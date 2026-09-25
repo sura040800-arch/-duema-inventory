@@ -1,68 +1,365 @@
-name: Debug Duel Masters Data
+name: Update Duel Masters Cards
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "0 18 * * *"
+
+permissions:
+  contents: write
 
 jobs:
-  debug:
+  update:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Install requests
-        run: pip install requests
+      - name: Install packages
+        run: |
+          pip install requests beautifulsoup4
 
-      - name: Inspect research and data
+      - name: Scrape official card list
         run: |
           python - <<'PY'
           import requests
+          from bs4 import BeautifulSoup
+          from urllib.parse import urljoin
+          import json
+          import time
+          import re
+          import sys
 
-          url = "https://dm.takaratomy.co.jp/common/js/search.js"
+          BASE = "https://dm.takaratomy.co.jp"
+          URL = BASE + "/card/"
 
-          r = requests.get(
-              url,
-              headers={"User-Agent": "Mozilla/5.0"},
+          session = requests.Session()
+          session.headers.update({
+              "User-Agent": "Mozilla/5.0 (compatible; DuelMastersInventory/1.0)"
+          })
+
+          print("公式カード検索を取得中...")
+          r = session.get(URL, timeout=30)
+          r.raise_for_status()
+
+          soup = BeautifulSoup(r.text, "html.parser")
+
+          form = soup.select_one("#search_cond")
+
+          if form is None:
+              print("ERROR: #search_cond が見つかりません")
+              sys.exit(1)
+
+          print("検索フォーム発見")
+          print("method =", form.get("method"))
+          print("action =", form.get("action"))
+
+          # フォームの現在値を取得
+          data = {}
+
+          for inp in form.select("input"):
+              name = inp.get("name")
+              if not name:
+                  continue
+
+              typ = (inp.get("type") or "text").lower()
+
+              if typ in ["submit", "button", "reset"]:
+                  continue
+
+              if typ in ["checkbox", "radio"]:
+                  if inp.has_attr("checked"):
+                      data.setdefault(name, []).append(inp.get("value", "on"))
+              else:
+                  data.setdefault(name, []).append(inp.get("value", ""))
+
+          for sel in form.select("select"):
+              name = sel.get("name")
+              if not name:
+                  continue
+
+              selected = sel.select_one("option[selected]")
+              if selected:
+                  value = selected.get("value", "")
+              else:
+                  option = sel.select_one("option")
+                  value = option.get("value", "") if option else ""
+
+              data.setdefault(name, []).append(value)
+
+          # pagenum を1にする
+          data["pagenum"] = ["1"]
+
+          def flatten(d):
+              result = []
+              for k, values in d.items():
+                  if not isinstance(values, list):
+                      values = [values]
+
+                  for v in values:
+                      result.append((k, v))
+              return result
+
+          def extract_cards(html):
+              soup = BeautifulSoup(html, "html.parser")
+              cards = []
+
+              # カード詳細リンクを探す
+              links = soup.select('a[href*="/card/detail/"]')
+
+              seen = set()
+
+              for a in links:
+                  href = a.get("href", "").strip()
+
+                  if not href:
+                      continue
+
+                  full_url = urljoin(BASE, href)
+
+                  m = re.search(r"[?&]id=([^&]+)", full_url)
+
+                  if not m:
+                      continue
+
+                  card_id = m.group(1)
+
+                  if card_id in seen:
+                      continue
+
+                  seen.add(card_id)
+
+                  text = a.get_text(" ", strip=True)
+
+                  # カード番号らしい文字列を探す
+                  number = ""
+
+                  nm = re.search(
+                      r"\b(dm\d+[a-z0-9-]*[-_][A-Za-z0-9]+)\b",
+                      text,
+                      re.I
+                  )
+
+                  if nm:
+                      number = nm.group(1)
+
+                  # リンク内画像のaltも確認
+                  if not number:
+                      img = a.find("img")
+                      if img:
+                          alt = img.get("alt", "")
+                          nm = re.search(
+                              r"\b(dm\d+[a-z0-9-]*[-_][A-Za-z0-9]+)\b",
+                              alt,
+                              re.I
+                          )
+                          if nm:
+                              number = nm.group(1)
+
+                  name = text
+
+                  cards.append({
+                      "id": card_id,
+                      "name": name,
+                      "number": number,
+                      "url": full_url
+                  })
+
+              return cards
+
+          # ----------------------------------------
+          # まずPOSTのページ2が本当に変わるか確認
+          # ----------------------------------------
+
+          print("")
+          print("=== POST ページ2確認 ===")
+
+          data["pagenum"] = ["1"]
+
+          r1 = session.post(
+              BASE + "/card/",
+              data=flatten(data),
               timeout=30
           )
 
-          lines = r.text.splitlines()
+          print("page1 HTTP:", r1.status_code)
 
-          print("=" * 80)
-          print("【research(data) 周辺】")
-          print("=" * 80)
+          cards1 = extract_cards(r1.text)
 
-          # research関数を探して、その中身をかなり広めに表示
-          for i, line in enumerate(lines):
-              if "function research(data)" in line:
-                  print("research開始:", i + 1)
+          print("page1 cards:", len(cards1))
 
-                  start = max(0, i - 5)
-                  end = min(len(lines), i + 115)
+          data["pagenum"] = ["2"]
 
-                  for j in range(start, end):
-                      print(f"{j + 1:04d}: {lines[j]}")
+          r2 = session.post(
+              BASE + "/card/",
+              data=flatten(data),
+              timeout=30
+          )
 
-          print("\n")
-          print("=" * 80)
-          print("【doAjax を呼び出している場所】")
-          print("=" * 80)
+          print("page2 HTTP:", r2.status_code)
 
-          for i, line in enumerate(lines):
-              if "doAjax(" in line:
-                  start = max(0, i - 15)
-                  end = min(len(lines), i + 15)
+          cards2 = extract_cards(r2.text)
 
-                  print("\n---", i + 1, "行目 ---")
+          print("page2 cards:", len(cards2))
 
-                  for j in range(start, end):
-                      print(f"{j + 1:04d}: {lines[j]}")
+          ids1 = [x["id"] for x in cards1]
+          ids2 = [x["id"] for x in cards2]
 
-          print("\n")
-          print("=" * 80)
-          print("調査終了")
-          print("=" * 80)
+          print("page1 first:", ids1[:5])
+          print("page2 first:", ids2[:5])
+
+          if ids1 and ids2 and ids1 == ids2:
+              print("")
+              print("ERROR: POSTしてもページ1とページ2が同じです")
+              print("安全のため data/cards.json は変更しません。")
+              sys.exit(1)
+
+          if not ids2:
+              print("")
+              print("ERROR: ページ2からカードを取得できませんでした")
+              print("安全のため data/cards.json は変更しません。")
+              sys.exit(1)
+
+          print("")
+          print("POSTページング成功")
+
+          # ----------------------------------------
+          # 最終ページを取得
+          # ----------------------------------------
+
+          initial_numbers = []
+
+          for a in soup.select("#cardlist .wp-pagenavia a"):
+              page = a.get("data-page")
+
+              if page and page.isdigit():
+                  initial_numbers.append(int(page))
+
+          last_page = max(initial_numbers) if initial_numbers else 1
+
+          print("検出した最大ページ:", last_page)
+
+          # 「最後のページ」から数字を取れる場合
+          for a in soup.select("#cardlist .wp-pagenavia a"):
+              text = a.get_text(strip=True)
+
+              if text == "最後のページ":
+                  p = a.get("data-page")
+                  if p and p.isdigit():
+                      last_page = max(last_page, int(p))
+
+          print("最終ページ:", last_page)
+
+          # ----------------------------------------
+          # 全ページ取得
+          # ----------------------------------------
+
+          all_cards = []
+          seen_ids = set()
+
+          for page in range(1, last_page + 1):
+
+              print("")
+              print(f"=== ページ {page}/{last_page} ===")
+
+              data["pagenum"] = [str(page)]
+
+              try:
+                  response = session.post(
+                      BASE + "/card/",
+                      data=flatten(data),
+                      timeout=30
+                  )
+
+                  response.raise_for_status()
+
+              except Exception as e:
+                  print("取得失敗:", e)
+                  print("安全のため既存データは変更しません。")
+                  sys.exit(1)
+
+              cards = extract_cards(response.text)
+
+              print("取得カード:", len(cards))
+
+              if not cards:
+                  print("カードが0件なので停止")
+                  print("安全のため既存データは変更しません。")
+                  sys.exit(1)
+
+              new_count = 0
+
+              for card in cards:
+                  if card["id"] not in seen_ids:
+                      seen_ids.add(card["id"])
+                      all_cards.append(card)
+                      new_count += 1
+
+              print("新規:", new_count)
+              print("累計:", len(all_cards))
+
+              time.sleep(0.5)
+
+          # ----------------------------------------
+          # 最低件数チェック
+          # ----------------------------------------
+
+          print("")
+          print("================================")
+          print("取得完了")
+          print("総カード数:", len(all_cards))
+          print("================================")
+
+          if len(all_cards) < 1000:
+              print("ERROR: カード数が少なすぎます")
+              print("安全のため data/cards.json は変更しません。")
+              sys.exit(1)
+
+          # ----------------------------------------
+          # JSON保存
+          # ----------------------------------------
+
+          all_cards.sort(
+              key=lambda x: (
+                  x.get("number", ""),
+                  x.get("id", "")
+              )
+          )
+
+          import os
+          os.makedirs("data", exist_ok=True)
+
+          with open(
+              "data/cards.json",
+              "w",
+              encoding="utf-8"
+          ) as f:
+              json.dump(
+                  all_cards,
+                  f,
+                  ensure_ascii=False,
+                  indent=2
+              )
+
+          print("data/cards.json を更新しました")
           PY
+
+      - name: Commit cards.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/cards.json
+
+          if git diff --cached --quiet; then
+            echo "変更なし"
+          else
+            git commit -m "Update Duel Masters card data"
+            git push
+          fi

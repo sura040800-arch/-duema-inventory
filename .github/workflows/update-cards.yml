@@ -1,4 +1,4 @@
-name: Test Duel Masters Page 2
+name: Test Duel Masters Official Click
 
 on:
   workflow_dispatch:
@@ -21,7 +21,7 @@ jobs:
           pip install playwright beautifulsoup4
           playwright install chromium
 
-      - name: Test official pagination
+      - name: Test official click
         run: |
           python - <<'PY'
           from playwright.sync_api import sync_playwright
@@ -33,18 +33,12 @@ jobs:
 
           def get_ids(html):
               soup = BeautifulSoup(html, "html.parser")
-
               ids = []
 
-              for a in soup.select(
-                  'a[href*="/card/detail/?id="]'
-              ):
+              for a in soup.select('a[href*="/card/detail/?id="]'):
                   href = a.get("href", "")
 
-                  m = re.search(
-                      r"[?&]id=([^&]+)",
-                      href
-                  )
+                  m = re.search(r"[?&]id=([^&]+)", href)
 
                   if m:
                       card_id = m.group(1)
@@ -54,8 +48,6 @@ jobs:
 
               return ids
 
-          print("公式カード検索を開きます...")
-
           with sync_playwright() as p:
 
               browser = p.chromium.launch(
@@ -64,109 +56,117 @@ jobs:
 
               page = browser.new_page()
 
-              print("1ページ目を読み込み中...")
+              # ネットワーク監視
+              def on_request(request):
+                  if request.method != "GET" or "/card/" in request.url:
+                      print("")
+                      print("REQUEST")
+                      print("method:", request.method)
+                      print("url:", request.url)
+
+                      if request.post_data:
+                          print("post_data:", request.post_data[:2000])
+
+              def on_response(response):
+                  if "/card/" in response.url:
+                      print("")
+                      print("RESPONSE")
+                      print("status:", response.status)
+                      print("url:", response.url)
+
+              page.on("request", on_request)
+              page.on("response", on_response)
+
+              print("公式カード検索を開きます...")
 
               page.goto(
                   URL,
-                  wait_until="domcontentloaded",
+                  wait_until="networkidle",
                   timeout=60000
               )
 
               page.wait_for_timeout(3000)
 
-              ids1 = get_ids(
-                  page.content()
-              )
+              ids1 = get_ids(page.content())
 
               print("")
               print("==============================")
               print("1ページ目")
               print("==============================")
-              print("URL:", page.url)
               print("カード数:", len(ids1))
               print("先頭5枚:", ids1[:5])
               print("最後5枚:", ids1[-5:])
 
               if len(ids1) == 0:
-                  print("ERROR: 1ページ目のカードが取れません")
+                  print("ERROR: 1ページ目が取得できません")
                   sys.exit(1)
 
-              # 公式JSと同じ方法
-              print("")
-              print("2ページ目へ移動します...")
-              print("公式JSと同じく pagenum=2 をセットして")
-              print("search_cond を submit します。")
+              # ページ2のボタン確認
+              button = page.locator(
+                  '#cardlist .wp-pagenavi a[data-page="2"]'
+              )
 
+              print("")
+              print("ページ2ボタン数:", button.count())
+
+              if button.count() == 0:
+                  print("ERROR: ページ2ボタンがありません")
+                  sys.exit(1)
+
+              print("ページ2ボタンを公式JS経由でクリックします...")
+
+              # 公式サイトと同じjQueryイベントを発火
               result = page.evaluate("""
               () => {
-                  const form =
+                  const el =
                       document.querySelector(
-                          'form#search_cond'
+                          '#cardlist .wp-pagenavi a[data-page="2"]'
                       );
 
-                  if (!form) {
+                  if (!el) {
                       return {
                           ok: false,
-                          error: "search_cond form not found"
+                          error: "page2 button not found"
                       };
                   }
 
-                  const input =
-                      form.querySelector(
-                          'input[name="pagenum"]'
-                      );
-
-                  if (!input) {
+                  if (typeof window.jQuery === "undefined") {
                       return {
                           ok: false,
-                          error: "pagenum input not found"
+                          error: "jQuery not found"
                       };
                   }
 
-                  input.value = "2";
+                  window.jQuery(el).trigger("click");
 
                   return {
                       ok: true,
-                      method: form.method,
-                      action: form.action,
-                      pagenum: input.value
+                      pagenum:
+                          document.querySelector(
+                              '#search_cond input[name="pagenum"]'
+                          )?.value
                   };
               }
               """)
 
               print("")
-              print("フォーム情報:", result)
+              print("クリック結果:", result)
 
               if not result.get("ok"):
                   print("ERROR:", result.get("error"))
                   sys.exit(1)
 
+              # Ajax完了待ち
               print("")
-              print("フォームを送信します...")
+              print("Ajax処理を待っています...")
 
-              # JavaScriptの form.submit() と同じ
-              page.evaluate("""
-              () => {
-                  const form =
-                      document.querySelector(
-                          'form#search_cond'
-                      );
+              page.wait_for_timeout(8000)
 
-                  HTMLFormElement.prototype.submit.call(
-                      form
-                  );
-              }
-              """)
-
-              page.wait_for_timeout(5000)
-
-              ids2 = get_ids(
-                  page.content()
-              )
+              ids2 = get_ids(page.content())
 
               print("")
               print("==============================")
-              print("2ページ目")
+              print("クリック後")
               print("==============================")
               print("URL:", page.url)
               print("カード数:", len(ids2))
@@ -175,7 +175,7 @@ jobs:
 
               print("")
               print("==============================")
-              print("比較")
+              print("結果")
               print("==============================")
 
               print(
@@ -183,21 +183,19 @@ jobs:
                   ids1 == ids2
               )
 
-              if ids1 == ids2:
-                  print(
-                      "ERROR: ページが変わっていません"
-                  )
+              if len(ids2) == 0:
+                  print("")
+                  print("ERROR: クリック後のカードが0枚です")
                   sys.exit(1)
 
-              if len(ids2) == 0:
-                  print(
-                      "ERROR: 2ページ目のカードが0枚です"
-                  )
+              if ids1 == ids2:
+                  print("")
+                  print("ERROR: ページが変わっていません")
                   sys.exit(1)
 
               print("")
               print("SUCCESS!")
-              print("2ページ目の取得に成功しました。")
+              print("公式のページ切り替えに成功しました。")
 
               browser.close()
 

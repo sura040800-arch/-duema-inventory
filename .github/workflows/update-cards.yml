@@ -1,4 +1,4 @@
-name: Test Duel Masters Official Click
+name: Test Duel Masters Click
 
 on:
   workflow_dispatch:
@@ -16,18 +16,19 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install Playwright
+      - name: Install packages
         run: |
           pip install playwright beautifulsoup4
           playwright install chromium
 
-      - name: Test official click
+      - name: Test official page switch
         run: |
           python - <<'PY'
           from playwright.sync_api import sync_playwright
           from bs4 import BeautifulSoup
           import re
           import sys
+          import time
 
           URL = "https://dm.takaratomy.co.jp/card/"
 
@@ -37,7 +38,6 @@ jobs:
 
               for a in soup.select('a[href*="/card/detail/?id="]'):
                   href = a.get("href", "")
-
                   m = re.search(r"[?&]id=([^&]+)", href)
 
                   if m:
@@ -48,6 +48,8 @@ jobs:
 
               return ids
 
+          print("公式カード検索を開きます...")
+
           with sync_playwright() as p:
 
               browser = p.chromium.launch(
@@ -56,36 +58,13 @@ jobs:
 
               page = browser.new_page()
 
-              # ネットワーク監視
-              def on_request(request):
-                  if request.method != "GET" or "/card/" in request.url:
-                      print("")
-                      print("REQUEST")
-                      print("method:", request.method)
-                      print("url:", request.url)
-
-                      if request.post_data:
-                          print("post_data:", request.post_data[:2000])
-
-              def on_response(response):
-                  if "/card/" in response.url:
-                      print("")
-                      print("RESPONSE")
-                      print("status:", response.status)
-                      print("url:", response.url)
-
-              page.on("request", on_request)
-              page.on("response", on_response)
-
-              print("公式カード検索を開きます...")
-
               page.goto(
                   URL,
-                  wait_until="networkidle",
+                  wait_until="domcontentloaded",
                   timeout=60000
               )
 
-              page.wait_for_timeout(3000)
+              page.wait_for_timeout(4000)
 
               ids1 = get_ids(page.content())
 
@@ -93,6 +72,7 @@ jobs:
               print("==============================")
               print("1ページ目")
               print("==============================")
+              print("URL:", page.url)
               print("カード数:", len(ids1))
               print("先頭5枚:", ids1[:5])
               print("最後5枚:", ids1[-5:])
@@ -101,101 +81,100 @@ jobs:
                   print("ERROR: 1ページ目が取得できません")
                   sys.exit(1)
 
-              # ページ2のボタン確認
-              button = page.locator(
-                  '#cardlist .wp-pagenavi a[data-page="2"]'
-              )
-
               print("")
-              print("ページ2ボタン数:", button.count())
+              print("ページ2ボタンを確認します...")
 
-              if button.count() == 0:
+              button_count = page.locator(
+                  '#cardlist .wp-pagenavi a[data-page="2"]'
+              ).count()
+
+              print("ページ2ボタン:", button_count)
+
+              if button_count == 0:
                   print("ERROR: ページ2ボタンがありません")
                   sys.exit(1)
 
-              print("ページ2ボタンを公式JS経由でクリックします...")
+              print("")
+              print("公式JavaScriptのクリック処理を実行します...")
 
-              # 公式サイトと同じjQueryイベントを発火
               result = page.evaluate("""
               () => {
-                  const el =
-                      document.querySelector(
-                          '#cardlist .wp-pagenavi a[data-page="2"]'
-                      );
+                  const el = document.querySelector(
+                      '#cardlist .wp-pagenavi a[data-page="2"]'
+                  );
 
                   if (!el) {
-                      return {
-                          ok: false,
-                          error: "page2 button not found"
-                      };
+                      return "BUTTON_NOT_FOUND";
                   }
 
-                  if (typeof window.jQuery === "undefined") {
-                      return {
-                          ok: false,
-                          error: "jQuery not found"
-                      };
+                  if (!window.jQuery) {
+                      return "JQUERY_NOT_FOUND";
                   }
 
                   window.jQuery(el).trigger("click");
 
-                  return {
-                      ok: true,
-                      pagenum:
-                          document.querySelector(
-                              '#search_cond input[name="pagenum"]'
-                          )?.value
-                  };
+                  return "CLICK_OK";
               }
               """)
 
-              print("")
               print("クリック結果:", result)
 
-              if not result.get("ok"):
-                  print("ERROR:", result.get("error"))
+              if result != "CLICK_OK":
+                  print("ERROR:", result)
                   sys.exit(1)
 
-              # Ajax完了待ち
               print("")
-              print("Ajax処理を待っています...")
+              print("ページ切り替えを待っています...")
 
-              page.wait_for_timeout(8000)
+              # Ajax完了待ち
+              for i in range(20):
+                  time.sleep(1)
+
+                  ids_now = get_ids(page.content())
+
+                  print(
+                      f"{i + 1}秒後: {len(ids_now)}枚"
+                  )
+
+                  if ids_now and ids_now != ids1:
+                      break
 
               ids2 = get_ids(page.content())
 
               print("")
               print("==============================")
-              print("クリック後")
+              print("結果")
               print("==============================")
               print("URL:", page.url)
-              print("カード数:", len(ids2))
+              print("2ページ目カード数:", len(ids2))
               print("先頭5枚:", ids2[:5])
               print("最後5枚:", ids2[-5:])
 
               print("")
               print("==============================")
-              print("結果")
+              print("比較")
               print("==============================")
 
               print(
-                  "1ページ目と2ページ目が同じ:",
+                  "1ページ目と同じ:",
                   ids1 == ids2
               )
 
               if len(ids2) == 0:
                   print("")
-                  print("ERROR: クリック後のカードが0枚です")
+                  print("ERROR: 2ページ目のカードが0枚です")
                   sys.exit(1)
 
               if ids1 == ids2:
                   print("")
-                  print("ERROR: ページが変わっていません")
+                  print("ERROR: ページが切り替わっていません")
                   sys.exit(1)
 
               print("")
+              print("================================")
               print("SUCCESS!")
-              print("公式のページ切り替えに成功しました。")
+              print("2ページ目の取得に成功しました")
+              print("================================")
 
               browser.close()
 

@@ -1,4 +1,4 @@
-name: Debug Duel Masters POST
+name: Debug Duel Masters Data
 
 on:
   workflow_dispatch:
@@ -16,7 +16,7 @@ jobs:
       - name: Install requests
         run: pip install requests
 
-      - name: Inspect POST request
+      - name: Inspect research and data
         run: |
           python - <<'PY'
           import requests
@@ -32,25 +32,31 @@ jobs:
           lines = r.text.splitlines()
 
           print("=" * 80)
-          print("【$.ajax 周辺を完全表示】")
+          print("【research(data) 周辺】")
           print("=" * 80)
 
-          # search.js の 200〜230行付近
-          for i in range(195, 235):
-              if i < len(lines):
-                  print(f"{i + 1:04d}: {lines[i]}")
+          # research関数を探して、その中身をかなり広めに表示
+          for i, line in enumerate(lines):
+              if "function research(data)" in line:
+                  print("research開始:", i + 1)
+
+                  start = max(0, i - 5)
+                  end = min(len(lines), i + 115)
+
+                  for j in range(start, end):
+                      print(f"{j + 1:04d}: {lines[j]}")
 
           print("\n")
           print("=" * 80)
-          print("【$.ajax がある場所をすべて表示】")
+          print("【doAjax を呼び出している場所】")
           print("=" * 80)
 
           for i, line in enumerate(lines):
-              if "$.ajax" in line:
-                  print(f"\n--- $.ajax 発見: {i + 1}行目 ---")
+              if "doAjax(" in line:
+                  start = max(0, i - 15)
+                  end = min(len(lines), i + 15)
 
-                  start = max(0, i - 10)
-                  end = min(len(lines), i + 40)
+                  print("\n---", i + 1, "行目 ---")
 
                   for j in range(start, end):
                       print(f"{j + 1:04d}: {lines[j]}")

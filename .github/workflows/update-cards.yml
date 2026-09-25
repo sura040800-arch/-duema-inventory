@@ -44,19 +44,20 @@ jobs:
           MAX_PAGES = 600
           MAX_RETRIES = 5
 
+
           def extract_cards(html):
               soup = BeautifulSoup(html, "html.parser")
               cards = {}
 
-              # 公式カード詳細ページへのリンクを取得
               for a in soup.select('a[href*="/card/detail/?id="]'):
                   href = a.get("href", "")
-                  m = re.search(r"[?&]id=([^&]+)", href)
 
-                  if not m:
+                  match = re.search(r"[?&]id=([^&]+)", href)
+
+                  if not match:
                       continue
 
-                  card_id = m.group(1).strip()
+                  card_id = match.group(1).strip()
 
                   if not card_id:
                       continue
@@ -70,21 +71,20 @@ jobs:
                       name = a.get("aria-label", "").strip()
 
                   img = a.find("img")
+
                   if not name and img:
                       name = img.get("alt", "").strip()
 
                   if not name:
                       name = card_id
 
-                  detail_url = (
-                      "https://dm.takaratomy.co.jp/card/detail/?id="
-                      + card_id
-                  )
-
                   cards[card_id] = {
                       "id": card_id,
                       "name": name,
-                      "url": detail_url
+                      "url": (
+                          "https://dm.takaratomy.co.jp/card/detail/?id="
+                          + card_id
+                      )
                   }
 
               return cards
@@ -93,82 +93,92 @@ jobs:
           def get_card_ids(page):
               return page.evaluate("""
               () => {
-                const links = Array.from(
-                  document.querySelectorAll('a[href*="/card/detail/?id="]')
-                );
-
-                return links.map(a => {
-                  const href = a.getAttribute("href") || "";
-                  const m = href.match(/[?&]id=([^&]+)/);
-                  return m ? m[1] : null;
-                }).filter(Boolean);
+                  return Array.from(
+                      document.querySelectorAll(
+                          'a[href*="/card/detail/?id="]'
+                      )
+                  )
+                  .map(a => {
+                      const href = a.getAttribute("href") || "";
+                      const m = href.match(/[?&]id=([^&]+)/);
+                      return m ? m[1] : null;
+                  })
+                  .filter(Boolean);
               }
               """)
 
 
-          def click_page(page, page_number, old_ids):
-              print(f"{page_number}ページ目へ移動...")
+          def click_next_page(page, next_page, old_ids):
+
+              print(f"{next_page}ページ目へ移動...")
 
               for retry in range(1, MAX_RETRIES + 1):
-                  print(f"  試行 {retry}/{MAX_RETRIES}")
+
+                  print(
+                      f"クリック試行 {retry}/{MAX_RETRIES}"
+                  )
 
                   result = page.evaluate("""
                   (pageNumber) => {
-                    const selectors = [
-                      `a[data-page="${pageNumber}"]`,
-                      `a.page[data-page="${pageNumber}"]`
-                    ];
 
-                    let el = null;
+                      const el = document.querySelector(
+                          `a[data-page="${pageNumber}"]`
+                      );
 
-                    for (const selector of selectors) {
-                      el = document.querySelector(selector);
-                      if (el) break;
-                    }
+                      if (!el) {
+                          return "NOT_FOUND";
+                      }
 
-                    if (!el) {
-                      return "NOT_FOUND";
-                    }
+                      if (window.jQuery) {
+                          window.jQuery(el).trigger("click");
+                          return "CLICK_OK";
+                      }
 
-                    if (window.jQuery) {
-                      window.jQuery(el).trigger("click");
-                      return "CLICK_OK";
-                    }
-
-                    el.click();
-                    return "NATIVE_CLICK_OK";
+                      el.click();
+                      return "NATIVE_CLICK_OK";
                   }
-                  """, page_number)
+                  """, next_page)
 
-                  print(f"  クリック結果: {result}")
+                  print(f"クリック結果: {result}")
 
                   if result == "NOT_FOUND":
-                      print("  ページボタンが見つかりません")
-                      time.sleep(2)
-                      continue
 
-                  # ページ内容が変わるまで最大15秒待つ
-                  changed = False
+                      print(
+                          f"{next_page}ページ目のボタンが見つかりません"
+                      )
 
-                  for _ in range(30):
+                      return False
+
+                  # 最大15秒待つ
+                  for wait_count in range(30):
+
                       time.sleep(0.5)
 
                       new_ids = get_card_ids(page)
 
                       if new_ids and new_ids != old_ids:
-                          changed = True
-                          print("  ページ内容が変化しました")
+
+                          print(
+                              f"{next_page}ページ目への移動成功"
+                          )
+
                           return True
 
-                  if not changed:
-                      print("  ページ内容が変化しませんでした")
-                      print("  もう一度クリックします...")
+                  print(
+                      "ページ内容が変化しませんでした"
+                  )
+
+                  if retry < MAX_RETRIES:
+                      print(
+                          "もう一度クリックします..."
+                      )
                       time.sleep(2)
 
               return False
 
 
           with sync_playwright() as p:
+
               browser = p.chromium.launch(
                   headless=True
               )
@@ -180,10 +190,10 @@ jobs:
                   }
               )
 
-              print("=" * 50)
+              print("=" * 60)
               print("デュエル・マスターズ公式カード検索")
               print("取得開始")
-              print("=" * 50)
+              print("=" * 60)
 
               page.goto(
                   BASE_URL,
@@ -194,18 +204,22 @@ jobs:
               page.wait_for_timeout(3000)
 
               all_cards = {}
+              current_page = 1
 
-              for page_number in range(1, MAX_PAGES + 1):
+              while current_page <= MAX_PAGES:
 
                   print()
-                  print("=" * 50)
-                  print(f"{page_number}ページ目を取得")
-                  print("=" * 50)
+                  print("=" * 60)
+                  print(f"{current_page}ページ目を取得")
+                  print("=" * 60)
 
                   html = page.content()
+
                   cards = extract_cards(html)
 
-                  print(f"このページ: {len(cards)} 枚")
+                  print(
+                      f"このページ: {len(cards)} 枚"
+                  )
 
                   before = len(all_cards)
 
@@ -214,66 +228,87 @@ jobs:
 
                   added = len(all_cards) - before
 
-                  print(f"新規追加: {added} 枚")
-                  print(f"現在の総カード数: {len(all_cards)}")
+                  print(
+                      f"新規追加: {added} 枚"
+                  )
 
+                  print(
+                      f"現在の総カード数: {len(all_cards)}"
+                  )
+
+                  # カードが取れなければ終了
                   if len(cards) == 0:
-                      print("カードが0枚なので終了します")
+
+                      print(
+                          "カードが0枚なので取得終了"
+                      )
+
                       break
 
                   old_ids = get_card_ids(page)
 
-                  # 最後のページか確認
-                  next_button_exists = page.evaluate("""
-                  (pageNumber) => {
-                    const selectors = [
-                      `a[data-page="${pageNumber + 1}"]`,
-                      `a.page[data-page="${pageNumber + 1}"]`
-                    ];
+                  next_page = current_page + 1
 
-                    return selectors.some(
-                      selector => document.querySelector(selector) !== null
-                    );
-                  }
-                  """)
-
-                  if not next_button_exists:
-                      print("次のページボタンがありません")
-                      print("最後のページと判断します")
-                      break
-
-                  success = click_page(
+                  success = click_next_page(
                       page,
-                      page_number + 1,
+                      next_page,
                       old_ids
                   )
 
                   if not success:
+
                       print()
-                      print("ERROR: ページ移動に失敗しました")
-                      print(f"停止ページ: {page_number + 1}")
+                      print(
+                          f"{next_page}ページ目へ移動できませんでした"
+                      )
+
+                      print(
+                          "最後のページと判断します"
+                      )
+
                       break
+
+                  current_page = next_page
 
               browser.close()
 
-          print()
-          print("=" * 50)
-          print("取得終了")
-          print("=" * 50)
-          print(f"総カード数: {len(all_cards)}")
-          print(f"取得ページ数: {page_number}")
-          print("=" * 50)
 
-          # 少なすぎるデータで既存データを上書きしない
+          print()
+          print("=" * 60)
+          print("取得終了")
+          print("=" * 60)
+
+          print(
+              f"総カード数: {len(all_cards)}"
+          )
+
+          print(
+              f"取得ページ数: {current_page}"
+          )
+
+          print("=" * 60)
+
+
+          # 少なすぎる場合は既存データを守る
           if len(all_cards) < 20000:
+
               print()
-              print("ERROR: 取得枚数が少なすぎます")
-              print("既存の cards.json は変更しません")
+              print(
+                  "ERROR: 取得枚数が少なすぎます"
+              )
+
+              print(
+                  "既存の cards.json は変更しません"
+              )
+
               raise SystemExit(1)
 
-          OUTPUT.parent.mkdir(parents=True, exist_ok=True)
 
-          # 安全のため一時ファイルに書いてから置換
+          OUTPUT.parent.mkdir(
+              parents=True,
+              exist_ok=True
+          )
+
           temp_file = OUTPUT.with_suffix(".tmp")
 
           with open(
@@ -281,6 +316,7 @@ jobs:
               "w",
               encoding="utf-8"
           ) as f:
+
               json.dump(
                   list(all_cards.values()),
                   f,
@@ -291,7 +327,9 @@ jobs:
           temp_file.replace(OUTPUT)
 
           print()
-          print("cards.json を更新しました")
+          print(
+              "cards.json を更新しました"
+          )
           PY
 
       - name: Commit and push

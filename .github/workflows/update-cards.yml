@@ -1,10 +1,10 @@
-name: Test Duel Masters Direct Pagination
+name: Debug Duel Masters Network
 
 on:
   workflow_dispatch:
 
 jobs:
-  test:
+  debug:
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
@@ -19,82 +19,41 @@ jobs:
           pip install playwright
           playwright install chromium
 
-      - name: Test direct pagination
+      - name: Debug official site
         run: |
           python - <<'PY'
-          import json
           import re
-          from urllib.parse import quote
-
+          import time
           from playwright.sync_api import sync_playwright
 
+          URL = "https://dm.takaratomy.co.jp/card/"
 
-          BASE = "https://dm.takaratomy.co.jp/card/"
-
-
-          def make_url(page_number):
-
-              state = {
-                  "suggest": "on",
-                  "keyword_type": [
-                      "card_name",
-                      "card_ruby",
-                      "card_text"
-                  ],
-                  "culture_cond": [
-                      "単色",
-                      "多色"
-                  ],
-                  "pagenum": str(page_number),
-                  "samename": "show",
-                  "sort": "release_new"
-              }
-
-              value = json.dumps(
-                  state,
-                  ensure_ascii=False,
-                  separators=(",", ":")
-              )
-
-              return BASE + "?v=" + quote(
-                  value,
-                  safe=""
-              )
-
-
-          def get_card_ids(page):
-
+          def get_ids(page):
               links = page.locator(
                   'a[href*="/card/detail/?id="]'
               ).all()
 
-              ids = []
+              result = []
 
               for link in links:
-
                   href = link.get_attribute("href")
 
-                  if not href:
-                      continue
-
-                  match = re.search(
-                      r'id=([^&"]+)',
-                      href
-                  )
-
-                  if match:
-                      ids.append(
-                          match.group(1)
+                  if href:
+                      m = re.search(
+                          r'id=([^&"]+)',
+                          href
                       )
 
-              return list(
-                  dict.fromkeys(ids)
-              )
+                      if m:
+                          result.append(m.group(1))
 
+              return list(dict.fromkeys(result))
 
           with sync_playwright() as p:
 
-              print("Chromiumを起動します")
+              print("================================")
+              print("ブラウザ起動")
+              print("================================")
 
               browser = p.chromium.launch(
                   headless=True
@@ -114,113 +73,319 @@ jobs:
 
               page = context.new_page()
 
+              # -----------------------------
+              # JavaScriptエラーを取得
+              # -----------------------------
 
-              # =====================================
-              # 1ページ目
-              # =====================================
+              page.on(
+                  "console",
+                  lambda msg:
+                      print(
+                          "CONSOLE:",
+                          msg.type,
+                          msg.text
+                      )
+              )
 
-              url1 = make_url(1)
+              page.on(
+                  "pageerror",
+                  lambda error:
+                      print(
+                          "PAGE ERROR:",
+                          error
+                      )
+              )
+
+              # -----------------------------
+              # 通信を記録
+              # -----------------------------
+
+              requests = []
+
+              def on_request(request):
+
+                  url = request.url
+
+                  if (
+                      "takaratomy.co.jp" in url
+                      or "ajax" in url.lower()
+                      or "api" in url.lower()
+                  ):
+                      requests.append(
+                          (
+                              "REQUEST",
+                              request.method,
+                              url
+                          )
+                      )
+
+                      print(
+                          "REQUEST:",
+                          request.method,
+                          url
+                      )
+
+              def on_response(response):
+
+                  url = response.url
+
+                  if (
+                      "takaratomy.co.jp" in url
+                      or "ajax" in url.lower()
+                      or "api" in url.lower()
+                  ):
+                      print(
+                          "RESPONSE:",
+                          response.status,
+                          url
+                      )
+
+              page.on(
+                  "request",
+                  on_request
+              )
+
+              page.on(
+                  "response",
+                  on_response
+              )
+
+              # -----------------------------
+              # 公式サイトを開く
+              # -----------------------------
 
               print("")
-              print("================================")
-              print("1ページ目を開きます")
-              print("================================")
-              print(url1)
+              print("公式サイトを開きます")
 
               page.goto(
-                  url1,
+                  URL,
                   wait_until="networkidle",
                   timeout=60000
               )
 
               page.wait_for_timeout(3000)
 
-              ids1 = get_card_ids(page)
-
-              print("")
-              print("===== 1ページ目 =====")
-              print("URL:", page.url)
-              print("カード:", len(ids1), "枚")
-              print("先頭:", ids1[:5])
-              print("末尾:", ids1[-5:])
-
-
-              if len(ids1) == 0:
-                  raise RuntimeError(
-                      "1ページ目のカードを取得できませんでした。"
-                  )
-
-
-              # =====================================
-              # 2ページ目
-              # =====================================
-
-              url2 = make_url(2)
+              ids1 = get_ids(page)
 
               print("")
               print("================================")
-              print("2ページ目を開きます")
+              print("1ページ目")
               print("================================")
-              print(url2)
-
-              page.goto(
-                  url2,
-                  wait_until="networkidle",
-                  timeout=60000
+              print(
+                  "カード数:",
+                  len(ids1)
+              )
+              print(
+                  "先頭:",
+                  ids1[:5]
+              )
+              print(
+                  "末尾:",
+                  ids1[-5:]
               )
 
-              page.wait_for_timeout(3000)
-
-              ids2 = get_card_ids(page)
-
-              print("")
-              print("===== 2ページ目 =====")
-              print("URL:", page.url)
-              print("カード:", len(ids2), "枚")
-              print("先頭:", ids2[:5])
-              print("末尾:", ids2[-5:])
-
-
-              # =====================================
-              # 比較
-              # =====================================
-
-              same = ids1 == ids2
+              # -----------------------------
+              # 2ページ目候補を探す
+              # -----------------------------
 
               print("")
               print("================================")
-              print("結果")
+              print("ページ2を探します")
               print("================================")
+
+              candidates = []
+
+              for element in page.locator("a").all():
+
+                  text = (
+                      element.inner_text() or ""
+                  ).strip()
+
+                  if text == "2":
+                      candidates.append(element)
 
               print(
-                  "1ページ目と2ページ目が同じ:",
-                  same
+                  "2の候補数:",
+                  len(candidates)
               )
 
-              if not same:
+              if not candidates:
 
-                  print("")
-                  print("SUCCESS!")
-                  print(
-                      "ブラウザでpagenum=2が正常に機能しました！"
+                  raise RuntimeError(
+                      "ページ2の要素が見つかりませんでした。"
+                  )
+
+              # -----------------------------
+              # クリック前の通信数
+              # -----------------------------
+
+              before_count = len(requests)
+
+              print("")
+              print(
+                  "クリック前の通信数:",
+                  before_count
+              )
+
+              # -----------------------------
+              # ページ2をクリック
+              # -----------------------------
+
+              element = candidates[0]
+
+              print("")
+              print("ページ2をクリックします")
+
+              element.scroll_into_view_if_needed()
+
+              box = element.bounding_box()
+
+              print(
+                  "座標:",
+                  box
+              )
+
+              if box:
+
+                  page.mouse.click(
+                      box["x"] + box["width"] / 2,
+                      box["y"] + box["height"] / 2
                   )
 
               else:
 
-                  print("")
                   print(
-                      "pagenum=2でも同じカードが返りました。"
+                      "座標が取得できませんでした"
                   )
 
-                  print("")
+              print("")
+              print("クリック後10秒待ちます")
+
+              for i in range(10):
+
+                  time.sleep(1)
+
                   print(
-                      "別の取得方法が必要です。"
+                      i + 1,
+                      "秒"
                   )
 
-                  raise RuntimeError(
-                      "1ページ目と2ページ目が同じです。"
+              # -----------------------------
+              # クリック後
+              # -----------------------------
+
+              ids2 = get_ids(page)
+
+              print("")
+              print("================================")
+              print("クリック後")
+              print("================================")
+
+              print(
+                  "現在URL:",
+                  page.url
+              )
+
+              print(
+                  "カード数:",
+                  len(ids2)
+              )
+
+              print(
+                  "先頭:",
+                  ids2[:5]
+              )
+
+              print(
+                  "末尾:",
+                  ids2[-5:]
+              )
+
+              # -----------------------------
+              # 新しく発生した通信
+              # -----------------------------
+
+              print("")
+              print("================================")
+              print("クリック後に発生した通信")
+              print("================================")
+
+              new_requests = requests[
+                  before_count:
+              ]
+
+              print(
+                  "通信数:",
+                  len(new_requests)
+              )
+
+              for item in new_requests:
+
+                  print(
+                      item
                   )
 
+              # -----------------------------
+              # ページ内のscript
+              # -----------------------------
+
+              print("")
+              print("================================")
+              print("読み込まれたJavaScript")
+              print("================================")
+
+              scripts = page.locator(
+                  "script[src]"
+              ).all()
+
+              print(
+                  "script数:",
+                  len(scripts)
+              )
+
+              for script in scripts:
+
+                  src = script.get_attribute(
+                      "src"
+                  )
+
+                  if src:
+                      print(
+                          "SCRIPT:",
+                          src
+                      )
+
+              # -----------------------------
+              # 結果
+              # -----------------------------
+
+              print("")
+              print("================================")
+              print("診断結果")
+              print("================================")
+
+              print(
+                  "1ページ目カード数:",
+                  len(ids1)
+              )
+
+              print(
+                  "クリック後カード数:",
+                  len(ids2)
+              )
+
+              print(
+                  "カードが変わった:",
+                  ids1 != ids2
+              )
+
+              print(
+                  "クリック後通信数:",
+                  len(new_requests)
+              )
+
+              print("")
+              print("診断終了")
 
               browser.close()
 

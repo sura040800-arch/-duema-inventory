@@ -33,15 +33,12 @@ jobs:
           import re
           import time
           from pathlib import Path
-
           from bs4 import BeautifulSoup
           from playwright.sync_api import sync_playwright
 
           BASE_URL = "https://dm.takaratomy.co.jp/card/"
           OUTPUT = Path("data/cards.json")
-
           MAX_RETRIES = 5
-
 
           def extract_cards(html):
               soup = BeautifulSoup(html, "html.parser")
@@ -49,44 +46,28 @@ jobs:
 
               for a in soup.select('a[href*="/card/detail/?id="]'):
                   href = a.get("href", "")
+                  m = re.search(r"[?&]id=([^&]+)", href)
 
-                  match = re.search(
-                      r"[?&]id=([^&]+)",
-                      href
-                  )
-
-                  if not match:
+                  if not m:
                       continue
 
-                  card_id = match.group(1).strip()
+                  card_id = m.group(1).strip()
 
                   if not card_id:
                       continue
 
-                  name = a.get_text(
-                      " ",
-                      strip=True
-                  )
+                  name = a.get_text(" ", strip=True)
 
                   if not name:
-                      name = a.get(
-                          "title",
-                          ""
-                      ).strip()
+                      name = a.get("title", "").strip()
 
                   if not name:
-                      name = a.get(
-                          "aria-label",
-                          ""
-                      ).strip()
+                      name = a.get("aria-label", "").strip()
 
                   img = a.find("img")
 
                   if not name and img:
-                      name = img.get(
-                          "alt",
-                          ""
-                      ).strip()
+                      name = img.get("alt", "").strip()
 
                   if not name:
                       name = card_id
@@ -94,115 +75,54 @@ jobs:
                   cards[card_id] = {
                       "id": card_id,
                       "name": name,
-                      "url": (
-                          "https://dm.takaratomy.co.jp/card/detail/?id="
-                          + card_id
-                      )
+                      "url": "https://dm.takaratomy.co.jp/card/detail/?id=" + card_id
                   }
 
               return cards
 
-
           def get_card_ids(page):
               return page.evaluate("""
-              () => {
-                  return Array.from(
-                      document.querySelectorAll(
-                          'a[href*="/card/detail/?id="]'
-                      )
-                  )
-                  .map(a => {
-                      const href =
-                          a.getAttribute("href") || "";
-
-                      const m =
-                          href.match(/[?&]id=([^&]+)/);
-
-                      return m ? m[1] : null;
-                  })
-                  .filter(Boolean);
-              }
+              () => Array.from(
+                  document.querySelectorAll('a[href*="/card/detail/?id="]')
+              ).map(a => {
+                  const href = a.getAttribute("href") || "";
+                  const m = href.match(/[?&]id=([^&]+)/);
+                  return m ? m[1] : null;
+              }).filter(Boolean)
               """)
 
-
-          def get_visible_current_page(page):
+          def get_current_page(page):
               return page.evaluate("""
               () => {
-                  const el =
-                      document.querySelector(
-                          '.wp-pagenavi .current'
-                      );
-
-                  if (!el) {
-                      return null;
-                  }
-
-                  const text =
-                      (el.innerText || '').trim();
-
-                  const match =
-                      text.match(/\\d+/);
-
-                  return match
-                      ? Number(match[0])
-                      : null;
+                  const el = document.querySelector(".wp-pagenavi .current");
+                  if (!el) return null;
+                  const m = (el.innerText || "").match(/\\d+/);
+                  return m ? Number(m[0]) : null;
               }
               """)
-
 
           def get_last_page(page):
               return page.evaluate("""
               () => {
-                  const el =
-                      document.querySelector(
-                          '.wp-pagenavi a.nextpostslink'
-                      );
-
-                  if (!el) {
-                      return null;
-                  }
-
-                  const value =
-                      el.getAttribute('data-page');
-
-                  return value
-                      ? Number(value)
-                      : null;
+                  const el = document.querySelector(".wp-pagenavi a.nextpostslink");
+                  if (!el) return null;
+                  return Number(el.getAttribute("data-page"));
               }
               """)
 
+          def move_to_page(page, target, old_ids):
+              for attempt in range(1, MAX_RETRIES + 1):
 
-          def click_and_wait(
-              page,
-              next_page,
-              old_ids
-          ):
-
-              print()
-              print(
-                  f"{next_page}ページ目へ移動..."
-              )
-
-              for retry in range(
-                  1,
-                  MAX_RETRIES + 1
-              ):
-
-                  print(
-                      f"クリック試行 {retry}/{MAX_RETRIES}"
-                  )
+                  print(f"{target}ページ目へ移動")
+                  print(f"試行 {attempt}/{MAX_RETRIES}")
 
                   result = page.evaluate("""
-                  (pageNumber) => {
+                  (target) => {
+                      const el = document.querySelector(
+                          `a[data-page="${target}"]`
+                      );
 
-                      const el =
-                          document.querySelector(
-                              `a[data-page="${pageNumber}"]`
-                          );
-
-                      if (!el) {
-                          return "NOT_FOUND";
-                      }
+                      if (!el) return "NOT_FOUND";
 
                       if (window.jQuery) {
                           window.jQuery(el).trigger("click");
@@ -210,125 +130,50 @@ jobs:
                       }
 
                       el.click();
-
                       return "NATIVE_CLICK_OK";
                   }
-                  """, next_page)
+                  """, target)
 
-                  print(
-                      f"クリック結果: {result}"
-                  )
+                  print(f"クリック結果: {result}")
 
                   if result == "NOT_FOUND":
+                      print("ボタンが現在の画面にありません")
+                      time.sleep(2)
+                      continue
 
-                      current =
-                          get_visible_current_page(page)
+                  for _ in range(40):
+                      time.sleep(0.5)
 
-                      print(
-                          f"現在表示中のページ: {current}"
-                      )
+                      current = get_current_page(page)
 
-                      if current == next_page:
-                          print(
-                              "すでに目的ページです"
-                          )
+                      if current == target:
+                          print(f"現在ページが{target}になりました")
+                          break
+                  else:
+                      print("現在ページの更新を確認できませんでした")
+                      continue
+
+                  for _ in range(40):
+                      time.sleep(0.5)
+
+                      new_ids = get_card_ids(page)
+
+                      if new_ids and new_ids != old_ids:
+                          print("カード内容が更新されました")
                           return True
 
-                      time.sleep(2)
-                      continue
-
-
-                  # まずページャーの「現在ページ」が
-                  # 次のページになるまで待つ
-                  pager_changed = False
-
-                  for _ in range(40):
-
-                      time.sleep(0.5)
-
-                      current =
-                          get_visible_current_page(page)
-
-                      if current == next_page:
-
-                          print(
-                              f"ページャーが"
-                              f"{next_page}ページ目に更新"
-                          )
-
-                          pager_changed = True
-                          break
-
-                  if not pager_changed:
-
-                      print(
-                          "ページャーの更新を確認できませんでした"
-                      )
-
-                      if retry < MAX_RETRIES:
-                          time.sleep(2)
-                          continue
-
-                      return False
-
-
-                  # カード一覧が新しいページになるまで待つ
-                  cards_changed = False
-
-                  for _ in range(40):
-
-                      time.sleep(0.5)
-
-                      new_ids =
-                          get_card_ids(page)
-
-                      if (
-                          new_ids
-                          and new_ids != old_ids
-                      ):
-
-                          print(
-                              "カード一覧が更新されました"
-                          )
-
-                          cards_changed = True
-                          break
-
-                  if cards_changed:
-                      return True
-
-                  print(
-                      "カード一覧の更新を確認できませんでした"
-                  )
-
-                  if retry < MAX_RETRIES:
-                      print(
-                          "もう一度確認します..."
-                      )
-                      time.sleep(2)
-                      continue
+                  print("カード内容の更新を確認できませんでした")
 
               return False
 
-
           with sync_playwright() as p:
-
-              browser = p.chromium.launch(
-                  headless=True
-              )
-
+              browser = p.chromium.launch(headless=True)
               page = browser.new_page(
-                  viewport={
-                      "width": 1280,
-                      "height": 1000
-                  }
+                  viewport={"width": 1280, "height": 1000}
               )
 
               print("=" * 60)
-              print(
-                  "デュエル・マスターズ公式カード検索"
-              )
-              print("取得開始")
+              print("デュエル・マスターズ公式カード取得")
               print("=" * 60)
 
               page.goto(
@@ -339,156 +184,87 @@ jobs:
 
               page.wait_for_timeout(3000)
 
-              # 最終ページを公式ページャーから取得
               last_page = get_last_page(page)
 
-              print()
-              print(
-                  f"公式サイトの最終ページ: {last_page}"
-              )
+              print(f"公式サイト最終ページ: {last_page}")
 
               if not last_page:
-                  print(
-                      "ERROR: 最終ページを取得できません"
-                  )
+                  print("ERROR: 最終ページを取得できません")
                   browser.close()
                   raise SystemExit(1)
 
               all_cards = {}
-
               current_page = 1
 
               while current_page <= last_page:
 
                   print()
                   print("=" * 60)
-                  print(
-                      f"{current_page}ページ目を取得"
-                  )
+                  print(f"{current_page}ページ目を取得")
                   print("=" * 60)
 
-                  # 現在ページのカード取得
                   html = page.content()
-
                   cards = extract_cards(html)
 
-                  print(
-                      f"このページ: {len(cards)} 枚"
-                  )
+                  print(f"このページ: {len(cards)}枚")
 
                   before = len(all_cards)
 
                   for card_id, card in cards.items():
                       all_cards[card_id] = card
 
-                  added =
-                      len(all_cards) - before
+                  added = len(all_cards) - before
 
-                  print(
-                      f"新規追加: {added} 枚"
-                  )
-
-                  print(
-                      f"現在の総カード数: "
-                      f"{len(all_cards)}"
-                  )
+                  print(f"新規追加: {added}枚")
+                  print(f"現在の総カード数: {len(all_cards)}")
 
                   if len(cards) == 0:
-
-                      print(
-                          "カードが0枚なので終了"
-                      )
-
+                      print("カードが0枚なので終了")
                       break
 
-                  # 最終ページなら終了
-                  if current_page >= last_page:
-
-                      print()
-                      print(
-                          "最終ページに到達しました"
-                      )
-
+                  if current_page == last_page:
+                      print("最終ページに到達しました")
                       break
 
                   old_ids = get_card_ids(page)
+                  next_page = current_page + 1
 
-                  next_page =
-                      current_page + 1
-
-                  success = click_and_wait(
+                  success = move_to_page(
                       page,
                       next_page,
                       old_ids
                   )
 
                   if not success:
-
-                      print()
-                      print(
-                          f"{next_page}ページ目への移動に失敗"
-                      )
-
-                      print(
-                          "取得を停止します"
-                      )
-
+                      print(f"{next_page}ページ目への移動に失敗")
                       break
 
                   current_page = next_page
 
               browser.close()
 
-
           print()
           print("=" * 60)
           print("取得終了")
           print("=" * 60)
-
-          print(
-              f"総カード数: {len(all_cards)}"
-          )
-
-          print(
-              f"取得ページ数: {current_page}"
-          )
-
-          print(
-              f"公式最終ページ: {last_page}"
-          )
-
+          print(f"総カード数: {len(all_cards)}")
+          print(f"取得ページ数: {current_page}")
+          print(f"公式最終ページ: {last_page}")
           print("=" * 60)
 
-
-          # 安全装置
           if len(all_cards) < 20000:
-
-              print()
-              print(
-                  "ERROR: 取得枚数が少なすぎます"
-              )
-
-              print(
-                  "既存の cards.json は変更しません"
-              )
-
+              print("ERROR: 取得枚数が少なすぎます")
+              print("既存の cards.json は変更しません")
               raise SystemExit(1)
-
 
           OUTPUT.parent.mkdir(
               parents=True,
               exist_ok=True
           )
 
-          temp_file =
-              OUTPUT.with_suffix(".tmp")
+          temp_file = OUTPUT.with_suffix(".tmp")
 
-          with open(
-              temp_file,
-              "w",
-              encoding="utf-8"
-          ) as f:
-
+          with open(temp_file, "w", encoding="utf-8") as f:
               json.dump(
                   list(all_cards.values()),
                   f,
@@ -498,17 +274,13 @@ jobs:
 
           temp_file.replace(OUTPUT)
 
-          print()
-          print(
-              "cards.json を更新しました"
-          )
+          print("cards.json を更新しました")
           PY
 
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
           git add data/cards.json
 
           if git diff --cached --quiet; then

@@ -28,122 +28,22 @@ def get_card_links(page):
     return links
 
 
-def get_current_page(page):
+def close_popup(page):
     try:
-        text = page.locator(
-            ".wp-pagenavi .current"
-        ).first.inner_text()
+        page.evaluate("""
+            () => {
+                const x = document.querySelector('.first-modal-close');
+                if (x) x.click();
 
-        return int(text.strip())
-    except Exception:
-        return 0
-
-
-def get_last_page(page):
-    try:
-        value = page.locator(
-            '.wp-pagenavi a[data-page]'
-        ).last.get_attribute("data-page")
-
-        return int(value)
-    except Exception:
-        return 470
-
-
-def click_next_page(page, next_page):
-    # 最大5回まで挑戦
-    for attempt in range(5):
-
-        # ボタンが出てくるまで待つ
-        try:
-            page.wait_for_function(
-                """pageNumber => {
-                    return !!document.querySelector(
-                        `a[data-page="${pageNumber}"]`
-                    );
-                }""",
-                arg=next_page,
-                timeout=10000
-            )
-        except Exception:
-            pass
-
-        # JavaScriptでクリック
-        result = page.evaluate(
-            """
-            pageNumber => {
-                const button =
-                    document.querySelector(
-                        `a[data-page="${pageNumber}"]`
-                    );
-
-                if (!button) {
-                    return false;
+                const modal = document.querySelector('#first-modal-wrap');
+                if (modal) {
+                    modal.style.display = 'none';
+                    modal.style.pointerEvents = 'none';
                 }
-
-                button.click();
-                return true;
             }
-            """,
-            next_page
-        )
-
-        if result:
-            # ページ番号が変わるまで待つ
-            try:
-                page.wait_for_function(
-                    """pageNumber => {
-                        const current =
-                            document.querySelector(
-                                '.wp-pagenavi .current'
-                            );
-
-                        return current &&
-                            current.textContent.trim() ===
-                            String(pageNumber);
-                    }""",
-                    arg=next_page,
-                    timeout=15000
-                )
-
-                return True
-
-            except Exception:
-                pass
-
-        print(
-            f"{next_page}ページ目への移動を再試行 "
-            f"({attempt + 1}/5)",
-            flush=True
-        )
-
-        # 現在のページを再読み込み
-        try:
-            page.reload(
-                wait_until="domcontentloaded",
-                timeout=60000
-            )
-
-            page.wait_for_timeout(1500)
-
-            # ポップアップがあれば閉じる
-            page.evaluate("""
-                () => {
-                    const x =
-                        document.querySelector(
-                            '.first-modal-close'
-                        );
-
-                    if (x) x.click();
-                }
-            """)
-
-            page.wait_for_timeout(500)
-
-        except Exception:
-            pass
-
-    return False
+        """)
+    except Exception:
+        pass
 
 
 def collect_all_links(page):
@@ -157,46 +57,16 @@ def collect_all_links(page):
     )
 
     page.wait_for_timeout(2000)
-
-    # ポップアップを閉じる
-    page.evaluate("""
-        () => {
-            const x =
-                document.querySelector(
-                    '.first-modal-close'
-                );
-
-            if (x) x.click();
-        }
-    """)
-
-    page.wait_for_timeout(500)
+    close_popup(page)
 
     all_links = []
 
-    last_page = get_last_page(page)
-
-    print(
-        f"最終ページ: {last_page}",
-        flush=True
-    )
-
-    for page_number in range(1, last_page + 1):
+    for page_number in range(1, 471):
 
         print(
-            f"一覧ページ {page_number}/{last_page}",
+            f"一覧ページ {page_number}/470",
             flush=True
         )
-
-        # 本当にそのページにいるか確認
-        current = get_current_page(page)
-
-        if current != page_number:
-            print(
-                f"現在ページ={current} → "
-                f"{page_number}へ移動",
-                flush=True
-            )
 
         links = get_card_links(page)
 
@@ -206,23 +76,74 @@ def collect_all_links(page):
             if link not in all_links:
                 all_links.append(link)
 
-        added = len(all_links) - before
-
         print(
-            f"今回追加 {added}枚 / "
-            f"現在合計 {len(all_links)}枚",
+            f"今回追加 {len(all_links) - before}枚 / "
+            f"現在 {len(all_links)}枚",
             flush=True
         )
 
-        if page_number >= last_page:
+        if page_number == 470:
             break
 
         next_page = page_number + 1
 
-        if not click_next_page(page, next_page):
-            raise RuntimeError(
-                f"{next_page}ページ目へ移動できません"
+        # 次のページボタンを探す
+        button = page.locator(
+            f'a[data-page="{next_page}"]'
+        )
+
+        # 見つからない場合は少し待って再確認
+        if button.count() == 0:
+
+            print(
+                f"{next_page}ページ目のボタンを再検索",
+                flush=True
             )
+
+            page.wait_for_timeout(1000)
+            close_popup(page)
+
+            button = page.locator(
+                f'a[data-page="{next_page}"]'
+            )
+
+        if button.count() == 0:
+            raise RuntimeError(
+                f"{next_page}ページ目のボタンが見つかりません"
+            )
+
+        # 強制クリック
+        try:
+            button.first.click(
+                force=True,
+                timeout=10000
+            )
+        except Exception as e:
+
+            print(
+                f"クリック失敗。再読み込みします: {e}",
+                flush=True
+            )
+
+            page.reload(
+                wait_until="domcontentloaded",
+                timeout=60000
+            )
+
+            page.wait_for_timeout(1500)
+            close_popup(page)
+
+            button = page.locator(
+                f'a[data-page="{next_page}"]'
+            )
+
+            button.first.click(
+                force=True,
+                timeout=10000
+            )
+
+        # 非同期読み込みを待つ
+        page.wait_for_timeout(1200)
 
     print(
         f"一覧取得完了: {len(all_links)}枚",
@@ -241,14 +162,13 @@ def parse_card(page, url):
         "html.parser"
     )
 
-    title = (
-        soup.title.get_text(
+    title = ""
+
+    if soup.title:
+        title = soup.title.get_text(
             " ",
             strip=True
         )
-        if soup.title
-        else ""
-    )
 
     title = title.split("|")[0].strip()
 
@@ -315,13 +235,12 @@ def main():
             }
         )
 
-        # まず一覧ページから全URL取得
+        # ① 全カードのURLを取得
         links = collect_all_links(page)
 
         if len(links) < 20000:
             raise RuntimeError(
-                f"カードURLが少なすぎます: "
-                f"{len(links)}枚"
+                f"取得枚数が少なすぎます: {len(links)}枚"
             )
 
         print(
@@ -329,10 +248,11 @@ def main():
             flush=True
         )
 
+        # ② 詳細ページを取得
         cards = []
 
         print(
-            "詳細ページの取得開始",
+            "詳細ページ取得開始",
             flush=True
         )
 
@@ -372,12 +292,18 @@ def main():
 
                     if not card["name"]:
                         raise RuntimeError(
-                            "カード名が取得できません"
+                            "カード名なし"
                         )
 
                     cards.append(card)
 
                     success = True
+
+                    print(
+                        f"{i}/{len(links)} "
+                        f"{card['name']}",
+                        flush=True
+                    )
 
                     break
 
@@ -392,13 +318,12 @@ def main():
                     time.sleep(1)
 
             if not success:
-
                 print(
                     f"スキップ: {url}",
                     flush=True
                 )
 
-            # 100枚ごとに途中保存
+            # 100枚ごとに保存
             if i % 100 == 0:
 
                 save_cards(cards)

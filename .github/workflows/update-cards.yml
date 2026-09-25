@@ -1,185 +1,519 @@
-name: Test Duel Masters Pager
+name: Update Duel Masters Cards
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "0 18 * * *"
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  test:
+  update:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Install Playwright
+      - name: Install packages
         run: |
-          pip install playwright
+          pip install playwright beautifulsoup4
           playwright install --with-deps chromium
 
-      - name: Test official pager
+      - name: Scrape official card list
         run: |
           python - <<'PY'
+          import json
+          import re
           import time
+          from pathlib import Path
+
+          from bs4 import BeautifulSoup
           from playwright.sync_api import sync_playwright
 
-          URL = "https://dm.takaratomy.co.jp/card/"
+          BASE_URL = "https://dm.takaratomy.co.jp/card/"
+          OUTPUT = Path("data/cards.json")
+
+          MAX_RETRIES = 5
+
+
+          def extract_cards(html):
+              soup = BeautifulSoup(html, "html.parser")
+              cards = {}
+
+              for a in soup.select('a[href*="/card/detail/?id="]'):
+                  href = a.get("href", "")
+
+                  match = re.search(
+                      r"[?&]id=([^&]+)",
+                      href
+                  )
+
+                  if not match:
+                      continue
+
+                  card_id = match.group(1).strip()
+
+                  if not card_id:
+                      continue
+
+                  name = a.get_text(
+                      " ",
+                      strip=True
+                  )
+
+                  if not name:
+                      name = a.get(
+                          "title",
+                          ""
+                      ).strip()
+
+                  if not name:
+                      name = a.get(
+                          "aria-label",
+                          ""
+                      ).strip()
+
+                  img = a.find("img")
+
+                  if not name and img:
+                      name = img.get(
+                          "alt",
+                          ""
+                      ).strip()
+
+                  if not name:
+                      name = card_id
+
+                  cards[card_id] = {
+                      "id": card_id,
+                      "name": name,
+                      "url": (
+                          "https://dm.takaratomy.co.jp/card/detail/?id="
+                          + card_id
+                      )
+                  }
+
+              return cards
+
+
+          def get_card_ids(page):
+              return page.evaluate("""
+              () => {
+                  return Array.from(
+                      document.querySelectorAll(
+                          'a[href*="/card/detail/?id="]'
+                      )
+                  )
+                  .map(a => {
+                      const href =
+                          a.getAttribute("href") || "";
+
+                      const m =
+                          href.match(/[?&]id=([^&]+)/);
+
+                      return m ? m[1] : null;
+                  })
+                  .filter(Boolean);
+              }
+              """)
+
+
+          def get_visible_current_page(page):
+              return page.evaluate("""
+              () => {
+                  const el =
+                      document.querySelector(
+                          '.wp-pagenavi .current'
+                      );
+
+                  if (!el) {
+                      return null;
+                  }
+
+                  const text =
+                      (el.innerText || '').trim();
+
+                  const match =
+                      text.match(/\\d+/);
+
+                  return match
+                      ? Number(match[0])
+                      : null;
+              }
+              """)
+
+
+          def get_last_page(page):
+              return page.evaluate("""
+              () => {
+                  const el =
+                      document.querySelector(
+                          '.wp-pagenavi a.nextpostslink'
+                      );
+
+                  if (!el) {
+                      return null;
+                  }
+
+                  const value =
+                      el.getAttribute('data-page');
+
+                  return value
+                      ? Number(value)
+                      : null;
+              }
+              """)
+
+
+          def click_and_wait(
+              page,
+              next_page,
+              old_ids
+          ):
+
+              print()
+              print(
+                  f"{next_page}ページ目へ移動..."
+              )
+
+              for retry in range(
+                  1,
+                  MAX_RETRIES + 1
+              ):
+
+                  print(
+                      f"クリック試行 {retry}/{MAX_RETRIES}"
+                  )
+
+                  result = page.evaluate("""
+                  (pageNumber) => {
+
+                      const el =
+                          document.querySelector(
+                              `a[data-page="${pageNumber}"]`
+                          );
+
+                      if (!el) {
+                          return "NOT_FOUND";
+                      }
+
+                      if (window.jQuery) {
+                          window.jQuery(el).trigger("click");
+                          return "CLICK_OK";
+                      }
+
+                      el.click();
+
+                      return "NATIVE_CLICK_OK";
+                  }
+                  """, next_page)
+
+                  print(
+                      f"クリック結果: {result}"
+                  )
+
+                  if result == "NOT_FOUND":
+
+                      current =
+                          get_visible_current_page(page)
+
+                      print(
+                          f"現在表示中のページ: {current}"
+                      )
+
+                      if current == next_page:
+                          print(
+                              "すでに目的ページです"
+                          )
+                          return True
+
+                      time.sleep(2)
+                      continue
+
+
+                  # まずページャーの「現在ページ」が
+                  # 次のページになるまで待つ
+                  pager_changed = False
+
+                  for _ in range(40):
+
+                      time.sleep(0.5)
+
+                      current =
+                          get_visible_current_page(page)
+
+                      if current == next_page:
+
+                          print(
+                              f"ページャーが"
+                              f"{next_page}ページ目に更新"
+                          )
+
+                          pager_changed = True
+                          break
+
+                  if not pager_changed:
+
+                      print(
+                          "ページャーの更新を確認できませんでした"
+                      )
+
+                      if retry < MAX_RETRIES:
+                          time.sleep(2)
+                          continue
+
+                      return False
+
+
+                  # カード一覧が新しいページになるまで待つ
+                  cards_changed = False
+
+                  for _ in range(40):
+
+                      time.sleep(0.5)
+
+                      new_ids =
+                          get_card_ids(page)
+
+                      if (
+                          new_ids
+                          and new_ids != old_ids
+                      ):
+
+                          print(
+                              "カード一覧が更新されました"
+                          )
+
+                          cards_changed = True
+                          break
+
+                  if cards_changed:
+                      return True
+
+                  print(
+                      "カード一覧の更新を確認できませんでした"
+                  )
+
+                  if retry < MAX_RETRIES:
+                      print(
+                          "もう一度確認します..."
+                      )
+                      time.sleep(2)
+                      continue
+
+              return False
+
 
           with sync_playwright() as p:
-              browser = p.chromium.launch(headless=True)
-              page = browser.new_page()
+
+              browser = p.chromium.launch(
+                  headless=True
+              )
+
+              page = browser.new_page(
+                  viewport={
+                      "width": 1280,
+                      "height": 1000
+                  }
+              )
 
               print("=" * 60)
-              print("公式カード検索を開きます")
+              print(
+                  "デュエル・マスターズ公式カード検索"
+              )
+              print("取得開始")
               print("=" * 60)
 
               page.goto(
-                  URL,
+                  BASE_URL,
                   wait_until="domcontentloaded",
                   timeout=60000
               )
 
               page.wait_for_timeout(3000)
 
-              print()
-              print("現在のURL:")
-              print(page.url)
+              # 最終ページを公式ページャーから取得
+              last_page = get_last_page(page)
 
               print()
-              print("=" * 60)
-              print("ページャーの調査")
-              print("=" * 60)
-
-              result = page.evaluate("""
-              () => {
-                  const elements =
-                      Array.from(
-                          document.querySelectorAll(
-                              'a[data-page]'
-                          )
-                      );
-
-                  return elements.map((el, index) => ({
-                      index: index,
-                      text: (el.innerText || '').trim(),
-                      dataPage: el.getAttribute('data-page'),
-                      className: el.className,
-                      href: el.getAttribute('href'),
-                      parentClass:
-                          el.parentElement
-                            ? el.parentElement.className
-                            : '',
-                      outerHTML:
-                          el.outerHTML.substring(0, 500)
-                  }));
-              }
-              """)
-
               print(
-                  "data-pageを持つ要素数:",
-                  len(result)
+                  f"公式サイトの最終ページ: {last_page}"
               )
 
-              for item in result:
+              if not last_page:
+                  print(
+                      "ERROR: 最終ページを取得できません"
+                  )
+                  browser.close()
+                  raise SystemExit(1)
+
+              all_cards = {}
+
+              current_page = 1
+
+              while current_page <= last_page:
+
                   print()
+                  print("=" * 60)
                   print(
-                      f"[{item['index']}] "
-                      f"text={item['text']!r} "
-                      f"data-page={item['dataPage']!r}"
+                      f"{current_page}ページ目を取得"
                   )
+                  print("=" * 60)
+
+                  # 現在ページのカード取得
+                  html = page.content()
+
+                  cards = extract_cards(html)
+
                   print(
-                      f"  class={item['className']!r}"
-                  )
-                  print(
-                      f"  href={item['href']!r}"
-                  )
-                  print(
-                      f"  parent={item['parentClass']!r}"
-                  )
-                  print(
-                      f"  html={item['outerHTML']}"
+                      f"このページ: {len(cards)} 枚"
                   )
 
-              print()
-              print("=" * 60)
-              print("ページャー周辺のHTML")
-              print("=" * 60)
+                  before = len(all_cards)
 
-              pager_html = page.evaluate("""
-              () => {
-                  const candidates = [
-                      '.wp-pagenavi',
-                      '#cardlist .wp-pagenavi',
-                      '.pagination',
-                      '.pager',
-                      '[class*="pagenavi"]',
-                      '[class*="pagination"]'
-                  ];
+                  for card_id, card in cards.items():
+                      all_cards[card_id] = card
 
-                  for (const selector of candidates) {
-                      const el =
-                          document.querySelector(selector);
+                  added =
+                      len(all_cards) - before
 
-                      if (el) {
-                          return {
-                              selector: selector,
-                              html:
-                                  el.outerHTML.substring(
-                                      0,
-                                      10000
-                                  )
-                          };
-                      }
-                  }
-
-                  return {
-                      selector: null,
-                      html: ''
-                  };
-              }
-              """)
-
-              print(
-                  "見つかったコンテナ:",
-                  pager_html["selector"]
-              )
-
-              print(
-                  pager_html["html"]
-              )
-
-              print()
-              print("=" * 60)
-              print("2ページ目ボタンの確認")
-              print("=" * 60)
-
-              count = page.locator(
-                  'a[data-page="2"]'
-              ).count()
-
-              print(
-                  'a[data-page="2"] の数:',
-                  count
-              )
-
-              if count > 0:
                   print(
-                      "2ページ目ボタン:",
-                      page.locator(
-                          'a[data-page="2"]'
-                      ).first.evaluate(
-                          "(el) => el.outerHTML"
+                      f"新規追加: {added} 枚"
+                  )
+
+                  print(
+                      f"現在の総カード数: "
+                      f"{len(all_cards)}"
+                  )
+
+                  if len(cards) == 0:
+
+                      print(
+                          "カードが0枚なので終了"
                       )
+
+                      break
+
+                  # 最終ページなら終了
+                  if current_page >= last_page:
+
+                      print()
+                      print(
+                          "最終ページに到達しました"
+                      )
+
+                      break
+
+                  old_ids = get_card_ids(page)
+
+                  next_page =
+                      current_page + 1
+
+                  success = click_and_wait(
+                      page,
+                      next_page,
+                      old_ids
                   )
 
-              print()
-              print("=" * 60)
-              print("診断終了")
-              print("=" * 60)
+                  if not success:
+
+                      print()
+                      print(
+                          f"{next_page}ページ目への移動に失敗"
+                      )
+
+                      print(
+                          "取得を停止します"
+                      )
+
+                      break
+
+                  current_page = next_page
 
               browser.close()
+
+
+          print()
+          print("=" * 60)
+          print("取得終了")
+          print("=" * 60)
+
+          print(
+              f"総カード数: {len(all_cards)}"
+          )
+
+          print(
+              f"取得ページ数: {current_page}"
+          )
+
+          print(
+              f"公式最終ページ: {last_page}"
+          )
+
+          print("=" * 60)
+
+
+          # 安全装置
+          if len(all_cards) < 20000:
+
+              print()
+              print(
+                  "ERROR: 取得枚数が少なすぎます"
+              )
+
+              print(
+                  "既存の cards.json は変更しません"
+              )
+
+              raise SystemExit(1)
+
+
+          OUTPUT.parent.mkdir(
+              parents=True,
+              exist_ok=True
+          )
+
+          temp_file =
+              OUTPUT.with_suffix(".tmp")
+
+          with open(
+              temp_file,
+              "w",
+              encoding="utf-8"
+          ) as f:
+
+              json.dump(
+                  list(all_cards.values()),
+                  f,
+                  ensure_ascii=False,
+                  indent=2
+              )
+
+          temp_file.replace(OUTPUT)
+
+          print()
+          print(
+              "cards.json を更新しました"
+          )
           PY
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/cards.json
+
+          if git diff --cached --quiet; then
+            echo "変更はありません"
+          else
+            git commit -m "Update Duel Masters card data"
+            git push
+          fi

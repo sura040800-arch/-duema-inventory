@@ -1,4 +1,4 @@
-name: Debug Duel Masters Ajax
+name: Debug Duel Masters POST
 
 on:
   workflow_dispatch:
@@ -16,7 +16,7 @@ jobs:
       - name: Install requests
         run: pip install requests
 
-      - name: Inspect Ajax functions
+      - name: Inspect POST request
         run: |
           python - <<'PY'
           import requests
@@ -29,75 +29,34 @@ jobs:
               timeout=30
           )
 
-          print("HTTP:", r.status_code)
-          print("文字数:", len(r.text))
-
           lines = r.text.splitlines()
 
-          # ------------------------------------------------
-          # doAjax を探す
-          # ------------------------------------------------
+          print("=" * 80)
+          print("【$.ajax 周辺を完全表示】")
+          print("=" * 80)
 
-          print("\n" + "=" * 80)
-          print("【doAjax 周辺】")
+          # search.js の 200〜230行付近
+          for i in range(195, 235):
+              if i < len(lines):
+                  print(f"{i + 1:04d}: {lines[i]}")
+
+          print("\n")
+          print("=" * 80)
+          print("【$.ajax がある場所をすべて表示】")
           print("=" * 80)
 
           for i, line in enumerate(lines):
-              if "function doAjax" in line or "doAjax =" in line:
-                  start = max(0, i - 20)
-                  end = min(len(lines), i + 100)
+              if "$.ajax" in line:
+                  print(f"\n--- $.ajax 発見: {i + 1}行目 ---")
 
-                  print(f"\n見つかった行: {i + 1}")
-                  print("-" * 80)
+                  start = max(0, i - 10)
+                  end = min(len(lines), i + 40)
 
                   for j in range(start, end):
                       print(f"{j + 1:04d}: {lines[j]}")
 
-          # ------------------------------------------------
-          # research 関数
-          # ------------------------------------------------
-
-          print("\n" + "=" * 80)
-          print("【research 関数】")
+          print("\n")
           print("=" * 80)
-
-          for i, line in enumerate(lines):
-              if "function research(data)" in line:
-                  start = i
-                  end = min(len(lines), i + 130)
-
-                  for j in range(start, end):
-                      print(f"{j + 1:04d}: {lines[j]}")
-
-          # ------------------------------------------------
-          # Ajax関連の行
-          # ------------------------------------------------
-
-          print("\n" + "=" * 80)
-          print("【Ajax関連】")
-          print("=" * 80)
-
-          keywords = [
-              "$.ajax",
-              "url:",
-              "type:",
-              "method:",
-              "data:",
-              "success:",
-              "error:",
-              "POST",
-              "GET",
-              "serialize",
-              "html",
-              "replace",
-              "cardlist",
-          ]
-
-          for i, line in enumerate(lines, 1):
-              if any(k.lower() in line.lower() for k in keywords):
-                  print(f"{i:04d}: {line}")
-
-          print("\n" + "=" * 80)
           print("調査終了")
           print("=" * 80)
           PY

@@ -41,21 +41,17 @@ jobs:
           URL = BASE + "/card/"
 
           def get_cards(page):
-              cards = []
+              result = []
+              seen = set()
 
               links = page.locator(
                   '#cardlist a[href*="/card/detail/"]'
               )
 
-              count = links.count()
-
-              seen = set()
-
-              for i in range(count):
+              for i in range(links.count()):
                   a = links.nth(i)
 
                   href = a.get_attribute("href")
-
                   if not href:
                       continue
 
@@ -78,42 +74,14 @@ jobs:
 
                   text = a.inner_text().strip()
 
-                  number = ""
-
-                  # テキストからカード番号を探す
-                  nm = re.search(
-                      r"\b(dm\d+[a-z0-9-]*[-_][A-Za-z0-9]+)\b",
-                      text,
-                      re.I
-                  )
-
-                  if nm:
-                      number = nm.group(1)
-
-                  # img altからも探す
-                  if not number:
-                      img = a.locator("img")
-
-                      if img.count() > 0:
-                          alt = img.first.get_attribute("alt") or ""
-
-                          nm = re.search(
-                              r"\b(dm\d+[a-z0-9-]*[-_][A-Za-z0-9]+)\b",
-                              alt,
-                              re.I
-                          )
-
-                          if nm:
-                              number = nm.group(1)
-
-                  cards.append({
+                  result.append({
                       "id": card_id,
                       "name": text,
-                      "number": number,
+                      "number": "",
                       "url": full_url
                   })
 
-              return cards
+              return result
 
           with sync_playwright() as p:
 
@@ -129,146 +97,123 @@ jobs:
               )
 
               print("公式カード検索を開いています...")
+
               page.goto(
                   URL,
                   wait_until="networkidle",
                   timeout=60000
               )
 
-              page.wait_for_timeout(3000)
+              page.wait_for_timeout(2000)
 
-              print("URL:", page.url)
-
-              # --------------------------------
+              # ----------------------------
               # 1ページ目
-              # --------------------------------
+              # ----------------------------
 
-              cards = get_cards(page)
-
-              print("")
-              print("1ページ目カード数:", len(cards))
-
-              if not cards:
-                  print("ERROR: 1ページ目からカードを取得できませんでした")
-                  browser.close()
-                  sys.exit(1)
+              first = get_cards(page)
 
               print(
-                  "1ページ目:",
-                  [x["id"] for x in cards[:5]]
+                  "1ページ目カード数:",
+                  len(first)
               )
+
+              if len(first) == 0:
+                  print("ERROR: カードを取得できませんでした")
+                  browser.close()
+                  sys.exit(1)
 
               all_cards = []
               seen_ids = set()
 
-              for card in cards:
-                  if card["id"] not in seen_ids:
-                      seen_ids.add(card["id"])
-                      all_cards.append(card)
-
-              # --------------------------------
-              # 最終ページ番号を取得
-              # --------------------------------
-
-              page_numbers = []
-
-              paginator = page.locator(
-                  "#cardlist .wp-pagenavia a"
-              )
-
-              for i in range(paginator.count()):
-
-                  a = paginator.nth(i)
-
-                  data_page = a.get_attribute(
-                      "data-page"
-                  )
-
-                  if data_page and data_page.isdigit():
-                      page_numbers.append(
-                          int(data_page)
-                      )
-
-              if not page_numbers:
-                  print(
-                      "ERROR: ページ番号を取得できませんでした"
-                  )
-
-                  browser.close()
-                  sys.exit(1)
-
-              last_page = max(page_numbers)
-
-              print("")
-              print(
-                  "検出したページ番号:",
-                  sorted(set(page_numbers))
-              )
+              for card in first:
+                  seen_ids.add(card["id"])
+                  all_cards.append(card)
 
               print(
-                  "最終ページ:",
-                  last_page
+                  "1ページ目:",
+                  [x["id"] for x in first[:5]]
               )
 
-              # --------------------------------
+              # ----------------------------
               # 2ページ目以降
-              # --------------------------------
+              # ----------------------------
+
+              previous_ids = [
+                  x["id"] for x in first
+              ]
+
+              MAX_PAGE = 500
 
               for target_page in range(
                   2,
-                  last_page + 1
+                  MAX_PAGE + 1
               ):
 
                   print("")
                   print(
-                      f"========== "
-                      f"{target_page}/{last_page} "
-                      f"=========="
+                      f"===== {target_page}ページ目 ====="
                   )
 
-                  # フォームのpagenumを変更
+                  # pagenumを変更
                   page.locator(
                       '#search_cond input[name="pagenum"]'
                   ).fill(str(target_page))
 
-                  # JavaScriptと同じくフォームを送信
-                  #
-                  # 公式JS:
-                  # $form.submit();
+                  # 通常のフォーム送信
+                  try:
+                      with page.expect_navigation(
+                          wait_until="networkidle",
+                          timeout=60000
+                      ):
+                          page.locator(
+                              "#search_cond"
+                          ).evaluate(
+                              "form => form.submit()"
+                          )
 
-                  with page.expect_navigation(
-                      wait_until="networkidle",
-                      timeout=60000
-                  ):
-                      page.locator(
-                          "#search_cond"
-                      ).evaluate(
-                          "form => form.submit()"
-                      )
+                  except Exception:
+                      # サイト側が非同期処理の場合に備える
+                      page.wait_for_timeout(5000)
 
                   page.wait_for_timeout(1000)
 
-                  current_cards = get_cards(page)
+                  current = get_cards(page)
 
                   print(
-                      "取得カード:",
-                      len(current_cards)
+                      "取得:",
+                      len(current),
+                      "枚"
                   )
 
-                  if not current_cards:
+                  if not current:
+                      print(
+                          "カードがなくなったので終了"
+                      )
+                      break
+
+                  current_ids = [
+                      x["id"] for x in current
+                  ]
+
+                  # ----------------------------
+                  # 同じページなら終了
+                  # ----------------------------
+
+                  if current_ids == previous_ids:
 
                       print(
-                          "ERROR: "
-                          f"{target_page}ページから "
-                          "カードを取得できませんでした"
+                          "前ページと同じカードなので終了"
                       )
 
-                      browser.close()
-                      sys.exit(1)
+                      break
+
+                  # ----------------------------
+                  # 新しいカードを追加
+                  # ----------------------------
 
                   new_count = 0
 
-                  for card in current_cards:
+                  for card in current:
 
                       if card["id"] not in seen_ids:
 
@@ -290,62 +235,45 @@ jobs:
                       len(all_cards)
                   )
 
-                  # 同じページが返っていないか確認
-                  if target_page == 2:
+                  # 新しいカードが0枚なら終了
+                  if new_count == 0:
 
-                      first_ids = [
-                          x["id"]
-                          for x in all_cards[:50]
-                      ]
+                      print(
+                          "新しいカードがないので終了"
+                      )
 
-                      second_ids = [
-                          x["id"]
-                          for x in current_cards[:50]
-                      ]
+                      break
 
-                      if first_ids == second_ids:
-
-                          print(
-                              "ERROR: "
-                              "ページ1とページ2が同じです"
-                          )
-
-                          browser.close()
-                          sys.exit(1)
+                  previous_ids = current_ids
 
                   time.sleep(0.5)
 
               browser.close()
 
-          # --------------------------------
+          # ----------------------------
           # 最終チェック
-          # --------------------------------
+          # ----------------------------
 
           print("")
           print("==============================")
-          print("全ページ取得完了")
-          print("総カード数:", len(all_cards))
+          print(
+              "取得完了:",
+              len(all_cards),
+              "枚"
+          )
           print("==============================")
 
           if len(all_cards) < 1000:
 
               print(
-                  "ERROR: "
-                  "カード数が少なすぎます"
+                  "ERROR: 取得枚数が少なすぎます"
               )
 
               sys.exit(1)
 
-          # --------------------------------
+          # ----------------------------
           # 保存
-          # --------------------------------
-
-          all_cards.sort(
-              key=lambda x: (
-                  x.get("number", ""),
-                  x.get("id", "")
-              )
-          )
+          # ----------------------------
 
           os.makedirs(
               "data",

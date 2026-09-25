@@ -1,4 +1,4 @@
-name: Debug Duel Masters Page Request
+name: Debug Duel Masters Page Request 2
 
 on:
   workflow_dispatch:
@@ -8,34 +8,30 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
       - name: Install requests
-        run: |
-          pip install requests
+        run: pip install requests
 
-      - name: Inspect search.js
+      - name: Inspect official search.js
         run: |
           python - <<'PY'
           import requests
           import re
 
-          JS_URL = "https://www.takaratomy.co.jp/common/2025/js/search.js"
+          JS_URL = "https://dm.takaratomy.co.jp/common/js/search.js"
 
           print("=" * 80)
-          print("search.js を取得します")
+          print("公式 search.js を取得")
           print("=" * 80)
 
           r = requests.get(
               JS_URL,
               headers={
-                  "User-Agent": "Mozilla/5.0"
+                  "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X)"
               },
               timeout=30
           )
@@ -46,13 +42,20 @@ jobs:
           js = r.text
           lines = js.splitlines()
 
-          print("\n")
-          print("=" * 80)
-          print("【先頭150行】")
+          # --------------------------------------------------
+          # 先頭200行
+          # --------------------------------------------------
+
+          print("\n" + "=" * 80)
+          print("【search.js 先頭200行】")
           print("=" * 80)
 
-          for i, line in enumerate(lines[:150], 1):
+          for i, line in enumerate(lines[:200], 1):
               print(f"{i:04d}: {line}")
+
+          # --------------------------------------------------
+          # 重要キーワード周辺
+          # --------------------------------------------------
 
           patterns = [
               "research",
@@ -73,42 +76,48 @@ jobs:
               "ページ取得",
           ]
 
-          print("\n")
-          print("=" * 80)
+          print("\n" + "=" * 80)
           print("【重要キーワード周辺】")
           print("=" * 80)
 
-          found_ranges = []
+          ranges = []
 
           for pattern in patterns:
               for i, line in enumerate(lines):
-                  if pattern.lower() in line.lower():
-                      start = max(0, i - 15)
-                      end = min(len(lines), i + 16)
 
-                      # 重複表示を避ける
-                      already = False
-                      for a, b in found_ranges:
+                  if pattern.lower() in line.lower():
+
+                      start = max(0, i - 20)
+                      end = min(len(lines), i + 21)
+
+                      # ほぼ同じ範囲は重複表示しない
+                      duplicate = False
+
+                      for a, b in ranges:
                           if start >= a and end <= b:
-                              already = True
+                              duplicate = True
                               break
 
-                      if already:
+                      if duplicate:
                           continue
 
-                      found_ranges.append((start, end))
+                      ranges.append((start, end))
 
-                      print("\n" + "-" * 80)
-                      print(f"KEYWORD: {pattern}")
-                      print(f"LINES: {start + 1} - {end}")
+                      print("\n")
+                      print("-" * 80)
+                      print("KEYWORD:", pattern)
+                      print("LINES:", start + 1, "-", end)
                       print("-" * 80)
 
                       for j in range(start, end):
                           print(f"{j + 1:04d}: {lines[j]}")
 
-          print("\n")
-          print("=" * 80)
-          print("【ページ関連の行だけ】")
+          # --------------------------------------------------
+          # ページ関連だけを一覧表示
+          # --------------------------------------------------
+
+          print("\n" + "=" * 80)
+          print("【ページ取得に関係しそうな行】")
           print("=" * 80)
 
           page_patterns = [
@@ -118,17 +127,21 @@ jobs:
               "$.ajax",
               "$.get(",
               "$.post(",
+              "getJSON",
               "fetch(",
               "非同期",
               "ページ取得",
           ]
 
           for i, line in enumerate(lines, 1):
-              if any(p.lower() in line.lower() for p in page_patterns):
+
+              if any(
+                  p.lower() in line.lower()
+                  for p in page_patterns
+              ):
                   print(f"{i:04d}: {line}")
 
-          print("\n")
-          print("=" * 80)
+          print("\n" + "=" * 80)
           print("調査終了")
           print("=" * 80)
           PY

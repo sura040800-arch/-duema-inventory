@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#111827">
+<title>デュエマ コレクション</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;background:#f3f4f6;color:#111827}
+header{background:#111827;color:#fff;padding:16px;position:sticky;top:0;z-index:2}h1{font-size:20px;margin:0 0 10px}
+input,button,select{font:inherit}input{width:100%;padding:12px;border:1px solid #d1d5db;border-radius:10px;background:#fff}
+main{max-width:760px;margin:auto;padding:12px}.tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.tab{padding:11px;border:0;border-radius:10px;background:#e5e7eb}.tab.active{background:#111827;color:white}
+.status{font-size:12px;color:#6b7280;margin:8px 0}.card{background:#fff;border-radius:14px;padding:12px;margin:8px 0;box-shadow:0 1px 3px #0001}
+.row{display:flex;gap:8px;align-items:center;justify-content:space-between}.name{font-weight:700}.meta{font-size:12px;color:#6b7280;margin-top:4px}
+.qty{display:flex;align-items:center;gap:8px}.qty button{width:42px;height:42px;border:0;border-radius:10px;background:#e5e7eb;font-size:22px}.qty b{min-width:28px;text-align:center}
+.btn{border:0;border-radius:10px;padding:10px 12px;background:#111827;color:#fff}.btn.secondary{background:#e5e7eb;color:#111827}
+.hidden{display:none}.deck{background:#fff;border-radius:14px;padding:12px;margin:8px 0}.deck input{margin:8px 0}
+.small{font-size:12px;color:#6b7280}.danger{color:#b91c1c}
+@media(max-width:430px){.row{align-items:flex-start}.card .row>div:first-child{min-width:0}.name{overflow-wrap:anywhere}}
+</style>
+</head>
+<body>
+<header><h1>デュエマ コレクション</h1><input id="search" placeholder="カード名・カード番号で検索"></header>
+<main>
+<div class="tabs">
+<button class="tab active" id="invTab">📦 所持カード</button>
+<button class="tab" id="deckTab">🃏 デッキ</button>
+</div>
+<div id="invView">
+<div class="status" id="status">カードデータを読み込み中…</div>
+<div id="cards"></div>
+</div>
+<div id="deckView" class="hidden">
+<div class="card"><button class="btn" id="newDeck">＋ デッキを作る</button></div>
+<div id="decks"></div>
+</div>
+</main>
+<script>
+const state={cards:[],owned:JSON.parse(localStorage.getItem('duema_owned_v3')||'{}'),decks:JSON.parse(localStorage.getItem('duema_decks_v3')||'[]')};
+const $=id=>document.getElementById(id);
+function save(){localStorage.setItem('duema_owned_v3',JSON.stringify(state.owned));localStorage.setItem('duema_decks_v3',JSON.stringify(state.decks))}
+function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+async function load(){
+ try{const r=await fetch('data/cards.json?'+Date.now());state.cards=await r.json();$('status').textContent=`公式カード ${state.cards.length.toLocaleString()}枚 / データ更新: ${new Date(document.lastModified).toLocaleDateString('ja-JP')}`;renderCards()}
+ catch(e){$('status').textContent='カードデータを読み込めません。GitHub Actionsの更新が完了するまで少し待ってください。'}
+}
+function renderCards(){
+ const q=$('search').value.trim().toLowerCase();
+ const list=state.cards.filter(c=>(c.name+' '+c.number).toLowerCase().includes(q)).slice(0,100);
+ $('cards').innerHTML=list.length?list.map(c=>{
+  const id=c.id, n=state.owned[id]||0;
+  return `<div class="card"><div class="row"><div><div class="name">${esc(c.name)}</div><div class="meta">${esc(c.number)}${c.civilization?' ・ '+esc(c.civilization):''}${c.cost!==''?' ・ コスト '+esc(c.cost):''}${c.rarity?' ・ '+esc(c.rarity):''}</div></div><div class="qty"><button data-minus="${esc(id)}">−</button><b>${n}</b><button data-plus="${esc(id)}">＋</button></div></div></div>`
+ }).join(''):`<div class="card">該当するカードがありません。</div>`;
+}
+$('cards').addEventListener('click',e=>{const p=e.target.dataset.plus,m=e.target.dataset.minus;if(p){state.owned[p]=(state.owned[p]||0)+1;save();renderCards()}if(m){state.owned[m]=Math.max(0,(state.owned[m]||0)-1);save();renderCards()}});
+$('search').addEventListener('input',renderCards);
+function renderDecks(){
+ $('decks').innerHTML=state.decks.length?state.decks.map((d,i)=>{
+  const rows=d.cards.map(x=>{const c=state.cards.find(z=>z.id===x.id);return c?`<div class="row"><span>${esc(c.name)} <span class="small">×${x.need}</span></span><span class="small">所持 ${state.owned[c.id]||0}</span></div>`:''}).join('');
+  return `<div class="deck"><div class="row"><b>${esc(d.name)}</b><button class="btn secondary" data-deldeck="${i}">削除</button></div><div style="margin-top:10px">${rows||'<span class="small">まだカードがありません</span>'}</div><button class="btn" style="margin-top:10px" data-addcard="${i}">カードを追加</button></div>`
+ }).join(''):'<div class="card">まだデッキがありません。</div>';
+}
+$('newDeck').onclick=()=>{const n=prompt('デッキ名');if(n?.trim()){state.decks.push({name:n.trim(),cards:[]});save();renderDecks()}};
+$('decks').addEventListener('click',e=>{
+ const di=e.target.dataset.deldeck, ai=e.target.dataset.addcard;
+ if(di!==undefined){state.decks.splice(+di,1);save();renderDecks()}
+ if(ai!==undefined){const q=prompt('カード名またはカード番号');if(!q)return;const matches=state.cards.filter(c=>(c.name+' '+c.number).toLowerCase().includes(q.toLowerCase())).slice(0,10);if(!matches.length)return alert('見つかりません');const msg=matches.map((c,i)=>`${i+1}: ${c.name} (${c.number})`).join('\\n');const pick=prompt(msg+'\\n番号を入力');const c=matches[+pick-1];if(!c)return;const need=Number(prompt('必要枚数','4'));if(!Number.isFinite(need)||need<1)return;state.decks[+ai].cards.push({id:c.id,need:Math.floor(need)});save();renderDecks()}}
+});
+$('invTab').onclick=()=>{ $('invView').classList.remove('hidden');$('deckView').classList.add('hidden');$('invTab').classList.add('active');$('deckTab').classList.remove('active')};
+$('deckTab').onclick=()=>{ $('invView').classList.add('hidden');$('deckView').classList.remove('hidden');$('deckTab').classList.remove('active');$('deckTab').classList.add('active');renderDecks()};
+load();
+</script>
+</body></html>

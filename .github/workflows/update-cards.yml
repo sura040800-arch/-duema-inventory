@@ -1,4 +1,4 @@
-name: Test Duel Masters Pagination
+name: Test Duel Masters Browser Pagination
 
 on:
   workflow_dispatch:
@@ -14,144 +14,122 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install packages
-        run: python -m pip install requests beautifulsoup4
+      - name: Install Playwright
+        run: |
+          pip install playwright
+          playwright install chromium
 
-      - name: Test official pagination
+      - name: Test browser pagination
         run: |
           python - <<'PY'
-          import json
-          import time
-          from urllib.parse import quote, urljoin
+          import re
+          from playwright.sync_api import sync_playwright
 
-          import requests
-          from bs4 import BeautifulSoup
+          URL = "https://dm.takaratomy.co.jp/card/"
 
-          BASE = "https://dm.takaratomy.co.jp"
-          CARD_PATH = "/card/"
+          def get_card_ids(page):
+              links = page.locator('a[href*="/card/detail/?id="]').all()
+              ids = []
 
-          session = requests.Session()
-          session.headers.update({
-              "User-Agent": (
-                  "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) "
-                  "AppleWebKit/605.1.15 (KHTML, like Gecko) "
-                  "Version/18.0 Mobile/15E148 Safari/604.1"
-              ),
-              "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-              "Accept-Language": "ja-JP,ja;q=0.9,en-US;q=0.8,en;q=0.7",
-              "Referer": BASE + CARD_PATH,
-          })
+              for link in links:
+                  href = link.get_attribute("href")
+                  if href:
+                      m = re.search(r'id=([^&"]+)', href)
+                      if m:
+                          ids.append(m.group(1))
 
-          def make_url(page):
-              state = {
-                  "suggest": "on",
-                  "keyword_type": [
-                      "card_name",
-                      "card_ruby",
-                      "card_text"
-                  ],
-                  "culture_cond": [
-                      "単色",
-                      "多色"
-                  ],
-                  "pagenum": str(page),
-                  "samename": "show",
-                  "sort": "release_new"
-              }
+              return list(dict.fromkeys(ids))
 
-              v = json.dumps(
-                  state,
-                  ensure_ascii=False,
-                  separators=(",", ":")
+          with sync_playwright() as p:
+              browser = p.chromium.launch()
+              page = browser.new_page(
+                  user_agent=(
+                      "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) "
+                      "AppleWebKit/605.1.15 (KHTML, like Gecko) "
+                      "Version/18.0 Mobile/15E148 Safari/604.1"
+                  )
               )
 
-              return BASE + CARD_PATH + "?v=" + quote(v, safe="")
+              print("公式カード検索をブラウザで開きます")
 
-          def get_cards(page):
-              url = make_url(page)
+              page.goto(URL, wait_until="domcontentloaded", timeout=60000)
+              page.wait_for_timeout(3000)
+
+              ids1 = get_card_ids(page)
 
               print("")
-              print("===== PAGE", page, "=====")
-              print(url)
+              print("===== 1ページ目 =====")
+              print("カード:", len(ids1), "枚")
+              print("先頭:", ids1[:5])
+              print("末尾:", ids1[-5:])
 
-              response = session.get(
-                  url,
-                  timeout=45,
-                  allow_redirects=True
+              # ページ送りリンクを探す
+              links = page.locator("a").all()
+
+              page2_href = None
+
+              for link in links:
+                  text = (link.inner_text() or "").strip()
+                  href = link.get_attribute("href")
+
+                  if text == "2" and href and "/card/" in href:
+                      page2_href = href
+                      print("")
+                      print("2ページ目リンク発見:")
+                      print(href)
+                      break
+
+              if not page2_href:
+                  print("")
+                  print("ページ2へのリンクが見つかりませんでした。")
+                  print("現在のページURL:")
+                  print(page.url)
+
+                  print("")
+                  print("ページ送り候補:")
+                  for link in links:
+                      text = (link.inner_text() or "").strip()
+                      href = link.get_attribute("href")
+
+                      if text in ["1", "2", "3", "4", "5", "最後のページ"]:
+                          print("TEXT:", repr(text))
+                          print("HREF:", href)
+
+                  raise RuntimeError("2ページ目のリンクを取得できませんでした。")
+
+              # 実際に2ページ目へ移動
+              page.goto(
+                  "https://dm.takaratomy.co.jp" + page2_href
+                  if page2_href.startswith("/")
+                  else page2_href,
+                  wait_until="domcontentloaded",
+                  timeout=60000
               )
 
-              print("HTTP:", response.status_code)
-              print("FINAL URL:", response.url)
-              print("HTML:", len(response.text), "bytes")
+              page.wait_for_timeout(3000)
 
-              response.raise_for_status()
+              ids2 = get_card_ids(page)
 
-              soup = BeautifulSoup(response.text, "html.parser")
-              links = set()
+              print("")
+              print("===== 2ページ目 =====")
+              print("現在URL:", page.url)
+              print("カード:", len(ids2), "枚")
+              print("先頭:", ids2[:5])
+              print("末尾:", ids2[-5:])
 
-              for a in soup.find_all("a", href=True):
-                  href = a["href"]
+              same = ids1 == ids2
 
-                  if "/card/detail/?id=" in href:
-                      links.add(urljoin(BASE, href))
+              print("")
+              print("===== 結果 =====")
+              print("1ページ目と2ページ目が同じ:", same)
 
-              ids = sorted(
-                  link.split("id=", 1)[1]
-                  for link in links
-                  if "id=" in link
-              )
+              if same:
+                  raise RuntimeError(
+                      "ブラウザで移動しても1ページ目と2ページ目が同じです。"
+                  )
 
-              print("カード:", len(ids), "枚")
-              print("先頭:", ids[:5])
-              print("末尾:", ids[-5:])
+              print("")
+              print("SUCCESS: ブラウザでページ送りできました！")
 
-              return ids
-
-          results = {}
-
-          for page in (1, 2, 3):
-              results[page] = get_cards(page)
-              time.sleep(2)
-
-          print("")
-          print("========== 比較 ==========")
-
-          for page in (1, 2, 3):
-              print(
-                  f"{page}ページ目: "
-                  f"{len(results[page])}枚"
-              )
-
-          if not results[1] or not results[2]:
-              raise RuntimeError(
-                  "1ページ目または2ページ目からカードを取得できませんでした。"
-              )
-
-          same12 = set(results[1]) == set(results[2])
-          same23 = set(results[2]) == set(results[3])
-
-          print(
-              "1ページ目と2ページ目が同じ:",
-              same12
-          )
-
-          print(
-              "2ページ目と3ページ目が同じ:",
-              same23
-          )
-
-          if same12:
-              raise RuntimeError(
-                  "ページ番号を変えても1ページ目と2ページ目が同じです。"
-              )
-
-          if same23:
-              raise RuntimeError(
-                  "2ページ目と3ページ目が同じです。"
-              )
-
-          print("")
-          print("SUCCESS")
-          print("1→2→3ページ目が別々に取得できました。")
-          print("この方式を確認できたら、全ページ取得版を作ります。")
+              browser.close()
           PY

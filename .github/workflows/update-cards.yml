@@ -34,14 +34,14 @@ jobs:
           import json
           import os
           import re
-          import time
           import sys
+          import time
 
           BASE = "https://dm.takaratomy.co.jp"
-          URL = BASE + "/card/"
+          START_URL = BASE + "/card/"
 
           def get_cards(page):
-              result = []
+              cards = []
               seen = set()
 
               links = page.locator(
@@ -52,36 +52,37 @@ jobs:
                   a = links.nth(i)
 
                   href = a.get_attribute("href")
+
                   if not href:
                       continue
 
-                  full_url = urljoin(BASE, href)
+                  url = urljoin(BASE, href)
 
-                  m = re.search(
+                  match = re.search(
                       r"[?&]id=([^&]+)",
-                      full_url
+                      url
                   )
 
-                  if not m:
+                  if not match:
                       continue
 
-                  card_id = m.group(1)
+                  card_id = match.group(1)
 
                   if card_id in seen:
                       continue
 
                   seen.add(card_id)
 
-                  text = a.inner_text().strip()
+                  name = a.inner_text().strip()
 
-                  result.append({
+                  cards.append({
                       "id": card_id,
-                      "name": text,
+                      "name": name,
                       "number": "",
-                      "url": full_url
+                      "url": url
                   })
 
-              return result
+              return cards
 
           with sync_playwright() as p:
 
@@ -97,28 +98,37 @@ jobs:
               )
 
               print("公式カード検索を開いています...")
+              print("URL:", START_URL)
 
               page.goto(
-                  URL,
+                  START_URL,
                   wait_until="networkidle",
                   timeout=60000
               )
 
               page.wait_for_timeout(2000)
 
-              # ----------------------------
+              # =========================
               # 1ページ目
-              # ----------------------------
+              # =========================
 
               first = get_cards(page)
 
+              print("")
               print(
                   "1ページ目カード数:",
                   len(first)
               )
 
+              print(
+                  "1ページ目:",
+                  [x["id"] for x in first[:5]]
+              )
+
               if len(first) == 0:
-                  print("ERROR: カードを取得できませんでした")
+                  print(
+                      "ERROR: 1ページ目のカード取得に失敗"
+                  )
                   browser.close()
                   sys.exit(1)
 
@@ -126,90 +136,127 @@ jobs:
               seen_ids = set()
 
               for card in first:
-                  seen_ids.add(card["id"])
-                  all_cards.append(card)
-
-              print(
-                  "1ページ目:",
-                  [x["id"] for x in first[:5]]
-              )
-
-              # ----------------------------
-              # 2ページ目以降
-              # ----------------------------
+                  if card["id"] not in seen_ids:
+                      seen_ids.add(card["id"])
+                      all_cards.append(card)
 
               previous_ids = [
-                  x["id"] for x in first
+                  card["id"]
+                  for card in first
               ]
 
-              MAX_PAGE = 500
+              # =========================
+              # 2ページ目以降
+              # =========================
 
-              for target_page in range(
-                  2,
-                  MAX_PAGE + 1
-              ):
+              for page_number in range(2, 501):
 
                   print("")
                   print(
-                      f"===== {target_page}ページ目 ====="
+                      "=============================="
+                  )
+                  print(
+                      f"{page_number}ページ目を取得"
+                  )
+                  print(
+                      "=============================="
                   )
 
-                  # pagenumを変更
-                  page.locator(
-                      '#search_cond input[name="pagenum"]'
-                  ).fill(str(target_page))
-
-                  # 通常のフォーム送信
+                  # hidden input の値を変更して
+                  # 公式サイトと同じフォームPOSTを行う
                   try:
+
                       with page.expect_navigation(
                           wait_until="networkidle",
                           timeout=60000
                       ):
-                          page.locator(
-                              "#search_cond"
-                          ).evaluate(
-                              "form => form.submit()"
+
+                          page.evaluate(
+                              """
+                              (pageNumber) => {
+
+                                  const form =
+                                      document.querySelector(
+                                          '#search_cond'
+                                      );
+
+                                  if (!form) {
+                                      throw new Error(
+                                          'search form not found'
+                                      );
+                                  }
+
+                                  const input =
+                                      form.querySelector(
+                                          'input[name="pagenum"]'
+                                      );
+
+                                  if (!input) {
+                                      throw new Error(
+                                          'pagenum input not found'
+                                      );
+                                  }
+
+                                  input.value =
+                                      String(pageNumber);
+
+                                  HTMLFormElement.prototype.submit.call(
+                                      form
+                                  );
+                              }
+                              """,
+                              page_number
                           )
 
-                  except Exception:
-                      # サイト側が非同期処理の場合に備える
-                      page.wait_for_timeout(5000)
+                      )
 
-                  page.wait_for_timeout(1000)
+                  except Exception as e:
+
+                      print(
+                          "ページ遷移待機:",
+                          str(e)
+                      )
+
+                      page.wait_for_timeout(3000)
+
+                  page.wait_for_timeout(1500)
 
                   current = get_cards(page)
 
                   print(
-                      "取得:",
-                      len(current),
-                      "枚"
+                      f"{page_number}ページ目カード数:",
+                      len(current)
                   )
 
-                  if not current:
+                  if len(current) == 0:
+
                       print(
-                          "カードがなくなったので終了"
+                          "カードが取得できなくなったので終了"
                       )
+
                       break
 
                   current_ids = [
-                      x["id"] for x in current
+                      card["id"]
+                      for card in current
                   ]
 
-                  # ----------------------------
-                  # 同じページなら終了
-                  # ----------------------------
+                  print(
+                      "先頭3枚:",
+                      current_ids[:3]
+                  )
 
+                  # 同じカードが返ったら終了
                   if current_ids == previous_ids:
 
                       print(
-                          "前ページと同じカードなので終了"
+                          "前ページと同じカードが返りました。"
+                      )
+                      print(
+                          "ページ取得を終了します。"
                       )
 
                       break
-
-                  # ----------------------------
-                  # 新しいカードを追加
-                  # ----------------------------
 
                   new_count = 0
 
@@ -217,29 +264,24 @@ jobs:
 
                       if card["id"] not in seen_ids:
 
-                          seen_ids.add(
-                              card["id"]
-                          )
-
+                          seen_ids.add(card["id"])
                           all_cards.append(card)
-
                           new_count += 1
 
                   print(
-                      "新規:",
+                      "今回の新規カード:",
                       new_count
                   )
 
                   print(
-                      "累計:",
+                      "累計カード数:",
                       len(all_cards)
                   )
 
-                  # 新しいカードが0枚なら終了
                   if new_count == 0:
 
                       print(
-                          "新しいカードがないので終了"
+                          "新しいカードがないため終了"
                       )
 
                       break
@@ -250,30 +292,38 @@ jobs:
 
               browser.close()
 
-          # ----------------------------
-          # 最終チェック
-          # ----------------------------
+          # =========================
+          # 最終確認
+          # =========================
 
           print("")
-          print("==============================")
           print(
-              "取得完了:",
-              len(all_cards),
-              "枚"
+              "================================"
           )
-          print("==============================")
+          print(
+              "最終取得カード数:",
+              len(all_cards)
+          )
+          print(
+              "================================"
+          )
 
+          # 少なすぎる場合は保存しない
           if len(all_cards) < 1000:
 
               print(
-                  "ERROR: 取得枚数が少なすぎます"
+                  "ERROR: 取得枚数が少なすぎます。"
+              )
+
+              print(
+                  "data/cards.json は変更しません。"
               )
 
               sys.exit(1)
 
-          # ----------------------------
+          # =========================
           # 保存
-          # ----------------------------
+          # =========================
 
           os.makedirs(
               "data",
@@ -294,7 +344,7 @@ jobs:
               )
 
           print(
-              "data/cards.json を更新しました"
+              "data/cards.json を更新しました。"
           )
 
           PY

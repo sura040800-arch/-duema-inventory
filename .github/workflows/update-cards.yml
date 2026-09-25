@@ -1,4 +1,4 @@
-name: Test Duel Masters Browser Pagination
+name: Test Duel Masters Browser Click
 
 on:
   workflow_dispatch:
@@ -23,26 +23,42 @@ jobs:
         run: |
           python - <<'PY'
           import re
+          import time
           from playwright.sync_api import sync_playwright
 
           URL = "https://dm.takaratomy.co.jp/card/"
 
           def get_card_ids(page):
-              links = page.locator('a[href*="/card/detail/?id="]').all()
+              links = page.locator(
+                  'a[href*="/card/detail/?id="]'
+              ).all()
+
               ids = []
 
               for link in links:
                   href = link.get_attribute("href")
+
                   if href:
                       m = re.search(r'id=([^&"]+)', href)
+
                       if m:
                           ids.append(m.group(1))
 
               return list(dict.fromkeys(ids))
 
           with sync_playwright() as p:
-              browser = p.chromium.launch()
+
+              print("Chromiumを起動します")
+
+              browser = p.chromium.launch(
+                  headless=True
+              )
+
               page = browser.new_page(
+                  viewport={
+                      "width": 390,
+                      "height": 844
+                  },
                   user_agent=(
                       "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) "
                       "AppleWebKit/605.1.15 (KHTML, like Gecko) "
@@ -50,86 +66,187 @@ jobs:
                   )
               )
 
-              print("公式カード検索をブラウザで開きます")
-
-              page.goto(URL, wait_until="domcontentloaded", timeout=60000)
-              page.wait_for_timeout(3000)
-
-              ids1 = get_card_ids(page)
-
               print("")
-              print("===== 1ページ目 =====")
-              print("カード:", len(ids1), "枚")
-              print("先頭:", ids1[:5])
-              print("末尾:", ids1[-5:])
+              print("公式カード検索を開きます")
 
-              # ページ送りリンクを探す
-              links = page.locator("a").all()
-
-              page2_href = None
-
-              for link in links:
-                  text = (link.inner_text() or "").strip()
-                  href = link.get_attribute("href")
-
-                  if text == "2" and href and "/card/" in href:
-                      page2_href = href
-                      print("")
-                      print("2ページ目リンク発見:")
-                      print(href)
-                      break
-
-              if not page2_href:
-                  print("")
-                  print("ページ2へのリンクが見つかりませんでした。")
-                  print("現在のページURL:")
-                  print(page.url)
-
-                  print("")
-                  print("ページ送り候補:")
-                  for link in links:
-                      text = (link.inner_text() or "").strip()
-                      href = link.get_attribute("href")
-
-                      if text in ["1", "2", "3", "4", "5", "最後のページ"]:
-                          print("TEXT:", repr(text))
-                          print("HREF:", href)
-
-                  raise RuntimeError("2ページ目のリンクを取得できませんでした。")
-
-              # 実際に2ページ目へ移動
               page.goto(
-                  "https://dm.takaratomy.co.jp" + page2_href
-                  if page2_href.startswith("/")
-                  else page2_href,
-                  wait_until="domcontentloaded",
+                  URL,
+                  wait_until="networkidle",
                   timeout=60000
               )
 
               page.wait_for_timeout(3000)
 
-              ids2 = get_card_ids(page)
+              # =========================
+              # 1ページ目
+              # =========================
+
+              ids1 = get_card_ids(page)
+
+              print("")
+              print("===== 1ページ目 =====")
+              print("URL:", page.url)
+              print("カード:", len(ids1), "枚")
+              print("先頭:", ids1[:5])
+              print("末尾:", ids1[-5:])
+
+              if len(ids1) != 50:
+                  raise RuntimeError(
+                      f"1ページ目のカード数が想定外です: {len(ids1)}枚"
+                  )
+
+              # =========================
+              # 「2」の要素を探す
+              # =========================
+
+              print("")
+              print("ページ2の要素を探します")
+
+              candidates = page.locator("a").all()
+
+              page2 = None
+
+              for element in candidates:
+
+                  text = (element.inner_text() or "").strip()
+
+                  if text == "2":
+                      page2 = element
+                      break
+
+              if page2 is None:
+                  raise RuntimeError(
+                      "ページ2の要素が見つかりませんでした。"
+                  )
+
+              print("ページ2の要素を発見")
+
+              print(
+                  "href:",
+                  page2.get_attribute("href")
+              )
+
+              print(
+                  "onclick:",
+                  page2.get_attribute("onclick")
+              )
+
+              print(
+                  "class:",
+                  page2.get_attribute("class")
+              )
+
+              # HTMLそのものも確認
+              try:
+                  print(
+                      "HTML:",
+                      page2.evaluate(
+                          "(el) => el.outerHTML"
+                      )
+                  )
+              except Exception as e:
+                  print("HTML取得失敗:", e)
+
+              # =========================
+              # クリック前のカードを保存
+              # =========================
+
+              first_before = ids1[:10]
+
+              # =========================
+              # 通常クリック
+              # =========================
+
+              print("")
+              print("ページ2をクリックします")
+
+              page2.scroll_into_view_if_needed()
+
+              try:
+                  page2.click(
+                      force=True,
+                      timeout=30000
+                  )
+
+                  print("通常クリック成功")
+
+              except Exception as e:
+
+                  print(
+                      "通常クリック失敗:",
+                      e
+                  )
+
+                  # =========================
+                  # JavaScriptクリック
+                  # =========================
+
+                  print("")
+                  print("JavaScriptクリックを試します")
+
+                  page2.evaluate(
+                      "(el) => el.click()"
+                  )
+
+                  print("JavaScriptクリック成功")
+
+              # =========================
+              # ページ切り替え待機
+              # =========================
+
+              print("")
+              print("ページ切り替えを待ちます")
+
+              for i in range(15):
+
+                  time.sleep(1)
+
+                  ids2 = get_card_ids(page)
+
+                  print(
+                      f"{i + 1}秒後:",
+                      len(ids2),
+                      "枚"
+                  )
+
+                  if ids2 and ids2 != ids1:
+                      break
+
+              # =========================
+              # 2ページ目
+              # =========================
 
               print("")
               print("===== 2ページ目 =====")
-              print("現在URL:", page.url)
+              print("URL:", page.url)
               print("カード:", len(ids2), "枚")
               print("先頭:", ids2[:5])
               print("末尾:", ids2[-5:])
+
+              # =========================
+              # 結果
+              # =========================
 
               same = ids1 == ids2
 
               print("")
               print("===== 結果 =====")
-              print("1ページ目と2ページ目が同じ:", same)
+              print(
+                  "1ページ目と2ページ目が同じ:",
+                  same
+              )
 
               if same:
                   raise RuntimeError(
-                      "ブラウザで移動しても1ページ目と2ページ目が同じです。"
+                      "ページ2をクリックしましたが、カード一覧が変わりませんでした。"
                   )
 
               print("")
-              print("SUCCESS: ブラウザでページ送りできました！")
+              print("==============================")
+              print("SUCCESS!")
+              print("ブラウザによるページ送りに成功しました！")
+              print("==============================")
 
               browser.close()
+
           PY

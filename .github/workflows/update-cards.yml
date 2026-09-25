@@ -1,181 +1,48 @@
-name: Test Direct Page Jump
+name: デュエマ公式カード自動更新
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "30 18 * * *"
+  push:
+    paths:
+      - "scraper.py"
+      - "requirements.txt"
+      - ".github/workflows/update-cards.yml"
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  test:
+  update:
     runs-on: ubuntu-latest
+    timeout-minutes: 360
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Install Playwright
+      - name: Install Python packages
         run: |
-          pip install playwright
-          playwright install --with-deps chromium
+          pip install requests beautifulsoup4 playwright
+          python -m playwright install --with-deps chromium
 
-      - name: Test direct page jump
+      - name: Scrape official card list
+        run: python scraper.py
+
+      - name: Commit if changed
         run: |
-          python - <<'PY'
-          import time
-          from playwright.sync_api import sync_playwright
-
-          URL = "https://dm.takaratomy.co.jp/card/"
-
-          with sync_playwright() as p:
-              browser = p.chromium.launch(headless=True)
-              page = browser.new_page()
-
-              print("=" * 60)
-              print("公式ページを開きます")
-              print("=" * 60)
-
-              page.goto(
-                  URL,
-                  wait_until="domcontentloaded",
-                  timeout=60000
-              )
-
-              page.wait_for_timeout(3000)
-
-              def get_ids():
-                  return page.evaluate("""
-                  () => Array.from(
-                      document.querySelectorAll(
-                          'a[href*="/card/detail/?id="]'
-                      )
-                  ).map(a => {
-                      const h =
-                          a.getAttribute("href") || "";
-                      const m =
-                          h.match(/[?&]id=([^&]+)/);
-                      return m ? m[1] : null;
-                  }).filter(Boolean)
-                  """)
-
-              before = get_ids()
-
-              print()
-              print("1ページ目カード数:", len(before))
-
-              print()
-              print("1ページ目の先頭5枚:")
-              print(before[:5])
-
-              print()
-              print("=" * 60)
-              print("20ページ目へ直接ジャンプ")
-              print("=" * 60)
-
-              result = page.evaluate("""
-              () => {
-
-                  const buttons =
-                      Array.from(
-                          document.querySelectorAll(
-                              'a[data-page]'
-                          )
-                      );
-
-                  const button =
-                      buttons.find(
-                          el =>
-                              el.getAttribute(
-                                  "data-page"
-                              ) === "2"
-                      );
-
-                  if (!button) {
-                      return "PAGE_2_BUTTON_NOT_FOUND";
-                  }
-
-                  console.log(
-                      "元のdata-page:",
-                      button.getAttribute("data-page")
-                  );
-
-                  button.setAttribute(
-                      "data-page",
-                      "20"
-                  );
-
-                  console.log(
-                      "変更後data-page:",
-                      button.getAttribute("data-page")
-                  );
-
-                  if (window.jQuery) {
-                      window.jQuery(button).trigger("click");
-                      return "CLICK_OK";
-                  }
-
-                  button.click();
-
-                  return "NATIVE_CLICK_OK";
-              }
-              """)
-
-              print(
-                  "クリック結果:",
-                  result
-              )
-
-              changed = False
-
-              for i in range(40):
-                  time.sleep(0.5)
-
-                  after = get_ids()
-
-                  if after and after != before:
-                      changed = True
-                      print()
-                      print(
-                          "カード内容が変化しました！"
-                      )
-                      print(
-                          "経過:",
-                          (i + 1) * 0.5,
-                          "秒"
-                      )
-                      break
-
-              print()
-              print("=" * 60)
-              print("結果")
-              print("=" * 60)
-
-              print(
-                  "カード変更:",
-                  changed
-              )
-
-              print(
-                  "現在のURL:",
-                  page.url
-              )
-
-              after = get_ids()
-
-              print(
-                  "現在のカード数:",
-                  len(after)
-              )
-
-              print()
-              print("現在の先頭5枚:")
-              print(after[:5])
-
-              print()
-              print("1ページ目と同じ:")
-              print(after == before)
-
-              browser.close()
-          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/cards.json
+          if git diff --cached --quiet; then
+            echo "カードデータに変更なし"
+          else
+            git commit -m "自動更新: 公式カードデータ"
+            git push
+          fi

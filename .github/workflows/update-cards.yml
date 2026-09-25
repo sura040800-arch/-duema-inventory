@@ -1,22 +1,14 @@
-name: Update Duel Masters Cards
+name: Test Duel Masters Pagination
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 9 * * *"
-
-permissions:
-  contents: write
 
 jobs:
-  update-cards:
+  test:
     runs-on: ubuntu-latest
-    timeout-minutes: 360
+    timeout-minutes: 10
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
@@ -25,340 +17,141 @@ jobs:
       - name: Install packages
         run: python -m pip install requests beautifulsoup4
 
-      - name: Scrape official cards
-        env:
-          PYTHONUNBUFFERED: "1"
+      - name: Test official pagination
         run: |
-          mkdir -p data
-
           python - <<'PY'
           import json
-          import re
           import time
-          from concurrent.futures import ThreadPoolExecutor, as_completed
-          from urllib.parse import urljoin, urlparse, parse_qs, unquote
+          from urllib.parse import quote, urljoin
 
           import requests
           from bs4 import BeautifulSoup
 
           BASE = "https://dm.takaratomy.co.jp"
-          START = BASE + "/card/"
-          OUT = "data/cards.json"
+          CARD_PATH = "/card/"
 
-          HEADERS = {
+          session = requests.Session()
+          session.headers.update({
               "User-Agent": (
-                  "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) "
+                  "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) "
                   "AppleWebKit/605.1.15 (KHTML, like Gecko) "
-                  "Version/17.0 Mobile/15E148 Safari/604.1"
+                  "Version/18.0 Mobile/15E148 Safari/604.1"
               ),
-              "Accept-Language": "ja-JP,ja;q=0.9,en;q=0.8",
-              "Referer": BASE + "/",
-          }
+              "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+              "Accept-Language": "ja-JP,ja;q=0.9,en-US;q=0.8,en;q=0.7",
+              "Referer": BASE + CARD_PATH,
+          })
 
-          def fetch(url, tries=3):
-              last_error = None
+          def make_url(page):
+              state = {
+                  "suggest": "on",
+                  "keyword_type": [
+                      "card_name",
+                      "card_ruby",
+                      "card_text"
+                  ],
+                  "culture_cond": [
+                      "単色",
+                      "多色"
+                  ],
+                  "pagenum": str(page),
+                  "samename": "show",
+                  "sort": "release_new"
+              }
 
-              for attempt in range(tries):
-                  try:
-                      r = requests.get(
-                          url,
-                          headers=HEADERS,
-                          timeout=30,
-                      )
+              v = json.dumps(
+                  state,
+                  ensure_ascii=False,
+                  separators=(",", ":")
+              )
 
-                      if r.status_code in (429, 500, 502, 503, 504):
-                          raise RuntimeError(
-                              f"HTTP {r.status_code}"
-                          )
+              return BASE + CARD_PATH + "?v=" + quote(v, safe="")
 
-                      r.raise_for_status()
+          def get_cards(page):
+              url = make_url(page)
 
-                      time.sleep(0.05)
-                      return r
+              print("")
+              print("===== PAGE", page, "=====")
+              print(url)
 
-                  except Exception as e:
-                      last_error = e
+              response = session.get(
+                  url,
+                  timeout=45,
+                  allow_redirects=True
+              )
 
-                      if attempt < tries - 1:
-                          time.sleep(1.5 * (attempt + 1))
+              print("HTTP:", response.status_code)
+              print("FINAL URL:", response.url)
+              print("HTML:", len(response.text), "bytes")
 
-              raise last_error
+              response.raise_for_status()
 
-
-          def get_list_page(url):
-              r = fetch(url)
-              soup = BeautifulSoup(r.text, "html.parser")
-
-              card_links = set()
+              soup = BeautifulSoup(response.text, "html.parser")
+              links = set()
 
               for a in soup.find_all("a", href=True):
                   href = a["href"]
 
-                  if "/card/detail/" in href and "?id=" in href:
-                      card_links.add(urljoin(BASE, href))
-
-              page_links = set()
-
-              for a in soup.find_all("a", href=True):
-                  href = urljoin(BASE, a["href"])
-
-                  parsed = urlparse(href)
-
-                  if parsed.path.rstrip("/") != "/card":
-                      continue
-
-                  decoded = unquote(href)
-
-                  if re.search(
-                      r'"pagenum"\s*:\s*"\d+"',
-                      decoded
-                  ):
-                      page_links.add(href)
-
-              return card_links, page_links
-
-
-          print("公式カード一覧を取得します")
-
-          queue = [START]
-          seen_pages = set()
-          all_card_links = set()
-
-          while queue:
-
-              url = queue.pop(0)
-
-              if url in seen_pages:
-                  continue
-
-              seen_pages.add(url)
-
-              try:
-                  card_links, page_links = get_list_page(url)
-
-                  before = len(all_card_links)
-                  all_card_links.update(card_links)
-
-                  print(
-                      f"一覧ページ {len(seen_pages)}ページ / "
-                      f"今回 {len(card_links)}枚 / "
-                      f"累計 {len(all_card_links)}枚"
-                  )
-
-                  for page_url in page_links:
-                      if page_url not in seen_pages:
-                          queue.append(page_url)
-
-              except Exception as e:
-                  print(f"一覧ページ取得失敗: {url}")
-                  print(e)
-
-              if len(seen_pages) >= 600:
-                  print("安全のため600ページで停止します")
-                  break
-
-              time.sleep(0.15)
-
-
-          print("")
-          print(f"一覧ページ数: {len(seen_pages)}")
-          print(f"詳細ページ数: {len(all_card_links)}")
-
-
-          def parse_card(url):
-
-              try:
-                  r = fetch(url)
-                  soup = BeautifulSoup(r.text, "html.parser")
-
-                  h1 = soup.find("h1")
-
-                  if not h1:
-                      return None
-
-                  title = h1.get_text(" ", strip=True)
-
-                  number_match = re.search(
-                      r"\(([^()]*)\)\s*$",
-                      title
-                  )
-
-                  if number_match:
-                      number = number_match.group(1).strip()
-                      name = title[:number_match.start()].strip()
-                  else:
-                      number = ""
-                      name = title
-
-                  parsed = urlparse(url)
-                  query = parse_qs(parsed.query)
-                  card_id = query.get("id", [""])[0]
-
-                  card = {
-                      "id": card_id,
-                      "name": name,
-                      "number": number,
-                      "type": "",
-                      "civilization": "",
-                      "rarity": "",
-                      "power": "",
-                      "cost": "",
-                      "mana": "",
-                      "race": "",
-                      "illustrator": "",
-                      "url": url,
-                  }
-
-                  field_map = {
-                      "カードの種類": "type",
-                      "文明": "civilization",
-                      "レアリティ": "rarity",
-                      "パワー": "power",
-                      "コスト": "cost",
-                      "マナ": "mana",
-                      "種族": "race",
-                      "イラストレーター": "illustrator",
-                  }
-
-                  for tr in soup.find_all("tr"):
-
-                      cells = [
-                          x.get_text(" ", strip=True)
-                          for x in tr.find_all(["th", "td"])
-                      ]
-
-                      if len(cells) < 2:
-                          continue
-
-                      for i in range(0, len(cells) - 1, 2):
-
-                          label = cells[i]
-                          value = cells[i + 1]
-
-                          if label in field_map:
-                              card[field_map[label]] = value
-
-
-                  text = soup.get_text(" ", strip=True)
-
-                  fallback_patterns = {
-                      "civilization": r"文明\s+(.+?)\s+レアリティ\s+",
-                      "rarity": r"レアリティ\s+(.+?)\s+パワー\s+",
-                      "cost": r"コスト\s+(.+?)\s+マナ\s+",
-                  }
-
-                  for key, pattern in fallback_patterns.items():
-
-                      if not card[key]:
-
-                          m = re.search(pattern, text)
-
-                          if m:
-                              card[key] = m.group(1).strip()
-
-
-                  return card
-
-              except Exception as e:
-
-                  print(
-                      f"詳細取得失敗: {url} / {e}"
-                  )
-
-                  return None
-
-
-          urls = list(all_card_links)
-
-          print("")
-          print(f"詳細ページを {len(urls)} 件取得します")
-          print("")
-
-
-          cards = []
-
-          with ThreadPoolExecutor(max_workers=6) as executor:
-
-              futures = [
-                  executor.submit(parse_card, url)
-                  for url in urls
-              ]
-
-              for i, future in enumerate(
-                  as_completed(futures),
-                  1
-              ):
-
-                  card = future.result()
-
-                  if card:
-                      cards.append(card)
-
-                  if i % 100 == 0:
-                      print(
-                          f"詳細取得: {i}/{len(futures)}"
-                      )
-
-
-          unique = {}
-
-          for card in cards:
-
-              if card.get("id"):
-                  unique[card["id"]] = card
-
-
-          cards = list(unique.values())
-
-          cards.sort(
-              key=lambda x: (
-                  x.get("number", ""),
-                  x.get("name", "")
+                  if "/card/detail/?id=" in href:
+                      links.add(urljoin(BASE, href))
+
+              ids = sorted(
+                  link.split("id=", 1)[1]
+                  for link in links
+                  if "id=" in link
               )
+
+              print("カード:", len(ids), "枚")
+              print("先頭:", ids[:5])
+              print("末尾:", ids[-5:])
+
+              return ids
+
+          results = {}
+
+          for page in (1, 2, 3):
+              results[page] = get_cards(page)
+              time.sleep(2)
+
+          print("")
+          print("========== 比較 ==========")
+
+          for page in (1, 2, 3):
+              print(
+                  f"{page}ページ目: "
+                  f"{len(results[page])}枚"
+              )
+
+          if not results[1] or not results[2]:
+              raise RuntimeError(
+                  "1ページ目または2ページ目からカードを取得できませんでした。"
+              )
+
+          same12 = set(results[1]) == set(results[2])
+          same23 = set(results[2]) == set(results[3])
+
+          print(
+              "1ページ目と2ページ目が同じ:",
+              same12
           )
 
+          print(
+              "2ページ目と3ページ目が同じ:",
+              same23
+          )
+
+          if same12:
+              raise RuntimeError(
+                  "ページ番号を変えても1ページ目と2ページ目が同じです。"
+              )
+
+          if same23:
+              raise RuntimeError(
+                  "2ページ目と3ページ目が同じです。"
+              )
 
           print("")
-          print(f"取得完了: {len(cards)}枚")
-
-
-          if len(cards) < 1000:
-
-              raise RuntimeError(
-                  f"取得枚数が少なすぎます: "
-                  f"{len(cards)}枚"
-              )
-
-
-          with open(
-              OUT,
-              "w",
-              encoding="utf-8"
-          ) as f:
-
-              json.dump(
-                  cards,
-                  f,
-                  ensure_ascii=False,
-                  indent=2
-              )
-
-
-          print(f"{OUT} を更新しました")
-
+          print("SUCCESS")
+          print("1→2→3ページ目が別々に取得できました。")
+          print("この方式を確認できたら、全ページ取得版を作ります。")
           PY
-
-      - name: Commit updated data
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          git add data/cards.json
-
-          if git diff --cached --quiet; then
-            echo "変更はありません"
-            exit 0
-          fi
-
-          git commit -m "Update card data"
-          git push

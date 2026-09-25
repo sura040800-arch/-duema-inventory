@@ -30,26 +30,21 @@ def main():
         html = page.content()
         soup = BeautifulSoup(html, "html.parser")
 
-        # カード名を取得
-        title = ""
+        # ページタイトルからカード名・番号を取得
+        title = soup.title.get_text(" ", strip=True) if soup.title else ""
 
-        h1 = soup.find("h1")
-        h2 = soup.find("h2")
+        # 例：
+        # ∑龍(DM26RP3 OR1/OR1) | デュエル・マスターズ
+        title = title.split("|")[0].strip()
 
-        if h1:
-            title = h1.get_text(" ", strip=True)
-        elif h2:
-            title = h2.get_text(" ", strip=True)
-
-        # タイトルから番号を分離
-        number = ""
-        name = title
-
-        match = re.search(r"\(([^()]*)\)", title)
+        match = re.match(r"(.+?)\(([^()]*)\)", title)
 
         if match:
-            number = match.group(1).strip()
-            name = re.sub(r"\s*\([^()]*\)", "", title).strip()
+            name = match.group(1).strip()
+            number = match.group(2).strip()
+        else:
+            name = title
+            number = ""
 
         card = {
             "id": "dm26rp3-OR001",
@@ -58,11 +53,15 @@ def main():
             "url": URL
         }
 
-        # cards.jsonに保存
         OUT.parent.mkdir(parents=True, exist_ok=True)
 
         with open(OUT, "w", encoding="utf-8") as f:
-            json.dump([card], f, ensure_ascii=False, indent=2)
+            json.dump(
+                [card],
+                f,
+                ensure_ascii=False,
+                indent=2
+            )
 
         print("取得結果:", flush=True)
         print(json.dumps(card, ensure_ascii=False, indent=2), flush=True)

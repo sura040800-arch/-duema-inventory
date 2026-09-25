@@ -1,4 +1,4 @@
-name: Debug Duel Masters Network
+name: Debug Duel Masters Pagination JS
 
 on:
   workflow_dispatch:
@@ -16,146 +16,99 @@ jobs:
 
       - name: Install Playwright
         run: |
-          pip install playwright
+          pip install playwright requests
           playwright install chromium
 
-      - name: Debug official site
+      - name: Inspect pagination
         run: |
           python - <<'PY'
+          import requests
           import re
-          import time
           from playwright.sync_api import sync_playwright
 
           URL = "https://dm.takaratomy.co.jp/card/"
+          JS_URL = "https://dm.takaratomy.co.jp/common/js/search.js"
 
-          def get_ids(page):
-              links = page.locator(
-                  'a[href*="/card/detail/?id="]'
-              ).all()
+          print("=" * 60)
+          print("公式サイトのページ送り仕組みを調査")
+          print("=" * 60)
 
-              result = []
+          # --------------------------------------------------
+          # 1. search.js を直接取得
+          # --------------------------------------------------
 
-              for link in links:
-                  href = link.get_attribute("href")
+          print("\n[1] search.js を取得")
 
-                  if href:
-                      m = re.search(
-                          r'id=([^&"]+)',
-                          href
-                      )
+          r = requests.get(
+              JS_URL,
+              timeout=30,
+              headers={
+                  "User-Agent": "Mozilla/5.0"
+              }
+          )
 
-                      if m:
-                          result.append(m.group(1))
+          print("HTTP:", r.status_code)
+          print("文字数:", len(r.text))
 
-              return list(dict.fromkeys(result))
+          js = r.text
+
+          print("\n--- ページ関連コード ---")
+
+          keywords = [
+              "pagenum",
+              "page_num",
+              "pagination",
+              "pager",
+              "page",
+              "ページ",
+              "ajax",
+              "search",
+              "location",
+              "history",
+              "href"
+          ]
+
+          lines = js.splitlines()
+
+          found = 0
+
+          for i, line in enumerate(lines, 1):
+              lower = line.lower()
+
+              if any(k.lower() in lower for k in keywords):
+                  print(f"\nJS {i}: {line[:1000]}")
+                  found += 1
+
+                  if found >= 150:
+                      break
+
+          print("\nページ関連候補:", found)
+
+          # --------------------------------------------------
+          # 2. HTMLを取得してページ送り部分を調べる
+          # --------------------------------------------------
+
+          print("\n" + "=" * 60)
+          print("[2] ページ送りHTMLを調査")
+          print("=" * 60)
 
           with sync_playwright() as p:
-
-              print("================================")
-              print("ブラウザ起動")
-              print("================================")
 
               browser = p.chromium.launch(
                   headless=True
               )
 
-              context = browser.new_context(
+              page = browser.new_page(
                   viewport={
                       "width": 390,
                       "height": 844
                   },
                   user_agent=(
-                      "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) "
-                      "AppleWebKit/605.1.15 (KHTML, like Gecko) "
-                      "Version/18.0 Mobile/15E148 Safari/604.1"
+                      "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) "
+                      "AppleWebKit/605.1.15 "
+                      "(KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1"
                   )
               )
-
-              page = context.new_page()
-
-              # -----------------------------
-              # JavaScriptエラーを取得
-              # -----------------------------
-
-              page.on(
-                  "console",
-                  lambda msg:
-                      print(
-                          "CONSOLE:",
-                          msg.type,
-                          msg.text
-                      )
-              )
-
-              page.on(
-                  "pageerror",
-                  lambda error:
-                      print(
-                          "PAGE ERROR:",
-                          error
-                      )
-              )
-
-              # -----------------------------
-              # 通信を記録
-              # -----------------------------
-
-              requests = []
-
-              def on_request(request):
-
-                  url = request.url
-
-                  if (
-                      "takaratomy.co.jp" in url
-                      or "ajax" in url.lower()
-                      or "api" in url.lower()
-                  ):
-                      requests.append(
-                          (
-                              "REQUEST",
-                              request.method,
-                              url
-                          )
-                      )
-
-                      print(
-                          "REQUEST:",
-                          request.method,
-                          url
-                      )
-
-              def on_response(response):
-
-                  url = response.url
-
-                  if (
-                      "takaratomy.co.jp" in url
-                      or "ajax" in url.lower()
-                      or "api" in url.lower()
-                  ):
-                      print(
-                          "RESPONSE:",
-                          response.status,
-                          url
-                      )
-
-              page.on(
-                  "request",
-                  on_request
-              )
-
-              page.on(
-                  "response",
-                  on_response
-              )
-
-              # -----------------------------
-              # 公式サイトを開く
-              # -----------------------------
-
-              print("")
-              print("公式サイトを開きます")
 
               page.goto(
                   URL,
@@ -163,230 +116,182 @@ jobs:
                   timeout=60000
               )
 
-              page.wait_for_timeout(3000)
+              print("URL:", page.url)
 
-              ids1 = get_ids(page)
+              # ------------------------------------------------
+              # 「2」の候補
+              # ------------------------------------------------
 
-              print("")
-              print("================================")
-              print("1ページ目")
-              print("================================")
-              print(
-                  "カード数:",
-                  len(ids1)
-              )
-              print(
-                  "先頭:",
-                  ids1[:5]
-              )
-              print(
-                  "末尾:",
-                  ids1[-5:]
+              print("\n--- 「2」の候補 ---")
+
+              candidates = page.locator("a").filter(
+                  has_text=re.compile(r"^\s*2\s*$")
               )
 
-              # -----------------------------
-              # 2ページ目候補を探す
-              # -----------------------------
+              count = candidates.count()
 
-              print("")
-              print("================================")
-              print("ページ2を探します")
-              print("================================")
+              print("候補数:", count)
 
-              candidates = []
+              for i in range(count):
 
-              for element in page.locator("a").all():
+                  el = candidates.nth(i)
 
-                  text = (
-                      element.inner_text() or ""
-                  ).strip()
+                  print("\n候補", i)
 
-                  if text == "2":
-                      candidates.append(element)
+                  try:
+                      print("text:", repr(el.inner_text()))
+                  except:
+                      pass
 
-              print(
-                  "2の候補数:",
-                  len(candidates)
-              )
+                  try:
+                      print("href:", el.get_attribute("href"))
+                  except:
+                      pass
 
-              if not candidates:
+                  try:
+                      print("onclick:", el.get_attribute("onclick"))
+                  except:
+                      pass
 
-                  raise RuntimeError(
-                      "ページ2の要素が見つかりませんでした。"
-                  )
+                  try:
+                      print("class:", el.get_attribute("class"))
+                  except:
+                      pass
 
-              # -----------------------------
-              # クリック前の通信数
-              # -----------------------------
+                  try:
+                      print("id:", el.get_attribute("id"))
+                  except:
+                      pass
 
-              before_count = len(requests)
+                  try:
+                      print("name:", el.get_attribute("name"))
+                  except:
+                      pass
 
-              print("")
-              print(
-                  "クリック前の通信数:",
-                  before_count
-              )
+                  try:
+                      print("value:", el.get_attribute("value"))
+                  except:
+                      pass
 
-              # -----------------------------
-              # ページ2をクリック
-              # -----------------------------
+                  try:
+                      print("outerHTML:")
+                      print(el.evaluate("(e) => e.outerHTML"))
+                  except:
+                      pass
 
-              element = candidates[0]
+              # ------------------------------------------------
+              # ページ送り周辺HTML
+              # ------------------------------------------------
 
-              print("")
-              print("ページ2をクリックします")
+              print("\n" + "=" * 60)
+              print("--- ページ送り周辺HTML ---")
+              print("=" * 60)
 
-              element.scroll_into_view_if_needed()
+              html = page.content()
 
-              box = element.bounding_box()
+              # 「2」が含まれる箇所を探す
+              matches = list(re.finditer(r">\s*2\s*<", html))
 
-              print(
-                  "座標:",
-                  box
-              )
+              print("HTML内の「>2<」候補:", len(matches))
 
-              if box:
+              for idx, m in enumerate(matches[:20]):
 
-                  page.mouse.click(
-                      box["x"] + box["width"] / 2,
-                      box["y"] + box["height"] / 2
-                  )
+                  start = max(0, m.start() - 1000)
+                  end = min(len(html), m.end() + 1000)
 
-              else:
+                  print("\n--- HTML候補", idx, "---")
+                  print(html[start:end])
+
+              # ------------------------------------------------
+              # form / hidden input
+              # ------------------------------------------------
+
+              print("\n" + "=" * 60)
+              print("--- FORM情報 ---")
+              print("=" * 60)
+
+              forms = page.locator("form")
+
+              print("form数:", forms.count())
+
+              for i in range(forms.count()):
+
+                  form = forms.nth(i)
+
+                  print("\nFORM", i)
 
                   print(
-                      "座標が取得できませんでした"
+                      form.evaluate(
+                          "(e) => e.outerHTML"
+                      )[:10000]
                   )
 
-              print("")
-              print("クリック後10秒待ちます")
+              # ------------------------------------------------
+              # input情報
+              # ------------------------------------------------
 
-              for i in range(10):
+              print("\n" + "=" * 60)
+              print("--- INPUT情報 ---")
+              print("=" * 60)
 
-                  time.sleep(1)
+              inputs = page.locator("input")
 
-                  print(
-                      i + 1,
-                      "秒"
-                  )
+              print("input数:", inputs.count())
 
-              # -----------------------------
-              # クリック後
-              # -----------------------------
+              for i in range(inputs.count()):
 
-              ids2 = get_ids(page)
+                  el = inputs.nth(i)
 
-              print("")
-              print("================================")
-              print("クリック後")
-              print("================================")
-
-              print(
-                  "現在URL:",
-                  page.url
-              )
-
-              print(
-                  "カード数:",
-                  len(ids2)
-              )
-
-              print(
-                  "先頭:",
-                  ids2[:5]
-              )
-
-              print(
-                  "末尾:",
-                  ids2[-5:]
-              )
-
-              # -----------------------------
-              # 新しく発生した通信
-              # -----------------------------
-
-              print("")
-              print("================================")
-              print("クリック後に発生した通信")
-              print("================================")
-
-              new_requests = requests[
-                  before_count:
-              ]
-
-              print(
-                  "通信数:",
-                  len(new_requests)
-              )
-
-              for item in new_requests:
-
-                  print(
-                      item
-                  )
-
-              # -----------------------------
-              # ページ内のscript
-              # -----------------------------
-
-              print("")
-              print("================================")
-              print("読み込まれたJavaScript")
-              print("================================")
-
-              scripts = page.locator(
-                  "script[src]"
-              ).all()
-
-              print(
-                  "script数:",
-                  len(scripts)
-              )
-
-              for script in scripts:
-
-                  src = script.get_attribute(
-                      "src"
-                  )
-
-                  if src:
+                  try:
                       print(
-                          "SCRIPT:",
-                          src
+                          el.evaluate(
+                              """(e) => ({
+                                  type: e.type,
+                                  name: e.name,
+                                  value: e.value,
+                                  id: e.id,
+                                  className: e.className
+                              })"""
+                          )
                       )
+                  except:
+                      pass
 
-              # -----------------------------
-              # 結果
-              # -----------------------------
+              # ------------------------------------------------
+              # window / global の pagenum 関連
+              # ------------------------------------------------
 
-              print("")
-              print("================================")
-              print("診断結果")
-              print("================================")
+              print("\n" + "=" * 60)
+              print("--- JavaScript変数調査 ---")
+              print("=" * 60)
 
-              print(
-                  "1ページ目カード数:",
-                  len(ids1)
-              )
+              result = page.evaluate("""
+              () => {
+                  const result = {};
 
-              print(
-                  "クリック後カード数:",
-                  len(ids2)
-              )
+                  for (const key of Object.keys(window)) {
+                      if (
+                          key.toLowerCase().includes("page") ||
+                          key.toLowerCase().includes("search") ||
+                          key.toLowerCase().includes("pager")
+                      ) {
+                          try {
+                              result[key] = String(window[key]).slice(0, 500);
+                          } catch(e) {}
+                      }
+                  }
 
-              print(
-                  "カードが変わった:",
-                  ids1 != ids2
-              )
+                  return result;
+              }
+              """)
 
-              print(
-                  "クリック後通信数:",
-                  len(new_requests)
-              )
-
-              print("")
-              print("診断終了")
+              for k, v in result.items():
+                  print(k, "=", v)
 
               browser.close()
+
+          print("\n" + "=" * 60)
+          print("調査終了")
+          print("=" * 60)
 
           PY

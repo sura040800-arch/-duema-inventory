@@ -7,7 +7,6 @@ from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright
 
 OUT = Path("data/cards.json")
-
 LIST_URL = "https://dm.takaratomy.co.jp/card/"
 
 
@@ -40,12 +39,26 @@ def collect_all_links(page):
 
     page.wait_for_timeout(2000)
 
+    # ポップアップを閉じる
+    page.evaluate("""
+        () => {
+            const x = document.querySelector('.first-modal-close');
+            if (x) x.click();
+
+            const modal = document.querySelector('#first-modal-wrap');
+            if (modal) modal.remove();
+        }
+    """)
+
+    page.wait_for_timeout(500)
+
     all_links = []
     page_number = 1
 
-    while True:
+    while page_number <= 470:
+
         print(
-            f"一覧ページ {page_number} / 470",
+            f"一覧ページ {page_number}/470",
             flush=True
         )
 
@@ -65,41 +78,27 @@ def collect_all_links(page):
 
         next_page = page_number + 1
 
-        button = page.locator(
-            f'a[data-page="{next_page}"]'
-        )
+        # JavaScriptでページ番号を押す
+        result = page.evaluate("""
+            (pageNumber) => {
+                const button =
+                    document.querySelector(
+                        `a[data-page="${pageNumber}"]`
+                    );
 
-        if button.count() == 0:
-            print(
-                f"次のページ {next_page} が見つかりません",
-                flush=True
+                if (!button) return false;
+
+                button.click();
+                return true;
+            }
+        """, next_page)
+
+        if not result:
+            raise RuntimeError(
+                f"{next_page}ページ目のボタンが見つかりません"
             )
-            break
 
-        button.first.click()
-
-        try:
-            page.wait_for_function(
-                """pageNumber => {
-                    const current =
-                        document.querySelector(
-                            '.wp-pagenavi .current'
-                        );
-                    return current &&
-                           current.textContent.trim() ===
-                           String(pageNumber);
-                }""",
-                arg=next_page,
-                timeout=30000
-            )
-        except Exception:
-            print(
-                f"ページ {next_page} の切り替え確認に失敗",
-                flush=True
-            )
-            break
-
-        page.wait_for_timeout(500)
+        page.wait_for_timeout(1500)
 
         page_number = next_page
 
@@ -115,10 +114,11 @@ def parse_card(page, url):
     html = page.content()
     soup = BeautifulSoup(html, "html.parser")
 
-    title = soup.title.get_text(
-        " ",
-        strip=True
-    ) if soup.title else ""
+    title = (
+        soup.title.get_text(" ", strip=True)
+        if soup.title
+        else ""
+    )
 
     title = title.split("|")[0].strip()
 
@@ -148,7 +148,9 @@ def parse_card(page, url):
 
 
 def main():
+
     with sync_playwright() as p:
+
         browser = p.chromium.launch(
             headless=True
         )
@@ -160,7 +162,6 @@ def main():
             }
         )
 
-        # まず全カードのURLを取得
         links = collect_all_links(page)
 
         if len(links) < 20000:
@@ -171,66 +172,48 @@ def main():
         cards = []
 
         print(
-            f"詳細ページ取得開始: {len(links)} 枚",
+            f"詳細ページ取得開始: {len(links)}枚",
             flush=True
         )
 
         for i, url in enumerate(links, 1):
 
-            success = False
+            try:
+                response = page.goto(
+                    url,
+                    wait_until="domcontentloaded",
+                    timeout=60000
+                )
 
-            for retry in range(3):
+                if response is None:
+                    raise RuntimeError("レスポンスなし")
 
-                try:
-                    response = page.goto(
-                        url,
-                        wait_until="domcontentloaded",
-                        timeout=60000
+                if response.status >= 400:
+                    raise RuntimeError(
+                        f"HTTP {response.status}"
                     )
 
-                    if response is None:
-                        raise RuntimeError(
-                            "レスポンスなし"
-                        )
+                page.wait_for_timeout(300)
 
-                    if response.status >= 400:
-                        raise RuntimeError(
-                            f"HTTP {response.status}"
-                        )
+                card = parse_card(page, url)
 
-                    page.wait_for_timeout(300)
-
-                    card = parse_card(
-                        page,
-                        url
-                    )
-
-                    if not card["name"]:
-                        raise RuntimeError(
-                            "カード名なし"
-                        )
-
+                if card["name"]:
                     cards.append(card)
 
-                    success = True
-                    break
-
-                except Exception as e:
-                    print(
-                        f"失敗 {i}/{len(links)} "
-                        f"retry={retry + 1}: {e}",
-                        flush=True
-                    )
-                    time.sleep(1)
-
-            if not success:
                 print(
-                    f"3回失敗したためスキップ: {url}",
+                    f"{i}/{len(links)} {card['name']}",
                     flush=True
                 )
 
-            # 100枚ごとに途中保存
+            except Exception as e:
+                print(
+                    f"失敗 {i}/{len(links)}: {e}",
+                    flush=True
+                )
+
+            # 100枚ごとに保存
             if i % 100 == 0:
+
                 with open(
                     OUT,
                     "w",
@@ -244,13 +227,12 @@ def main():
                     )
 
                 print(
-                    f"途中保存: {len(cards)} 枚",
+                    f"途中保存: {len(cards)}枚",
                     flush=True
                 )
 
         browser.close()
 
-    # 最終保存
     with open(
         OUT,
         "w",
@@ -264,7 +246,7 @@ def main():
         )
 
     print(
-        f"完了: {len(cards)} 枚",
+        f"完了: {len(cards)}枚",
         flush=True
     )
 

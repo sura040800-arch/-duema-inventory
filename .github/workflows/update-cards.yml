@@ -1,4 +1,4 @@
-name: Debug Duel Masters Page Request 2
+name: Debug Duel Masters Ajax
 
 on:
   workflow_dispatch:
@@ -16,129 +16,85 @@ jobs:
       - name: Install requests
         run: pip install requests
 
-      - name: Inspect official search.js
+      - name: Inspect Ajax functions
         run: |
           python - <<'PY'
           import requests
-          import re
 
-          JS_URL = "https://dm.takaratomy.co.jp/common/js/search.js"
-
-          print("=" * 80)
-          print("公式 search.js を取得")
-          print("=" * 80)
+          url = "https://dm.takaratomy.co.jp/common/js/search.js"
 
           r = requests.get(
-              JS_URL,
-              headers={
-                  "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X)"
-              },
+              url,
+              headers={"User-Agent": "Mozilla/5.0"},
               timeout=30
           )
 
           print("HTTP:", r.status_code)
           print("文字数:", len(r.text))
 
-          js = r.text
-          lines = js.splitlines()
+          lines = r.text.splitlines()
 
-          # --------------------------------------------------
-          # 先頭200行
-          # --------------------------------------------------
+          # ------------------------------------------------
+          # doAjax を探す
+          # ------------------------------------------------
 
           print("\n" + "=" * 80)
-          print("【search.js 先頭200行】")
+          print("【doAjax 周辺】")
           print("=" * 80)
 
-          for i, line in enumerate(lines[:200], 1):
-              print(f"{i:04d}: {line}")
+          for i, line in enumerate(lines):
+              if "function doAjax" in line or "doAjax =" in line:
+                  start = max(0, i - 20)
+                  end = min(len(lines), i + 100)
 
-          # --------------------------------------------------
-          # 重要キーワード周辺
-          # --------------------------------------------------
+                  print(f"\n見つかった行: {i + 1}")
+                  print("-" * 80)
 
-          patterns = [
-              "research",
+                  for j in range(start, end):
+                      print(f"{j + 1:04d}: {lines[j]}")
+
+          # ------------------------------------------------
+          # research 関数
+          # ------------------------------------------------
+
+          print("\n" + "=" * 80)
+          print("【research 関数】")
+          print("=" * 80)
+
+          for i, line in enumerate(lines):
+              if "function research(data)" in line:
+                  start = i
+                  end = min(len(lines), i + 130)
+
+                  for j in range(start, end):
+                      print(f"{j + 1:04d}: {lines[j]}")
+
+          # ------------------------------------------------
+          # Ajax関連の行
+          # ------------------------------------------------
+
+          print("\n" + "=" * 80)
+          print("【Ajax関連】")
+          print("=" * 80)
+
+          keywords = [
               "$.ajax",
-              "$.get",
-              "$.post",
-              "getJSON",
-              "fetch(",
-              "XMLHttpRequest",
-              "pagenum",
-              "data-page",
-              ".page",
-              "history.pushState",
-              "history.replaceState",
-              "param_json",
-              "location.search",
-              "非同期",
-              "ページ取得",
-          ]
-
-          print("\n" + "=" * 80)
-          print("【重要キーワード周辺】")
-          print("=" * 80)
-
-          ranges = []
-
-          for pattern in patterns:
-              for i, line in enumerate(lines):
-
-                  if pattern.lower() in line.lower():
-
-                      start = max(0, i - 20)
-                      end = min(len(lines), i + 21)
-
-                      # ほぼ同じ範囲は重複表示しない
-                      duplicate = False
-
-                      for a, b in ranges:
-                          if start >= a and end <= b:
-                              duplicate = True
-                              break
-
-                      if duplicate:
-                          continue
-
-                      ranges.append((start, end))
-
-                      print("\n")
-                      print("-" * 80)
-                      print("KEYWORD:", pattern)
-                      print("LINES:", start + 1, "-", end)
-                      print("-" * 80)
-
-                      for j in range(start, end):
-                          print(f"{j + 1:04d}: {lines[j]}")
-
-          # --------------------------------------------------
-          # ページ関連だけを一覧表示
-          # --------------------------------------------------
-
-          print("\n" + "=" * 80)
-          print("【ページ取得に関係しそうな行】")
-          print("=" * 80)
-
-          page_patterns = [
-              "data-page",
-              "pagenum",
-              "research(",
-              "$.ajax",
-              "$.get(",
-              "$.post(",
-              "getJSON",
-              "fetch(",
-              "非同期",
-              "ページ取得",
+              "url:",
+              "type:",
+              "method:",
+              "data:",
+              "success:",
+              "error:",
+              "POST",
+              "GET",
+              "serialize",
+              "html",
+              "replace",
+              "cardlist",
           ]
 
           for i, line in enumerate(lines, 1):
-
-              if any(
-                  p.lower() in line.lower()
-                  for p in page_patterns
-              ):
+              if any(k.lower() in line.lower() for k in keywords):
                   print(f"{i:04d}: {line}")
 
           print("\n" + "=" * 80)

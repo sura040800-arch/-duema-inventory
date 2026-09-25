@@ -1,4 +1,4 @@
-name: Debug Duel Masters Pagination JS
+name: Debug Duel Masters Page Request
 
 on:
   workflow_dispatch:
@@ -6,292 +6,129 @@ on:
 jobs:
   debug:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Install Playwright
+      - name: Install requests
         run: |
-          pip install playwright requests
-          playwright install chromium
+          pip install requests
 
-      - name: Inspect pagination
+      - name: Inspect search.js
         run: |
           python - <<'PY'
           import requests
           import re
-          from playwright.sync_api import sync_playwright
 
-          URL = "https://dm.takaratomy.co.jp/card/"
-          JS_URL = "https://dm.takaratomy.co.jp/common/js/search.js"
+          JS_URL = "https://www.takaratomy.co.jp/common/2025/js/search.js"
 
-          print("=" * 60)
-          print("公式サイトのページ送り仕組みを調査")
-          print("=" * 60)
-
-          # --------------------------------------------------
-          # 1. search.js を直接取得
-          # --------------------------------------------------
-
-          print("\n[1] search.js を取得")
+          print("=" * 80)
+          print("search.js を取得します")
+          print("=" * 80)
 
           r = requests.get(
               JS_URL,
-              timeout=30,
               headers={
                   "User-Agent": "Mozilla/5.0"
-              }
+              },
+              timeout=30
           )
 
           print("HTTP:", r.status_code)
           print("文字数:", len(r.text))
 
           js = r.text
-
-          print("\n--- ページ関連コード ---")
-
-          keywords = [
-              "pagenum",
-              "page_num",
-              "pagination",
-              "pager",
-              "page",
-              "ページ",
-              "ajax",
-              "search",
-              "location",
-              "history",
-              "href"
-          ]
-
           lines = js.splitlines()
 
-          found = 0
+          print("\n")
+          print("=" * 80)
+          print("【先頭150行】")
+          print("=" * 80)
+
+          for i, line in enumerate(lines[:150], 1):
+              print(f"{i:04d}: {line}")
+
+          patterns = [
+              "research",
+              "$.ajax",
+              "$.get",
+              "$.post",
+              "getJSON",
+              "fetch(",
+              "XMLHttpRequest",
+              "pagenum",
+              "data-page",
+              ".page",
+              "history.pushState",
+              "history.replaceState",
+              "param_json",
+              "location.search",
+              "非同期",
+              "ページ取得",
+          ]
+
+          print("\n")
+          print("=" * 80)
+          print("【重要キーワード周辺】")
+          print("=" * 80)
+
+          found_ranges = []
+
+          for pattern in patterns:
+              for i, line in enumerate(lines):
+                  if pattern.lower() in line.lower():
+                      start = max(0, i - 15)
+                      end = min(len(lines), i + 16)
+
+                      # 重複表示を避ける
+                      already = False
+                      for a, b in found_ranges:
+                          if start >= a and end <= b:
+                              already = True
+                              break
+
+                      if already:
+                          continue
+
+                      found_ranges.append((start, end))
+
+                      print("\n" + "-" * 80)
+                      print(f"KEYWORD: {pattern}")
+                      print(f"LINES: {start + 1} - {end}")
+                      print("-" * 80)
+
+                      for j in range(start, end):
+                          print(f"{j + 1:04d}: {lines[j]}")
+
+          print("\n")
+          print("=" * 80)
+          print("【ページ関連の行だけ】")
+          print("=" * 80)
+
+          page_patterns = [
+              "data-page",
+              "pagenum",
+              "research(",
+              "$.ajax",
+              "$.get(",
+              "$.post(",
+              "fetch(",
+              "非同期",
+              "ページ取得",
+          ]
 
           for i, line in enumerate(lines, 1):
-              lower = line.lower()
+              if any(p.lower() in line.lower() for p in page_patterns):
+                  print(f"{i:04d}: {line}")
 
-              if any(k.lower() in lower for k in keywords):
-                  print(f"\nJS {i}: {line[:1000]}")
-                  found += 1
-
-                  if found >= 150:
-                      break
-
-          print("\nページ関連候補:", found)
-
-          # --------------------------------------------------
-          # 2. HTMLを取得してページ送り部分を調べる
-          # --------------------------------------------------
-
-          print("\n" + "=" * 60)
-          print("[2] ページ送りHTMLを調査")
-          print("=" * 60)
-
-          with sync_playwright() as p:
-
-              browser = p.chromium.launch(
-                  headless=True
-              )
-
-              page = browser.new_page(
-                  viewport={
-                      "width": 390,
-                      "height": 844
-                  },
-                  user_agent=(
-                      "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) "
-                      "AppleWebKit/605.1.15 "
-                      "(KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1"
-                  )
-              )
-
-              page.goto(
-                  URL,
-                  wait_until="networkidle",
-                  timeout=60000
-              )
-
-              print("URL:", page.url)
-
-              # ------------------------------------------------
-              # 「2」の候補
-              # ------------------------------------------------
-
-              print("\n--- 「2」の候補 ---")
-
-              candidates = page.locator("a").filter(
-                  has_text=re.compile(r"^\s*2\s*$")
-              )
-
-              count = candidates.count()
-
-              print("候補数:", count)
-
-              for i in range(count):
-
-                  el = candidates.nth(i)
-
-                  print("\n候補", i)
-
-                  try:
-                      print("text:", repr(el.inner_text()))
-                  except:
-                      pass
-
-                  try:
-                      print("href:", el.get_attribute("href"))
-                  except:
-                      pass
-
-                  try:
-                      print("onclick:", el.get_attribute("onclick"))
-                  except:
-                      pass
-
-                  try:
-                      print("class:", el.get_attribute("class"))
-                  except:
-                      pass
-
-                  try:
-                      print("id:", el.get_attribute("id"))
-                  except:
-                      pass
-
-                  try:
-                      print("name:", el.get_attribute("name"))
-                  except:
-                      pass
-
-                  try:
-                      print("value:", el.get_attribute("value"))
-                  except:
-                      pass
-
-                  try:
-                      print("outerHTML:")
-                      print(el.evaluate("(e) => e.outerHTML"))
-                  except:
-                      pass
-
-              # ------------------------------------------------
-              # ページ送り周辺HTML
-              # ------------------------------------------------
-
-              print("\n" + "=" * 60)
-              print("--- ページ送り周辺HTML ---")
-              print("=" * 60)
-
-              html = page.content()
-
-              # 「2」が含まれる箇所を探す
-              matches = list(re.finditer(r">\s*2\s*<", html))
-
-              print("HTML内の「>2<」候補:", len(matches))
-
-              for idx, m in enumerate(matches[:20]):
-
-                  start = max(0, m.start() - 1000)
-                  end = min(len(html), m.end() + 1000)
-
-                  print("\n--- HTML候補", idx, "---")
-                  print(html[start:end])
-
-              # ------------------------------------------------
-              # form / hidden input
-              # ------------------------------------------------
-
-              print("\n" + "=" * 60)
-              print("--- FORM情報 ---")
-              print("=" * 60)
-
-              forms = page.locator("form")
-
-              print("form数:", forms.count())
-
-              for i in range(forms.count()):
-
-                  form = forms.nth(i)
-
-                  print("\nFORM", i)
-
-                  print(
-                      form.evaluate(
-                          "(e) => e.outerHTML"
-                      )[:10000]
-                  )
-
-              # ------------------------------------------------
-              # input情報
-              # ------------------------------------------------
-
-              print("\n" + "=" * 60)
-              print("--- INPUT情報 ---")
-              print("=" * 60)
-
-              inputs = page.locator("input")
-
-              print("input数:", inputs.count())
-
-              for i in range(inputs.count()):
-
-                  el = inputs.nth(i)
-
-                  try:
-                      print(
-                          el.evaluate(
-                              """(e) => ({
-                                  type: e.type,
-                                  name: e.name,
-                                  value: e.value,
-                                  id: e.id,
-                                  className: e.className
-                              })"""
-                          )
-                      )
-                  except:
-                      pass
-
-              # ------------------------------------------------
-              # window / global の pagenum 関連
-              # ------------------------------------------------
-
-              print("\n" + "=" * 60)
-              print("--- JavaScript変数調査 ---")
-              print("=" * 60)
-
-              result = page.evaluate("""
-              () => {
-                  const result = {};
-
-                  for (const key of Object.keys(window)) {
-                      if (
-                          key.toLowerCase().includes("page") ||
-                          key.toLowerCase().includes("search") ||
-                          key.toLowerCase().includes("pager")
-                      ) {
-                          try {
-                              result[key] = String(window[key]).slice(0, 500);
-                          } catch(e) {}
-                      }
-                  }
-
-                  return result;
-              }
-              """)
-
-              for k, v in result.items():
-                  print(k, "=", v)
-
-              browser.close()
-
-          print("\n" + "=" * 60)
+          print("\n")
+          print("=" * 80)
           print("調査終了")
-          print("=" * 60)
-
+          print("=" * 80)
           PY

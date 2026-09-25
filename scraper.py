@@ -32,10 +32,13 @@ def close_popup(page):
     try:
         page.evaluate("""
             () => {
-                const x = document.querySelector('.first-modal-close');
+                const x =
+                    document.querySelector('.first-modal-close');
                 if (x) x.click();
 
-                const modal = document.querySelector('#first-modal-wrap');
+                const modal =
+                    document.querySelector('#first-modal-wrap');
+
                 if (modal) {
                     modal.style.display = 'none';
                     modal.style.pointerEvents = 'none';
@@ -46,18 +49,67 @@ def close_popup(page):
         pass
 
 
+def open_list(page):
+
+    for attempt in range(5):
+
+        try:
+            print(
+                f"公式サイトへ接続 {attempt + 1}/5",
+                flush=True
+            )
+
+            page.goto(
+                LIST_URL,
+                wait_until="commit",
+                timeout=120000
+            )
+
+            page.wait_for_timeout(5000)
+
+            close_popup(page)
+
+            # カード一覧が出るまで待つ
+            page.wait_for_selector(
+                'a[href*="/card/detail/?id="]',
+                timeout=60000
+            )
+
+            print(
+                "カード一覧の読み込み成功",
+                flush=True
+            )
+
+            return True
+
+        except Exception as e:
+
+            print(
+                f"接続失敗: {e}",
+                flush=True
+            )
+
+            if attempt < 4:
+                print(
+                    "30秒待って再試行します",
+                    flush=True
+                )
+                time.sleep(30)
+
+    return False
+
+
 def collect_all_links(page):
 
-    print("カード一覧を取得開始", flush=True)
-
-    page.goto(
-        LIST_URL,
-        wait_until="domcontentloaded",
-        timeout=60000
+    print(
+        "カード一覧を取得開始",
+        flush=True
     )
 
-    page.wait_for_timeout(2000)
-    close_popup(page)
+    if not open_list(page):
+        raise RuntimeError(
+            "公式カード一覧を読み込めませんでした"
+        )
 
     all_links = []
 
@@ -67,6 +119,8 @@ def collect_all_links(page):
             f"一覧ページ {page_number}/470",
             flush=True
         )
+
+        page.wait_for_timeout(500)
 
         links = get_card_links(page)
 
@@ -78,7 +132,7 @@ def collect_all_links(page):
 
         print(
             f"今回追加 {len(all_links) - before}枚 / "
-            f"現在 {len(all_links)}枚",
+            f"合計 {len(all_links)}枚",
             flush=True
         )
 
@@ -87,51 +141,61 @@ def collect_all_links(page):
 
         next_page = page_number + 1
 
-        # 次のページボタンを探す
+        # 次ページボタンを探す
         button = page.locator(
             f'a[data-page="{next_page}"]'
         )
 
-        # 見つからない場合は少し待って再確認
         if button.count() == 0:
 
             print(
-                f"{next_page}ページ目のボタンを再検索",
+                f"{next_page}ページ目のボタンがないため再読み込み",
                 flush=True
             )
 
-            page.wait_for_timeout(1000)
-            close_popup(page)
+            if not open_list(page):
+                raise RuntimeError(
+                    "一覧ページを再読み込みできません"
+                )
+
+            # 目的のページまで戻る
+            for p in range(2, next_page):
+
+                b = page.locator(
+                    f'a[data-page="{p}"]'
+                )
+
+                if b.count() == 0:
+                    raise RuntimeError(
+                        f"{p}ページ目へ移動できません"
+                    )
+
+                b.first.click(
+                    force=True,
+                    timeout=15000
+                )
+
+                page.wait_for_timeout(1000)
 
             button = page.locator(
                 f'a[data-page="{next_page}"]'
             )
 
-        if button.count() == 0:
-            raise RuntimeError(
-                f"{next_page}ページ目のボタンが見つかりません"
-            )
-
-        # 強制クリック
         try:
+
             button.first.click(
                 force=True,
-                timeout=10000
+                timeout=15000
             )
+
         except Exception as e:
 
             print(
-                f"クリック失敗。再読み込みします: {e}",
+                f"ページ移動失敗: {e}",
                 flush=True
             )
 
-            page.reload(
-                wait_until="domcontentloaded",
-                timeout=60000
-            )
-
-            page.wait_for_timeout(1500)
-            close_popup(page)
+            time.sleep(5)
 
             button = page.locator(
                 f'a[data-page="{next_page}"]'
@@ -139,11 +203,10 @@ def collect_all_links(page):
 
             button.first.click(
                 force=True,
-                timeout=10000
+                timeout=15000
             )
 
-        # 非同期読み込みを待つ
-        page.wait_for_timeout(1200)
+        page.wait_for_timeout(1500)
 
     print(
         f"一覧取得完了: {len(all_links)}枚",
@@ -187,10 +250,7 @@ def parse_card(page, url):
     card_id = ""
 
     if "?id=" in url:
-        card_id = url.split(
-            "?id=",
-            1
-        )[1]
+        card_id = url.split("?id=", 1)[1]
 
     return {
         "id": card_id,
@@ -235,12 +295,12 @@ def main():
             }
         )
 
-        # ① 全カードのURLを取得
+        # 全カードURLを取得
         links = collect_all_links(page)
 
         if len(links) < 20000:
             raise RuntimeError(
-                f"取得枚数が少なすぎます: {len(links)}枚"
+                f"カードURLが少なすぎます: {len(links)}枚"
             )
 
         print(
@@ -248,7 +308,6 @@ def main():
             flush=True
         )
 
-        # ② 詳細ページを取得
         cards = []
 
         print(
@@ -261,16 +320,14 @@ def main():
             1
         ):
 
-            success = False
-
             for retry in range(3):
 
                 try:
 
                     response = page.goto(
                         url,
-                        wait_until="domcontentloaded",
-                        timeout=60000
+                        wait_until="commit",
+                        timeout=120000
                     )
 
                     if response is None:
@@ -278,12 +335,7 @@ def main():
                             "レスポンスなし"
                         )
 
-                    if response.status >= 400:
-                        raise RuntimeError(
-                            f"HTTP {response.status}"
-                        )
-
-                    page.wait_for_timeout(200)
+                    page.wait_for_timeout(1500)
 
                     card = parse_card(
                         page,
@@ -296,8 +348,6 @@ def main():
                         )
 
                     cards.append(card)
-
-                    success = True
 
                     print(
                         f"{i}/{len(links)} "
@@ -315,17 +365,9 @@ def main():
                         flush=True
                     )
 
-                    time.sleep(1)
+                    time.sleep(3)
 
-            if not success:
-                print(
-                    f"スキップ: {url}",
-                    flush=True
-                )
-
-            # 100枚ごとに保存
             if i % 100 == 0:
-
                 save_cards(cards)
 
                 print(

@@ -33,7 +33,9 @@ def close_popup(page):
         page.evaluate("""
         () => {
             const x = document.querySelector('.first-modal-close');
-            if (x) x.click();
+            if (x) {
+                x.click();
+            }
 
             const m = document.querySelector('#first-modal-wrap');
             if (m) {
@@ -61,12 +63,9 @@ def find_button(page, number):
 
 
 def move_page(page, number):
-    # 最大5回リトライ
     for retry in range(5):
-
         print(
-            f"{number}ページ目へ移動 "
-            f"({retry + 1}/5)",
+            f"{number}ページ目へ移動 ({retry + 1}/5)",
             flush=True
         )
 
@@ -96,18 +95,6 @@ def move_page(page, number):
 
                 page.wait_for_timeout(2500)
 
-                # ページ番号の表示を確認
-                current = page.locator(
-                    ".wp-pagenavi .current"
-                )
-
-                if current.count() > 0:
-                    text = current.first.inner_text().strip()
-
-                    if text == str(number):
-                        return True
-
-                # 番号確認できなくてもカードが変われば成功とみなす
                 return True
 
             except Exception as e:
@@ -142,7 +129,6 @@ def move_page(page, number):
 
 
 def collect_links(page):
-
     print(
         "公式カード一覧を開きます",
         flush=True
@@ -155,6 +141,7 @@ def collect_links(page):
     )
 
     page.wait_for_timeout(3000)
+
     close_popup(page)
 
     page.wait_for_selector(
@@ -165,7 +152,6 @@ def collect_links(page):
     all_links = []
 
     for number in range(1, 471):
-
         print(
             f"一覧ページ {number}/470",
             flush=True
@@ -179,19 +165,17 @@ def collect_links(page):
             if link not in all_links:
                 all_links.append(link)
 
+        added = len(all_links) - before
+
         print(
-            f"今回追加 {len(all_links) - before}枚 / "
-            f"合計 {len(all_links)}枚",
+            f"今回追加 {added}枚 / 合計 {len(all_links)}枚",
             flush=True
         )
 
         if number == 470:
             break
 
-        if not move_page(
-            page,
-            number + 1
-        ):
+        if not move_page(page, number + 1):
             raise RuntimeError(
                 f"{number + 1}ページ目へ移動できません"
             )
@@ -205,19 +189,18 @@ def collect_links(page):
 
 
 def parse_card(page, url):
-
     soup = BeautifulSoup(
         page.content(),
         "html.parser"
     )
-
-    title = ""
 
     if soup.title:
         title = soup.title.get_text(
             " ",
             strip=True
         )
+    else:
+        title = ""
 
     title = title.split("|")[0].strip()
 
@@ -244,7 +227,6 @@ def parse_card(page, url):
 
 
 def save(cards):
-
     OUT.parent.mkdir(
         parents=True,
         exist_ok=True
@@ -254,4 +236,88 @@ def save(cards):
         OUT,
         "w",
         encoding="utf-8"
+    ) as f:
+        json.dump(
+            cards,
+            f,
+            ensure_ascii=False,
+            indent=2
+        )
+
+
+def main():
+    with sync_playwright() as p:
+        browser = p.chromium.launch(
+            headless=True
+        )
+
+        page = browser.new_page(
+            viewport={
+                "width": 1280,
+                "height": 900
+            }
+        )
+
+        links = collect_links(page)
+
+        if len(links) < 20000:
+            raise RuntimeError(
+                f"カード数が少なすぎます: {len(links)}"
+            )
+
+        print(
+            f"全URL取得成功: {len(links)}枚",
+            flush=True
+        )
+
+        cards = []
+
+        for i, url in enumerate(links, 1):
+            try:
+                page.goto(
+                    url,
+                    wait_until="domcontentloaded",
+                    timeout=120000
+                )
+
+                page.wait_for_timeout(1000)
+
+                card = parse_card(
+                    page,
+                    url
+                )
+
+                if card["name"]:
+                    cards.append(card)
+
+                print(
+                    f"{i}/{len(links)} {card['name']}",
+                    flush=True
+                )
+
+            except Exception as e:
+                print(
+                    f"失敗 {i}: {e}",
+                    flush=True
+                )
+
+            if i % 100 == 0:
+                save(cards)
+
+                print(
+                    f"途中保存: {len(cards)}枚",
+                    flush=True
+                )
+
+        browser.close()
+
+    save(cards)
+
+    print(
+        f"★★ 完了 {len(cards)}枚 ★★",
+        flush=True
     )
+
+
+if __name__ == "__main__":
+    main()

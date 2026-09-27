@@ -1,206 +1,52 @@
 import json
 import re
-import time
 from pathlib import Path
 
 from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright
 
+
 OUT = Path("data/cards.json")
-LIST_URL = "https://dm.takaratomy.co.jp/card/"
+
+# ★テストするのはこの2枚だけ
+TEST_URLS = [
+    "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp3-OR001",
+    "https://dm.takaratomy.co.jp/card/detail/?id=dm26sd1-u012",
+]
 
 
-def get_links(page):
-    links = []
-
-    for a in page.locator('a[href*="/card/detail/?id="]').all():
-        href = a.get_attribute("href")
-
-        if not href:
-            continue
-
-        if href.startswith("/"):
-            href = "https://dm.takaratomy.co.jp" + href
-
-        if href not in links:
-            links.append(href)
-
-    return links
+def clean(text):
+    if not text:
+        return ""
+    return re.sub(r"\s+", " ", text).strip()
 
 
-def close_popup(page):
-    try:
-        page.evaluate("""
-        () => {
-            const x = document.querySelector('.first-modal-close');
-            if (x) {
-                x.click();
-            }
-
-            const m = document.querySelector('#first-modal-wrap');
-            if (m) {
-                m.style.display = 'none';
-                m.style.pointerEvents = 'none';
-            }
-        }
-        """)
-    except Exception:
-        pass
-
-
-def find_button(page, number):
-    selector = f'a[data-page="{number}"]'
-
-    for _ in range(20):
-        close_popup(page)
-
-        if page.locator(selector).count() > 0:
-            return page.locator(selector).first
-
-        time.sleep(1)
-
-    return None
-
-
-def move_page(page, number):
-    for retry in range(5):
-        print(
-            f"{number}ページ目へ移動 ({retry + 1}/5)",
-            flush=True
-        )
-
-        button = find_button(page, number)
-
-        if button is not None:
-            try:
-                page.evaluate(
-                    """
-                    n => {
-                        const b =
-                            document.querySelector(
-                                `a[data-page="${n}"]`
-                            );
-
-                        if (b) {
-                            if (window.jQuery) {
-                                window.jQuery(b).trigger('click');
-                            } else {
-                                b.click();
-                            }
-                        }
-                    }
-                    """,
-                    number
-                )
-
-                page.wait_for_timeout(2500)
-
-                return True
-
-            except Exception as e:
-                print(
-                    f"移動エラー: {e}",
-                    flush=True
-                )
-
-        print(
-            "ボタンが見つからないので再読み込み",
-            flush=True
-        )
-
-        try:
-            page.reload(
-                wait_until="domcontentloaded",
-                timeout=120000
-            )
-
-            page.wait_for_timeout(3000)
-            close_popup(page)
-
-        except Exception as e:
-            print(
-                f"再読み込みエラー: {e}",
-                flush=True
-            )
-
-        time.sleep(2)
-
-    return False
-
-
-def collect_links(page):
-    print(
-        "公式カード一覧を開きます",
-        flush=True
-    )
+def get_card(page, url):
+    print("DETAIL TEST:", url, flush=True)
 
     page.goto(
-        LIST_URL,
+        url,
         wait_until="domcontentloaded",
         timeout=120000
     )
 
-    page.wait_for_timeout(3000)
+    page.wait_for_timeout(1000)
 
-    close_popup(page)
-
-    page.wait_for_selector(
-        'a[href*="/card/detail/?id="]',
-        timeout=120000
-    )
-
-    all_links = []
-
-    for number in range(1, 471):
-        print(
-            f"一覧ページ {number}/470",
-            flush=True
-        )
-
-        links = get_links(page)
-
-        before = len(all_links)
-
-        for link in links:
-            if link not in all_links:
-                all_links.append(link)
-
-        added = len(all_links) - before
-
-        print(
-            f"今回追加 {added}枚 / 合計 {len(all_links)}枚",
-            flush=True
-        )
-
-        if number == 470:
-            break
-
-        if not move_page(page, number + 1):
-            raise RuntimeError(
-                f"{number + 1}ページ目へ移動できません"
-            )
-
-    print(
-        f"一覧取得完了: {len(all_links)}枚",
-        flush=True
-    )
-
-    return all_links
-
-
-def parse_card(page, url):
     soup = BeautifulSoup(
         page.content(),
         "html.parser"
     )
 
+    # カード名・番号
+    title = ""
+
     if soup.title:
-        title = soup.title.get_text(
-            " ",
-            strip=True
+        title = clean(
+            soup.title.get_text(
+                " ",
+                strip=True
+            )
         )
-    else:
-        title = ""
 
     title = title.split("|")[0].strip()
 
@@ -218,35 +64,130 @@ def parse_card(page, url):
 
     card_id = url.split("?id=", 1)[1]
 
-    return {
+    # 画像URL
+    image = ""
+
+    for img in soup.find_all("img"):
+        src = img.get("src")
+
+        if src and "card" in src.lower():
+            image = src
+
+            if image.startswith("/"):
+                image = (
+                    "https://dm.takaratomy.co.jp"
+                    + image
+                )
+
+            break
+
+    # ページ内テキスト
+    lines = []
+
+    for line in soup.get_text(
+        "\n",
+        strip=True
+    ).splitlines():
+
+        line = clean(line)
+
+        if line:
+            lines.append(line)
+
+    card = {
         "id": card_id,
         "name": name,
         "number": number,
-        "url": url
+        "url": url,
+        "image": image,
+        "sides": [],
     }
 
+    # 基本情報を取得
+    labels = {
+        "カードの種類": "type",
+        "文明": "civilization",
+        "レアリティ": "rarity",
+        "パワー": "power",
+        "コスト": "cost",
+        "マナ": "mana",
+        "種族": "race",
+        "イラストレーター": "illustrator",
+    }
 
-def save(cards):
-    OUT.parent.mkdir(
-        parents=True,
-        exist_ok=True
-    )
+    for i, line in enumerate(lines):
 
-    with open(
-        OUT,
-        "w",
-        encoding="utf-8"
-    ) as f:
-        json.dump(
-            cards,
-            f,
-            ensure_ascii=False,
-            indent=2
-        )
+        if line in labels and i + 1 < len(lines):
+
+            key = labels[line]
+            value = lines[i + 1]
+
+            card[key] = value
+
+    # 特殊能力
+    abilities = []
+
+    for i, line in enumerate(lines):
+
+        if line == "特殊能力":
+
+            text = []
+
+            for j in range(
+                i + 1,
+                min(i + 30, len(lines))
+            ):
+
+                if lines[j] in [
+                    "フレーバー",
+                    "商品情報",
+                    "イラストレーター",
+                ]:
+                    break
+
+                text.append(lines[j])
+
+            if text:
+                abilities.append(
+                    " ".join(text)
+                )
+
+    if abilities:
+        card["abilities"] = abilities
+
+    # ツインパクト判定
+    if "/" in name:
+        card["type"] = "ツインパクト"
+
+    return card
 
 
 def main():
+
+    print(
+        "================================",
+        flush=True
+    )
+
+    print(
+        "★ 2枚だけのDETAIL TEST ★",
+        flush=True
+    )
+
+    print(
+        "一覧ページは一切取得しません",
+        flush=True
+    )
+
+    print(
+        "================================",
+        flush=True
+    )
+
+    cards = []
+
     with sync_playwright() as p:
+
         browser = p.chromium.launch(
             headless=True
         )
@@ -258,63 +199,64 @@ def main():
             }
         )
 
-        links = collect_links(page)
+        for i, url in enumerate(
+            TEST_URLS,
+            1
+        ):
 
-        if len(links) < 20000:
-            raise RuntimeError(
-                f"カード数が少なすぎます: {len(links)}"
-            )
-
-        print(
-            f"全URL取得成功: {len(links)}枚",
-            flush=True
-        )
-
-        cards = []
-
-        for i, url in enumerate(links, 1):
             try:
-                page.goto(
-                    url,
-                    wait_until="domcontentloaded",
-                    timeout=120000
-                )
 
-                page.wait_for_timeout(1000)
-
-                card = parse_card(
+                card = get_card(
                     page,
                     url
                 )
 
-                if card["name"]:
-                    cards.append(card)
+                cards.append(card)
 
                 print(
-                    f"{i}/{len(links)} {card['name']}",
+                    f"★ {i}/2 成功: {card['name']}",
                     flush=True
                 )
 
             except Exception as e:
-                print(
-                    f"失敗 {i}: {e}",
-                    flush=True
-                )
-
-            if i % 100 == 0:
-                save(cards)
 
                 print(
-                    f"途中保存: {len(cards)}枚",
+                    f"★ {i}/2 失敗: {e}",
                     flush=True
                 )
 
         browser.close()
 
-    save(cards)
+    OUT.parent.mkdir(
+        parents=True,
+        exist_ok=True
+    )
+
+    with open(
+        OUT,
+        "w",
+        encoding="utf-8"
+    ) as f:
+
+        json.dump(
+            cards,
+            f,
+            ensure_ascii=False,
+            indent=2
+        )
 
     print(
-        f"★★ 完了 {len(cards)}枚 ★★",
+        "================================",
+        flush=True
+    )
+
+    print(
+        f"★ TEST COMPLETE: {len(cards)}枚 ★",
+        flush=True
+    )
+
+    print(
+        "================================",
         flush=True
     )
 

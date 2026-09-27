@@ -2034,6 +2034,378 @@
     ]
   },
   {
+    "id": "dm22ex2-060",
+    "name": "ダーク・ルピア (DM22EX2 60/75)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22ex2-060.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22ex2-060",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "1000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ファイアー・バード",
+        "illustrator": "Akifumi Yamamoto",
+        "abilities": [],
+        "flavor": "龍たちが闇に染まりし時、鳥たちも闇に染まる。 商品情報 同名カードが含まれる商品を表示 DM22-EX2 ヒーローズ・ダークサイド・パック ～闇のキリフダたち～ DMPCD-03 デュエマプレイス・コラボデッキ 激竜の英雄＆邪眼の始祖 特別商品限定カード DMX-21 マスターズ・クロニクル・パック（コミック・オブ・ヒーローズ） DMX-17 龍の祭典！ドラゴン魂フェス！！ DMC-61 コロコロ・ドリーム・パック IV (エターナル・ヘヴン) DMC-53 レジェンド・クロニクル 勝舞編 DM-27 極神編 第4弾 完全極神(パーフェクト・ヘヴン) DMX-10 デッキビルダー鬼DX キラリ！レオ編 DMC-65 ザ･ムービーデッキ･ショック ULTRA FIRE SPIRITS 炎のキズナXX"
+      }
+    ]
+  },
+  {
+    "id": "dm22ex2-061",
+    "name": "不死 デッドエンド (DM22EX2 61/75)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22ex2-061.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22ex2-061",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "4000",
+        "cost": "2",
+        "mana": "1",
+        "race": "デーモン・コマンド/ソニック・コマンド/侵略者",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "ギュウジン丸の生み出した侵略ウイルスは、アカシック兄弟の生み出した技術を実にうまく使っていた。しかし、ギュウジン丸は兄弟のツインパクト計画が世界の崩壊を止められないと判断して放棄されたことを知らず、したがって侵略ウイルスでは禁断の使徒を止められないことも知らなかった。 — ミスティ・レポート 第三十一章『天災計画について』より 商品情報 同名カードが含まれる商品を表示 DM22-EX2 ヒーローズ・ダークサイド・パック ～闇のキリフダたち～"
+      }
+    ]
+  },
+  {
+    "id": "dm22ex2-062",
+    "name": "ヤット・パウル (DM22EX2 62/75)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22ex2-062.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22ex2-062",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "2000",
+        "cost": "2",
+        "mana": "1",
+        "race": "ファイアー・バード",
+        "illustrator": "rikose",
+        "abilities": [],
+        "flavor": "ダークサイドなヒーローたちは、勝つためには多少の犠牲は気にしないッピ！ — ヤット・パウル 商品情報 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜 DM22-EX2 ヒーローズ・ダークサイド・パック ～闇のキリフダたち～ DMEX-17 20周年超感謝メモリアルパック 究極の章 デュエキングMAX"
+      }
+    ]
+  },
+  {
+    "id": "dm22ex2-063",
+    "name": "深淵秘伝アビス・インベージョン (DM22EX2 63/75)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22ex2-063.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22ex2-063",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "douzen",
+        "abilities": [],
+        "flavor": "深淵の力は二度刺す。 商品情報 同名カードが含まれる商品を表示 DM22-EX2 ヒーローズ・ダークサイド・パック ～闇のキリフダたち～ プロモ限定カード 22期"
+      }
+    ]
+  },
+  {
+    "id": "dm22ex2-064",
+    "name": "人形の裏技ペット・パペット (DM22EX2 64/75)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22ex2-064.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22ex2-064",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Yuichi Maekawa",
+        "abilities": [],
+        "flavor": "卑怯!? 闇文明には誉め言葉よ。 — 解体人形ジェニー 商品情報 同名カードが含まれる商品を表示 DM24-EX1 超感謝祭 ファンタジーBEST DM22-EX2 ヒーローズ・ダークサイド・パック ～闇のキリフダたち～ DMR-10 エピソード3 デッド＆ビート"
+      }
+    ]
+  },
+  {
+    "id": "dm22ex2-065",
+    "name": "ジェニーの黒像 (DM22EX2 65/75)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22ex2-065.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22ex2-065",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "デスパペット/レクスターズ",
+        "illustrator": "HIRO”WO”NORI",
+        "abilities": [],
+        "flavor": "カットちゃん！あそこにあるのは、私たちのタマシードじゃない！？ — 解体人形ジェニー 商品情報 同名カードが含まれる商品を表示 DM24-EX1 超感謝祭 ファンタジーBEST DM22-EX2 ヒーローズ・ダークサイド・パック ～闇のキリフダたち～ DMRP-21 王来MAX第1弾 鬼ヤバ逆襲S-MAX!! DMSD-21 キングマスタースタートデッキ アバクの鬼レクスターズ"
+      }
+    ]
+  },
+  {
+    "id": "dm22ex2-066",
+    "name": "シャクネツ悪鬼の巻 (DM22EX2 66/75)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22ex2-066.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22ex2-066",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "デモニオ/鬼レクスターズ",
+        "illustrator": "KOUSAKU",
+        "abilities": [],
+        "flavor": "鬼の歴史、それもデュエマのダークサイドの歴史のひとつ。 商品情報 同名カードが含まれる商品を表示 DM22-EX2 ヒーローズ・ダークサイド・パック ～闇のキリフダたち～ DMSD-21 キングマスタースタートデッキ アバクの鬼レクスターズ"
+      }
+    ]
+  },
+  {
+    "id": "dm22ex2-067",
+    "name": "ロマノフの黒像 (DM22EX2 67/75)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22ex2-067.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22ex2-067",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "1",
+        "mana": "1",
+        "race": "ダークロード/ナイト/レクスターズ",
+        "illustrator": "Moopic",
+        "abilities": [],
+        "flavor": "邪眼財閥を率いたロマノフの名声も、タマシードに封じられ語られ続ける。 商品情報 同名カードが含まれる商品を表示 DM22-EX2 ヒーローズ・ダークサイド・パック ～闇のキリフダたち～"
+      }
+    ]
+  },
+  {
+    "id": "dm22ex2-068",
+    "name": "魔獣星樹ギガゲドー (DM22EX2 68/75)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22ex2-068.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22ex2-068",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/闇",
+        "rarity": "C",
+        "power": "5000",
+        "cost": "3",
+        "mana": "1",
+        "race": "キマイラ/スターライト・ツリー",
+        "illustrator": "Nottsuo",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM22-EX2 ヒーローズ・ダークサイド・パック ～闇のキリフダたち～"
+      }
+    ]
+  },
+  {
+    "id": "dm22ex2-069",
+    "name": "罪無 バスダク極 / ダックス奮闘 (DM22EX2 69/75)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22ex2-069a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22ex2-069",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "5000",
+        "cost": "6",
+        "mana": "1",
+        "race": "マフィ・ギャング/チーム零",
+        "illustrator": "HIRO”WO”NORI",
+        "abilities": [],
+        "flavor": "商品情報 罪無 バスダク極 / ダックス奮闘 (DM22EX2 69/75) 33405"
+      },
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "1",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM22-EX2 ヒーローズ・ダークサイド・パック ～闇のキリフダたち～"
+      }
+    ]
+  },
+  {
+    "id": "dm22ex2-070",
+    "name": "凶鬼98号 ガシャゴン / 堕呪 ブラッドゥ (DM22EX2 70/75)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22ex2-070a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22ex2-070",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "5000",
+        "cost": "3",
+        "mana": "1",
+        "race": "マフィ・ギャング/魔導具",
+        "illustrator": "sarmat",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 凶鬼98号 ガシャゴン / 堕呪 ブラッドゥ (DM22EX2 70/75)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "魔導具",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM23-RP4X アビス・レボリューション 第4弾 「竜皇神爆輝」 超刺激パック DM23-RP4 アビス・レボリューション 第4弾 「竜皇神爆輝」 DM22-EX2 ヒーローズ・ダークサイド・パック ～闇のキリフダたち～ DMART-24 神アート 魔法少女アイドル「Girl Mage」 ～偶像魔導具集～"
+      }
+    ]
+  },
+  {
+    "id": "dm22ex2-071",
+    "name": "戯具 ドゥゲンダ (DM22EX2 71/75)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22ex2-071.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22ex2-071",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/闇",
+        "rarity": "C",
+        "power": "2000",
+        "cost": "2",
+        "mana": "1",
+        "race": "マフィ・ギャング/チーム零",
+        "illustrator": "Miyaki Hajime",
+        "abilities": [],
+        "flavor": "「世界の記録」と呼ばれるふたつの文書、それがミスティ・レポートとアカシック・レコード。ミスティ・レポートがミスティ自身が観察した記録であるのに対して、アカシック・レコードはアカシック・タレスが作り出したシミュレーターによる世界崩壊までの動的な記録である。 商品情報 同名カードが含まれる商品を表示 DM22-EX2 ヒーローズ・ダークサイド・パック ～闇のキリフダたち～ DMBD-22 クロニクル・ダークサイド・デッキ 「零誕」 DMRP-15 十王篇拡張パック第3弾 幻龍×凶襲 ゲンムエンペラー!!! DMSD-16 キングマスタースタートデッキ ゼーロJr.のムゲンクライム"
+      }
+    ]
+  },
+  {
+    "id": "dm22ex2-072",
+    "name": "コオニ小町 / 「世界はジャオウガ様のモノ！」 (DM22EX2 72/75)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22ex2-072a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22ex2-072",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "2000",
+        "cost": "2",
+        "mana": "1",
+        "race": "デモニオ",
+        "illustrator": "sarmat",
+        "abilities": [],
+        "flavor": "商品情報 コオニ小町 / 「世界はジャオウガ様のモノ！」 (DM22EX2 72/75)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "火",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM22-EX2 ヒーローズ・ダークサイド・パック ～闇のキリフダたち～"
+      }
+    ]
+  },
+  {
+    "id": "dm22ex2-073",
+    "name": "神滅翔天ザーク・ゼヴォル (DM22EX2 73/75)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22ex2-073.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22ex2-073",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇/火",
+        "rarity": "C",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ファイアー・バード/ドラゴン・ゾンビ",
+        "illustrator": "Moopic",
+        "abilities": [],
+        "flavor": "ミロクが生み出した魔銃「マッド・ロック・チェスター」は、邪眼の手に渡る前に暗黒凰に魅入られ、煉獄にて不死と破壊のイデアに飲み込まれた。魔銃による世界の支配をもくろんだキング・ロマノフは「マッド・ロック・チェスター」を手に入れたが、その代償として煉獄に囚われ続けることとなってしまった。 — ミスティ・レポート 第十九章『邪眼一族について』より 商品情報 同名カードが含まれる商品を表示 DM22-EX2 ヒーローズ・ダークサイド・パック ～闇のキリフダたち～ DMEX-16 20周年超感謝メモリアルパック 技の章 英雄戦略パーフェクト20"
+      }
+    ]
+  },
+  {
+    "id": "dm22ex2-074",
+    "name": "チョイワ・ルピア (DM22EX2 74/75)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22ex2-074.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22ex2-074",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇/火",
+        "rarity": "C",
+        "power": "2000",
+        "cost": "2",
+        "mana": "1",
+        "race": "ファイアー・バード",
+        "illustrator": "nuisuke",
+        "abilities": [],
+        "flavor": "ちょいワル程度だと思ってナめてると、大変なことになるッピ！ — チョイワ・ルピア 商品情報 同名カードが含まれる商品を表示 DM22-EX2 ヒーローズ・ダークサイド・パック ～闇のキリフダたち～"
+      }
+    ]
+  },
+  {
+    "id": "dm22ex2-075",
+    "name": "フェアリーの闇の子祭 (DM22EX2 75/75)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22ex2-075.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22ex2-075",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇/自然",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "HIRO”WO”NORI",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM22-EX2 ヒーローズ・ダークサイド・パック ～闇のキリフダたち～"
+      }
+    ]
+  },
+  {
     "id": "dm22ex2-10A",
     "name": "鬼ヶ英悪 ジャオウガOG (DM22EX2 H10A/H12)",
     "type": "クリーチャー",
@@ -2849,6 +3221,4341 @@
         "illustrator": "Sansyu",
         "abilities": [],
         "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX2 悪感謝祭 カリスマBEST DM22-EX2 ヒーローズ・ダークサイド・パック ～闇のキリフダたち～"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2-10B",
+    "name": "環嵐！ホールインワン・ヘラクレス (DM22RP2 10B/10)",
+    "type": "タマシード/クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2-10B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2-10B",
+    "sides": [
+      {
+        "type": "タマシード/クリーチャー",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "12000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ジャイアント・インセクト/ACE",
+        "illustrator": "Norikatsu Miyoshi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM24-EX3 刺激爆発デュエナマイトパック DM24-RP2 王道篇 第2弾 「カイザー・オブ・ハイパードラゴン」 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2-1A",
+    "name": "レディゴ・カリゾミダーマ (DM22RP2 1A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2-1A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2-1A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "3500",
+        "cost": "3",
+        "mana": "1",
+        "race": "メカ・デル・ディネロ",
+        "illustrator": "IWAO",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2-1B",
+    "name": "轟炎の竜皇 ボルシャック・カイザー (DM22RP2 1B/10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2-1B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2-1B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "OR",
+        "power": "5000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アーマード・ドラゴン",
+        "illustrator": "RUI MARUYAMA",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2-2A",
+    "name": "ルベル・ゴルギーニ (DM22RP2 2A/20)",
+    "type": "タマシード/クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2-2A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2-2A",
+    "sides": [
+      {
+        "type": "タマシード/クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "16500",
+        "cost": "5",
+        "mana": "1",
+        "race": "メカ・デル・ディネロ/スーパーカー・ドラゴン/ACE",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2-2B",
+    "name": "邪龍 ジャブラッド (DM22RP2 2B/10)",
+    "type": "タマシード/クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2-2B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2-2B",
+    "sides": [
+      {
+        "type": "タマシード/クリーチャー",
+        "civilization": "闇",
+        "rarity": "OR",
+        "power": "9000",
+        "cost": "3",
+        "mana": "1",
+        "race": "アビスドラゴン/ACE",
+        "illustrator": "akagi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-SD1 いきなりつよいデッキ 技の王道 DM24-RP4 王道篇 第4弾 「悪魔神、復活」 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DMART-25 神アート アビス、東京に現わる"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2-3A",
+    "name": "Eine k’Reine (DM22RP2 3A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2-3A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2-3A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "6000",
+        "cost": "6",
+        "mana": "1",
+        "race": "マジック・スプラッシュ・クイーン",
+        "illustrator": "Mikio Masuda",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2-3B",
+    "name": "レディゴ・カリゾミダーマ (DM22RP2 3B/10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2-3B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2-3B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "3500",
+        "cost": "3",
+        "mana": "1",
+        "race": "メカ・デル・ディネロ",
+        "illustrator": "IWAO",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2-4A",
+    "name": "Law儿-怪Hawk (DM22RP2 4A/20)",
+    "type": "タマシード/クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2-4A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2-4A",
+    "sides": [
+      {
+        "type": "タマシード/クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "8000",
+        "cost": "3",
+        "mana": "1",
+        "race": "マジック・コマンド/ACE",
+        "illustrator": "Futaro",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2-4B",
+    "name": "ルベル・ゴルギーニ (DM22RP2 4B/10)",
+    "type": "タマシード/クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2-4B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2-4B",
+    "sides": [
+      {
+        "type": "タマシード/クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "16500",
+        "cost": "5",
+        "mana": "1",
+        "race": "メカ・デル・ディネロ/スーパーカー・ドラゴン/ACE",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2-5A",
+    "name": "深淵の壊炉 マーダン=ロウ (DM22RP2 5A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2-5A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2-5A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "Moopic",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～ DM25-SD1 いきなりつよいデッキ 技の王道 DM23-SP1 スタートWIN・スーパーデッキ 深淵の邪襲 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DMART-25 神アート アビス、東京に現わる"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2-5B",
+    "name": "Eine k’Reine (DM22RP2 5B/10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2-5B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2-5B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "6000",
+        "cost": "6",
+        "mana": "1",
+        "race": "マジック・スプラッシュ・クイーン",
+        "illustrator": "Mikio Masuda",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2-6A",
+    "name": "ボルシャック・バラフィオル (DM22RP2 6A/20)",
+    "type": "タマシード/クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2-6A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2-6A",
+    "sides": [
+      {
+        "type": "タマシード/クリーチャー",
+        "civilization": "火",
+        "rarity": "SR",
+        "power": "9000",
+        "cost": "4",
+        "mana": "1",
+        "race": "アーマード・ドラゴン/ACE",
+        "illustrator": "MATSUMOTO EIGHT",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2-6B",
+    "name": "Law儿-怪Hawk (DM22RP2 6B/10)",
+    "type": "タマシード/クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2-6B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2-6B",
+    "sides": [
+      {
+        "type": "タマシード/クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "8000",
+        "cost": "3",
+        "mana": "1",
+        "race": "マジック・コマンド/ACE",
+        "illustrator": "Futaro",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2-7A",
+    "name": "氷駆の妖精 (DM22RP2 7A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2-7A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2-7A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "4000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ジャイアント・スノーフェアリー",
+        "illustrator": "sarmat",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM24-BD5 エキサイティング・デュエパ・デッキ アセビと異世界フェアリーたち DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2-7B",
+    "name": "深淵の壊炉 マーダン=ロウ (DM22RP2 7B/10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2-7B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2-7B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "Moopic",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～ DM25-SD1 いきなりつよいデッキ 技の王道 DM23-SP1 スタートWIN・スーパーデッキ 深淵の邪襲 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DMART-25 神アート アビス、東京に現わる"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2-8A",
+    "name": "環嵐！ホールインワン・ヘラクレス (DM22RP2 8A/20)",
+    "type": "タマシード/クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2-8A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2-8A",
+    "sides": [
+      {
+        "type": "タマシード/クリーチャー",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "12000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ジャイアント・インセクト/ACE",
+        "illustrator": "Norikatsu Miyoshi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM24-EX3 刺激爆発デュエナマイトパック DM24-RP2 王道篇 第2弾 「カイザー・オブ・ハイパードラゴン」 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2-8B",
+    "name": "ボルシャック・バラフィオル (DM22RP2 8B/10)",
+    "type": "タマシード/クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2-8B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2-8B",
+    "sides": [
+      {
+        "type": "タマシード/クリーチャー",
+        "civilization": "火",
+        "rarity": "SR",
+        "power": "9000",
+        "cost": "4",
+        "mana": "1",
+        "race": "アーマード・ドラゴン/ACE",
+        "illustrator": "MATSUMOTO EIGHT",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2-OR1",
+    "name": "轟炎の竜皇 ボルシャック・カイザー (DM22RP2 OR1/OR2)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2-OR1.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2-OR1",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "OR",
+        "power": "5000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アーマード・ドラゴン",
+        "illustrator": "RUI MARUYAMA",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2-OR2",
+    "name": "邪龍 ジャブラッド (DM22RP2 OR2/OR2)",
+    "type": "タマシード/クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2-OR2.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2-OR2",
+    "sides": [
+      {
+        "type": "タマシード/クリーチャー",
+        "civilization": "闇",
+        "rarity": "OR",
+        "power": "9000",
+        "cost": "3",
+        "mana": "1",
+        "race": "アビスドラゴン/ACE",
+        "illustrator": "akagi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-SD1 いきなりつよいデッキ 技の王道 DM24-RP4 王道篇 第4弾 「悪魔神、復活」 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DMART-25 神アート アビス、東京に現わる"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2-S1",
+    "name": "レディゴ・カリゾミダーマ (DM22RP2 S1/S8)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2-S1.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2-S1",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "3500",
+        "cost": "3",
+        "mana": "1",
+        "race": "メカ・デル・ディネロ",
+        "illustrator": "IWAO",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2-S2",
+    "name": "ルベル・ゴルギーニ (DM22RP2 S2/S8)",
+    "type": "タマシード/クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2-S2.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2-S2",
+    "sides": [
+      {
+        "type": "タマシード/クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "16500",
+        "cost": "5",
+        "mana": "1",
+        "race": "メカ・デル・ディネロ/スーパーカー・ドラゴン/ACE",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2-S3",
+    "name": "Eine k’Reine (DM22RP2 S3/S8)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2-S3.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2-S3",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "6000",
+        "cost": "6",
+        "mana": "1",
+        "race": "マジック・スプラッシュ・クイーン",
+        "illustrator": "Mikio Masuda",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2-S4",
+    "name": "Law儿-怪Hawk (DM22RP2 S4/S8)",
+    "type": "タマシード/クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2-S4.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2-S4",
+    "sides": [
+      {
+        "type": "タマシード/クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "8000",
+        "cost": "3",
+        "mana": "1",
+        "race": "マジック・コマンド/ACE",
+        "illustrator": "Futaro",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2-S5",
+    "name": "深淵の壊炉 マーダン=ロウ (DM22RP2 S5/S8)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2-S5.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2-S5",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "Moopic",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～ DM25-SD1 いきなりつよいデッキ 技の王道 DM23-SP1 スタートWIN・スーパーデッキ 深淵の邪襲 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DMART-25 神アート アビス、東京に現わる"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2-S6",
+    "name": "ボルシャック・バラフィオル (DM22RP2 S6/S8)",
+    "type": "タマシード/クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2-S6.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2-S6",
+    "sides": [
+      {
+        "type": "タマシード/クリーチャー",
+        "civilization": "火",
+        "rarity": "SR",
+        "power": "9000",
+        "cost": "4",
+        "mana": "1",
+        "race": "アーマード・ドラゴン/ACE",
+        "illustrator": "KISUKE",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2-S7",
+    "name": "氷駆の妖精 (DM22RP2 S7/S8)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2-S7.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2-S7",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "4000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ジャイアント・スノーフェアリー",
+        "illustrator": "sarmat",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM24-BD5 エキサイティング・デュエパ・デッキ アセビと異世界フェアリーたち DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2-S8",
+    "name": "環嵐！ホールインワン・ヘラクレス (DM22RP2 S8/S8)",
+    "type": "タマシード/クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2-S8.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2-S8",
+    "sides": [
+      {
+        "type": "タマシード/クリーチャー",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "12000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ジャイアント・インセクト/ACE",
+        "illustrator": "Norikatsu Miyoshi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM24-EX3 刺激爆発デュエナマイトパック DM24-RP2 王道篇 第2弾 「カイザー・オブ・ハイパードラゴン」 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2-SP3",
+    "name": "キャンベロ ＜レッゾ.Star＞ (DM22RP2 SP3/SP5)",
+    "type": "スター進化クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2-SP3.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2-SP3",
+    "sides": [
+      {
+        "type": "スター進化クリーチャー",
+        "civilization": "火",
+        "rarity": "SR",
+        "power": "7000",
+        "cost": "5",
+        "mana": "1",
+        "race": "ジョーカーズ/ソニック・コマンド/レクスターズ",
+        "illustrator": "西沢5㍉",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-EX2 王道vs邪道 デュエキングWDreaM 2025 DM22-BD2 開発部セレクションデッキ 「光水火鬼羅.Star」 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DM22-EX1 黄金戦略!!デュエキングMAX 2022 DMRP-19 王来篇拡張パック第3弾 禁断龍VS禁断竜 プロモ限定カード 20期"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2-TR4",
+    "name": "知識の破壊者デストルツィオーネ (DM22RP2 TR4/TR10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2-TR4.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2-TR4",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "17000",
+        "cost": "10",
+        "mana": "1",
+        "race": "デーモン・コマンド",
+        "illustrator": "Kotakan",
+        "abilities": [],
+        "flavor": "クックック、知識だけで何とかなると驕ったな……馬鹿め！ — 知識の破壊者デストルツィオーネ 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DMX-19 スーパーレア100%パック プロモ限定カード 12期"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2-TR5",
+    "name": "暴力類 アバレマックス (DM22RP2 TR5/TR10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2-TR5.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2-TR5",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "6000",
+        "cost": "6",
+        "mana": "1",
+        "race": "ジュラシック・コマンド・ドラゴン",
+        "illustrator": "Tonbi Aburaya",
+        "abilities": [],
+        "flavor": "ジュラシック・コマンド・ドラゴンは、力を求め、力に溺れる。 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DMR-21 革命ファイナル 拡張パック第１章 ハムカツ団とドギラゴン剣"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2-TR6",
+    "name": "超次元の王家 (DM22RP2 TR6/TR10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2-TR6.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2-TR6",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/火",
+        "rarity": "SR",
+        "power": "6000",
+        "cost": "4",
+        "mana": "1",
+        "race": "エイリアン/ハンター/キング・コマンド",
+        "illustrator": "HIRO”WO”NORI",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX4 エピソード4 パンドラ・ウォーズ DM25-EX2 王道vs邪道 デュエキングWDreaM 2025 DM22-BD2 開発部セレクションデッキ 「光水火鬼羅.Star」 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DMEX-18 20周年超感謝メモリアルパック 裏の章 パラレル･マスターズ"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2-TR7",
+    "name": "流星のガイアッシュ・カイザー (DM22RP2 TR7/TR10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2-TR7.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2-TR7",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/自然",
+        "rarity": "SR",
+        "power": "8000",
+        "cost": "6",
+        "mana": "1",
+        "race": "ブルー・コマンド・ドラゴン/グリーン・コマンド・ドラゴン/ハンター",
+        "illustrator": "Daisuke Izuka",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX3 キャラプレミアムパック ドラゴン娘になりたくないっ！ 文化祭だョ！全員集合!!ドラ娘100％パック DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-EX2 王道vs邪道 デュエキングWDreaM 2025 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～ DM24-EX1 超感謝祭 ファンタジーBEST DM23-BD1 レジェンドスーパーデッキ 禁王創来 DM23-EX1 大感謝祭 ビクトリーBEST DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DM22-RP1 ゴッド・オブ・アビス 第１弾「伝説の邪神」 DMEX-17 20周年超感謝メモリアルパック 究極の章 デュエキングMAX DMART-18 神アート 超獣世界の歩き方 ～アセビ見聞録～ DMART-05 神アート 五人祭でドラゴン♡サマー プロモ限定カード 22期 プロモ限定カード 21期"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2-TR8",
+    "name": "ドマンモ龍樹 (DM22RP2 TR8/TR10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2-TR8.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2-TR8",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇/自然",
+        "rarity": "SR",
+        "power": "12000",
+        "cost": "7",
+        "mana": "1",
+        "race": "ジャイアント・ドラゴン/不死樹王国",
+        "illustrator": "SENNSU",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DMEX-10 W王国ドッキングパック 鬼札王国＆不死樹王国"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-001",
+    "name": "真実の精霊ヴァルペキュラ (DM22RP2X 1/8)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-001.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-001",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "VR",
+        "power": "15000",
+        "cost": "8",
+        "mana": "1",
+        "race": "エンジェル・コマンド",
+        "illustrator": "neko61",
+        "abilities": [],
+        "flavor": "ディネロの裏で、真実の歴史を求める天使たちが居た。 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-001X",
+    "name": "真実の精霊ヴァルペキュラ (DM22RP2X 1X/8)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-001X.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-001X",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "VR",
+        "power": "15000",
+        "cost": "8",
+        "mana": "1",
+        "race": "エンジェル・コマンド",
+        "illustrator": "neko61",
+        "abilities": [],
+        "flavor": "天門から現れる一団は、叡智の名の下に真実を追求する。 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-002",
+    "name": "アカシック・ヴィジョン (DM22RP2X 2/8)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-002.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-002",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "水",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "4",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Yuukoo009",
+        "abilities": [],
+        "flavor": "アカシック・レコードには、超獣世界の歴史の全てが記録されている。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-002X",
+    "name": "アカシック・ヴィジョン (DM22RP2X 2X/8)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-002X.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-002X",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "水",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "4",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Yuukoo009",
+        "abilities": [],
+        "flavor": "アカシック・レコードに強制的にアクセスさせられたアカシック・タレスは、そこに記録された滅亡の日を避けることを誓った。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-003",
+    "name": "悪縁 ガクブッチ＝リッチーモア (DM22RP2X 3/8)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-003.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-003",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "VR",
+        "power": "7000",
+        "cost": "6",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "MISAWA_K",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-BD2 開発部セレクションデッキ 「火闇邪王門」 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-003X",
+    "name": "悪縁 ガクブッチ＝リッチーモア (DM22RP2X 3X/8)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-003X.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-003X",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "VR",
+        "power": "7000",
+        "cost": "6",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "MISAWA_K",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-BD2 開発部セレクションデッキ 「火闇邪王門」 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-004",
+    "name": "死神覇王 XENARCH (DM22RP2X 4/8)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-004.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-004",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "VR",
+        "power": "6000",
+        "cost": "5",
+        "mana": "1",
+        "race": "デーモン・コマンド/ダークロード",
+        "illustrator": "Takaaki Sato",
+        "abilities": [],
+        "flavor": "死神、それは覇王の名のもとに動く不死の軍団。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-004X",
+    "name": "死神覇王 XENARCH (DM22RP2X 4X/8)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-004X.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-004X",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "VR",
+        "power": "6000",
+        "cost": "5",
+        "mana": "1",
+        "race": "デーモン・コマンド/ダークロード",
+        "illustrator": "Takaaki Sato",
+        "abilities": [],
+        "flavor": "闇文明の象徴、それは覇王ブラックモナーク。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-005",
+    "name": "ボルシャック・クリスド (DM22RP2X 5/8)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-005.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-005",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "VR",
+        "power": "5000",
+        "cost": "6",
+        "mana": "1",
+        "race": "アーマード・ドラゴン",
+        "illustrator": "Norikatsu Miyoshi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-005X",
+    "name": "ボルシャック・クリスド (DM22RP2X 5X/8)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-005X.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-005X",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "VR",
+        "power": "5000",
+        "cost": "6",
+        "mana": "1",
+        "race": "アーマード・ドラゴン",
+        "illustrator": "Norikatsu Miyoshi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-006",
+    "name": "NEXの手甲 (DM22RP2X 6/8)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-006.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-006",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "火",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "hatapug",
+        "abilities": [],
+        "flavor": "その拳の大きさが、ボルシャック一族の存在の証。 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-006X",
+    "name": "NEXの手甲 (DM22RP2X 6X/8)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-006X.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-006X",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "火",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "hatapug",
+        "abilities": [],
+        "flavor": "ドラゴンとバードの友情の象徴。 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-007",
+    "name": "あるまじきモンジロー (DM22RP2X 7/8)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-007.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-007",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "VR",
+        "power": "7000",
+        "cost": "5",
+        "mana": "1",
+        "race": "ドリームメイト",
+        "illustrator": "nablange",
+        "abilities": [],
+        "flavor": "「剛流振」を極めし者は、大量のチアガールを伴って登場する。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-007X",
+    "name": "あるまじきモンジロー (DM22RP2X 7X/8)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-007X.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-007X",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "VR",
+        "power": "7000",
+        "cost": "5",
+        "mana": "1",
+        "race": "ドリームメイト",
+        "illustrator": "nablange",
+        "abilities": [],
+        "flavor": "「剛流振」を極めし者、それはあらゆる競技を極めし者。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-008",
+    "name": "熱線と照射の決断 (DM22RP2X 8/8)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-008.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-008",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光/火",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "KISUKE",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-008X",
+    "name": "熱線と照射の決断 (DM22RP2X 8X/8)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-008X.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-008X",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光/火",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "KISUKE",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-009",
+    "name": "チゼンテーナ-R10 (DM22RP2X 9/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-009.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-009",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "R",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "メカ・デル・ディネロ",
+        "illustrator": "Murakami Hisashi",
+        "abilities": [],
+        "flavor": "ルベル・ゴルギーニは深淵の入り口へと向かう途中、火文明に向けて「カイザーが独りでジャシンと戦おうとしている！我こそはという戦士は加勢するのだ!!」という内容の放送を何度も繰り返し発信していたのだ。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-010",
+    "name": "ウルトラクイック・マホガニーハンドル (DM22RP2X 10/74)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-010.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-010",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "光",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "4",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Tanru",
+        "abilities": [],
+        "flavor": "ルベル・ゴルギーニはエンジンだけでなく内装も強化した。まるで天使の羽根のような軽さで最高の曲がり具合を保証する、ウルトラクイック・マホガニーハンドルは1000万ディネロ。 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-011",
+    "name": "閃光呪文「スパーク」 (DM22RP2X 11/74)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-011.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-011",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Miyamoto Satoru",
+        "abilities": [],
+        "flavor": "撃！これぞ貴き聖気による閃光の呪文なり!! 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-012",
+    "name": "ルナ・ゲリラライブ (DM22RP2X 12/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-012.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-012",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "R",
+        "power": "6000",
+        "cost": "7",
+        "mana": "1",
+        "race": "マジック・サイバー・ムーン",
+        "illustrator": "KOUSAKU",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-013",
+    "name": "マサオカ・ドラムハイカー (DM22RP2X 13/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-013.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-013",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "R",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "マジック・マーフォーク",
+        "illustrator": "KOUSAKU",
+        "abilities": [],
+        "flavor": "決まったぁーっ！マサオカのお家芸、超高速7万BPMのハイク詠唱が炸裂だぁーっ！……誰も聞き取れないっ!! — Uta-Awase-Fes.生放送アーカイブより 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-014",
+    "name": "電脳呪文「ブレイン」 (DM22RP2X 14/74)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-014.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-014",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Tutui Misa",
+        "abilities": [],
+        "flavor": "算！これぞ素早き演算による電脳の呪文なり!! 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 プロモ限定カード 21期"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-015",
+    "name": "セリヴィエット＝エリー (DM22RP2X 15/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-015.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-015",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "R",
+        "power": "2000",
+        "cost": "3",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "Ittoku",
+        "abilities": [],
+        "flavor": "戦いを終えたジャシンは、次の標的である自然文明へと向かっていったのだった……。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-016",
+    "name": "ブルーム＝プルーフ (DM22RP2X 16/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-016.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-016",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "R",
+        "power": "3000",
+        "cost": "2",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "Tanaka Kenichi",
+        "abilities": [],
+        "flavor": "名乗りを上げたボルシャック・カイザーの身体が太陽よりも赤く染まっていく。それは全身に炎の闘気が充溢している証。やがて力を解放し終えたボルシャックの一撃が、ジャブラッドの身体を砕く！……だがバラバラになったジャブラッドの身体の破片はやがて集まっていき、そして気づけば全く無傷のままの姿で再びカイザーの前に立っていたのだった!! 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-SD1 いきなりつよいデッキ 技の王道 DM23-SP1 スタートWIN・スーパーデッキ 深淵の邪襲 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 プロモ限定カード 22期"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-017",
+    "name": "堕獄呪文「ハンド」 (DM22RP2X 17/74)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-017.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-017",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "6",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "ikeda_cpt",
+        "abilities": [],
+        "flavor": "握！これぞ恐ろしき死霊による堕獄の呪文なり!! 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-018",
+    "name": "招龍邪技 (DM22RP2X 18/74)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-018.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-018",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "MATSUMOTO EIGHT",
+        "abilities": [],
+        "flavor": "ジャシンによって深淵から呼び出されたジャブラッドは暴竜爵に向け、開口一番に産声代わりの深淵の波動を放った。暴竜爵も即座に轟炎を吐いて応え、波動と轟炎とが激突する。その衝撃によって大地はカルデラのごとく抉られ、空も見えないほど厚く広がっていた雲は衝撃を中心に台風の目のごとく円形に吹き飛ばされた。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-BD7 エキサイティング・デュエパ・デッキ 「ネゴシエートの偽衒学者」 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-019",
+    "name": "コッコ・武・ルピア (DM22RP2X 19/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-019.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-019",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "R",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "アーマード・ファイアー・バード",
+        "illustrator": "sarmat",
+        "abilities": [],
+        "flavor": "暴竜爵様が名乗りを上げる……それはつまり、これから本気を出すぞってことなんだッピ！ — コッコ・武・ルピア 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM24-EX1 超感謝祭 ファンタジーBEST DM23-BD2 開発部セレクションデッキ 「火闇邪王門」 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-020",
+    "name": "チッタ・ペロルの冠 (DM22RP2X 20/74)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-020.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-020",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "火",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "salsoba",
+        "abilities": [],
+        "flavor": "身に着けていると、他の誰にも見えない勝利への道が見えるようになるという。 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 プロモ限定カード 21期"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-021",
+    "name": "粉砕呪文「スクラッパー」 (DM22RP2X 21/74)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-021.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-021",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "火",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "6",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "neko61",
+        "abilities": [],
+        "flavor": "圧！これぞ万力の機械による粉砕の呪文なり!! 商品情報 同名カードが含まれる商品を表示 DM22-SP2 「轟炎の竜皇」暴竜爵からの招待状 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-022",
+    "name": "回板の化身 (DM22RP2X 22/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-022.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-022",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "R",
+        "power": "6000",
+        "cost": "6",
+        "mana": "1",
+        "race": "ミステリー・トーテム",
+        "illustrator": "Kare",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-023",
+    "name": "試練の大地ダン・ティラン (DM22RP2X 23/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-023.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-023",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "R",
+        "power": "5000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ガイア・コマンド",
+        "illustrator": "nurikabe",
+        "abilities": [],
+        "flavor": "「剛流振」最終試験、第18のドラゴンのコースでOBを出してしまうと、待ち構えていたダン・ティランに襲われてしまう。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-024",
+    "name": "眼鏡の頑強者 (DM22RP2X 24/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-024.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-024",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "R",
+        "power": "3000",
+        "cost": "2",
+        "mana": "1",
+        "race": "ビーストフォーク",
+        "illustrator": "Kemonomichi",
+        "abilities": [],
+        "flavor": "さすがにホールインワン・ヘラクレスのコースはホールインワンを狙いたいところなんじゃが、さて、ワシはメガネをどこにやったかのう……。 — 眼鏡の頑強者 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-025",
+    "name": "野生呪文「トラップ」 (DM22RP2X 25/74)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-025.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-025",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "自然",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "6",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "kou1",
+        "abilities": [],
+        "flavor": "縛！これぞ植物の迷宮による野生の呪文なり!! 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-026",
+    "name": "真価と代価のチェスト (DM22RP2X 26/74)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-026.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-026",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "光/闇",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Moopic",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-027",
+    "name": "利則の求道者シャ・イロック (DM22RP2X 27/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-027.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-027",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "U",
+        "power": "6500",
+        "cost": "6",
+        "mana": "1",
+        "race": "メカサンダー",
+        "illustrator": "Tanru",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-028",
+    "name": "奇石 エルバ (DM22RP2X 28/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-028.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-028",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "U",
+        "power": "4500",
+        "cost": "4",
+        "mana": "1",
+        "race": "メタリカ",
+        "illustrator": "kou1",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-029",
+    "name": "ケニグワイト-C1 (DM22RP2X 29/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-029.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-029",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "U",
+        "power": "3500",
+        "cost": "3",
+        "mana": "1",
+        "race": "メカ・デル・ディネロ",
+        "illustrator": "neko61",
+        "abilities": [],
+        "flavor": "ルベル・ゴルギーニとの二人がかりでも倒せない……ジャブラッドが放った極大の深淵の波動にボルシャック・カイザーが押しきられそうになったその時、ルベルが叫んだ。「カイザー、安心しな！助けに来たのはどうやらオレだけじゃないぜ!!」 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-030",
+    "name": "星姫械 デネビア (DM22RP2X 30/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-030.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-030",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "U",
+        "power": "2000",
+        "cost": "2",
+        "mana": "1",
+        "race": "メカ・デル・ステラ",
+        "illustrator": "Yuukoo009",
+        "abilities": [],
+        "flavor": "我々は、光の器となる方々をお守りするべき定め……。 — 星姫械 デネビア 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-031",
+    "name": "ネオマッハ・ダイヤエンジン (DM22RP2X 31/74)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-031.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-031",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "光",
+        "rarity": "U",
+        "power": "コスト",
+        "cost": "4",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "500siki",
+        "abilities": [],
+        "flavor": "ルベル・ゴルギーニは深淵の入り口に向かう前に、私財をなげうって各パーツの強化を図った。史上最高の馬力と絶対に壊れない頑丈さとを兼ね備えた、ネオマッハ・ダイヤエンジンは500万ディネロ。 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-032",
+    "name": "ディグル (DM22RP2X 32/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-032.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-032",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "U",
+        "power": "5000",
+        "cost": "4",
+        "mana": "1",
+        "race": "マジック・サイバーロード",
+        "illustrator": "D-suzuki",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-033",
+    "name": "AQcess (DM22RP2X 33/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-033.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-033",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "U",
+        "power": "4000",
+        "cost": "3",
+        "mana": "1",
+        "race": "マジック・リキッド・ピープル",
+        "illustrator": "Katora",
+        "abilities": [],
+        "flavor": "Drache der’Zenのハイクを聞いたEine k’Reineが舞台に乱入したことで、Drache der’Zenとの即興セッションハイクが始まった。「二人はもう ここからずっと エターナル」……二人のハイクにAQcessが感動的な旋律を添えると、観客たちは割れんばかりの拍手とアンコールで応えたのだった。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-034",
+    "name": "竪琴魚 (DM22RP2X 34/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-034.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-034",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "U",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "マジック・フィッシュ",
+        "illustrator": "Tobimaru Konatsu",
+        "abilities": [],
+        "flavor": "Eine k’Reineは昔、Drache der’Zenと伝説のハイク・バンド「壱百年Wish」を組んでいたのよ。けどハイク性の違いで解散となり、それからDrache der’Zenは独りでハイクの道を突き進むようになった。Eine k’Reineはきっとそんな強い姿を見て、羨ましいと思うようになったんでしょうね。 — 竪琴魚 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-035",
+    "name": "生きる墨・サイバー硯 電気式 (DM22RP2X 35/74)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-035.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-035",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "水",
+        "rarity": "U",
+        "power": "コスト",
+        "cost": "4",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Tutui Misa",
+        "abilities": [],
+        "flavor": "誰知らぬ 古代の技術 アカシック — 詠み人知らず 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-036",
+    "name": "どこまでも声乗るマイク（ライブ用） (DM22RP2X 36/74)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-036.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-036",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "水",
+        "rarity": "U",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "500siki",
+        "abilities": [],
+        "flavor": "アゲアゲの Uta-Awase-Fes. みんな来い — Uta-Awase-Fes.のキャッチコピー 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-037",
+    "name": "ベッドウ＝ロウ (DM22RP2X 37/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-037.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-037",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "U",
+        "power": "14000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "jintetsu",
+        "abilities": [],
+        "flavor": "仲間の思いで真の力を引き出したボルシャック・カイザーが、ついにジャブラッドを地面に組み伏せる。「仲間こそがボルシャックの強さの源！終わりだ。まがいものの龍よ」そしてカイザーの目にも止まらぬ拳の連撃がジャブラッドの身体を叩き、割り、貫き、そうしてついには二度と再生できぬよう粉々に磨り潰したのだった。 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 プロモ限定カード 21期"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-038",
+    "name": "ソー＝ゾー (DM22RP2X 38/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-038.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-038",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "U",
+        "power": "6000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "douzen",
+        "abilities": [],
+        "flavor": "ジャシンは暴竜爵の激しい拳打のラッシュを受けながらも、その身体を隅々まで観察していた。そして観察を終えたジャシンはおもむろに右手を深淵へと突っ込むと、左手で大気中の魔力を凄まじい勢いで吸い上げていった……。 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-039",
+    "name": "ゴブレット＝ブレゴ (DM22RP2X 39/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-039.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-039",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "U",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "Nottsuo",
+        "abilities": [],
+        "flavor": "ジャシンに魔力を吸われた周囲の草木は枯れ、周辺の海は海岸線に沿って干上がり、空は暗雲で埋め尽くされた。そしてジャシンが深淵から右手で取り出したのは……禍々しい邪気を放つ龍だった。それは深淵の中のあらゆる負なるものと邪なるものを凝縮し血液とした、ジャシンが生み出した暴竜爵の似姿……その名も、邪龍 ジャブラッド！ 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-040",
+    "name": "深淵の手紙 (DM22RP2X 40/74)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-040.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-040",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "闇",
+        "rarity": "U",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "Katora",
+        "abilities": [],
+        "flavor": "深淵の誘惑からは逃れられない。 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-041",
+    "name": "ボルシャック・メカ・ドラゴン (DM22RP2X 41/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-041.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-041",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "U",
+        "power": "9000",
+        "cost": "7",
+        "mana": "1",
+        "race": "アーマード・ドラゴン",
+        "illustrator": "Shishizaru",
+        "abilities": [],
+        "flavor": "ジャブラッドの深淵の波動をかろうじて相殺したものの、暴竜爵は思った……この邪龍は自分と互角以上の強さを持っている、と。ゆえに決意する。名乗りを上げることで、真の力を解き放つことを！ 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-SP2 「轟炎の竜皇」暴竜爵からの招待状 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-042",
+    "name": "ボルシャック・ローレン・ドラゴン (DM22RP2X 42/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-042.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-042",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "U",
+        "power": "9000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アーマード・ドラゴン",
+        "illustrator": "KIYA",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-SD1 スタートWINデッキ 竜軍・オブ・ボルシャック DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 プロモ限定カード 21期"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-043",
+    "name": "クミタテ・チュリス (DM22RP2X 43/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-043.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-043",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "U",
+        "power": "1000",
+        "cost": "1",
+        "mana": "1",
+        "race": "ビートジョッキー",
+        "illustrator": "HIRO”WO”NORI",
+        "abilities": [],
+        "flavor": "この戦車、なんだかすごい\"ギーク\"って感じッス！ — クミタテ・チュリス 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM24-SD1 いきなりつよいデッキ 攻めの王道 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-044",
+    "name": "ブルレイザーのハサミ (DM22RP2X 44/74)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-044.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-044",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "火",
+        "rarity": "U",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "tessy",
+        "abilities": [],
+        "flavor": "仲間たちの声を聞き、ボルシャック・カイザーは身体に力がみなぎるのを感じた。守るべき民。先人たちが積み重ねた火文明の歴史。暴竜爵としての務め。様々な思いがカイザーの脳裏によぎり……そして、爆発した。血液は煮えたぎり、筋肉ははちきれんばかりに肥大化する。噛み締めた奥歯は火花を散らし、渾身の力で轟炎を放つ。その轟炎は極大の深淵の波動を少しずつ押し返していった。 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-045",
+    "name": "冷好の妖精 (DM22RP2X 45/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-045.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-045",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "U",
+        "power": "3000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ジャイアント・スノーフェアリー",
+        "illustrator": "kawasumi",
+        "abilities": [],
+        "flavor": "自然文明にジャシンが攻めてくるんだって！早く首領に知らせなくちゃ!! — 冷好の妖精 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-046",
+    "name": "式神オーダーメイド (DM22RP2X 46/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-046.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-046",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "U",
+        "power": "2000",
+        "cost": "2",
+        "mana": "1",
+        "race": "ワンダー・トリック",
+        "illustrator": "Kare",
+        "abilities": [],
+        "flavor": "回転を極めるには、それぞれに合わせた最適なドライバーが必要になる。ゆえにドライバー職人は重宝され、なかでも式神オーダーメイドが作るものは一級品とされている。 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-047",
+    "name": "推進型無重力ジャイロボール (DM22RP2X 47/74)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-047.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-047",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "自然",
+        "rarity": "U",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "MATSUMOTO EIGHT",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-048",
+    "name": "空間型無限収納ストラトバッグ (DM22RP2X 48/74)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-048.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-048",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "自然",
+        "rarity": "U",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Tobimaru Konatsu",
+        "abilities": [],
+        "flavor": "自然文明の住民たちは「剛流振」に必要な道具の開発に余念がなく、最近の流行はどれだけ多くの物を入れても壊れることのない最優のバッグだという。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM24-BD5 エキサイティング・デュエパ・デッキ アセビと異世界フェアリーたち DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-049",
+    "name": "イデア・パラドックス (DM22RP2X 49/74)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-049.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-049",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "水/火",
+        "rarity": "U",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "MITSUAKI MATSUMOTO",
+        "abilities": [],
+        "flavor": "イデアは、認識した時にはすでにイデアではない。だが、認識しようとし続けることが大事なのだ。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-050",
+    "name": "霊魂と怨念のドライバー (DM22RP2X 50/74)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-050.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-050",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "闇/自然",
+        "rarity": "U",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "IWAO",
+        "abilities": [],
+        "flavor": "打てば魂まで響き、叩けば魂すら刈り取る。このSoulこそが、回転と漆黒のショット。 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-051",
+    "name": "光器デュアリ・スタンド (DM22RP2X 51/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-051.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-051",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "C",
+        "power": "5000",
+        "cost": "4",
+        "mana": "1",
+        "race": "メカ・デル・ソル",
+        "illustrator": "KISUKE",
+        "abilities": [],
+        "flavor": "無限に再生するジャブラッドに対し、本気を出したボルシャック・カイザーでさえもダメージを与えられず、次第に追い詰められていく。そして矢継ぎ早に放たれた深淵の波動をカイザーが轟炎で打ち消しきれず、押しきられそうになった時……流星と見まごうばかりの紅色の光跡が、両者の間に割って入った！「助けに来たぞ、カイザー！」ドラン・ゴルギーニの兄、ルベル・ゴルギーニだ！ 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-052",
+    "name": "眺望の守護者 アル・ブ・ダビ (DM22RP2X 52/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-052.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-052",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "C",
+        "power": "5500",
+        "cost": "3",
+        "mana": "1",
+        "race": "ガーディアン",
+        "illustrator": "Ishibashi Yosuke",
+        "abilities": [],
+        "flavor": "我らがルベル・ゴルギーニ様が、暴竜爵と二人で力を合わせてジャシンが生み出した邪龍 ジャブラッドと戦うだと!? 一体どうなってしまうんだ……。 — 眺望の守護者 アル・ブ・ダビ 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-053",
+    "name": "ゼヴォカート-M2 (DM22RP2X 53/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-053.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-053",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "C",
+        "power": "2500",
+        "cost": "2",
+        "mana": "1",
+        "race": "メカ・デル・ディネロ",
+        "illustrator": "KOUSAKU",
+        "abilities": [],
+        "flavor": "ボルシャック・カイザーを助けに現れたルベル・ゴルギーニは高速の体当たりでジャブラッドに衝突すると、さらに千切れたジャブラッドの身体の一部を遠くに運んで再生を防ごうとする。だが、ジャブラッドは構わず深淵の波動に深淵の波動を重ね合わせ、極大の波動をカイザーに向けて放つのだった。 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-054",
+    "name": "轟龍のギフト (DM22RP2X 54/74)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-054.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-054",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "光",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "hati",
+        "abilities": [],
+        "flavor": "富を豪快に築く者……富豪龍と呼ばれるドラン・ゴルギーニに対し、ルベル・ゴルギーニは富を使うさまを世に轟かせる者……富轟龍と呼ばれている。 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 プロモ限定カード 21期"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-055",
+    "name": "レバレッジ・ドリフト (DM22RP2X 55/74)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-055.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-055",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "1",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "tetrapod",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-056",
+    "name": "コバヤシ・ジアマリン (DM22RP2X 56/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-056.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-056",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "C",
+        "power": "1000",
+        "cost": "3",
+        "mana": "1",
+        "race": "マジック・マーフォーク",
+        "illustrator": "Itadakumike",
+        "abilities": [],
+        "flavor": "ジャシン復活に対する不安を吹き飛ばすべく、水文明ではついにUta-Awase-Fes.が開催となった。まずはコバヤシ・ジアマリンが熟達のハイクで観客を沸かす。そしてそれに続くのは、優勝候補のDrache der’Zenだ。 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-057",
+    "name": "透明な工作員 コジェリ (DM22RP2X 57/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-057.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-057",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "C",
+        "power": "2000",
+        "cost": "2",
+        "mana": "1",
+        "race": "ムートピア",
+        "illustrator": "kawaryu",
+        "abilities": [],
+        "flavor": "マネージャーのコジェリとともに舞台袖で出番を待つEine k’Reineの耳に飛び込んできたのは、Drache der’Zenのハイクだった。「なぜ離れ どこへ行くのか 君は今」……その瞬間様々な思いが去来し、気づけばまなじりから一筋の涙がこぼれていたのだった。 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-058",
+    "name": "粋歌のギフト (DM22RP2X 58/74)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-058.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-058",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "水",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Miyamoto Satoru",
+        "abilities": [],
+        "flavor": "いよいよDrache der’Zenの出番がやってきた。お気に入りのピックがギターの弦を弾き、積年の思いが込められたハイクが紡がれる。それは友に捧げる歌だった。「なぜ離れ どこへ行くのか 君は今」。魂の慟哭は、聴く者すべての心を揺さぶった。 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-059",
+    "name": "♪冬深き 隣は何も せぬ人ぞ (DM22RP2X 59/74)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-059.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-059",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "マジック・ソング",
+        "illustrator": "Tobimaru Konatsu",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-060",
+    "name": "黒天の影オミナス・ウインド (DM22RP2X 60/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-060.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-060",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ゴースト",
+        "illustrator": "otumami",
+        "abilities": [],
+        "flavor": "その影は不吉を連れてくる。その風は憂鬱を連れてくる。 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-061",
+    "name": "ディッシュ＝ウィッシュ (DM22RP2X 61/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-061.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-061",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "5000",
+        "cost": "2",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "douzen",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 プロモ限定カード 21期"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-062",
+    "name": "シル＝シャルロット (DM22RP2X 62/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-062.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-062",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "2000",
+        "cost": "2",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "Katora",
+        "abilities": [],
+        "flavor": "深淵の入り口へとたどり着いた暴竜爵は、ついにジャシンと対峙する。そして不敵に佇むジャシンに対し、暴竜爵はいきなり距離を詰めると、ボルシャックの魂である拳をジャシンの頬に叩きこむ！だが、ジャシンの身体には傷一つ付けることができないのだった……。 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 プロモ限定カード 21期"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-063",
+    "name": "覇王のギフト (DM22RP2X 63/74)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-063.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-063",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "otumami",
+        "abilities": [],
+        "flavor": "ジャシンの復活をいち早く察知していたのは、XENARCHをはじめとする闇文明の後継者を自称する漆黒の一団たちだった。彼らは深淵に乗り込みその力を密かに我が物にしようとしたが、ことごとくジャシンに敗れてしまい、その時の戦いが引き金となって起こった大変動が、他の文明にもジャシンの復活を知らせるきっかけとなってしまったのだった。 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-064",
+    "name": "スケルトン・デバイス (DM22RP2X 64/74)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-064.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-064",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Miyamoto Satoru",
+        "abilities": [],
+        "flavor": "血と肉と魂を差し出して、死者の怨念を呼び起こす儀式。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-065",
+    "name": "フィーアカノン・ワイバーン (DM22RP2X 65/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-065.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-065",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "C",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "アーマード・ワイバーン",
+        "illustrator": "tessy",
+        "abilities": [],
+        "flavor": "ルベル・ゴルギーニの言葉を聞いてボルシャック・カイザーが周りを見渡すと、四方から近づいてくるいくつもの声が聞こえた。「暴竜爵、頑張ってください！」「我々もすぐに加勢します!!」「偽物のドラゴンなんかに負けないで！」それはジャシンを倒すために駆けつけた、火文明の戦士たちだった。 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-066",
+    "name": "ドライザウルス (DM22RP2X 66/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-066.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-066",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "C",
+        "power": "4000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ロック・ビースト",
+        "illustrator": "KIYA",
+        "abilities": [],
+        "flavor": "ジャブラッドを倒したボルシャック・カイザーは、続けて身体に120%の炎をみなぎらせた状態でジャシンに突進する。だが、ジャシンは衝撃波を放って邪魔者を吹き飛ばしにかかる！カイザーは回避しようとするが、後方にはカイザーを尊敬するルピアたちがいた。思わずルピアを庇うため衝撃波の直撃を受けるカイザー。しかしそのダメージで動けない隙にカイザーの身体はジャシンに貫かれてしまい、カイザーの身体を覆っていた炎は段々と燻っていくと、やがて消えてしまったのだった……。 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-067",
+    "name": "トット・銃・ピッチ (DM22RP2X 67/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-067.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-067",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "C",
+        "power": "1000",
+        "cost": "2",
+        "mana": "1",
+        "race": "アーマード・ファイアー・バード",
+        "illustrator": "Shishizaru",
+        "abilities": [],
+        "flavor": "ドラゴンの持つ強さに憧れ、自ら武装するファイアー・バードも存在した。 商品情報 同名カードが含まれる商品を表示 DM22-SP2 「轟炎の竜皇」暴竜爵からの招待状 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-068",
+    "name": "暴竜のギフト (DM22RP2X 68/74)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-068.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-068",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "火",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "tessy",
+        "abilities": [],
+        "flavor": "聞け、ものどもよ！我こそは全ての理不尽なるものへの怒りを薪にくべ、骨まで焼き尽くす暴嵐の轟火をその身に従える竜皇……我が名は轟炎の竜皇、ボルシャック・カイザーなり！ — 轟炎の竜皇 ボルシャック・カイザー 商品情報 同名カードが含まれる商品を表示 DM22-SP2 「轟炎の竜皇」暴竜爵からの招待状 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-069",
+    "name": "暴竜要塞フジヤマ・ホールド (DM22RP2X 69/74)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-069.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-069",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "火",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Shishizaru",
+        "abilities": [],
+        "flavor": "拠点の一つであるフジヤマ・ホールドに戻ってきた暴竜爵は、盟友ドラン・ゴルギーニがジャシンに敗れたとの知らせを受けて、すぐさま深淵の入り口へと単身猛スピードで直行するのだった。 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-070",
+    "name": "きりんご (DM22RP2X 70/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-070.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-070",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "C",
+        "power": "9000",
+        "cost": "5",
+        "mana": "1",
+        "race": "グランセクト",
+        "illustrator": "Kemonomichi",
+        "abilities": [],
+        "flavor": "「剛流振」最終試験、第１のドラゴンのコースに挑戦したきりんごたち。だが暴れるドラゴンの背でまともにドライバーを振ることができず、それどころか他の参加者たちに片っ端から皮を剥かれてしまい、あえなくリタイアとなってしまった。 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-071",
+    "name": "ポッピン・マメスレー (DM22RP2X 71/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-071.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-071",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "C",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ワイルド・ベジーズ",
+        "illustrator": "Tutui Misa",
+        "abilities": [],
+        "flavor": "「剛流振」最終試験、第10のドラゴンのコースに挑戦したマメスレーたち。だが、あまりに複雑にうねった難解すぎるコースすぎてOBを連発してしまい規定打数の100打を超過、やってられるかと試験を諦めて帰宅するのだった。そう、そのドラゴンの名はオービーメイカー。 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-072",
+    "name": "雪花の妖精 (DM22RP2X 72/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-072.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-072",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "C",
+        "power": "2000",
+        "cost": "2",
+        "mana": "1",
+        "race": "ジャイアント・スノーフェアリー",
+        "illustrator": "Miyamoto Satoru",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-073",
+    "name": "首領のギフト (DM22RP2X 73/74)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-073.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-073",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "自然",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Muna-Ge",
+        "abilities": [],
+        "flavor": "自然文明では「剛流振」を最も極めた者が首領を名乗っており、その周りにいる者たちは彼に尽くすことを無上の喜びとしているのだ。 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-074",
+    "name": "ブレスユー・トラップ (DM22RP2X 74/74)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-074.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-074",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "自然",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Tutui Misa",
+        "abilities": [],
+        "flavor": "「剛流振」を修めた者を認定するための最終試験に2000人以上の猛者たちが集った。回転の力によって互いを妨害しながら18のドラゴンの背のコースすべてを回ることができたらクリアとなる、突破率0.1%以下の厳しい試練だ。 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-10A",
+    "name": "あるまじきモンジロー (DM22RP2X 10A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-10A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-10A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "VR",
+        "power": "7000",
+        "cost": "5",
+        "mana": "1",
+        "race": "ドリームメイト",
+        "illustrator": "nablange",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-10B",
+    "name": "環嵐！ホールインワン・ヘラクレス (DM22RP2X 10B/10)",
+    "type": "タマシード/クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-10B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-10B",
+    "sides": [
+      {
+        "type": "タマシード/クリーチャー",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "12000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ジャイアント・インセクト/ACE",
+        "illustrator": "Norikatsu Miyoshi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM24-EX3 刺激爆発デュエナマイトパック DM24-RP2 王道篇 第2弾 「カイザー・オブ・ハイパードラゴン」 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-11A",
+    "name": "熱線と照射の決断 (DM22RP2X 11A/20)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-11A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-11A",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光/火",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-12A",
+    "name": "チゼンテーナ-R10 (DM22RP2X 12A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-12A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-12A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "R",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "メカ・デル・ディネロ",
+        "illustrator": "Murakami Hisashi",
+        "abilities": [],
+        "flavor": "メカ・デル・ディネロたちの移動中には無線放送が欠かせない。その放送を発信しているのが、チゼンテーナ-R10だ。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-13A",
+    "name": "セリヴィエット＝エリー (DM22RP2X 13A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-13A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-13A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "R",
+        "power": "2000",
+        "cost": "3",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "Ittoku",
+        "abilities": [],
+        "flavor": "その瞳に魅入られた者が、世界のルールを決める。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-14A",
+    "name": "コッコ・武・ルピア (DM22RP2X 14A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-14A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-14A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "R",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "アーマード・ファイアー・バード",
+        "illustrator": "sarmat",
+        "abilities": [],
+        "flavor": "ドラゴンの進化に追いつくべく身に着けた、ファイアー・バードの新たなる強化形……それがアーマード・ファイアー・バードだ。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM24-EX1 超感謝祭 ファンタジーBEST DM23-BD2 開発部セレクションデッキ 「火闇邪王門」 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-15A",
+    "name": "ソー＝ゾー (DM22RP2X 15A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-15A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-15A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "U",
+        "power": "6000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "douzen",
+        "abilities": [],
+        "flavor": "ゾーは、太く生命力に満ちたものを切り倒すことを好む……深淵の地にそんなものがあるかはわからないが。 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-16A",
+    "name": "クミタテ・チュリス (DM22RP2X 16A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-16A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-16A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "U",
+        "power": "1000",
+        "cost": "1",
+        "mana": "1",
+        "race": "ビートジョッキー",
+        "illustrator": "HIRO”WO”NORI",
+        "abilities": [],
+        "flavor": "休日に模型を組み立てるのがクミタテ・チュリスの楽しみ。だが、それが世界を揺るがす戦略の組み立てにつながっていることをクミタテ・チュリスはまだ知らない。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM24-SD1 いきなりつよいデッキ 攻めの王道 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-17A",
+    "name": "イデア・パラドックス (DM22RP2X 17A/20)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-17A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-17A",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "水/火",
+        "rarity": "U",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "MITSUAKI MATSUMOTO",
+        "abilities": [],
+        "flavor": "同一のイデア・フェニックスから生まれたフェニックス同士が争うのは、視点はひとつではないからだ。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-18A",
+    "name": "ゼヴォカート-M2 (DM22RP2X 18A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-18A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-18A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "C",
+        "power": "2500",
+        "cost": "2",
+        "mana": "1",
+        "race": "メカ・デル・ディネロ",
+        "illustrator": "KOUSAKU",
+        "abilities": [],
+        "flavor": "彼らがショッピングモールを爆走する姿を見ることは難しい……目にもとまらぬ速さで通報されて捕まるからだ。 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-19A",
+    "name": "コバヤシ・ジアマリン (DM22RP2X 19A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-19A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-19A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "C",
+        "power": "1000",
+        "cost": "3",
+        "mana": "1",
+        "race": "マジック・マーフォーク",
+        "illustrator": "Itadakumike",
+        "abilities": [],
+        "flavor": "タマシード 使って戻すと おいしーどと声がでる — コバヤシ・ジアマリン 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-1A",
+    "name": "レディゴ・カリゾミダーマ (DM22RP2X 1A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-1A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-1A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "3500",
+        "cost": "3",
+        "mana": "1",
+        "race": "メカ・デル・ディネロ",
+        "illustrator": "IWAO",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-1B",
+    "name": "轟炎の竜皇 ボルシャック・カイザー (DM22RP2X 1B/10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-1B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-1B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "OR",
+        "power": "5000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アーマード・ドラゴン",
+        "illustrator": "RUI MARUYAMA",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-20A",
+    "name": "ディッシュ＝ウィッシュ (DM22RP2X 20A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-20A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-20A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "5000",
+        "cost": "2",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "douzen",
+        "abilities": [],
+        "flavor": "何もせずおさらばする気などさらさらなくて、さらなる皿をただ重ねる。 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 プロモ限定カード 21期"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-2A",
+    "name": "ルベル・ゴルギーニ (DM22RP2X 2A/20)",
+    "type": "タマシード/クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-2A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-2A",
+    "sides": [
+      {
+        "type": "タマシード/クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "16500",
+        "cost": "5",
+        "mana": "1",
+        "race": "メカ・デル・ディネロ/スーパーカー・ドラゴン/ACE",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-2B",
+    "name": "邪龍 ジャブラッド (DM22RP2X 2B/10)",
+    "type": "タマシード/クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-2B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-2B",
+    "sides": [
+      {
+        "type": "タマシード/クリーチャー",
+        "civilization": "闇",
+        "rarity": "OR",
+        "power": "9000",
+        "cost": "3",
+        "mana": "1",
+        "race": "アビスドラゴン/ACE",
+        "illustrator": "akagi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-SD1 いきなりつよいデッキ 技の王道 DM24-RP4 王道篇 第4弾 「悪魔神、復活」 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DMART-25 神アート アビス、東京に現わる"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-3A",
+    "name": "Eine k’Reine (DM22RP2X 3A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-3A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-3A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "6000",
+        "cost": "6",
+        "mana": "1",
+        "race": "マジック・スプラッシュ・クイーン",
+        "illustrator": "Mikio Masuda",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-3B",
+    "name": "レディゴ・カリゾミダーマ (DM22RP2X 3B/10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-3B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-3B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "3500",
+        "cost": "3",
+        "mana": "1",
+        "race": "メカ・デル・ディネロ",
+        "illustrator": "IWAO",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-4A",
+    "name": "Law儿-怪Hawk (DM22RP2X 4A/20)",
+    "type": "タマシード/クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-4A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-4A",
+    "sides": [
+      {
+        "type": "タマシード/クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "8000",
+        "cost": "3",
+        "mana": "1",
+        "race": "マジック・コマンド/ACE",
+        "illustrator": "Futaro",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-4B",
+    "name": "ルベル・ゴルギーニ (DM22RP2X 4B/10)",
+    "type": "タマシード/クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-4B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-4B",
+    "sides": [
+      {
+        "type": "タマシード/クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "16500",
+        "cost": "5",
+        "mana": "1",
+        "race": "メカ・デル・ディネロ/スーパーカー・ドラゴン/ACE",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-5A",
+    "name": "深淵の壊炉 マーダン=ロウ (DM22RP2X 5A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-5A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-5A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "Moopic",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～ DM25-SD1 いきなりつよいデッキ 技の王道 DM23-SP1 スタートWIN・スーパーデッキ 深淵の邪襲 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DMART-25 神アート アビス、東京に現わる"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-5B",
+    "name": "Eine k’Reine (DM22RP2X 5B/10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-5B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-5B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "6000",
+        "cost": "6",
+        "mana": "1",
+        "race": "マジック・スプラッシュ・クイーン",
+        "illustrator": "Mikio Masuda",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-6A",
+    "name": "ボルシャック・バラフィオル (DM22RP2X 6A/20)",
+    "type": "タマシード/クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-6A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-6A",
+    "sides": [
+      {
+        "type": "タマシード/クリーチャー",
+        "civilization": "火",
+        "rarity": "SR",
+        "power": "9000",
+        "cost": "4",
+        "mana": "1",
+        "race": "アーマード・ドラゴン/ACE",
+        "illustrator": "MATSUMOTO EIGHT",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-6B",
+    "name": "Law儿-怪Hawk (DM22RP2X 6B/10)",
+    "type": "タマシード/クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-6B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-6B",
+    "sides": [
+      {
+        "type": "タマシード/クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "8000",
+        "cost": "3",
+        "mana": "1",
+        "race": "マジック・コマンド/ACE",
+        "illustrator": "Futaro",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-7A",
+    "name": "氷駆の妖精 (DM22RP2X 7A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-7A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-7A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "4000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ジャイアント・スノーフェアリー",
+        "illustrator": "sarmat",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM24-BD5 エキサイティング・デュエパ・デッキ アセビと異世界フェアリーたち DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-7B",
+    "name": "深淵の壊炉 マーダン=ロウ (DM22RP2X 7B/10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-7B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-7B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "Moopic",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～ DM25-SD1 いきなりつよいデッキ 技の王道 DM23-SP1 スタートWIN・スーパーデッキ 深淵の邪襲 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DMART-25 神アート アビス、東京に現わる"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-8A",
+    "name": "環嵐！ホールインワン・ヘラクレス (DM22RP2X 8A/20)",
+    "type": "タマシード/クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-8A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-8A",
+    "sides": [
+      {
+        "type": "タマシード/クリーチャー",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "12000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ジャイアント・インセクト/ACE",
+        "illustrator": "Norikatsu Miyoshi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM24-EX3 刺激爆発デュエナマイトパック DM24-RP2 王道篇 第2弾 「カイザー・オブ・ハイパードラゴン」 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-8B",
+    "name": "ボルシャック・バラフィオル (DM22RP2X 8B/10)",
+    "type": "タマシード/クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-8B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-8B",
+    "sides": [
+      {
+        "type": "タマシード/クリーチャー",
+        "civilization": "火",
+        "rarity": "SR",
+        "power": "9000",
+        "cost": "4",
+        "mana": "1",
+        "race": "アーマード・ドラゴン/ACE",
+        "illustrator": "MATSUMOTO EIGHT",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-9A",
+    "name": "ボルシャック・クリスド (DM22RP2X 9A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-9A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-9A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "VR",
+        "power": "5000",
+        "cost": "6",
+        "mana": "1",
+        "race": "アーマード・ドラゴン",
+        "illustrator": "MATSUMOTO EIGHT",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-9B",
+    "name": "氷駆の妖精 (DM22RP2X 9B/10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-9B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-9B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "4000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ジャイアント・スノーフェアリー",
+        "illustrator": "sarmat",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM24-BD5 エキサイティング・デュエパ・デッキ アセビと異世界フェアリーたち DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-OR1",
+    "name": "轟炎の竜皇 ボルシャック・カイザー (DM22RP2X OR1/OR2)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-OR1.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-OR1",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "OR",
+        "power": "5000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アーマード・ドラゴン",
+        "illustrator": "RUI MARUYAMA",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-OR2",
+    "name": "邪龍 ジャブラッド (DM22RP2X OR2/OR2)",
+    "type": "タマシード/クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-OR2.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-OR2",
+    "sides": [
+      {
+        "type": "タマシード/クリーチャー",
+        "civilization": "闇",
+        "rarity": "OR",
+        "power": "9000",
+        "cost": "3",
+        "mana": "1",
+        "race": "アビスドラゴン/ACE",
+        "illustrator": "akagi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-SD1 いきなりつよいデッキ 技の王道 DM24-RP4 王道篇 第4弾 「悪魔神、復活」 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DMART-25 神アート アビス、東京に現わる"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-S1",
+    "name": "レディゴ・カリゾミダーマ (DM22RP2X S1/S8)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-S1.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-S1",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "3500",
+        "cost": "3",
+        "mana": "1",
+        "race": "メカ・デル・ディネロ",
+        "illustrator": "IWAO",
+        "abilities": [],
+        "flavor": "メカ・デル・ディネロにとって、タイヤの数は自身の地位を示すのに重要なものである。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-S1X",
+    "name": "レディゴ・カリゾミダーマ (DM22RP2X S1X/S8)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-S1X.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-S1X",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "3500",
+        "cost": "3",
+        "mana": "1",
+        "race": "メカ・デル・ディネロ",
+        "illustrator": "IWAO",
+        "abilities": [],
+        "flavor": "タイヤは多ければいいわけでも少なければいいわけでもない。理想の形に近いことがもっとも賞賛される。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-S2",
+    "name": "ルベル・ゴルギーニ (DM22RP2X S2/S8)",
+    "type": "タマシード/クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-S2.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-S2",
+    "sides": [
+      {
+        "type": "タマシード/クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "16500",
+        "cost": "5",
+        "mana": "1",
+        "race": "メカ・デル・ディネロ/スーパーカー・ドラゴン/ACE",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-S2X",
+    "name": "ルベル・ゴルギーニ (DM22RP2X S2X/S8)",
+    "type": "タマシード/クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-S2X.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-S2X",
+    "sides": [
+      {
+        "type": "タマシード/クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "16500",
+        "cost": "5",
+        "mana": "1",
+        "race": "メカ・デル・ディネロ/スーパーカー・ドラゴン/ACE",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-S3",
+    "name": "Eine k’Reine (DM22RP2X S3/S8)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-S3.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-S3",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "6000",
+        "cost": "6",
+        "mana": "1",
+        "race": "マジック・スプラッシュ・クイーン",
+        "illustrator": "Mikio Masuda",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-S3X",
+    "name": "Eine k’Reine (DM22RP2X S3X/S8)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-S3X.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-S3X",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "6000",
+        "cost": "6",
+        "mana": "1",
+        "race": "マジック・スプラッシュ・クイーン",
+        "illustrator": "Mikio Masuda",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-S4",
+    "name": "Law儿-怪Hawk (DM22RP2X S4/S8)",
+    "type": "タマシード/クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-S4.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-S4",
+    "sides": [
+      {
+        "type": "タマシード/クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "8000",
+        "cost": "3",
+        "mana": "1",
+        "race": "マジック・コマンド/ACE",
+        "illustrator": "Futaro",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-S4X",
+    "name": "Law儿-怪Hawk (DM22RP2X S4X/S8)",
+    "type": "タマシード/クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-S4X.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-S4X",
+    "sides": [
+      {
+        "type": "タマシード/クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "8000",
+        "cost": "3",
+        "mana": "1",
+        "race": "マジック・コマンド/ACE",
+        "illustrator": "Futaro",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-S5",
+    "name": "深淵の壊炉 マーダン=ロウ (DM22RP2X S5/S8)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-S5.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-S5",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "Moopic",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～ DM25-SD1 いきなりつよいデッキ 技の王道 DM23-SP1 スタートWIN・スーパーデッキ 深淵の邪襲 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DMART-25 神アート アビス、東京に現わる"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-S5X",
+    "name": "深淵の壊炉 マーダン=ロウ (DM22RP2X S5X/S8)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-S5X.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-S5X",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "Moopic",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～ DM25-SD1 いきなりつよいデッキ 技の王道 DM23-SP1 スタートWIN・スーパーデッキ 深淵の邪襲 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DMART-25 神アート アビス、東京に現わる"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-S6",
+    "name": "ボルシャック・バラフィオル (DM22RP2X S6/S8)",
+    "type": "タマシード/クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-S6.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-S6",
+    "sides": [
+      {
+        "type": "タマシード/クリーチャー",
+        "civilization": "火",
+        "rarity": "SR",
+        "power": "9000",
+        "cost": "4",
+        "mana": "1",
+        "race": "アーマード・ドラゴン/ACE",
+        "illustrator": "KISUKE",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-S6X",
+    "name": "ボルシャック・バラフィオル (DM22RP2X S6X/S8)",
+    "type": "タマシード/クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-S6X.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-S6X",
+    "sides": [
+      {
+        "type": "タマシード/クリーチャー",
+        "civilization": "火",
+        "rarity": "SR",
+        "power": "9000",
+        "cost": "4",
+        "mana": "1",
+        "race": "アーマード・ドラゴン/ACE",
+        "illustrator": "KISUKE",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-S7",
+    "name": "氷駆の妖精 (DM22RP2X S7/S8)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-S7.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-S7",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "4000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ジャイアント・スノーフェアリー",
+        "illustrator": "sarmat",
+        "abilities": [],
+        "flavor": "もぐもぐタイム、突入!! —氷駆の妖精 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM24-BD5 エキサイティング・デュエパ・デッキ アセビと異世界フェアリーたち DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-S7X",
+    "name": "氷駆の妖精 (DM22RP2X S7X/S8)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-S7X.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-S7X",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "4000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ジャイアント・スノーフェアリー",
+        "illustrator": "sarmat",
+        "abilities": [],
+        "flavor": "そだねー。 —氷駆の妖精 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM24-BD5 エキサイティング・デュエパ・デッキ アセビと異世界フェアリーたち DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-S8",
+    "name": "環嵐！ホールインワン・ヘラクレス (DM22RP2X S8/S8)",
+    "type": "タマシード/クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-S8.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-S8",
+    "sides": [
+      {
+        "type": "タマシード/クリーチャー",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "12000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ジャイアント・インセクト/ACE",
+        "illustrator": "Norikatsu Miyoshi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM24-EX3 刺激爆発デュエナマイトパック DM24-RP2 王道篇 第2弾 「カイザー・オブ・ハイパードラゴン」 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-S8X",
+    "name": "環嵐！ホールインワン・ヘラクレス (DM22RP2X S8X/S8)",
+    "type": "タマシード/クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-S8X.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-S8X",
+    "sides": [
+      {
+        "type": "タマシード/クリーチャー",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "12000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ジャイアント・インセクト/ACE",
+        "illustrator": "Norikatsu Miyoshi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM24-EX3 刺激爆発デュエナマイトパック DM24-RP2 王道篇 第2弾 「カイザー・オブ・ハイパードラゴン」 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-SP1",
+    "name": "禁断竜王 Vol-Val-8 (DM22RP2X SP1/SP5)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-SP1.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-SP1",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/火/自然",
+        "rarity": "KGM",
+        "power": "54321",
+        "cost": "9",
+        "mana": "1",
+        "race": "ディスペクター/アーマード・ドラゴン/アース・ドラゴン/禁断",
+        "illustrator": "NAKAMURA 8",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!! DM26-EX1 ますますつよいパック 25の援軍 DM24-EX2 天下夢双!!デュエキングDreaM 2024 DM24-SP1 キャラプレミアムデッキ「ドラゴン娘になりたくないっ！」 イェーイめっちゃドラゴン!! DM23-BD1 レジェンドスーパーデッキ 禁王創来 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DMEX-19 マスター・ファイナル・メモリアル・パック DMRP-19 王来篇拡張パック第3弾 禁断龍VS禁断竜"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-SP2",
+    "name": "天地命動 バラギアラ / 輪廻暴聖 (DM22RP2X SP2/SP5)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-SP2a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-SP2",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "MHZ",
+        "power": "17000",
+        "cost": "9",
+        "mana": "1",
+        "race": "マスター・ハザード/グランセクト",
+        "illustrator": "春場ねぎ",
+        "abilities": [],
+        "flavor": "商品情報 天地命動 バラギアラ / 輪廻暴聖 (DM22RP2X SP2/SP5)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "光",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DMRP-08 双極篇 拡張パック第４弾 超決戦!バラギアラ!!無敵オラオラ輪廻∞"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-SP3",
+    "name": "キャンベロ ＜レッゾ.Star＞ (DM22RP2X SP3/SP5)",
+    "type": "スター進化クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-SP3.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-SP3",
+    "sides": [
+      {
+        "type": "スター進化クリーチャー",
+        "civilization": "火",
+        "rarity": "SR",
+        "power": "7000",
+        "cost": "5",
+        "mana": "1",
+        "race": "ジョーカーズ/ソニック・コマンド/レクスターズ",
+        "illustrator": "西沢5㍉",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-EX2 王道vs邪道 デュエキングWDreaM 2025 DM22-BD2 開発部セレクションデッキ 「光水火鬼羅.Star」 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DM22-EX1 黄金戦略!!デュエキングMAX 2022 DMRP-19 王来篇拡張パック第3弾 禁断龍VS禁断竜 プロモ限定カード 20期"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-SP4",
+    "name": "蒼狼の大王 イザナギテラス (DM22RP2X SP4/SP5)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-SP4.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-SP4",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "VR",
+        "power": "3000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ナイト/オリジン/ポセイディア・ドラゴン",
+        "illustrator": "尾方富生",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM24-EX2 天下夢双!!デュエキングDreaM 2024 DM22-BD2 開発部セレクションデッキ 「光水火鬼羅.Star」 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DM22-EX1 黄金戦略!!デュエキングMAX 2022 DMBD-18 レジェンドスーパーデッキ 神歌繚嵐 プロモ限定カード 25期"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-SP5",
+    "name": "灰燼と天門の儀式 (DM22RP2X SP5/SP5)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-SP5.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-SP5",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光/闇/火",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "6",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "冬臣",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM24-BD6 エキサイティング・デュエパ・デッキ ツラトゥストラは水晶と語らう DM23-BD1 レジェンドスーパーデッキ 禁王創来 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DMEX-19 マスター・ファイナル・メモリアル・パック DMRP-17 王来篇拡張パック第1弾 王星伝説超動 DMART-09 神アート ディスペクター・デュエマリウム"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-SP6",
+    "name": "ロスト・Re:ソウル (DM22RP2X SP6/SP5)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-SP6.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-SP6",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "7",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "ぽんかん⑧",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX2 悪感謝祭 カリスマBEST DM26-SD1 ドキドキつよいデッキ 25の王道 DM23-BD1 レジェンドスーパーデッキ 禁王創来 DM22-EX2 ヒーローズ・ダークサイド・パック ～闇のキリフダたち～ DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DMRP-20 王来篇拡張パック第4弾 終末王龍大戦 プロモ限定カード 24期"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-TF1",
+    "name": "冥界の不死帝 ブルース /「迷いはない。俺の成すことは決まった」 (DM22RP2X TF1/TF20)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-TF1a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-TF1",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "-",
+        "power": "13000",
+        "cost": "2",
+        "mana": "1",
+        "race": "アウトレイジMAX",
+        "illustrator": "MATSUMOTO EIGHT",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 冥界の不死帝 ブルース /「迷いはない。俺の成すことは決まった」 (DM22RP2X TF1/TF20)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "闇",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DM22-RP1 ゴッド・オブ・アビス 第１弾「伝説の邪神」 DMBD-17 20th クロニクルデッキ 熱血!! アウトレイジ・ビクトリー"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-TF10",
+    "name": "竜のフレア・エッグ (DM22RP2X TF10/TF20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-TF10.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-TF10",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "R",
+        "power": "1000",
+        "cost": "3",
+        "mana": "1",
+        "race": "エッグ",
+        "illustrator": "Hisanobu Kometani",
+        "abilities": [],
+        "flavor": "新しい世界、龍世界は居心地が良いでちゅ。 — 竜のフレア・エッグ 商品情報 同名カードが含まれる商品を表示 DM23-BD4 エキサイティング・デュエパ・デッキ 「ドラドラドラゴン龍幻郷」 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DMR-01 エピソード1 ファースト・コンタクト"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-TF11",
+    "name": "Dの花道 ズンドコ晴れ舞台 (DM22RP2X TF11/TF20)",
+    "type": "D2フィールド",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-TF11.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-TF11",
+    "sides": [
+      {
+        "type": "D2フィールド",
+        "civilization": "自然",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "RUI MARUYAMA",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-EX3 キャラプレミアムパック ドラゴン娘になりたくないっ！ 文化祭だョ！全員集合!!ドラ娘100％パック DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DM22-RP1 ゴッド・オブ・アビス 第１弾「伝説の邪神」 DMR-21 革命ファイナル 拡張パック第１章 ハムカツ団とドギラゴン剣 プロモ限定カード 18期"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-TF12",
+    "name": "極楽鳥 (DM22RP2X TF12/TF20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-TF12.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-TF12",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "R",
+        "power": "1000",
+        "cost": "2",
+        "mana": "1",
+        "race": "マナ・バード",
+        "illustrator": "nablange",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM24-EX4 にじさんじコラボ・マスターズ「異次元の超獣使い」 DM24-EX2 天下夢双!!デュエキングDreaM 2024 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DMEX-18 20周年超感謝メモリアルパック 裏の章 パラレル･マスターズ"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-TF13",
+    "name": "テック団の波壊Go！ (DM22RP2X TF13/TF20)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-TF13.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-TF13",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "水/闇",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "7",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Futaro",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!! DM23-BD7 エキサイティング・デュエパ・デッキ 「ネゴシエートの偽衒学者」 DM22-EX2 ヒーローズ・ダークサイド・パック ～闇のキリフダたち～ DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DM22-RP1 ゴッド・オブ・アビス 第１弾「伝説の邪神」 DMRP-17 王来篇拡張パック第1弾 王星伝説超動 DMBD-10 アルティメット・クロニクル・デッキ 2019 SSS!! 侵略デッドディザスター DMEX-03 ペリッ!! スペシャルだらけのミステリーパック DMR-23 革命ファイナル 拡張パック最終章 ドギラゴールデン vs. ドルマゲドンＸ プロモ限定カード 18期"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-TF14",
+    "name": "神の裏技ゴッド・ウォール (DM22RP2X TF14/TF20)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-TF14.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-TF14",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "ゼロ",
+        "rarity": "U",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Norikatsu Miyoshi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DMR-10 エピソード3 デッド＆ビート"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-TF15",
+    "name": "とこしえの超人 (DM22RP2X TF15/TF20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-TF15.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-TF15",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "U",
+        "power": "4000",
+        "cost": "1",
+        "mana": "1",
+        "race": "ジャイアント",
+        "illustrator": "otumami",
+        "abilities": [],
+        "flavor": "巨人の三つの目はとこしえの時代から超獣世界をにらみ続けている。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～ DM24-EX4 にじさんじコラボ・マスターズ「異次元の超獣使い」 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DM22-RP1 ゴッド・オブ・アビス 第１弾「伝説の邪神」 DMRP-17 王来篇拡張パック第1弾 王星伝説超動 プロモ限定カード 23期 プロモ限定カード 20期"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-TF16",
+    "name": "氷牙レオポル・ディーネ公 / エマージェンシー・タイフーン (DM22RP2X TF16/TF20)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-TF16a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-TF16",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "C",
+        "power": "2000",
+        "cost": "4",
+        "mana": "1",
+        "race": "サイバー・ウイルス/ナイト",
+        "illustrator": "amagasaki/Sansyu",
+        "abilities": [],
+        "flavor": "商品情報 氷牙レオポル・ディーネ公 / エマージェンシー・タイフーン (DM22RP2X TF16/TF20)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-EX2 悪感謝祭 カリスマBEST DM23-BD6 エキサイティング・デュエパ・デッキ 「双極のアカシックZ計画」 DM23-RP3 アビス・レボリューション 第3弾 「魔覇革命」 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DM22-RP1 ゴッド・オブ・アビス 第１弾「伝説の邪神」 DMEX-17 20周年超感謝メモリアルパック 究極の章 デュエキングMAX"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-TF17",
+    "name": "堕呪 ゴンパドゥ (DM22RP2X TF17/TF20)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-TF17.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-TF17",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "魔導具",
+        "illustrator": "douzen",
+        "abilities": [],
+        "flavor": "魔導具の開発時、水文明と闇文明の間で「語られぬ者 シンゴン」という魚人が暗躍していたと言う…… 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM23-EX2 頂上決戦!!デュエキングMAX 2023 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DM22-RP1 ゴッド・オブ・アビス 第１弾「伝説の邪神」 DMEX-17 20周年超感謝メモリアルパック 究極の章 デュエキングMAX DMRP-08 双極篇 拡張パック第４弾 超決戦!バラギアラ!!無敵オラオラ輪廻∞ DMART-24 神アート 魔法少女アイドル「Girl Mage」 ～偶像魔導具集～"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-TF18",
+    "name": "鬼面妖蟲ワーム・ゴワルスキー (DM22RP2X TF18/TF20)",
+    "type": "進化クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-TF18.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-TF18",
+    "sides": [
+      {
+        "type": "進化クリーチャー",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "4000",
+        "cost": "2",
+        "mana": "1",
+        "race": "パラサイトワーム/デビルマスク",
+        "illustrator": "Syuichi Obata",
+        "abilities": [],
+        "flavor": "その仮面をはがした時、絶望を味わうこととなる。 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DM22-RP1 ゴッド・オブ・アビス 第１弾「伝説の邪神」 DMC-64 コロコロ・レジェンド・7 ムービー・ダイナマイト DM-32 神化編(エボリューション・サーガ) 第1弾"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-TF19",
+    "name": "原始 サンナップ (DM22RP2X TF19/TF20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-TF19.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-TF19",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "C",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ビーストフォーク號/侵略者",
+        "illustrator": "Yuri Shinjuro",
+        "abilities": [],
+        "flavor": "『デュエル・マスターズ』の過去が明らかになり、そして新世代の物語が始まろうとしている。 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DM22-RP1 ゴッド・オブ・アビス 第１弾「伝説の邪神」 DMEX-17 20周年超感謝メモリアルパック 究極の章 デュエキングMAX DMR-20 革命 拡張パック第4章 正体判明のギュウジン丸!!"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-TF2",
+    "name": "ボルシャック・ドラゴン / 決闘者・チャージャー (DM22RP2X TF2/TF20)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-TF2a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-TF2",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "-",
+        "power": "6000",
+        "cost": "6",
+        "mana": "1",
+        "race": "アーマード・ドラゴン",
+        "illustrator": "Ryoya Yuki/boyaking",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 ボルシャック・ドラゴン / 決闘者・チャージャー (DM22RP2X TF2/TF20)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "火",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-BD1 ドリーム英雄譚デッキ ボルシャックの書 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～ DM24-EX2 天下夢双!!デュエキングDreaM 2024 DM23-BD4 エキサイティング・デュエパ・デッキ 「ドラドラドラゴン龍幻郷」 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DM22-RP1 ゴッド・オブ・アビス 第１弾「伝説の邪神」 DMBD-16 20th クロニクルデッキ 決闘!! ボルシャック・デュエル DMEX-15 20周年超感謝メモリアルパック 魂の章 名場面BEST DMBD-15 レジェンドスーパーデッキ 蒼龍革命 DMEX-04 夢の最＆強!!ツインパクト超No.1パック プロモ限定カード 24期"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-TF20",
+    "name": "ボルシャック・栄光・ルピア (DM22RP2X TF20/TF20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-TF20.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-TF20",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火/自然",
+        "rarity": "C",
+        "power": "4000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ファイアー・バード/アーマード・ドラゴン",
+        "illustrator": "nuisuke",
+        "abilities": [],
+        "flavor": "……そして、ルピアの栄光もドラゴンあってのものだッピ！ — ボルシャック・栄光・ルピア 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX3 キャラプレミアムパック ドラゴン娘になりたくないっ！ 文化祭だョ！全員集合!!ドラ娘100％パック DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-BD1 ドリーム英雄譚デッキ ボルシャックの書 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～ DM24-EX3 刺激爆発デュエナマイトパック DM24-EX2 天下夢双!!デュエキングDreaM 2024 DM24-SP1 キャラプレミアムデッキ「ドラゴン娘になりたくないっ！」 イェーイめっちゃドラゴン!! DM23-BD4 エキサイティング・デュエパ・デッキ 「ドラドラドラゴン龍幻郷」 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DM22-BD1 レジェンドスーパーデッキ 龍覇爆炎 DM22-RP1 ゴッド・オブ・アビス 第１弾「伝説の邪神」 DMEX-18 20周年超感謝メモリアルパック 裏の章 パラレル･マスターズ DMBD-16 20th クロニクルデッキ 決闘!! ボルシャック・デュエル DMART-02 神アート Bolshack by Toshiaki Takayama プロモ限定カード 24期 プロモ限定カード 22期"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-TF3",
+    "name": "ラ・ズーネヨマ・パンツァー / 逆転のオーロラ (DM22RP2X TF3/TF20)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-TF3a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-TF3",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "-",
+        "power": "12000",
+        "cost": "4",
+        "mana": "1",
+        "race": "グランセクト",
+        "illustrator": "nablange",
+        "abilities": [],
+        "flavor": "商品情報 ラ・ズーネヨマ・パンツァー / 逆転のオーロラ (DM22RP2X TF3/TF20)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "自然",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DM22-RP1 ゴッド・オブ・アビス 第１弾「伝説の邪神」 DMEX-04 夢の最＆強!!ツインパクト超No.1パック"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-TF4",
+    "name": "灼熱の闘志 テスタ・ロッサ (DM22RP2X TF4/TF20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-TF4.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-TF4",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/火",
+        "rarity": "-",
+        "power": "2000",
+        "cost": "2",
+        "mana": "1",
+        "race": "アウトレイジMAX",
+        "illustrator": "sarmat",
+        "abilities": [],
+        "flavor": "理不尽に苦しむ者がいる限り、俺達は闘う！闘い続ける!! — 灼熱の闘志 テスタ・ロッサ 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-EX1 大感謝祭 ビクトリーBEST DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DM22-RP1 ゴッド・オブ・アビス 第１弾「伝説の邪神」 DMBD-17 20th クロニクルデッキ 熱血!! アウトレイジ・ビクトリー"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-TF5",
+    "name": "裁キノ聖堂 ラ・ファミリエ (DM22RP2X TF5/TF20)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-TF5.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-TF5",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "裁きの紋章",
+        "illustrator": "RUI MARUYAMA",
+        "abilities": [],
+        "flavor": "正義が輝き続けるには、正義の象徴が必要だ。 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DM22-RP1 ゴッド・オブ・アビス 第１弾「伝説の邪神」 DMRP-08 双極篇 拡張パック第４弾 超決戦!バラギアラ!!無敵オラオラ輪廻∞"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-TF6",
+    "name": "ジャスト・ラビリンス (DM22RP2X TF6/TF20)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-TF6.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-TF6",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Murakami Hisashi",
+        "abilities": [],
+        "flavor": "迷えば迷うほど賢くなる!!! 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DM22-RP1 ゴッド・オブ・アビス 第１弾「伝説の邪神」 DMSD-10 超GRスタートデッキ キラのギラミリオン・ギラクシー DMRP-01 拡張パック新1弾 ジョーカーズ参上！！"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-TF7",
+    "name": "深海の伝道師 アトランティス (DM22RP2X TF7/TF20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-TF7.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-TF7",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "R",
+        "power": "4000",
+        "cost": "10",
+        "mana": "1",
+        "race": "オラクル/リヴァイアサン",
+        "illustrator": "Heart",
+        "abilities": [],
+        "flavor": "アトランティスのひとかきは、クジラ百匹分に相当する。 商品情報 同名カードが含まれる商品を表示 DM23-BD6 エキサイティング・デュエパ・デッキ 「双極のアカシックZ計画」 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DMEX-08 謎のブラックボックスパック DMX-15 フルホイルVSパック 仁義無きロワイヤル"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-TF8",
+    "name": "撃髄医 スパイナー (DM22RP2X TF8/TF20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-TF8.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-TF8",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "R",
+        "power": "2000",
+        "cost": "9",
+        "mana": "1",
+        "race": "マフィ・ギャング",
+        "illustrator": "Tamagonokimi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-BD5 エキサイティング・デュエパ・デッキ 「不敬なり！真邪眼騎士団」 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DM22-RP1 ゴッド・オブ・アビス 第１弾「伝説の邪神」 DMBD-14 クロニクル最終決戦デッキ 龍魂紅蓮譚 DMRP-12 超天篇 拡張パック第4弾 超超超天！覚醒ジョギラゴン vs. 零龍卍誕 DMBD-10 アルティメット・クロニクル・デッキ 2019 SSS!! 侵略デッドディザスター DMRP-04 拡張パック新4弾 誕ジョー！マスター・ドルスザク！！～無月の魔凰～ DMART-17 神アート 蛍光少女 プロモ限定カード 17期"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-TF9",
+    "name": "地震 (DM22RP2X TF9/TF20)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-TF9.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-TF9",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "火",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "1",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "暴竜爵の降臨は、大地をも震わせる。 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DMEX-18 20周年超感謝メモリアルパック 裏の章 パラレル･マスターズ プロモ限定カード 25期"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-TR1",
+    "name": "龍騎旋竜ボルシャック・バルガ (DM22RP2X TR1/TR10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-TR1.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-TR1",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "-",
+        "power": "17000",
+        "cost": "19",
+        "mana": "1",
+        "race": "ボルケーノ・ドラゴン/アーマード・ドラゴン",
+        "illustrator": "Muna-Ge",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-EX3 キャラプレミアムパック ドラゴン娘になりたくないっ！ 文化祭だョ！全員集合!!ドラ娘100％パック DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-BD1 ドリーム英雄譚デッキ ボルシャックの書 DM23-BD4 エキサイティング・デュエパ・デッキ 「ドラドラドラゴン龍幻郷」 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DM22-RP1 ゴッド・オブ・アビス 第１弾「伝説の邪神」 DMEX-16 20周年超感謝メモリアルパック 技の章 英雄戦略パーフェクト20 DMART-02 神アート Bolshack by Toshiaki Takayama"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-TR10",
+    "name": "二刀龍覇 グレンモルト 「王」 (DM22RP2X TR10/TR10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-TR10.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-TR10",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "VR",
+        "power": "9000",
+        "cost": "10",
+        "mana": "1",
+        "race": "ガイアール・コマンド・ドラゴン/ヒューマノイド爆/ドラグナー",
+        "illustrator": "Murakami Hisashi",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-BD3 ドリーム英雄譚デッキ グレンモルトの書 DM24-EX2 天下夢双!!デュエキングDreaM 2024 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DMBD-14 クロニクル最終決戦デッキ 龍魂紅蓮譚 DMEX-06 絶対王者!! デュエキングパック DMX-26 ファイナル・メモリアル・パック ～DS・Rev・RevF編～ DMR-15 ドラゴン・サーガ 拡張パック第３章 双剣オウギンガ"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-TR2",
+    "name": "熱血武闘 カツキング (DM22RP2X TR2/TR10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-TR2.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-TR2",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/闇/火",
+        "rarity": "-",
+        "power": "11000",
+        "cost": "8",
+        "mana": "1",
+        "race": "アウトレイジMAX",
+        "illustrator": "YOICHI ITO",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DMBD-17 20th クロニクルデッキ 熱血!! アウトレイジ・ビクトリー"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-TR3",
+    "name": "天獄の正義 ヘブンズ・ヘブン (DM22RP2X TR3/TR10)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-TR3a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-TR3",
+    "sides": [
+      {
+        "type": "ドラグハート・フォートレス",
+        "civilization": "光",
+        "rarity": "VIC",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "-",
+        "race": "イラストレーター",
+        "illustrator": "tetrapod",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 天命讃華 ネバーラスト (DM22RP2X TR3/TR10)"
+      },
+      {
+        "type": "ドラグハート・クリーチャー",
+        "civilization": "光",
+        "rarity": "VIC",
+        "power": "14500",
+        "cost": "9",
+        "mana": "-",
+        "race": "エンジェル・コマンド・ドラゴン",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM25-EX4 エピソード4 パンドラ・ウォーズ DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DMEX-06 絶対王者!! デュエキングパック DMX-26 ファイナル・メモリアル・パック ～DS・Rev・RevF編～ DMR-15 ドラゴン・サーガ 拡張パック第３章 双剣オウギンガ"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-TR4",
+    "name": "知識の破壊者デストルツィオーネ (DM22RP2X TR4/TR10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-TR4.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-TR4",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "17000",
+        "cost": "10",
+        "mana": "1",
+        "race": "デーモン・コマンド",
+        "illustrator": "Kotakan",
+        "abilities": [],
+        "flavor": "クックック、知識だけで何とかなると驕ったな……馬鹿め！ — 知識の破壊者デストルツィオーネ 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DMX-19 スーパーレア100%パック プロモ限定カード 12期"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-TR5",
+    "name": "暴力類 アバレマックス (DM22RP2X TR5/TR10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-TR5.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-TR5",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "6000",
+        "cost": "6",
+        "mana": "1",
+        "race": "ジュラシック・コマンド・ドラゴン",
+        "illustrator": "Tonbi Aburaya",
+        "abilities": [],
+        "flavor": "ジュラシック・コマンド・ドラゴンは、力を求め、力に溺れる。 商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DMR-21 革命ファイナル 拡張パック第１章 ハムカツ団とドギラゴン剣"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-TR6",
+    "name": "超次元の王家 (DM22RP2X TR6/TR10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-TR6.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-TR6",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/火",
+        "rarity": "SR",
+        "power": "6000",
+        "cost": "4",
+        "mana": "1",
+        "race": "エイリアン/ハンター/キング・コマンド",
+        "illustrator": "HIRO”WO”NORI",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX4 エピソード4 パンドラ・ウォーズ DM25-EX2 王道vs邪道 デュエキングWDreaM 2025 DM22-BD2 開発部セレクションデッキ 「光水火鬼羅.Star」 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DMEX-18 20周年超感謝メモリアルパック 裏の章 パラレル･マスターズ"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-TR7",
+    "name": "流星のガイアッシュ・カイザー (DM22RP2X TR7/TR10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-TR7.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-TR7",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/自然",
+        "rarity": "SR",
+        "power": "8000",
+        "cost": "6",
+        "mana": "1",
+        "race": "ブルー・コマンド・ドラゴン/グリーン・コマンド・ドラゴン/ハンター",
+        "illustrator": "Daisuke Izuka",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX3 キャラプレミアムパック ドラゴン娘になりたくないっ！ 文化祭だョ！全員集合!!ドラ娘100％パック DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-EX2 王道vs邪道 デュエキングWDreaM 2025 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～ DM24-EX1 超感謝祭 ファンタジーBEST DM23-BD1 レジェンドスーパーデッキ 禁王創来 DM23-EX1 大感謝祭 ビクトリーBEST DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DM22-RP1 ゴッド・オブ・アビス 第１弾「伝説の邪神」 DMEX-17 20周年超感謝メモリアルパック 究極の章 デュエキングMAX DMART-18 神アート 超獣世界の歩き方 ～アセビ見聞録～ DMART-05 神アート 五人祭でドラゴン♡サマー プロモ限定カード 22期 プロモ限定カード 21期"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-TR8",
+    "name": "ドマンモ龍樹 (DM22RP2X TR8/TR10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-TR8.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-TR8",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇/自然",
+        "rarity": "SR",
+        "power": "12000",
+        "cost": "7",
+        "mana": "1",
+        "race": "ジャイアント・ドラゴン/不死樹王国",
+        "illustrator": "SENNSU",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DMEX-10 W王国ドッキングパック 鬼札王国＆不死樹王国"
+      }
+    ]
+  },
+  {
+    "id": "dm22rp2x-TR9",
+    "name": "真実の名 タイガー・レジェンド (DM22RP2X TR9/TR10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22rp2x-TR9.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22rp2x-TR9",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "VR",
+        "power": "7500",
+        "cost": "7",
+        "mana": "1",
+        "race": "エンジェル・コマンド/アンノウン",
+        "illustrator": "Muna-Ge",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DMR-08 エピソード2 グレイト・ミラクル"
+      }
+    ]
+  },
+  {
+    "id": "dm22sp2-001",
+    "name": "粉砕呪文「スクラッパー」 (DM22SP2 1/4)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22sp2-001.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22sp2-001",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "火",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "6",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "MATSUMOTO EIGHT",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM22-SP2 「轟炎の竜皇」暴竜爵からの招待状 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22sp2-002",
+    "name": "ボルシャック・メカ・ドラゴン (DM22SP2 2/4)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22sp2-002.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22sp2-002",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "U",
+        "power": "9000",
+        "cost": "7",
+        "mana": "1",
+        "race": "アーマード・ドラゴン",
+        "illustrator": "douzen",
+        "abilities": [],
+        "flavor": "ボルシャックたちの力はそのままに、機械化することで量産を可能にした究極の兵器。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM22-SP2 「轟炎の竜皇」暴竜爵からの招待状 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22sp2-003",
+    "name": "トット・銃・ピッチ (DM22SP2 3/4)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22sp2-003.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22sp2-003",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "C",
+        "power": "1000",
+        "cost": "2",
+        "mana": "1",
+        "race": "アーマード・ファイアー・バード",
+        "illustrator": "Tobimaru Konatsu",
+        "abilities": [],
+        "flavor": "より速く、より強く。ボルシャックを助けるために、ルピアたちも必死だ。 商品情報 同名カードが含まれる商品を表示 DM22-SP2 「轟炎の竜皇」暴竜爵からの招待状 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
+      }
+    ]
+  },
+  {
+    "id": "dm22sp2-004",
+    "name": "暴竜のギフト (DM22SP2 4/4)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm22sp2-004.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm22sp2-004",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "火",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "neko61",
+        "abilities": [],
+        "flavor": "轟炎の竜皇 ボルシャック・カイザー。その名の通り、火山を思わせる轟炎を身にまとって戦う最強のボルシャックの王だ。 商品情報 同名カードが含まれる商品を表示 DM22-SP2 「轟炎の竜皇」暴竜爵からの招待状 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」"
       }
     ]
   },
@@ -145614,6 +150321,729 @@
         "illustrator": "Tutui Misa",
         "abilities": [],
         "flavor": "進化クリーチャーを探しながら１ターン目に進化元まで用意できるすごいやつだ！ 商品情報 同名カードが含まれる商品を表示 DM26-EX2 悪感謝祭 カリスマBEST DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-SD2 いきなりつよいデッキ 力の王道 DM23-EX2 頂上決戦!!デュエキングMAX 2023 DMRP-21 王来MAX第1弾 鬼ヤバ逆襲S-MAX!! DMSD-20 キングマスタースタートデッキ ジョーのS-MAX進化"
+      }
+    ]
+  },
+  {
+    "id": "dmpcd03-SP1",
+    "name": "ダーク・ルピア (DMPCD03 SP1/SP1)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dmpcd03-SP1.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dmpcd03-SP1",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "1000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ファイアー・バード",
+        "illustrator": "アートアンフ",
+        "abilities": [],
+        "flavor": "貴様も道連れだ！ — ダピコ 同名カードが含まれる商品を表示 DM22-EX2 ヒーローズ・ダークサイド・パック ～闇のキリフダたち～ DMPCD-03 デュエマプレイス・コラボデッキ 激竜の英雄＆邪眼の始祖 特別商品限定カード DMX-21 マスターズ・クロニクル・パック（コミック・オブ・ヒーローズ） DMX-17 龍の祭典！ドラゴン魂フェス！！ DMC-61 コロコロ・ドリーム・パック IV (エターナル・ヘヴン) DMC-53 レジェンド・クロニクル 勝舞編 DM-27 極神編 第4弾 完全極神(パーフェクト・ヘヴン) DMX-10 デッキビルダー鬼DX キラリ！レオ編 DMC-65 ザ･ムービーデッキ･ショック ULTRA FIRE SPIRITS 炎のキズナXX"
+      }
+    ]
+  },
+  {
+    "id": "dmpcd03-a01",
+    "name": "ガイアール・カイザーP'S (DMPCD03 激1/激17)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dmpcd03-a01a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dmpcd03-a01",
+    "sides": [
+      {
+        "type": "サイキック・クリーチャー",
+        "civilization": "火",
+        "rarity": "VIC",
+        "power": "6000",
+        "cost": "8",
+        "mana": "-",
+        "race": "レッド・コマンド・ドラゴン/ハンター",
+        "illustrator": "Ishibashi Yosuke",
+        "abilities": [],
+        "flavor": "激竜王ガイアール・オウドラゴンP'S (DMPCD03 激1/激17)"
+      },
+      {
+        "type": "文明",
+        "civilization": "火",
+        "rarity": "VIC",
+        "power": "コスト",
+        "cost": "24",
+        "mana": "-",
+        "race": "キング・コマンド・ドラゴン/ハンター",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DMPCD-03 デュエマプレイス・コラボデッキ 激竜の英雄＆邪眼の始祖"
+      }
+    ]
+  },
+  {
+    "id": "dmpcd03-a02",
+    "name": "ドラゴニック・ピッピーP'S (DMPCD03 激2/激17)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dmpcd03-a02a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dmpcd03-a02",
+    "sides": [
+      {
+        "type": "サイキック・クリーチャー",
+        "civilization": "火",
+        "rarity": "VIC",
+        "power": "2000",
+        "cost": "3",
+        "mana": "-",
+        "race": "ファイアー・バード/ハンター",
+        "illustrator": "Ishibashi Yosuke",
+        "abilities": [],
+        "flavor": "激竜王ガイアール・オウドラゴンP'S (DMPCD03 激2/激17)"
+      },
+      {
+        "type": "サイキック・スーパー・クリーチャー",
+        "civilization": "火",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "マナ",
+        "mana": "-",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DMPCD-03 デュエマプレイス・コラボデッキ 激竜の英雄＆邪眼の始祖"
+      }
+    ]
+  },
+  {
+    "id": "dmpcd03-a03",
+    "name": "ブーストグレンオーP'S (DMPCD03 激3/激17)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dmpcd03-a03a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dmpcd03-a03",
+    "sides": [
+      {
+        "type": "サイキック・クリーチャー",
+        "civilization": "火",
+        "rarity": "VIC",
+        "power": "3000",
+        "cost": "5",
+        "mana": "-",
+        "race": "フレイム・モンスター/ハンター",
+        "illustrator": "Ishibashi Yosuke",
+        "abilities": [],
+        "flavor": "その三体の力がビクトリーをもたらす。 激竜王ガイアール・オウドラゴンP'S (DMPCD03 激3/激17)"
+      },
+      {
+        "type": "文明",
+        "civilization": "火",
+        "rarity": "-",
+        "power": "25000",
+        "cost": "マナ",
+        "mana": "-",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DMPCD-03 デュエマプレイス・コラボデッキ 激竜の英雄＆邪眼の始祖"
+      }
+    ]
+  },
+  {
+    "id": "dmpcd03-a04",
+    "name": "時空の火焔ボルシャック・ドラゴン (DMPCD03 激4/激17)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dmpcd03-a04a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dmpcd03-a04",
+    "sides": [
+      {
+        "type": "サイキック・クリーチャー",
+        "civilization": "火",
+        "rarity": "SR",
+        "power": "6000",
+        "cost": "7",
+        "mana": "-",
+        "race": "アーマード・ドラゴン",
+        "illustrator": "NINNIN",
+        "abilities": [],
+        "flavor": "強き意思で勝利をつかみ、新たな力を呼び起こせ！ 勝利の覚醒者ボルシャック・メビウス (DMPCD03 激4/激17)"
+      },
+      {
+        "type": "サイキック・クリーチャー",
+        "civilization": "火",
+        "rarity": "SR",
+        "power": "12000",
+        "cost": "14",
+        "mana": "-",
+        "race": "アーマード・ドラゴン",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DMPCD-03 デュエマプレイス・コラボデッキ 激竜の英雄＆邪眼の始祖 DMX-08 激熱! ガチンコBEST DMC-67 ドラマティック・ウォーズ ドラゴン＆ファイアー DMC-66 デュエル・マスターズ 超BEST DM-36 覚醒編(サイキック･ショック) 第1弾 DMD-18 スーパーVデッキ 燃えよ龍剣 ガイアール"
+      }
+    ]
+  },
+  {
+    "id": "dmpcd03-a05",
+    "name": "時空の英雄アンタッチャブル (DMPCD03 激5/激17)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dmpcd03-a05a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dmpcd03-a05",
+    "sides": [
+      {
+        "type": "サイキック・クリーチャー",
+        "civilization": "光",
+        "rarity": "U",
+        "power": "1000",
+        "cost": "2",
+        "mana": "-",
+        "race": "キカイヒーロー",
+        "illustrator": "AMON",
+        "abilities": [],
+        "flavor": "超次元の力が、変幻せし英雄を呼び出す！ 変幻の覚醒者アンタッチャブル・パワード (DMPCD03 激5/激17)"
+      },
+      {
+        "type": "サイキック・クリーチャー",
+        "civilization": "水",
+        "rarity": "U",
+        "power": "5000",
+        "cost": "7",
+        "mana": "-",
+        "race": "サイバー・コマンド",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DMPCD-03 デュエマプレイス・コラボデッキ 激竜の英雄＆邪眼の始祖 DMEX-17 20周年超感謝メモリアルパック 究極の章 デュエキングMAX DM-37 覚醒編 第2弾 暗黒の野望(ダーク・エンペラー) DMX-03 デッキビルダーDX エイリアン･エディション"
+      }
+    ]
+  },
+  {
+    "id": "dmpcd03-a06",
+    "name": "時空の喧嘩屋キル (DMPCD03 激6/激17)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dmpcd03-a06a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dmpcd03-a06",
+    "sides": [
+      {
+        "type": "サイキック・クリーチャー",
+        "civilization": "火",
+        "rarity": "U",
+        "power": "1000",
+        "cost": "2",
+        "mana": "-",
+        "race": "ヒューマノイド",
+        "illustrator": "hippo",
+        "abilities": [],
+        "flavor": "超次元の力が、喧嘩屋に眠る巨人の力を呼び覚ます。 巨人の覚醒者セツダン (DMPCD03 激6/激17)"
+      },
+      {
+        "type": "サイキック・クリーチャー",
+        "civilization": "自然",
+        "rarity": "U",
+        "power": "5000",
+        "cost": "7",
+        "mana": "-",
+        "race": "ジャイアント",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DMPCD-03 デュエマプレイス・コラボデッキ 激竜の英雄＆邪眼の始祖 DM22-EX1 黄金戦略!!デュエキングMAX 2022 DM-37 覚醒編 第2弾 暗黒の野望(ダーク・エンペラー) DMX-02 デッキビルダーDX ハンター･エディション"
+      }
+    ]
+  },
+  {
+    "id": "dmpcd03-a07",
+    "name": "DNA・スパーク (DMPCD03 激7/激17)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dmpcd03-a07.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dmpcd03-a07",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "6",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Naoki Saito",
+        "abilities": [],
+        "flavor": "信じ抜いたものだけが、最高の奇跡と出会う事ができる。 同名カードが含まれる商品を表示 DMPCD-03 デュエマプレイス・コラボデッキ 激竜の英雄＆邪眼の始祖 DMEX-15 20周年超感謝メモリアルパック 魂の章 名場面BEST DMSD-18 キングマスタースタートデッキ ジェンドルのディスペクター DMSD-07 煌世の剣・Z炸裂・スタートデッキ DMEX-02 デュエマクエスト・パック ～伝説の最強戦略12～ DMX-25 ファイナル・メモリアル・パック ～Ｅ１・Ｅ２・Ｅ３編～ DMX-24 革命ファイナル 輝け！デュエデミー賞パック DMX-23 革命ファイナル 奥義伝授!! デッキLv.マックスパック DMX-22 革命 超ブラック・ボックス・パック DMX-20 デッキ一撃完成!! デュエマックス160 ～革命＆侵略～ DMX-18 三段変形！龍解オールスターズ DMX-16 超王道戦略ファンタジスタ１２ DMR-02 エピソード1 ダークサイド DMBD-04 超メガ盛りプレミアム７デッキ キラめけ!! ＤＧ超動 DMD-24 マスターズ・クロニクル・デッキ ボルメテウス・リターンズ DMD-12 禁断の変形デッキ オラクルの書 プロモ限定カード 16期 プロモ限定カード 15期 プロモ限定カード 12期"
+      }
+    ]
+  },
+  {
+    "id": "dmpcd03-a08",
+    "name": "超次元ガイアール・ホール (DMPCD03 激8/激17)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dmpcd03-a08.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dmpcd03-a08",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "火",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "6",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "jintetsu",
+        "abilities": [],
+        "flavor": "勝利のために叫べ！ガイアールの名を!! 同名カードが含まれる商品を表示 DMPCD-03 デュエマプレイス・コラボデッキ 激竜の英雄＆邪眼の始祖 DMX-25 ファイナル・メモリアル・パック ～Ｅ１・Ｅ２・Ｅ３編～ DMR-01 エピソード1 ファースト・コンタクト プロモ限定カード 10期"
+      }
+    ]
+  },
+  {
+    "id": "dmpcd03-a09",
+    "name": "ナチュラル・トラップ (DMPCD03 激9/激17)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dmpcd03-a09.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dmpcd03-a09",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "自然",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "6",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "罠にはまった者たちは、夜の森で生きる屍と化す。 同名カードが含まれる商品を表示 DMPCD-03 デュエマプレイス・コラボデッキ 激竜の英雄＆邪眼の始祖 DMPCD-01デュエマプレイス・コラボデッキ 超竜の君臨＆天門の降臨 DMSD-12 超GRスタートデッキ ゼーロのオレガ無月の大罪 DMSD-08 超ＧＲスタートデッキ ジョーのガチャメカ・ワンダフォー DMX-25 ファイナル・メモリアル・パック ～Ｅ１・Ｅ２・Ｅ３編～ DMX-20 デッキ一撃完成!! デュエマックス160 ～革命＆侵略～ DMX-16 超王道戦略ファンタジスタ１２ DMC-61 コロコロ・ドリーム・パック IV (エターナル・ヘヴン) DMC-47 ヒーローズ・クロス・パック 勝舞編 DMC-42 コロコロ・ドリーム・パックIII DM-18 ベスト・チャレンジャー DM-01 DMD-13 スーパーデッキMAX カツキングと伝説の秘宝 DMD-07 変形デッキセット DX鬼ドラゴン DMX-09 デッキビルダー鬼DX ガンバ！勝太編 DMD-03 ストロング・メタル・デッキ 爆裂ダッシュ DMX-02 デッキビルダーDX ハンター･エディション DMD-01 スタートダッシュ・デッキ 火＆自然 編 DMC-59 エントリーデッキ 2010 サムライ・アンビシャス DMC-49 エントリーデッキ ゼロ フォース・オブ・ドラゴン DMC-45 スーパーデッキクロス「バトル・オブ・ヤマト魂」 コロコロ・スペシャル デッキ5 コロコロ・スペシャル デッキ2 プロモ限定カード 10期"
+      }
+    ]
+  },
+  {
+    "id": "dmpcd03-a10",
+    "name": "聖鎧亜ジャック・アルカディアス (DMPCD03 激10/激17)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dmpcd03-a10.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dmpcd03-a10",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/火",
+        "rarity": "R",
+        "power": "1000",
+        "cost": "4",
+        "mana": "1",
+        "race": "スピリット・クォーツ/ロスト・クルセイダー",
+        "illustrator": "KOUSAKU",
+        "abilities": [],
+        "flavor": "悪魔神の復活に呼応するかのように、アルカディアス王家が動き出した。 同名カードが含まれる商品を表示 DMPCD-03 デュエマプレイス・コラボデッキ 激竜の英雄＆邪眼の始祖"
+      }
+    ]
+  },
+  {
+    "id": "dmpcd03-a11",
+    "name": "超次元シューティング・ホール (DMPCD03 激11/激17)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dmpcd03-a11.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dmpcd03-a11",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "火",
+        "rarity": "U",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Okera",
+        "abilities": [],
+        "flavor": "目覚めよ！新しきレジェンドよ！ 同名カードが含まれる商品を表示 DM25-EX4 エピソード4 パンドラ・ウォーズ DMPCD-03 デュエマプレイス・コラボデッキ 激竜の英雄＆邪眼の始祖 DMX-25 ファイナル・メモリアル・パック ～Ｅ１・Ｅ２・Ｅ３編～ DMC-67 ドラマティック・ウォーズ ドラゴン＆ファイアー DMD-18 スーパーVデッキ 燃えよ龍剣 ガイアール DMD-03 ストロング・メタル・デッキ 爆裂ダッシュ DMX-02 デッキビルダーDX ハンター･エディション DMC-62 スーパーデッキ ショック ウルトラ・NEX"
+      }
+    ]
+  },
+  {
+    "id": "dmpcd03-a12",
+    "name": "超次元オーフレイム・ホール (DMPCD03 激12/激17)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dmpcd03-a12.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dmpcd03-a12",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "火",
+        "rarity": "U",
+        "power": "コスト",
+        "cost": "4",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "neko61",
+        "abilities": [],
+        "flavor": "オリジナル・ハート爆心地にて、覚醒の力を持った新たな戦士達が生まれた！ 同名カードが含まれる商品を表示 DMPCD-03 デュエマプレイス・コラボデッキ 激竜の英雄＆邪眼の始祖"
+      }
+    ]
+  },
+  {
+    "id": "dmpcd03-a13",
+    "name": "超次元ボルシャック・ホール (DMPCD03 激13/激17)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dmpcd03-a13.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dmpcd03-a13",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "火",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "MATSUMOTO EIGHT",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DMPCD-03 デュエマプレイス・コラボデッキ 激竜の英雄＆邪眼の始祖 DMX-08 激熱! ガチンコBEST DM-36 覚醒編(サイキック･ショック) 第1弾 DMD-20 勝利の将龍剣ガイオウバーン DMD-03 ストロング・メタル・デッキ 爆裂ダッシュ DMX-03 デッキビルダーDX エイリアン･エディション"
+      }
+    ]
+  },
+  {
+    "id": "dmpcd03-a14",
+    "name": "超次元キル・ホール (DMPCD03 激14/激17)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dmpcd03-a14.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dmpcd03-a14",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "火",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "hippo",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DMPCD-03 デュエマプレイス・コラボデッキ 激竜の英雄＆邪眼の始祖 DMEX-17 20周年超感謝メモリアルパック 究極の章 デュエキングMAX DM-37 覚醒編 第2弾 暗黒の野望(ダーク・エンペラー) DMX-03 デッキビルダーDX エイリアン･エディション"
+      }
+    ]
+  },
+  {
+    "id": "dmpcd03-a15",
+    "name": "霞み妖精ジャスミン (DMPCD03 激15/激17)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dmpcd03-a15.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dmpcd03-a15",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "C",
+        "power": "1000",
+        "cost": "2",
+        "mana": "1",
+        "race": "スノーフェアリー",
+        "illustrator": "Tanru",
+        "abilities": [],
+        "flavor": "命を育むため、ジャスミンは自らの命をかけた。 同名カードが含まれる商品を表示 DM24-BD5 エキサイティング・デュエパ・デッキ アセビと異世界フェアリーたち DM24-EX1 超感謝祭 ファンタジーBEST DM23-BD5 エキサイティング・デュエパ・デッキ 「不敬なり！真邪眼騎士団」 DMPCD-03 デュエマプレイス・コラボデッキ 激竜の英雄＆邪眼の始祖 DMRP-17 王来篇拡張パック第1弾 王星伝説超動 DMEX-12 最強戦略!!ドラリンパック DMEX-09 Wチームドッキングパック チーム切札＆チームウェイブ DMBD-08 超誕!!ツインヒーローデッキ80 自然大暴走 VS 卍獄の虚無月 DMEX-01 ゴールデン・ベスト DMX-24 革命ファイナル 輝け！デュエデミー賞パック DMX-16 超王道戦略ファンタジスタ１２ DMX-14 最強戦略 パーフェクト12 DMX-12 エピソード2 ブラック・ボックス・パック DMR-01 エピソード1 ファースト・コンタクト DMBD-02 クロニクル・レガシー・デッキ 風雲!! 怒流牙忍法帖 DMD-34 DXデュエガチャデッキ 銀刃の勇者ドギラゴン DMD-33 マスターズ・クロニクル・デッキ 2016 終焉の悪魔神 DMD-25 マスターズ・クロニクル・デッキ ロマノフ 煉獄からの復活 DMD-13 スーパーデッキMAX カツキングと伝説の秘宝 DMD-03 ストロング・メタル・デッキ 爆裂ダッシュ プロモ限定カード 18期 プロモ限定カード 16期 プロモ限定カード 13期 プロモ限定カード 12期 プロモ限定カード 11期"
+      }
+    ]
+  },
+  {
+    "id": "dmpcd03-a16",
+    "name": "フェアリー・ライフ (DMPCD03 激16/激17)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dmpcd03-a16.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dmpcd03-a16",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "自然",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Tomofumi Ogasawara",
+        "abilities": [],
+        "flavor": "小さいけれど、大きな仕事！ 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DMPCD-03 デュエマプレイス・コラボデッキ 激竜の英雄＆邪眼の始祖 DMRP-21 王来MAX第1弾 鬼ヤバ逆襲S-MAX!! DMSD-20 キングマスタースタートデッキ ジョーのS-MAX進化 DMBD-18 レジェンドスーパーデッキ 神歌繚嵐 DMEX-17 20周年超感謝メモリアルパック 究極の章 デュエキングMAX DMEX-15 20周年超感謝メモリアルパック 魂の章 名場面BEST DMPCD-01デュエマプレイス・コラボデッキ 超竜の君臨＆天門の降臨 DMBD-13 クロニクル最終決戦デッキ 覚醒流星譚 DMEX-09 Wチームドッキングパック チーム切札＆チームウェイブ DMEX-08 謎のブラックボックスパック DMBD-11 ガチヤバ4！無限改造デッキセットDX!! ジョーのビッグバンGR DMBD-09 アルティメット・クロニクル・デッキ 2019 必勝!! 闘将ブレードオーガ DMEX-06 絶対王者!! デュエキングパック DMEX-01 ゴールデン・ベスト DMRP-01 拡張パック新1弾 ジョーカーズ参上！！ DMX-24 革命ファイナル 輝け！デュエデミー賞パック DMX-22 革命 超ブラック・ボックス・パック DMR-17 革命 拡張パック第1章 燃えろドギラゴン!! DMR-13 ドラゴン・サーガ 拡張パック第１章 龍解ガイギンガ DMX-14 最強戦略 パーフェクト12 DMX-12 エピソード2 ブラック・ボックス・パック DM-32 神化編(エボリューション・サーガ) 第1弾 DMC-47 ヒーローズ・クロス・パック 勝舞編 DMC-42 コロコロ・ドリーム・パックIII DM-10 聖拳編(エターナル・アームズ) DM-06 闘魂編(インビンシブル・ソウル) DMD-34 DXデュエガチャデッキ 銀刃の勇者ドギラゴン DMD-13 スーパーデッキMAX カツキングと伝説の秘宝 DMD-11 禁断の変形デッキ アウトレイジの書 DMD-07 変形デッキセット DX鬼ドラゴン DMX-09 デッキビルダー鬼DX ガンバ！勝太編 DMX-02 デッキビルダーDX ハンター･エディション DMC-59 エントリーデッキ 2010 サムライ・アンビシャス DMC-57 スーパーデッキ サーガ ザ・ゴッド・キングダム プロモ限定カード 22期 プロモ限定カード 19期 プロモ限定カード 17期 プロモ限定カード 16期 プロモ限定カード 15期 プロモ限定カード 13期 プロモ限定カード 11期 プロモ限定カード 10期 プロモ限定カード 2期"
+      }
+    ]
+  },
+  {
+    "id": "dmpcd03-a17",
+    "name": "霊騎幻獣ウルコス (DMPCD03 激17/激17)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dmpcd03-a17.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dmpcd03-a17",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/自然",
+        "rarity": "C",
+        "power": "2000",
+        "cost": "3",
+        "mana": "1",
+        "race": "アーク・セラフィム/ドリームメイト",
+        "illustrator": "tokiti",
+        "abilities": [],
+        "flavor": "霊騎幻獣ウルコスは噂の龍の神を一目見るべく、フィオナの森を飛び出した！ 同名カードが含まれる商品を表示 DM24-EX4 にじさんじコラボ・マスターズ「異次元の超獣使い」 DMPCD-03 デュエマプレイス・コラボデッキ 激竜の英雄＆邪眼の始祖"
+      }
+    ]
+  },
+  {
+    "id": "dmpcd03-b01",
+    "name": "煉獄邪神M・R・C・ロマノフ (DMPCD03 邪1/邪13)",
+    "type": "進化クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dmpcd03-b01.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dmpcd03-b01",
+    "sides": [
+      {
+        "type": "進化クリーチャー",
+        "civilization": "闇/火",
+        "rarity": "SR",
+        "power": "17000",
+        "cost": "20",
+        "mana": "1",
+        "race": "ゴッド/ダークロード/ナイト",
+        "illustrator": "KISUKE",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-EX2 悪感謝祭 カリスマBEST DM23-RP3 アビス・レボリューション 第3弾 「魔覇革命」 DMPCD-03 デュエマプレイス・コラボデッキ 激竜の英雄＆邪眼の始祖"
+      }
+    ]
+  },
+  {
+    "id": "dmpcd03-b02",
+    "name": "大邪眼Ｂ・ロマノフ (DMPCD03 邪2/邪13)",
+    "type": "進化クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dmpcd03-b02.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dmpcd03-b02",
+    "sides": [
+      {
+        "type": "進化クリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "12000",
+        "cost": "7",
+        "mana": "1",
+        "race": "ダークロード/ドラゴン・ゾンビ/ナイト",
+        "illustrator": "Shishizaru",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DMPCD-03 デュエマプレイス・コラボデッキ 激竜の英雄＆邪眼の始祖 DMX-14 最強戦略 パーフェクト12 DMX-12 エピソード2 ブラック・ボックス・パック DMC-66 デュエル・マスターズ 超BEST DM-34 神化編 第3弾 烈火の刃(クロス・ジェネレーション) DMD-25 マスターズ・クロニクル・デッキ ロマノフ 煉獄からの復活"
+      }
+    ]
+  },
+  {
+    "id": "dmpcd03-b03",
+    "name": "邪眼皇ロマノフI世 (DMPCD03 邪3/邪13)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dmpcd03-b03.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dmpcd03-b03",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "8000",
+        "cost": "7",
+        "mana": "1",
+        "race": "ダークロード/ドラゴン・ゾンビ/ナイト",
+        "illustrator": "Toshiaki Takayama",
+        "abilities": [],
+        "flavor": "その魔銃に狙われて生きて帰ったものはいない！よもやの出場！ロマノフ I 世の登場だ！ — 超舌実況ミラクル・ショー 同名カードが含まれる商品を表示 DMPCD-03 デュエマプレイス・コラボデッキ 激竜の英雄＆邪眼の始祖 DMPCD-02 デュエマプレイス・コラボデッキ 竜装の武者＆魔弾の騎士 DMEX-15 20周年超感謝メモリアルパック 魂の章 名場面BEST DMC-54 レジェンド・クロニクル ライバル編 DM-28 戦国編(バトル・ギャラクシー) 第1弾 DMD-25 マスターズ・クロニクル・デッキ ロマノフ 煉獄からの復活 DMC-58 スーパーデッキ サーガ マッド・ロック・チェスター"
+      }
+    ]
+  },
+  {
+    "id": "dmpcd03-b04",
+    "name": "憎悪と怒りの獄門 (DMPCD03 邪4/邪13)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dmpcd03-b04.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dmpcd03-b04",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇/火",
+        "rarity": "SR",
+        "power": "コスト",
+        "cost": "6",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Daisuke Izuka",
+        "abilities": [],
+        "flavor": "その門は、憎悪や怒りを糧とし敵を引きずりこむ。 同名カードが含まれる商品を表示 DMPCD-03 デュエマプレイス・コラボデッキ 激竜の英雄＆邪眼の始祖 DM-11 聖拳編 第2弾 無限軍団の飛翔(エターナル・ウェーブ) DMC-58 スーパーデッキ サーガ マッド・ロック・チェスター"
+      }
+    ]
+  },
+  {
+    "id": "dmpcd03-b05",
+    "name": "煉獄と魔弾の印 (DMPCD03 邪5/邪13)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dmpcd03-b05.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dmpcd03-b05",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇/火",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "6",
+        "mana": "1",
+        "race": "ナイト",
+        "illustrator": "Yuichi Maekawa",
+        "abilities": [],
+        "flavor": "ロマノフ・Z・ウィザードはその身を生贄に、煉獄に閉じ込められている邪眼の始祖をこの世界に蘇らせた。 同名カードが含まれる商品を表示 DMPCD-03 デュエマプレイス・コラボデッキ 激竜の英雄＆邪眼の始祖 DMD-35 DXデュエガチャデッキ 禁星の壊者ドキンダム DMD-25 マスターズ・クロニクル・デッキ ロマノフ 煉獄からの復活"
+      }
+    ]
+  },
+  {
+    "id": "dmpcd03-b06",
+    "name": "邪眼獣ヤミノオーダー (DMPCD03 邪6/邪13)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dmpcd03-b06.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dmpcd03-b06",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇/火",
+        "rarity": "R",
+        "power": "2000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ダーク・モンスター/ゴースト/ナイト",
+        "illustrator": "douzen",
+        "abilities": [],
+        "flavor": "3つに引き裂かれたキング・ロマノフはそれぞれの地獄を支配した後、再び一つとなって、煉獄の主としてロマノフの力を与える存在となったのだった。 同名カードが含まれる商品を表示 DMPCD-03 デュエマプレイス・コラボデッキ 激竜の英雄＆邪眼の始祖"
+      }
+    ]
+  },
+  {
+    "id": "dmpcd03-b07",
+    "name": "地獄門デス・ゲート (DMPCD03 邪7/邪13)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dmpcd03-b07.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dmpcd03-b07",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "6",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "キング・ロマノフ、それは邪眼の始祖であり、煉獄からすべてのロマノフを任命してきた邪眼の影の支配者である。 同名カードが含まれる商品を表示 DMPCD-03 デュエマプレイス・コラボデッキ 激竜の英雄＆邪眼の始祖 DMEX-15 20周年超感謝メモリアルパック 魂の章 名場面BEST DMEX-06 絶対王者!! デュエキングパック DMSD-06 ドルスザク・無月炸裂・スタートデッキ DMX-24 革命ファイナル 輝け！デュエデミー賞パック DMX-23 革命ファイナル 奥義伝授!! デッキLv.マックスパック DMX-20 デッキ一撃完成!! デュエマックス160 ～革命＆侵略～ DMX-16 超王道戦略ファンタジスタ１２ DMX-14 最強戦略 パーフェクト12 DMX-12 エピソード2 ブラック・ボックス・パック DMR-02 エピソード1 ダークサイド DMD-35 DXデュエガチャデッキ 禁星の壊者ドキンダム DMD-33 マスターズ・クロニクル・デッキ 2016 終焉の悪魔神 DMD-25 マスターズ・クロニクル・デッキ ロマノフ 煉獄からの復活 DMD-19 スーパーVデッキ 滅びの龍刃 ディアボロス DMD-12 禁断の変形デッキ オラクルの書 DMX-10 デッキビルダー鬼DX キラリ！レオ編 DMD-05 ライジング・ダッシュ・デッキ 無限アタック!! プロモ限定カード 11期 プロモ限定カード 10期"
+      }
+    ]
+  },
+  {
+    "id": "dmpcd03-b08",
+    "name": "インフェルノ・サイン (DMPCD03 邪8/邪13)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dmpcd03-b08.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dmpcd03-b08",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇",
+        "rarity": "U",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Toshiaki Takayama",
+        "abilities": [],
+        "flavor": "氷牙、天雷、魔光、騎士の一族と我ら邪眼を分かつのは死の理。煉獄の屍を従え、その邪なる眼で死を乗り越えよ!! — 煉獄の儀式 最終詠唱 同名カードが含まれる商品を表示 DM23-BD7 エキサイティング・デュエパ・デッキ 「ネゴシエートの偽衒学者」 DMPCD-03 デュエマプレイス・コラボデッキ 激竜の英雄＆邪眼の始祖 DMPCD-02 デュエマプレイス・コラボデッキ 竜装の武者＆魔弾の騎士 DMX-24 革命ファイナル 輝け！デュエデミー賞パック DMX-21 マスターズ・クロニクル・パック（コミック・オブ・ヒーローズ） DMC-48 ヒーローズ・クロス・パック ザキラ編 DMD-25 マスターズ・クロニクル・デッキ ロマノフ 煉獄からの復活 DMD-10 1stデッキ オラクル・ダッシュ DMC-63 スーパーデッキ ショック ルナティック・ゴッド DMC-44 スーパーデッキクロス「エンドレス・オール・デリート」"
+      }
+    ]
+  },
+  {
+    "id": "dmpcd03-b09",
+    "name": "プライマル・スクリーム (DMPCD03 邪9/邪13)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dmpcd03-b09.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dmpcd03-b09",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇",
+        "rarity": "U",
+        "power": "コスト",
+        "cost": "4",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "hippo",
+        "abilities": [],
+        "flavor": "最初の叫びは、死ぬことへの喜び。 同名カードが含まれる商品を表示 DMPCD-03 デュエマプレイス・コラボデッキ 激竜の英雄＆邪眼の始祖 DMX-14 最強戦略 パーフェクト12 DMX-11 大決戦オールスター12 DMC-68 ドラマティック・ウォーズ エンジェル＆デーモン DMX-03 デッキビルダーDX エイリアン･エディション DMC-58 スーパーデッキ サーガ マッド・ロック・チェスター"
+      }
+    ]
+  },
+  {
+    "id": "dmpcd03-b10",
+    "name": "魔光蟲ヴィルジニア卿 (DMPCD03 邪10/邪13)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dmpcd03-b10.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dmpcd03-b10",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "3000",
+        "cost": "5",
+        "mana": "1",
+        "race": "パラサイトワーム/ナイト",
+        "illustrator": "Naoki Saito",
+        "abilities": [],
+        "flavor": "戦国武闘会がきっかけで、禁断の騎士達が世界へと解き放たれた。 同名カードが含まれる商品を表示 DM26-EX2 悪感謝祭 カリスマBEST DMPCD-03 デュエマプレイス・コラボデッキ 激竜の英雄＆邪眼の始祖 DMEX-17 20周年超感謝メモリアルパック 究極の章 デュエキングMAX DMC-55 コロコロ・レジェンド・７ DM-30 戦国編 第3弾 戦極魂(ウルトラ・デュエル) DMD-25 マスターズ・クロニクル・デッキ ロマノフ 煉獄からの復活"
+      }
+    ]
+  },
+  {
+    "id": "dmpcd03-b11",
+    "name": "邪眼銃士ディミトリ卿 (DMPCD03 邪11/邪13)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dmpcd03-b11.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dmpcd03-b11",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "4000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ダークロード/ナイト",
+        "illustrator": "douzen",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DMPCD-03 デュエマプレイス・コラボデッキ 激竜の英雄＆邪眼の始祖"
+      }
+    ]
+  },
+  {
+    "id": "dmpcd03-b12",
+    "name": "暗黒獣ヤミノシーザー (DMPCD03 邪12/邪13)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dmpcd03-b12.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dmpcd03-b12",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "3000",
+        "cost": "2",
+        "mana": "1",
+        "race": "ダーク・モンスター/ナイト",
+        "illustrator": "KOUSAKU",
+        "abilities": [],
+        "flavor": "ロマノフは、ライバルである紫電、そしてサムライに勝つために今その禁忌の力を解き放とうとしていた。それが戦国武闘会に凶事をもたらす存在に導かれているとも知らずに… 同名カードが含まれる商品を表示 DMPCD-03 デュエマプレイス・コラボデッキ 激竜の英雄＆邪眼の始祖"
+      }
+    ]
+  },
+  {
+    "id": "dmpcd03-b13",
+    "name": "ボーンおどり・チャージャー (DMPCD03 邪13/邪13)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dmpcd03-b13.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dmpcd03-b13",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Yuri Shinjuro",
+        "abilities": [],
+        "flavor": "フェニックスによって封印された伝説の魔銃「マッド・ロック・チェスター」を求めたキング・ロマノフ。しかし、魔銃の呪いによって「マッド」「ロック」「チェスター」の三体に引き裂かれ煉獄へと封じられてしまったのだった。 同名カードが含まれる商品を表示 DMPCD-03 デュエマプレイス・コラボデッキ 激竜の英雄＆邪眼の始祖 DMSD-18 キングマスタースタートデッキ ジェンドルのディスペクター DMEX-10 W王国ドッキングパック 鬼札王国＆不死樹王国 DMEX-02 デュエマクエスト・パック ～伝説の最強戦略12～ DMSP-01 ステキ！カンペキ！！ジョーデッキーBOX DMX-23 革命ファイナル 奥義伝授!! デッキLv.マックスパック DMX-20 デッキ一撃完成!! デュエマックス160 ～革命＆侵略～ DMX-16 超王道戦略ファンタジスタ１２ DMD-19 スーパーVデッキ 滅びの龍刃 ディアボロス DMD-08 変形デッキセット DX鬼エンジェル DMX-10 デッキビルダー鬼DX キラリ！レオ編 DMD-04 ストロング・メタル・デッキ 最強国技 プロモ限定カード 12期"
       }
     ]
   }

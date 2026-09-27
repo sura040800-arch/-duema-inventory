@@ -1,5 +1,2678 @@
 [
   {
+    "id": "dm26ex1-001",
+    "name": "超絶奇跡 鬼羅丸 (DM26EX1 1/50)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-001.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-001",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "ゼロ",
+        "rarity": "VIC",
+        "power": "17000",
+        "cost": "12",
+        "mana": "1",
+        "race": "ヒューマノイド/ハンター/エイリアン/ゼニス",
+        "illustrator": "TUBAKI HALSAME",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM23-EX3 アビス・レボリューション外伝 「邪神と水晶の華」 DMEX-01 ゴールデン・ベスト DMX-25 ファイナル・メモリアル・パック ～Ｅ１・Ｅ２・Ｅ３編～ DMR-08 エピソード2 グレイト・ミラクル"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-002",
+    "name": "飛翔龍 5000VT (DM26EX1 2/50)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-002.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-002",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "VIC",
+        "power": "12000",
+        "cost": "8",
+        "mana": "1",
+        "race": "マジック・アウトレイジMAX",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "相手の小型クリーチャーに困ってるなら、コイツの出番だ！自分のクリーチャーも数えるから、小型クリーチャーが多いデッキに入れてみよう！ 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX2 悪感謝祭 カリスマBEST DM26-EX1 ますますつよいパック 25の援軍 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～ DM24-BD5 エキサイティング・デュエパ・デッキ アセビと異世界フェアリーたち DM24-EX3 刺激爆発デュエナマイトパック DM24-RP4 王道篇 第4弾 「悪魔神、復活」 DM24-RP2 王道篇 第2弾 「カイザー・オブ・ハイパードラゴン」 DM23-EX1 大感謝祭 ビクトリーBEST プロモ限定カード 24期"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-003",
+    "name": "新世界王の権威 (DM26EX1 3/50)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-003a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-003",
+    "sides": [
+      {
+        "type": "キング・セル",
+        "civilization": "光/闇/火",
+        "rarity": "KGM",
+        "power": "コスト",
+        "cost": "マナ",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "RUI MARUYAMA",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 Volzeos-Balamord (DM26EX1 3/50)"
+      },
+      {
+        "type": "キング・クリーチャー",
+        "civilization": "光/水/闇/火/自然",
+        "rarity": "KGM",
+        "power": "555555",
+        "cost": "9",
+        "mana": "1",
+        "race": "ディスペクター/ニュー・ワールド・ドラゴン",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM23-BD1 レジェンドスーパーデッキ 禁王創来 DMRP-20 王来篇拡張パック第4弾 終末王龍大戦 DMART-08 神アート 輝かしき新世界"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-004",
+    "name": "新世界王の思想 (DM26EX1 4/50)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-004a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-004",
+    "sides": [
+      {
+        "type": "キング・セル",
+        "civilization": "水/火/自然",
+        "rarity": "KGM",
+        "power": "コスト",
+        "cost": "マナ",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "特殊能力",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 Volzeos-Balamord (DM26EX1 4/50)"
+      },
+      {
+        "type": "キング・クリーチャー",
+        "civilization": "光/水/闇/火/自然",
+        "rarity": "KGM",
+        "power": "555555",
+        "cost": "9",
+        "mana": "1",
+        "race": "ディスペクター/ニュー・ワールド・ドラゴン",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM23-BD1 レジェンドスーパーデッキ 禁王創来 DMRP-20 王来篇拡張パック第4弾 終末王龍大戦 DMART-08 神アート 輝かしき新世界"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-005",
+    "name": "新世界王の闘気 (DM26EX1 5/50)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-005a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-005",
+    "sides": [
+      {
+        "type": "キング・セル",
+        "civilization": "光/闇/自然",
+        "rarity": "KGM",
+        "power": "コスト",
+        "cost": "マナ",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "特殊能力",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 Volzeos-Balamord (DM26EX1 5/50)"
+      },
+      {
+        "type": "キング・クリーチャー",
+        "civilization": "光/水/闇/火/自然",
+        "rarity": "KGM",
+        "power": "555555",
+        "cost": "9",
+        "mana": "1",
+        "race": "ディスペクター/ニュー・ワールド・ドラゴン",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM23-BD1 レジェンドスーパーデッキ 禁王創来 DMRP-20 王来篇拡張パック第4弾 終末王龍大戦 DMART-08 神アート 輝かしき新世界"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-006",
+    "name": "禁断竜王 Vol-Val-8 (DM26EX1 6/50)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-006.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-006",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/火/自然",
+        "rarity": "KGM",
+        "power": "54321",
+        "cost": "9",
+        "mana": "1",
+        "race": "ディスペクター/アーマード・ドラゴン/アース・ドラゴン/禁断",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!! DM26-EX1 ますますつよいパック 25の援軍 DM24-EX2 天下夢双!!デュエキングDreaM 2024 DM24-SP1 キャラプレミアムデッキ「ドラゴン娘になりたくないっ！」 イェーイめっちゃドラゴン!! DM23-BD1 レジェンドスーパーデッキ 禁王創来 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DMEX-19 マスター・ファイナル・メモリアル・パック DMRP-19 王来篇拡張パック第3弾 禁断龍VS禁断竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-007",
+    "name": "超機動罠 デンジャデオン / 地獄極楽トラップ黙示録 (DM26EX1 7/50)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-007a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-007",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "MAS",
+        "power": "6000",
+        "cost": "6",
+        "mana": "1",
+        "race": "グランセクト",
+        "illustrator": "Miyamoto Satoru",
+        "abilities": [],
+        "flavor": "商品情報 超機動罠 デンジャデオン / 地獄極楽トラップ黙示録 (DM26EX1 7/50)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "自然",
+        "rarity": "MAS",
+        "power": "コスト",
+        "cost": "8",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DMEX-19 マスター・ファイナル・メモリアル・パック DMEX-15 20周年超感謝メモリアルパック 魂の章 名場面BEST DMEX-03 ペリッ!! スペシャルだらけのミステリーパック"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-008",
+    "name": "天上天下双極∞ (DM26EX1 8/50)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-008.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-008",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "自然",
+        "rarity": "MSS",
+        "power": "コスト",
+        "cost": "9",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "MITSUAKI MATSUMOTO",
+        "abilities": [],
+        "flavor": "ツインパクトが大量に入ったデッキなら呪文を使いながらクリーチャーが3体並ぶぞ！まさに呪文版の清永だ！ 商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DMEX-07 必殺!!マキシマム・ザ・マスターパック"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-009",
+    "name": "「修羅」の頂 VAN・ベートーベン (DM26EX1 9/50)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-009.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-009",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "ゼロ",
+        "rarity": "SR",
+        "power": "14000",
+        "cost": "11",
+        "mana": "1",
+        "race": "キング・コマンド・ドラゴン/アンノウン/ゼニス",
+        "illustrator": "YOICHI ITO",
+        "abilities": [],
+        "flavor": "相手のコマンドやドラゴンを完封する最強の切り札だ！ガイアッシュが入ってればコストの重さも気にならないぞ!! 商品情報 同名カードが含まれる商品を表示 DM26-EX3 キャラプレミアムパック ドラゴン娘になりたくないっ！ 文化祭だョ！全員集合!!ドラ娘100％パック DM26-EX1 ますますつよいパック 25の援軍 DM23-EX3 アビス・レボリューション外伝 「邪神と水晶の華」 DMBD-18 レジェンドスーパーデッキ 神歌繚嵐 DMEX-12 最強戦略!!ドラリンパック DMBD-06 クロニクル・レガシー・デッキ2018 至高のゼニス頂神殿 DMX-22 革命 超ブラック・ボックス・パック DMX-13 エピソード2 ホワイト・ゼニス・パック DMART-23 神アート ドラゴン娘の文化祭でウェカドラ♪ プロモ限定カード 18期"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-010",
+    "name": "「正義星帝」 <鬼羅.Star> (DM26EX1 10/50)",
+    "type": "スター進化クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-010.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-010",
+    "sides": [
+      {
+        "type": "スター進化クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "8500",
+        "cost": "5",
+        "mana": "1",
+        "race": "メタリカ/ヒューマノイド/レクスターズ",
+        "illustrator": "tetrapod",
+        "abilities": [],
+        "flavor": "小型クリーチャーを並べるデッキにこいつを入れれば展開力がブーストする！防御もこれでバッチリだ!! 商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM22-BD2 開発部セレクションデッキ 「光水火鬼羅.Star」 DM22-EX1 黄金戦略!!デュエキングMAX 2022 DMEX-19 マスター・ファイナル・メモリアル・パック DMRP-17 王来篇拡張パック第1弾 王星伝説超動"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-011",
+    "name": "無限銀河ジ・エンド・オブ・ユニバース (DM26EX1 11/50)",
+    "type": "進化クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-011.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-011",
+    "sides": [
+      {
+        "type": "進化クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "17000",
+        "cost": "7",
+        "mana": "1",
+        "race": "フェニックス",
+        "illustrator": "Yuukoo009",
+        "abilities": [],
+        "flavor": "大量にクリーチャーを並べてもS・トリガーで逆転されちゃう？ならばこいつでシールドをブレイクせずに勝利を目指せ!! 商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」 DMEX-08 謎のブラックボックスパック DMEX-01 ゴールデン・ベスト"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-012",
+    "name": "神聖龍 エモーショナル・ハードコア (DM26EX1 12/50)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-012.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-012",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "9500",
+        "cost": "7",
+        "mana": "1",
+        "race": "オラクル・ドラゴン/オラクリオン",
+        "illustrator": "Futaro",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX3 キャラプレミアムパック ドラゴン娘になりたくないっ！ 文化祭だョ！全員集合!!ドラ娘100％パック DM26-EX1 ますますつよいパック 25の援軍 DM24-BD6 エキサイティング・デュエパ・デッキ ツラトゥストラは水晶と語らう DM24-EX3 刺激爆発デュエナマイトパック DM24-RP4 王道篇 第4弾 「悪魔神、復活」 DM24-RP1 王道篇 第1弾 「デーモン・オブ・ハイパームーン」 DMRP-22 王来MAX最終弾 切札!マスターCRYMAX!! DMEX-12 最強戦略!!ドラリンパック DMART-12 神アート Angelic Wisdom by Daisuke Izuka"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-013",
+    "name": "ウィリデ・ゴル・ゲルス (DM26EX1 13/50)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-013.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-013",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "8000",
+        "cost": "6",
+        "mana": "1",
+        "race": "メカ・デル・ディネロ/メカ・エンジェル・コマンド",
+        "illustrator": "SENNSU",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM24-EX3 刺激爆発デュエナマイトパック DM24-RP1 王道篇 第1弾 「デーモン・オブ・ハイパームーン」"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-014",
+    "name": "ブルー・インパルス / 「真実を見極めよ、ジョニー！」 (DM26EX1 14/50)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-014a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-014",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "12000",
+        "cost": "10",
+        "mana": "1",
+        "race": "スプリガン/ムートピア",
+        "illustrator": "Murakami Hisashi",
+        "abilities": [],
+        "flavor": "商品情報 ブルー・インパルス / 「真実を見極めよ、ジョニー！」 (DM26EX1 14/50)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "コスト",
+        "cost": "7",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ DM25-EX1 愛感謝祭 ヒロインBEST DM24-EX2 天下夢双!!デュエキングDreaM 2024 DM23-BD7 エキサイティング・デュエパ・デッキ 「ネゴシエートの偽衒学者」 プロモ限定カード 25期"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-015",
+    "name": "卍 ギ・ルーギリン 卍 / 卍獄ブレイン (DM26EX1 15/50)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-015a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-015",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "9000",
+        "cost": "8",
+        "mana": "1",
+        "race": "ムートピア/ドルスザク",
+        "illustrator": "Yuukoo009",
+        "abilities": [],
+        "flavor": "商品情報 卍 ギ・ルーギリン 卍 / 卍獄ブレイン (DM26EX1 15/50)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "コスト",
+        "cost": "1",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DMEX-19 マスター・ファイナル・メモリアル・パック DMBD-08 超誕!!ツインヒーローデッキ80 自然大暴走 VS 卍獄の虚無月"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-016",
+    "name": "ヨビニオン・ハルカス (DM26EX1 16/50)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-016.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-016",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "6000",
+        "cost": "5",
+        "mana": "1",
+        "race": "リキッド・ピープル",
+        "illustrator": "eiji kaneda",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM24-EX3 刺激爆発デュエナマイトパック DM24-RP3 王道篇 第3弾 「ゴールド・オブ・ハイパーエンジェル」"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-017",
+    "name": "超暴淵 ボウダン＝ロウ (DM26EX1 17/50)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-017.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-017",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "13000",
+        "cost": "10",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "IWAO",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM24-EX3 刺激爆発デュエナマイトパック DM24-RP3 王道篇 第3弾 「ゴールド・オブ・ハイパーエンジェル」"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-018",
+    "name": "邪魂龍 ジャビビルブラッド (DM26EX1 18/50)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-018a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-018",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "アビスドラゴン/超化獣",
+        "illustrator": "akagi",
+        "abilities": [],
+        "flavor": "商品情報 邪魂龍 ジャビビルブラッド (DM26EX1 18/50)"
+      },
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "10000",
+        "cost": "4",
+        "mana": "1",
+        "race": "アビスドラゴン/超化獣",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM24-EX3 刺激爆発デュエナマイトパック DM24-RP2 王道篇 第2弾 「カイザー・オブ・ハイパードラゴン」 プロモ限定カード 24期"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-019",
+    "name": "悪名き侵略 レッドアウト (DM26EX1 19/50)",
+    "type": "NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-019.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-019",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "火",
+        "rarity": "SR",
+        "power": "6000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ソニック・コマンド/侵略者",
+        "illustrator": "MORICHIKA SHUTO",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM25-EX2 王道vs邪道 デュエキングWDreaM 2025"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-020",
+    "name": "超神羅ロマノフカイザー・NEX (DM26EX1 20/50)",
+    "type": "進化クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-020.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-020",
+    "sides": [
+      {
+        "type": "進化クリーチャー",
+        "civilization": "火",
+        "rarity": "SR",
+        "power": "25000",
+        "cost": "7",
+        "mana": "1",
+        "race": "アーマード・ドラゴン/ルナーズ・サンガイザー",
+        "illustrator": "Toshiaki Takayama",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM-35 神化編 第4弾 超極竜 VS 六体神 (ネバーエンディング・サーガ)"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-021",
+    "name": "勝利龍装 クラッシュ“覇道” (DM26EX1 21/50)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-021.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-021",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "SR",
+        "power": "9000+",
+        "cost": "10",
+        "mana": "1",
+        "race": "ドラゴンギルド/ビートジョッキー",
+        "illustrator": "Shishizaru",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-RP3 逆札篇 第3弾 勝敵！逆転おこせ鬼の∞ディスペクター!! DM26-EX1 ますますつよいパック 25の援軍 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DMBD-19 開発部セレクションデッキ 「火水覇道」 DMEX-17 20周年超感謝メモリアルパック 究極の章 デュエキングMAX DMRP-05 双極篇 拡張パック第１弾 轟快!! ジョラゴンGo Fight!! DMART-20 神アート DUELMASTERS「AMAZING COMICS」 プロモ限定カード 21期 プロモ限定カード 20期"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-022",
+    "name": "偽りの希望 鬼丸「終斗」 (DM26EX1 22/50)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-022.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-022",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "SR",
+        "power": "6000+",
+        "cost": "6",
+        "mana": "1",
+        "race": "レッド・コマンド・ドラゴン/アンノウン",
+        "illustrator": "Murakami Hisashi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP3 逆札篇 第3弾 勝敵！逆転おこせ鬼の∞ディスペクター!! DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!! DM26-EX1 ますますつよいパック 25の援軍 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM24-EX3 刺激爆発デュエナマイトパック DM23-EX3 アビス・レボリューション外伝 「邪神と水晶の華」 プロモ限定カード 25期"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-023",
+    "name": "魔誕の猛将ダイダロス (DM26EX1 23/50)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-023.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-023",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "SR",
+        "power": "6000",
+        "cost": "5",
+        "mana": "1",
+        "race": "デーモン・コマンド",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM24-EX3 刺激爆発デュエナマイトパック DM24-RP4 王道篇 第4弾 「悪魔神、復活」"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-024",
+    "name": "禁断 ～解放せしX～ (DM26EX1 24/50)",
+    "type": "禁断の鼓動",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-024.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-024",
+    "sides": [
+      {
+        "type": "禁断の鼓動",
+        "civilization": "火",
+        "rarity": "SR",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "RUI MARUYAMA",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DMEX-17 20周年超感謝メモリアルパック 究極の章 デュエキングMAX"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-025",
+    "name": "十四番龍 アクロスラピュタズ Par青天井 (DM26EX1 25/50)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-025.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-025",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "19000",
+        "cost": "14",
+        "mana": "1",
+        "race": "ジャイアント・ドラゴン",
+        "illustrator": "SENNSU",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-026",
+    "name": "ブラキオ龍樹 (DM26EX1 26/50)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-026.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-026",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "23000",
+        "cost": "11",
+        "mana": "1",
+        "race": "ジャイアント・ドラゴン/不死樹王国",
+        "illustrator": "Mikio Masuda",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DMRP-22 王来MAX最終弾 切札!マスターCRYMAX!! DMRP-14 十王篇拡張パック第2弾 爆皇×爆誕 ダイナボルト!!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-027",
+    "name": "十番龍 オービーメイカー Par100 (DM26EX1 27/50)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-027.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-027",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "19000",
+        "cost": "10",
+        "mana": "1",
+        "race": "ジャイアント・ドラゴン",
+        "illustrator": "SENNSU",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM24-EX4 にじさんじコラボ・マスターズ「異次元の超獣使い」 DM24-BD5 エキサイティング・デュエパ・デッキ アセビと異世界フェアリーたち DM23-EX2 頂上決戦!!デュエキングMAX 2023 DM22-RP1 ゴッド・オブ・アビス 第１弾「伝説の邪神」"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-028",
+    "name": "超聖竜シデン・ギャラクシー (DM26EX1 28/50)",
+    "type": "進化クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-028.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-028",
+    "sides": [
+      {
+        "type": "進化クリーチャー",
+        "civilization": "光/火",
+        "rarity": "SR",
+        "power": "15000",
+        "cost": "5",
+        "mana": "1",
+        "race": "エンジェル・コマンド/アーマード・ドラゴン/サムライ",
+        "illustrator": "Toshiaki Takayama",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DMEX-01 ゴールデン・ベスト DMX-19 スーパーレア100%パック DMC-66 デュエル・マスターズ 超BEST DMC-55 コロコロ・レジェンド・７ DM-31 戦国編 第4弾 戦国武闘会(グレイテスト・チャンピオン)"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-029",
+    "name": "邪龍 ジャジーブラッド (DM26EX1 29/50)",
+    "type": "G-NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-029.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-029",
+    "sides": [
+      {
+        "type": "G-NEOクリーチャー",
+        "civilization": "水/闇/火",
+        "rarity": "SR",
+        "power": "6000",
+        "cost": "4",
+        "mana": "1",
+        "race": "アビスドラゴン",
+        "illustrator": "akagi",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～ プロモ限定カード 25期"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-030",
+    "name": "呪烏竜 ACE-Curase / 繁栄の鏡 (DM26EX1 30/50)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-030a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-030",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/闇",
+        "rarity": "SR",
+        "power": "30000",
+        "cost": "15",
+        "mana": "1",
+        "race": "キング・コマンド・ドラゴン/オリジン",
+        "illustrator": "MATSUMOTO EIGHT",
+        "abilities": [],
+        "flavor": "商品情報 呪烏竜 ACE-Curase / 繁栄の鏡 (DM26EX1 30/50)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "コスト",
+        "cost": "4",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM24-EX2 天下夢双!!デュエキングDreaM 2024"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-031",
+    "name": "頂上電融 ジョルト・ザ・ジョクスト4th (DM26EX1 31/50)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-031.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-031",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/火/自然",
+        "rarity": "SR",
+        "power": "10000",
+        "cost": "7",
+        "mana": "1",
+        "race": "ディスペクター/ガイアール・コマンド・ドラゴン/ジョーカーズ",
+        "illustrator": "boyaking",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM23-EX2 頂上決戦!!デュエキングMAX 2023"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-032",
+    "name": "偽りの王 ナンバーナイン / 歓喜の歌 (DM26EX1 32/50)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-032a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-032",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "VR",
+        "power": "9000",
+        "cost": "9",
+        "mana": "1",
+        "race": "キング・コマンド・ドラゴン/アンノウン",
+        "illustrator": "Dmitry Burmak",
+        "abilities": [],
+        "flavor": "商品情報 偽りの王 ナンバーナイン / 歓喜の歌 (DM26EX1 32/50)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "光",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM24-BD6 エキサイティング・デュエパ・デッキ ツラトゥストラは水晶と語らう DM22-EX1 黄金戦略!!デュエキングMAX 2022 DMEX-04 夢の最＆強!!ツインパクト超No.1パック"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-033",
+    "name": "翼速 ザ・ウイング (DM26EX1 33/50)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-033.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-033",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "VR",
+        "power": "6000",
+        "cost": "6",
+        "mana": "1",
+        "race": "アーマード・ソニック・コマンド",
+        "illustrator": "Mikio Masuda",
+        "abilities": [],
+        "flavor": "小型クリーチャーを並べまくると手札がなくなっちゃう？ならばこいつの出番だ！攻撃するだけでどんどん手札が増えるぞ!! 商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM23-RP4X アビス・レボリューション 第4弾 「竜皇神爆輝」 超刺激パック DM23-RP4 アビス・レボリューション 第4弾 「竜皇神爆輝」"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-034",
+    "name": "水晶の記録 ゼノシャーク / クリスタル・メモリー (DM26EX1 34/50)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-034a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-034",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "VR",
+        "power": "1000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ムートピア",
+        "illustrator": "Mikio Masuda",
+        "abilities": [],
+        "flavor": "商品情報 水晶の記録 ゼノシャーク / クリスタル・メモリー (DM26EX1 34/50)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "4",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM23-EX2 頂上決戦!!デュエキングMAX 2023 DMBD-15 レジェンドスーパーデッキ 蒼龍革命 DMEX-13 四強集結→最強直結パック DMRP-08 双極篇 拡張パック第４弾 超決戦!バラギアラ!!無敵オラオラ輪廻∞"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-035",
+    "name": "奇天烈 シャッフ (DM26EX1 35/50)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-035.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-035",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "VR",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "マジック・コマンド/グレートメカオー/侵略者",
+        "illustrator": "akira actagawa",
+        "abilities": [],
+        "flavor": "相手の呪文を止めたいならコイツの出番！メカ・メクレイドから出せる裏ワザも忘れちゃいけないぞ!! 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!! DM26-EX1 ますますつよいパック 25の援軍 DM22-BD2 開発部セレクションデッキ 「光水火鬼羅.Star」 DMBD-19 開発部セレクションデッキ 「火水覇道」 DMRP-18 王来篇拡張パック第2弾 禁時王の凶来 DMBD-15 レジェンドスーパーデッキ 蒼龍革命 DMBD-10 アルティメット・クロニクル・デッキ 2019 SSS!! 侵略デッドディザスター DMR-19 革命 拡張パック第3章 禁断のドキンダムX"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-036",
+    "name": "堕魔 ジグス★ガルビ (DM26EX1 36/50)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-036.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-036",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "VR",
+        "power": "6000",
+        "cost": "6",
+        "mana": "1",
+        "race": "マフィ・ギャング/魔導具/ムーゲッツ",
+        "illustrator": "shosuke",
+        "abilities": [],
+        "flavor": "魔導具のおともならコイツで決まり！ドルスザクと一緒に出てくれば一気にゲームが決まっちゃうぞ!! 商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DMEX-02 デュエマクエスト・パック ～伝説の最強戦略12～"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-037",
+    "name": "貴布人 テブルカッケ＝エディ (DM26EX1 37/50)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-037.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-037",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "VR",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "アビスロイヤル/フュージョナー",
+        "illustrator": "Chiam",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-038",
+    "name": "戦極竜ヴァルキリアス・ムサシ (DM26EX1 38/50)",
+    "type": "進化クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-038.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-038",
+    "sides": [
+      {
+        "type": "進化クリーチャー",
+        "civilization": "火",
+        "rarity": "VR",
+        "power": "11000",
+        "cost": "6",
+        "mana": "1",
+        "race": "ヒューマノイド/アーマード・ドラゴン/サムライ",
+        "illustrator": "hippo",
+        "abilities": [],
+        "flavor": "弐天で増やした手札はこいつで叩きつけろ！ムサシとムサシの二刀流だ!! 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DMC-53 レジェンド・クロニクル 勝舞編 DM-30 戦国編 第3弾 戦極魂(ウルトラ・デュエル)"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-039",
+    "name": "超神羅ギャラクシー・デスティニー (DM26EX1 39/50)",
+    "type": "進化クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-039.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-039",
+    "sides": [
+      {
+        "type": "進化クリーチャー",
+        "civilization": "自然",
+        "rarity": "VR",
+        "power": "17000",
+        "cost": "7",
+        "mana": "1",
+        "race": "ガイア・コマンド/ルナーズ・サンガイザー",
+        "illustrator": "hippo",
+        "abilities": [],
+        "flavor": "ケンジの究極切札MAXがこいつだ！ここからギャイアとCRYMAX ジャオウガを出す必殺コンボを決めろ!! 商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM23-EX2 頂上決戦!!デュエキングMAX 2023 DM-35 神化編 第4弾 超極竜 VS 六体神 (ネバーエンディング・サーガ)"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-040",
+    "name": "若頭 鬼流院 刃 (DM26EX1 40/50)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-040.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-040",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "VR",
+        "power": "17000",
+        "cost": "10",
+        "mana": "1",
+        "race": "ガイア・コマンド/ビーストフォーク/ハンター",
+        "illustrator": "Kazuo Matsushima",
+        "abilities": [],
+        "flavor": "刃鬼のハンター・メクレイドでコイツが出れば勝利確定!?マナゾーンのハンターを出しまくって夢のコンボを決めろ！ 商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DMR-02 エピソード1 ダークサイド"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-041",
+    "name": "アクア・スペルブルー / インビンシブル・オーラ (DM26EX1 41/50)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-041a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-041",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "VR",
+        "power": "2000",
+        "cost": "7",
+        "mana": "1",
+        "race": "リキッド・ピープル/ハンター",
+        "illustrator": "MATSUMOTO EIGHT/Masaki Hirooka",
+        "abilities": [],
+        "flavor": "商品情報 アクア・スペルブルー / インビンシブル・オーラ (DM26EX1 41/50)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "光",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "13",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM22-EX1 黄金戦略!!デュエキングMAX 2022"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-042",
+    "name": "超光喜 エルボロム (DM26EX1 42/50)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-042a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-042",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/水",
+        "rarity": "VR",
+        "power": "6000",
+        "cost": "4",
+        "mana": "1",
+        "race": "デーモン・コマンド/超化獣",
+        "illustrator": "Ishibashi Yosuke",
+        "abilities": [],
+        "flavor": "商品情報 超光喜 エルボロム (DM26EX1 42/50)"
+      },
+      {
+        "type": "クリーチャー",
+        "civilization": "光/水",
+        "rarity": "VR",
+        "power": "8500",
+        "cost": "4",
+        "mana": "1",
+        "race": "デーモン・コマンド/超化獣",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM24-EX3 刺激爆発デュエナマイトパック DM24-RP2 王道篇 第2弾 「カイザー・オブ・ハイパードラゴン」"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-043",
+    "name": "天体妖精エスメル / 「お茶はいかがですか？」 (DM26EX1 43/50)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-043a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-043",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "VR",
+        "power": "2000",
+        "cost": "2",
+        "mana": "1",
+        "race": "スノーフェアリー",
+        "illustrator": "KOUSAKU",
+        "abilities": [],
+        "flavor": "商品情報 天体妖精エスメル / 「お茶はいかがですか？」 (DM26EX1 43/50)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "光",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "4",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM24-EX4 にじさんじコラボ・マスターズ「異次元の超獣使い」 DM24-EX2 天下夢双!!デュエキングDreaM 2024 DMEX-17 20周年超感謝メモリアルパック 究極の章 デュエキングMAX DMEX-12 最強戦略!!ドラリンパック DMART-03 神アート フェアリー・ライブラリー"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-044",
+    "name": "メアリー・ジェニーのお茶会 (DM26EX1 44/50)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-044.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-044",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "水/闇",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "デスパペットの集い",
+        "illustrator": "MATSUMOTO EIGHT",
+        "abilities": [],
+        "flavor": "ジェニーデッキの最終兵器がこの呪文だ！デスパペットを大量に並べれば相手の手札はボロボロだ!! 商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM24-EX1 超感謝祭 ファンタジーBEST"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-045",
+    "name": "鬼羅王女プリン (DM26EX1 45/50)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-045.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-045",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/自然",
+        "rarity": "VR",
+        "power": "5000",
+        "cost": "5",
+        "mana": "1",
+        "race": "ジャイアント・ハンター/エイリアン",
+        "illustrator": "Tanru",
+        "abilities": [],
+        "flavor": "ハンターデッキの中盤なら姫の出番だ！出た時と相手のターンのはじめの2回能力を発動させて刃鬼につなげよう!! 商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM24-BD5 エキサイティング・デュエパ・デッキ アセビと異世界フェアリーたち DM23-EX1 大感謝祭 ビクトリーBEST"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-046",
+    "name": "フォック＝ザ＝ダーティ (DM26EX1 46/50)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-046.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-046",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇/自然",
+        "rarity": "VR",
+        "power": "5000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "douzen",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM23-RP3 アビス・レボリューション 第3弾 「魔覇革命」"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-047",
+    "name": "プリンセス・パーティ ～シラハの絆～ (DM26EX1 47/50)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-047.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-047",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/水/自然",
+        "rarity": "VR",
+        "power": "5000",
+        "cost": "5",
+        "mana": "1",
+        "race": "スノーフェアリー/ドリームメイト/スプラッシュ・クイーン",
+        "illustrator": "kawasumi",
+        "abilities": [],
+        "flavor": "防御が不安ならコイツの出番だ！トリガーしたら3体を対処できる強力トリガー、多色デッキならマナでも活躍してくれるぞ!! 商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-EX2 王道vs邪道 デュエキングWDreaM 2025 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～ DM24-EX3 刺激爆発デュエナマイトパック DM24-RP3 王道篇 第3弾 「ゴールド・オブ・ハイパーエンジェル」 プロモ限定カード 24期"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-048",
+    "name": "邪眼の魔法陣 (DM26EX1 48/50)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-048.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-048",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "光/水/自然",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "デーモン・コマンド",
+        "illustrator": "nurikabe",
+        "abilities": [],
+        "flavor": "多色マナのタップインが気になるならコイツを試せ！シンカライズを活用できる進化デッキなら絶対無駄にならない!! 商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM24-EX3 刺激爆発デュエナマイトパック DM24-RP4 王道篇 第4弾 「悪魔神、復活」"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-049",
+    "name": "邪尾の魔法陣 (DM26EX1 49/50)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-049.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-049",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "光/火/自然",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "4",
+        "mana": "1",
+        "race": "デーモン・コマンド",
+        "illustrator": "douzen",
+        "abilities": [],
+        "flavor": "多色マナのタップインが気になるならコイツを試せ！G・ストライクもあるから、マナと防御の不安を同時に解決できるぞ!! 商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM24-EX3 刺激爆発デュエナマイトパック DM24-RP4 王道篇 第4弾 「悪魔神、復活」"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-050",
+    "name": "邪爪の魔法陣 (DM26EX1 50/50)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-050.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-050",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "闇/火/自然",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "デーモン・コマンド",
+        "illustrator": "Masateru Ikeda",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM24-EX3 刺激爆発デュエナマイトパック DM24-RP4 王道篇 第4弾 「悪魔神、復活」"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-N001",
+    "name": "バザガベルグ・閃光・ドラゴン (DM26EX1 N1/N25)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-N001.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-N001",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "6000",
+        "cost": "4",
+        "mana": "1",
+        "race": "アーマード・ドラゴン/サムライ",
+        "illustrator": "RUI MARUYAMA",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-N002",
+    "name": "ジョギメラゴン＆メラビート ～Jの焔舞～ (DM26EX1 N2/N25)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-N002.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-N002",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "SR",
+        "power": "10000",
+        "cost": "7",
+        "mana": "1",
+        "race": "ジョーカーズ・ドラゴン",
+        "illustrator": "YOICHI ITO",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-N003",
+    "name": "大地無双 カイザー「勝」 / 勝利の大地 (DM26EX1 N3/N25)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-N003a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-N003",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/自然",
+        "rarity": "SR",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ブルー・コマンド・ドラゴン/グリーン・コマンド・ドラゴン/ハンター",
+        "illustrator": "RYU FUJINAKA",
+        "abilities": [],
+        "flavor": "商品情報 大地無双 カイザー「勝」 / 勝利の大地 (DM26EX1 N3/N25)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "水/自然",
+        "rarity": "SR",
+        "power": "コスト",
+        "cost": "8",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-N004",
+    "name": "邪幽 ジャヴェール / 「ヤベーのを見たいか？」 (DM26EX1 N4/N25)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-N004a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-N004",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇/自然",
+        "rarity": "SR",
+        "power": "8000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アビスドラゴン",
+        "illustrator": "akagi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 邪幽 ジャヴェール / 「ヤベーのを見たいか？」 (DM26EX1 N4/N25)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "闇/自然",
+        "rarity": "SR",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-N005",
+    "name": "星龍ゴージャス・アース (DM26EX1 N5/N25)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-N005.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-N005",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/水/闇/火/自然",
+        "rarity": "SR",
+        "power": "25000",
+        "cost": "25",
+        "mana": "1",
+        "race": "ワールド・ドラゴン",
+        "illustrator": "Kotakan",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-N006",
+    "name": "ガチャンコ ガジェロボ / ガチャンコ・チャージャー (DM26EX1 N6/N25)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-N006a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-N006",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "VR",
+        "power": "9000",
+        "cost": "8",
+        "mana": "1",
+        "race": "グレートメカオー/侵略者",
+        "illustrator": "MATSUMOTO EIGHT",
+        "abilities": [],
+        "flavor": "商品情報 ガチャンコ ガジェロボ / ガチャンコ・チャージャー (DM26EX1 N6/N25)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-N007",
+    "name": "ヨビニオン・コオニ (DM26EX1 N7/N25)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-N007.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-N007",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "VR",
+        "power": "3000",
+        "cost": "4",
+        "mana": "1",
+        "race": "デモニオ",
+        "illustrator": "sarmat",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-N008",
+    "name": "愛羅特攻の忠剣ハチ公 (DM26EX1 N8/N25)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-N008.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-N008",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "VR",
+        "power": "8000",
+        "cost": "9",
+        "mana": "1",
+        "race": "フレイム・コマンド/フレイム・モンスター/ハンター",
+        "illustrator": "Kemonomichi",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-N009",
+    "name": "龍素記号Si サインサイクリカ / ザーディアン・サイン (DM26EX1 N9/N25)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-N009a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-N009",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/闇",
+        "rarity": "VR",
+        "power": "6500",
+        "cost": "6",
+        "mana": "1",
+        "race": "クリスタル・コマンド・ドラゴン",
+        "illustrator": "Murakami Hisashi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 龍素記号Si サインサイクリカ / ザーディアン・サイン (DM26EX1 N9/N25)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "光/水",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-N010",
+    "name": "五輪の従者 呼勇気 / 「名誉ある勝利を！」 (DM26EX1 N10/N25)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-N010a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-N010",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/火",
+        "rarity": "VR",
+        "power": "8000",
+        "cost": "6",
+        "mana": "1",
+        "race": "ドリームメイト/サムライ",
+        "illustrator": "kawasumi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 五輪の従者 呼勇気 / 「名誉ある勝利を！」 (DM26EX1 N10/N25)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "火",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "1",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-N011",
+    "name": "インビンシブル・アポカリプス (DM26EX1 N11/N25)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-N011.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-N011",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光/火",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "13",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "tetrapod",
+        "abilities": [],
+        "flavor": "ゴスペルから撃つもうひとつの必殺呪文がこれだ！追加ターンじゃ勝てない時も相手を全滅させれば逆転できるかも!? 商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-N012",
+    "name": "鬼ヶ魔槍 ジャオウガ (DM26EX1 N12/N25)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-N012.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-N012",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇/火",
+        "rarity": "VR",
+        "power": "6000",
+        "cost": "6",
+        "mana": "1",
+        "race": "デモニオ",
+        "illustrator": "Soto Kuzutani",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-N013",
+    "name": "“絶闘乱襲”ブランド (DM26EX1 N13/N25)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-N013a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-N013",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火/自然",
+        "rarity": "VR",
+        "power": "3000",
+        "cost": "2",
+        "mana": "1",
+        "race": "ビートジョッキー/超化獣",
+        "illustrator": "Yuukoo009",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 “絶闘乱襲”ブランド (DM26EX1 N13/N25)"
+      },
+      {
+        "type": "クリーチャー",
+        "civilization": "火/自然",
+        "rarity": "VR",
+        "power": "5000",
+        "cost": "2",
+        "mana": "1",
+        "race": "ビートジョッキー/超化獣",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-N014",
+    "name": "邪闘魔縛 ウェロマノフ=ルキウスB (DM26EX1 N14/N25)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-N014.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-N014",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/闇/自然",
+        "rarity": "VR",
+        "power": "19500",
+        "cost": "12",
+        "mana": "1",
+        "race": "ディスペクター/エンジェル・コマンド/ドラゴン・ゾンビ/ナイト",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-N015",
+    "name": "禁断の超轟速 バイオレットゾーン (DM26EX1 N15/N25)",
+    "type": "進化クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-N015.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-N015",
+    "sides": [
+      {
+        "type": "進化クリーチャー",
+        "civilization": "水/闇/火",
+        "rarity": "VR",
+        "power": "12000",
+        "cost": "7",
+        "mana": "1",
+        "race": "ソニック・コマンド/S級侵略者",
+        "illustrator": "Yuukoo009",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-N016",
+    "name": "「正義の記念碑」 (DM26EX1 N16/N25)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-N016.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-N016",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "光",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "8",
+        "mana": "1",
+        "race": "メタリカ/エンジェル・コマンド/レクスターズ",
+        "illustrator": "tetrapod",
+        "abilities": [],
+        "flavor": "ライオネル.Starから出せば、自分の進化は残しつつ相手だけ全滅も夢じゃない！ 商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-N017",
+    "name": "冥土人形クリン・ラビィ (DM26EX1 N17/N25)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-N017.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-N017",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "R",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "デスパペット",
+        "illustrator": "kawasumi",
+        "abilities": [],
+        "flavor": "デスパペットで手札破壊しつつ、自分は手札補充。ジェニー戦略の強力サポートだ!! 商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-N018",
+    "name": "ジョパンダ大佐 <ケンジ.Star> (DM26EX1 N18/N25)",
+    "type": "スター進化クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-N018.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-N018",
+    "sides": [
+      {
+        "type": "スター進化クリーチャー",
+        "civilization": "闇",
+        "rarity": "R",
+        "power": "4000",
+        "cost": "3",
+        "mana": "1",
+        "race": "デーモン・コマンド/ドリームメイト/レクスターズ",
+        "illustrator": "KIYA",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-N019",
+    "name": "堕魔 グリデリア / 堕呪 フンズヴァイ (DM26EX1 N19/N25)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-N019a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-N019",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "R",
+        "power": "2000",
+        "cost": "3",
+        "mana": "1",
+        "race": "マフィ・ギャング/魔導具",
+        "illustrator": "sarmat",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 堕魔 グリデリア / 堕呪 フンズヴァイ (DM26EX1 N19/N25)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "魔導具",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-N020",
+    "name": "ゲイルマッチ・ビートル (DM26EX1 N20/N25)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-N020.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-N020",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "R",
+        "power": "12000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ジャイアント・インセクト",
+        "illustrator": "KISUKE",
+        "abilities": [],
+        "flavor": "ゲイル・ヴェスパーを邪魔する厄介な妨害クリーチャーは、こいつとバトルさせて仕留めるべし！ 商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-N021",
+    "name": "チアスイート アカネ / 「ファーーー！甘い甘い!!」 (DM26EX1 N21/N25)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-N021a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-N021",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "R",
+        "power": "1000",
+        "cost": "2",
+        "mana": "1",
+        "race": "ジャイアント・スノーフェアリー",
+        "illustrator": "TETSU KUROSAWA",
+        "abilities": [],
+        "flavor": "商品情報 チアスイート アカネ / 「ファーーー！甘い甘い!!」 (DM26EX1 N21/N25)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "自然",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "8",
+        "mana": "1",
+        "race": "ジャイアント・スキル",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-N022",
+    "name": "般若真城 マントラ丸 (DM26EX1 N22/N25)",
+    "type": "G城",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-N022.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-N022",
+    "sides": [
+      {
+        "type": "G城",
+        "civilization": "光/闇",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "4",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Takayuki Futami",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-N023",
+    "name": "ボルシャック・デンジャラス・ドラゴン (DM26EX1 N23/N25)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-N023.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-N023",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/火",
+        "rarity": "R",
+        "power": "5000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アーマード・ドラゴン",
+        "illustrator": "nablange",
+        "abilities": [],
+        "flavor": "７マナのボルシャックに革命チェンジする時に余ったマナでコイツをD・D・D！アンタップさせてバクテラスに革命チェンジだ!! 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-N024",
+    "name": "芸魔猛牛 オックスチェッカー (DM26EX1 N24/N25)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-N024.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-N024",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/火",
+        "rarity": "R",
+        "power": "5000",
+        "cost": "5",
+        "mana": "1",
+        "race": "マジック・モンスター/ゲーム・コマンド",
+        "illustrator": "AIRI YOSHIHISA",
+        "abilities": [],
+        "flavor": "カラクリバーシに頼らなくても、Mogi林檎から３ターン目に出してカクメイジンへとつなげられるぞ！ 商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-N025",
+    "name": "ディザスター・チューン (DM26EX1 N25/N25)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-N025.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-N025",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "水/闇/自然",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "ヨビニオンデッキで序盤のカードが足りなくて困ってるそこのキミ！このカードなら呪文だからヨビニオンを邪魔しないぞ!! 商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-SECN001",
+    "name": "バザガベルグ・閃光・ドラゴン (DM26EX1 ㊙N1/㊙N25)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-SECN001.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-SECN001",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "6000",
+        "cost": "4",
+        "mana": "1",
+        "race": "アーマード・ドラゴン/サムライ",
+        "illustrator": "RUI MARUYAMA",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-SECN001CHO",
+    "name": "バザガベルグ・閃光・ドラゴン (DM26EX1 ㊙N1超/㊙N5)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-SECN001CHO.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-SECN001CHO",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "6000",
+        "cost": "4",
+        "mana": "1",
+        "race": "アーマード・ドラゴン/サムライ",
+        "illustrator": "RUI MARUYAMA",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-SECN002",
+    "name": "ジョギメラゴン＆メラビート ～Jの焔舞～ (DM26EX1 ㊙N2/㊙N25)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-SECN002.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-SECN002",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "SR",
+        "power": "10000",
+        "cost": "7",
+        "mana": "1",
+        "race": "ジョーカーズ・ドラゴン",
+        "illustrator": "YOICHI ITO",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-SECN002CHO",
+    "name": "ジョギメラゴン＆メラビート ～Jの焔舞～ (DM26EX1 ㊙N2超/㊙N5)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-SECN002CHO.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-SECN002CHO",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "SR",
+        "power": "10000",
+        "cost": "7",
+        "mana": "1",
+        "race": "ジョーカーズ・ドラゴン",
+        "illustrator": "YOICHI ITO",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-SECN003",
+    "name": "大地無双 カイザー「勝」 / 勝利の大地 (DM26EX1 ㊙N3/㊙N25)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-SECN003a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-SECN003",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/自然",
+        "rarity": "SR",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ブルー・コマンド・ドラゴン/グリーン・コマンド・ドラゴン/ハンター",
+        "illustrator": "RYU FUJINAKA",
+        "abilities": [],
+        "flavor": "商品情報 大地無双 カイザー「勝」 / 勝利の大地 (DM26EX1 ㊙N3/㊙N25)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "水/自然",
+        "rarity": "SR",
+        "power": "コスト",
+        "cost": "8",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-SECN003CHO",
+    "name": "大地無双 カイザー「勝」 / 勝利の大地 (DM26EX1 ㊙N3超/㊙N5)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-SECN003CHOa.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-SECN003CHO",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/自然",
+        "rarity": "SR",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ブルー・コマンド・ドラゴン/グリーン・コマンド・ドラゴン/ハンター",
+        "illustrator": "Daisuke Izuka",
+        "abilities": [],
+        "flavor": "商品情報 大地無双 カイザー「勝」 / 勝利の大地 (DM26EX1 ㊙N3超/㊙N5)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "水/自然",
+        "rarity": "SR",
+        "power": "コスト",
+        "cost": "8",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-SECN004",
+    "name": "邪幽 ジャヴェール / 「ヤベーのを見たいか？」 (DM26EX1 ㊙N4/㊙N25)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-SECN004a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-SECN004",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇/自然",
+        "rarity": "SR",
+        "power": "8000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アビスドラゴン",
+        "illustrator": "akagi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 邪幽 ジャヴェール / 「ヤベーのを見たいか？」 (DM26EX1 ㊙N4/㊙N25)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "闇/自然",
+        "rarity": "SR",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-SECN004CHO",
+    "name": "邪幽 ジャヴェール / 「ヤベーのを見たいか？」 (DM26EX1 ㊙N4超/㊙N5)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-SECN004CHOa.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-SECN004CHO",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇/自然",
+        "rarity": "SR",
+        "power": "8000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アビスドラゴン",
+        "illustrator": "akagi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 邪幽 ジャヴェール / 「ヤベーのを見たいか？」 (DM26EX1 ㊙N4超/㊙N5)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "闇/自然",
+        "rarity": "SR",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-SECN005",
+    "name": "星龍ゴージャス・アース (DM26EX1 ㊙N5/㊙N25)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-SECN005.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-SECN005",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/水/闇/火/自然",
+        "rarity": "SR",
+        "power": "25000",
+        "cost": "25",
+        "mana": "1",
+        "race": "ワールド・ドラゴン",
+        "illustrator": "Kotakan",
+        "abilities": [],
+        "flavor": "龍の力が結集した時、ゴージャスな援軍が降臨する。 商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-SECN005CHO",
+    "name": "星龍ゴージャス・アース (DM26EX1 ㊙N5超/㊙N5)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-SECN005CHO.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-SECN005CHO",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/水/闇/火/自然",
+        "rarity": "SR",
+        "power": "25000",
+        "cost": "25",
+        "mana": "1",
+        "race": "ワールド・ドラゴン",
+        "illustrator": "Otake Okayu",
+        "abilities": [],
+        "flavor": "25周年をゴージャスなケーキでお祝いっ!! — 真久間メガ 商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-SECN006",
+    "name": "ガチャンコ ガジェロボ / ガチャンコ・チャージャー (DM26EX1 ㊙N6/㊙N25)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-SECN006a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-SECN006",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "VR",
+        "power": "9000",
+        "cost": "8",
+        "mana": "1",
+        "race": "グレートメカオー/侵略者",
+        "illustrator": "MATSUMOTO EIGHT",
+        "abilities": [],
+        "flavor": "商品情報 ガチャンコ ガジェロボ / ガチャンコ・チャージャー (DM26EX1 ㊙N6/㊙N25)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-SECN007",
+    "name": "ヨビニオン・コオニ (DM26EX1 ㊙N7/㊙N25)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-SECN007.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-SECN007",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "VR",
+        "power": "3000",
+        "cost": "4",
+        "mana": "1",
+        "race": "デモニオ",
+        "illustrator": "sarmat",
+        "abilities": [],
+        "flavor": "このコオニが援軍に来たからには、鬼札王国集結は間違いありません!! — ヨビニオン・コオニ 商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-SECN008",
+    "name": "愛羅特攻の忠剣ハチ公 (DM26EX1 ㊙N8/㊙N25)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-SECN008.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-SECN008",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "VR",
+        "power": "8000",
+        "cost": "9",
+        "mana": "1",
+        "race": "フレイム・コマンド/フレイム・モンスター/ハンター",
+        "illustrator": "Kemonomichi",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-SECN009",
+    "name": "龍素記号Si サインサイクリカ / ザーディアン・サイン (DM26EX1 ㊙N9/㊙N25)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-SECN009a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-SECN009",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/闇",
+        "rarity": "VR",
+        "power": "6500",
+        "cost": "6",
+        "mana": "1",
+        "race": "クリスタル・コマンド・ドラゴン",
+        "illustrator": "Murakami Hisashi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 龍素記号Si サインサイクリカ / ザーディアン・サイン (DM26EX1 ㊙N9/㊙N25)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "光/水",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-SECN010",
+    "name": "五輪の従者 呼勇気 / 「名誉ある勝利を！」 (DM26EX1 ㊙N10/㊙N25)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-SECN010a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-SECN010",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/火",
+        "rarity": "VR",
+        "power": "8000",
+        "cost": "6",
+        "mana": "1",
+        "race": "ドリームメイト/サムライ",
+        "illustrator": "kawasumi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 五輪の従者 呼勇気 / 「名誉ある勝利を！」 (DM26EX1 ㊙N10/㊙N25)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "火",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "1",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-SECN011",
+    "name": "インビンシブル・アポカリプス (DM26EX1 ㊙N11/㊙N25)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-SECN011.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-SECN011",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光/火",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "13",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "tetrapod",
+        "abilities": [],
+        "flavor": "水晶の王への援軍は、偽りの神による破滅の予言。 商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-SECN012",
+    "name": "鬼ヶ魔槍 ジャオウガ (DM26EX1 ㊙N12/㊙N25)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-SECN012.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-SECN012",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇/火",
+        "rarity": "VR",
+        "power": "6000",
+        "cost": "6",
+        "mana": "1",
+        "race": "デモニオ",
+        "illustrator": "Soto Kuzutani",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-SECN013",
+    "name": "“絶闘乱襲”ブランド (DM26EX1 ㊙N13/㊙N25)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-SECN013a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-SECN013",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火/自然",
+        "rarity": "VR",
+        "power": "3000",
+        "cost": "2",
+        "mana": "1",
+        "race": "ビートジョッキー/超化獣",
+        "illustrator": "Yuukoo009",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 “絶闘乱襲”ブランド (DM26EX1 ㊙N13/㊙N25)"
+      },
+      {
+        "type": "クリーチャー",
+        "civilization": "火/自然",
+        "rarity": "VR",
+        "power": "5000",
+        "cost": "2",
+        "mana": "1",
+        "race": "ビートジョッキー/超化獣",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-SECN014",
+    "name": "邪闘魔縛 ウェロマノフ=ルキウスB (DM26EX1 ㊙N14/㊙N25)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-SECN014.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-SECN014",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/闇/自然",
+        "rarity": "VR",
+        "power": "19500",
+        "cost": "12",
+        "mana": "1",
+        "race": "ディスペクター/エンジェル・コマンド/ドラゴン・ゾンビ/ナイト",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "天門へと進軍した真邪眼騎士団へ、新たなロマノフが援軍として送り込まれた。 商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-SECN015",
+    "name": "禁断の超轟速 バイオレットゾーン (DM26EX1 ㊙N15/㊙N25)",
+    "type": "進化クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-SECN015.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-SECN015",
+    "sides": [
+      {
+        "type": "進化クリーチャー",
+        "civilization": "水/闇/火",
+        "rarity": "VR",
+        "power": "12000",
+        "cost": "7",
+        "mana": "1",
+        "race": "ソニック・コマンド/S級侵略者",
+        "illustrator": "Yuukoo009",
+        "abilities": [],
+        "flavor": "禁断の援軍は超次元すらも駆け抜ける。紫の軌跡を残して。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-SECN016",
+    "name": "「正義の記念碑」 (DM26EX1 ㊙N16/㊙N25)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-SECN016.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-SECN016",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "光",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "8",
+        "mana": "1",
+        "race": "メタリカ/エンジェル・コマンド/レクスターズ",
+        "illustrator": "tetrapod",
+        "abilities": [],
+        "flavor": "語り継がれる「正義」への思いこそが、最高の援軍。 商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-SECN017",
+    "name": "冥土人形クリン・ラビィ (DM26EX1 ㊙N17/㊙N25)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-SECN017.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-SECN017",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "R",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "デスパペット",
+        "illustrator": "kawasumi",
+        "abilities": [],
+        "flavor": "私がメアリーお嬢様の援軍⁉ はわわ、恐れ多いですぅ～。— 冥土人形クリン・ラビィ 商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-SECN018",
+    "name": "ジョパンダ大佐 <ケンジ.Star> (DM26EX1 ㊙N18/㊙N25)",
+    "type": "スター進化クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-SECN018.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-SECN018",
+    "sides": [
+      {
+        "type": "スター進化クリーチャー",
+        "civilization": "闇",
+        "rarity": "R",
+        "power": "4000",
+        "cost": "3",
+        "mana": "1",
+        "race": "デーモン・コマンド/ドリームメイト/レクスターズ",
+        "illustrator": "KIYA",
+        "abilities": [],
+        "flavor": "パンダネルラ将軍の命を受け、ジョパンダ大佐が援軍への旅にでる。 商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-SECN019",
+    "name": "堕魔 グリデリア / 堕呪 フンズヴァイ (DM26EX1 ㊙N19/㊙N25)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-SECN019a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-SECN019",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "R",
+        "power": "2000",
+        "cost": "3",
+        "mana": "1",
+        "race": "マフィ・ギャング/魔導具",
+        "illustrator": "sarmat",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 堕魔 グリデリア / 堕呪 フンズヴァイ (DM26EX1 ㊙N19/㊙N25)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "魔導具",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-SECN020",
+    "name": "ゲイルマッチ・ビートル (DM26EX1 ㊙N20/㊙N25)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-SECN020.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-SECN020",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "R",
+        "power": "12000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ジャイアント・インセクト",
+        "illustrator": "KISUKE",
+        "abilities": [],
+        "flavor": "ゲイルからの援軍が来たか、持つべきものは友だな。— ジーク・ナハトファルター 商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-SECN021",
+    "name": "チアスイート アカネ / 「ファーーー！甘い甘い!!」 (DM26EX1 ㊙N21/㊙N25)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-SECN021a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-SECN021",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "R",
+        "power": "1000",
+        "cost": "2",
+        "mana": "1",
+        "race": "ジャイアント・スノーフェアリー",
+        "illustrator": "TETSU KUROSAWA",
+        "abilities": [],
+        "flavor": "商品情報 チアスイート アカネ / 「ファーーー！甘い甘い!!」 (DM26EX1 ㊙N21/㊙N25)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "自然",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "8",
+        "mana": "1",
+        "race": "ジャイアント・スキル",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-SECN022",
+    "name": "般若真城 マントラ丸 (DM26EX1 ㊙N22/㊙N25)",
+    "type": "G城",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-SECN022.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-SECN022",
+    "sides": [
+      {
+        "type": "G城",
+        "civilization": "光/闇",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "4",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Takayuki Futami",
+        "abilities": [],
+        "flavor": "ゴルギーニ・タウンが危機に瀕した際には、マントラ丸に駐在するシノビたちが援軍として駆けつける約定となっていた。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-SECN023",
+    "name": "ボルシャック・デンジャラス・ドラゴン (DM26EX1 ㊙N23/㊙N25)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-SECN023.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-SECN023",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/火",
+        "rarity": "R",
+        "power": "5000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アーマード・ドラゴン",
+        "illustrator": "nablange",
+        "abilities": [],
+        "flavor": "その援軍、どこまでもデンジャラス。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-SECN024",
+    "name": "芸魔猛牛 オックスチェッカー (DM26EX1 ㊙N24/㊙N25)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-SECN024.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-SECN024",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/火",
+        "rarity": "R",
+        "power": "5000",
+        "cost": "5",
+        "mana": "1",
+        "race": "マジック・モンスター/ゲーム・コマンド",
+        "illustrator": "AIRI YOSHIHISA",
+        "abilities": [],
+        "flavor": "必要な時にはすでに援軍が送られている。それがバンキッシュの戦略。 商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-SECN025",
+    "name": "ディザスター・チューン (DM26EX1 ㊙N25/㊙N25)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-SECN025.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-SECN025",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "水/闇/自然",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "天災の量産化。それが天才が考えた、天災への援軍だった。 商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-SP001",
+    "name": "覇帝なき侵略 レッドゾーンF (DM26EX1 SP1/SP4)",
+    "type": "進化クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-SP001.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-SP001",
+    "sides": [
+      {
+        "type": "進化クリーチャー",
+        "civilization": "火",
+        "rarity": "SR",
+        "power": "11000",
+        "cost": "6",
+        "mana": "1",
+        "race": "ソニック・コマンド/侵略者",
+        "illustrator": "TETSU KUROSAWA",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-SD2 いきなりつよいデッキ 力の王道 DM24-EX3 刺激爆発デュエナマイトパック DM24-RP3 王道篇 第3弾 「ゴールド・オブ・ハイパーエンジェル」 DM22-EX1 黄金戦略!!デュエキングMAX 2022"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-SP002",
+    "name": "炎氷渦と鎮魂禍の決断 (DM26EX1 SP2/SP4)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-SP002.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-SP002",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "水/闇/火",
+        "rarity": "SR",
+        "power": "コスト",
+        "cost": "6",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Essual",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～ DMART-25 神アート アビス、東京に現わる"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-SP003",
+    "name": "星門の精霊アケルナル / スターゲイズ・ゲート (DM26EX1 SP3/SP4)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-SP003a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-SP003",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "VR",
+        "power": "10500",
+        "cost": "9",
+        "mana": "1",
+        "race": "エンジェル・コマンド",
+        "illustrator": "Hoshi Rusk",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 星門の精霊アケルナル / スターゲイズ・ゲート (DM26EX1 SP3/SP4)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "光",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM26-SD1 ドキドキつよいデッキ 25の王道 DM24-EX4 にじさんじコラボ・マスターズ「異次元の超獣使い」 DM24-SD2 いきなりつよいデッキ 守りの王道 DM23-RP4X アビス・レボリューション 第4弾 「竜皇神爆輝」 超刺激パック DM23-RP4 アビス・レボリューション 第4弾 「竜皇神爆輝」 DMEX-17 20周年超感謝メモリアルパック 究極の章 デュエキングMAX DMRP-05 双極篇 拡張パック第１弾 轟快!! ジョラゴンGo Fight!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26ex1-SP004",
+    "name": "“逆悪襲”ブランド (DM26EX1 SP4/SP4)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26ex1-SP004.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26ex1-SP004",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "VR",
+        "power": "9000",
+        "cost": "7",
+        "mana": "1",
+        "race": "ビートジョッキー",
+        "illustrator": "Otake Okayu",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM26-SD1 ドキドキつよいデッキ 25の王道"
+      }
+    ]
+  },
+  {
     "id": "dm26ex2-001",
     "name": "飛翔龍 5000VT (DM26EX2 1/89)",
     "type": "クリーチャー",
@@ -7026,6 +9699,1623 @@
     ]
   },
   {
+    "id": "dm26rp1-001",
+    "name": "神羅の銀月 ザ・ラムーン (DM26RP1 1/77)",
+    "type": "G城",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-001.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-001",
+    "sides": [
+      {
+        "type": "G城",
+        "civilization": "光",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "4",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "それは進化の力が秘められた月。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-002",
+    "name": "神帝の黒月 ジ・オリジナル (DM26RP1 2/77)",
+    "type": "G城",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-002.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-002",
+    "sides": [
+      {
+        "type": "G城",
+        "civilization": "水",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "douzen",
+        "abilities": [],
+        "flavor": "それは神化の力が秘められた月。 商品情報 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-003",
+    "name": "傀儡秘宝ベンゾルス (DM26RP1 3/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-003.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-003",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "VR",
+        "power": "5000",
+        "cost": "7",
+        "mana": "1",
+        "race": "パンドラボックス/デスパペット",
+        "illustrator": "Nanami Lusia",
+        "abilities": [],
+        "flavor": "ヘヴィ・ウィン・メタルとボルメテウスの闘いを見て、闘う意志を支配することなどできないと悟った「Z」の魂は宇宙の一部へと還っていった。そして、後には抜け殻のように立ち尽くす「Z」の体があった。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-004",
+    "name": "爆焔ジェット・メモッタ (DM26RP1 4/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-004.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-004",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "VR",
+        "power": "5000",
+        "cost": "4",
+        "mana": "1",
+        "race": "???",
+        "illustrator": "O-G Osahune",
+        "abilities": [],
+        "flavor": "別世界から流れ着いたメモッタは、我竜塔の第一層で奮戦するヘヴィ・メタルと遭遇したのだった。 商品情報 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-005",
+    "name": "二重のA ボルバルザーク・紫電 (DM26RP1 5/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-005.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-005",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "VR",
+        "power": "4000+",
+        "cost": "3",
+        "mana": "1",
+        "race": "アーマード・ドラゴン/サムライ",
+        "illustrator": "Yuukoo009",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-006",
+    "name": "圧倒するレオパルズ・ホーン (DM26RP1 6/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-006.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-006",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "VR",
+        "power": "0000+",
+        "cost": "6",
+        "mana": "1",
+        "race": "ホーン・ビースト",
+        "illustrator": "salsoba",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-007",
+    "name": "邪眼鎧悪ロマノフⅣ世 (DM26RP1 7/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-007.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-007",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/闇",
+        "rarity": "VR",
+        "power": "6000",
+        "cost": "5",
+        "mana": "1",
+        "race": "ダークロード/ドラゴン・ゾンビ/ナイト",
+        "illustrator": "ikeda_cpt",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-008",
+    "name": "聖竜鎧 シデンズ・ソウル (DM26RP1 8/77)",
+    "type": "クロスギア",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-008.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-008",
+    "sides": [
+      {
+        "type": "クロスギア",
+        "civilization": "光/火",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "サムライ",
+        "illustrator": "jintetsu",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-009",
+    "name": "空神のD ドッコイ (DM26RP1 9/77)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-009a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-009",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/自然",
+        "rarity": "VR",
+        "power": "4000",
+        "cost": "2",
+        "mana": "1",
+        "race": "ゴッド/超化獣",
+        "illustrator": "Kemonomichi",
+        "abilities": [],
+        "flavor": "商品情報 空神のD ドッコイ (DM26RP1 9/77)"
+      },
+      {
+        "type": "クリーチャー",
+        "civilization": "水/自然",
+        "rarity": "VR",
+        "power": "9000",
+        "cost": "2",
+        "mana": "1",
+        "race": "ゴッド/超化獣",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-010",
+    "name": "魅神のG パロロ (DM26RP1 10/77)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-010a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-010",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇/自然",
+        "rarity": "VR",
+        "power": "4000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ゴッド/超化獣",
+        "illustrator": "Kogaratsu",
+        "abilities": [],
+        "flavor": "商品情報 魅神のG パロロ (DM26RP1 10/77)"
+      },
+      {
+        "type": "クリーチャー",
+        "civilization": "闇/自然",
+        "rarity": "VR",
+        "power": "7000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ゴッド/超化獣",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-011",
+    "name": "宝魂剣と獄門盾の決断 (DM26RP1 11/77)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-011.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-011",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光/闇/火",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "ESUTHIO",
+        "abilities": [],
+        "flavor": "理断の剣。憎怒の門。封敵の盾。今、そのすべてが一つとなる。 商品情報 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-OR001",
+    "name": "逆転龍神ヘヴィ・ウィン・メタル (DM26RP1 OR1/OR1)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-OR001a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-OR001",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇/火",
+        "rarity": "OR",
+        "power": "5000",
+        "cost": "5",
+        "mana": "1",
+        "race": "ゴッド/超化獣",
+        "illustrator": "Kotakan",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 逆転龍神ヘヴィ・ウィン・メタル (DM26RP1 OR1/OR1)"
+      },
+      {
+        "type": "クリーチャー",
+        "civilization": "闇/火",
+        "rarity": "OR",
+        "power": "39000",
+        "cost": "5",
+        "mana": "1",
+        "race": "ゴッド/超化獣",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-S001",
+    "name": "叡智のW インビンシブル・ギャラクシー (DM26RP1 S1/S11)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-S001.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-S001",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "9000",
+        "cost": "6",
+        "mana": "1",
+        "race": "エンジェル・コマンド",
+        "illustrator": "tetrapod",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-S002",
+    "name": "世界のY チャクラ・デル・フィン (DM26RP1 S2/S11)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-S002a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-S002",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "4000",
+        "cost": "3",
+        "mana": "1",
+        "race": "アポロニア・ドラゴン/超化獣",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 世界のY チャクラ・デル・フィン (DM26RP1 S2/S11)"
+      },
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "7500",
+        "cost": "3",
+        "mana": "1",
+        "race": "アポロニア・ドラゴン/超化獣",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-S003",
+    "name": "偉形のX エクストリーム・キリコ (DM26RP1 S3/S11)",
+    "type": "進化クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-S003.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-S003",
+    "sides": [
+      {
+        "type": "進化クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "12000",
+        "cost": "6",
+        "mana": "1",
+        "race": "サイバーロード/オリジン",
+        "illustrator": "Heart",
+        "abilities": [],
+        "flavor": "キリキリキリ、すべてを破壊するザンス！ ー エクストリーム・キリコ 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-S004",
+    "name": "旋略のS アドミラル・アレグル (DM26RP1 S4/S11)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-S004a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-S004",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "1000",
+        "cost": "2",
+        "mana": "1",
+        "race": "サイバー・ムーン/超化獣",
+        "illustrator": "Adachi Yosuke",
+        "abilities": [],
+        "flavor": "商品情報 旋略のS アドミラル・アレグル (DM26RP1 S4/S11)"
+      },
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "6000",
+        "cost": "2",
+        "mana": "1",
+        "race": "サイバー・ムーン/超化獣",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-S005",
+    "name": "冥幽のU ブライゼジェネレイド (DM26RP1 S5/S11)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-S005.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-S005",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "9000",
+        "cost": "5",
+        "mana": "1",
+        "race": "ドラゴン・ゾンビ",
+        "illustrator": "MISAWA_K",
+        "abilities": [],
+        "flavor": "理想郷は、冥く幽かな場所にある。 商品情報 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-S006",
+    "name": "蝕眼のV ヴェノム・ランブル (DM26RP1 S6/S11)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-S006a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-S006",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "デーモン・コマンド/超化獣",
+        "illustrator": "Miyamoto Satoru",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 蝕眼のV ヴェノム・ランブル (DM26RP1 S6/S11)"
+      },
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "8000",
+        "cost": "4",
+        "mana": "1",
+        "race": "デーモン・コマンド/超化獣",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-S007",
+    "name": "逆転の火焔ボルシャック・メビウス (DM26RP1 S7/S11)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-S007a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-S007",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "SR",
+        "power": "7000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アーマード・ドラゴン/超化獣",
+        "illustrator": "Morechand",
+        "abilities": [],
+        "flavor": "商品情報 逆転の火焔ボルシャック・メビウス (DM26RP1 S7/S11)"
+      },
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "SR",
+        "power": "12000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アーマード・ドラゴン/超化獣",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-S008",
+    "name": "暴龍のT ミリオンベジータ (DM26RP1 S8/S11)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-S008.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-S008",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "18000",
+        "cost": "9",
+        "mana": "1",
+        "race": "アース・ドラゴン/キカイヒーロー/アーク・セラフィム",
+        "illustrator": "hippo",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-S009",
+    "name": "轟腕のR ダグラジャパニカン (DM26RP1 S9/S11)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-S009a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-S009",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ジャイアント/超化獣",
+        "illustrator": "Jun Ishimaru",
+        "abilities": [],
+        "flavor": "商品情報 轟腕のR ダグラジャパニカン (DM26RP1 S9/S11)"
+      },
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "6000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ジャイアント/超化獣",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-S010",
+    "name": "森仙のJ ロマネスク (DM26RP1 S10/S11)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-S010.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-S010",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/自然",
+        "rarity": "SR",
+        "power": "15000",
+        "cost": "8",
+        "mana": "1",
+        "race": "アポロニア・ドラゴン/アーマード・ドラゴン/アース・ドラゴン",
+        "illustrator": "Daisuke Izuka",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-S011",
+    "name": "斬隠将撃龍ニバイケン (DM26RP1 S11/S11)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-S011.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-S011",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/火",
+        "rarity": "SR",
+        "power": "6000",
+        "cost": "6",
+        "mana": "1",
+        "race": "ポセイディア・ドラゴン/アーマード・ドラゴン/シノビ",
+        "illustrator": "Norikatsu Miyoshi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-SEC001",
+    "name": "逆転龍神ヘヴィ・ウィン・メタル (DM26RP1 ㊙1/㊙24)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-SEC001a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-SEC001",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇/火",
+        "rarity": "OR",
+        "power": "5000",
+        "cost": "5",
+        "mana": "1",
+        "race": "ゴッド/超化獣",
+        "illustrator": "Koji Nishino",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 逆転龍神ヘヴィ・ウィン・メタル (DM26RP1 ㊙1/㊙24)"
+      },
+      {
+        "type": "クリーチャー",
+        "civilization": "闇/火",
+        "rarity": "OR",
+        "power": "39000",
+        "cost": "5",
+        "mana": "1",
+        "race": "ゴッド/超化獣",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-SEC002",
+    "name": "叡智のW インビンシブル・ギャラクシー (DM26RP1 ㊙2/㊙24)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-SEC002.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-SEC002",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "9000",
+        "cost": "6",
+        "mana": "1",
+        "race": "エンジェル・コマンド",
+        "illustrator": "tetrapod",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-SEC003",
+    "name": "世界のY チャクラ・デル・フィン (DM26RP1 ㊙3/㊙24)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-SEC003a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-SEC003",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "4000",
+        "cost": "3",
+        "mana": "1",
+        "race": "アポロニア・ドラゴン/超化獣",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 世界のY チャクラ・デル・フィン (DM26RP1 ㊙3/㊙24)"
+      },
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "7500",
+        "cost": "3",
+        "mana": "1",
+        "race": "アポロニア・ドラゴン/超化獣",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-SEC004",
+    "name": "偉形のX エクストリーム・キリコ (DM26RP1 ㊙4/㊙24)",
+    "type": "進化クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-SEC004.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-SEC004",
+    "sides": [
+      {
+        "type": "進化クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "12000",
+        "cost": "6",
+        "mana": "1",
+        "race": "サイバーロード/オリジン",
+        "illustrator": "Kutay",
+        "abilities": [],
+        "flavor": "その歌声は、知らぬうちに異形のものとなっていた。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-SEC005",
+    "name": "旋略のS アドミラル・アレグル (DM26RP1 ㊙5/㊙24)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-SEC005a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-SEC005",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "1000",
+        "cost": "2",
+        "mana": "1",
+        "race": "サイバー・ムーン/超化獣",
+        "illustrator": "Adachi Yosuke",
+        "abilities": [],
+        "flavor": "商品情報 旋略のS アドミラル・アレグル (DM26RP1 ㊙5/㊙24)"
+      },
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "6000",
+        "cost": "2",
+        "mana": "1",
+        "race": "サイバー・ムーン/超化獣",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-SEC006",
+    "name": "冥幽のU ブライゼジェネレイド (DM26RP1 ㊙6/㊙24)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-SEC006.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-SEC006",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "9000",
+        "cost": "5",
+        "mana": "1",
+        "race": "ドラゴン・ゾンビ",
+        "illustrator": "MISAWA_K",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-SEC007",
+    "name": "蝕眼のV ヴェノム・ランブル (DM26RP1 ㊙7/㊙24)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-SEC007a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-SEC007",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "デーモン・コマンド/超化獣",
+        "illustrator": "Miyamoto Satoru",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 蝕眼のV ヴェノム・ランブル (DM26RP1 ㊙7/㊙24)"
+      },
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "8000",
+        "cost": "4",
+        "mana": "1",
+        "race": "デーモン・コマンド/超化獣",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-SEC008",
+    "name": "逆転の火焔ボルシャック・メビウス (DM26RP1 ㊙8/㊙24)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-SEC008a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-SEC008",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "SR",
+        "power": "7000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アーマード・ドラゴン/超化獣",
+        "illustrator": "Morechand",
+        "abilities": [],
+        "flavor": "商品情報 逆転の火焔ボルシャック・メビウス (DM26RP1 ㊙8/㊙24)"
+      },
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "SR",
+        "power": "12000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アーマード・ドラゴン/超化獣",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-SEC009",
+    "name": "暴龍のT ミリオンベジータ (DM26RP1 ㊙9/㊙24)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-SEC009.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-SEC009",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "18000",
+        "cost": "9",
+        "mana": "1",
+        "race": "アース・ドラゴン/キカイヒーロー/アーク・セラフィム",
+        "illustrator": "tessy",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-SEC010",
+    "name": "轟腕のR ダグラジャパニカン (DM26RP1 ㊙10/㊙24)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-SEC010a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-SEC010",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ジャイアント/超化獣",
+        "illustrator": "Jun Ishimaru",
+        "abilities": [],
+        "flavor": "商品情報 轟腕のR ダグラジャパニカン (DM26RP1 ㊙10/㊙24)"
+      },
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "6000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ジャイアント/超化獣",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-SEC011",
+    "name": "森仙のJ ロマネスク (DM26RP1 ㊙11/㊙24)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-SEC011.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-SEC011",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/自然",
+        "rarity": "SR",
+        "power": "15000",
+        "cost": "8",
+        "mana": "1",
+        "race": "アポロニア・ドラゴン/アーマード・ドラゴン/アース・ドラゴン",
+        "illustrator": "SENNSU",
+        "abilities": [],
+        "flavor": "森仙では、大地の力も紋章の力も不要なり。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-SEC012",
+    "name": "斬隠将撃龍ニバイケン (DM26RP1 ㊙12/㊙24)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-SEC012.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-SEC012",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/火",
+        "rarity": "SR",
+        "power": "6000",
+        "cost": "6",
+        "mana": "1",
+        "race": "ポセイディア・ドラゴン/アーマード・ドラゴン/シノビ",
+        "illustrator": "Norikatsu Miyoshi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-SEC013",
+    "name": "爆焔ジェット・メモッタ (DM26RP1 ㊙13/㊙24)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-SEC013.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-SEC013",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "VR",
+        "power": "5000",
+        "cost": "4",
+        "mana": "1",
+        "race": "???",
+        "illustrator": "O-G Osahune",
+        "abilities": [],
+        "flavor": "異世界を知り、異世界を旅し、異世界の姿となる。だが、その目的は覚えていない。 商品情報 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-SEC014",
+    "name": "邪眼鎧悪ロマノフⅣ世 (DM26RP1 ㊙14/㊙24)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-SEC014.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-SEC014",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/闇",
+        "rarity": "VR",
+        "power": "6000",
+        "cost": "5",
+        "mana": "1",
+        "race": "ダークロード/ドラゴン・ゾンビ/ナイト",
+        "illustrator": "ikeda_cpt",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-SEC015",
+    "name": "宝魂剣と獄門盾の決断 (DM26RP1 ㊙15/㊙24)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-SEC015.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-SEC015",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光/闇/火",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Shishizaru",
+        "abilities": [],
+        "flavor": "ボルメテウスの怒りは魂の炎となって永遠に追撃をやめない。 商品情報 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-SEC016",
+    "name": "戦技の炎 ボルメテウス・ソル (DM26RP1 ㊙16/㊙24)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-SEC016a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-SEC016",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "R",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ミリオン・フレイム/超化獣",
+        "illustrator": "Yuukoo009",
+        "abilities": [],
+        "flavor": "商品情報 戦技の炎 ボルメテウス・ソル (DM26RP1 ㊙16/㊙24)"
+      },
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "R",
+        "power": "8000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ミリオン・フレイム/超化獣",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-SEC017",
+    "name": "ゴッダマ・ルピア (DM26RP1 ㊙17/㊙24)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-SEC017a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-SEC017",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "R",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ファイアー・バード/超化獣",
+        "illustrator": "sarmat",
+        "abilities": [],
+        "flavor": "商品情報 ゴッダマ・ルピア (DM26RP1 ㊙17/㊙24)"
+      },
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "R",
+        "power": "6000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ファイアー・バード/超化獣",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜 プロモ限定カード 25期"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-SEC018",
+    "name": "インフェルノ・ドラグーン (DM26RP1 ㊙18/㊙24)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-SEC018.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-SEC018",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "R",
+        "power": "1000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ティラノ・ドレイク",
+        "illustrator": "Tobimaru Konatsu",
+        "abilities": [],
+        "flavor": "汝、神を欲すなら、再び我自身を神へと捧げよ。 ー インフェルノ・ドラグーン 商品情報 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-SP001",
+    "name": "「奇妙」の頂天 クリス=バアル (DM26RP1 SP1/SP5)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-SP001.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-SP001",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "ゼロ",
+        "rarity": "SR",
+        "power": "17371",
+        "cost": "10",
+        "mana": "1",
+        "race": "ゼニス・セレス",
+        "illustrator": "田村隆平",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜 DM24-SP2 キャラプレミアムデッキ「デュエル・マスターズLOST」誓いの水晶"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-SP002",
+    "name": "チアスカーレット アカネ (DM26RP1 SP2/SP5)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-SP002.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-SP002",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "7000",
+        "cost": "5",
+        "mana": "1",
+        "race": "ジャイアント・スノーフェアリー",
+        "illustrator": "黒イ森",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜 DM26-SD1 ドキドキつよいデッキ 25の王道 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-SP003",
+    "name": "ヨビニオン・マルル (DM26RP1 SP3/SP5)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-SP003.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-SP003",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "5000",
+        "cost": "4",
+        "mana": "1",
+        "race": "スノーフェアリー",
+        "illustrator": "Mika Pikazo",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX2 王道vs邪道 デュエキングWDreaM 2025 DM24-EX3 刺激爆発デュエナマイトパック DM24-RP3 王道篇 第3弾 「ゴールド・オブ・ハイパーエンジェル」"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-STD001",
+    "name": "頂上電融 クライアッシュ“覇星” ’22 (DM26RP1 STD1/)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-STD001.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-STD001",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/火/自然",
+        "rarity": "SR",
+        "power": "11000",
+        "cost": "10",
+        "mana": "1",
+        "race": "ディスペクター/グリーン・コマンド・ドラゴン/ビートジョッキー",
+        "illustrator": "mowa",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜 DM24-EX2 天下夢双!!デュエキングDreaM 2024"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-STD004",
+    "name": "頂上連結 ロッド・ゾージア5th (DM26RP1 STD4/)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-STD004.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-STD004",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/火",
+        "rarity": "SR",
+        "power": "11000",
+        "cost": "7",
+        "mana": "1",
+        "race": "ディスペクター/エンジェル・コマンド・ドラゴン/ソニック・コマンド",
+        "illustrator": "Essual",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ DM25-EX2 王道vs邪道 デュエキングWDreaM 2025 DM25-SP1 キャラプレミアムデッキ 「ドラゴン娘になりたくないっ!」Jack-Pot-Live!! in 桜龍高校 DM23-EX2 頂上決戦!!デュエキングMAX 2023 DMART-19 神アート RPD-ロールプレイングデュエマ リュウセイ・カイザーが転生したら勇者だった件 プロモ限定カード 25期 プロモ限定カード 24期"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-STDChoSEC001",
+    "name": "頂上電融 クライアッシュ“覇星” ’22 (DM26RP1 STD超㊙1/)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-STDChoSEC001.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-STDChoSEC001",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/火/自然",
+        "rarity": "SR",
+        "power": "11000",
+        "cost": "10",
+        "mana": "1",
+        "race": "ディスペクター/グリーン・コマンド・ドラゴン/ビートジョッキー",
+        "illustrator": "mowa",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜 DM24-EX2 天下夢双!!デュエキングDreaM 2024"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-STDChoSEC004",
+    "name": "頂上連結 ロッド・ゾージア5th (DM26RP1 STD超㊙4/)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-STDChoSEC004.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-STDChoSEC004",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/火",
+        "rarity": "SR",
+        "power": "11000",
+        "cost": "7",
+        "mana": "1",
+        "race": "ディスペクター/エンジェル・コマンド・ドラゴン/ソニック・コマンド",
+        "illustrator": "Essual",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ DM25-EX2 王道vs邪道 デュエキングWDreaM 2025 DM25-SP1 キャラプレミアムデッキ 「ドラゴン娘になりたくないっ!」Jack-Pot-Live!! in 桜龍高校 DM23-EX2 頂上決戦!!デュエキングMAX 2023 DMART-19 神アート RPD-ロールプレイングデュエマ リュウセイ・カイザーが転生したら勇者だった件 プロモ限定カード 25期 プロモ限定カード 24期"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-STDSEC001",
+    "name": "頂上電融 クライアッシュ“覇星” ’22 (DM26RP1 STD㊙1/)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-STDSEC001.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-STDSEC001",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/火/自然",
+        "rarity": "SR",
+        "power": "11000",
+        "cost": "10",
+        "mana": "1",
+        "race": "ディスペクター/グリーン・コマンド・ドラゴン/ビートジョッキー",
+        "illustrator": "mowa",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜 DM24-EX2 天下夢双!!デュエキングDreaM 2024"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-STDSEC004",
+    "name": "頂上連結 ロッド・ゾージア5th (DM26RP1 STD㊙4/)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-STDSEC004.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-STDSEC004",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/火",
+        "rarity": "SR",
+        "power": "11000",
+        "cost": "7",
+        "mana": "1",
+        "race": "ディスペクター/エンジェル・コマンド・ドラゴン/ソニック・コマンド",
+        "illustrator": "Essual",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ DM25-EX2 王道vs邪道 デュエキングWDreaM 2025 DM25-SP1 キャラプレミアムデッキ 「ドラゴン娘になりたくないっ!」Jack-Pot-Live!! in 桜龍高校 DM23-EX2 頂上決戦!!デュエキングMAX 2023 DMART-19 神アート RPD-ロールプレイングデュエマ リュウセイ・カイザーが転生したら勇者だった件 プロモ限定カード 25期 プロモ限定カード 24期"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-T001",
+    "name": "霊騎コルテオ / プロテクション・サークル (DM26RP1 T1/T10)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-T001a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-T001",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "R",
+        "power": "2000",
+        "cost": "7",
+        "mana": "1",
+        "race": "アーク・セラフィム/オリジン",
+        "illustrator": "D-suzuki/HOKUTO",
+        "abilities": [],
+        "flavor": "商品情報 霊騎コルテオ / プロテクション・サークル (DM26RP1 T1/T10)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "光",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜 DM24-EX2 天下夢双!!デュエキングDreaM 2024 DM23-BD7 エキサイティング・デュエパ・デッキ 「ネゴシエートの偽衒学者」 DM22-EX1 黄金戦略!!デュエキングMAX 2022"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-T002",
+    "name": "「策略のエメラル」 (DM26RP1 T2/T10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-T002.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-T002",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "R",
+        "power": "3000",
+        "cost": "4",
+        "mana": "1",
+        "race": "サイバーロード/チーム銀河",
+        "illustrator": "Norikatsu Miyoshi",
+        "abilities": [],
+        "flavor": "天門からの天海の来襲。それすなわち「天使からの暴力」なり！ 商品情報 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜 DMEX-16 20周年超感謝メモリアルパック 技の章 英雄戦略パーフェクト20 DMRP-14 十王篇拡張パック第2弾 爆皇×爆誕 ダイナボルト!!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-TD001",
+    "name": "支配の精霊ペルフェクト / ギャラクシー・チャージャー (DM26RP1 TD1/TD5)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-TD001a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-TD001",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "9000",
+        "cost": "7",
+        "mana": "1",
+        "race": "エンジェル・コマンド",
+        "illustrator": "tetrapod",
+        "abilities": [],
+        "flavor": "商品情報 支配の精霊ペルフェクト / ギャラクシー・チャージャー (DM26RP1 TD1/TD5)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～ DM25-BD2 ドリーム英雄譚デッキ アルカディアスの​書 DM25-EX1 愛感謝祭 ヒロインBEST DM24-EX4 にじさんじコラボ・マスターズ「異次元の超獣使い」 DM24-EX2 天下夢双!!デュエキングDreaM 2024 DM23-EX2 頂上決戦!!デュエキングMAX 2023 DMART-12 神アート Angelic Wisdom by Daisuke Izuka プロモ限定カード 23期"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-TD002",
+    "name": "超神星DOOM・ドラゲリオン (DM26RP1 TD2/TD5)",
+    "type": "進化クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-TD002.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-TD002",
+    "sides": [
+      {
+        "type": "進化クリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "12000",
+        "cost": "12",
+        "mana": "1",
+        "race": "フェニックス/デーモン・コマンド/ドラゴン・ゾンビ",
+        "illustrator": "Moopic",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-EX2 悪感謝祭 カリスマBEST DM26-RP1 逆札篇 第1弾 逆転神VS切札竜 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～ DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DM22-EX1 黄金戦略!!デュエキングMAX 2022"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-TD003",
+    "name": "ボルシャック・ドリーム・ドラゴン (DM26RP1 TD3/TD5)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-TD003.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-TD003",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/火/自然",
+        "rarity": "SR",
+        "power": "11000",
+        "cost": "7",
+        "mana": "1",
+        "race": "アーマード・ドラゴン",
+        "illustrator": "TUBAKI HALSAME",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-BD1 ドリーム英雄譚デッキ ボルシャックの書 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～ DM24-EX2 天下夢双!!デュエキングDreaM 2024 プロモ限定カード 25期"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-TD004",
+    "name": "爆藍月 スケルハンター (DM26RP1 TD4/TD5)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-TD004.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-TD004",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "VR",
+        "power": "7000",
+        "cost": "7",
+        "mana": "1",
+        "race": "グレートメカオー",
+        "illustrator": "KISUKE",
+        "abilities": [],
+        "flavor": "待たせてごめんね！ ー 黄昏ミミ 商品情報 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜 DM24-EX3 刺激爆発デュエナマイトパック DM24-RP3 王道篇 第3弾 「ゴールド・オブ・ハイパーエンジェル」"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-TR001",
+    "name": "終炎の竜皇 ボルシャック・ハイパードラゴン (DM26RP1 TR1/TR9)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-TR001a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-TR001",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "OR",
+        "power": "5000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アーマード・ドラゴン/超化獣",
+        "illustrator": "RUI MARUYAMA",
+        "abilities": [],
+        "flavor": "商品情報 終炎の竜皇 ボルシャック・ハイパードラゴン (DM26RP1 TR1/TR9)"
+      },
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "OR",
+        "power": "11000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アーマード・ドラゴン/超化獣",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜 DM24-EX3 刺激爆発デュエナマイトパック DM24-RP2 王道篇 第2弾 「カイザー・オブ・ハイパードラゴン」 プロモ限定カード 23期"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-TR002",
+    "name": "楯教の求道者 ザゼ・ゼーン (DM26RP1 TR2/TR9)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-TR002.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-TR002",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "8000",
+        "cost": "2",
+        "mana": "1",
+        "race": "メカサンダー",
+        "illustrator": "Tanru",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜 DM24-EX3 刺激爆発デュエナマイトパック DM24-RP3 王道篇 第3弾 「ゴールド・オブ・ハイパーエンジェル」"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-TR003",
+    "name": "審判の精霊ラストジャッジ (DM26RP1 TR3/TR9)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-TR003.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-TR003",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/水",
+        "rarity": "SR",
+        "power": "15500",
+        "cost": "10",
+        "mana": "1",
+        "race": "エンジェル・コマンド",
+        "illustrator": "shosuke",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜 DM24-EX4 にじさんじコラボ・マスターズ「異次元の超獣使い」"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-TR004",
+    "name": "剛撃聖霊シェバ・エリクシア (DM26RP1 TR4/TR9)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-TR004.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-TR004",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/自然",
+        "rarity": "SR",
+        "power": "18000",
+        "cost": "8",
+        "mana": "1",
+        "race": "ジャイアント/エンジェル・コマンド",
+        "illustrator": "Ishibashi Yosuke",
+        "abilities": [],
+        "flavor": "天と地。二つの力が合わされば、聖にして剛なり。 商品情報 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜 DM26-SD1 ドキドキつよいデッキ 25の王道 DM24-EX3 刺激爆発デュエナマイトパック DM24-RP4 王道篇 第4弾 「悪魔神、復活」"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-TR005",
+    "name": "幻影 ミスキュー (DM26RP1 TR5/TR9)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-TR005.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-TR005",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "VR",
+        "power": "3000",
+        "cost": "6",
+        "mana": "1",
+        "race": "ミステリー・トーテム/侵略者",
+        "illustrator": "salsoba",
+        "abilities": [],
+        "flavor": "幻影の侵略者はどんな姿にも変化できる。まるで霊を降ろすシャーマンのように。 商品情報 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ DMEX-10 W王国ドッキングパック 鬼札王国＆不死樹王国 DMEX-03 ペリッ!! スペシャルだらけのミステリーパック DMR-17 革命 拡張パック第1章 燃えろドギラゴン!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-TR006",
+    "name": "修羅の死神フミシュナ / 「この先は修羅の道ぞ」 (DM26RP1 TR6/TR9)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-TR006a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-TR006",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "VR",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "デーモン・コマンド",
+        "illustrator": "MATSUMOTO EIGHT",
+        "abilities": [],
+        "flavor": "商品情報 修羅の死神フミシュナ / 「この先は修羅の道ぞ」 (DM26RP1 TR6/TR9)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜 DM26-SD1 ドキドキつよいデッキ 25の王道 DM24-BD4 ナイトメア黙示録デッキ バロムの章 プロモ限定カード 24期"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-TR007",
+    "name": "冥土人形ヴァミリア・バレル (DM26RP1 TR7/TR9)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-TR007a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-TR007",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/闇",
+        "rarity": "VR",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "デスパペット/超化獣",
+        "illustrator": "HIRO”WO”NORI",
+        "abilities": [],
+        "flavor": "商品情報 冥土人形ヴァミリア・バレル (DM26RP1 TR7/TR9)"
+      },
+      {
+        "type": "クリーチャー",
+        "civilization": "水/闇",
+        "rarity": "VR",
+        "power": "6000",
+        "cost": "3",
+        "mana": "1",
+        "race": "デスパペット/超化獣",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ DM24-EX1 超感謝祭 ファンタジーBEST プロモ限定カード 25期"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-TR008",
+    "name": "氷柱と炎弧の決断 (DM26RP1 TR8/TR9)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-TR008.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-TR008",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "水/火",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "MATSUMOTO EIGHT",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX2 悪感謝祭 カリスマBEST DM26-RP1 逆札篇 第1弾 逆転神VS切札竜 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX2 王道vs邪道 デュエキングWDreaM 2025 DM23-RP4X アビス・レボリューション 第4弾 「竜皇神爆輝」 超刺激パック DM23-RP4 アビス・レボリューション 第4弾 「竜皇神爆輝」 DMART-21 神アート 美女と死神の決断 プロモ限定カード 24期"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp1-TR009",
+    "name": "覚醒連結 XXDDZ (DM26RP1 TR9/TR9)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp1-TR009.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp1-TR009",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/闇/火",
+        "rarity": "VR",
+        "power": "8000",
+        "cost": "7",
+        "mana": "1",
+        "race": "ディスペクター/アーマード・ドラゴン/ワールド・コマンド",
+        "illustrator": "nablange",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜 DM23-BD1 レジェンドスーパーデッキ 禁王創来 DM22-BD3 開発部セレクションデッキ 「7軸ガチロボ」 DM22-EX1 黄金戦略!!デュエキングMAX 2022 DMRP-20 王来篇拡張パック第4弾 終末王龍大戦"
+      }
+    ]
+  },
+  {
     "id": "dm26rp2-001",
     "name": "極まる九極 Q. 9 (DM26RP2 1/77)",
     "type": "進化クリーチャー",
@@ -7421,6 +11711,1266 @@
         "illustrator": "Ishikawa Kenta",
         "abilities": [],
         "flavor": "ド派手に鳴らす鍛造力！ ー D2G ゴッドファーザー 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-020",
+    "name": "虹暴の面 ガチ=ザ＝デッドマン (DM26RP2 20/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-020.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-020",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "R",
+        "power": "3000",
+        "cost": "2",
+        "mana": "1",
+        "race": "ビーストフォーク號/革命軍/ハムカツ団",
+        "illustrator": "Muna-Ge",
+        "abilities": [],
+        "flavor": "デス=ヴェルムートを陰で操っていると言えば、この男。 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-021",
+    "name": "サクサク打つべしナウ (DM26RP2 21/77)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-021.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-021",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "自然",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "4",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "FUJIWARA HISASHI",
+        "abilities": [],
+        "flavor": "うるさく風切る打撃力！ ー D2Y ヨー・サーク 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-022",
+    "name": "熱血美刃 ミケランジェロ (DM26RP2 22/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-022.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-022",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/水",
+        "rarity": "R",
+        "power": "9500",
+        "cost": "6",
+        "mana": "1",
+        "race": "アウトレイジ・コマンドMAX/革命軍/ハムカツ団",
+        "illustrator": "Ishibashi Yosuke",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!! プロモ限定カード 25期"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-023",
+    "name": "漢の2号 ボスカツ逆 (DM26RP2 23/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-023.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-023",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/自然",
+        "rarity": "R",
+        "power": "8500",
+        "cost": "6",
+        "mana": "1",
+        "race": "メガ・コマンド・ドラゴン/革命軍/ハムカツ団",
+        "illustrator": "Kemonomichi",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-024",
+    "name": "絶超熱血 ロビンフッド (DM26RP2 24/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-024.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-024",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/闇",
+        "rarity": "R",
+        "power": "8000",
+        "cost": "6",
+        "mana": "1",
+        "race": "アウトレイジ・コマンドMAX/革命軍/ハムカツ団",
+        "illustrator": "Takayuki Futami",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!! プロモ限定カード 25期"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-025",
+    "name": "革命の轟速 レッドゾーンW (DM26RP2 25/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-025.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-025",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇/火",
+        "rarity": "R",
+        "power": "9000",
+        "cost": "6",
+        "mana": "1",
+        "race": "ソニック・コマンド/イニシャルズW",
+        "illustrator": "Spareribs",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!! プロモ限定カード 25期"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-026",
+    "name": "V闘将軍 カツキング (DM26RP2 26/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-026.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-026",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火/自然",
+        "rarity": "R",
+        "power": "9000",
+        "cost": "6",
+        "mana": "1",
+        "race": "アウトレイジ・コマンドMAX/革命軍/ハムカツ団",
+        "illustrator": "nao",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-027",
+    "name": "獣音類武士目 グローバル・ステージ (DM26RP2 27/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-027.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-027",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火/自然",
+        "rarity": "R",
+        "power": "8000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ジュラシック・コマンド・ドラゴン/スノーフェアリー風",
+        "illustrator": "Jun Ishimaru",
+        "abilities": [],
+        "flavor": "ハラグロX。のライブもグローバルに進出！ 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-028",
+    "name": "護英雄 タップ・ド・レイユ (DM26RP2 28/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-028.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-028",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "U",
+        "power": "3000+",
+        "cost": "4",
+        "mana": "1",
+        "race": "エンジェル・コマンド・ドラゴン",
+        "illustrator": "Ishibashi Yosuke",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-029",
+    "name": "鎧亜寄生パラス・キューピッド (DM26RP2 29/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-029.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-029",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "U",
+        "power": "4000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ロスト・クルセイダー/エイリアン",
+        "illustrator": "Gin",
+        "abilities": [],
+        "flavor": "ドギラゴン逆はハムスターランド大陸の地下に居城を構える。 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-030",
+    "name": "光器セイント・ガチ・マリア (DM26RP2 30/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-030.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-030",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "U",
+        "power": "2500",
+        "cost": "2",
+        "mana": "1",
+        "race": "メカ・デル・ソル/ハンター",
+        "illustrator": "Ishibashi Yosuke",
+        "abilities": [],
+        "flavor": "漂流してきたメモッタと出会ったドルマゲドンは、その目を見て小さくうなずいた。そして、カレーパンの元凶、ドギラゴン逆へと対抗することを決意するのだった。 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-031",
+    "name": "極俺秘伝ライオネル・ガード (DM26RP2 31/77)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-031.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-031",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光",
+        "rarity": "U",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Shiobara",
+        "abilities": [],
+        "flavor": "なにものにも媚びぬ！これぞ、俺の極み！ 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-032",
+    "name": "理英雄 コギトL (DM26RP2 32/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-032.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-032",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "U",
+        "power": "4000+",
+        "cost": "5",
+        "mana": "1",
+        "race": "クリスタル・コマンド・ドラゴン",
+        "illustrator": "Itadakumike",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-033",
+    "name": "救済のラクシャ ミルク (DM26RP2 33/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-033.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-033",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "U",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "オラクル/ヒューマノイド",
+        "illustrator": "KOUSAKU",
+        "abilities": [],
+        "flavor": "カレーパンによって生み出したゼニスとの合一を果たしたゾロスターは、新たにゾロ・ア・スタートを名乗った。そして自身を守る親衛隊として、オラクル教団にラクシャの階級を創設した。 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-034",
+    "name": "鎧亜寄生パラス・ボクサー (DM26RP2 34/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-034.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-034",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "U",
+        "power": "1000+",
+        "cost": "2",
+        "mana": "1",
+        "race": "ロスト・クルセイダー/エイリアン",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-035",
+    "name": "極智秘伝ローゼス・チューン (DM26RP2 35/77)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-035.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-035",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "U",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "haisiro",
+        "abilities": [],
+        "flavor": "すべてを把握する！これぞ、智の極み！ 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!! プロモ限定カード 25期"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-036",
+    "name": "熱血の星夜 アバター・イン・ザ・ラブ (DM26RP2 36/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-036.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-036",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "U",
+        "power": "8000",
+        "cost": "7",
+        "mana": "1",
+        "race": "エンジェル・コマンド/アンノウン",
+        "illustrator": "IWAO",
+        "abilities": [],
+        "flavor": "ドギラゴン逆がこの世界に飛来した時、世界にカレーパンが振りまかれた。 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-037",
+    "name": "凶英雄 アカトクロ (DM26RP2 37/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-037.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-037",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "U",
+        "power": "4000+",
+        "cost": "5",
+        "mana": "1",
+        "race": "デーモン・コマンド・ドラゴン",
+        "illustrator": "Kutay",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-038",
+    "name": "鎧亜寄生パラス・マジシャン (DM26RP2 38/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-038.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-038",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "U",
+        "power": "2000",
+        "cost": "2",
+        "mana": "1",
+        "race": "ロスト・クルセイダー/エイリアン",
+        "illustrator": "Norikatsu Miyoshi",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-039",
+    "name": "極呪秘伝サスペンス・マインド (DM26RP2 39/77)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-039.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-039",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇",
+        "rarity": "U",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "UKAI bakuinu",
+        "abilities": [],
+        "flavor": "祝いすらも届かない！これぞ、呪の極み！ 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-040",
+    "name": "撃英雄 ガイグンシン (DM26RP2 40/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-040.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-040",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "U",
+        "power": "4000+",
+        "cost": "5",
+        "mana": "1",
+        "race": "ガイアール・コマンド・ドラゴン",
+        "illustrator": "Norikatsu Miyoshi",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-041",
+    "name": "鎧亜寄生パラス・ミュージック (DM26RP2 41/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-041.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-041",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "U",
+        "power": "2000+",
+        "cost": "2",
+        "mana": "1",
+        "race": "ロスト・クルセイダー/エイリアン",
+        "illustrator": "500siki",
+        "abilities": [],
+        "flavor": "カレーパンより解放されるべし！イニシャルズWたちはドギラゴン逆とその配下であるハムカツ団の本拠地へと向かった。その名もハムスターランド大陸。 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-042",
+    "name": "連射のラクシャ ユキメ (DM26RP2 42/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-042.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-042",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "U",
+        "power": "4000",
+        "cost": "1",
+        "mana": "1",
+        "race": "オラクル/ヒューマノイド",
+        "illustrator": "Miyamoto Satoru",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-043",
+    "name": "極命秘伝グレート・クラッシュ (DM26RP2 43/77)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-043.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-043",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "火",
+        "rarity": "U",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "jintetsu",
+        "abilities": [],
+        "flavor": "死をも操る！これぞ、命の極み！ 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-044",
+    "name": "牙英雄 アワザ＝カーン (DM26RP2 44/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-044.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-044",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "U",
+        "power": "5000+",
+        "cost": "5",
+        "mana": "1",
+        "race": "ジュラシック・コマンド・ドラゴン",
+        "illustrator": "salsoba",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-045",
+    "name": "鎧亜寄生パラス・ピエロ (DM26RP2 45/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-045.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-045",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "U",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ロスト・クルセイダー/エイリアン",
+        "illustrator": "nablange",
+        "abilities": [],
+        "flavor": "多くの強者たちが自身の信念を捨て熱血とビクトリーに屈する中、最初から熱血とビクトリーに屈し彼らの力を利用しようと考えた者たちがいた。それが、鎧亜戦隊たちだった。 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-046",
+    "name": "雪精 エリカッチュ。 (DM26RP2 46/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-046.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-046",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "U",
+        "power": "8000",
+        "cost": "2",
+        "mana": "1",
+        "race": "スノーフェアリー風",
+        "illustrator": "Tanru",
+        "abilities": [],
+        "flavor": "ハラグロX。の時代はまるっとこれから！ ー 雪精 エリカッチュ。 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-047",
+    "name": "極勝秘伝カイザー・ビクトリー (DM26RP2 47/77)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-047.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-047",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "自然",
+        "rarity": "U",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "I☆LA",
+        "abilities": [],
+        "flavor": "大地を踏みしめる！これぞ、勝の極み！ 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-048",
+    "name": "熱血刃 ニケ (DM26RP2 48/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-048.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-048",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/水",
+        "rarity": "U",
+        "power": "4500",
+        "cost": "3",
+        "mana": "1",
+        "race": "アウトレイジ・コマンドMAX/革命軍/ハムカツ団",
+        "illustrator": "Miyaki Hajime",
+        "abilities": [],
+        "flavor": "ハムスターランド大陸にたどり着いたドルマゲドンWを待っていたもの。それはカレーパンにとり憑かれたエグザイルたちであった。彼らにはもはやアウトレイジの誇りはない。 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-049",
+    "name": "刀の3号 カツえもん逆 (DM26RP2 49/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-049.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-049",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/自然",
+        "rarity": "U",
+        "power": "6000+",
+        "cost": "4",
+        "mana": "1",
+        "race": "メガ・コマンド・ドラゴン/革命軍/ハムカツ団",
+        "illustrator": "eiji kaneda",
+        "abilities": [],
+        "flavor": "ハムスターランド大陸にたどり着いたドルマゲドンWを待っていたもの。それはカレーパンにとり憑かれたミラダンテ、プチョヘンザをはじめとした革命軍たちであった。彼らにはもはや禁断に立ち向かう力はない。 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-050",
+    "name": "超熱血 ロビー (DM26RP2 50/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-050.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-050",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/闇",
+        "rarity": "U",
+        "power": "3000+",
+        "cost": "3",
+        "mana": "1",
+        "race": "アウトレイジ・コマンドMAX/革命軍/ハムカツ団",
+        "illustrator": "IWAO",
+        "abilities": [],
+        "flavor": "メ、メモッタが、全生命力をドルマゲドンWに注ぎ込んだでアリマス！ ー 超熱血 ロビー 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-051",
+    "name": "D2-W革命のボルトロン (DM26RP2 51/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-051.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-051",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇/火",
+        "rarity": "U",
+        "power": "10000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ソニック・コマンド/イニシャルズW",
+        "illustrator": "DAI-XT.",
+        "abilities": [],
+        "flavor": "ドギラゴン逆を倒すために結成されたイニシャルズW。その団長となったドルマゲドンは、新たな名前、ドルマゲドンWを名乗った。 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-052",
+    "name": "V闘龍 カツドン (DM26RP2 52/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-052.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-052",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火/自然",
+        "rarity": "U",
+        "power": "8000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アウトレイジ・コマンドMAX/革命軍/ハムカツ団",
+        "illustrator": "Shin “JASON” Nagasawa",
+        "abilities": [],
+        "flavor": "復活し、カレーパンとなったハムカツ団を食べて、パワーアップするドギラゴン逆。その姿を見ていたカツドンも喰われた。 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!! プロモ限定カード 25期"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-053",
+    "name": "タイム槍 ドレミ (DM26RP2 53/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-053.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-053",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "C",
+        "power": "4500",
+        "cost": "4",
+        "mana": "1",
+        "race": "エンジェル・コマンド・ドラゴン/革命軍/ハムカツ団",
+        "illustrator": "Kou Kikuchi",
+        "abilities": [],
+        "flavor": "ミラダンテ槍様のカレーパンがボクたちもパワーアップさせてくれたのです！ ー タイム槍 ドレミ 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-054",
+    "name": "熱血の羅刹 メフィス・トリック (DM26RP2 54/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-054.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-054",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "C",
+        "power": "8000",
+        "cost": "3",
+        "mana": "1",
+        "race": "デーモン・コマンド/アンノウン",
+        "illustrator": "Kou1",
+        "abilities": [],
+        "flavor": "メモッタが我竜塔に続いてたどり着いた世界、そこは熱血とビクトリーの名のもとにカレーパンが支配する世界。端的に言えば違和感のある世界。 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-055",
+    "name": "神判のラクシャ コットン (DM26RP2 55/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-055.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-055",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "C",
+        "power": "1500",
+        "cost": "2",
+        "mana": "1",
+        "race": "オラクル/ヒューマノイド",
+        "illustrator": "HIRO”WO”NORI",
+        "abilities": [],
+        "flavor": "アウトレイジの心に目覚めたメモッタがやるべきことはひとつ。心はもう決まっていた。自身がカレーパンになるしかないと。 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-056",
+    "name": "熱血の親衛隊ラプソディ (DM26RP2 56/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-056.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-056",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "C",
+        "power": "4000",
+        "cost": "1",
+        "mana": "1",
+        "race": "イニシエート/ハンター/エイリアン",
+        "illustrator": "hatapug",
+        "abilities": [],
+        "flavor": "ハムスターランド大陸にたどり着いたドルマゲドンWを待っていたもの。それはカレーパンにとり憑かれた熱血の親衛隊たちであった。彼らにはもはやパンドラへの忠義はない。 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-057",
+    "name": "ホーリー・出す・バナナ (DM26RP2 57/77)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-057.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-057",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "MATSUMOTO EIGHT",
+        "abilities": [],
+        "flavor": "バナナの皮に、ツルっとすべってスッテンコロリン！コロリン・コロリン……。あれ？なんか出た？ 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-058",
+    "name": "宇宙 バリアスキー (DM26RP2 58/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-058.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-058",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "C",
+        "power": "5000",
+        "cost": "5",
+        "mana": "1",
+        "race": "マジック・コマンド/S級侵略者",
+        "illustrator": "tetrapod",
+        "abilities": [],
+        "flavor": "誰もが倒せず、屈するしかなかった、カレーパンの力。それを史上初めて倒したのが、ドルマゲドンWとメモッタだ！ 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-059",
+    "name": "【問銃】テック (DM26RP2 59/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-059.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-059",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "C",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "クリスタル・コマンド・ドラゴン/革命軍/ハムカツ団",
+        "illustrator": "Futaro",
+        "abilities": [],
+        "flavor": "ドギラゴン逆の待つハムスターランド大陸への行き方を見つけ出したのは、当然テック団ではなかった。 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-060",
+    "name": "熱血の親衛隊ペッパー (DM26RP2 60/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-060.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-060",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "C",
+        "power": "4000",
+        "cost": "2",
+        "mana": "1",
+        "race": "サイバーロード/ハンター/エイリアン",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "ドルマゲドンWを待ち構えていた最強の超獣たち。彼らは一斉にドルマゲドンWに襲い掛かった。そこで禁断ビッグバン!!自身の信念を捨て熱血とビクトリーに染まった彼らではその爆発に耐えきることはできなかった。 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-061",
+    "name": "アクア秘務官 ロバート・フック (DM26RP2 61/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-061.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-061",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "C",
+        "power": "2000+",
+        "cost": "2",
+        "mana": "1",
+        "race": "リキッド・ピープル閃",
+        "illustrator": "KOUSAKU",
+        "abilities": [],
+        "flavor": "伝説の黄金のカレーパンとなったメモッタの目はさも「さぁ、ドルマゲドン、ワイをたべるんやで！」と言わんばかりだった。ドルマゲドンWは「な、なんだ、この姿は……」と思う。ロバート・フックは「あのいいつたえはメモッタのことだったか……」とつぶやいた。 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-062",
+    "name": "天災のSSS級計画 (DM26RP2 62/77)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-062.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-062",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Yuukoo009",
+        "abilities": [],
+        "flavor": "ハムスターランド大陸にたどり着いたドルマゲドンWを待っていたもの。それはカレーパンにとり憑かれた侵略者たちとギュウジン丸であった。彼らにはもはや野望すらない。 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-063",
+    "name": "ZEROの革命 ブラックアウト (DM26RP2 63/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-063.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-063",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ソニック・コマンド/イニシャルズW",
+        "illustrator": "haisiro",
+        "abilities": [],
+        "flavor": "オレの新必殺技、革命チェンジを見せてやる！ ー ZEROの革命 ブラックアウト 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!! プロモ限定カード 25期"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-064",
+    "name": "革命α ドルーター (DM26RP2 64/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-064.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-064",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "4000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ソニック・コマンド/イニシャルズW",
+        "illustrator": "neko61",
+        "abilities": [],
+        "flavor": "世界のすべてを支配するために、禁断のカレーパンを送り込んでいたのがドギラゴン逆なのだ！ 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-065",
+    "name": "熱血の親衛隊ファンク (DM26RP2 65/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-065.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-065",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "4000",
+        "cost": "2",
+        "mana": "1",
+        "race": "ダークロード/ハンター/エイリアン",
+        "illustrator": "Taro Yamazaki",
+        "abilities": [],
+        "flavor": "大量のカレーパンによってパワーアップしたドギラゴン逆！だが、ドルマゲドンWも伝説のカレーパンを食べてパワーアップ、実力は均衡した！最後に勝負の決め手となったのは、カレーパンに込められた魂の差だった。 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-066",
+    "name": "禁術のラクシャ カレイル (DM26RP2 66/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-066.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-066",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "2000",
+        "cost": "2",
+        "mana": "1",
+        "race": "オラクル/ヒューマノイド",
+        "illustrator": "Muna-Ge",
+        "abilities": [],
+        "flavor": "ドルマゲドンWとドギラゴン逆の戦いを見る中でメモッタは考えた。本当の熱血とは、そしてビクトリーとは、自由のことなのではないかと。支配のために使われてはならない！その時、メモッタはアウトレイジの心に目覚めた。 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-067",
+    "name": "狼牙獣鎌拳 (DM26RP2 67/77)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-067.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-067",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Yuukoo009",
+        "abilities": [],
+        "flavor": "ハムスターランド大陸にたどり着いたドルマゲドンWを待っていたもの。それはカレーパンにとり憑かれたドラグハートに封じられし王たちであった。彼らにはもはや龍の魂はない。 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-068",
+    "name": "超革命 マッハ55 (DM26RP2 68/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-068.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-068",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "C",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ソニック・コマンド/イニシャルズW",
+        "illustrator": "shosuke",
+        "abilities": [],
+        "flavor": "熱血とビクトリーのカレーパンに対抗するべく世界に唯一残された希望にして禁断の力、その名もドルマゲドン！ 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-069",
+    "name": "雪精 マリニャン。 (DM26RP2 69/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-069.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-069",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "C",
+        "power": "8000",
+        "cost": "3",
+        "mana": "1",
+        "race": "スノーフェアリー風",
+        "illustrator": "Tanru",
+        "abilities": [],
+        "flavor": "私たちの歌で、まるっと虜にしちゃうんだから！ ー 雪精 マリニャン。 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-070",
+    "name": "機神勇者ビクトリーダッシュ・バスター (DM26RP2 70/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-070.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-070",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "C",
+        "power": "4000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ヒューマノイド/ビーストフォーク",
+        "illustrator": "hippo",
+        "abilities": [],
+        "flavor": "ドルマゲドンWとドギラゴン逆が熱い戦いを繰り広げる中、ドルマゲドンWのエネルギー補充のために、イニシャルズW食料部は大忙し！だが、ドギラゴン逆の強大な力に対抗するには、腕の良い料理人が足りない！ 「このハムスターランド大陸に伝わるカレーパンはドギラゴン逆のものだけじゃないんだぜ！禁断のカレーパンのウワサを聞いたことがないとは言わせないぜ！」 「あ、あなたは！伝説のカレーパニストにして、伝説の料理人！機神勇者ビクトリーダッシュ・バスター!!」 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-071",
+    "name": "熱血の親衛隊クラップ (DM26RP2 71/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-071.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-071",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "C",
+        "power": "2000+",
+        "cost": "2",
+        "mana": "1",
+        "race": "ファイアー・バード/ハンター/エイリアン",
+        "illustrator": "YUKIHIRO MARUO",
+        "abilities": [],
+        "flavor": "ドルマゲドンWの前に立ちはだかるのは、ただドギラゴン逆のみ！だが、熱血とビクトリーの本当の意味を忘れ、カレーパンでの支配におぼれたドギラゴン逆では禁断の力には対抗できないのだった。 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-072",
+    "name": "FORBIDDEN RAGE ～禁断の怒り～ (DM26RP2 72/77)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-072.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-072",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "火",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Takayuki Futami",
+        "abilities": [],
+        "flavor": "史上最悪の敵と戦うため、禁断たちが力をあわせる……みなの勇気を守るため。 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!! プロモ限定カード 25期"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-073",
+    "name": "雪精 サエポヨ。 (DM26RP2 73/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-073.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-073",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "C",
+        "power": "12000",
+        "cost": "7",
+        "mana": "1",
+        "race": "スノーフェアリー風",
+        "illustrator": "Tanru",
+        "abilities": [],
+        "flavor": "このホルンがまるっと私の初恋！ ー 雪精 サエポヨ。 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-074",
+    "name": "風の1号 ハムカツマン逆 (DM26RP2 74/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-074.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-074",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "C",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "メガ・コマンド・ドラゴン/革命軍/ハムカツ団",
+        "illustrator": "500siki",
+        "abilities": [],
+        "flavor": "ハムカツ団の団長、ドギラゴン逆！さすがワイの見込んだ男やで！ ー 風の1号 ハムカツマン逆 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-075",
+    "name": "清浄のラクシャ インカ (DM26RP2 75/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-075.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-075",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "C",
+        "power": "5000",
+        "cost": "3",
+        "mana": "1",
+        "race": "オラクル/スノーフェアリー",
+        "illustrator": "kenko",
+        "abilities": [],
+        "flavor": "熱血とビクトリー。それは自由の象徴。だが、あまりに魅力的すぎるがゆえに支配の力を持ってしまった。 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-076",
+    "name": "熱血の親衛隊シウバ (DM26RP2 76/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-076.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-076",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "C",
+        "power": "4000",
+        "cost": "2",
+        "mana": "1",
+        "race": "ビーストフォーク/ハンター/エイリアン",
+        "illustrator": "RUI MARUYAMA",
+        "abilities": [],
+        "flavor": "ドルマゲドンWは、メモッタの力を借りて、ドギラゴン逆を倒すことに成功した。だが、ふたつの巨大なエネルギーのぶつかり合いがこの世界を完全に作り変えてしまった。そして世界からメモッタはいなくなり、新しい冒険が始まる。 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-077",
+    "name": "完全熱血革命 (DM26RP2 77/77)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-077.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-077",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "自然",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Futaro",
+        "abilities": [],
+        "flavor": "禁断の力でついにカレーパンの支配を脱した……と思われたが、ドギラゴン逆も文字通りの「禁断の力」を使った。彼は倒れたハムカツ団たちをカレーパンにして次々と食べ始めたのだ！！！ 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-DM001",
+    "name": "烈しき切札 ドギラゴン逆 (DM26RP2 DM1/DM1)",
+    "type": "ドリーム・クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-DM001.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-DM001",
+    "sides": [
+      {
+        "type": "ドリーム・クリーチャー",
+        "civilization": "光/自然",
+        "rarity": "DMR",
+        "power": "15000",
+        "cost": "8",
+        "mana": "1",
+        "race": "エクスドリーマー/メガ・コマンド・ドラゴン/革命軍/ハムカツ団",
+        "illustrator": "NAKAMURA8",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-DM001SEC",
+    "name": "烈しき切札 ドギラゴン逆 (DM26RP2 DM1㊙/DM1)",
+    "type": "ドリーム・クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-DM001SEC.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-DM001SEC",
+    "sides": [
+      {
+        "type": "ドリーム・クリーチャー",
+        "civilization": "光/自然",
+        "rarity": "DMR",
+        "power": "15000",
+        "cost": "8",
+        "mana": "1",
+        "race": "エクスドリーマー/メガ・コマンド・ドラゴン/革命軍/ハムカツ団",
+        "illustrator": "NAKAMURA8",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
       }
     ]
   },
@@ -8055,6 +13605,132 @@
     ]
   },
   {
+    "id": "dm26rp2-SEC019",
+    "name": "理英雄 コギトL (DM26RP2 ㊙19/㊙24)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-SEC019.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-SEC019",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "U",
+        "power": "4000+",
+        "cost": "5",
+        "mana": "1",
+        "race": "クリスタル・コマンド・ドラゴン",
+        "illustrator": "Itadakumike",
+        "abilities": [],
+        "flavor": "我思うゆえに、我あり。それがコギトLにとって新たな難問となる。(この難問に答えるにはスペースが足りない) 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-SEC020",
+    "name": "連射のラクシャ ユキメ (DM26RP2 ㊙20/㊙24)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-SEC020.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-SEC020",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "U",
+        "power": "4000",
+        "cost": "1",
+        "mana": "1",
+        "race": "オラクル/ヒューマノイド",
+        "illustrator": "Miyamoto Satoru",
+        "abilities": [],
+        "flavor": "見せてみな！アンタのガチってやつを!! — 連射のラクシャ ユキメ 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-SEC021",
+    "name": "鎧亜寄生パラス・ピエロ (DM26RP2 ㊙21/㊙24)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-SEC021.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-SEC021",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "U",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ロスト・クルセイダー/エイリアン",
+        "illustrator": "nablange",
+        "abilities": [],
+        "flavor": "すべてを手に入れるには、すべてを取り込むのが一番早い。 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-SEC022",
+    "name": "ZEROの革命 ブラックアウト (DM26RP2 ㊙22/㊙24)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-SEC022.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-SEC022",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ソニック・コマンド/イニシャルズW",
+        "illustrator": "haisiro",
+        "abilities": [],
+        "flavor": "ゼロから生み出す、革命の世界。 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!! プロモ限定カード 25期"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-SEC023",
+    "name": "超革命 マッハ55 (DM26RP2 ㊙23/㊙24)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-SEC023.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-SEC023",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "C",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ソニック・コマンド/イニシャルズW",
+        "illustrator": "shosuke",
+        "abilities": [],
+        "flavor": "世界を変えろ。侵略から革命に旗印を変えて。 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-SEC024",
+    "name": "風の1号 ハムカツマン逆 (DM26RP2 ㊙24/㊙24)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-SEC024.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-SEC024",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "C",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "メガ・コマンド・ドラゴン/革命軍/ハムカツ団",
+        "illustrator": "500siki",
+        "abilities": [],
+        "flavor": "ハムカツ団はいつでも、ドギラゴンのそばにいる。 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!!"
+      }
+    ]
+  },
+  {
     "id": "dm26rp2-SP001",
     "name": "天革の騎令嬢 ミラクルステラ (DM26RP2 SP1/SP5)",
     "type": "クリーチャー",
@@ -8235,6 +13911,27 @@
     ]
   },
   {
+    "id": "dm26rp2-STD008",
+    "name": "禁断竜王 Vol-Val-8 (DM26RP2 STD8/)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-STD008.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-STD008",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/火/自然",
+        "rarity": "KGM",
+        "power": "54321",
+        "cost": "9",
+        "mana": "1",
+        "race": "ディスペクター/アーマード・ドラゴン/アース・ドラゴン/禁断",
+        "illustrator": "311taro",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!! DM26-EX1 ますますつよいパック 25の援軍 DM24-EX2 天下夢双!!デュエキングDreaM 2024 DM24-SP1 キャラプレミアムデッキ「ドラゴン娘になりたくないっ！」 イェーイめっちゃドラゴン!! DM23-BD1 レジェンドスーパーデッキ 禁王創来 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DMEX-19 マスター・ファイナル・メモリアル・パック DMRP-19 王来篇拡張パック第3弾 禁断龍VS禁断竜"
+      }
+    ]
+  },
+  {
     "id": "dm26rp2-STDChoSEC005",
     "name": "「鎮魂」の頂 ベートーベン・ソレムニス (DM26RP2 STD超㊙5/)",
     "type": "クリーチャー",
@@ -8298,6 +13995,27 @@
     ]
   },
   {
+    "id": "dm26rp2-STDChoSEC008",
+    "name": "禁断竜王 Vol-Val-8 (DM26RP2 STD超㊙8/)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-STDChoSEC008.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-STDChoSEC008",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/火/自然",
+        "rarity": "KGM",
+        "power": "54321",
+        "cost": "9",
+        "mana": "1",
+        "race": "ディスペクター/アーマード・ドラゴン/アース・ドラゴン/禁断",
+        "illustrator": "311taro",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!! DM26-EX1 ますますつよいパック 25の援軍 DM24-EX2 天下夢双!!デュエキングDreaM 2024 DM24-SP1 キャラプレミアムデッキ「ドラゴン娘になりたくないっ！」 イェーイめっちゃドラゴン!! DM23-BD1 レジェンドスーパーデッキ 禁王創来 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DMEX-19 マスター・ファイナル・メモリアル・パック DMRP-19 王来篇拡張パック第3弾 禁断龍VS禁断竜"
+      }
+    ]
+  },
+  {
     "id": "dm26rp2-STDSEC005",
     "name": "「鎮魂」の頂 ベートーベン・ソレムニス (DM26RP2 STD㊙5/)",
     "type": "クリーチャー",
@@ -8357,6 +14075,27 @@
         "illustrator": "TETSU KUROSAWA",
         "abilities": [],
         "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!! DM25-EX2 王道vs邪道 デュエキングWDreaM 2025 DMEX-12 最強戦略!!ドラリンパック DMX-26 ファイナル・メモリアル・パック ～DS・Rev・RevF編～ DMR-16極 ドラゴン・サーガ 拡張パック第4章 超戦ガイネクスト×極 DMBD-01 クロニクル・レガシー・デッキ アルカディアス鎮魂歌"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-STDSEC008",
+    "name": "禁断竜王 Vol-Val-8 (DM26RP2 STD㊙8/)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-STDSEC008.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-STDSEC008",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/火/自然",
+        "rarity": "KGM",
+        "power": "54321",
+        "cost": "9",
+        "mana": "1",
+        "race": "ディスペクター/アーマード・ドラゴン/アース・ドラゴン/禁断",
+        "illustrator": "311taro",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!! DM26-EX1 ますますつよいパック 25の援軍 DM24-EX2 天下夢双!!デュエキングDreaM 2024 DM24-SP1 キャラプレミアムデッキ「ドラゴン娘になりたくないっ！」 イェーイめっちゃドラゴン!! DM23-BD1 レジェンドスーパーデッキ 禁王創来 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DMEX-19 マスター・ファイナル・メモリアル・パック DMRP-19 王来篇拡張パック第3弾 禁断龍VS禁断竜"
       }
     ]
   },
@@ -8511,6 +14250,132 @@
     ]
   },
   {
+    "id": "dm26rp2-T007",
+    "name": "勇愛の天秤 (DM26RP2 T7/T10)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-T007.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-T007",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "火",
+        "rarity": "U",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Piro",
+        "abilities": [],
+        "flavor": "勇気の力で、未知も怖くねぇ！ ー グレンモルト 愛の力で、道を切り開く！ ー アイラ 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!! DM26-SD1 ドキドキつよいデッキ 25の王道 DMSD-21 キングマスタースタートデッキ アバクの鬼レクスターズ DMSD-18 キングマスタースタートデッキ ジェンドルのディスペクター DMEX-09 Wチームドッキングパック チーム切札＆チームウェイブ DMBD-11 ガチヤバ4！無限改造デッキセットDX!! ジョーのビッグバンGR DMEX-02 デュエマクエスト・パック ～伝説の最強戦略12～ DMSP-01 ステキ！カンペキ！！ジョーデッキーBOX DMR-19 革命 拡張パック第3章 禁断のドキンダムX プロモ限定カード 20期 プロモ限定カード 15期"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-T008",
+    "name": "Disコットン＆Disケラサス (DM26RP2 T8/T10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-T008.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-T008",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/自然",
+        "rarity": "U",
+        "power": "1500",
+        "cost": "3",
+        "mana": "1",
+        "race": "オラクル/アウトレイジ/ディスタス",
+        "illustrator": "HIRO”WO”NORI",
+        "abilities": [],
+        "flavor": "アウトレイジでもオラクルでも今の私たちには関係ないわ！ ー ケラサス ディスペクターのいるこの世界こそが本当の幸せなのだわ！ ー コットン 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!! DM24-EX2 天下夢双!!デュエキングDreaM 2024 DM23-BD1 レジェンドスーパーデッキ 禁王創来 プロモ限定カード 23期"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-T009",
+    "name": "FORBIDDEN SUNRISE ～禁断の夜明け～ (DM26RP2 T9/T10)",
+    "type": "禁断フィールド",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-T009.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-T009",
+    "sides": [
+      {
+        "type": "禁断フィールド",
+        "civilization": "闇/火",
+        "rarity": "U",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "boyaking",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!! DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～ DMEX-17 20周年超感謝メモリアルパック 究極の章 デュエキングMAX DMART-16 神アート 禁断 ~封印されしアート~ プロモ限定カード 25期"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-T010",
+    "name": "赤い稲妻 テスタ・ロッサ (DM26RP2 T10/T10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-T010.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-T010",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "C",
+        "power": "2000+",
+        "cost": "2",
+        "mana": "1",
+        "race": "アウトレイジ",
+        "illustrator": "Morechand",
+        "abilities": [],
+        "flavor": "仲間がいるから俺達は走る、走るんだ！ ー テスタ・ロッサ 道案内くらいはまかせてよ。 ー アリス 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!! DM24-SD1 いきなりつよいデッキ 攻めの王道 DM23-EX1 大感謝祭 ビクトリーBEST DM22-BD2 開発部セレクションデッキ 「光水火鬼羅.Star」 DMRP-22 王来MAX最終弾 切札!マスターCRYMAX!! DMRP-21 王来MAX第1弾 鬼ヤバ逆襲S-MAX!! DMRP-18 王来篇拡張パック第2弾 禁時王の凶来 プロモ限定カード 23期 プロモ限定カード 22期"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-TD001",
+    "name": "神聖牙 UK パンク (DM26RP2 TD1/TD5)",
+    "type": "エグザイル・クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-TD001.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-TD001",
+    "sides": [
+      {
+        "type": "エグザイル・クリーチャー",
+        "civilization": "ゼロ",
+        "rarity": "VIC",
+        "power": "14000",
+        "cost": "11",
+        "mana": "1",
+        "race": "アウトレイジMAX/オラクリオン",
+        "illustrator": "Kotetsu Kinoshita",
+        "abilities": [],
+        "flavor": "ドロン・ゴーなのだ！ — プラマイ零 商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!! DMR-11 エピソード３ ウルトラＶマスター"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-TD002",
+    "name": "百族の長 プチョヘンザ (DM26RP2 TD2/TD5)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-TD002.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-TD002",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/自然",
+        "rarity": "LEG",
+        "power": "12500",
+        "cost": "8",
+        "mana": "1",
+        "race": "ジュラシック・コマンド・ドラゴン/革命軍/ダママ団",
+        "illustrator": "MATSUMOTO EIGHT",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!! DM24-SP1 キャラプレミアムデッキ「ドラゴン娘になりたくないっ！」 イェーイめっちゃドラゴン!! DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DMEX-15 20周年超感謝メモリアルパック 魂の章 名場面BEST DMEX-06 絶対王者!! デュエキングパック DMRP-05 双極篇 拡張パック第１弾 轟快!! ジョラゴンGo Fight!! DMR-21 革命ファイナル 拡張パック第１章 ハムカツ団とドギラゴン剣 プロモ限定カード 20期"
+      }
+    ]
+  },
+  {
     "id": "dm26rp2-TD003",
     "name": "音卿の精霊龍 ラフルル・ラブ / 「未来から来る、だからミラクル」 (DM26RP2 TD3/TD5)",
     "type": "ツインパクト",
@@ -8582,6 +14447,27 @@
         "illustrator": "Daisuke Izuka",
         "abilities": [],
         "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!! DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～ DM22-BD3 開発部セレクションデッキ 「7軸ガチロボ」 DMRP-21 王来MAX第1弾 鬼ヤバ逆襲S-MAX!! DMEX-15 20周年超感謝メモリアルパック 魂の章 名場面BEST DMEX-12 最強戦略!!ドラリンパック プロモ限定カード 21期"
+      }
+    ]
+  },
+  {
+    "id": "dm26rp2-TR001",
+    "name": "切札勝太&カツキング ー熱血の物語ー (DM26RP2 TR1/TR9)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp2-TR001.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp2-TR001",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/火/自然",
+        "rarity": "DSR",
+        "power": "5000+",
+        "cost": "5",
+        "mana": "1",
+        "race": "アウトレイジ・ドラゴン/ヒューマノイド",
+        "illustrator": "Murakami Hisashi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!! DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-BD3 ドリーム英雄譚デッキ グレンモルトの書 DM25-SP1 キャラプレミアムデッキ 「ドラゴン娘になりたくないっ!」Jack-Pot-Live!! in 桜龍高校 DM24-EX3 刺激爆発デュエナマイトパック DM23-RP3 アビス・レボリューション 第3弾 「魔覇革命」 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DM22-EX1 黄金戦略!!デュエキングMAX 2022 DMBD-19 開発部セレクションデッキ 「火水覇道」 DMEX-15 20周年超感謝メモリアルパック 魂の章 名場面BEST DMART-17 神アート 蛍光少女"
       }
     ]
   },

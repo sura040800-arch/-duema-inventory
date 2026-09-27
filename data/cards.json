@@ -1,5 +1,1790 @@
 [
   {
+    "id": "dm25ex3-001",
+    "name": "一音の妖精 (DM25EX3 1/80)",
+    "type": "NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-001.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-001",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "光",
+        "rarity": "R",
+        "power": "2500",
+        "cost": "2",
+        "mana": "1",
+        "race": "ジャイアント・スノーフェアリー",
+        "illustrator": "Kurumitsu",
+        "abilities": [],
+        "flavor": "資産の本質とは、未来を信じて積み重ねていくこと。そう考えたゴルギーネクストは世界の再建を誓い、創世竜の名を名乗った。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX2 悪感謝祭 カリスマBEST DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～ プロモ限定カード 25期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-002",
+    "name": "～輝きは奇跡そのもの～ (DM25EX3 2/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-002.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-002",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "R",
+        "power": "4000",
+        "cost": "7",
+        "mana": "1",
+        "race": "アポロニア・ドラゴン/メカ・デル・ソル/スチーム・ナイト/フュージョナー",
+        "illustrator": "kenko",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-003",
+    "name": "純粋ZARU-36 (DM25EX3 3/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-003.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-003",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "R",
+        "power": "4500",
+        "cost": "5",
+        "mana": "1",
+        "race": "シャイン・モンスター/テクノ・サムライ/フュージョナー",
+        "illustrator": "Kou1",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-004",
+    "name": "黒喜剣 エルナグニル (DM25EX3 4/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-004.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-004",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "R",
+        "power": "2000",
+        "cost": "2",
+        "mana": "1",
+        "race": "マスターズ・レガシー/フュージョナー",
+        "illustrator": "tessy",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-005",
+    "name": "ウルの天宝 (DM25EX3 5/80)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-005.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-005",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "光",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "4",
+        "mana": "1",
+        "race": "エンジェル・コマンド/フュージョナー",
+        "illustrator": "MATSUMOTO EIGHT",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ プロモ限定カード 25期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-006",
+    "name": "～海獣戦車～ (DM25EX3 6/80)",
+    "type": "NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-006.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-006",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "水",
+        "rarity": "R",
+        "power": "6000",
+        "cost": "4",
+        "mana": "1",
+        "race": "リヴァイアサン/スチーム・ナイト",
+        "illustrator": "Ishibashi Yosuke",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-007",
+    "name": "～進封せし大悪魔～ (DM25EX3 7/80)",
+    "type": "NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-007.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-007",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "水",
+        "rarity": "R",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "グランド・デビル/スチーム・ナイト",
+        "illustrator": "Shiobara",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-008",
+    "name": "～紺碧の奇術師～ (DM25EX3 8/80)",
+    "type": "NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-008.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-008",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "水",
+        "rarity": "R",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "リキッド・ピープル/スチーム・ナイト",
+        "illustrator": "500siki",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-009",
+    "name": "トルネド＝ネード (DM25EX3 9/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-009.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-009",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "R",
+        "power": "2000",
+        "cost": "4",
+        "mana": "1",
+        "race": "アズールアビス/フュージョナー",
+        "illustrator": "nablange",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-010",
+    "name": "～その怪物、害悪なり～ (DM25EX3 10/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-010.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-010",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "R",
+        "power": "2000",
+        "cost": "2",
+        "mana": "1",
+        "race": "アースイーター/スチーム・ナイト",
+        "illustrator": "Norikatsu Miyoshi",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ プロモ限定カード 24期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-011",
+    "name": "エリー＝エリザベス (DM25EX3 11/80)",
+    "type": "G-NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-011.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-011",
+    "sides": [
+      {
+        "type": "G-NEOクリーチャー",
+        "civilization": "闇",
+        "rarity": "R",
+        "power": "1000",
+        "cost": "2",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "Ittoku",
+        "abilities": [],
+        "flavor": "ヴリドガルドの巨体を押し込むのに苦戦するアビスラブを配下たちが助けた。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-012",
+    "name": "ドクラス＝ドウダクラス (DM25EX3 12/80)",
+    "type": "NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-012.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-012",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "闇",
+        "rarity": "R",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "haisiro",
+        "abilities": [],
+        "flavor": "虚ろであったかつてのジャシン……ヴリドガルドに芽生えた感情、それがアビスベルの魂。そしてその魂が無意識に積み重ねてきた愛が、今、爆発する。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-013",
+    "name": "魔誕の穿将ベリュガデス (DM25EX3 13/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-013.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-013",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "R",
+        "power": "3000",
+        "cost": "4",
+        "mana": "1",
+        "race": "デーモン・コマンド/フュージョナー",
+        "illustrator": "Kotakan",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-014",
+    "name": "轟速 ジャッカー (DM25EX3 14/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-014.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-014",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "R",
+        "power": "1000",
+        "cost": "2",
+        "mana": "1",
+        "race": "ヒューマノイド/フュージョナー",
+        "illustrator": "TUBAKI HALSAME",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-015",
+    "name": "魔誕音像スカルテット (DM25EX3 15/80)",
+    "type": "G-NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-015.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-015",
+    "sides": [
+      {
+        "type": "G-NEOクリーチャー",
+        "civilization": "火",
+        "rarity": "R",
+        "power": "2000",
+        "cost": "2",
+        "mana": "1",
+        "race": "ガーゴイル",
+        "illustrator": "ikeda_cpt",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～ プロモ限定カード 24期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-016",
+    "name": "魔誕の魔龍虫ビャハ (DM25EX3 16/80)",
+    "type": "NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-016.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-016",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "火",
+        "rarity": "R",
+        "power": "8000",
+        "cost": "7",
+        "mana": "1",
+        "race": "パラサイトワーム/ドラゴン・ゾンビ",
+        "illustrator": "Kou1",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-017",
+    "name": "魔誕の覇王アザファウスト (DM25EX3 17/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-017.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-017",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "R",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "デーモン・コマンド",
+        "illustrator": "jintetsu",
+        "abilities": [],
+        "flavor": "暴竜爵と富轟龍の血を受け継いだものによって、再び深淵は誰も出てくることのできない封じられた地となった。それを見てアビスラブは満足げにほほ笑んだ。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-018",
+    "name": "魔誕盗掘男 (DM25EX3 18/80)",
+    "type": "NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-018.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-018",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "火",
+        "rarity": "R",
+        "power": "9000",
+        "cost": "1",
+        "mana": "1",
+        "race": "ヘドリアン",
+        "illustrator": "shosuke",
+        "abilities": [],
+        "flavor": "灰となったアビスラブをみてバクスザクは「最期の深淵か……」とつぶやき、さらに続けた。「……だが、最後には貴様も友であった」 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-019",
+    "name": "ヴォルカ＝グルーカ (DM25EX3 19/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-019.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-019",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "R",
+        "power": "3000+",
+        "cost": "4",
+        "mana": "1",
+        "race": "ルージュアビス/フュージョナー",
+        "illustrator": "nao",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-020",
+    "name": "インフェル＝フェルト (DM25EX3 20/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-020.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-020",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "R",
+        "power": "3000",
+        "cost": "2",
+        "mana": "1",
+        "race": "ルージュアビス/フュージョナー",
+        "illustrator": "Taro Yamazaki",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-021",
+    "name": "魔誕妖蟲デンジャラス・ワーム (DM25EX3 21/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-021.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-021",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "R",
+        "power": "2000",
+        "cost": "2",
+        "mana": "1",
+        "race": "パラサイトワーム",
+        "illustrator": "Masateru Ikeda",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-022",
+    "name": "MATATA-美吾罪261 (DM25EX3 22/80)",
+    "type": "G-NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-022.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-022",
+    "sides": [
+      {
+        "type": "G-NEOクリーチャー",
+        "civilization": "自然",
+        "rarity": "R",
+        "power": "4000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ワイルド・ベジーズ/テクノ・サムライ",
+        "illustrator": "sarmat",
+        "abilities": [],
+        "flavor": "オウ禍武斗は自然文明を汚染から救ってくれたタレットに義を果たしている。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-023",
+    "name": "BARUGA-雷座87 (DM25EX3 23/80)",
+    "type": "NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-023.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-023",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "自然",
+        "rarity": "R",
+        "power": "6000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アーマード・ドラゴン/テクノ・サムライ",
+        "illustrator": "Taro Yamazaki",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-RP3 逆札篇 第3弾 勝敵！逆転おこせ鬼の∞ディスペクター!! DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-024",
+    "name": "ソウルスカーレット アカネ (DM25EX3 24/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-024.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-024",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "R",
+        "power": "5000",
+        "cost": "5",
+        "mana": "1",
+        "race": "ジャイアント・スノーフェアリー/フュージョナー",
+        "illustrator": "Murakami Hisashi",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-025",
+    "name": "場和了GO-YAMA-58 (DM25EX3 25/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-025.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-025",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "R",
+        "power": "3000+",
+        "cost": "2",
+        "mana": "1",
+        "race": "ワイルド・ベジーズ/テクノ・サムライ/フュージョナー",
+        "illustrator": "Futaro",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～ プロモ限定カード 24期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-026",
+    "name": "剣轟奥義 ドドド・ドギラゴン・ドライブ (DM25EX3 26/80)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-026.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-026",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "自然",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "4",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "NAKAMURA8",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-027",
+    "name": "～驚異的な矛盾～ (DM25EX3 27/80)",
+    "type": "NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-027.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-027",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "光/水/闇",
+        "rarity": "R",
+        "power": "4500",
+        "cost": "3",
+        "mana": "1",
+        "race": "エンジェル・コマンド/デーモン・コマンド/スチーム・ナイト",
+        "illustrator": "KOHEI YAMADA",
+        "abilities": [],
+        "flavor": "万能である神を超える。キング・ロマノフの野望はひどく矛盾したものだった。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～ プロモ限定カード 24期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-028",
+    "name": "～地獄帰りの騎士～ (DM25EX3 28/80)",
+    "type": "NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-028.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-028",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "光/水/闇",
+        "rarity": "R",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "アーク・セラフィム/スチーム・ナイト",
+        "illustrator": "Y.HIRASAKA",
+        "abilities": [],
+        "flavor": "魔縛のディスペクターによって行なわれた7か所同時侵略は十分な戦果を挙げることができなかった。それ以来、キング・ロマノフは己の軍備を強化することにとりつかれている。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～ プロモ限定カード 24期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-029",
+    "name": "観覧！ホールインランド・ヘラクレス (DM25EX3 29/80)",
+    "type": "NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-029.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-029",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "光/水/自然",
+        "rarity": "R",
+        "power": "6000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ジャイアント・インセクト",
+        "illustrator": "Norikatsu Miyoshi",
+        "abilities": [],
+        "flavor": "二柱のジャシンは世界を去った。だが、創世竜たちの戦いはこれからだ。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-030",
+    "name": "名俳句楽 Drache der’Zen (DM25EX3 30/80)",
+    "type": "NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-030.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-030",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "光/水/自然",
+        "rarity": "R",
+        "power": "3500",
+        "cost": "3",
+        "mana": "1",
+        "race": "マジック・コマンド・ドラゴン",
+        "illustrator": "Yuukoo009",
+        "abilities": [],
+        "flavor": "ハイクの本質とは常に新しい世界を生み出すこと。そう考えたDracheは世界の再建を誓い、創世竜の名を名乗った。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-031",
+    "name": "golDe’d’Ramar (DM25EX3 31/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-031.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-031",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/水/自然",
+        "rarity": "R",
+        "power": "5500",
+        "cost": "7",
+        "mana": "1",
+        "race": "マジック・コマンド・ドラゴン",
+        "illustrator": "FUJIWARA HISASHI",
+        "abilities": [],
+        "flavor": "二柱のジャシンによって世界は完全に荒廃した。だがゴルファン財団はいよいよこれからこそが自分たちの仕事の始まりだと感じていた。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-032",
+    "name": "コアラ大佐の虹勲章 (DM25EX3 32/80)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-032.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-032",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "光/火/自然",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "ドリームメイト/フュージョナー",
+        "illustrator": "Muna-Ge",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-033",
+    "name": "ダンマ＝ダンマダン (DM25EX3 33/80)",
+    "type": "NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-033.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-033",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "水/闇/火",
+        "rarity": "R",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "tessy",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-034",
+    "name": "シャワ＝アガール (DM25EX3 34/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-034.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-034",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/闇/火",
+        "rarity": "R",
+        "power": "4000",
+        "cost": "3",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "Ayuko",
+        "abilities": [],
+        "flavor": "完全体となったヴリドガルドを深淵へと送り込んだアビスラブだったが、愛に目覚めた代償として、ついに燃え尽きて灰になってしまったのだった。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～ プロモ限定カード 24期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-035",
+    "name": "ハイヒール＝ハミール (DM25EX3 35/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-035.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-035",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/闇/火",
+        "rarity": "R",
+        "power": "3000+",
+        "cost": "3",
+        "mana": "1",
+        "race": "アビスロイヤル/フュージョナー",
+        "illustrator": "Ayuko",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ プロモ限定カード 24期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-036",
+    "name": "魔誕の賢者ランブル (DM25EX3 36/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-036.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-036",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇/火/自然",
+        "rarity": "R",
+        "power": "5000",
+        "cost": "5",
+        "mana": "1",
+        "race": "デーモン・コマンド",
+        "illustrator": "Ishikawa Kenta",
+        "abilities": [],
+        "flavor": "かつて深淵を封じた暴竜爵の力だったが、より強大となったヴリドガルドの力の前に封印しきることができない……その時、暴竜爵を助けたのはゴルギーニの力を受け継ぐ者、ゴルギーネクストだった。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-037",
+    "name": "忍蛇の聖光 c0br4 (DM25EX3 37/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-037.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-037",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "U",
+        "power": "3500",
+        "cost": "9",
+        "mana": "1",
+        "race": "メカ・デル・ステラ/シノビ/フュージョナー",
+        "illustrator": "Kare",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-038",
+    "name": "♪離れても 周りが廻り 離回りなり (DM25EX3 38/80)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-038.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-038",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光",
+        "rarity": "U",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "マジック・ソング",
+        "illustrator": "haisiro",
+        "abilities": [],
+        "flavor": "世界がどれだけ荒廃しても、受け継ぐものが居る限り必ず再生する。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-039",
+    "name": "スコール＝シャコル (DM25EX3 39/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-039.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-039",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "U",
+        "power": "3000",
+        "cost": "2",
+        "mana": "1",
+        "race": "アズールアビス/フュージョナー",
+        "illustrator": "nablange",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～ プロモ限定カード 24期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-040",
+    "name": "NEW ECHO WHISPER (DM25EX3 40/80)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-040.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-040",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "U",
+        "power": "コスト",
+        "cost": "4",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Nottsuo",
+        "abilities": [],
+        "flavor": "回収したCOMPLEXは完全に破壊され使い物にならなくなっていた。だが、キング・ロマノフはそれでも使い道を見出す。魔導具は使い手次第なのだから。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-041",
+    "name": "デンジャラス=トットロ (DM25EX3 41/80)",
+    "type": "NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-041.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-041",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "闇",
+        "rarity": "U",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "douzen",
+        "abilities": [],
+        "flavor": "アビスラブと配下たち。その愛の力でヴリドガルドは深淵に押し込まれた。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-042",
+    "name": "邪入梵 (DM25EX3 42/80)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-042.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-042",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇",
+        "rarity": "U",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Keselum",
+        "abilities": [],
+        "flavor": "ヴリドガルドが配下の魂を喰らった時、アビスベルには怒りの理由がわからなかった。だが、少なくとも今、横にいる暴竜爵はその時の自分と同じ怒りを感じていることはわかった。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～ プロモ限定カード 24期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-043",
+    "name": "逢邪時 (DM25EX3 43/80)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-043.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-043",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇",
+        "rarity": "U",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "akagi",
+        "abilities": [],
+        "flavor": "……よかろう。余が貴様と手を組むなんぞ……かつて深淵が封印された時には思いもよらなかったぞ！ — 至高の魂 アビスベル=ジャシン帝 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～ コロコロ・スペシャル デッキ12"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-044",
+    "name": "愛・爆・発 (DM25EX3 44/80)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-044.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-044",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇",
+        "rarity": "U",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Kotakan",
+        "abilities": [],
+        "flavor": "バクスザクと手を組んだ時、初めて他者を信頼した時、アビスベルは怒りの理由を理解した。大事なものを守りたいという願い。それを皆は「愛」と呼んでいると。その瞬間巻き起こる愛・爆・発!!! 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-045",
+    "name": "魔誕の邪剣デスライオス (DM25EX3 45/80)",
+    "type": "G-NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-045.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-045",
+    "sides": [
+      {
+        "type": "G-NEOクリーチャー",
+        "civilization": "火",
+        "rarity": "U",
+        "power": "6000",
+        "cost": "4",
+        "mana": "1",
+        "race": "デーモン・コマンド",
+        "illustrator": "hippo",
+        "abilities": [],
+        "flavor": "完全体のヴリドガルドには愛に目覚めたアビスラブでも互角がやっとだった。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-046",
+    "name": "魔誕竜凰ドルゲドス (DM25EX3 46/80)",
+    "type": "NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-046.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-046",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "火",
+        "rarity": "U",
+        "power": "4000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ティラノ・ドレイク",
+        "illustrator": "nablange",
+        "abilities": [],
+        "flavor": "自身の領土である深淵の封印を申し出るアビスラブに一瞬驚くバクスザクであったが、その覚悟を認めると小さくうなずいた。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-047",
+    "name": "魔誕邪脚ディメンジョネーク (DM25EX3 47/80)",
+    "type": "NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-047.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-047",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "火",
+        "rarity": "U",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ブレインジャッカー",
+        "illustrator": "sarmat",
+        "abilities": [],
+        "flavor": "深淵への扉を開くと、爆発する愛の力でアビスラブは、ヴリドガルドの巨体を強引に深淵へと押し込んだ。それは持てる力の全てを込めた愛の力だった。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-048",
+    "name": "ラーヴァ＝アーヴァ (DM25EX3 48/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-048.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-048",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "U",
+        "power": "4000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ルージュアビス/フュージョナー",
+        "illustrator": "nao",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-049",
+    "name": "コッコ・超魂・ルピア (DM25EX3 49/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-049.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-049",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "U",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "アーマード・ファイアー・バード/フュージョナー",
+        "illustrator": "Akifumi Yamamoto",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-050",
+    "name": "パイロー＝アイロ (DM25EX3 50/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-050.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-050",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "U",
+        "power": "2000+",
+        "cost": "2",
+        "mana": "1",
+        "race": "ルージュアビス",
+        "illustrator": "Hiro Usuda",
+        "abilities": [],
+        "flavor": "バクスザクに感じるその感情。その名をアビスベルはまだ知らない。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-051",
+    "name": "XENOGEAR-雷1号 (DM25EX3 51/80)",
+    "type": "NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-051.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-051",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "自然",
+        "rarity": "U",
+        "power": "6000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ドリームメイト/テクノ・サムライ",
+        "illustrator": "Ryoji",
+        "abilities": [],
+        "flavor": "グラッサの土産話を聞き、愛が爆発するところは見たかったとバンキッシュは思ったのだった。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-052",
+    "name": "USHI和歌轟-8 (DM25EX3 52/80)",
+    "type": "NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-052.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-052",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "自然",
+        "rarity": "U",
+        "power": "4000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ヒューマノイド/テクノ・サムライ",
+        "illustrator": "kawasumi",
+        "abilities": [],
+        "flavor": "SEN59-BU10街に戻ったタレットは「やっぱり、愛だよね」と仲間に語った。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-053",
+    "name": "魔誕怪人モステリオ (DM25EX3 53/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-053.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-053",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "U",
+        "power": "1000",
+        "cost": "3",
+        "mana": "1",
+        "race": "デビルマスク/フュージョナー",
+        "illustrator": "Kutay",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-054",
+    "name": "～破壊と殺戮の連鎖～ (DM25EX3 54/80)",
+    "type": "NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-054.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-054",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "光/水/闇",
+        "rarity": "U",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "デーモン・コマンド/パラサイトワーム/スチーム・ナイト",
+        "illustrator": "ikeda_cpt",
+        "abilities": [],
+        "flavor": "キング・ロマノフが次に狙うミロクの発明品は山のようにあった。その中にはサファイア・ペンダットが操る「偽衒学者の鍵」も含まれていた。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-055",
+    "name": "DARK MEMORY CONTAINER (DM25EX3 55/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-055.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-055",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/水/闇",
+        "rarity": "U",
+        "power": "5500",
+        "cost": "5",
+        "mana": "1",
+        "race": "???/スチーム・ナイト",
+        "illustrator": "MISAWA_K",
+        "abilities": [],
+        "flavor": "長く続いたアビスベルの物語は、愛に目覚め、愛に爆発し、愛に散るという形で終わりを迎えた。そして、また、全く新しい物語が始まろうとしている。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～ プロモ限定カード 25期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-056",
+    "name": "～王家の御曹司～ (DM25EX3 56/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-056.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-056",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/水/闇",
+        "rarity": "U",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "エンジェル・コマンド/ロスト・クルセイダー/スチーム・ナイト",
+        "illustrator": "touge369",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-057",
+    "name": "大集合！アカネ&アサギ&コハク (DM25EX3 57/80)",
+    "type": "NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-057.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-057",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "光/水/自然",
+        "rarity": "U",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ジャイアント・スノーフェアリー",
+        "illustrator": "Krgc",
+        "abilities": [],
+        "flavor": "スノーフェアリーたちは、いつでもゴルファウンデーションを支え続ける。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-058",
+    "name": "貪欲妖精ハナグルマ (DM25EX3 58/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-058.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-058",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/水/自然",
+        "rarity": "U",
+        "power": "4500",
+        "cost": "5",
+        "mana": "1",
+        "race": "スノーフェアリー",
+        "illustrator": "nuisuke",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-059",
+    "name": "HIMEGYA-流予見618 (DM25EX3 59/80)",
+    "type": "NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-059.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-059",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "光/火/自然",
+        "rarity": "U",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ファイアー・バード/テクノ・サムライ",
+        "illustrator": "Yuukoo009",
+        "abilities": [],
+        "flavor": "パンドラ復興のためにグラッサが流してくれた涙。プリンはそのためにゼノテクソードとして戦うことを決めたのだった。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-060",
+    "name": "トレース＝トレーシー (DM25EX3 60/80)",
+    "type": "NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-060.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-060",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "水/闇/火",
+        "rarity": "U",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "Miho Taguchi",
+        "abilities": [],
+        "flavor": "アビスベルがアビスラブとなった時、配下のアビスにも愛がうまれた。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-061",
+    "name": "バース＝ターブ (DM25EX3 61/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-061.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-061",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/闇/火",
+        "rarity": "U",
+        "power": "1000",
+        "cost": "4",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "danciao",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-062",
+    "name": "哀蛇の虚 シンロッチ (DM25EX3 62/80)",
+    "type": "NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-062.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-062",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "闇/火/自然",
+        "rarity": "U",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "デーモン・コマンド",
+        "illustrator": "douzen",
+        "abilities": [],
+        "flavor": "他者を思いやるのが愛の本質。他者と協力できるのが愛の力。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-063",
+    "name": "奇跡妖精ヴェヌス (DM25EX3 63/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-063.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-063",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "C",
+        "power": "3000",
+        "cost": "2",
+        "mana": "1",
+        "race": "スノーフェアリー",
+        "illustrator": "Kotetsu Kinoshita",
+        "abilities": [],
+        "flavor": "戦いが終わった後。ゴルギーネクストはゴルギーオージャーと協力し、ゴルギーニ・タウンの再建にいそしんだ。エルボロムの残した傷跡は深く険しいものであった。だが、それでも未来を信じて彼らは積み重ねることをやめない。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-064",
+    "name": "奇跡妖精メルクリ (DM25EX3 64/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-064.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-064",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "C",
+        "power": "3000",
+        "cost": "2",
+        "mana": "1",
+        "race": "スノーフェアリー",
+        "illustrator": "Aya Yamai",
+        "abilities": [],
+        "flavor": "戦いが終わった後。Dracheは一人フミビロムの石碑の前でハイクを詠む。17文字に想像を超えた可能性を与えてくれた相手に、17文字以上の価値を創造して返す。その時、ついにDracheはハイクの神髄をつかんだのだった。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-065",
+    "name": "タイフン＝フインタ (DM25EX3 65/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-065.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-065",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "C",
+        "power": "2000",
+        "cost": "2",
+        "mana": "1",
+        "race": "アズールアビス",
+        "illustrator": "nablange",
+        "abilities": [],
+        "flavor": "暴竜爵よ！なぜ余を助ける！？貴様にとって余は敵であり、そして仇ではないのか!? — 至高の魂 アビスベル=ジャシン帝 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-066",
+    "name": "蒸熱のタイフーン (DM25EX3 66/80)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-066.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-066",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Tonbi Aburaya",
+        "abilities": [],
+        "flavor": "世界を征服することへのキング・ロマノフの蒸熱は止まらない。暴竜爵と富轟龍によって封印された深淵すらも新たな侵略の対象に加えられた。そこに三種の魔神器があるのであればなおさらだ。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-067",
+    "name": "魔誕の翼ダークモルダー (DM25EX3 67/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-067.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-067",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "デーモン・コマンド",
+        "illustrator": "D-suzuki",
+        "abilities": [],
+        "flavor": "愛に目覚め、アビスラブになろうとも、究極の魔誕によって完全体となり世界を覆うほどの巨体を手に入れたヴリドガルドを倒すにはまだ力が足りない……アビスラブだけであれば。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-068",
+    "name": "奇跡妖精サートゥル (DM25EX3 68/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-068.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-068",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "3000",
+        "cost": "2",
+        "mana": "1",
+        "race": "スノーフェアリー",
+        "illustrator": "Ishibashi Yosuke",
+        "abilities": [],
+        "flavor": "戦いが終わった後。アビスたちはヴリドガルドとともに深淵にとどまり、そして深淵は暴竜爵と富轟龍によって封印され再び誰も出られない空間となった。その中で何が起こっているかを知ることは、もう誰にもできない。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-069",
+    "name": "～魔の夕暮れ～ (DM25EX3 69/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-069.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-069",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "2000",
+        "cost": "2",
+        "mana": "1",
+        "race": "ダークロード/スチーム・ナイト",
+        "illustrator": "hippo",
+        "abilities": [],
+        "flavor": "破壊されたアカシアの残骸から造り上げた機械の神たちは予想以上の戦力となってくれた。COMPLEXを回収できたこともあり、今回の戦果にはキング・ロマノフは大満足だった。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-070",
+    "name": "コースター＝コーデキター (DM25EX3 70/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-070.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-070",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "1000",
+        "cost": "1",
+        "mana": "1",
+        "race": "アビスロイヤル/フュージョナー",
+        "illustrator": "Chiam",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-071",
+    "name": "深淵の記念碑 (DM25EX3 71/80)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-071.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-071",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "1",
+        "mana": "1",
+        "race": "アビスロイヤル/フュージョナー",
+        "illustrator": "Jun Ishimaru",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-072",
+    "name": "昇邪淵 (DM25EX3 72/80)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-072.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-072",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "4",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Kotakan",
+        "abilities": [],
+        "flavor": "……貴様との決着は後だ。今は先に倒すべき相手がいるだろう。ならば……わたしは貴様とでも手を組む。 — ボルシャック・バクスザク 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-073",
+    "name": "危識:邪道、轟き中 (DM25EX3 73/80)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-073.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-073",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "KIYA",
+        "abilities": [],
+        "flavor": "王道も、時には邪道となる。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～ コロコロ・スペシャル デッキ12"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-074",
+    "name": "魔誕妖クズトレイン (DM25EX3 74/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-074.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-074",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "C",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "デーモン・コマンド",
+        "illustrator": "Taro Yamazaki",
+        "abilities": [],
+        "flavor": "暴竜爵よ！余がヴリドガルドを深淵に送り返す！貴様はヤツがこちらに戻ってくる前に再び深淵を封印するのだ!! — アビスラブ・ジャシン帝 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-075",
+    "name": "奇跡妖精マルス (DM25EX3 75/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-075.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-075",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "C",
+        "power": "3000",
+        "cost": "2",
+        "mana": "1",
+        "race": "スノーフェアリー",
+        "illustrator": "Hayaka Asari",
+        "abilities": [],
+        "flavor": "戦いが終わった後。暴竜爵の帰還をケンスケを始めとした火文明の面々は喜び、そしてその活躍を称えた。そんな中、バクスザクは愛に目覚めた友の最期と、今までの因縁を思い返し「……無責任なヤツめ」と一人呟くのだった。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-076",
+    "name": "XENOGEAR-速4号 (DM25EX3 76/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-076.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-076",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "C",
+        "power": "2000",
+        "cost": "2",
+        "mana": "1",
+        "race": "ティラノ・ドレイク/テクノ・サムライ",
+        "illustrator": "ikeda_cpt",
+        "abilities": [],
+        "flavor": "COMPLEXをキング・ロマノフから守ることに失敗したグラッサとタレット。しかし、まだミロクの発明品は星の数ほどもある。まだまだテクノ・サムライとスチーム・ナイトの戦いは終わらない。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-077",
+    "name": "メルテオ＝メッテオ (DM25EX3 77/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-077.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-077",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "C",
+        "power": "1000+",
+        "cost": "2",
+        "mana": "1",
+        "race": "ルージュアビス/フュージョナー",
+        "illustrator": "nao",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-078",
+    "name": "奇跡妖精ユピ (DM25EX3 78/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-078.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-078",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "C",
+        "power": "3000",
+        "cost": "2",
+        "mana": "1",
+        "race": "スノーフェアリー",
+        "illustrator": "Krgc",
+        "abilities": [],
+        "flavor": "戦いが終わった後。愛に目覚めたアビスラブの話を聞き、ゴルファンは自身をもて遊んだジャシンと同一人物だと思えなかった。だが、それこそ成長だと複雑な感情を飲み込んだ。我々はそのために回転しつづけているのだからと。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-079",
+    "name": "AQrotation (DM25EX3 79/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-079.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-079",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "C",
+        "power": "2000",
+        "cost": "2",
+        "mana": "1",
+        "race": "マジック・リキッド・ピープル",
+        "illustrator": "Takaaki Sato",
+        "abilities": [],
+        "flavor": "回転の本質とは続けていき繋げていくこと。そう考えたゴルファウンデーションは、世界の再建を誓い、創世竜の名を名乗った。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-080",
+    "name": "轟速奪取 トップギジャ (DM25EX3 80/80)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-080.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-080",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "C",
+        "power": "1000",
+        "cost": "2",
+        "mana": "1",
+        "race": "アウトレイジ/侵略者",
+        "illustrator": "hippo",
+        "abilities": [],
+        "flavor": "夢も、見る者によっては悪夢となる。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-CSP1",
+    "name": "月下卍壊 ガ・リュミーズ 卍 (DM25EX3 CSP1/CSP5)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-CSP1.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-CSP1",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "コスト",
+        "cost": "99",
+        "mana": "1",
+        "race": "ドルスザク",
+        "illustrator": "YAKOTAKOS",
+        "abilities": [],
+        "flavor": "よーし、いけー！ — ライザリン・シュタウト 商品情報 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」 DMEX-17 20周年超感謝メモリアルパック 究極の章 デュエキングMAX DMRP-08 双極篇 拡張パック第４弾 超決戦!バラギアラ!!無敵オラオラ輪廻∞ DMART-24 神アート 魔法少女アイドル「Girl Mage」 ～偶像魔導具集～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-CSP2",
+    "name": "煌銀河最終形態 ギラングレイル (DM25EX3 CSP2/CSP5)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-CSP2.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-CSP2",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "12",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Tatsuya Nakanishi",
+        "abilities": [],
+        "flavor": "これでおしまい！ — クラウディア・バレンツ 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DMEX-19 マスター・ファイナル・メモリアル・パック DMRP-12 超天篇 拡張パック第4弾 超超超天！覚醒ジョギラゴン vs. 零龍卍誕"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-CSP3",
+    "name": "オールデリート (DM25EX3 CSP3/CSP5)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-CSP3.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-CSP3",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "11",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "chatsubaki",
+        "abilities": [],
+        "flavor": "迫りくる闇に……怯えよ！ — カラ・イデアス 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM22-EX1 黄金戦略!!デュエキングMAX 2022 DMRP-20 王来篇拡張パック第4弾 終末王龍大戦 DMEX-15 20周年超感謝メモリアルパック 魂の章 名場面BEST DMX-24 革命ファイナル 輝け！デュエデミー賞パック DMX-21 マスターズ・クロニクル・パック（コミック・オブ・ヒーローズ） DMART-15 神アート 激筆!!超獣戯画"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-CSP4",
+    "name": "ティラノ・リンク・ノヴァ (DM25EX3 CSP4/CSP5)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-CSP4.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-CSP4",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "火",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "14",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "311taro",
+        "abilities": [],
+        "flavor": "任せてください……私の剣からは逃れられない！ — パトリツィア・アーベルハイム 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DMEX-15 20周年超感謝メモリアルパック 魂の章 名場面BEST DM-21 不死鳥編 第3弾 封魔王の系譜(ヒストリー・オブ・デビル・ノヴァ)"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-CSP5",
+    "name": "エンドレス・フローズン・カーニバル (DM25EX3 CSP5/CSP5)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-CSP5.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-CSP5",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光/水/自然",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "15",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Gesoking",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM24-BD5 エキサイティング・デュエパ・デッキ アセビと異世界フェアリーたち DM24-EX1 超感謝祭 ファンタジーBEST DM22-EX1 黄金戦略!!デュエキングMAX 2022 DMEX-12 最強戦略!!ドラリンパック"
+      }
+    ]
+  },
+  {
     "id": "dm25ex3-OR1",
     "name": "ARC REALITY COMPLEX (DM25EX3 OR1/OR4)",
     "type": "NEOクリーチャー",
@@ -84,6 +1869,48 @@
     ]
   },
   {
+    "id": "dm25ex3-SP1",
+    "name": "我我我ガイアール・ブランド (DM25EX3 SP1/SP6)",
+    "type": "スター進化クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-SP1.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-SP1",
+    "sides": [
+      {
+        "type": "スター進化クリーチャー",
+        "civilization": "火",
+        "rarity": "KGM",
+        "power": "9000",
+        "cost": "8",
+        "mana": "1",
+        "race": "ビートジョッキー/レッド・コマンド・ドラゴン/レクスターズ",
+        "illustrator": "緜",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM24-SD1 いきなりつよいデッキ 攻めの王道 DM22-BD2 開発部セレクションデッキ 「光水火鬼羅.Star」 DMEX-19 マスター・ファイナル・メモリアル・パック DMRP-18 王来篇拡張パック第2弾 禁時王の凶来 プロモ限定カード 22期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-SP2",
+    "name": "アルカディアス・モモキング (DM25EX3 SP2/SP6)",
+    "type": "スター進化クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-SP2.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-SP2",
+    "sides": [
+      {
+        "type": "スター進化クリーチャー",
+        "civilization": "光/火",
+        "rarity": "KGM",
+        "power": "12500",
+        "cost": "6",
+        "mana": "1",
+        "race": "ジョーカーズ・ドラゴン/エンジェル・コマンド/レクスターズ",
+        "illustrator": "神慶",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM24-BD3 ドリーム英雄譚デッキ モモキングの書 DMEX-19 マスター・ファイナル・メモリアル・パック DMRP-18 王来篇拡張パック第2弾 禁時王の凶来"
+      }
+    ]
+  },
+  {
     "id": "dm25ex3-SP3",
     "name": "魔誕の斬将オルゲイト (DM25EX3 SP3/SP6)",
     "type": "クリーチャー",
@@ -122,6 +1949,90 @@
         "illustrator": "憂姫はぐれ",
         "abilities": [],
         "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM24-EX1 超感謝祭 ファンタジーBEST"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-SP5",
+    "name": "百威と族絆の決断 (DM25EX3 SP5/SP6)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-SP5.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-SP5",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光/自然",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "7",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "DSマイル",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-EX2 王道vs邪道 デュエキングWDreaM 2025 DM24-EX3 刺激爆発デュエナマイトパック DM24-RP1 王道篇 第1弾 「デーモン・オブ・ハイパームーン」"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-SP6",
+    "name": "プリンセス・パーティ ～シラハの絆～ (DM25EX3 SP6/SP6)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-SP6.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-SP6",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/水/自然",
+        "rarity": "VR",
+        "power": "5000",
+        "cost": "5",
+        "mana": "1",
+        "race": "スノーフェアリー/ドリームメイト/スプラッシュ・クイーン",
+        "illustrator": "フライ",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-EX2 王道vs邪道 デュエキングWDreaM 2025 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～ DM24-EX3 刺激爆発デュエナマイトパック DM24-RP3 王道篇 第3弾 「ゴールド・オブ・ハイパーエンジェル」 プロモ限定カード 24期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-STR1",
+    "name": "飛翔龍 5000VT (DM25EX3 STR1/STR5)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-STR1.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-STR1",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "VIC",
+        "power": "12000",
+        "cost": "8",
+        "mana": "1",
+        "race": "マジック・アウトレイジMAX",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX2 悪感謝祭 カリスマBEST DM26-EX1 ますますつよいパック 25の援軍 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～ DM24-BD5 エキサイティング・デュエパ・デッキ アセビと異世界フェアリーたち DM24-EX3 刺激爆発デュエナマイトパック DM24-RP4 王道篇 第4弾 「悪魔神、復活」 DM24-RP2 王道篇 第2弾 「カイザー・オブ・ハイパードラゴン」 DM23-EX1 大感謝祭 ビクトリーBEST プロモ限定カード 24期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-STR2",
+    "name": "∞龍 ゲンムエンペラー (DM25EX3 STR2/STR5)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-STR2.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-STR2",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/闇",
+        "rarity": "KGM",
+        "power": "∞",
+        "cost": "∞",
+        "mana": "1",
+        "race": "∞マスター・ドラゴン/チーム零",
+        "illustrator": "Futaro",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP3 逆札篇 第3弾 勝敵！逆転おこせ鬼の∞ディスペクター!! DM26-EX3 キャラプレミアムパック ドラゴン娘になりたくないっ！ 文化祭だョ！全員集合!!ドラ娘100％パック DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-EX1 愛感謝祭 ヒロインBEST DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～ DM24-EX1 超感謝祭 ファンタジーBEST DM23-EX2 頂上決戦!!デュエキングMAX 2023 DMEX-19 マスター・ファイナル・メモリアル・パック DMRP-20 王来篇拡張パック第4弾 終末王龍大戦 DMRP-15 十王篇拡張パック第3弾 幻龍×凶襲 ゲンムエンペラー!!! DMART-11 神アート ドラゴン娘の青春☆パラダイス プロモ限定カード 23期"
       }
     ]
   },
@@ -419,6 +2330,1491 @@
         "illustrator": "I☆LA",
         "abilities": [],
         "flavor": "生徒会の友情は永遠！ 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DMEX-15 20周年超感謝メモリアルパック 魂の章 名場面BEST"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TD11",
+    "name": "黒神龍グールジェネレイド (DM25EX3 TD11/TD23)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TD11.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TD11",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "VR",
+        "power": "6000",
+        "cost": "7",
+        "mana": "1",
+        "race": "ドラゴン・ゾンビ",
+        "illustrator": "Krgc",
+        "abilities": [],
+        "flavor": "うわっびっくりした！……わ、わらわも大きさでは負けてないぞ。 — 熊田すず 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DMEX-13 四強集結→最強直結パック DMX-21 マスターズ・クロニクル・パック（コミック・オブ・ヒーローズ） DMX-16 超王道戦略ファンタジスタ１２ DMX-12 エピソード2 ブラック・ボックス・パック DMX-11 大決戦オールスター12 DMC-61 コロコロ・ドリーム・パック IV (エターナル・ヘヴン) DM-22 不死鳥編 第4弾 超神龍雷撃(ザ・ドラゴニック・ノヴァ) DMC-44 スーパーデッキクロス「エンドレス・オール・デリート」"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TD12",
+    "name": "深淵の逆転撃 (DM25EX3 TD12/TD23)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TD12.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TD12",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "4",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Mitsu",
+        "abilities": [],
+        "flavor": "そのカードは……俺に残された、希望なんだ！ — 斬札ウィン 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX3 キャラプレミアムパック ドラゴン娘になりたくないっ！ 文化祭だョ！全員集合!!ドラ娘100％パック DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-EX2 王道vs邪道 デュエキングWDreaM 2025 DM24-EX3 刺激爆発デュエナマイトパック DM24-RP3 王道篇 第3弾 「ゴールド・オブ・ハイパーエンジェル」 プロモ限定カード 24期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TD13",
+    "name": "龍覇皆伝 スコッチ・フィディック / 「勇愛龍、これぞ爆流の神髄なり」 (DM25EX3 TD13/TD23)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TD13a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TD13",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "VR",
+        "power": "6000",
+        "cost": "6",
+        "mana": "1",
+        "race": "ガイアール・コマンド・ドラゴン/ヒューマノイド爆/ドラグナー",
+        "illustrator": "Aya Yamai",
+        "abilities": [],
+        "flavor": "商品情報 龍覇皆伝 スコッチ・フィディック / 「勇愛龍、これぞ爆流の神髄なり」 (DM25EX3 TD13/TD23)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "自然",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "1",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-BD3 ドリーム英雄譚デッキ グレンモルトの書"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TD14",
+    "name": "ボルシャック・サイバーエクス (DM25EX3 TD14/TD23)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TD14.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TD14",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/火",
+        "rarity": "VR",
+        "power": "7000",
+        "cost": "6",
+        "mana": "1",
+        "race": "アーマード・ドラゴン/サイバー・コマンド",
+        "illustrator": "Adachi Yosuke",
+        "abilities": [],
+        "flavor": "……ブッちぎるヨ！ — 春咲栄久 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM24-BD1 ドリーム英雄譚デッキ ドギラゴンの書 DM23-RP3 アビス・レボリューション 第3弾 「魔覇革命」 DMEX-17 20周年超感謝メモリアルパック 究極の章 デュエキングMAX DMBD-15 レジェンドスーパーデッキ 蒼龍革命 プロモ限定カード 20期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TD15",
+    "name": "ガイアッシュの海地図 (DM25EX3 TD15/TD23)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TD15.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TD15",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "水/自然",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "ブルー・コマンド・ドラゴン/グリーン・コマンド・ドラゴン/ハンター/レクスターズ",
+        "illustrator": "Ryuichi Sakuma",
+        "abilities": [],
+        "flavor": "狛犬ならぬ狛ドラゴンでしょうか？可愛いですね～。 — 流星アーシュ 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-SP2 キャラプレミアムデッキ ドラゴン娘になりたくないっ！ はじけろスポーツ！青春☆ワールドカップ!! DM23-EX2 頂上決戦!!デュエキングMAX 2023"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TD16",
+    "name": "新世界王の創造 (DM25EX3 TD16/TD23)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TD16a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TD16",
+    "sides": [
+      {
+        "type": "キング・セル",
+        "civilization": "光/水/火",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "マナ",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Yoshimo",
+        "abilities": [],
+        "flavor": "商品情報 新世界秩序 (DM25EX3 TD16/TD23)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "光/水/闇/火/自然",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "13",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DMEX-18 20周年超感謝メモリアルパック 裏の章 パラレル･マスターズ DMART-08 神アート 輝かしき新世界"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TD17",
+    "name": "新世界王の破壊 (DM25EX3 TD17/TD23)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TD17a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TD17",
+    "sides": [
+      {
+        "type": "キング・セル",
+        "civilization": "水/闇/自然",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "マナ",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Yoshimo",
+        "abilities": [],
+        "flavor": "商品情報 新世界秩序 (DM25EX3 TD17/TD23)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "光/水/闇/火/自然",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "13",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DMEX-18 20周年超感謝メモリアルパック 裏の章 パラレル･マスターズ DMART-08 神アート 輝かしき新世界"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TD18",
+    "name": "ポッピ・冠・ラッキー (DM25EX3 TD18/TD23)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TD18.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TD18",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "R",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "アーマード・ファイアー・バード",
+        "illustrator": "Yunikon",
+        "abilities": [],
+        "flavor": "あの虹きれーい！まるで空にかかった冠みたい!! — 香取ニイカ 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX2 悪感謝祭 カリスマBEST DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-EX2 王道vs邪道 デュエキングWDreaM 2025 DM23-RP3 アビス・レボリューション 第3弾 「魔覇革命」 プロモ限定カード 23期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TD19",
+    "name": "スローリー・チェーン (DM25EX3 TD19/TD23)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TD19.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TD19",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "4",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "mowa",
+        "abilities": [],
+        "flavor": "朕ノ舞妓姿、ドウドスカ？ — サーヴァ・K・ゼオス 商品情報 同名カードが含まれる商品を表示 DM26-EX3 キャラプレミアムパック ドラゴン娘になりたくないっ！ 文化祭だョ！全員集合!!ドラ娘100％パック DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DMBD-18 レジェンドスーパーデッキ 神歌繚嵐 DMEX-01 ゴールデン・ベスト DMX-12 エピソード2 ブラック・ボックス・パック DM-20 不死鳥編 第2弾 魔闘竜×機兵団(ジ・アルティメット・ノヴァ)"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TD20",
+    "name": "終止の時計 ザ・ミュート (DM25EX3 TD20/TD23)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TD20.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TD20",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "R",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "マジック・アウトレイジMAX",
+        "illustrator": "RUI MARUYAMA",
+        "abilities": [],
+        "flavor": "キミは、まだ自分の罪に気づいていないのかい……？ — 神岬ロスト 商品情報 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DMART-17 神アート 蛍光少女 プロモ限定カード 22期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TD21",
+    "name": "龍騎旋竜ボルシャック・バルガ (DM25EX3 TD21/TD23)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TD21.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TD21",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "R",
+        "power": "17000",
+        "cost": "19",
+        "mana": "1",
+        "race": "ボルケーノ・ドラゴン/アーマード・ドラゴン",
+        "illustrator": "Hisashi Momose",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-EX3 キャラプレミアムパック ドラゴン娘になりたくないっ！ 文化祭だョ！全員集合!!ドラ娘100％パック DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-BD1 ドリーム英雄譚デッキ ボルシャックの書 DM23-BD4 エキサイティング・デュエパ・デッキ 「ドラドラドラゴン龍幻郷」 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DM22-RP1 ゴッド・オブ・アビス 第１弾「伝説の邪神」 DMEX-16 20周年超感謝メモリアルパック 技の章 英雄戦略パーフェクト20 DMART-02 神アート Bolshack by Toshiaki Takayama"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TD22",
+    "name": "ドラゴカリプス・デイ (DM25EX3 TD22/TD23)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TD22.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TD22",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "火",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "7",
+        "mana": "1",
+        "race": "ドラゴン",
+        "illustrator": "Bashikou",
+        "abilities": [],
+        "flavor": "秘技、「枕吹雪」……受けてみよっ！ — 伍代ドーラ わーっ！降参、降参するばい!! — 蒼斬しのぶ 商品情報 同名カードが含まれる商品を表示 DM26-EX3 キャラプレミアムパック ドラゴン娘になりたくないっ！ 文化祭だョ！全員集合!!ドラ娘100％パック DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM23-BD4 エキサイティング・デュエパ・デッキ 「ドラドラドラゴン龍幻郷」"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TD23",
+    "name": "ネオ・ボルシャック・ドラゴン / ボルシャックゾーン (DM25EX3 TD23/TD23)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TD23a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TD23",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "C",
+        "power": "11000+",
+        "cost": "8",
+        "mana": "1",
+        "race": "アーマード・ドラゴン",
+        "illustrator": "tokumaro",
+        "abilities": [],
+        "flavor": "商品情報 ネオ・ボルシャック・ドラゴン / ボルシャックゾーン (DM25EX3 TD23/TD23)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "自然",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-EX3 キャラプレミアムパック ドラゴン娘になりたくないっ！ 文化祭だョ！全員集合!!ドラ娘100％パック DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-BD1 ドリーム英雄譚デッキ ボルシャックの書 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～ DM25-SP1 キャラプレミアムデッキ 「ドラゴン娘になりたくないっ!」Jack-Pot-Live!! in 桜龍高校 DM24-EX2 天下夢双!!デュエキングDreaM 2024 DM23-BD6 エキサイティング・デュエパ・デッキ 「双極のアカシックZ計画」 DM23-BD4 エキサイティング・デュエパ・デッキ 「ドラドラドラゴン龍幻郷」 DMRP-22 王来MAX最終弾 切札!マスターCRYMAX!! DMRP-21 王来MAX第1弾 鬼ヤバ逆襲S-MAX!! DMBD-16 20th クロニクルデッキ 決闘!! ボルシャック・デュエル"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF01",
+    "name": "AQ NETWORK (DM25EX3 TF1/TF40)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF01.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF01",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "R",
+        "power": "5000",
+        "cost": "5",
+        "mana": "1",
+        "race": "マジック・リキッド・ピープル",
+        "illustrator": "500siki",
+        "abilities": [],
+        "flavor": "AQ NETWORKのサウンドは、メビウスの輪に囚われた傷ついた夢を爆発させる。 商品情報 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ DM22-RP1 ゴッド・オブ・アビス 第１弾「伝説の邪神」"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF02",
+    "name": "ヴィオラの黒像 (DM25EX3 TF2/TF40)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF02.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF02",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "闇",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "7",
+        "mana": "1",
+        "race": "キング・コマンド・ドラゴン/アンノウン/レクスターズ",
+        "illustrator": "RUI MARUYAMA",
+        "abilities": [],
+        "flavor": "偽りの名から想いを爆発させて真実の名に目覚める。 商品情報 同名カードが含まれる商品を表示 DM26-EX2 悪感謝祭 カリスマBEST DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ DM25-SP2 キャラプレミアムデッキ ドラゴン娘になりたくないっ！ はじけろスポーツ！青春☆ワールドカップ!! DMRP-21 王来MAX第1弾 鬼ヤバ逆襲S-MAX!! DMSD-21 キングマスタースタートデッキ アバクの鬼レクスターズ プロモ限定カード 22期 プロモ限定カード 21期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF03",
+    "name": "ZERO ハンド (DM25EX3 TF3/TF40)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF03.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF03",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "6",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "lack",
+        "abilities": [],
+        "flavor": "油断した瞬間、爆発する！ 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～ DMEX-03 ペリッ!! スペシャルだらけのミステリーパック DMD-35 DXデュエガチャデッキ 禁星の壊者ドキンダム"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF04",
+    "name": "超竜キング・ボルシャック (DM25EX3 TF4/TF40)",
+    "type": "進化クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF04.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF04",
+    "sides": [
+      {
+        "type": "進化クリーチャー",
+        "civilization": "火",
+        "rarity": "R",
+        "power": "13000+",
+        "cost": "7",
+        "mana": "1",
+        "race": "アーマード・ドラゴン",
+        "illustrator": "NAKAMURA8",
+        "abilities": [],
+        "flavor": "王闘の闘い、それは互いに全力で爆発させ合う闘い。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～ DM24-EX2 天下夢双!!デュエキングDreaM 2024 DMBD-16 20th クロニクルデッキ 決闘!! ボルシャック・デュエル DMEX-08 謎のブラックボックスパック DMX-21 マスターズ・クロニクル・パック（コミック・オブ・ヒーローズ） プロモ限定カード 21期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF05",
+    "name": "ボルシャック・ドラゴン / 決闘者・チャージャー (DM25EX3 TF5/TF40)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF05a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF05",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "R",
+        "power": "6000+",
+        "cost": "6",
+        "mana": "1",
+        "race": "アーマード・ドラゴン",
+        "illustrator": "Ryoya Yuki/boyaking",
+        "abilities": [],
+        "flavor": "商品情報 ボルシャック・ドラゴン / 決闘者・チャージャー (DM25EX3 TF5/TF40)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "火",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-BD1 ドリーム英雄譚デッキ ボルシャックの書 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～ DM24-EX2 天下夢双!!デュエキングDreaM 2024 DM23-BD4 エキサイティング・デュエパ・デッキ 「ドラドラドラゴン龍幻郷」 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DM22-RP1 ゴッド・オブ・アビス 第１弾「伝説の邪神」 DMBD-16 20th クロニクルデッキ 決闘!! ボルシャック・デュエル DMEX-15 20周年超感謝メモリアルパック 魂の章 名場面BEST DMBD-15 レジェンドスーパーデッキ 蒼龍革命 DMEX-04 夢の最＆強!!ツインパクト超No.1パック プロモ限定カード 24期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF06",
+    "name": "ボルシャック・スーパーヒーロー / 超英雄タイム (DM25EX3 TF6/TF40)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF06a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF06",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "R",
+        "power": "6000",
+        "cost": "6",
+        "mana": "1",
+        "race": "アーマード・ドラゴン/ハンター",
+        "illustrator": "Murakami Hisashi/otumami",
+        "abilities": [],
+        "flavor": "商品情報 ボルシャック・スーパーヒーロー / 超英雄タイム (DM25EX3 TF6/TF40)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "火",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-BD1 ドリーム英雄譚デッキ ボルシャックの書 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～ DM25-SP1 キャラプレミアムデッキ 「ドラゴン娘になりたくないっ!」Jack-Pot-Live!! in 桜龍高校 DM24-EX2 天下夢双!!デュエキングDreaM 2024 DM23-BD6 エキサイティング・デュエパ・デッキ 「双極のアカシックZ計画」 DM23-BD4 エキサイティング・デュエパ・デッキ 「ドラドラドラゴン龍幻郷」 DM23-EX1 大感謝祭 ビクトリーBEST DM22-RP1 ゴッド・オブ・アビス 第１弾「伝説の邪神」 DMBD-16 20th クロニクルデッキ 決闘!! ボルシャック・デュエル プロモ限定カード 25期 プロモ限定カード 20期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF07",
+    "name": "ロック・ポロン (DM25EX3 TF7/TF40)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF07.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF07",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "R",
+        "power": "1000",
+        "cost": "2",
+        "mana": "1",
+        "race": "ファイアー・バード",
+        "illustrator": "Bun Toujo",
+        "abilities": [],
+        "flavor": "爆発だって、遊び場だ。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～ DM24-RP3 王道篇 第3弾 「ゴールド・オブ・ハイパーエンジェル」"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF08",
+    "name": "爆進イントゥ・ザ・ワイルド (DM25EX3 TF8/TF40)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF08.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF08",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "自然",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "6",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Katora",
+        "abilities": [],
+        "flavor": "生命は爆発だ。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～ DMEX-01 ゴールデン・ベスト DM-32 神化編(エボリューション・サーガ) 第1弾 DMD-26 マスターズ・クロニクル・デッキ サバイバー進化論 α to Ω プロモ限定カード 18期 プロモ限定カード 15期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF09",
+    "name": "時空の庭園 (DM25EX3 TF9/TF40)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF09.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF09",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "自然",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "D-suzuki",
+        "abilities": [],
+        "flavor": "様々な分岐を経たことで、いつか世界は爆発の危機に襲われる。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～ DM22-EX1 黄金戦略!!デュエキングMAX 2022 DM-34 神化編 第3弾 烈火の刃(クロス・ジェネレーション) DMX-09 デッキビルダー鬼DX ガンバ！勝太編"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF10",
+    "name": "審問の絆 (DM25EX3 TF10/TF40)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF10.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF10",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光/水",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "6",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Tanru",
+        "abilities": [],
+        "flavor": "審問、それは正義の意志の爆発。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ DM24-EX4 にじさんじコラボ・マスターズ「異次元の超獣使い」"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF11",
+    "name": "幻双の絆 (DM25EX3 TF11/TF40)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF11.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF11",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光/闇",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "6",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "chatsubaki",
+        "abilities": [],
+        "flavor": "爆発したけど、ほら、もとどおり！ 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～ DM24-EX4 にじさんじコラボ・マスターズ「異次元の超獣使い」"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF12",
+    "name": "獅子王の紋章 (DM25EX3 TF12/TF40)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF12.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF12",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光/自然",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "6",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "MATSUMOTO EIGHT",
+        "abilities": [],
+        "flavor": "友を信じる心が、紋章を爆発させる。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～ DMEX-15 20周年超感謝メモリアルパック 魂の章 名場面BEST DMEX-08 謎のブラックボックスパック DMR-21 革命ファイナル 拡張パック第１章 ハムカツ団とドギラゴン剣 プロモ限定カード 15期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF13",
+    "name": "豪運の絆 (DM25EX3 TF13/TF40)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF13.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF13",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "水/火",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Rorubei",
+        "abilities": [],
+        "flavor": "爆発するもしないも運次第!! 商品情報 同名カードが含まれる商品を表示 DM26-EX2 悪感謝祭 カリスマBEST DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ DM24-EX4 にじさんじコラボ・マスターズ「異次元の超獣使い」"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF14",
+    "name": "刹那の絆 (DM25EX3 TF14/TF40)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF14.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF14",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇/火",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "4",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "IWAO",
+        "abilities": [],
+        "flavor": "爆発するその刹那…… 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～ DM24-EX4 にじさんじコラボ・マスターズ「異次元の超獣使い」"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF15",
+    "name": "ボルシャック・インフィニティ (DM25EX3 TF15/TF40)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF15.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF15",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火/自然",
+        "rarity": "R",
+        "power": "7000",
+        "cost": "6",
+        "mana": "1",
+        "race": "アーマード・ドラゴン/アース・ドラゴン",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "闘う意志が受け継がれる限り、ボルシャックは爆発し続ける！ 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～ DM23-BD4 エキサイティング・デュエパ・デッキ 「ドラドラドラゴン龍幻郷」 プロモ限定カード 23期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF16",
+    "name": "刀舞の3号 カツえもん (DM25EX3 TF16/TF40)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF16.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF16",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/水/火",
+        "rarity": "R",
+        "power": "3500",
+        "cost": "3",
+        "mana": "1",
+        "race": "メガ・ドラゴン/革命軍/ハムカツ団",
+        "illustrator": "Futaro",
+        "abilities": [],
+        "flavor": "拙者もこの爆発にはビックリでござる。 ー 刀舞の3号 カツえもん 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ DM25-EX2 王道vs邪道 デュエキングWDreaM 2025 DM24-BD1 ドリーム英雄譚デッキ ドギラゴンの書"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF17",
+    "name": "漢気の2号 ボスカツ (DM25EX3 TF17/TF40)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF17.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF17",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/闇/火",
+        "rarity": "R",
+        "power": "4000",
+        "cost": "5",
+        "mana": "1",
+        "race": "メガ・コマンド・ドラゴン/革命軍/ハムカツ団",
+        "illustrator": "NAKAMURA8",
+        "abilities": [],
+        "flavor": "オレの漢気に匹敵する爆発だったな！ ー 漢気の2号 ボスカツ 商品情報 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ DM25-EX2 王道vs邪道 デュエキングWDreaM 2025 DM24-BD1 ドリーム英雄譚デッキ ドギラゴンの書"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF18",
+    "name": "天災 デドダム (DM25EX3 TF18/TF40)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF18.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF18",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/闇/自然",
+        "rarity": "R",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "トリニティ・コマンド/侵略者",
+        "illustrator": "otumami",
+        "abilities": [],
+        "flavor": "天災は爆発だ！ 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP3 逆札篇 第3弾 勝敵！逆転おこせ鬼の∞ディスペクター!! DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ DM23-BD3 開発部セレクションデッキ 「水闇自然ハンデス」 DM23-EX2 頂上決戦!!デュエキングMAX 2023 DM23-BD1 レジェンドスーパーデッキ 禁王創来 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」 DM22-EX2 ヒーローズ・ダークサイド・パック ～闇のキリフダたち～ DM22-EX1 黄金戦略!!デュエキングMAX 2022 DMRP-22 王来MAX最終弾 切札!マスターCRYMAX!! DMRP-21 王来MAX第1弾 鬼ヤバ逆襲S-MAX!! DMRP-20 王来篇拡張パック第4弾 終末王龍大戦 DMEX-16 20周年超感謝メモリアルパック 技の章 英雄戦略パーフェクト20 DMBD-10 アルティメット・クロニクル・デッキ 2019 SSS!! 侵略デッドディザスター DMART-22 神アート アニマル・マスターズ ～決闘は猫である～ DMART-07 神アート COLORFUL＊SNOW プロモ限定カード 24期 プロモ限定カード 21期 プロモ限定カード 19期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF19",
+    "name": "神聖の精霊アルカ・キッド (DM25EX3 TF19/TF40)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF19.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF19",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "U",
+        "power": "5000",
+        "cost": "5",
+        "mana": "1",
+        "race": "エンジェル・コマンド",
+        "illustrator": "MATSUMOTO EIGHT",
+        "abilities": [],
+        "flavor": "爆発。それは閃光の象徴である。 ー 『アルカディアス・バイブル』第1章第7節 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～ DM24-EX2 天下夢双!!デュエキングDreaM 2024 DMX-21 マスターズ・クロニクル・パック（コミック・オブ・ヒーローズ）"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF20",
+    "name": "賢門の精霊ヘブンストライク (DM25EX3 TF20/TF40)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF20.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF20",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "U",
+        "power": "3500",
+        "cost": "5",
+        "mana": "1",
+        "race": "エンジェル・コマンド",
+        "illustrator": "Tanru",
+        "abilities": [],
+        "flavor": "天の門は爆発すらも耐え抜くほど堅牢だ。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～ DMEX-16 20周年超感謝メモリアルパック 技の章 英雄戦略パーフェクト20"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF21",
+    "name": "ヴェネラック-F5 (DM25EX3 TF21/TF40)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF21.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF21",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "U",
+        "power": "2000",
+        "cost": "2",
+        "mana": "1",
+        "race": "メカ・デル・ディネロ",
+        "illustrator": "IWAO",
+        "abilities": [],
+        "flavor": "過剰な爆発に備え、消火の準備も万端だ。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～ DM24-EX3 刺激爆発デュエナマイトパック DM24-RP1 王道篇 第1弾 「デーモン・オブ・ハイパームーン」 プロモ限定カード 24期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF22",
+    "name": "時空工兵タイムチェンジャー (DM25EX3 TF22/TF40)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF22.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF22",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "U",
+        "power": "2000",
+        "cost": "3",
+        "mana": "1",
+        "race": "グレートメカオー",
+        "illustrator": "hippo",
+        "abilities": [],
+        "flavor": "時の爆発の中、選択を続ける。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～ DM-34 神化編 第3弾 烈火の刃(クロス・ジェネレーション) DM-22 不死鳥編 第4弾 超神龍雷撃(ザ・ドラゴニック・ノヴァ) DMX-10 デッキビルダー鬼DX キラリ！レオ編"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF23",
+    "name": "ボルシャック・ヒート・ドラゴン / ヒートブレス・チャージャー (DM25EX3 TF23/TF40)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF23a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF23",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "U",
+        "power": "6000",
+        "cost": "6",
+        "mana": "1",
+        "race": "アーマード・ドラゴン/アーマード・ファイアー・バード",
+        "illustrator": "neko61",
+        "abilities": [],
+        "flavor": "商品情報 ボルシャック・ヒート・ドラゴン / ヒートブレス・チャージャー (DM25EX3 TF23/TF40)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "火",
+        "rarity": "U",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "アーマード・アーツ",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～ DM23-SD1 スタートWINデッキ 竜軍・オブ・ボルシャック"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF24",
+    "name": "忠犬な騎士スゴイワン (DM25EX3 TF24/TF40)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF24.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF24",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "U",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ドリームメイト",
+        "illustrator": "syutsuri",
+        "abilities": [],
+        "flavor": "この爆発、凄いワン！ ー 忠犬な騎士スゴイワン 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ DM24-EX4 にじさんじコラボ・マスターズ「異次元の超獣使い」"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF25",
+    "name": "審絆の鎮り 新蓮 / ジャスティス・シェイパー (DM25EX3 TF25/TF40)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF25a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF25",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "光",
+        "rarity": "U",
+        "power": "6000",
+        "cost": "7",
+        "mana": "1",
+        "race": "メタリカ",
+        "illustrator": "Shishizaru",
+        "abilities": [],
+        "flavor": "商品情報 審絆の鎮り 新蓮 / ジャスティス・シェイパー (DM25EX3 TF25/TF40)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "U",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～ DMEX-19 マスター・ファイナル・メモリアル・パック DMSD-10 超GRスタートデッキ キラのギラミリオン・ギラクシー"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF26",
+    "name": "鎧輪双翔ボルシャック・スカイ (DM25EX3 TF26/TF40)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF26.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF26",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/火",
+        "rarity": "U",
+        "power": "5500",
+        "cost": "5",
+        "mana": "1",
+        "race": "アーマード・ドラゴン/メカ・デル・ディネロ",
+        "illustrator": "Shishizaru",
+        "abilities": [],
+        "flavor": "闘い続けるために、何度爆発しても起き上がる。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～ DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF27",
+    "name": "怪盗妖精カサブランカ / 「信じていたのに裏切られるなんて！」 (DM25EX3 TF27/TF40)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF27a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF27",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "U",
+        "power": "2000",
+        "cost": "3",
+        "mana": "1",
+        "race": "スノーフェアリー",
+        "illustrator": "Hayaka Asari",
+        "abilities": [],
+        "flavor": "商品情報 怪盗妖精カサブランカ / 「信じていたのに裏切られるなんて！」 (DM25EX3 TF27/TF40)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "U",
+        "power": "コスト",
+        "cost": "6",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ DM24-BD5 エキサイティング・デュエパ・デッキ アセビと異世界フェアリーたち"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF28",
+    "name": "絶速 ザ・ヒート (DM25EX3 TF28/TF40)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF28.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF28",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇/火",
+        "rarity": "U",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ソニック・コマンド",
+        "illustrator": "MATSUMOTO EIGHT",
+        "abilities": [],
+        "flavor": "爆発が派手すぎるのではないか？ ー 絶速 ザ・ヒート 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～ DM22-EX2 ヒーローズ・ダークサイド・パック ～闇のキリフダたち～ プロモ限定カード 22期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF29",
+    "name": "影速 ザ・トリッパー (DM25EX3 TF29/TF40)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF29.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF29",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇/火",
+        "rarity": "U",
+        "power": "4000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ソニック・コマンド/ゴースト",
+        "illustrator": "Mikio Masuda",
+        "abilities": [],
+        "flavor": "標識読めないのか？「この先、爆発につき止まれ」だぜ？ ー 影速 ザ・トリッパー 商品情報 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～ DM24-EX4 にじさんじコラボ・マスターズ「異次元の超獣使い」 DM24-RP2 王道篇 第2弾 「カイザー・オブ・ハイパードラゴン」 DM23-BD2 開発部セレクションデッキ 「火闇邪王門」 DM22-EX2 ヒーローズ・ダークサイド・パック ～闇のキリフダたち～ DM22-EX1 黄金戦略!!デュエキングMAX 2022 DMEX-17 20周年超感謝メモリアルパック 究極の章 デュエキングMAX プロモ限定カード 21期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF30",
+    "name": "FORBIDDEN SUNRISE ～禁断の夜明け～ (DM25EX3 TF30/TF40)",
+    "type": "禁断フィールド",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF30.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF30",
+    "sides": [
+      {
+        "type": "禁断フィールド",
+        "civilization": "闇/火",
+        "rarity": "U",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "boyaking",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!! DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～ DMEX-17 20周年超感謝メモリアルパック 究極の章 デュエキングMAX DMART-16 神アート 禁断 ~封印されしアート~ プロモ限定カード 25期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF31",
+    "name": "ボルシャック・秘伝・ドラゴン (DM25EX3 TF31/TF40)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF31.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF31",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火/自然",
+        "rarity": "U",
+        "power": "5000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アーマード・ドラゴン",
+        "illustrator": "Muna-Ge",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～ DM23-BD4 エキサイティング・デュエパ・デッキ 「ドラドラドラゴン龍幻郷」 DM23-RP3 アビス・レボリューション 第3弾 「魔覇革命」 DMEX-18 20周年超感謝メモリアルパック 裏の章 パラレル･マスターズ"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF32",
+    "name": "風波の1号 ハムカツマン (DM25EX3 TF32/TF40)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF32.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF32",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火/自然",
+        "rarity": "U",
+        "power": "4000",
+        "cost": "3",
+        "mana": "1",
+        "race": "メガ・ドラゴン/革命軍/ハムカツ団",
+        "illustrator": "500siki",
+        "abilities": [],
+        "flavor": "爆発が風を呼び、波をおこすんやで!! ー 風波の1号 ハムカツマン 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ DM24-BD1 ドリーム英雄譚デッキ ドギラゴンの書 プロモ限定カード 23期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF33",
+    "name": "ケンザン・チャージャー (DM25EX3 TF33/TF40)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF33.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF33",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "kyo",
+        "abilities": [],
+        "flavor": "裁きの剣が降り注ぎ爆発する。汚れた大地を浄化するために。 商品情報 同名カードが含まれる商品を表示 DM26-EX3 キャラプレミアムパック ドラゴン娘になりたくないっ！ 文化祭だョ！全員集合!!ドラ娘100％パック DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～ DMEX-16 20周年超感謝メモリアルパック 技の章 英雄戦略パーフェクト20 DMEX-11 Wチームドッキングパック チーム銀河＆チームボンバー DMEX-06 絶対王者!! デュエキングパック"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF34",
+    "name": "♪なぜ離れ どこへ行くのか 君は今 (DM25EX3 TF34/TF40)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF34.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF34",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "マジック・ソング",
+        "illustrator": "KOUSAKU",
+        "abilities": [],
+        "flavor": "芸術は、どこへ行っても爆発だ。 商品情報 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～ DM24-EX2 天下夢双!!デュエキングDreaM 2024 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 プロモ限定カード 24期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF35",
+    "name": "ロスト・ウォーターゲイト (DM25EX3 TF35/TF40)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF35.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF35",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "1",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Syuichi Obata",
+        "abilities": [],
+        "flavor": "渦も爆発も同じだ。おさまった後には違う世界が広がっている。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～ DMEX-13 四強集結→最強直結パック DM-24 極神編(バイオレンス・ヘヴン) 第1弾 プロモ限定カード 24期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF36",
+    "name": "時を戻す水時計 (DM25EX3 TF36/TF40)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF36.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF36",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "1",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Katora",
+        "abilities": [],
+        "flavor": "時を戻せば、爆発も巻き戻る。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～ DMRP-06 双極篇 拡張パック第２弾 逆襲のギャラクシー 卍・獄・殺!!"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF37",
+    "name": "轟血鬼 ザ・バット (DM25EX3 TF37/TF40)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF37.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF37",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "C",
+        "power": "4000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ソニック・コマンド/ヴァンパイア",
+        "illustrator": "Hasumi Fumi",
+        "abilities": [],
+        "flavor": "爆発しすぎて、退屈する暇もない。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～ DM24-EX4 にじさんじコラボ・マスターズ「異次元の超獣使い」 プロモ限定カード 23期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF38",
+    "name": "ネオ・ボルシャック・ドラゴン / ボルシャックゾーン (DM25EX3 TF38/TF40)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF38a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF38",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "C",
+        "power": "11000+",
+        "cost": "8",
+        "mana": "1",
+        "race": "アーマード・ドラゴン",
+        "illustrator": "Shishizaru",
+        "abilities": [],
+        "flavor": "商品情報 ネオ・ボルシャック・ドラゴン / ボルシャックゾーン (DM25EX3 TF38/TF40)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "自然",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-EX3 キャラプレミアムパック ドラゴン娘になりたくないっ！ 文化祭だョ！全員集合!!ドラ娘100％パック DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-BD1 ドリーム英雄譚デッキ ボルシャックの書 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～ DM25-SP1 キャラプレミアムデッキ 「ドラゴン娘になりたくないっ!」Jack-Pot-Live!! in 桜龍高校 DM24-EX2 天下夢双!!デュエキングDreaM 2024 DM23-BD6 エキサイティング・デュエパ・デッキ 「双極のアカシックZ計画」 DM23-BD4 エキサイティング・デュエパ・デッキ 「ドラドラドラゴン龍幻郷」 DMRP-22 王来MAX最終弾 切札!マスターCRYMAX!! DMRP-21 王来MAX第1弾 鬼ヤバ逆襲S-MAX!! DMBD-16 20th クロニクルデッキ 決闘!! ボルシャック・デュエル"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF39",
+    "name": "ボルシャック・西南・ドラゴン (DM25EX3 TF39/TF40)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF39.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF39",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火/自然",
+        "rarity": "C",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "アーマード・ドラゴン/アース・ドラゴン/サムライ",
+        "illustrator": "Shishizaru",
+        "abilities": [],
+        "flavor": "爆発の道には、ただ闘の一字あるのみ！ 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～ DM23-BD4 エキサイティング・デュエパ・デッキ 「ドラドラドラゴン龍幻郷」 DMEX-16 20周年超感謝メモリアルパック 技の章 英雄戦略パーフェクト20 プロモ限定カード 20期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-TF40",
+    "name": "ボルシャック・栄光・ルピア (DM25EX3 TF40/TF40)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-TF40.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-TF40",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火/自然",
+        "rarity": "C",
+        "power": "4000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ファイアー・バード/アーマード・ドラゴン",
+        "illustrator": "nuisuke",
+        "abilities": [],
+        "flavor": "おいらがパワーを爆発させるッピ！ ー ボルシャック・栄光・ルピア 商品情報 同名カードが含まれる商品を表示 DM26-EX3 キャラプレミアムパック ドラゴン娘になりたくないっ！ 文化祭だョ！全員集合!!ドラ娘100％パック DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-BD1 ドリーム英雄譚デッキ ボルシャックの書 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～ DM24-EX3 刺激爆発デュエナマイトパック DM24-EX2 天下夢双!!デュエキングDreaM 2024 DM24-SP1 キャラプレミアムデッキ「ドラゴン娘になりたくないっ！」 イェーイめっちゃドラゴン!! DM23-BD4 エキサイティング・デュエパ・デッキ 「ドラドラドラゴン龍幻郷」 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DM22-BD1 レジェンドスーパーデッキ 龍覇爆炎 DM22-RP1 ゴッド・オブ・アビス 第１弾「伝説の邪神」 DMEX-18 20周年超感謝メモリアルパック 裏の章 パラレル･マスターズ DMBD-16 20th クロニクルデッキ 決闘!! ボルシャック・デュエル DMART-02 神アート Bolshack by Toshiaki Takayama プロモ限定カード 24期 プロモ限定カード 22期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp1001",
+    "name": "回転の精霊ナイッショエル (DM25EX3 1/77)",
+    "type": "NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp1001.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp1001",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "光",
+        "rarity": "VR",
+        "power": "7500",
+        "cost": "6",
+        "mana": "1",
+        "race": "ジャイアント・エンジェル・コマンド",
+        "illustrator": "nurikabe",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp1002",
+    "name": "～啓示ある天騎士～ (DM25EX3 2/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp1002.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp1002",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "VR",
+        "power": "4500",
+        "cost": "4",
+        "mana": "1",
+        "race": "アポロニア・ドラゴン/スチーム・ナイト/フュージョナー",
+        "illustrator": "Shin “JASON” Nagasawa",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp1003",
+    "name": "～鉄装の氷騎士～ (DM25EX3 3/77)",
+    "type": "NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp1003.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp1003",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "水",
+        "rarity": "VR",
+        "power": "1000+",
+        "cost": "2",
+        "mana": "1",
+        "race": "サイバーロード/スチーム・ナイト",
+        "illustrator": "D-Suzuki",
+        "abilities": [],
+        "flavor": "～黒馬の騎兵長～よ、貴殿の書の力、我が使わせてもらう！我が歴史の歯車となれ!! — ～鉄装の氷騎士～ 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp1004",
+    "name": "～歴史ある王騎士～ (DM25EX3 4/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp1004.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp1004",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "VR",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "グランド・デビル/スチーム・ナイト/フュージョナー",
+        "illustrator": "RYU FUJINAKA",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp1005",
+    "name": "深淵の怒貫 ファウン＝テイン (DM25EX3 5/77)",
+    "type": "NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp1005.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp1005",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "闇",
+        "rarity": "VR",
+        "power": "6000",
+        "cost": "6",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "neko61",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp1006",
+    "name": "貴布人 テブルカッケ＝エディ (DM25EX3 6/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp1006.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp1006",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "VR",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "アビスロイヤル/フュージョナー",
+        "illustrator": "Chiam",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp1007",
+    "name": "悪魔神フレアスポーン (DM25EX3 7/77)",
+    "type": "NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp1007.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp1007",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "火",
+        "rarity": "VR",
+        "power": "6000",
+        "cost": "6",
+        "mana": "1",
+        "race": "デーモン・コマンド",
+        "illustrator": "Nekobayashi",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp1008",
+    "name": "粋と雨衣 ケローラ (DM25EX3 8/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp1008.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp1008",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "VR",
+        "power": "7000",
+        "cost": "5",
+        "mana": "1",
+        "race": "マジック・アウトレイジ",
+        "illustrator": "Tonbi Aburaya",
+        "abilities": [],
+        "flavor": "達人は、酸いも甘いも噛み分ける。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp1009",
+    "name": "KENJI-番練羅999 (DM25EX3 9/77)",
+    "type": "NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp1009.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp1009",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "自然",
+        "rarity": "VR",
+        "power": "11000",
+        "cost": "6",
+        "mana": "1",
+        "race": "ドリームメイト/テクノ・サムライ",
+        "illustrator": "MATSUMOTO EIGHT",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp1010",
+    "name": "咎十字YUNAGI-10 (DM25EX3 10/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp1010.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp1010",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "VR",
+        "power": "4000+",
+        "cost": "4",
+        "mana": "1",
+        "race": "スノーフェアリー/テクノ・サムライ/フュージョナー",
+        "illustrator": "Koji Nishino",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp1011",
+    "name": "R・R・R (DM25EX3 11/77)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp1011.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp1011",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光/水/自然",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "6",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "MARUYAMA RUI",
+        "abilities": [],
+        "flavor": "光と水と自然の盟主が結束し、新たな戦いのためのゴルファン財団が結成された！ 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp1DM1",
+    "name": "王闘竜皇 ボルシャック・ドラゴン (DM25EX3 DM1/DM1)",
+    "type": "G-NEOドリーム・クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp1DM1.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp1DM1",
+    "sides": [
+      {
+        "type": "G-NEOドリーム・クリーチャー",
+        "civilization": "火/自然",
+        "rarity": "DMR",
+        "power": "6000+",
+        "cost": "6",
+        "mana": "1",
+        "race": "アーマード・ドラゴン",
+        "illustrator": "Shishizaru",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-BD1 ドリーム英雄譚デッキ ボルシャックの書 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～"
       }
     ]
   },
@@ -885,6 +4281,111 @@
     ]
   },
   {
+    "id": "dm25ex3-rp1Sec13",
+    "name": "～鉄装の氷騎士～ (DM25EX3 ㊙13/㊙24)",
+    "type": "NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp1Sec13.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp1Sec13",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "水",
+        "rarity": "VR",
+        "power": "1000+",
+        "cost": "2",
+        "mana": "1",
+        "race": "サイバーロード/スチーム・ナイト",
+        "illustrator": "D-Suzuki",
+        "abilities": [],
+        "flavor": "彼らが望むのは、自らの活躍が書物として後世に残り続けること。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp1Sec14",
+    "name": "貴布人 テブルカッケ＝エディ (DM25EX3 ㊙14/㊙24)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp1Sec14.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp1Sec14",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "VR",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "アビスロイヤル/フュージョナー",
+        "illustrator": "Chiam",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp1Sec15",
+    "name": "R・R・R (DM25EX3 ㊙15/㊙24)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp1Sec15.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp1Sec15",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光/水/自然",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "6",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "MARUYAMA RUI",
+        "abilities": [],
+        "flavor": "3つの文明を代表する戦士たちが、力を合わせるべき時が来た。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp1SecDM1",
+    "name": "王闘竜皇 ボルシャック・ドラゴン (DM25EX3 DM1㊙/DM1)",
+    "type": "G-NEOドリーム・クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp1SecDM1.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp1SecDM1",
+    "sides": [
+      {
+        "type": "G-NEOドリーム・クリーチャー",
+        "civilization": "火/自然",
+        "rarity": "DMR",
+        "power": "6000+",
+        "cost": "6",
+        "mana": "1",
+        "race": "アーマード・ドラゴン",
+        "illustrator": "Shishizaru",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-BD1 ドリーム英雄譚デッキ ボルシャックの書 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp1TR1",
+    "name": "聖魔連結王 ドルファディロム (DM25EX3 TR1/TR9)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp1TR1.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp1TR1",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/闇/火",
+        "rarity": "KGM",
+        "power": "13500",
+        "cost": "8",
+        "mana": "1",
+        "race": "ディスペクター/エンジェル・コマンド/デーモン・コマンド",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "悪魔の魂はいつの時代も魅力的らしい。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～ DM24-EX2 天下夢双!!デュエキングDreaM 2024 DM23-BD1 レジェンドスーパーデッキ 禁王創来 DMEX-19 マスター・ファイナル・メモリアル・パック DMRP-17 王来篇拡張パック第1弾 王星伝説超動 DMART-07 神アート COLORFUL＊SNOW プロモ限定カード 20期"
+      }
+    ]
+  },
+  {
     "id": "dm25ex3-rp1TR2",
     "name": "竜皇神 ボルシャック・バクテラス (DM25EX3 TR2/TR9)",
     "type": "クリーチャー",
@@ -1085,6 +4586,258 @@
         "illustrator": "toriyufu",
         "abilities": [],
         "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX2 悪感謝祭 カリスマBEST DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～ DM23-RP4X アビス・レボリューション 第4弾 「竜皇神爆輝」 超刺激パック DM23-RP4 アビス・レボリューション 第4弾 「竜皇神爆輝」 DM23-BD2 開発部セレクションデッキ 「火闇邪王門」 DM22-EX2 ヒーローズ・ダークサイド・パック ～闇のキリフダたち～ DMART-16 神アート 禁断 ~封印されしアート~"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp2001",
+    "name": "Celeb k’Reine (DM25EX3 1/77)",
+    "type": "NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp2001.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp2001",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "光",
+        "rarity": "VR",
+        "power": "12000",
+        "cost": "6",
+        "mana": "1",
+        "race": "マジック・スプラッシュ・クイーン",
+        "illustrator": "RYU FUJINAKA",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp2002",
+    "name": "～凍てついた時間～ (DM25EX3 2/77)",
+    "type": "G-NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp2002.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp2002",
+    "sides": [
+      {
+        "type": "G-NEOクリーチャー",
+        "civilization": "水",
+        "rarity": "VR",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "リキッド・ピープル/スチーム・ナイト",
+        "illustrator": "touge369",
+        "abilities": [],
+        "flavor": "出会ってしまえば、未来は通行止め。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp2003",
+    "name": "深淵の侵鈴 リリン＝リリンカーン (DM25EX3 3/77)",
+    "type": "NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp2003.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp2003",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "闇",
+        "rarity": "VR",
+        "power": "6000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "Miyamoto Satoru",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp2004",
+    "name": "怒像アゲ (DM25EX3 4/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp2004.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp2004",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "VR",
+        "power": "5000",
+        "cost": "7",
+        "mana": "1",
+        "race": "デーモン・コマンド/デモンズ・レガシー/フュージョナー",
+        "illustrator": "tetrapod",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-EX2 悪感謝祭 カリスマBEST DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp2005",
+    "name": "BARUGA-雷増88 (DM25EX3 5/77)",
+    "type": "NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp2005.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp2005",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "自然",
+        "rarity": "VR",
+        "power": "8000+",
+        "cost": "6",
+        "mana": "1",
+        "race": "アース・ドラゴン/テクノ・サムライ",
+        "illustrator": "Spareribs",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp2006",
+    "name": "王座の精霊 ファディオアル (DM25EX3 6/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp2006.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp2006",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/水",
+        "rarity": "VR",
+        "power": "3500",
+        "cost": "4",
+        "mana": "1",
+        "race": "エンジェル・コマンド/フュージョナー",
+        "illustrator": "Shin “JASON” Nagasawa",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp2007",
+    "name": "アルジェン・ゴルギーニ (DM25EX3 7/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp2007.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp2007",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/自然",
+        "rarity": "VR",
+        "power": "5500",
+        "cost": "6",
+        "mana": "1",
+        "race": "メカ・デル・ディネロ/スーパーカー・ドラゴン/フュージョナー",
+        "illustrator": "haisiro",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp2008",
+    "name": "深淵の洪怖 ソクトー＝ソレクトー (DM25EX3 8/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp2008.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp2008",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/闇",
+        "rarity": "VR",
+        "power": "1000",
+        "cost": "2",
+        "mana": "1",
+        "race": "アビスロイヤル/フュージョナー",
+        "illustrator": "danciao",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp2009",
+    "name": "喜像エル (DM25EX3 9/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp2009.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp2009",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇/火",
+        "rarity": "VR",
+        "power": "3000",
+        "cost": "4",
+        "mana": "1",
+        "race": "デーモン・コマンド/デモンズ・レガシー/フュージョナー",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp2010",
+    "name": "BAKURYU-厳磁XX (DM25EX3 10/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp2010.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp2010",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火/自然",
+        "rarity": "VR",
+        "power": "8000",
+        "cost": "4",
+        "mana": "1",
+        "race": "アーマード・ドラゴン/フレイム・コマンド/テクノ・サムライ/フュージョナー",
+        "illustrator": "nablange",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp2011",
+    "name": "王闘の大地 (DM25EX3 11/77)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp2011.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp2011",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光/火/自然",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "7",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Shishizaru",
+        "abilities": [],
+        "flavor": "ボルシャックの一撃が、大地に眠れる力を呼び起こす。 商品情報 同名カードが含まれる商品を表示 DM26-EX3 キャラプレミアムパック ドラゴン娘になりたくないっ！ 文化祭だョ！全員集合!!ドラ娘100％パック DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp2DM1",
+    "name": "王導聖霊 アルファディオス (DM25EX3 DM1/DM1)",
+    "type": "NEOドリーム・クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp2DM1.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp2DM1",
+    "sides": [
+      {
+        "type": "NEOドリーム・クリーチャー",
+        "civilization": "光/水/自然",
+        "rarity": "DMR",
+        "power": "12500",
+        "cost": "7",
+        "mana": "1",
+        "race": "エンジェル・コマンド",
+        "illustrator": "Shin “JASON” Nagasawa",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-BD2 ドリーム英雄譚デッキ アルカディアスの​書 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～"
       }
     ]
   },
@@ -1551,6 +5304,132 @@
     ]
   },
   {
+    "id": "dm25ex3-rp2Sec13",
+    "name": "～凍てついた時間～ (DM25EX3 ㊙13/㊙24)",
+    "type": "G-NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp2Sec13.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp2Sec13",
+    "sides": [
+      {
+        "type": "G-NEOクリーチャー",
+        "civilization": "水",
+        "rarity": "VR",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "リキッド・ピープル/スチーム・ナイト",
+        "illustrator": "touge369",
+        "abilities": [],
+        "flavor": "凍った時間の中では、未来の希望すら持てない。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp2Sec14",
+    "name": "喜像エル (DM25EX3 ㊙14/㊙24)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp2Sec14.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp2Sec14",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇/火",
+        "rarity": "VR",
+        "power": "3000",
+        "cost": "4",
+        "mana": "1",
+        "race": "デーモン・コマンド/デモンズ・レガシー/フュージョナー",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp2Sec15",
+    "name": "王闘の大地 (DM25EX3 ㊙15/㊙24)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp2Sec15.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp2Sec15",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光/火/自然",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "7",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Shishizaru",
+        "abilities": [],
+        "flavor": "闘いの王であること、それがボルシャックの王道だ。 商品情報 同名カードが含まれる商品を表示 DM26-EX3 キャラプレミアムパック ドラゴン娘になりたくないっ！ 文化祭だョ！全員集合!!ドラ娘100％パック DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp2SecDM1",
+    "name": "王導聖霊 アルファディオス (DM25EX3 DM1㊙/DM1)",
+    "type": "NEOドリーム・クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp2SecDM1.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp2SecDM1",
+    "sides": [
+      {
+        "type": "NEOドリーム・クリーチャー",
+        "civilization": "光/水/自然",
+        "rarity": "DMR",
+        "power": "12500",
+        "cost": "7",
+        "mana": "1",
+        "race": "エンジェル・コマンド",
+        "illustrator": "Shin “JASON” Nagasawa",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-BD2 ドリーム英雄譚デッキ アルカディアスの​書 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp2TR1",
+    "name": "∞龍 ゲンムエンペラー (DM25EX3 TR1/TR9)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp2TR1.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp2TR1",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/闇",
+        "rarity": "KGM",
+        "power": "∞",
+        "cost": "∞",
+        "mana": "1",
+        "race": "∞マスター・ドラゴン/チーム零",
+        "illustrator": "Futaro",
+        "abilities": [],
+        "flavor": "無限は媚びず、ただ飲み込むのみ。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP3 逆札篇 第3弾 勝敵！逆転おこせ鬼の∞ディスペクター!! DM26-EX3 キャラプレミアムパック ドラゴン娘になりたくないっ！ 文化祭だョ！全員集合!!ドラ娘100％パック DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-EX1 愛感謝祭 ヒロインBEST DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～ DM24-EX1 超感謝祭 ファンタジーBEST DM23-EX2 頂上決戦!!デュエキングMAX 2023 DMEX-19 マスター・ファイナル・メモリアル・パック DMRP-20 王来篇拡張パック第4弾 終末王龍大戦 DMRP-15 十王篇拡張パック第3弾 幻龍×凶襲 ゲンムエンペラー!!! DMART-11 神アート ドラゴン娘の青春☆パラダイス プロモ限定カード 23期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp2TR2",
+    "name": "王来英雄 モモキングRX (DM25EX3 TR2/TR9)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp2TR2.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp2TR2",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火/自然",
+        "rarity": "KGM",
+        "power": "6000",
+        "cost": "5",
+        "mana": "1",
+        "race": "ヒーロー・ドラゴン/ジョーカーズ/レクスターズ",
+        "illustrator": "YOICHI ITO",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP3 逆札篇 第3弾 勝敵！逆転おこせ鬼の∞ディスペクター!! DM26-EX3 キャラプレミアムパック ドラゴン娘になりたくないっ！ 文化祭だョ！全員集合!!ドラ娘100％パック DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～ DM24-BD3 ドリーム英雄譚デッキ モモキングの書 DM22-RP1 ゴッド・オブ・アビス 第１弾「伝説の邪神」 DMEX-19 マスター・ファイナル・メモリアル・パック DMEX-17 20周年超感謝メモリアルパック 究極の章 デュエキングMAX DMRP-17 王来篇拡張パック第1弾 王星伝説超動 プロモ限定カード 20期"
+      }
+    ]
+  },
+  {
     "id": "dm25ex3-rp2TR3",
     "name": "聖霊王アルファディオス GS (DM25EX3 TR3/TR9)",
     "type": "進化クリーチャー",
@@ -1631,6 +5510,321 @@
         "illustrator": "shosuke design.石田絆",
         "abilities": [],
         "flavor": "建造物が移動した跡が次々と見つかったが、古代人が何のためにそうしていたかは長年の謎だった。だが、実は建造物自体が意思を持って勝手に移動していただけだった。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～ DMEX-19 マスター・ファイナル・メモリアル・パック DMRP-02 拡張パック新2弾 マジでB・A・Dなラビリンス!!"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp2TR7",
+    "name": "魔軸の鎖 カメカメン (DM25EX3 TR7/TR9)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp2TR7.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp2TR7",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "VR",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ビーストフォーク/暴拳王国",
+        "illustrator": "salsoba",
+        "abilities": [],
+        "flavor": "魔力の込められた鎖は、あらゆる魔術の軸となる。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～ DMEX-19 マスター・ファイナル・メモリアル・パック DMRP-15 十王篇拡張パック第3弾 幻龍×凶襲 ゲンムエンペラー!!!"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp2TR8",
+    "name": "キユリのASMラジオ (DM25EX3 TR8/TR9)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp2TR8.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp2TR8",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "自然",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "4",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "nablange",
+        "abilities": [],
+        "flavor": "こんにちゆりゆり～！ゲスト……っていうかほとんど準レギュラーでお馴染みのハキリちゃんでーす!! — 珊瑚妖精キユリ まいどおおきに、よろしゅうおたのもうします～。 — 葉鳴妖精ハキリ 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～ DM24-EX4 にじさんじコラボ・マスターズ「異次元の超獣使い」 DM24-BD5 エキサイティング・デュエパ・デッキ アセビと異世界フェアリーたち DM24-EX3 刺激爆発デュエナマイトパック DM24-EX2 天下夢双!!デュエキングDreaM 2024 DM24-RP1 王道篇 第1弾 「デーモン・オブ・ハイパームーン」 DM23-BD3 開発部セレクションデッキ 「水闇自然ハンデス」 DM22-EX1 黄金戦略!!デュエキングMAX 2022 プロモ限定カード 22期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp2TR9",
+    "name": "流星アーシュ (DM25EX3 TR9/TR9)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp2TR9.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp2TR9",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/自然",
+        "rarity": "R",
+        "power": "5000",
+        "cost": "5",
+        "mana": "1",
+        "race": "ブルー・コマンド・ドラゴン/グリーン・コマンド・ドラゴン/ハンター",
+        "illustrator": "MITSUAKI MATSUMOTO",
+        "abilities": [],
+        "flavor": "水と自然を併せ持つリュウセイ、その真の姿を現す。 商品情報 同名カードが含まれる商品を表示 DM26-EX3 キャラプレミアムパック ドラゴン娘になりたくないっ！ 文化祭だョ！全員集合!!ドラ娘100％パック DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～ DM24-SP1 キャラプレミアムデッキ「ドラゴン娘になりたくないっ！」 イェーイめっちゃドラゴン!! プロモ限定カード 23期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp3001",
+    "name": "三番龍 マンション&ドラゴン Parヒルズ (DM25EX3 1/77)",
+    "type": "G-NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp3001.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp3001",
+    "sides": [
+      {
+        "type": "G-NEOクリーチャー",
+        "civilization": "光",
+        "rarity": "VR",
+        "power": "8000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ジャイアント・ドラゴン",
+        "illustrator": "KISUKE",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp3002",
+    "name": "～創造、破壊、そして絶望～ (DM25EX3 2/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp3002.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp3002",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "VR",
+        "power": "3000",
+        "cost": "2",
+        "mana": "1",
+        "race": "クリエイター/スチーム・ナイト/フュージョナー",
+        "illustrator": "Adachi Yosuke",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp3003",
+    "name": "ARTIFICIAL REALITY CHARGER (DM25EX3 3/77)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp3003.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp3003",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "9",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Masateru Ikeda",
+        "abilities": [],
+        "flavor": "COMPLEXに歪められた現実、それは闇の心が輝く世界。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp3004",
+    "name": "邪幽 ジャジーガイスト (DM25EX3 4/77)",
+    "type": "G-NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp3004.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp3004",
+    "sides": [
+      {
+        "type": "G-NEOクリーチャー",
+        "civilization": "闇",
+        "rarity": "VR",
+        "power": "5000",
+        "cost": "3",
+        "mana": "1",
+        "race": "アビスドラゴン",
+        "illustrator": "Jun Ishimaru",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp3005",
+    "name": "熱き邪道 レッドゾーンZ (DM25EX3 5/77)",
+    "type": "G-NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp3005.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp3005",
+    "sides": [
+      {
+        "type": "G-NEOクリーチャー",
+        "civilization": "火",
+        "rarity": "VR",
+        "power": "6000",
+        "cost": "5",
+        "mana": "1",
+        "race": "ソニック・コマンド/侵略者",
+        "illustrator": "shosuke",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp3006",
+    "name": "PP-「P」 (DM25EX3 6/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp3006.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp3006",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "VR",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "エイリアン/ハンター/テクノ・サムライ",
+        "illustrator": "tokumaro",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp3007",
+    "name": "～神核の六起源～ (DM25EX3 7/77)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp3007.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp3007",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/水/闇",
+        "rarity": "VR",
+        "power": "4000",
+        "cost": "6",
+        "mana": "1",
+        "race": "ゴッド/スチーム・ナイト",
+        "illustrator": "Soto Kuzutani",
+        "abilities": [],
+        "flavor": "スチーム・ナイトは、かつて回収した魔導具でゴッドの力をも手に入れていた。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp3008",
+    "name": "「GT」-002 (DM25EX3 8/77)",
+    "type": "G-NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp3008.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp3008",
+    "sides": [
+      {
+        "type": "G-NEOクリーチャー",
+        "civilization": "光/火/自然",
+        "rarity": "VR",
+        "power": "10500",
+        "cost": "6",
+        "mana": "1",
+        "race": "ガイアール・コマンド・ドラゴン/ヒューマノイド爆/テクノ・サムライ",
+        "illustrator": "Murakami Hisashi",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp3009",
+    "name": "凶怖覇王 ブラックXENARCH (DM25EX3 9/77)",
+    "type": "G-NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp3009.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp3009",
+    "sides": [
+      {
+        "type": "G-NEOクリーチャー",
+        "civilization": "水/闇/火",
+        "rarity": "VR",
+        "power": "6000",
+        "cost": "4",
+        "mana": "1",
+        "race": "デーモン・コマンド/ダークロード",
+        "illustrator": "Hiro Usuda",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp3010",
+    "name": "邪悪発動 (DM25EX3 10/77)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp3010.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp3010",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "水/闇/火",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Moopic",
+        "abilities": [],
+        "flavor": "「キサマには、我が邪悪発動をくれてやろう」アビスベルの右手が、怪しく輝きだす。極限まで引き絞られたその力が、COMPLEXへと向けられた。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp3011",
+    "name": "弐闘路と轟点火の決断 (DM25EX3 11/77)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp3011.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp3011",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇/火/自然",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "MORICHIKA SHUTO",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp3DM1",
+    "name": "轟く邪道 レッドゾーン (DM25EX3 DM1/DM1)",
+    "type": "G-NEOドリーム・クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp3DM1.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp3DM1",
+    "sides": [
+      {
+        "type": "G-NEOドリーム・クリーチャー",
+        "civilization": "火",
+        "rarity": "DMR",
+        "power": "12000",
+        "cost": "6",
+        "mana": "1",
+        "race": "ソニック・コマンド/侵略者",
+        "illustrator": "Soto Kuzutani",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～"
       }
     ]
   },
@@ -2097,6 +6291,111 @@
     ]
   },
   {
+    "id": "dm25ex3-rp3Sec13",
+    "name": "ARTIFICIAL REALITY CHARGER (DM25EX3 ㊙13/㊙24)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp3Sec13.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp3Sec13",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "9",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "touge369",
+        "abilities": [],
+        "flavor": "蓄積した歪んだ感情が、現実を曲げていく。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp3Sec14",
+    "name": "熱き邪道 レッドゾーンZ (DM25EX3 ㊙14/㊙24)",
+    "type": "G-NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp3Sec14.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp3Sec14",
+    "sides": [
+      {
+        "type": "G-NEOクリーチャー",
+        "civilization": "火",
+        "rarity": "VR",
+        "power": "6000",
+        "cost": "5",
+        "mana": "1",
+        "race": "ソニック・コマンド/侵略者",
+        "illustrator": "Hisashi Momose",
+        "abilities": [],
+        "flavor": "サーキットに王道なし。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp3Sec15",
+    "name": "弐闘路と轟点火の決断 (DM25EX3 ㊙15/㊙24)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp3Sec15.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp3Sec15",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇/火/自然",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Hisashi Momose",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp3SecDM1",
+    "name": "轟く邪道 レッドゾーン (DM25EX3 DM1㊙/DM1)",
+    "type": "G-NEOドリーム・クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp3SecDM1.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp3SecDM1",
+    "sides": [
+      {
+        "type": "G-NEOドリーム・クリーチャー",
+        "civilization": "火",
+        "rarity": "DMR",
+        "power": "12000",
+        "cost": "6",
+        "mana": "1",
+        "race": "ソニック・コマンド/侵略者",
+        "illustrator": "Soto Kuzutani",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp3TR1",
+    "name": "飛翔龍 5000VT (DM25EX3 TR1/TR9)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp3TR1.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp3TR1",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "VIC",
+        "power": "12000",
+        "cost": "8",
+        "mana": "1",
+        "race": "マジック・アウトレイジMAX",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX2 悪感謝祭 カリスマBEST DM26-EX1 ますますつよいパック 25の援軍 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～ DM24-BD5 エキサイティング・デュエパ・デッキ アセビと異世界フェアリーたち DM24-EX3 刺激爆発デュエナマイトパック DM24-RP4 王道篇 第4弾 「悪魔神、復活」 DM24-RP2 王道篇 第2弾 「カイザー・オブ・ハイパードラゴン」 DM23-EX1 大感謝祭 ビクトリーBEST プロモ限定カード 24期"
+      }
+    ]
+  },
+  {
     "id": "dm25ex3-rp3TR2",
     "name": "強襲竜 ボルシャック・レイダー / レイド・エントリー (DM25EX3 TR2/TR9)",
     "type": "ツインパクト",
@@ -2189,6 +6488,342 @@
         "illustrator": "Daisuke Izuka",
         "abilities": [],
         "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!! DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～ DM22-BD3 開発部セレクションデッキ 「7軸ガチロボ」 DMRP-21 王来MAX第1弾 鬼ヤバ逆襲S-MAX!! DMEX-15 20周年超感謝メモリアルパック 魂の章 名場面BEST DMEX-12 最強戦略!!ドラリンパック プロモ限定カード 21期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp3TR6",
+    "name": "謀遠 テレスコ=テレス (DM25EX3 TR6/TR9)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp3TR6.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp3TR6",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "VR",
+        "power": "5000+",
+        "cost": "5",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "douzen",
+        "abilities": [],
+        "flavor": "覗けるのは幸せなことだ。遠くばかり見ていれば、近くにある危機を見ずに済む。 商品情報 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～ DM24-EX3 刺激爆発デュエナマイトパック DM24-RP2 王道篇 第2弾 「カイザー・オブ・ハイパードラゴン」 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DMART-25 神アート アビス、東京に現わる"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp3TR7",
+    "name": "パロッタ・剣・ルピア (DM25EX3 TR7/TR9)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp3TR7.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp3TR7",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "VR",
+        "power": "2000",
+        "cost": "3",
+        "mana": "1",
+        "race": "アーマード・ファイアー・バード",
+        "illustrator": "kawasumi",
+        "abilities": [],
+        "flavor": "剣の加護を受けし龍は、稲妻のごとき速さを手に入れるという。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～ DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp3TR8",
+    "name": "審罰の精霊ロイヤル・パニッシャー (DM25EX3 TR8/TR9)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp3TR8.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp3TR8",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/水",
+        "rarity": "VR",
+        "power": "6000",
+        "cost": "5",
+        "mana": "1",
+        "race": "エンジェル・コマンド",
+        "illustrator": "TOMOYO ASATANI",
+        "abilities": [],
+        "flavor": "フォージ計画でうまれた異次元の超獣による審判が始まる。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～ DM24-EX4 にじさんじコラボ・マスターズ「異次元の超獣使い」"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp3TR9",
+    "name": "プリンセス・パーティ ～シラハの絆～ (DM25EX3 TR9/TR9)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp3TR9.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp3TR9",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/水/自然",
+        "rarity": "VR",
+        "power": "5000",
+        "cost": "5",
+        "mana": "1",
+        "race": "スノーフェアリー/ドリームメイト/スプラッシュ・クイーン",
+        "illustrator": "kawasumi",
+        "abilities": [],
+        "flavor": "彼女たちのティータイムにはメイ様がとっておきのデザートを用意してくれる。 商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-EX2 王道vs邪道 デュエキングWDreaM 2025 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～ DM24-EX3 刺激爆発デュエナマイトパック DM24-RP3 王道篇 第3弾 「ゴールド・オブ・ハイパーエンジェル」 プロモ限定カード 24期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp4001",
+    "name": "ペトローバの天宝 (DM25EX3 1/78)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp4001.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp4001",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "光",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "6",
+        "mana": "1",
+        "race": "メカ・デル・ソル/フュージョナー",
+        "illustrator": "MORICHIKA SHUTO",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp4002",
+    "name": "謎の存在 メモッタ (DM25EX3 2/78)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp4002.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp4002",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "VR",
+        "power": "2000",
+        "cost": "6",
+        "mana": "1",
+        "race": "???",
+        "illustrator": "O-G Osahune",
+        "abilities": [],
+        "flavor": "別世界からの存在。果たしてどんな姿になっていくのか？ 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp4003",
+    "name": "邪心タル悪魔神ノ禍魂 (DM25EX3 3/78)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp4003.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp4003",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "闇",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "4",
+        "mana": "1",
+        "race": "デーモン・コマンド/フュージョナー",
+        "illustrator": "Shishizaru",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp4004",
+    "name": "LOVE＆ABYSS (DM25EX3 4/78)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp4004.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp4004",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "9",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "akagi",
+        "abilities": [],
+        "flavor": "愛に目覚めたアビスラブと、究極の魔誕、その名も蛇誕を果たしたヴリドガルド。いよいよ最終決戦が始まる。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp4005",
+    "name": "仙界の闘神将 ムロク (DM25EX3 5/78)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp4005.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp4005",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "VR",
+        "power": "4000",
+        "cost": "3",
+        "mana": "1",
+        "race": "スターノイド/テクノ・サムライ",
+        "illustrator": "kenko",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp4006",
+    "name": "暗雲タル漆黒ノ魔剣 (DM25EX3 6/78)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp4006.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp4006",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "火",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "デーモン・コマンド/マスターズ・レガシー/フュージョナー",
+        "illustrator": "tetrapod",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp4007",
+    "name": "アセビ with 9OD-2 (DM25EX3 7/78)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp4007.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp4007",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "VR",
+        "power": "3000+",
+        "cost": "2",
+        "mana": "1",
+        "race": "スノーフェアリー/テクノ・サムライ",
+        "illustrator": "Otake Okayu",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp4008",
+    "name": "凶乱タル月光ノ夜鏡 (DM25EX3 8/78)",
+    "type": "タマシード",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp4008.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp4008",
+    "sides": [
+      {
+        "type": "タマシード",
+        "civilization": "自然",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "デーモン・コマンド/フュージョナー",
+        "illustrator": "ESUTHIO",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp4009",
+    "name": "聖霊王の聖典 (DM25EX3 9/78)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp4009.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp4009",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光/水",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "4",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Kare",
+        "abilities": [],
+        "flavor": "その中には、聖霊王による叡智と正義の言葉が並べられている。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp4010",
+    "name": "ペテンズ・ゲート (DM25EX3 10/78)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp4010.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp4010",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光/水/闇",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "8",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Futaro",
+        "abilities": [],
+        "flavor": "誰もが希望に目を輝かせた時、欺瞞は起こった。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp4011",
+    "name": "三種の魔神器 (DM25EX3 11/78)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp4011.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp4011",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇/火/自然",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "6",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Ishikawa Kenta",
+        "abilities": [],
+        "flavor": "三種の魔神器、それがヴリドガルドの真の魂。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp4DM1",
+    "name": "剣轟の団長 ドギラゴン王道 (DM25EX3 DM1/DM1)",
+    "type": "G-NEOドリーム・クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp4DM1.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp4DM1",
+    "sides": [
+      {
+        "type": "G-NEOドリーム・クリーチャー",
+        "civilization": "光/火/自然",
+        "rarity": "DMR",
+        "power": "13000",
+        "cost": "8",
+        "mana": "1",
+        "race": "メガ・コマンド・ドラゴン/革命軍/ハムカツ団",
+        "illustrator": "NAKAMURA8",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
       }
     ]
   },
@@ -2357,6 +6992,69 @@
         "illustrator": "nablange",
         "abilities": [],
         "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp4S09",
+    "name": "皇天闘と炎天華の決断 (DM25EX3 S9/S11)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp4S09.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp4S09",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光/火/自然",
+        "rarity": "SR",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "nurikabe",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp4S10",
+    "name": "喜蛇の虚 エルヴリド (DM25EX3 S10/S11)",
+    "type": "G-NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp4S10.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp4S10",
+    "sides": [
+      {
+        "type": "G-NEOクリーチャー",
+        "civilization": "闇/火/自然",
+        "rarity": "SR",
+        "power": "6000+",
+        "cost": "6",
+        "mana": "1",
+        "race": "デーモン・コマンド",
+        "illustrator": "Ishibashi Yosuke",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp4S11",
+    "name": "究極の魔誕 (DM25EX3 S11/S11)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp4S11.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp4S11",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇/火/自然",
+        "rarity": "SR",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Kogaratsu",
+        "abilities": [],
+        "flavor": "暗黒剣が究極の魔誕をたくらんだ真の目的。それはヴリドガルドに真の魂を与え、その一部になることだった。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
       }
     ]
   },
@@ -2592,6 +7290,90 @@
     ]
   },
   {
+    "id": "dm25ex3-rp4Sec13",
+    "name": "アセビ with 9OD-2 (DM25EX3 ㊙13/㊙24)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp4Sec13.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp4Sec13",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "VR",
+        "power": "3000+",
+        "cost": "2",
+        "mana": "1",
+        "race": "スノーフェアリー/テクノ・サムライ",
+        "illustrator": "Otake Okayu",
+        "abilities": [],
+        "flavor": "タレットくん！約束通り助けにきたよ！ — アセビ＝アンドロメダ＝クシナダ 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp4Sec14",
+    "name": "聖霊王の聖典 (DM25EX3 ㊙14/㊙24)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp4Sec14.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp4Sec14",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光/水",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "4",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Kogaratsu",
+        "abilities": [],
+        "flavor": "天命とは英知の名のもとにある。— 『アルカディアス・バイブル』第1章第1節 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp4Sec15",
+    "name": "ペテンズ・ゲート (DM25EX3 ㊙15/㊙24)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp4Sec15.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp4Sec15",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光/水/闇",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "8",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Futaro",
+        "abilities": [],
+        "flavor": "うわっ！やられたよ、もうダメだ……なんてね。 — サファイア・ペンダット 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp4SecDM1",
+    "name": "剣轟の団長 ドギラゴン王道 (DM25EX3 DM1㊙/DM1)",
+    "type": "G-NEOドリーム・クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp4SecDM1.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp4SecDM1",
+    "sides": [
+      {
+        "type": "G-NEOドリーム・クリーチャー",
+        "civilization": "光/火/自然",
+        "rarity": "DMR",
+        "power": "13000",
+        "cost": "8",
+        "mana": "1",
+        "race": "メガ・コマンド・ドラゴン/革命軍/ハムカツ団",
+        "illustrator": "NAKAMURA8",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
     "id": "dm25ex3-rp4TR1",
     "name": "「正義星帝」 <ライオネル.Star> (DM25EX3 TR1/TR9)",
     "type": "スター進化クリーチャー",
@@ -2747,6 +7529,60 @@
         "illustrator": "Hokuyu",
         "abilities": [],
         "flavor": "天災は場所を選ばない。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ DM23-BD3 開発部セレクションデッキ 「水闇自然ハンデス」 DM22-EX1 黄金戦略!!デュエキングMAX 2022 DMRP-18 王来篇拡張パック第2弾 禁時王の凶来 DMBD-10 アルティメット・クロニクル・デッキ 2019 SSS!! 侵略デッドディザスター DMART-22 神アート アニマル・マスターズ ～決闘は猫である～ プロモ限定カード 21期"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp4TR8",
+    "name": "邪杯と魔術の決断 (DM25EX3 TR8/TR9)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp4TR8.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp4TR8",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "水/闇",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "FUJIWARA HISASHI",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ DM22-RP1 ゴッド・オブ・アビス 第１弾「伝説の邪神」 DMART-21 神アート 美女と死神の決断"
+      }
+    ]
+  },
+  {
+    "id": "dm25ex3-rp4TR9",
+    "name": "雷撃の冥将クーゼン / ダーク・ライフ (DM25EX3 TR9/TR9)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25ex3-rp4TR9a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25ex3-rp4TR9",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇/自然",
+        "rarity": "VR",
+        "power": "6000",
+        "cost": "5",
+        "mana": "1",
+        "race": "デーモン・コマンド",
+        "illustrator": "DAI-XT.",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 雷撃の冥将クーゼン / ダーク・ライフ (DM25EX3 TR9/TR9)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "闇/自然",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ DM24-EX4 にじさんじコラボ・マスターズ「異次元の超獣使い」"
       }
     ]
   },
@@ -7274,6 +12110,564 @@
         "illustrator": "RUI MARUYAMA",
         "abilities": [],
         "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX4 エピソード4 パンドラ・ウォーズ DM25-EX2 王道vs邪道 デュエキングWDreaM 2025 DM23-EX2 頂上決戦!!デュエキングMAX 2023"
+      }
+    ]
+  },
+  {
+    "id": "dm25rp4-ChoSec01",
+    "name": "アビスラブ=ジャシン帝 (DM25RP4 超㊙1/超㊙10)",
+    "type": "NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25rp4-ChoSec01.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25rp4-ChoSec01",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "水/闇/火",
+        "rarity": "OR",
+        "power": "9000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "akagi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ プロモ限定カード 24期"
+      }
+    ]
+  },
+  {
+    "id": "dm25rp4-ChoSec02",
+    "name": "危険深淵 デンジャラス＝ラッセル (DM25RP4 超㊙2/超㊙10)",
+    "type": "G-NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25rp4-ChoSec02.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25rp4-ChoSec02",
+    "sides": [
+      {
+        "type": "G-NEOクリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "13000",
+        "cost": "8",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "jintetsu",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25rp4-ChoSec06",
+    "name": "究極の虚 ジャシン＝ヴリドガルド (DM25RP4 超㊙6/超㊙10)",
+    "type": "G-NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25rp4-ChoSec06.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25rp4-ChoSec06",
+    "sides": [
+      {
+        "type": "G-NEOクリーチャー",
+        "civilization": "闇/火/自然",
+        "rarity": "OR",
+        "power": "7000",
+        "cost": "5",
+        "mana": "1",
+        "race": "デーモン・コマンド/アビスロイヤル",
+        "illustrator": "Kogaratsu",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～"
+      }
+    ]
+  },
+  {
+    "id": "dm25rp4-ChoSec07",
+    "name": "究極の魔誕 (DM25RP4 超㊙7/超㊙10)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25rp4-ChoSec07.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25rp4-ChoSec07",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇/火/自然",
+        "rarity": "SR",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Kogaratsu",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25rp4-OR1",
+    "name": "アビスラブ=ジャシン帝 (DM25RP4 OR1/OR1)",
+    "type": "NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25rp4-OR1.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25rp4-OR1",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "水/闇/火",
+        "rarity": "OR",
+        "power": "9000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "akagi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ プロモ限定カード 24期"
+      }
+    ]
+  },
+  {
+    "id": "dm25rp4-SP1",
+    "name": "闘門の精霊ウェルキウス (DM25RP4 SP1/SP5)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25rp4-SP1.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25rp4-SP1",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "7500",
+        "cost": "9",
+        "mana": "1",
+        "race": "エンジェル・コマンド",
+        "illustrator": "寿なし子",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ DM24-SD2 いきなりつよいデッキ 守りの王道 DMEX-16 20周年超感謝メモリアルパック 技の章 英雄戦略パーフェクト20 DMRP-09 超天篇 拡張パック第１弾 新世界ガチ誕！超ＧＲとオレガ・オーラ!! DMART-12 神アート Angelic Wisdom by Daisuke Izuka"
+      }
+    ]
+  },
+  {
+    "id": "dm25rp4-Sec01",
+    "name": "アビスラブ=ジャシン帝 (DM25RP4 ㊙1/㊙24)",
+    "type": "NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25rp4-Sec01.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25rp4-Sec01",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "水/闇/火",
+        "rarity": "OR",
+        "power": "9000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "akagi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ プロモ限定カード 24期"
+      }
+    ]
+  },
+  {
+    "id": "dm25rp4-Sec02",
+    "name": "創世竜 ゴルファウンデーション (DM25RP4 ㊙2/㊙24)",
+    "type": "G-NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25rp4-Sec02.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25rp4-Sec02",
+    "sides": [
+      {
+        "type": "G-NEOクリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "12500",
+        "cost": "7",
+        "mana": "1",
+        "race": "ジャイアント・ドラゴン",
+        "illustrator": "IWAO",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25rp4-Sec03",
+    "name": "～大邪眼は称えすぎる～ (DM25RP4 ㊙3/㊙24)",
+    "type": "G-NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25rp4-Sec03.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25rp4-Sec03",
+    "sides": [
+      {
+        "type": "G-NEOクリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "17000",
+        "cost": "8",
+        "mana": "1",
+        "race": "ダークロード/スチーム・ナイト",
+        "illustrator": "Jun Ishimaru",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25rp4-Sec04",
+    "name": "危険深淵 デンジャラス＝ラッセル (DM25RP4 ㊙4/㊙24)",
+    "type": "G-NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25rp4-Sec04.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25rp4-Sec04",
+    "sides": [
+      {
+        "type": "G-NEOクリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "13000",
+        "cost": "8",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "jintetsu",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25rp4-Sec05",
+    "name": "楽蛇の虚 フミガルド (DM25RP4 ㊙5/㊙24)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25rp4-Sec05.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25rp4-Sec05",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "SR",
+        "power": "6000",
+        "cost": "5",
+        "mana": "1",
+        "race": "デーモン・コマンド",
+        "illustrator": "Nanae Yamazaki",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25rp4-Sec06",
+    "name": "「K」-9+9+9 (DM25RP4 ㊙6/㊙24)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25rp4-Sec06.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25rp4-Sec06",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "12000",
+        "cost": "6",
+        "mana": "1",
+        "race": "グランセクト/テクノ・サムライ",
+        "illustrator": "Soto Kuzutani",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25rp4-Sec07",
+    "name": "～そして覚醒へ…～ (DM25RP4 ㊙7/㊙24)",
+    "type": "G-NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25rp4-Sec07.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25rp4-Sec07",
+    "sides": [
+      {
+        "type": "G-NEOクリーチャー",
+        "civilization": "光/水/闇",
+        "rarity": "SR",
+        "power": "8500",
+        "cost": "6",
+        "mana": "1",
+        "race": "アーマード・ドラゴン/ドラゴン・ゾンビ/スチーム・ナイト",
+        "illustrator": "Hisashi Momose",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25rp4-Sec08",
+    "name": "創世竜 Drache der’Zen (DM25RP4 ㊙8/㊙24)",
+    "type": "G-NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25rp4-Sec08.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25rp4-Sec08",
+    "sides": [
+      {
+        "type": "G-NEOクリーチャー",
+        "civilization": "光/水/自然",
+        "rarity": "SR",
+        "power": "3500",
+        "cost": "3",
+        "mana": "1",
+        "race": "マジック・コマンド・ドラゴン",
+        "illustrator": "Yuukoo009",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25rp4-Sec09",
+    "name": "永炎の竜凰 ボルシャック・バクスザク (DM25RP4 ㊙9/㊙24)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25rp4-Sec09.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25rp4-Sec09",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/火/自然",
+        "rarity": "SR",
+        "power": "11000",
+        "cost": "7",
+        "mana": "1",
+        "race": "アーマード・ドラゴン",
+        "illustrator": "nablange",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25rp4-Sec10",
+    "name": "皇天闘と炎天華の決断 (DM25RP4 ㊙10/㊙24)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25rp4-Sec10.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25rp4-Sec10",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光/火/自然",
+        "rarity": "SR",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "RUI MARUYAMA",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25rp4-Sec11",
+    "name": "喜蛇の虚 エルヴリド (DM25RP4 ㊙11/㊙24)",
+    "type": "G-NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25rp4-Sec11.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25rp4-Sec11",
+    "sides": [
+      {
+        "type": "G-NEOクリーチャー",
+        "civilization": "闇/火/自然",
+        "rarity": "SR",
+        "power": "6000+",
+        "cost": "6",
+        "mana": "1",
+        "race": "デーモン・コマンド",
+        "illustrator": "Ishibashi Yosuke",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25rp4-Sec12",
+    "name": "究極の魔誕 (DM25RP4 ㊙12/㊙24)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25rp4-Sec12.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25rp4-Sec12",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇/火/自然",
+        "rarity": "SR",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "touge369",
+        "abilities": [],
+        "flavor": "究極の魔誕、その名も蛇誕。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～"
+      }
+    ]
+  },
+  {
+    "id": "dm25rp4-TD1",
+    "name": "終末の監視者 ジ・ウォッチ (DM25RP4 TD1/TD5)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25rp4-TD1.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25rp4-TD1",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "12000",
+        "cost": "10",
+        "mana": "1",
+        "race": "アウトレイジMAX",
+        "illustrator": "MORICHIKA SHUTO",
+        "abilities": [],
+        "flavor": "キミとはとても仲良くできそうだよ、斬札ウィン君。 — 神岬ロスト 商品情報 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ DM24-EX3 刺激爆発デュエナマイトパック DM24-RP2 王道篇 第2弾 「カイザー・オブ・ハイパードラゴン」 DM22-EX1 黄金戦略!!デュエキングMAX 2022 DMEX-06 絶対王者!! デュエキングパック DMART-20 神アート DUELMASTERS「AMAZING COMICS」"
+      }
+    ]
+  },
+  {
+    "id": "dm25rp4-TR1",
+    "name": "「正義星帝」 <ライオネル.Star> (DM25RP4 TR1/TR9)",
+    "type": "スター進化クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25rp4-TR1.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25rp4-TR1",
+    "sides": [
+      {
+        "type": "スター進化クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "9500",
+        "cost": "5",
+        "mana": "1",
+        "race": "メタリカ/エンジェル・コマンド/レクスターズ",
+        "illustrator": "tetrapod",
+        "abilities": [],
+        "flavor": "俺こそが正義！俺が俺である限り!! — 「正義星帝」 商品情報 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」 DMRP-21 王来MAX第1弾 鬼ヤバ逆襲S-MAX!!"
+      }
+    ]
+  },
+  {
+    "id": "dm25rp4-TR2",
+    "name": "獲銀月 ペトローバ (DM25RP4 TR2/TR9)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25rp4-TR2a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25rp4-TR2",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "3500",
+        "cost": "3",
+        "mana": "1",
+        "race": "メカ・デル・ソル/超化獣",
+        "illustrator": "KISUKE",
+        "abilities": [],
+        "flavor": "商品情報 獲銀月 ペトローバ (DM25RP4 TR2/TR9)"
+      },
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "7500",
+        "cost": "3",
+        "mana": "1",
+        "race": "メカ・デル・ソル/超化獣",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～ DM24-EX3 刺激爆発デュエナマイトパック DM24-RP1 王道篇 第1弾 「デーモン・オブ・ハイパームーン」"
+      }
+    ]
+  },
+  {
+    "id": "dm25rp4-TR3",
+    "name": "テラ・スザーク <ロマノフ.Star> (DM25RP4 TR3/TR9)",
+    "type": "スター進化クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25rp4-TR3.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25rp4-TR3",
+    "sides": [
+      {
+        "type": "スター進化クリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "9000",
+        "cost": "7",
+        "mana": "1",
+        "race": "ドルスザク/ドラゴン・ゾンビ/ナイト/レクスターズ",
+        "illustrator": "FUJIWARA HISASHI",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ DMRP-22 王来MAX最終弾 切札!マスターCRYMAX!!"
+      }
+    ]
+  },
+  {
+    "id": "dm25rp4-TR4",
+    "name": "革命の絆 (DM25RP4 TR4/TR9)",
+    "type": "NEOクリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25rp4-TR4.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25rp4-TR4",
+    "sides": [
+      {
+        "type": "NEOクリーチャー",
+        "civilization": "光/火",
+        "rarity": "SR",
+        "power": "8000",
+        "cost": "7",
+        "mana": "1",
+        "race": "メガ・コマンド・ドラゴン/エンジェル・コマンド・ドラゴン/ヒューマノイド/革命軍",
+        "illustrator": "NAKAMURA8",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ DM24-BD1 ドリーム英雄譚デッキ ドギラゴンの書 DM23-RP4X アビス・レボリューション 第4弾 「竜皇神爆輝」 超刺激パック DM23-RP4 アビス・レボリューション 第4弾 「竜皇神爆輝」 DM23-RP3 アビス・レボリューション 第3弾 「魔覇革命」 DMEX-15 20周年超感謝メモリアルパック 魂の章 名場面BEST DMART-17 神アート 蛍光少女 プロモ限定カード 24期"
+      }
+    ]
+  },
+  {
+    "id": "dm25rp4-TR5",
+    "name": "頂上連結 ロッド・ゾージア5th (DM25RP4 TR5/TR9)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25rp4-TR5.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25rp4-TR5",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/火",
+        "rarity": "SR",
+        "power": "11000",
+        "cost": "7",
+        "mana": "1",
+        "race": "ディスペクター/エンジェル・コマンド・ドラゴン/ソニック・コマンド",
+        "illustrator": "Hokuyu",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ DM25-EX2 王道vs邪道 デュエキングWDreaM 2025 DM25-SP1 キャラプレミアムデッキ 「ドラゴン娘になりたくないっ!」Jack-Pot-Live!! in 桜龍高校 DM23-EX2 頂上決戦!!デュエキングMAX 2023 DMART-19 神アート RPD-ロールプレイングデュエマ リュウセイ・カイザーが転生したら勇者だった件 プロモ限定カード 25期 プロモ限定カード 24期"
+      }
+    ]
+  },
+  {
+    "id": "dm25rp4-TR6",
+    "name": "ミリオンブレイブ・カイザー (DM25RP4 TR6/TR9)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25rp4-TR6.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25rp4-TR6",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火/自然",
+        "rarity": "SR",
+        "power": "10000+",
+        "cost": "7",
+        "mana": "1",
+        "race": "レッド・コマンド・ドラゴン",
+        "illustrator": "Yoshimo",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ DM24-EX4 にじさんじコラボ・マスターズ「異次元の超獣使い」"
+      }
+    ]
+  },
+  {
+    "id": "dm25rp4-TR7",
+    "name": "SSS級天災 デッドダムド (DM25RP4 TR7/TR9)",
+    "type": "進化クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm25rp4-TR7.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm25rp4-TR7",
+    "sides": [
+      {
+        "type": "進化クリーチャー",
+        "civilization": "水/闇/自然",
+        "rarity": "SR",
+        "power": "11000",
+        "cost": "8",
+        "mana": "1",
+        "race": "トリニティ・コマンド/S級侵略者",
+        "illustrator": "Hokuyu",
+        "abilities": [],
+        "flavor": "天災は場所を選ばない。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ DM23-BD3 開発部セレクションデッキ 「水闇自然ハンデス」 DM22-EX1 黄金戦略!!デュエキングMAX 2022 DMRP-18 王来篇拡張パック第2弾 禁時王の凶来 DMBD-10 アルティメット・クロニクル・デッキ 2019 SSS!! 侵略デッドディザスター DMART-22 神アート アニマル・マスターズ ～決闘は猫である～ プロモ限定カード 21期"
       }
     ]
   },

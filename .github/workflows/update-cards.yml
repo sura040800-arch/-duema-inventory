@@ -48,14 +48,5 @@ jobs:
             echo "カードデータに変更なし"
           else
             git commit -m "自動更新: 公式カードデータ"
-
-            git fetch origin main
-            git reset --hard origin/main
-
-            git checkout HEAD -- data/cards.json
-
-            git add data/cards.json
-            git commit -m "自動更新: 公式カードデータ" || true
-
             git push origin main
           fi

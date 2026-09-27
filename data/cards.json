@@ -3,6 +3,39 @@
     "id": "dm26rp3-OR001",
     "name": "∑龍",
     "number": "DM26RP3 OR1/OR1",
-    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp3-OR001"
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26rp3-OR001",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26rp3-OR001.jpg",
+    "sides": [],
+    "type": "クリーチャー",
+    "civilization": "闇",
+    "rarity": "OR",
+    "power": "0",
+    "cost": "8",
+    "mana": "1",
+    "race": "マスター・ドラゴンZ/ジョーカーズ",
+    "illustrator": "Kotakan",
+    "abilities": [
+      "スレイヤー（このクリーチャーがバトルする時、バトルの後、相手クリーチャーを破壊する） ワールド・ブレイカー（このクリーチャーは相手のシールドをすべてブレイクする） このクリーチャーが出た時または攻撃する時、相手のクリーチャーを１体選ぶ。このターン、そのクリーチャーのパワーを０にする。（パワーが０以下のクリーチャーは破壊される） 各ターン、相手のクリーチャーがはじめて攻撃する時、そのターン、そのクリーチャーのパワーを０にする。 このクリーチャーは、パワーが０以下の間離れない。"
+    ]
+  },
+  {
+    "id": "dm26sd1-u012",
+    "name": "蒼狼の豊穣 ワクムテラス / オリジナル・ライフ",
+    "number": "DM26SD1 12/12",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm26sd1-u012",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm26sd1-u012a.jpg",
+    "sides": [],
+    "type": "ツインパクト",
+    "civilization": "自然",
+    "rarity": "C",
+    "power": "コスト",
+    "cost": "2",
+    "mana": "1",
+    "race": "特殊能力",
+    "illustrator": "Muna-Ge",
+    "abilities": [
+      "このクリーチャーが出た時、カードを２枚引く。",
+      "自分の山札の上から１枚をマナゾーンに置く。"
+    ]
   }
 ]

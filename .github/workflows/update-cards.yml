@@ -48,5 +48,6 @@ jobs:
             echo "カードデータに変更なし"
           else
             git commit -m "自動更新: 公式カードデータ"
+            git pull --rebase origin main
             git push origin main
           fi

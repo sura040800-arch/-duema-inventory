@@ -16278,6 +16278,4983 @@
     ]
   },
   {
+    "id": "dm23rp1-001",
+    "name": "アプドリ・ビグッティーノ (DM23RP1 1/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-001.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-001",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "VR",
+        "power": "13000",
+        "cost": "8",
+        "mana": "1",
+        "race": "メカ・デル・ディネロ",
+        "illustrator": "SENNSU",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-002",
+    "name": "D-Jealousy-灰撫 / ♪五本まで 集めて林 森ジャングル (DM23RP1 2/74)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-002a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-002",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "VR",
+        "power": "9000",
+        "cost": "7",
+        "mana": "1",
+        "race": "マジック・コマンド・ドラゴン",
+        "illustrator": "Futaro",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 D-Jealousy-灰撫 / ♪五本まで 集めて林 森ジャングル (DM23RP1 2/74)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "8",
+        "mana": "1",
+        "race": "マジック・ソング",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM23-BD6 エキサイティング・デュエパ・デッキ 「双極のアカシックZ計画」 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-003",
+    "name": "コーボー・マジカルショッカー (DM23RP1 3/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-003.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-003",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "VR",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "マジック・マーフォーク",
+        "illustrator": "tetrapod",
+        "abilities": [],
+        "flavor": "コーボーの書を見た者はマジショック。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-004",
+    "name": "終納 カボード＝ロウ (DM23RP1 4/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-004.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-004",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "VR",
+        "power": "12000",
+        "cost": "8",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "hati",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-005",
+    "name": "パロッタ・剣・ルピア (DM23RP1 5/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-005.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-005",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "VR",
+        "power": "2000",
+        "cost": "3",
+        "mana": "1",
+        "race": "アーマード・ファイアー・バード",
+        "illustrator": "kawasumi",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～ DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-006",
+    "name": "輝跡！シャイニングロード・マンティス / 輝跡の大地 (DM23RP1 6/74)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-006a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-006",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "VR",
+        "power": "13000",
+        "cost": "8",
+        "mana": "1",
+        "race": "ジャイアント・インセクト",
+        "illustrator": "tessy",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 輝跡！シャイニングロード・マンティス / 輝跡の大地 (DM23RP1 6/74)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "自然",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "7",
+        "mana": "1",
+        "race": "ジャイアント・スキル",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-007",
+    "name": "極輪の妖精 (DM23RP1 7/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-007.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-007",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "VR",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ジャイアント・スノーフェアリー",
+        "illustrator": "Heart",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-008",
+    "name": "荒廃と豊穣の決断 (DM23RP1 8/74)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-008.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-008",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇/自然",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Mikio Masuda",
+        "abilities": [],
+        "flavor": "その花は、滅びゆく大地に咲くという。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-10A",
+    "name": "極輪の妖精 (DM23RP1 10A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-10A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-10A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "VR",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ジャイアント・スノーフェアリー",
+        "illustrator": "Tanru",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-10B",
+    "name": "チアスカーレット アカネ (DM23RP1 10B/22)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-10B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-10B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "7000",
+        "cost": "5",
+        "mana": "1",
+        "race": "ジャイアント・スノーフェアリー",
+        "illustrator": "Yuukoo009",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜 DM26-SD1 ドキドキつよいデッキ 25の王道 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-11A",
+    "name": "荒廃と豊穣の決断 (DM23RP1 11A/20)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-11A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-11A",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇/自然",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "nuisuke",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-11B",
+    "name": "コーボー・マジカルショッカー (DM23RP1 11B/22)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-11B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-11B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "VR",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "マジック・マーフォーク",
+        "illustrator": "Futaro",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-12B",
+    "name": "極輪の妖精 (DM23RP1 12B/22)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-12B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-12B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "VR",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ジャイアント・スノーフェアリー",
+        "illustrator": "Tanru",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-13B",
+    "name": "荒廃と豊穣の決断 (DM23RP1 13B/22)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-13B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-13B",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇/自然",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "nuisuke",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-1A",
+    "name": "ウィリデ・ゴルギーニ (DM23RP1 1A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-1A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-1A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "7500",
+        "cost": "5",
+        "mana": "1",
+        "race": "メカ・デル・ディネロ/スーパーカー・ドラゴン",
+        "illustrator": "hati",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-1B",
+    "name": "覇炎竜 ボルシャック・ライダー (DM23RP1 1B/22)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-1B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-1B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "OR",
+        "power": "9000",
+        "cost": "7",
+        "mana": "1",
+        "race": "アーマード・ドラゴン",
+        "illustrator": "RUI MARUYAMA",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-1S",
+    "name": "覇炎竜 ボルシャック・ライダー (DM23RP1 1S/2)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-1S.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-1S",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "OR",
+        "power": "9000",
+        "cost": "7",
+        "mana": "1",
+        "race": "アーマード・ドラゴン",
+        "illustrator": "RUI MARUYAMA",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-2A",
+    "name": "新星姫 マルシドループ (DM23RP1 2A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-2A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-2A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "4500",
+        "cost": "4",
+        "mana": "1",
+        "race": "メカ・デル・ステラ",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-2B",
+    "name": "首領竜 ゴルファンタジスタ (DM23RP1 2B/22)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-2B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-2B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "OR",
+        "power": "25000",
+        "cost": "8",
+        "mana": "1",
+        "race": "ジャイアント・ドラゴン",
+        "illustrator": "IWAO",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-2S",
+    "name": "首領竜 ゴルファンタジスタ (DM23RP1 2S/2)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-2S.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-2S",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "OR",
+        "power": "25000",
+        "cost": "8",
+        "mana": "1",
+        "race": "ジャイアント・ドラゴン",
+        "illustrator": "IWAO",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-3A",
+    "name": "der'Zen Mondo / ♪必殺で つわものどもが 夢の跡 (DM23RP1 3A/20)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-3Aa.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-3A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "マジック・コマンド",
+        "illustrator": "KISUKE",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 der'Zen Mondo / ♪必殺で つわものどもが 夢の跡 (DM23RP1 3A/20)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "8",
+        "mana": "1",
+        "race": "マジック・ソング",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM24-EX3 刺激爆発デュエナマイトパック DM24-RP3 王道篇 第3弾 「ゴールド・オブ・ハイパーエンジェル」 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-3B",
+    "name": "ウィリデ・ゴルギーニ (DM23RP1 3B/22)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-3B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-3B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "7500",
+        "cost": "5",
+        "mana": "1",
+        "race": "メカ・デル・ディネロ/スーパーカー・ドラゴン",
+        "illustrator": "hati",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-4A",
+    "name": "SC龍飛→SC風流 (DM23RP1 4A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-4A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-4A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "5000",
+        "cost": "2",
+        "mana": "1",
+        "race": "マジック・コマンド・ドラゴン",
+        "illustrator": "akagi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-4B",
+    "name": "新星姫 マルシドループ (DM23RP1 4B/22)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-4B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-4B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "4500",
+        "cost": "4",
+        "mana": "1",
+        "race": "メカ・デル・ステラ",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-5A",
+    "name": "深淵の螺穿 ラゼル=ズバイラル (DM23RP1 5A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-5A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-5A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "10000",
+        "cost": "8",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "jintetsu",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-5B",
+    "name": "der'Zen Mondo / ♪必殺で つわものどもが 夢の跡 (DM23RP1 5B/22)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-5Ba.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-5B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "マジック・コマンド",
+        "illustrator": "KISUKE",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 der'Zen Mondo / ♪必殺で つわものどもが 夢の跡 (DM23RP1 5B/22)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "8",
+        "mana": "1",
+        "race": "マジック・ソング",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM24-EX3 刺激爆発デュエナマイトパック DM24-RP3 王道篇 第3弾 「ゴールド・オブ・ハイパーエンジェル」 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-6A",
+    "name": "ノラディ:ド:スルーザ (DM23RP1 6A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-6A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-6A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ノワールアビス",
+        "illustrator": "douzen",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-6B",
+    "name": "SC龍飛→SC風流 (DM23RP1 6B/22)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-6B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-6B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "5000",
+        "cost": "2",
+        "mana": "1",
+        "race": "マジック・コマンド・ドラゴン",
+        "illustrator": "akagi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-7A",
+    "name": "ボルシャック・アークゼオス (DM23RP1 7A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-7A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-7A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "SR",
+        "power": "5000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アーマード・ドラゴン",
+        "illustrator": "tetrapod",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM24-EX1 超感謝祭 ファンタジーBEST DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-7B",
+    "name": "深淵の螺穿 ラゼル=ズバイラル (DM23RP1 7B/22)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-7B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-7B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "10000",
+        "cost": "8",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "jintetsu",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-8A",
+    "name": "チアスカーレット アカネ (DM23RP1 8A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-8A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-8A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "7000",
+        "cost": "5",
+        "mana": "1",
+        "race": "ジャイアント・スノーフェアリー",
+        "illustrator": "Yuukoo009",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜 DM26-SD1 ドキドキつよいデッキ 25の王道 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-8B",
+    "name": "ノラディ:ド:スルーザ (DM23RP1 8B/22)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-8B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-8B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ノワールアビス",
+        "illustrator": "douzen",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-9A",
+    "name": "コーボー・マジカルショッカー (DM23RP1 9A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-9A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-9A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "VR",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "マジック・マーフォーク",
+        "illustrator": "Futaro",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-9B",
+    "name": "ボルシャック・アークゼオス (DM23RP1 9B/22)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-9B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-9B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "SR",
+        "power": "5000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アーマード・ドラゴン",
+        "illustrator": "tetrapod",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM24-EX1 超感謝祭 ファンタジーBEST DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-OR1",
+    "name": "覇炎竜 ボルシャック・ライダー (DM23RP1 OR1/OR2)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-OR1.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-OR1",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "OR",
+        "power": "9000",
+        "cost": "7",
+        "mana": "1",
+        "race": "アーマード・ドラゴン",
+        "illustrator": "RUI MARUYAMA",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-OR2",
+    "name": "首領竜 ゴルファンタジスタ (DM23RP1 OR2/OR2)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-OR2.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-OR2",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "OR",
+        "power": "25000",
+        "cost": "8",
+        "mana": "1",
+        "race": "ジャイアント・ドラゴン",
+        "illustrator": "IWAO",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-S1",
+    "name": "ウィリデ・ゴルギーニ (DM23RP1 S1/S8)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-S1.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-S1",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "7500",
+        "cost": "5",
+        "mana": "1",
+        "race": "メカ・デル・ディネロ/スーパーカー・ドラゴン",
+        "illustrator": "hati",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-S2",
+    "name": "新星姫 マルシドループ (DM23RP1 S2/S8)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-S2.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-S2",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "4500",
+        "cost": "4",
+        "mana": "1",
+        "race": "メカ・デル・ステラ",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-S3",
+    "name": "der'Zen Mondo / ♪必殺で つわものどもが 夢の跡 (DM23RP1 S3/S8)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-S3a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-S3",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "マジック・コマンド",
+        "illustrator": "Yuukoo009",
+        "abilities": [],
+        "flavor": "◆解説◆必殺技は使えば勝ちます。 商品情報 このカードのよくある質問 der'Zen Mondo / ♪必殺で つわものどもが 夢の跡 (DM23RP1 S3/S8)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "8",
+        "mana": "1",
+        "race": "マジック・ソング",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM24-EX3 刺激爆発デュエナマイトパック DM24-RP3 王道篇 第3弾 「ゴールド・オブ・ハイパーエンジェル」 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-S4",
+    "name": "SC龍飛→SC風流 (DM23RP1 S4/S8)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-S4.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-S4",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "5000",
+        "cost": "2",
+        "mana": "1",
+        "race": "マジック・コマンド・ドラゴン",
+        "illustrator": "akagi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-S5",
+    "name": "深淵の螺穿 ラゼル=ズバイラル (DM23RP1 S5/S8)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-S5.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-S5",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "10000",
+        "cost": "8",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "jintetsu",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-S6",
+    "name": "ノラディ:ド:スルーザ (DM23RP1 S6/S8)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-S6.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-S6",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ノワールアビス",
+        "illustrator": "douzen",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-S7",
+    "name": "ボルシャック・アークゼオス (DM23RP1 S7/S8)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-S7.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-S7",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "SR",
+        "power": "5000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アーマード・ドラゴン",
+        "illustrator": "SENNSU",
+        "abilities": [],
+        "flavor": "そのボルシャックは天をどこまでも高く翔ける。 商品情報 同名カードが含まれる商品を表示 DM24-EX1 超感謝祭 ファンタジーBEST DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-S8",
+    "name": "チアスカーレット アカネ (DM23RP1 S8/S8)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-S8.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-S8",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "7000",
+        "cost": "5",
+        "mana": "1",
+        "race": "ジャイアント・スノーフェアリー",
+        "illustrator": "Murakami Hisashi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜 DM26-SD1 ドキドキつよいデッキ 25の王道 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-SP1",
+    "name": "「正義星帝」 ＜ライオネル.Star＞ (DM23RP1 SP1/SP5)",
+    "type": "スター進化クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-SP1.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-SP1",
+    "sides": [
+      {
+        "type": "スター進化クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "9500",
+        "cost": "5",
+        "mana": "1",
+        "race": "メタリカ/エンジェル・コマンド/レクスターズ",
+        "illustrator": "SOLANI",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」 DMRP-21 王来MAX第1弾 鬼ヤバ逆襲S-MAX!!"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-SP2",
+    "name": "プラチナ・ワルスラS (DM23RP1 SP2/SP5)",
+    "type": "進化クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-SP2.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-SP2",
+    "sides": [
+      {
+        "type": "進化クリーチャー",
+        "civilization": "水",
+        "rarity": "VR",
+        "power": "6000",
+        "cost": "3",
+        "mana": "1",
+        "race": "マジック・コマンド/イニシャルズ",
+        "illustrator": "まえだくん",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」 DMBD-15 レジェンドスーパーデッキ 蒼龍革命 DMBD-10 アルティメット・クロニクル・デッキ 2019 SSS!! 侵略デッドディザスター DMR-23 革命ファイナル 拡張パック最終章 ドギラゴールデン vs. ドルマゲドンＸ"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-TF1",
+    "name": "パーロックのミラクルフィーバー (DM23RP1 TF1/TF10)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-TF1.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-TF1",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "7",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Okera",
+        "abilities": [],
+        "flavor": "神の試練にも抗わんとする強靭な精神が、パーロックに奇跡をもたらす。 商品情報 同名カードが含まれる商品を表示 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」 DMR-01 エピソード1 ファースト・コンタクト"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-TR2",
+    "name": "ガヨウ神 (DM23RP1 TR2/TR9)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-TR2.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-TR2",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "ゼロ",
+        "rarity": "SR",
+        "power": "4000",
+        "cost": "5",
+        "mana": "1",
+        "race": "ジョーカーズ/スペシャルズ",
+        "illustrator": "neko61 Design 中山涼太郎",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM24-BD2 ドリーム英雄譚デッキ ジョニーの書 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」 DMRP-05 双極篇 拡張パック第１弾 轟快!! ジョラゴンGo Fight!!"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-TR3",
+    "name": "無限銀河ジ・エンド・オブ・ユニバース (DM23RP1 TR3/TR9)",
+    "type": "進化クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-TR3.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-TR3",
+    "sides": [
+      {
+        "type": "進化クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "17000",
+        "cost": "7",
+        "mana": "1",
+        "race": "フェニックス",
+        "illustrator": "MITSUAKI MATSUMOTO",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-EX1 ますますつよいパック 25の援軍 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」 DMEX-08 謎のブラックボックスパック DMEX-01 ゴールデン・ベスト"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-TR4",
+    "name": "水上第九院 シャコガイル (DM23RP1 TR4/TR9)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-TR4.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-TR4",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "13000",
+        "cost": "9",
+        "mana": "1",
+        "race": "ムートピア",
+        "illustrator": "Futaro",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP3 逆札篇 第3弾 勝敵！逆転おこせ鬼の∞ディスペクター!! DM26-SD1 ドキドキつよいデッキ 25の王道 DM23-EX2 頂上決戦!!デュエキングMAX 2023 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」 DMRP-18 王来篇拡張パック第2弾 禁時王の凶来 DMEX-06 絶対王者!! デュエキングパック DMRP-03 拡張パック新3弾 気分Ｊ･O･E×２メラ冒険！！"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-TR5",
+    "name": "月下卍壊 ガ・リュミーズ 卍 (DM23RP1 TR5/TR9)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-TR5.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-TR5",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "コスト",
+        "cost": "99",
+        "mana": "1",
+        "race": "ドルスザク",
+        "illustrator": "Kotakan",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」 DMEX-17 20周年超感謝メモリアルパック 究極の章 デュエキングMAX DMRP-08 双極篇 拡張パック第４弾 超決戦!バラギアラ!!無敵オラオラ輪廻∞ DMART-24 神アート 魔法少女アイドル「Girl Mage」 ～偶像魔導具集～"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-TR6",
+    "name": "超神羅星アポロヌス・ドラゲリオン (DM23RP1 TR6/TR9)",
+    "type": "進化クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-TR6.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-TR6",
+    "sides": [
+      {
+        "type": "進化クリーチャー",
+        "civilization": "火",
+        "rarity": "SR",
+        "power": "15000",
+        "cost": "6",
+        "mana": "1",
+        "race": "フェニックス",
+        "illustrator": "toriyufu",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-SD2 いきなりつよいデッキ 力の王道 DM23-EX2 頂上決戦!!デュエキングMAX 2023 DM23-RP3 アビス・レボリューション 第3弾 「魔覇革命」 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」 DMEX-17 20周年超感謝メモリアルパック 究極の章 デュエキングMAX"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-TR7",
+    "name": "氷結龍 ダイヤモンド・クレバス (DM23RP1 TR7/TR9)",
+    "type": "進化クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-TR7.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-TR7",
+    "sides": [
+      {
+        "type": "進化クリーチャー",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "3000",
+        "cost": "4",
+        "mana": "1",
+        "race": "スノーフェアリー・ドラゴン",
+        "illustrator": "TUBAKI HALSAME",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM24-BD5 エキサイティング・デュエパ・デッキ アセビと異世界フェアリーたち DM24-EX1 超感謝祭 ファンタジーBEST DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」 DMEX-12 最強戦略!!ドラリンパック"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-TR8",
+    "name": "ソーシャル・マニフェストⅡ世 (DM23RP1 TR8/TR9)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-TR8.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-TR8",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/自然",
+        "rarity": "SR",
+        "power": "6000",
+        "cost": "7",
+        "mana": "1",
+        "race": "トリックス/サイバー・コマンド/チームウェイブ",
+        "illustrator": "Kemonomichi",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」 DMEX-14 弩闘×十王超ファイナルウォーズ!!!"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp1-TR9",
+    "name": "インフェル星樹 (DM23RP1 TR9/TR9)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp1-TR9.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp1-TR9",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "VR",
+        "power": "6000",
+        "cost": "5",
+        "mana": "1",
+        "race": "ジャイアント・ドラゴン/レクスターズ",
+        "illustrator": "Kotakan",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX3 キャラプレミアムパック ドラゴン娘になりたくないっ！ 文化祭だョ！全員集合!!ドラ娘100％パック DM23-BD4 エキサイティング・デュエパ・デッキ 「ドラドラドラゴン龍幻郷」 DM23-EX2 頂上決戦!!デュエキングMAX 2023 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」 DMRP-21 王来MAX第1弾 鬼ヤバ逆襲S-MAX!! DMART-23 神アート ドラゴン娘の文化祭でウェカドラ♪"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-001",
+    "name": "フラウム・ゴルギーニ (DM23RP2 1/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-001.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-001",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "VR",
+        "power": "11500",
+        "cost": "9",
+        "mana": "1",
+        "race": "メカ・デル・ディネロ/スーパーカー・ドラゴン",
+        "illustrator": "hati",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-002",
+    "name": "聖沌大忍者 クーソクゼーシキ (DM23RP2 2/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-002.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-002",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "VR",
+        "power": "5500",
+        "cost": "5",
+        "mana": "1",
+        "race": "メカ・デル・ステラ/シノビ",
+        "illustrator": "Miyamoto Satoru",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX1 愛感謝祭 ヒロインBEST DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-003",
+    "name": "Go! 韻句 Steady (DM23RP2 3/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-003.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-003",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "VR",
+        "power": "11000",
+        "cost": "9",
+        "mana": "1",
+        "race": "マジック・ポセイディア・ドラゴン",
+        "illustrator": "KIYA",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-004",
+    "name": "ラーテ:ガ:フヨーキ (DM23RP2 4/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-004.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-004",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "VR",
+        "power": "11000",
+        "cost": "9",
+        "mana": "1",
+        "race": "ノワールアビス",
+        "illustrator": "douzen",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-005",
+    "name": "謀遠 テレスコ=テレス (DM23RP2 5/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-005.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-005",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "VR",
+        "power": "5000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "Moopic",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～ DM24-EX3 刺激爆発デュエナマイトパック DM24-RP2 王道篇 第2弾 「カイザー・オブ・ハイパードラゴン」 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DMART-25 神アート アビス、東京に現わる"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-006",
+    "name": "ボルシャック・ノブリス・ドラゴン (DM23RP2 6/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-006.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-006",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "VR",
+        "power": "10000",
+        "cost": "9",
+        "mana": "1",
+        "race": "アーマード・ドラゴン",
+        "illustrator": "Futaro",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-007",
+    "name": "乱振！アルバトロス・タランチュラ (DM23RP2 7/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-007.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-007",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "VR",
+        "power": "13000",
+        "cost": "9",
+        "mana": "1",
+        "race": "ジャイアント・インセクト",
+        "illustrator": "nablange",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-008",
+    "name": "幻想と伝承の決断 (DM23RP2 8/74)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-008.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-008",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "水/自然",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "8",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "IWAO",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DMART-14 神アート フェアリー・タイムライン"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-009",
+    "name": "星姫械 ミントジュバ / ミンティア・リンギング (DM23RP2 9/74)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-009a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-009",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "R",
+        "power": "8000",
+        "cost": "6",
+        "mana": "1",
+        "race": "メカ・デル・ステラ",
+        "illustrator": "hatapug",
+        "abilities": [],
+        "flavor": "商品情報 星姫械 ミントジュバ / ミンティア・リンギング (DM23RP2 9/74)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "光",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "4",
+        "mana": "1",
+        "race": "メカ・デル・テック",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-010",
+    "name": "アウルーリー-T8 (DM23RP2 10/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-010.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-010",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "R",
+        "power": "6000",
+        "cost": "5",
+        "mana": "1",
+        "race": "メカ・デル・ディネロ",
+        "illustrator": "KOUSAKU",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 プロモ限定カード 22期"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-011",
+    "name": "水雲の聖沌 5u170n (DM23RP2 11/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-011.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-011",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "R",
+        "power": "4000",
+        "cost": "5",
+        "mana": "1",
+        "race": "メカ・デル・ステラ/シノビ",
+        "illustrator": "hatapug",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DM23-SD2 スタートWINデッキ 聖沌・クノイチ・チェンジ"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-012",
+    "name": "忍鎖の聖沌 94nm4 (DM23RP2 12/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-012.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-012",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "R",
+        "power": "2000",
+        "cost": "3",
+        "mana": "1",
+        "race": "メカ・デル・ステラ/シノビ",
+        "illustrator": "RUI MARUYAMA",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX1 愛感謝祭 ヒロインBEST DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-013",
+    "name": "歌舞音愛 ヒメカット / ♪蛙の子 遭えるの何処？好きと謂ひて (DM23RP2 13/74)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-013a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-013",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "R",
+        "power": "2000",
+        "cost": "2",
+        "mana": "1",
+        "race": "マジック・マーメイド",
+        "illustrator": "Itadakumike",
+        "abilities": [],
+        "flavor": "◆解説◆行方不明になったケローラの帰りを待っている様子を表しています。 商品情報 このカードのよくある質問 歌舞音愛 ヒメカット / ♪蛙の子 遭えるの何処？好きと謂ひて (DM23RP2 13/74)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "4",
+        "mana": "1",
+        "race": "マジック・ソング",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 プロモ限定カード 23期 プロモ限定カード 22期"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-014",
+    "name": "Kl’avia Mondo (DM23RP2 14/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-014.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-014",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "R",
+        "power": "5000",
+        "cost": "5",
+        "mana": "1",
+        "race": "マジック・コマンド",
+        "illustrator": "hati",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-015",
+    "name": "終止の時計 ザ・ミュート (DM23RP2 15/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-015.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-015",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "R",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "マジック・アウトレイジMAX",
+        "illustrator": "RUI MARUYAMA",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DMART-17 神アート 蛍光少女 プロモ限定カード 22期"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-016",
+    "name": "ヨービリン=リリン / 「……誰を呼びたい？」 (DM23RP2 16/74)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-016a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-016",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "R",
+        "power": "4000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "Miyamoto Satoru",
+        "abilities": [],
+        "flavor": "押し逃げしようとした者には、お返しに100倍の力で押し返してくる。 商品情報 このカードのよくある質問 ヨービリン=リリン / 「……誰を呼びたい？」 (DM23RP2 16/74)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "闇",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "アビスへの誘い",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-017",
+    "name": "ガ:ナテハ (DM23RP2 17/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-017.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-017",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "R",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ノワールアビス",
+        "illustrator": "douzen",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-018",
+    "name": "冥逝邪夢 (DM23RP2 18/74)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-018.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-018",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "9",
+        "mana": "1",
+        "race": "アビスへの誘い",
+        "illustrator": "MATSUMOTO EIGHT",
+        "abilities": [],
+        "flavor": "すべてを出し尽くしクラブも失ったゴルファンタジスタの身体は、肌はひび割れ、体毛は白く染まってまばらに抜けていった。「回転」によって酷使された命は限界を迎えていた。そんなボロボロの身体を、ジャシンの右手が容赦なく貫いた。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-019",
+    "name": "死神XENARCH・ハンド (DM23RP2 19/74)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-019.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-019",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "6",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Ittoku",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-01A",
+    "name": "聖沌大忍者 シキソクゼック (DM23RP2 1A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-01A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-01A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "13000",
+        "cost": "8",
+        "mana": "1",
+        "race": "メカ・デル・ソル/シノビ",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-01B",
+    "name": "聖カオスマントラ (DM23RP2 1B/22)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-01B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-01B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "OR",
+        "power": "9500",
+        "cost": "7",
+        "mana": "1",
+        "race": "メカ・デル・ステラ/シノビ",
+        "illustrator": "MATSUMOTO EIGHT",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX1 愛感謝祭 ヒロインBEST DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-01S",
+    "name": "聖カオスマントラ (DM23RP2 1S/2)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-01S.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-01S",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "OR",
+        "power": "9500",
+        "cost": "7",
+        "mana": "1",
+        "race": "メカ・デル・ステラ/シノビ",
+        "illustrator": "MATSUMOTO EIGHT",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX1 愛感謝祭 ヒロインBEST DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-020",
+    "name": "カラカラ・警・ルピア / 「ここはお任せだッピ！」 (DM23RP2 20/74)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-020a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-020",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "R",
+        "power": "2000",
+        "cost": "2",
+        "mana": "1",
+        "race": "アーマード・ファイアー・バード",
+        "illustrator": "Norikatsu Miyoshi",
+        "abilities": [],
+        "flavor": "竜との絆が、新たなる奇跡を生む。 商品情報 カラカラ・警・ルピア / 「ここはお任せだッピ！」 (DM23RP2 20/74)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "火",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "アーマード・アーツ",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-021",
+    "name": "バーチカル・ワイバーン (DM23RP2 21/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-021.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-021",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "R",
+        "power": "5000",
+        "cost": "6",
+        "mana": "1",
+        "race": "アーマード・ワイバーン",
+        "illustrator": "Shishizaru",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-022",
+    "name": "パロッタ・夜・ミエッピ (DM23RP2 22/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-022.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-022",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "R",
+        "power": "4000",
+        "cost": "3",
+        "mana": "1",
+        "race": "アーマード・ファイアー・バード",
+        "illustrator": "Kemonomichi",
+        "abilities": [],
+        "flavor": "光文明でシノビの反乱が起こったらしいッピ！暴竜爵様の幼馴染であるドラン・ゴルギーニ様は無事だッピ～？ — パロッタ・夜・ミエッピ 商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-023",
+    "name": "マーチングベル シアン / ミーミル・ミュージカル (DM23RP2 23/74)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-023a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-023",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "R",
+        "power": "7000",
+        "cost": "5",
+        "mana": "1",
+        "race": "ジャイアント・スノーフェアリー",
+        "illustrator": "Muna-Ge",
+        "abilities": [],
+        "flavor": "商品情報 マーチングベル シアン / ミーミル・ミュージカル (DM23RP2 23/74)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "自然",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "ジャイアント・スキル",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-024",
+    "name": "マーチングドラム ミドリ / ハーメルン・ハーモニー (DM23RP2 24/74)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-024a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-024",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "R",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ジャイアント・スノーフェアリー",
+        "illustrator": "Muna-Ge",
+        "abilities": [],
+        "flavor": "その旋律を耳にした者は、どことも知らぬ場所に連れていかれてしまうという。 商品情報 マーチングドラム ミドリ / ハーメルン・ハーモニー (DM23RP2 24/74)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "自然",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "8",
+        "mana": "1",
+        "race": "ジャイアント・スキル",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM24-BD5 エキサイティング・デュエパ・デッキ アセビと異世界フェアリーたち DM23-BD6 エキサイティング・デュエパ・デッキ 「双極のアカシックZ計画」 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-025",
+    "name": "振舞の超人 (DM23RP2 25/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-025.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-025",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "R",
+        "power": "9000",
+        "cost": "6",
+        "mana": "1",
+        "race": "ジャイアント",
+        "illustrator": "D-suzuki",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-026",
+    "name": "ニアピン・モスキート (DM23RP2 26/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-026.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-026",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "R",
+        "power": "6000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ジャイアント・インセクト",
+        "illustrator": "kou1",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 プロモ限定カード 22期"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-027",
+    "name": "聖沌忍者 シャーリーシー / シャーリー・チャージャー (DM23RP2 27/74)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-027a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-027",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "U",
+        "power": "8500",
+        "cost": "7",
+        "mana": "1",
+        "race": "メカ・デル・ソル/シノビ",
+        "illustrator": "IWAO",
+        "abilities": [],
+        "flavor": "商品情報 聖沌忍者 シャーリーシー / シャーリー・チャージャー (DM23RP2 27/74)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "光",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "メカ・デル・テック/シノビ",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM23-BD7 エキサイティング・デュエパ・デッキ 「ネゴシエートの偽衒学者」 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-028",
+    "name": "星姫械 エルナリク (DM23RP2 28/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-028.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-028",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "U",
+        "power": "8000",
+        "cost": "4",
+        "mana": "1",
+        "race": "メカ・デル・ステラ/シノビ",
+        "illustrator": "KOUSAKU",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-029",
+    "name": "忍爪の聖沌 k491 (DM23RP2 29/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-029.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-029",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "U",
+        "power": "3500",
+        "cost": "3",
+        "mana": "1",
+        "race": "メカ・デル・ステラ/シノビ",
+        "illustrator": "jintetsu",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-02A",
+    "name": "マジック・H・コレクター / ♪マジソンを 集めて早し ストリーム (DM23RP2 2A/20)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-02Aa.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-02A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "6000",
+        "cost": "5",
+        "mana": "1",
+        "race": "マジック・サイバー・コマンド",
+        "illustrator": "Hokuyu",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 マジック・H・コレクター / ♪マジソンを 集めて早し ストリーム (DM23RP2 2A/20)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "マジック・ソング",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-02B",
+    "name": "邪闘 シス (DM23RP2 2B/22)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-02B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-02B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "OR",
+        "power": "9000",
+        "cost": "6",
+        "mana": "1",
+        "race": "アビスキマイラ",
+        "illustrator": "akagi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-02S",
+    "name": "邪闘 シス (DM23RP2 2S/2)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-02S.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-02S",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "OR",
+        "power": "9000",
+        "cost": "6",
+        "mana": "1",
+        "race": "アビスキマイラ",
+        "illustrator": "akagi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-030",
+    "name": "星姫械 レゴミール (DM23RP2 30/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-030.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-030",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "U",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "メカ・デル・ステラ",
+        "illustrator": "sarmat",
+        "abilities": [],
+        "flavor": "盛られた軽油によりゴルギーオーの腰部分担当のフラウムは力が発揮できず、ゴルギーニたちはメカ・デル・ステラの助けが入る前にシノビに倒されてしまった。すべては聖カオスマントラの策略……世に言う「ゴルギーニ家の変」である。 商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-031",
+    "name": "音素記号Bm エネルジコ / ♪水面から 天掴まんと するチャージャー (DM23RP2 31/74)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-031a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-031",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "U",
+        "power": "9000",
+        "cost": "7",
+        "mana": "1",
+        "race": "マジック・クリスタル・コマンド・ドラゴン",
+        "illustrator": "Hokuyu",
+        "abilities": [],
+        "flavor": "商品情報 音素記号Bm エネルジコ / ♪水面から 天掴まんと するチャージャー (DM23RP2 31/74)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "マジック・ソング",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM23-BD7 エキサイティング・デュエパ・デッキ 「ネゴシエートの偽衒学者」 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-032",
+    "name": "人気魚 / ♪大空の ムーンサルト やや斜め (DM23RP2 32/74)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-032a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-032",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "U",
+        "power": "4000",
+        "cost": "3",
+        "mana": "1",
+        "race": "マジック・フィッシュ",
+        "illustrator": "KOUSAKU",
+        "abilities": [],
+        "flavor": "◆解説◆イルカショーに行きましょう。 商品情報 人気魚 / ♪大空の ムーンサルト やや斜め (DM23RP2 32/74)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "マジック・ソング",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM24-EX4 にじさんじコラボ・マスターズ「異次元の超獣使い」 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-033",
+    "name": "ゼンツー (DM23RP2 33/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-033.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-033",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "U",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "マジック・サイバーロード",
+        "illustrator": "Itadakumike",
+        "abilities": [],
+        "flavor": "「壱百年Wish」のステージはDrache der'Zenの突然の告知で幕を閉じた。「皆の者！次は火文明で会おうぞ!!」まさかの文明間をまたいでの全国ツアーの発表だ。 商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-034",
+    "name": "タカスギ・ワヲンチョッパー (DM23RP2 34/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-034.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-034",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "U",
+        "power": "3000",
+        "cost": "2",
+        "mana": "1",
+        "race": "マジック・マーフォーク",
+        "illustrator": "500siki",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-SD3 スタートWINデッキ 革命・アメイジン・マジック DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-035",
+    "name": "音愛楽団 ブリーチ (DM23RP2 35/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-035.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-035",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "U",
+        "power": "2000",
+        "cost": "2",
+        "mana": "1",
+        "race": "マジック・マーメイド",
+        "illustrator": "Yuukoo009",
+        "abilities": [],
+        "flavor": "「壱百年Wish」復活のニュースを受け、これまで動画で作品を発表するのみだった稀代のカリスマハイクアーティストが、Uta-Awase-Fes.でついにその姿を現そうとしていた。そしてそのことを音愛楽団 ブリーチのメンバーだけが知っていた。 商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-036",
+    "name": "モノクル＝ドクトール / 「すべてを見通す眼だ」 (DM23RP2 36/74)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-036a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-036",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "U",
+        "power": "8000",
+        "cost": "7",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "MISAWA_K",
+        "abilities": [],
+        "flavor": "商品情報 モノクル＝ドクトール / 「すべてを見通す眼だ」 (DM23RP2 36/74)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "闇",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "アビスへの誘い",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-037",
+    "name": "カーペット=ガペット / 「ふむ、君の希望を踏まえよう」 (DM23RP2 37/74)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-037a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-037",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "U",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "Norikatsu Miyoshi",
+        "abilities": [],
+        "flavor": "その絨毯は、いつでも不満そうだ。 商品情報 カーペット=ガペット / 「ふむ、君の希望を踏まえよう」 (DM23RP2 37/74)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "闇",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "アビスへの誘い",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-038",
+    "name": "ド:トヤッキ (DM23RP2 38/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-038.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-038",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "U",
+        "power": "1000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ノワールアビス",
+        "illustrator": "Kemonomichi",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-039",
+    "name": "邪招待 (DM23RP2 39/74)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-039.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-039",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇",
+        "rarity": "U",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "アビスへの誘い",
+        "illustrator": "douzen",
+        "abilities": [],
+        "flavor": "気づけばアビスで満席のスタジアムにいたゴルファンタジスタに対してジャシンが用意した対戦相手は、触れたものを無限の深淵へと引きずり込む力で数多の厄災をもたらしたアビス……その名も、邪闘 シス！ 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 コロコロ・スペシャル デッキ10"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-03A",
+    "name": "Kl’avia Tune (DM23RP2 3A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-03A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-03A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "12000",
+        "cost": "8",
+        "mana": "1",
+        "race": "マジック・コマンド・ドラゴン",
+        "illustrator": "Murakami Hisashi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-03B",
+    "name": "聖沌大忍者 シキソクゼック (DM23RP2 3B/22)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-03B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-03B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "13000",
+        "cost": "8",
+        "mana": "1",
+        "race": "メカ・デル・ソル/シノビ",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-040",
+    "name": "セルリアン・アックス・ドラゴン / ダブルアックス・チャージャー (DM23RP2 40/74)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-040a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-040",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "U",
+        "power": "9000",
+        "cost": "7",
+        "mana": "1",
+        "race": "アーマード・ドラゴン",
+        "illustrator": "Ishibashi Yosuke",
+        "abilities": [],
+        "flavor": "商品情報 セルリアン・アックス・ドラゴン / ダブルアックス・チャージャー (DM23RP2 40/74)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "火",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "アーマード・アーツ",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM24-BD6 エキサイティング・デュエパ・デッキ ツラトゥストラは水晶と語らう DM24-EX2 天下夢双!!デュエキングDreaM 2024 DM23-BD4 エキサイティング・デュエパ・デッキ 「ドラドラドラゴン龍幻郷」 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-041",
+    "name": "ボルシャック・コーヤ・ドラゴン (DM23RP2 41/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-041.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-041",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "U",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "アーマード・ドラゴン",
+        "illustrator": "kou1",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 プロモ限定カード 22期"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-042",
+    "name": "リトル・翔・バルピア (DM23RP2 42/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-042.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-042",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "U",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "アーマード・ファイアー・バード",
+        "illustrator": "Miyamoto Satoru",
+        "abilities": [],
+        "flavor": "太陽がボルシャックだった……つまりボルシャックは太陽ってことだッピ!? — リトル・翔・バルピア 商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-043",
+    "name": "チック・医・スルッチ (DM23RP2 43/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-043.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-043",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "U",
+        "power": "2000",
+        "cost": "2",
+        "mana": "1",
+        "race": "アーマード・ファイアー・バード",
+        "illustrator": "sarmat",
+        "abilities": [],
+        "flavor": "自然文明もジャシンにやられちゃったみたいッピ……それでも暴竜爵なら、今度こそ何とかしてくれるに違いないッピ！ — チック・医・スルッチ 商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-044",
+    "name": "ワット・棘・トラッピ (DM23RP2 44/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-044.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-044",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "U",
+        "power": "3000",
+        "cost": "1",
+        "mana": "1",
+        "race": "アーマード・ファイアー・バード",
+        "illustrator": "Muna-Ge",
+        "abilities": [],
+        "flavor": "歴代のボルシャックたちが仲間とともに戦った歴史そのものが、光り輝く太陽となったのだ！ 商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-045",
+    "name": "竹馬の超人 / テイクバック・チャージャー (DM23RP2 45/74)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-045a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-045",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "U",
+        "power": "11000",
+        "cost": "7",
+        "mana": "1",
+        "race": "ジャイアント",
+        "illustrator": "Shishizaru",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 竹馬の超人 / テイクバック・チャージャー (DM23RP2 45/74)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "自然",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "ジャイアント・スキル",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM24-SD2 いきなりつよいデッキ 守りの王道 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-046",
+    "name": "ティーショット・ビートル (DM23RP2 46/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-046.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-046",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "U",
+        "power": "2000",
+        "cost": "5",
+        "mana": "1",
+        "race": "ジャイアント・インセクト",
+        "illustrator": "Tonbi Aburaya",
+        "abilities": [],
+        "flavor": "左腕を失ったゴルファンタジスタが咆哮を上げると、肌は赤く染まり全身から蒸気が上がる。それは汗が高熱で即座に気化している証。これぞ「剛流振」の秘奥義、自らの命を「回転」させ全力以上の全力を引き出したのだ!! 商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-047",
+    "name": "推出の超人 (DM23RP2 47/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-047.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-047",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "U",
+        "power": "5000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ジャイアント",
+        "illustrator": "Itadakumike",
+        "abilities": [],
+        "flavor": "131打目を放とうとしたゴルファンタジスタは衝撃を受けると同時に左腕が消えているのに気づいた。視界はあえてそのままに死角に向けて押し出された邪闘 シスの掌が左腕に触れただけで、無限の深淵に引きずり込まれてしまったのだ。 商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-048",
+    "name": "マーチングバトン ダイダイ (DM23RP2 48/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-048.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-048",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "U",
+        "power": "3000",
+        "cost": "2",
+        "mana": "1",
+        "race": "ジャイアント・スノーフェアリー",
+        "illustrator": "Muna-Ge",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM24-EX4 にじさんじコラボ・マスターズ「異次元の超獣使い」 DM24-BD5 エキサイティング・デュエパ・デッキ アセビと異世界フェアリーたち DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-049",
+    "name": "罰打の妖精 (DM23RP2 49/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-049.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-049",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "U",
+        "power": "2000",
+        "cost": "2",
+        "mana": "1",
+        "race": "ジャイアント・スノーフェアリー",
+        "illustrator": "tokiti",
+        "abilities": [],
+        "flavor": "クラブに込められた妖精の祈りがゴルファンタジスタを守り、その代償としてクラブは粉々に砕け散った。邪闘 シスは嵐の中に消えたが、しかし目の前には嵐をものともしないジャシンが立っていた。 商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-04A",
+    "name": "深淵の襲傘 アンブレラ＝イザベラ (DM23RP2 4A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-04A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-04A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "9000",
+        "cost": "8",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "Moopic",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-04B",
+    "name": "マジック・H・コレクター / ♪マジソンを 集めて早し ストリーム (DM23RP2 4B/22)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-04Ba.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-04B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "6000",
+        "cost": "5",
+        "mana": "1",
+        "race": "マジック・サイバー・コマンド",
+        "illustrator": "Hokuyu",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 マジック・H・コレクター / ♪マジソンを 集めて早し ストリーム (DM23RP2 4B/22)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "マジック・ソング",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-050",
+    "name": "鎧輪双翔ボルシャック・スカイ (DM23RP2 50/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-050.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-050",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/火",
+        "rarity": "U",
+        "power": "5500",
+        "cost": "5",
+        "mana": "1",
+        "race": "アーマード・ドラゴン/メカ・デル・ディネロ",
+        "illustrator": "Shishizaru",
+        "abilities": [],
+        "flavor": "「ええい、合体だ、合体するのだ!!」キング・ゴルギーニの合図でゴルギーニ家５兄弟が巨大ロボ、ゴルギーオーへと合体する。だが聖カオスマントラが無数の暗器を四方から浴びせかけると、ゴルギーオーの腰部分がぐらつきはじめた！ 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～ DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-051",
+    "name": "星姫械 ミモザスター / 招光呪文「メカミング」 (DM23RP2 51/74)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-051a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-051",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "C",
+        "power": "7500",
+        "cost": "5",
+        "mana": "1",
+        "race": "メカ・デル・ステラ",
+        "illustrator": "Ishibashi Yosuke",
+        "abilities": [],
+        "flavor": "その呪文が、星を呼ぶ。 商品情報 星姫械 ミモザスター / 招光呪文「メカミング」 (DM23RP2 51/74)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "光",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "1",
+        "mana": "1",
+        "race": "メカ・デル・テック",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DM23-SD2 スタートWINデッキ 聖沌・クノイチ・チェンジ"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-052",
+    "name": "忍瞬の聖沌 53nju (DM23RP2 52/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-052.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-052",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "C",
+        "power": "2000",
+        "cost": "5",
+        "mana": "1",
+        "race": "メカ・デル・ステラ/シノビ",
+        "illustrator": "hati",
+        "abilities": [],
+        "flavor": "「お代わりはいかがですか？」「ああ、いただくよ」フラウム・ゴルギーニはパーティーの最中、メイドの自動人形からグラスに入ったエンジンオイルを受け取る。しかしそれを飲むとたちどころにグラスを落とし、苦しみ悶えだした。 商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DM23-SD2 スタートWINデッキ 聖沌・クノイチ・チェンジ"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-053",
+    "name": "忍防の聖沌 h4990u (DM23RP2 53/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-053.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-053",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "C",
+        "power": "2500",
+        "cost": "2",
+        "mana": "1",
+        "race": "メカ・デル・ステラ/シノビ",
+        "illustrator": "Katora",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DM23-SD2 スタートWINデッキ 聖沌・クノイチ・チェンジ"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-054",
+    "name": "撒菱の聖沌 7093 (DM23RP2 54/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-054.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-054",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "C",
+        "power": "3000",
+        "cost": "1",
+        "mana": "1",
+        "race": "メカ・デル・ステラ/シノビ",
+        "illustrator": "Katora",
+        "abilities": [],
+        "flavor": "ゴルギーニ家５兄弟とそれを束ねる当主のキング・ゴルギーニが一堂に会する、４年に一度のパーティーがゴルギーニ家の屋敷で開催された。だが贅沢を尽くした催しの裏側で、シノビの企みが密かに進行していた。 商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-055",
+    "name": "聖沌忍法 7r0y (DM23RP2 55/74)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-055.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-055",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "4",
+        "mana": "1",
+        "race": "メカ・デル・テック/シノビ",
+        "illustrator": "MATSUMOTO EIGHT",
+        "abilities": [],
+        "flavor": "倒れたフラウムに駆け寄ったゴルギーニたちは気づけば聖カオスマントラたちシノビに囲まれていた。「シノビ、裏切るのか！まだあの約束は続いているはず！」「愚カナ。オ前タチガアビスニ敗北シタ時点デ約束ハ反故ニナッタノダ」 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DM23-SD2 スタートWINデッキ 聖沌・クノイチ・チェンジ"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-056",
+    "name": "詠み人-シラズ-Machine / 招水呪文「マジックル」 (DM23RP2 56/74)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-056a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-056",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "C",
+        "power": "6000",
+        "cost": "5",
+        "mana": "1",
+        "race": "マジック・コマンド",
+        "illustrator": "Yuukoo009",
+        "abilities": [],
+        "flavor": "その呪文が、ハイクを詠む。 商品情報 詠み人-シラズ-Machine / 招水呪文「マジックル」 (DM23RP2 56/74)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "1",
+        "mana": "1",
+        "race": "マジック・ソング",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM23-SD3 スタートWINデッキ 革命・アメイジン・マジック DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-057",
+    "name": "爆弾音愛 メッシュ / ♪キミとボク 共感すれば マジ文殊 (DM23RP2 57/74)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-057a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-057",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "C",
+        "power": "3000",
+        "cost": "4",
+        "mana": "1",
+        "race": "マジック・マーメイド",
+        "illustrator": "kawasumi",
+        "abilities": [],
+        "flavor": "◆解説◆共感すれば解説などいりません。 商品情報 爆弾音愛 メッシュ / ♪キミとボク 共感すれば マジ文殊 (DM23RP2 57/74)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "マジック・ソング",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-058",
+    "name": "TUBA・クロウラー (DM23RP2 58/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-058.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-058",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "C",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "マジック・アースイーター",
+        "illustrator": "Tanaka Kenichi",
+        "abilities": [],
+        "flavor": "強大な魔法はその分魔力を必要とする。Uta-Awase-Fes.での観衆の感動を魔力とした、水文明の命運をかけた砲撃魔法が、住人たちの無意識によってあくまで自動的に、深淵に向け発射されようとしていた。TUBA・クロウラーはそれをただ見ていることしかできなかった。 商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-059",
+    "name": "AQvibrato (DM23RP2 59/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-059.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-059",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "C",
+        "power": "1000",
+        "cost": "2",
+        "mana": "1",
+        "race": "マジック・リキッド・ピープル",
+        "illustrator": "Takaaki Sato",
+        "abilities": [],
+        "flavor": "「壱百年Wish」再結成で爆発的な盛り上がりを見せたUta-Awase-Fes.の水文明全体での視聴率は400%にも達した。そしてそれは番組のスポンサーに絶大な魔力が集まるということを意味していた。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM24-EX2 天下夢双!!デュエキングDreaM 2024 DM23-SD3 スタートWINデッキ 革命・アメイジン・マジック DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-05A",
+    "name": "ボルシャック・ガラワルド (DM23RP2 5A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-05A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-05A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "SR",
+        "power": "9000",
+        "cost": "8",
+        "mana": "1",
+        "race": "アーマード・ドラゴン",
+        "illustrator": "neko61",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX3 キャラプレミアムパック ドラゴン娘になりたくないっ！ 文化祭だョ！全員集合!!ドラ娘100％パック DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-BD1 ドリーム英雄譚デッキ ボルシャックの書 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-05B",
+    "name": "Kl’avia Tune (DM23RP2 5B/22)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-05B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-05B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "12000",
+        "cost": "8",
+        "mana": "1",
+        "race": "マジック・コマンド・ドラゴン",
+        "illustrator": "Murakami Hisashi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-060",
+    "name": "♪なぜ離れ どこへ行くのか 君は今 (DM23RP2 60/74)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-060.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-060",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "マジック・ソング",
+        "illustrator": "KOUSAKU",
+        "abilities": [],
+        "flavor": "「なぜ離れ どこへ行くのか 君は今」……２人をつないだハイクに続けて、Drache der'ZenとEine k'Reineは互いを追いかけるように連作ハイクを紡いだ。「すれ違い かけ違えてた」「お互いよ 若かったのね」「だけど今 ここに来ている」「呼んだから 君が私を」２人１組のハイクは、離れた時間を埋め合わせるように続いた。 商品情報 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～ DM24-EX2 天下夢双!!デュエキングDreaM 2024 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 プロモ限定カード 24期"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-061",
+    "name": "サドレイン=トレイン / 邪神呪文「アビサール」 (DM23RP2 61/74)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-061a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-061",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "6000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "KISUKE",
+        "abilities": [],
+        "flavor": "その呪文が、深淵を呼ぶ。 商品情報 サドレイン=トレイン / 邪神呪文「アビサール」 (DM23RP2 61/74)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "闇",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "1",
+        "mana": "1",
+        "race": "アビスへの誘い",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 プロモ限定カード 22期"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-062",
+    "name": "ド:ニーワ (DM23RP2 62/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-062.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-062",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "5000",
+        "cost": "5",
+        "mana": "1",
+        "race": "ノワールアビス",
+        "illustrator": "Ittoku",
+        "abilities": [],
+        "flavor": "全力のゴルファンタジスタがオービーメイカーのコースすらもホールインワンするほどの力でスタジアムを「回転」させると、激しい嵐でアビスたちがすり潰されていく。邪闘 シスは嵐の中心へと無限の深淵を放つ……だがその時、まばゆい光がクラブから放たれた！ 商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 コロコロ・スペシャル デッキ11"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-063",
+    "name": "噴霧怪人ドポイズン (DM23RP2 63/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-063.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-063",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "5000",
+        "cost": "3",
+        "mana": "1",
+        "race": "デビルマスク",
+        "illustrator": "kou1",
+        "abilities": [],
+        "flavor": "ジャシンに身体を貫かれたゴルファンタジスタは霞む視界の中で手を伸ばし、最後の力で自然文明全体に「回転」による守りを施した。やがてその手は虚空を掴むと、身体は深淵の泥の中へと沈んでいき、二度と浮かび上がることはなかった。 商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-064",
+    "name": "グ:ルボカッサ (DM23RP2 64/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-064.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-064",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "4000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ノワールアビス",
+        "illustrator": "jintetsu",
+        "abilities": [],
+        "flavor": "向かい合うゴルファンタジスタと邪闘 シスから少し離れて立っていたジャシンが、ボール状のアビスをおもむろに天高く放った。その落下が戦いの開始の合図なのだと、言葉で伝えられずともゴルファンタジスタにはわかった。 商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-065",
+    "name": "麗迭人形ジェニー (DM23RP2 65/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-065.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-065",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "1000",
+        "cost": "2",
+        "mana": "1",
+        "race": "デスパペット",
+        "illustrator": "kawasumi",
+        "abilities": [],
+        "flavor": "あなたにはもう興味ないわ。— 麗迭人形ジェニー 商品情報 同名カードが含まれる商品を表示 DM24-EX1 超感謝祭 ファンタジーBEST DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-066",
+    "name": "ゲンジ・天・パワッチ / 招火呪文「アーマアド」 (DM23RP2 66/74)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-066a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-066",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "C",
+        "power": "4000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アーマード・ファイアー・バード",
+        "illustrator": "Tobimaru Konatsu",
+        "abilities": [],
+        "flavor": "商品情報 ゲンジ・天・パワッチ / 招火呪文「アーマアド」 (DM23RP2 66/74)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "火",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "1",
+        "mana": "1",
+        "race": "アーマード・アーツ",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-067",
+    "name": "パーレン・煙・イエッピ (DM23RP2 67/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-067.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-067",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "C",
+        "power": "3000",
+        "cost": "4",
+        "mana": "1",
+        "race": "アーマード・ファイアー・バード",
+        "illustrator": "sarmat",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-068",
+    "name": "アチコチ・鳴・ピッピ (DM23RP2 68/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-068.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-068",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "C",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "アーマード・ファイアー・バード",
+        "illustrator": "Tobimaru Konatsu",
+        "abilities": [],
+        "flavor": "真実を知ったボルシャック・カイザーは、新たな決意を胸に秘める。力のための力ではなく、人々を明るく照らすための力を得ることを！ 商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-069",
+    "name": "襲撃者 「鎧」ドライブ (DM23RP2 69/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-069.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-069",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "C",
+        "power": "1000",
+        "cost": "2",
+        "mana": "1",
+        "race": "アーマード・ドラゴノイド",
+        "illustrator": "ISSEI MURAKAMI",
+        "abilities": [],
+        "flavor": "流星すらぶっちぎり。 商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-06A",
+    "name": "雷炎翔鎧バルピアレスク (DM23RP2 6A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-06A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-06A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "SR",
+        "power": "5000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アーマード・ファイアー・バード/アーマード・ワイバーン",
+        "illustrator": "Norikatsu Miyoshi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-06B",
+    "name": "深淵の襲傘 アンブレラ＝イザベラ (DM23RP2 6B/22)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-06B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-06B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "9000",
+        "cost": "8",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "Moopic",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-070",
+    "name": "太陽との邂逅 (DM23RP2 70/74)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-070.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-070",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "火",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "アーマード・アーツ",
+        "illustrator": "neko61",
+        "abilities": [],
+        "flavor": "祠の奥で見つけた秘宝。それに触れたボルシャック・カイザーは、世界の真実を知る。火文明を照らす太陽とはすなわちボルシャックの輝きであり、実はボルシャックこそが世界を照らしていたのだ。 商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-071",
+    "name": "無双の妖精 / 招然呪文「ジャイババン」 (DM23RP2 71/74)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-071a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-071",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "C",
+        "power": "8000",
+        "cost": "5",
+        "mana": "1",
+        "race": "ジャイアント・スノーフェアリー",
+        "illustrator": "Hokuyu",
+        "abilities": [],
+        "flavor": "その呪文が、回転する。 商品情報 無双の妖精 / 招然呪文「ジャイババン」 (DM23RP2 71/74)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "自然",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "ジャイアント・スキル",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-072",
+    "name": "パーパット・スカラベ (DM23RP2 72/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-072.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-072",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "C",
+        "power": "5000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ジャイアント・インセクト",
+        "illustrator": "salsoba",
+        "abilities": [],
+        "flavor": "ゴルファンタジスタは邪闘 シスの背後からクラブで全身の急所をパーパットの要領で精密に打ちまくった。生まれてからホールインワンしか出していなかったので130打も叩いたのは初めてだった。それでもシスが倒れる気配は全くなかった。 商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 プロモ限定カード 22期"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-073",
+    "name": "幕間の妖精 (DM23RP2 73/74)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-073.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-073",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "C",
+        "power": "6000",
+        "cost": "2",
+        "mana": "1",
+        "race": "ジャイアント・スノーフェアリー",
+        "illustrator": "Miyamoto Satoru",
+        "abilities": [],
+        "flavor": "無数のアビスに囲まれたスタジアムの中央でゴルファンタジスタは、愛用のクラブに魔力を込めた守りを施してくれたチアリーダーの妖精のことを思った。彼女たちの元へ帰り着くために、必ず生きて切り抜けてみせる……そう思った。 商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-074",
+    "name": "ファンタジスタ・ライフ (DM23RP2 74/74)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-074.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-074",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "自然",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "4",
+        "mana": "1",
+        "race": "ジャイアント・スキル",
+        "illustrator": "tetrapod",
+        "abilities": [],
+        "flavor": "開始の合図とともに突進するゴルファンタジスタに対し、邪闘 シスはかすっただけでも無限の深淵が発生する拳で一撃を放つ。だが拳は空を切り、自然の龍の姿は気づけば背後にあった。シスの視界を「回転」させたのだ。 商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-07A",
+    "name": "超球の超人 / 父なるタッチダウン (DM23RP2 7A/20)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-07Aa.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-07A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "12000",
+        "cost": "8",
+        "mana": "1",
+        "race": "ジャイアント",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 超球の超人 / 父なるタッチダウン (DM23RP2 7A/20)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "自然",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "ジャイアント・スキル",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-07B",
+    "name": "ボルシャック・ガラワルド (DM23RP2 7B/22)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-07B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-07B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "SR",
+        "power": "9000",
+        "cost": "8",
+        "mana": "1",
+        "race": "アーマード・ドラゴン",
+        "illustrator": "neko61",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX3 キャラプレミアムパック ドラゴン娘になりたくないっ！ 文化祭だョ！全員集合!!ドラ娘100％パック DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-BD1 ドリーム英雄譚デッキ ボルシャックの書 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-08A",
+    "name": "十八番龍 エターナルグリーン ParLife (DM23RP2 8A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-08A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-08A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "11000",
+        "cost": "10",
+        "mana": "1",
+        "race": "ジャイアント・ドラゴン",
+        "illustrator": "Mikio Masuda",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-08B",
+    "name": "雷炎翔鎧バルピアレスク (DM23RP2 8B/22)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-08B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-08B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "SR",
+        "power": "5000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アーマード・ファイアー・バード/アーマード・ワイバーン",
+        "illustrator": "Norikatsu Miyoshi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-09A",
+    "name": "フラウム・ゴルギーニ (DM23RP2 9A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-09A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-09A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "VR",
+        "power": "11500",
+        "cost": "9",
+        "mana": "1",
+        "race": "メカ・デル・ディネロ/スーパーカー・ドラゴン",
+        "illustrator": "hati",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-09B",
+    "name": "超球の超人 / 父なるタッチダウン (DM23RP2 9B/22)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-09Ba.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-09B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "12000",
+        "cost": "8",
+        "mana": "1",
+        "race": "ジャイアント",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 超球の超人 / 父なるタッチダウン (DM23RP2 9B/22)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "自然",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "ジャイアント・スキル",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-10A",
+    "name": "謀遠 テレスコ=テレス (DM23RP2 10A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-10A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-10A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "VR",
+        "power": "5000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "Moopic",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～ DM24-EX3 刺激爆発デュエナマイトパック DM24-RP2 王道篇 第2弾 「カイザー・オブ・ハイパードラゴン」 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DMART-25 神アート アビス、東京に現わる"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-10B",
+    "name": "十八番龍 エターナルグリーン ParLife (DM23RP2 10B/22)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-10B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-10B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "11000",
+        "cost": "10",
+        "mana": "1",
+        "race": "ジャイアント・ドラゴン",
+        "illustrator": "Mikio Masuda",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-11A",
+    "name": "幻想と伝承の決断 (DM23RP2 11A/20)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-11A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-11A",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "水/自然",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "8",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DMART-14 神アート フェアリー・タイムライン"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-11B",
+    "name": "フラウム・ゴルギーニ (DM23RP2 11B/22)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-11B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-11B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "VR",
+        "power": "11500",
+        "cost": "9",
+        "mana": "1",
+        "race": "メカ・デル・ディネロ/スーパーカー・ドラゴン",
+        "illustrator": "hati",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-12A",
+    "name": "忍鎖の聖沌 94nm4 (DM23RP2 12A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-12A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-12A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "R",
+        "power": "2000",
+        "cost": "3",
+        "mana": "1",
+        "race": "メカ・デル・ステラ/シノビ",
+        "illustrator": "hatapug",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX1 愛感謝祭 ヒロインBEST DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-12B",
+    "name": "謀遠 テレスコ=テレス (DM23RP2 12B/22)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-12B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-12B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "VR",
+        "power": "5000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "Moopic",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP3 王道W 第3弾 邪神vs時皇 ～ビヨンド・ザ・タイム～ DM24-EX3 刺激爆発デュエナマイトパック DM24-RP2 王道篇 第2弾 「カイザー・オブ・ハイパードラゴン」 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DMART-25 神アート アビス、東京に現わる"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-13A",
+    "name": "終止の時計 ザ・ミュート (DM23RP2 13A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-13A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-13A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "R",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "マジック・アウトレイジMAX",
+        "illustrator": "Futaro",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DMART-17 神アート 蛍光少女 プロモ限定カード 22期"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-13B",
+    "name": "幻想と伝承の決断 (DM23RP2 13B/22)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-13B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-13B",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "水/自然",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "8",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Sansyu",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DMART-14 神アート フェアリー・タイムライン"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-14A",
+    "name": "ガ:ナテハ (DM23RP2 14A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-14A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-14A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "R",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ノワールアビス",
+        "illustrator": "douzen",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-14B",
+    "name": "忍鎖の聖沌 94nm4 (DM23RP2 14B/22)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-14B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-14B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "R",
+        "power": "2000",
+        "cost": "3",
+        "mana": "1",
+        "race": "メカ・デル・ステラ/シノビ",
+        "illustrator": "hatapug",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX1 愛感謝祭 ヒロインBEST DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-15A",
+    "name": "聖沌忍者 シャーリーシー / シャーリー・チャージャー (DM23RP2 15A/20)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-15Aa.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-15A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "U",
+        "power": "8500",
+        "cost": "7",
+        "mana": "1",
+        "race": "メカ・デル・ソル/シノビ",
+        "illustrator": "tetrapod",
+        "abilities": [],
+        "flavor": "商品情報 聖沌忍者 シャーリーシー / シャーリー・チャージャー (DM23RP2 15A/20)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "光",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "メカ・デル・テック/シノビ",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM23-BD7 エキサイティング・デュエパ・デッキ 「ネゴシエートの偽衒学者」 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-15B",
+    "name": "終止の時計 ザ・ミュート (DM23RP2 15B/22)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-15B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-15B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "R",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "マジック・アウトレイジMAX",
+        "illustrator": "Futaro",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP1 逆札篇 第1弾 逆転神VS切札竜 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DMART-17 神アート 蛍光少女 プロモ限定カード 22期"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-16A",
+    "name": "音素記号Bm エネルジコ / ♪水面から 天掴まんと するチャージャー (DM23RP2 16A/20)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-16Aa.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-16A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "U",
+        "power": "9000",
+        "cost": "7",
+        "mana": "1",
+        "race": "マジック・クリスタル・コマンド・ドラゴン",
+        "illustrator": "KISUKE",
+        "abilities": [],
+        "flavor": "商品情報 音素記号Bm エネルジコ / ♪水面から 天掴まんと するチャージャー (DM23RP2 16A/20)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "マジック・ソング",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM23-BD7 エキサイティング・デュエパ・デッキ 「ネゴシエートの偽衒学者」 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-16B",
+    "name": "ガ:ナテハ (DM23RP2 16B/22)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-16B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-16B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "R",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ノワールアビス",
+        "illustrator": "douzen",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-17A",
+    "name": "鎧輪双翔ボルシャック・スカイ (DM23RP2 17A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-17A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-17A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/火",
+        "rarity": "U",
+        "power": "5500",
+        "cost": "5",
+        "mana": "1",
+        "race": "アーマード・ドラゴン/メカ・デル・ディネロ",
+        "illustrator": "SENNSU",
+        "abilities": [],
+        "flavor": "ジャシンに対抗する者同士、火文明と光文明の絆は深い。 商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～ DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-17B",
+    "name": "聖沌忍者 シャーリーシー / シャーリー・チャージャー (DM23RP2 17B/22)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-17Ba.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-17B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "U",
+        "power": "8500",
+        "cost": "7",
+        "mana": "1",
+        "race": "メカ・デル・ソル/シノビ",
+        "illustrator": "tetrapod",
+        "abilities": [],
+        "flavor": "商品情報 聖沌忍者 シャーリーシー / シャーリー・チャージャー (DM23RP2 17B/22)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "光",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "メカ・デル・テック/シノビ",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM23-BD7 エキサイティング・デュエパ・デッキ 「ネゴシエートの偽衒学者」 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-18A",
+    "name": "麗迭人形ジェニー (DM23RP2 18A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-18A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-18A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "1000",
+        "cost": "2",
+        "mana": "1",
+        "race": "デスパペット",
+        "illustrator": "YOICHI ITO",
+        "abilities": [],
+        "flavor": "彼女はお気に入りを一日しか愛さない。それで壊れてしまうからだ。 商品情報 同名カードが含まれる商品を表示 DM24-EX1 超感謝祭 ファンタジーBEST DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-18B",
+    "name": "音素記号Bm エネルジコ / ♪水面から 天掴まんと するチャージャー (DM23RP2 18B/22)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-18Ba.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-18B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "U",
+        "power": "9000",
+        "cost": "7",
+        "mana": "1",
+        "race": "マジック・クリスタル・コマンド・ドラゴン",
+        "illustrator": "KISUKE",
+        "abilities": [],
+        "flavor": "商品情報 音素記号Bm エネルジコ / ♪水面から 天掴まんと するチャージャー (DM23RP2 18B/22)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "マジック・ソング",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM23-BD7 エキサイティング・デュエパ・デッキ 「ネゴシエートの偽衒学者」 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-19A",
+    "name": "アチコチ・鳴・ピッピ (DM23RP2 19A/20)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-19A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-19A",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "C",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "アーマード・ファイアー・バード",
+        "illustrator": "HIRO”WO”NORI",
+        "abilities": [],
+        "flavor": "ファイアー・バードたちは太陽を目指して飛び続ける。 商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-19B",
+    "name": "鎧輪双翔ボルシャック・スカイ (DM23RP2 19B/22)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-19B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-19B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/火",
+        "rarity": "U",
+        "power": "5500",
+        "cost": "5",
+        "mana": "1",
+        "race": "アーマード・ドラゴン/メカ・デル・ディネロ",
+        "illustrator": "SENNSU",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～ DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-20A",
+    "name": "ファンタジスタ・ライフ (DM23RP2 20A/20)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-20A.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-20A",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "自然",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "4",
+        "mana": "1",
+        "race": "ジャイアント・スキル",
+        "illustrator": "HIRO”WO”NORI",
+        "abilities": [],
+        "flavor": "自然文明の首領は、永遠にコースをまわり続ける。 商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-20B",
+    "name": "麗迭人形ジェニー (DM23RP2 20B/22)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-20B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-20B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "1000",
+        "cost": "2",
+        "mana": "1",
+        "race": "デスパペット",
+        "illustrator": "YOICHI ITO",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM24-EX1 超感謝祭 ファンタジーBEST DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-21B",
+    "name": "アチコチ・鳴・ピッピ (DM23RP2 21B/22)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-21B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-21B",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "C",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "アーマード・ファイアー・バード",
+        "illustrator": "HIRO”WO”NORI",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-22B",
+    "name": "ファンタジスタ・ライフ (DM23RP2 22B/22)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-22B.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-22B",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "自然",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "4",
+        "mana": "1",
+        "race": "ジャイアント・スキル",
+        "illustrator": "HIRO”WO”NORI",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-OR01",
+    "name": "聖カオスマントラ (DM23RP2 OR1/OR2)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-OR01.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-OR01",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "OR",
+        "power": "9500",
+        "cost": "7",
+        "mana": "1",
+        "race": "メカ・デル・ステラ/シノビ",
+        "illustrator": "MATSUMOTO EIGHT",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX1 愛感謝祭 ヒロインBEST DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-OR02",
+    "name": "邪闘 シス (DM23RP2 OR2/OR2)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-OR02.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-OR02",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "OR",
+        "power": "9000",
+        "cost": "6",
+        "mana": "1",
+        "race": "アビスキマイラ",
+        "illustrator": "akagi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-S01",
+    "name": "聖沌大忍者 シキソクゼック (DM23RP2 S1/S8)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-S01.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-S01",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "13000",
+        "cost": "8",
+        "mana": "1",
+        "race": "メカ・デル・ソル/シノビ",
+        "illustrator": "Mikio Masuda",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-S02",
+    "name": "マジック・H・コレクター / ♪マジソンを 集めて早し ストリーム (DM23RP2 S2/S8)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-S02a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-S02",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "6000",
+        "cost": "5",
+        "mana": "1",
+        "race": "マジック・サイバー・コマンド",
+        "illustrator": "Yuukoo009",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 マジック・H・コレクター / ♪マジソンを 集めて早し ストリーム (DM23RP2 S2/S8)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "マジック・ソング",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-S03",
+    "name": "Kl’avia Tune (DM23RP2 S3/S8)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-S03.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-S03",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "12000",
+        "cost": "8",
+        "mana": "1",
+        "race": "マジック・コマンド・ドラゴン",
+        "illustrator": "SENNSU",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-S04",
+    "name": "深淵の襲傘 アンブレラ＝イザベラ (DM23RP2 S4/S8)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-S04.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-S04",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "9000",
+        "cost": "8",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "Moopic",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-S05",
+    "name": "ボルシャック・ガラワルド (DM23RP2 S5/S8)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-S05.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-S05",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "SR",
+        "power": "9000",
+        "cost": "8",
+        "mana": "1",
+        "race": "アーマード・ドラゴン",
+        "illustrator": "nablange",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX3 キャラプレミアムパック ドラゴン娘になりたくないっ！ 文化祭だョ！全員集合!!ドラ娘100％パック DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-BD1 ドリーム英雄譚デッキ ボルシャックの書 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-S06",
+    "name": "雷炎翔鎧バルピアレスク (DM23RP2 S6/S8)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-S06.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-S06",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "火",
+        "rarity": "SR",
+        "power": "5000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アーマード・ファイアー・バード/アーマード・ワイバーン",
+        "illustrator": "Murakami Hisashi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-S07",
+    "name": "超球の超人 / 父なるタッチダウン (DM23RP2 S7/S8)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-S07a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-S07",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "12000",
+        "cost": "8",
+        "mana": "1",
+        "race": "ジャイアント",
+        "illustrator": "boyaking",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 超球の超人 / 父なるタッチダウン (DM23RP2 S7/S8)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "自然",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "ジャイアント・スキル",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-S08",
+    "name": "十八番龍 エターナルグリーン ParLife (DM23RP2 S8/S8)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-S08.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-S08",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "SR",
+        "power": "11000",
+        "cost": "10",
+        "mana": "1",
+        "race": "ジャイアント・ドラゴン",
+        "illustrator": "Norikatsu Miyoshi",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-SP01",
+    "name": "百族の長 プチョヘンザ (DM23RP2 SP1/SP4)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-SP01.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-SP01",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/自然",
+        "rarity": "LEG",
+        "power": "12500",
+        "cost": "8",
+        "mana": "1",
+        "race": "ジュラシック・コマンド・ドラゴン/革命軍/ダママ団",
+        "illustrator": "古澤あつし",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!! DM24-SP1 キャラプレミアムデッキ「ドラゴン娘になりたくないっ！」 イェーイめっちゃドラゴン!! DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DMEX-15 20周年超感謝メモリアルパック 魂の章 名場面BEST DMEX-06 絶対王者!! デュエキングパック DMRP-05 双極篇 拡張パック第１弾 轟快!! ジョラゴンGo Fight!! DMR-21 革命ファイナル 拡張パック第１章 ハムカツ団とドギラゴン剣 プロモ限定カード 20期"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-SP02",
+    "name": "獰猛なる大地 (DM23RP2 SP2/SP4)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-SP02.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-SP02",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "自然",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "8",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "丸山恭右",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DMEX-02 デュエマクエスト・パック ～伝説の最強戦略12～ DM-27 極神編 第4弾 完全極神(パーフェクト・ヘヴン) DMX-09 デッキビルダー鬼DX ガンバ！勝太編 プロモ限定カード 12期"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-SP03",
+    "name": "卍 新世壊 卍 (DM23RP2 SP3/SP4)",
+    "type": "無月フィールド",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-SP03.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-SP03",
+    "sides": [
+      {
+        "type": "無月フィールド",
+        "civilization": "水",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "中村佑介",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DMEX-17 20周年超感謝メモリアルパック 究極の章 デュエキングMAX DMRP-08 双極篇 拡張パック第４弾 超決戦!バラギアラ!!無敵オラオラ輪廻∞ DMART-24 神アート 魔法少女アイドル「Girl Mage」 ～偶像魔導具集～"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-SP04",
+    "name": "「敬虔なる警官」 (DM23RP2 SP4/SP4)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-SP04.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-SP04",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "R",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "メタリカ/チーム銀河",
+        "illustrator": "風間雷太",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-BD7 エキサイティング・デュエパ・デッキ 「ネゴシエートの偽衒学者」 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DM22-EX1 黄金戦略!!デュエキングMAX 2022 DMEX-14 弩闘×十王超ファイナルウォーズ!!!"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-SP05",
+    "name": "一王二命三眼槍 (DM23RP2 SP5/SP4)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-SP05.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-SP05",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇/火",
+        "rarity": "SR",
+        "power": "6000",
+        "cost": "5",
+        "mana": "1",
+        "race": "デモニオ/鬼札王国",
+        "illustrator": "しぐれうい",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP3 逆札篇 第3弾 勝敵！逆転おこせ鬼の∞ディスペクター!! DM26-SD1 ドキドキつよいデッキ 25の王道 DM23-BD2 開発部セレクションデッキ 「火闇邪王門」 DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DM22-EX2 ヒーローズ・ダークサイド・パック ～闇のキリフダたち～ DMRP-21 王来MAX第1弾 鬼ヤバ逆襲S-MAX!! DMEX-17 20周年超感謝メモリアルパック 究極の章 デュエキングMAX DMRP-16 十王篇拡張パック第4弾 百王×邪王 鬼レヴォリューション!!! DMART-01 神アート 鬼札覇王絵巻"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-T01",
+    "name": "「ひっくり返したれやぁぁぁ!!」 (DM23RP2 T1/T10)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-T01.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-T01",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "火",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "7",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Adachi Yosuke",
+        "abilities": [],
+        "flavor": "行くぞ！ガイギンガ!! — グレンモルト 商品情報 同名カードが含まれる商品を表示 DM25-EX4 エピソード4 パンドラ・ウォーズ DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DMEX-15 20周年超感謝メモリアルパック 魂の章 名場面BEST"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-T02",
+    "name": "夏だ！デュエル修業だ!! (DM23RP2 T2/T10)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-T02.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-T02",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "水/火/自然",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "HIRO”WO”NORI",
+        "abilities": [],
+        "flavor": "えーい！「チャンネル登録よろゆり」アタック～!! — 珊瑚妖精キユリ さすがキユリちゃんっ！すごいすごいすご～い!! — 応援妖精エール 商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DMEX-15 20周年超感謝メモリアルパック 魂の章 名場面BEST"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-T03",
+    "name": "オリオティス・ジャッジ (DM23RP2 T3/T10)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-T03.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-T03",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "TUBAKI HALSAME",
+        "abilities": [],
+        "flavor": "相手に厳しく、自分にも厳しく。それがオリオティスの信条だ。 商品情報 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM23-EX2 頂上決戦!!デュエキングMAX 2023 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DMEX-06 絶対王者!! デュエキングパック DMX-24 革命ファイナル 輝け！デュエデミー賞パック DMX-22 革命 超ブラック・ボックス・パック プロモ限定カード 25期 プロモ限定カード 16期"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-T04",
+    "name": "奇天烈 ガチダイブ (DM23RP2 T4/T10)",
+    "type": "進化クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-T04.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-T04",
+    "sides": [
+      {
+        "type": "進化クリーチャー",
+        "civilization": "水",
+        "rarity": "R",
+        "power": "6000",
+        "cost": "5",
+        "mana": "1",
+        "race": "マジック・コマンド/グレートメカオー/侵略者",
+        "illustrator": "MATSUMOTO EIGHT",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP3 アビス・レボリューション 第3弾 「魔覇革命」 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DMEX-12 最強戦略!!ドラリンパック DMR-20 革命 拡張パック第4章 正体判明のギュウジン丸!!"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-T05",
+    "name": "「光魔の鎧」 (DM23RP2 T5/T10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-T05.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-T05",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/水",
+        "rarity": "R",
+        "power": "2000",
+        "cost": "7",
+        "mana": "1",
+        "race": "メタリカ/チーム銀河",
+        "illustrator": "tetrapod",
+        "abilities": [],
+        "flavor": "仮に「光魔の鎧」がやられても、必ず誰かのカバーが入る。チーム銀河は欠かさぬ訓練によって、そうした高度なチームワークを体得しているのだ。 商品情報 同名カードが含まれる商品を表示 DM24-RP2 王道篇 第2弾 「カイザー・オブ・ハイパードラゴン」 DM23-BD7 エキサイティング・デュエパ・デッキ 「ネゴシエートの偽衒学者」 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DMEX-19 マスター・ファイナル・メモリアル・パック DMRP-13 十王篇拡張パック第1弾 切札x鬼札 キングウォーズ!!! プロモ限定カード 19期"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-T06",
+    "name": "凰翔竜機ワルキューレ・ルピア (DM23RP2 T6/T10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-T06.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-T06",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/火",
+        "rarity": "R",
+        "power": "6000",
+        "cost": "5",
+        "mana": "1",
+        "race": "ファイアー・バード/アーマード・ドラゴン",
+        "illustrator": "RUI MARUYAMA",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DM22-EX1 黄金戦略!!デュエキングMAX 2022 DMEX-17 20周年超感謝メモリアルパック 究極の章 デュエキングMAX DMEX-12 最強戦略!!ドラリンパック"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-T07",
+    "name": "天災 デドダム (DM23RP2 T7/T10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-T07.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-T07",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/闇/自然",
+        "rarity": "R",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "トリニティ・コマンド/侵略者",
+        "illustrator": "otumami",
+        "abilities": [],
+        "flavor": "天才が受け入れられるには、時代は早すぎた。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP3 逆札篇 第3弾 勝敵！逆転おこせ鬼の∞ディスペクター!! DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ DM23-BD3 開発部セレクションデッキ 「水闇自然ハンデス」 DM23-EX2 頂上決戦!!デュエキングMAX 2023 DM23-BD1 レジェンドスーパーデッキ 禁王創来 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」 DM22-EX2 ヒーローズ・ダークサイド・パック ～闇のキリフダたち～ DM22-EX1 黄金戦略!!デュエキングMAX 2022 DMRP-22 王来MAX最終弾 切札!マスターCRYMAX!! DMRP-21 王来MAX第1弾 鬼ヤバ逆襲S-MAX!! DMRP-20 王来篇拡張パック第4弾 終末王龍大戦 DMEX-16 20周年超感謝メモリアルパック 技の章 英雄戦略パーフェクト20 DMBD-10 アルティメット・クロニクル・デッキ 2019 SSS!! 侵略デッドディザスター DMART-22 神アート アニマル・マスターズ ～決闘は猫である～ DMART-07 神アート COLORFUL＊SNOW プロモ限定カード 24期 プロモ限定カード 21期 プロモ限定カード 19期"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-T08",
+    "name": "桜風妖精ステップル (DM23RP2 T8/T10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-T08.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-T08",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "U",
+        "power": "1000",
+        "cost": "2",
+        "mana": "1",
+        "race": "スノーフェアリー",
+        "illustrator": "Daisuke Izuka",
+        "abilities": [],
+        "flavor": "風とともにステップルは各地を巡る。生命の芽吹きを祝福するために。 商品情報 同名カードが含まれる商品を表示 DM24-EX4 にじさんじコラボ・マスターズ「異次元の超獣使い」 DM24-EX1 超感謝祭 ファンタジーBEST DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DMEX-12 最強戦略!!ドラリンパック DMEX-09 Wチームドッキングパック チーム切札＆チームウェイブ DMEX-07 必殺!!マキシマム・ザ・マスターパック DMRP-01 拡張パック新1弾 ジョーカーズ参上！！ プロモ限定カード 20期"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-T09",
+    "name": "裏斬隠 カクシ・レシピ (DM23RP2 T9/T10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-T09.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-T09",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "C",
+        "power": "3000",
+        "cost": "4",
+        "mana": "1",
+        "race": "スプラッシュ・クイーン/シノビ",
+        "illustrator": "Heart",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DMEX-12 最強戦略!!ドラリンパック"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-T10",
+    "name": "雲の超人 (DM23RP2 T10/T10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-T10.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-T10",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "C",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ジャイアント",
+        "illustrator": "hatapug",
+        "abilities": [],
+        "flavor": "雲に覆われた空から雨が降ってきたなら、そこには２つの可能性が存在する。雨雲のせいか、もしくは雲の超人が大泣きしているかだ。 商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」 DM22-EX1 黄金戦略!!デュエキングMAX 2022"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-TF01",
+    "name": "「ひっくり返したれやぁぁぁ!!」 (DM23RP2 TF1/TF10)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-TF01.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-TF01",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "火",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "7",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "Adachi Yosuke",
+        "abilities": [],
+        "flavor": "ザ＝デッドマン……お前だけは許さない!! — グレンモルト 商品情報 同名カードが含まれる商品を表示 DM25-EX4 エピソード4 パンドラ・ウォーズ DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DMEX-15 20周年超感謝メモリアルパック 魂の章 名場面BEST"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-TF02",
+    "name": "夏だ！デュエル修業だ!! (DM23RP2 TF2/TF10)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-TF02.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-TF02",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "水/火/自然",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "HIRO”WO”NORI",
+        "abilities": [],
+        "flavor": "お姉様、恥ずかしいです……。 — 恋愛妖精アジサイ アジサイちゃん大丈夫よ、と～～～っても可愛いから！ — 情熱妖精ヒガンナ 商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DMEX-15 20周年超感謝メモリアルパック 魂の章 名場面BEST"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-TF03",
+    "name": "オリオティス・ジャッジ (DM23RP2 TF3/TF10)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-TF03.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-TF03",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光",
+        "rarity": "R",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "TUBAKI HALSAME",
+        "abilities": [],
+        "flavor": "オリオティスに不正が見つかって裁かれた者は、有罪率が300%を超えてしまう。最初に見つけた不正の他にも、隠れた不正が必ず２つ以上見つけられてしまうからだ。 商品情報 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM23-EX2 頂上決戦!!デュエキングMAX 2023 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DMEX-06 絶対王者!! デュエキングパック DMX-24 革命ファイナル 輝け！デュエデミー賞パック DMX-22 革命 超ブラック・ボックス・パック プロモ限定カード 25期 プロモ限定カード 16期"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-TF04",
+    "name": "奇天烈 ガチダイブ (DM23RP2 TF4/TF10)",
+    "type": "進化クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-TF04.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-TF04",
+    "sides": [
+      {
+        "type": "進化クリーチャー",
+        "civilization": "水",
+        "rarity": "R",
+        "power": "6000",
+        "cost": "5",
+        "mana": "1",
+        "race": "マジック・コマンド/グレートメカオー/侵略者",
+        "illustrator": "MATSUMOTO EIGHT",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP3 アビス・レボリューション 第3弾 「魔覇革命」 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DMEX-12 最強戦略!!ドラリンパック DMR-20 革命 拡張パック第4章 正体判明のギュウジン丸!!"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-TF05",
+    "name": "「光魔の鎧」 (DM23RP2 TF5/TF10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-TF05.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-TF05",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/水",
+        "rarity": "R",
+        "power": "2000",
+        "cost": "7",
+        "mana": "1",
+        "race": "メタリカ/チーム銀河",
+        "illustrator": "tetrapod",
+        "abilities": [],
+        "flavor": "たとえ何度倒れようとも、「光魔の鎧」の名を継ぐ者が必ず現れる。それがチーム銀河だ。 商品情報 同名カードが含まれる商品を表示 DM24-RP2 王道篇 第2弾 「カイザー・オブ・ハイパードラゴン」 DM23-BD7 エキサイティング・デュエパ・デッキ 「ネゴシエートの偽衒学者」 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DMEX-19 マスター・ファイナル・メモリアル・パック DMRP-13 十王篇拡張パック第1弾 切札x鬼札 キングウォーズ!!! プロモ限定カード 19期"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-TF06",
+    "name": "凰翔竜機ワルキューレ・ルピア (DM23RP2 TF6/TF10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-TF06.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-TF06",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/火",
+        "rarity": "R",
+        "power": "6000",
+        "cost": "5",
+        "mana": "1",
+        "race": "ファイアー・バード/アーマード・ドラゴン",
+        "illustrator": "RUI MARUYAMA",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DM22-EX1 黄金戦略!!デュエキングMAX 2022 DMEX-17 20周年超感謝メモリアルパック 究極の章 デュエキングMAX DMEX-12 最強戦略!!ドラリンパック"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-TF07",
+    "name": "天災 デドダム (DM23RP2 TF7/TF10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-TF07.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-TF07",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/闇/自然",
+        "rarity": "R",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "トリニティ・コマンド/侵略者",
+        "illustrator": "otumami",
+        "abilities": [],
+        "flavor": "未来から見ても、まだ時代が追いついていない。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP3 逆札篇 第3弾 勝敵！逆転おこせ鬼の∞ディスペクター!! DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP4 王道W 第4弾 終淵 ～LOVE＆ABYSS～ DM23-BD3 開発部セレクションデッキ 「水闇自然ハンデス」 DM23-EX2 頂上決戦!!デュエキングMAX 2023 DM23-BD1 レジェンドスーパーデッキ 禁王創来 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」 DM22-EX2 ヒーローズ・ダークサイド・パック ～闇のキリフダたち～ DM22-EX1 黄金戦略!!デュエキングMAX 2022 DMRP-22 王来MAX最終弾 切札!マスターCRYMAX!! DMRP-21 王来MAX第1弾 鬼ヤバ逆襲S-MAX!! DMRP-20 王来篇拡張パック第4弾 終末王龍大戦 DMEX-16 20周年超感謝メモリアルパック 技の章 英雄戦略パーフェクト20 DMBD-10 アルティメット・クロニクル・デッキ 2019 SSS!! 侵略デッドディザスター DMART-22 神アート アニマル・マスターズ ～決闘は猫である～ DMART-07 神アート COLORFUL＊SNOW プロモ限定カード 24期 プロモ限定カード 21期 プロモ限定カード 19期"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-TF08",
+    "name": "桜風妖精ステップル (DM23RP2 TF8/TF10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-TF08.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-TF08",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "U",
+        "power": "1000",
+        "cost": "2",
+        "mana": "1",
+        "race": "スノーフェアリー",
+        "illustrator": "Daisuke Izuka",
+        "abilities": [],
+        "flavor": "ステップルは寒さが大嫌いなので、冬の間は家から出てこない。だがそれ以上に暖かな日差しが大好きなので、少しでも早く冬を終わらせようと毎年努力している。 商品情報 同名カードが含まれる商品を表示 DM24-EX4 にじさんじコラボ・マスターズ「異次元の超獣使い」 DM24-EX1 超感謝祭 ファンタジーBEST DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DMEX-12 最強戦略!!ドラリンパック DMEX-09 Wチームドッキングパック チーム切札＆チームウェイブ DMEX-07 必殺!!マキシマム・ザ・マスターパック DMRP-01 拡張パック新1弾 ジョーカーズ参上！！ プロモ限定カード 20期"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-TF09",
+    "name": "裏斬隠 カクシ・レシピ (DM23RP2 TF9/TF10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-TF09.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-TF09",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "C",
+        "power": "3000",
+        "cost": "4",
+        "mana": "1",
+        "race": "スプラッシュ・クイーン/シノビ",
+        "illustrator": "Heart",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DMEX-12 最強戦略!!ドラリンパック"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-TF10",
+    "name": "雲の超人 (DM23RP2 TF10/TF10)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-TF10.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-TF10",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "C",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ジャイアント",
+        "illustrator": "hatapug",
+        "abilities": [],
+        "flavor": "周りの雲を身体にくっつけてしまうので、雲の超人が通った後には晴れやかな青空が広がるという。 商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」 DM22-EX1 黄金戦略!!デュエキングMAX 2022"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-TR01",
+    "name": "切札勝太&カツキング ー熱血の物語ー (DM23RP2 TR1/TR9)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-TR01.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-TR01",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/火/自然",
+        "rarity": "DSR",
+        "power": "5000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アウトレイジ・ドラゴン/ヒューマノイド",
+        "illustrator": "Murakami Hisashi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!! DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-BD3 ドリーム英雄譚デッキ グレンモルトの書 DM25-SP1 キャラプレミアムデッキ 「ドラゴン娘になりたくないっ!」Jack-Pot-Live!! in 桜龍高校 DM24-EX3 刺激爆発デュエナマイトパック DM23-RP3 アビス・レボリューション 第3弾 「魔覇革命」 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DM22-EX1 黄金戦略!!デュエキングMAX 2022 DMBD-19 開発部セレクションデッキ 「火水覇道」 DMEX-15 20周年超感謝メモリアルパック 魂の章 名場面BEST DMART-17 神アート 蛍光少女"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-TR02",
+    "name": "ガヨウ神 (DM23RP2 TR2/TR9)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-TR02.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-TR02",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "ゼロ",
+        "rarity": "SR",
+        "power": "4000",
+        "cost": "5",
+        "mana": "1",
+        "race": "ジョーカーズ/スペシャルズ",
+        "illustrator": "neko61 Design 中山涼太郎",
+        "abilities": [],
+        "flavor": "「画用紙」を超えた「画用紙」！それがガヨウ神!! 商品情報 同名カードが含まれる商品を表示 DM24-BD2 ドリーム英雄譚デッキ ジョニーの書 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」 DMRP-05 双極篇 拡張パック第１弾 轟快!! ジョラゴンGo Fight!!"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-TR03",
+    "name": "裏斬隠蒼頭龍 バジリスク (DM23RP2 TR3/TR9)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-TR03.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-TR03",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "6000",
+        "cost": "6",
+        "mana": "1",
+        "race": "シノビ・ドラゴン/オリジン",
+        "illustrator": "tetrapod",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DMEX-12 最強戦略!!ドラリンパック"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-TR04",
+    "name": "月下卍壊 ガ・リュミーズ 卍 (DM23RP2 TR4/TR9)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-TR04.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-TR04",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "水",
+        "rarity": "SR",
+        "power": "コスト",
+        "cost": "99",
+        "mana": "1",
+        "race": "ドルスザク",
+        "illustrator": "Kotakan",
+        "abilities": [],
+        "flavor": "闇文明のマスターは、世界を壊すことを願った。そしてそのために無限の時間を手に入れた。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」 DMEX-17 20周年超感謝メモリアルパック 究極の章 デュエキングMAX DMRP-08 双極篇 拡張パック第４弾 超決戦!バラギアラ!!無敵オラオラ輪廻∞ DMART-24 神アート 魔法少女アイドル「Girl Mage」 ～偶像魔導具集～"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-TR05",
+    "name": "超神星DOOM・ドラゲリオン (DM23RP2 TR5/TR9)",
+    "type": "進化クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-TR05.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-TR05",
+    "sides": [
+      {
+        "type": "進化クリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "12000",
+        "cost": "12",
+        "mana": "1",
+        "race": "フェニックス/デーモン・コマンド/ドラゴン・ゾンビ",
+        "illustrator": "toriyufu",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-EX2 悪感謝祭 カリスマBEST DM26-RP1 逆札篇 第1弾 逆転神VS切札竜 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP2 王道W 第2弾 邪神vs邪神Ⅱ ～ジャシン・イン・ザ・シェル～ DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DM22-EX1 黄金戦略!!デュエキングMAX 2022"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-TR06",
+    "name": "ジョルジュ・バタイユ (DM23RP2 TR6/TR9)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-TR06.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-TR06",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "12000",
+        "cost": "8",
+        "mana": "1",
+        "race": "マフィ・ギャング",
+        "illustrator": "Kotakan",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DMRP-01 拡張パック新1弾 ジョーカーズ参上！！"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-TR07",
+    "name": "星龍パーフェクト・アース (DM23RP2 TR7/TR9)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-TR07.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-TR07",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/水/闇/火/自然",
+        "rarity": "SR",
+        "power": "6000",
+        "cost": "5",
+        "mana": "-",
+        "race": "ワールド・ドラゴン",
+        "illustrator": "Kotakan",
+        "abilities": [],
+        "flavor": "仙界に封じられし星の記憶。それが龍の姿となったとき、五文明すべてに奇跡を起こす！ 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM24-EX3 刺激爆発デュエナマイトパック DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DMEX-01 ゴールデン・ベスト DMX-19 スーパーレア100%パック DMC-66 デュエル・マスターズ 超BEST DMC-55 コロコロ・レジェンド・７ DM-27 極神編 第4弾 完全極神(パーフェクト・ヘヴン)"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-TR08",
+    "name": "瞬閃と疾駆と双撃の決断 (DM23RP2 TR8/TR9)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-TR08.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-TR08",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "火",
+        "rarity": "VR",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "MITSUAKI MATSUMOTO",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM23-RP4X アビス・レボリューション 第4弾 「竜皇神爆輝」 超刺激パック DM23-RP4 アビス・レボリューション 第4弾 「竜皇神爆輝」 DM23-SD3 スタートWINデッキ 革命・アメイジン・マジック DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DM22-BD2 開発部セレクションデッキ 「光水火鬼羅.Star」 DMEX-19 マスター・ファイナル・メモリアル・パック DMRP-11 超天篇 拡張パック第3弾 零誕！魔神おこせジョルネード1059!! DMART-04 神アート 超獣創造 ～松本しげのぶの世界～"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2-TR09",
+    "name": "黒豆だんしゃく / 白米男しゃく (DM23RP2 TR9/TR9)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2-TR09a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2-TR09",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "自然",
+        "rarity": "VR",
+        "power": "12000",
+        "cost": "8",
+        "mana": "1",
+        "race": "グランセクト/スペシャルズ",
+        "illustrator": "otumami Design 荻原玲",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 黒豆だんしゃく / 白米男しゃく (DM23RP2 TR9/TR9)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "自然",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "特殊能力",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM23-BD5 エキサイティング・デュエパ・デッキ 「不敬なり！真邪眼騎士団」 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DMEX-19 マスター・ファイナル・メモリアル・パック DMEX-12 最強戦略!!ドラリンパック DMRP-05 双極篇 拡張パック第１弾 轟快!! ジョラゴンGo Fight!!"
+      }
+    ]
+  },
+  {
     "id": "dm23rp2x-001",
     "name": "フラウム・ゴルギーニ (DM23RP2X 1/8)",
     "type": "クリーチャー",
@@ -19716,6 +24693,27 @@
     ]
   },
   {
+    "id": "dm23rp2x-SP01",
+    "name": "百族の長 プチョヘンザ (DM23RP2X SP1/SP4)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2x-SP01.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2x-SP01",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光/自然",
+        "rarity": "LEG",
+        "power": "12500",
+        "cost": "8",
+        "mana": "1",
+        "race": "ジュラシック・コマンド・ドラゴン/革命軍/ダママ団",
+        "illustrator": "古澤あつし",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!! DM24-SP1 キャラプレミアムデッキ「ドラゴン娘になりたくないっ！」 イェーイめっちゃドラゴン!! DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DMEX-15 20周年超感謝メモリアルパック 魂の章 名場面BEST DMEX-06 絶対王者!! デュエキングパック DMRP-05 双極篇 拡張パック第１弾 轟快!! ジョラゴンGo Fight!! DMR-21 革命ファイナル 拡張パック第１章 ハムカツ団とドギラゴン剣 プロモ限定カード 20期"
+      }
+    ]
+  },
+  {
     "id": "dm23rp2x-SP02",
     "name": "獰猛なる大地 (DM23RP2X SP2/SP4)",
     "type": "呪文",
@@ -20006,6 +25004,27 @@
         "illustrator": "hatapug",
         "abilities": [],
         "flavor": "周りの雲を身体にくっつけてしまうので、雲の超人が通った後には晴れやかな青空が広がるという。 商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」 DM22-EX1 黄金戦略!!デュエキングMAX 2022"
+      }
+    ]
+  },
+  {
+    "id": "dm23rp2x-TR01",
+    "name": "切札勝太&カツキング ー熱血の物語ー (DM23RP2X TR1/TR9)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23rp2x-TR01.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23rp2x-TR01",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "水/火/自然",
+        "rarity": "DSR",
+        "power": "5000",
+        "cost": "5",
+        "mana": "1",
+        "race": "アウトレイジ・ドラゴン/ヒューマノイド",
+        "illustrator": "Murakami Hisashi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-RP2 逆札篇 第2弾 燃えろ禁断！逆転のドギラゴン革命!! DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-BD3 ドリーム英雄譚デッキ グレンモルトの書 DM25-SP1 キャラプレミアムデッキ 「ドラゴン娘になりたくないっ!」Jack-Pot-Live!! in 桜龍高校 DM24-EX3 刺激爆発デュエナマイトパック DM23-RP3 アビス・レボリューション 第3弾 「魔覇革命」 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DM22-EX1 黄金戦略!!デュエキングMAX 2022 DMBD-19 開発部セレクションデッキ 「火水覇道」 DMEX-15 20周年超感謝メモリアルパック 魂の章 名場面BEST DMART-17 神アート 蛍光少女"
       }
     ]
   },
@@ -31716,6 +36735,324 @@
     ]
   },
   {
+    "id": "dm23sd2-001",
+    "name": "聖なる混沌 クノイチマントラ (DM23SD2 1/14)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23sd2-001.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23sd2-001",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "7000",
+        "cost": "5",
+        "mana": "1",
+        "race": "メカ・デル・ステラ/シノビ",
+        "illustrator": "MATSUMOTO EIGHT",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-SD2 スタートWINデッキ 聖沌・クノイチ・チェンジ"
+      }
+    ]
+  },
+  {
+    "id": "dm23sd2-002",
+    "name": "聖沌大忍者 ハラギャティ (DM23SD2 2/14)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23sd2-002.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23sd2-002",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "SR",
+        "power": "10000",
+        "cost": "9",
+        "mana": "1",
+        "race": "メカ・デル・ソル/シノビ",
+        "illustrator": "MATSUMOTO EIGHT",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-SD2 スタートWINデッキ 聖沌・クノイチ・チェンジ"
+      }
+    ]
+  },
+  {
+    "id": "dm23sd2-003",
+    "name": "水雲の聖沌 5u170n (DM23SD2 3/14)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23sd2-003.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23sd2-003",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "R",
+        "power": "4000",
+        "cost": "5",
+        "mana": "1",
+        "race": "メカ・デル・ステラ/シノビ",
+        "illustrator": "hatapug",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DM23-SD2 スタートWINデッキ 聖沌・クノイチ・チェンジ"
+      }
+    ]
+  },
+  {
+    "id": "dm23sd2-004",
+    "name": "星姫械 シリエス (DM23SD2 4/14)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23sd2-004.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23sd2-004",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "R",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "メカ・デル・ステラ",
+        "illustrator": "Katora",
+        "abilities": [],
+        "flavor": "シノビのオキテ：メカを展開しながらカードを引いて、手札にニンジャ・ストライク持ちやニンジャ・チェンジ持ちのシノビを大量に抱えて相手の攻撃に備えるべし!! 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-SD2 スタートWINデッキ 聖沌・クノイチ・チェンジ DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23sd2-005",
+    "name": "警鐘の聖沌 n4rc0 (DM23SD2 5/14)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23sd2-005.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23sd2-005",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "R",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "メカ・デル・ステラ/シノビ",
+        "illustrator": "KIYA",
+        "abilities": [],
+        "flavor": "シノビのオキテ：このデッキの切り札、クノイチマントラは相手の攻撃やブロックに対してバトルゾーンのメカまたはシノビと入れ替わっていきなり出てくるニンジャ・チェンジ持ち！代わりにこいつを手札に戻して、能力を再利用すべし!! 商品情報 同名カードが含まれる商品を表示 DM25-EX1 愛感謝祭 ヒロインBEST DM23-SD2 スタートWINデッキ 聖沌・クノイチ・チェンジ"
+      }
+    ]
+  },
+  {
+    "id": "dm23sd2-006",
+    "name": "忍縛の聖沌 3n9375u (DM23SD2 6/14)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23sd2-006.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23sd2-006",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "R",
+        "power": "1000",
+        "cost": "1",
+        "mana": "1",
+        "race": "メカ・デル・ステラ/シノビ",
+        "illustrator": "douzen",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-SD2 スタートWINデッキ 聖沌・クノイチ・チェンジ"
+      }
+    ]
+  },
+  {
+    "id": "dm23sd2-007",
+    "name": "煙幕の聖沌 k3mur1 / 聖沌忍法 メカくしの術 (DM23SD2 7/14)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23sd2-007a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23sd2-007",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "U",
+        "power": "4000",
+        "cost": "3",
+        "mana": "1",
+        "race": "メカ・デル・ステラ/シノビ",
+        "illustrator": "KOUSAKU",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 煙幕の聖沌 k3mur1 / 聖沌忍法 メカくしの術 (DM23SD2 7/14)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "光",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "3",
+        "mana": "1",
+        "race": "メカ・デル・テック/シノビ",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM23-SD2 スタートWINデッキ 聖沌・クノイチ・チェンジ"
+      }
+    ]
+  },
+  {
+    "id": "dm23sd2-008",
+    "name": "光牙忍ライデン (DM23SD2 8/14)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23sd2-008.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23sd2-008",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "U",
+        "power": "1000",
+        "cost": "3",
+        "mana": "1",
+        "race": "アーク・セラフィム/シノビ",
+        "illustrator": "Syuichi Obata",
+        "abilities": [],
+        "flavor": "シノビのオキテ：ニンジャ・ストライクの直後はニンジャ・チェンジできぬぞ！ 商品情報 同名カードが含まれる商品を表示 DM23-SD2 スタートWINデッキ 聖沌・クノイチ・チェンジ DMEX-12 最強戦略!!ドラリンパック DMEX-06 絶対王者!! デュエキングパック DMEX-01 ゴールデン・ベスト DM-30 戦国編 第3弾 戦極魂(ウルトラ・デュエル)"
+      }
+    ]
+  },
+  {
+    "id": "dm23sd2-009",
+    "name": "星姫械 ミモザスター / 招光呪文「メカミング」 (DM23SD2 9/14)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23sd2-009a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23sd2-009",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "C",
+        "power": "7500",
+        "cost": "5",
+        "mana": "1",
+        "race": "メカ・デル・ステラ",
+        "illustrator": "Ishibashi Yosuke",
+        "abilities": [],
+        "flavor": "シノビのオキテ：序盤はシリエスを、中盤以降はクノイチマントラを探すべし！ 商品情報 星姫械 ミモザスター / 招光呪文「メカミング」 (DM23SD2 9/14)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "光",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "1",
+        "mana": "1",
+        "race": "メカ・デル・テック",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DM23-SD2 スタートWINデッキ 聖沌・クノイチ・チェンジ"
+      }
+    ]
+  },
+  {
+    "id": "dm23sd2-010",
+    "name": "忍瞬の聖沌 53nju (DM23SD2 10/14)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23sd2-010.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23sd2-010",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "C",
+        "power": "2000",
+        "cost": "5",
+        "mana": "1",
+        "race": "メカ・デル・ステラ/シノビ",
+        "illustrator": "hati",
+        "abilities": [],
+        "flavor": "シノビのオキテ：このカードはこのデッキのエースアタッカー！クノイチマントラを手札に構えてどんどん攻撃すべし！そして、相手が殴り返してきたらこいつを戻してニンジャ・チェンジ！すぐ出し直して攻め続けるべし!! 商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DM23-SD2 スタートWINデッキ 聖沌・クノイチ・チェンジ"
+      }
+    ]
+  },
+  {
+    "id": "dm23sd2-011",
+    "name": "光牙忍ハヤブサマル (DM23SD2 11/14)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23sd2-011.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23sd2-011",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "C",
+        "power": "3000",
+        "cost": "3",
+        "mana": "1",
+        "race": "ガーディアン/シノビ",
+        "illustrator": "Shin \"JASON\" Nagasawa",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM24-BD6 エキサイティング・デュエパ・デッキ ツラトゥストラは水晶と語らう DM24-BD1 ドリーム英雄譚デッキ ドギラゴンの書 DM23-BD7 エキサイティング・デュエパ・デッキ 「ネゴシエートの偽衒学者」 DM23-BD5 エキサイティング・デュエパ・デッキ 「不敬なり！真邪眼騎士団」 DM23-SD2 スタートWINデッキ 聖沌・クノイチ・チェンジ DMBD-21 クロニクル・ダークサイド・デッキ 「終焉」 DMBD-15 レジェンドスーパーデッキ 蒼龍革命 DMEX-08 謎のブラックボックスパック DMEX-01 ゴールデン・ベスト DMX-12 エピソード2 ブラック・ボックス・パック DMX-08 激熱! ガチンコBEST DM-29 戦国編 第2弾 戦国英雄伝(ロックオン・ヒーローズ) DMBD-02 クロニクル・レガシー・デッキ 風雲!! 怒流牙忍法帖 DMD-24 マスターズ・クロニクル・デッキ ボルメテウス・リターンズ プロモ限定カード 24期"
+      }
+    ]
+  },
+  {
+    "id": "dm23sd2-012",
+    "name": "アシスター・アルデ (DM23SD2 12/14)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23sd2-012.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23sd2-012",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "C",
+        "power": "3000",
+        "cost": "2",
+        "mana": "1",
+        "race": "メカ・デル・ステラ",
+        "illustrator": "Kare",
+        "abilities": [],
+        "flavor": "シノビのオキテ：メカをどんどん展開してガンガン攻めるべし！そして相手が反撃してきたところを、ニンジャ・チェンジやニンジャ・ストライクで切り返すべし!! 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-SD2 スタートWINデッキ 聖沌・クノイチ・チェンジ DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23sd2-013",
+    "name": "忍防の聖沌 h4990u (DM23SD2 13/14)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23sd2-013.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23sd2-013",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "光",
+        "rarity": "C",
+        "power": "2500",
+        "cost": "2",
+        "mana": "1",
+        "race": "メカ・デル・ステラ/シノビ",
+        "illustrator": "Katora",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DM23-SD2 スタートWINデッキ 聖沌・クノイチ・チェンジ"
+      }
+    ]
+  },
+  {
+    "id": "dm23sd2-014",
+    "name": "聖沌忍法 7r0y (DM23SD2 14/14)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23sd2-014.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23sd2-014",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "光",
+        "rarity": "C",
+        "power": "コスト",
+        "cost": "4",
+        "mana": "1",
+        "race": "メカ・デル・テック/シノビ",
+        "illustrator": "MATSUMOTO EIGHT",
+        "abilities": [],
+        "flavor": "シノビのオキテ：マナを使わず召喚できる53njuは、手札に戻ってもすぐにまた出し直せる！シリエスがいればさらにドローもできるので、メカをどんどん出して戻すべし!! 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」 DM23-SD2 スタートWINデッキ 聖沌・クノイチ・チェンジ"
+      }
+    ]
+  },
+  {
     "id": "dm23sd3-001",
     "name": "芸魔龍王 アメイジン (DM23SD3 1/15)",
     "type": "クリーチャー",
@@ -32087,6 +37424,423 @@
         "illustrator": "Takaaki Sato",
         "abilities": [],
         "flavor": "このデッキの基本的な動きは、２マナクリーチャーを５マナへと革命チェンジし、さらに５マナクリーチャーをアメイジンへとチェンジさせるというもの！クリーチャーを出してチェンジ、を繰り返すのだ!! 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM24-EX2 天下夢双!!デュエキングDreaM 2024 DM23-SD3 スタートWINデッキ 革命・アメイジン・マジック DM23-RP2X アビス・レボリューション 第2弾 「忍邪乱武」 超刺激パック DM23-RP2 アビス・レボリューション 第2弾 「忍邪乱武」"
+      }
+    ]
+  },
+  {
+    "id": "dm23sp1-001",
+    "name": "スパトー:ド:スパトゥー / 邪暴乱舞 (DM23SP1 1/17)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23sp1-001a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23sp1-001",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "OR",
+        "power": "8000",
+        "cost": "5",
+        "mana": "1",
+        "race": "ノワールアビス",
+        "illustrator": "Moopic",
+        "abilities": [],
+        "flavor": "商品情報 スパトー:ド:スパトゥー / 邪暴乱舞 (DM23SP1 1/17)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "闇",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "6",
+        "mana": "1",
+        "race": "アビスへの誘い",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM23-SP1 スタートWIN・スーパーデッキ 深淵の邪襲"
+      }
+    ]
+  },
+  {
+    "id": "dm23sp1-002",
+    "name": "アビスベル=ジャシン帝 (DM23SP1 2/17)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23sp1-002.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23sp1-002",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "OR",
+        "power": "7000",
+        "cost": "4",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "akagi",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-SD1 いきなりつよいデッキ 技の王道 DM23-SP1 スタートWIN・スーパーデッキ 深淵の邪襲 DM22-RP1 ゴッド・オブ・アビス 第１弾「伝説の邪神」 プロモ限定カード 25期 プロモ限定カード 22期 プロモ限定カード 21期"
+      }
+    ]
+  },
+  {
+    "id": "dm23sp1-003",
+    "name": "ソファ＝ソフティソニア / 「どんな夢がお望みだ？」 (DM23SP1 3/17)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23sp1-003a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23sp1-003",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "14000",
+        "cost": "8",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "hati",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 ソファ＝ソフティソニア / 「どんな夢がお望みだ？」 (DM23SP1 3/17)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "闇",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "4",
+        "mana": "1",
+        "race": "アビスへの誘い",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM23-SP1 スタートWIN・スーパーデッキ 深淵の邪襲"
+      }
+    ]
+  },
+  {
+    "id": "dm23sp1-004",
+    "name": "深淵の壊炉 マーダン=ロウ (DM23SP1 4/17)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23sp1-004.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23sp1-004",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "Moopic",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-EX3 邪神爆発デュエナマイトパック「王道W」 DM25-RP1 王道W 第1弾 邪神vs邪神 ～ソウル・オブ・ジ・アビス～ DM25-SD1 いきなりつよいデッキ 技の王道 DM23-SP1 スタートWIN・スーパーデッキ 深淵の邪襲 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 DMART-25 神アート アビス、東京に現わる"
+      }
+    ]
+  },
+  {
+    "id": "dm23sp1-005",
+    "name": "絶望と反魂と滅殺の決断 (DM23SP1 5/17)",
+    "type": "呪文",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23sp1-005.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23sp1-005",
+    "sides": [
+      {
+        "type": "呪文",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "コスト",
+        "cost": "5",
+        "mana": "1",
+        "race": "イラストレーター",
+        "illustrator": "douzen",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM26-EX2 悪感謝祭 カリスマBEST DM26-SD1 ドキドキつよいデッキ 25の王道 DM24-EX4 にじさんじコラボ・マスターズ「異次元の超獣使い」 DM23-RP4 アビス・レボリューション 第4弾 「竜皇神爆輝」 DM23-BD3 開発部セレクションデッキ 「水闇自然ハンデス」 DM23-SP1 スタートWIN・スーパーデッキ 深淵の邪襲 DMEX-19 マスター・ファイナル・メモリアル・パック DMBD-20 開発部セレクションデッキ 「水闇魔導具」 DMRP-19 王来篇拡張パック第3弾 禁断龍VS禁断竜 DMRP-12 超天篇 拡張パック第4弾 超超超天！覚醒ジョギラゴン vs. 零龍卍誕 DMART-04 神アート 超獣創造 ～松本しげのぶの世界～"
+      }
+    ]
+  },
+  {
+    "id": "dm23sp1-006",
+    "name": "深淵の三咆哮 バウワウジャ (DM23SP1 6/17)",
+    "type": "タマシード/クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23sp1-006.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23sp1-006",
+    "sides": [
+      {
+        "type": "タマシード/クリーチャー",
+        "civilization": "闇",
+        "rarity": "SR",
+        "power": "13000",
+        "cost": "4",
+        "mana": "1",
+        "race": "アビスロイヤル/ACE",
+        "illustrator": "Moopic",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-SP1 スタートWIN・スーパーデッキ 深淵の邪襲 DM22-RP1 ゴッド・オブ・アビス 第１弾「伝説の邪神」"
+      }
+    ]
+  },
+  {
+    "id": "dm23sp1-007",
+    "name": "悪灯 トーチ＝トートロット (DM23SP1 7/17)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23sp1-007.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23sp1-007",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "VR",
+        "power": "5000",
+        "cost": "7",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "douzen",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-SP1 スタートWIN・スーパーデッキ 深淵の邪襲 DM22-RP1 ゴッド・オブ・アビス 第１弾「伝説の邪神」"
+      }
+    ]
+  },
+  {
+    "id": "dm23sp1-008",
+    "name": "ドアノッカ＝ノアドッカ / 「…開けるか？」 (DM23SP1 8/17)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23sp1-008a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23sp1-008",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "R",
+        "power": "4000",
+        "cost": "7",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "Murakami Hisashi",
+        "abilities": [],
+        "flavor": "コイツは１体で迫る２体を倒し、きさまを守ることもあるであろう、フハハハハ！ 商品情報 このカードのよくある質問 ドアノッカ＝ノアドッカ / 「…開けるか？」 (DM23SP1 8/17)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "闇",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "アビスへの誘い",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM25-SD1 いきなりつよいデッキ 技の王道 DM23-SP1 スタートWIN・スーパーデッキ 深淵の邪襲 プロモ限定カード 22期"
+      }
+    ]
+  },
+  {
+    "id": "dm23sp1-009",
+    "name": "イード＝ミード / 「奈落を見たいか？」 (DM23SP1 9/17)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23sp1-009a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23sp1-009",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "R",
+        "power": "12000",
+        "cost": "7",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "Tanaka Kenichi",
+        "abilities": [],
+        "flavor": "メクレイドをするならば、このしもべが来ることを願うがよい！ 商品情報 イード＝ミード / 「奈落を見たいか？」 (DM23SP1 9/17)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "闇",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "2",
+        "mana": "1",
+        "race": "アビスへの誘い",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "同名カードが含まれる商品を表示 DM23-SP1 スタートWIN・スーパーデッキ 深淵の邪襲 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」 プロモ限定カード 22期"
+      }
+    ]
+  },
+  {
+    "id": "dm23sp1-010",
+    "name": "ブルーム＝プルーフ (DM23SP1 10/17)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23sp1-010.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23sp1-010",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "R",
+        "power": "3000",
+        "cost": "2",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "Tanaka Kenichi",
+        "abilities": [],
+        "flavor": "ワレらが新たな力、それがアビス・メクレイドである。山札を３枚めくってそこからより強大なしもべを呼び出せる、深淵の邪襲を支える素晴らしき力だ！ 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-SD1 いきなりつよいデッキ 技の王道 DM23-SP1 スタートWIN・スーパーデッキ 深淵の邪襲 DM22-RP2X ゴッド・オブ・アビス 第2弾「轟炎の竜皇」超刺激パック DM22-RP2 ゴッド・オブ・アビス 第2弾「轟炎の竜皇」 プロモ限定カード 22期"
+      }
+    ]
+  },
+  {
+    "id": "dm23sp1-011",
+    "name": "フットレス＝トレース / 「力が欲しいか？」 (DM23SP1 11/17)",
+    "type": "ツインパクト",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23sp1-011a.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23sp1-011",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "U",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "hati",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 フットレス＝トレース / 「力が欲しいか？」 (DM23SP1 11/17)"
+      },
+      {
+        "type": "呪文",
+        "civilization": "闇",
+        "rarity": "-",
+        "power": "コスト",
+        "cost": "4",
+        "mana": "1",
+        "race": "アビスへの誘い",
+        "illustrator": "",
+        "abilities": [],
+        "flavor": "このカードのよくある質問 同名カードが含まれる商品を表示 DM26-SD1 ドキドキつよいデッキ 25の王道 DM24-EX3 刺激爆発デュエナマイトパック DM24-RP2 王道篇 第2弾 「カイザー・オブ・ハイパードラゴン」 DM23-SP1 スタートWIN・スーパーデッキ 深淵の邪襲"
+      }
+    ]
+  },
+  {
+    "id": "dm23sp1-012",
+    "name": "ド:スモンマー (DM23SP1 12/17)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23sp1-012.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23sp1-012",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "U",
+        "power": "3000",
+        "cost": "5",
+        "mana": "1",
+        "race": "ノワールアビス",
+        "illustrator": "Tobimaru Konatsu",
+        "abilities": [],
+        "flavor": "商品情報 同名カードが含まれる商品を表示 DM23-SP1 スタートWIN・スーパーデッキ 深淵の邪襲 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」"
+      }
+    ]
+  },
+  {
+    "id": "dm23sp1-013",
+    "name": "グ:ボガメン (DM23SP1 13/17)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23sp1-013.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23sp1-013",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "U",
+        "power": "4000",
+        "cost": "4",
+        "mana": "1",
+        "race": "ノワールアビス",
+        "illustrator": "douzen",
+        "abilities": [],
+        "flavor": "商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-SP1 スタートWIN・スーパーデッキ 深淵の邪襲"
+      }
+    ]
+  },
+  {
+    "id": "dm23sp1-014",
+    "name": "ハンマ＝ダンマ (DM23SP1 14/17)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23sp1-014.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23sp1-014",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "U",
+        "power": "2000",
+        "cost": "4",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "tessy",
+        "abilities": [],
+        "flavor": "ピンチの時こそ力が欲しいか？ならば、S・トリガーを望むがよい！相手の攻撃を止めたら、ワレらが逆転の刻が訪れる。 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-SD1 いきなりつよいデッキ 技の王道 DM23-EX2 頂上決戦!!デュエキングMAX 2023 DM23-SP1 スタートWIN・スーパーデッキ 深淵の邪襲 DM22-SD1 スタートWINデッキ 邪神・フロム・アビス コロコロ・スペシャル デッキ12 コロコロ・スペシャル デッキ10 プロモ限定カード 21期"
+      }
+    ]
+  },
+  {
+    "id": "dm23sp1-015",
+    "name": "フォーク＝フォック (DM23SP1 15/17)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23sp1-015.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23sp1-015",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "U",
+        "power": "4000",
+        "cost": "3",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "douzen",
+        "abilities": [],
+        "flavor": "ワレが生み出したノワールアビス、スパトー:ド:スパトゥ―はアビスラッシュで消えた時もアビス・メクレイドでさらなるしもべを呼び出せるのだ。邪暴乱舞でこやつを墓地に叩き落とし、アビスラッシュで深淵より呼び起こせ！ 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM25-SD1 いきなりつよいデッキ 技の王道 DM23-SP1 スタートWIN・スーパーデッキ 深淵の邪襲 DM22-SP1 「伝説の邪神」深淵からの招待状 DM22-RP1 ゴッド・オブ・アビス 第１弾「伝説の邪神」 DM22-SD1 スタートWINデッキ 邪神・フロム・アビス コロコロ・スペシャル デッキ11 プロモ限定カード 22期"
+      }
+    ]
+  },
+  {
+    "id": "dm23sp1-016",
+    "name": "ベル＝ゲルエール (DM23SP1 16/17)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23sp1-016.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23sp1-016",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "1000",
+        "cost": "2",
+        "mana": "1",
+        "race": "アビスロイヤル",
+        "illustrator": "MATSUMOTO EIGHT",
+        "abilities": [],
+        "flavor": "わが能力、アビスラッシュは墓地からしもべどもをよみがえらせ、即、攻撃を開始する能力である。突如あらわれる大量のアビスロイヤルによって深淵の恐ろしさを相手に思い知らせてやれ！ 商品情報 このカードのよくある質問 同名カードが含まれる商品を表示 DM23-SP1 スタートWIN・スーパーデッキ 深淵の邪襲 DM22-SD1 スタートWINデッキ 邪神・フロム・アビス コロコロ・スペシャル デッキ12 プロモ限定カード 22期"
+      }
+    ]
+  },
+  {
+    "id": "dm23sp1-017",
+    "name": "ド:ノラテップ (DM23SP1 17/17)",
+    "type": "クリーチャー",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/dm23sp1-017.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=dm23sp1-017",
+    "sides": [
+      {
+        "type": "クリーチャー",
+        "civilization": "闇",
+        "rarity": "C",
+        "power": "1000",
+        "cost": "2",
+        "mana": "1",
+        "race": "ノワールアビス",
+        "illustrator": "Tobimaru Konatsu",
+        "abilities": [],
+        "flavor": "深淵の邪襲を極めるには、まずは小さきしもべどもで墓地を増やすのだ。そして、スパトー:ド:スパトゥーをアビスラッシュし、メクレイドでさらなるしもべを呼び出し、相手を圧倒するのだ！フハハハハ！ 商品情報 同名カードが含まれる商品を表示 DM23-SP1 スタートWIN・スーパーデッキ 深淵の邪襲 DM23-RP1 アビス・レボリューション 第1弾 「双竜戦記」 コロコロ・スペシャル デッキ10 プロモ限定カード 22期"
       }
     ]
   },

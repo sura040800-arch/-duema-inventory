@@ -1,20 +1,31 @@
 import asyncio
 import json
 import re
+import subprocess
 from pathlib import Path
+from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
 from playwright.async_api import async_playwright
 
 
+# ==========================================
+# 設定
+# ==========================================
+
 OUT = Path("data/cards.json")
 
-# ==============================
-# 今回は50枚だけテスト
-# ==============================
-LIMIT = 50
-
 LIST_URL = "https://dm.takaratomy.co.jp/card/"
+
+# 同時取得数
+CONCURRENCY = 8
+
+# 何枚ごとにGitHubへ保存するか
+CHECKPOINT = 250
+
+# 詳細ページの最大リトライ回数
+RETRIES = 3
+
 
 LABELS = [
     "カードの種類",
@@ -31,6 +42,10 @@ LABELS = [
 ]
 
 
+# ==========================================
+# 共通
+# ==========================================
+
 def clean(text):
     if not text:
         return ""
@@ -38,35 +53,6 @@ def clean(text):
     text = re.sub(r"\s+", " ", text)
 
     return text.strip()
-
-
-def get_image(soup):
-    candidates = []
-
-    for img in soup.find_all("img"):
-        src = img.get("src")
-
-        if not src:
-            continue
-
-        if src.startswith("//"):
-            src = "https:" + src
-
-        elif src.startswith("/"):
-            src = "https://dm.takaratomy.co.jp" + src
-
-        src_lower = src.lower()
-
-        if (
-            "wp-content/uploads" in src_lower
-            or "/card/" in src_lower
-        ):
-            candidates.append(src)
-
-    if candidates:
-        return candidates[0]
-
-    return ""
 
 
 def get_lines(soup):
@@ -84,27 +70,66 @@ def get_lines(soup):
     return lines
 
 
+def get_image(soup):
+
+    candidates = []
+
+    for img in soup.find_all("img"):
+
+        src = img.get("src")
+
+        if not src:
+            continue
+
+        if src.startswith("//"):
+            src = "https:" + src
+
+        elif src.startswith("/"):
+            src = urljoin(
+                "https://dm.takaratomy.co.jp",
+                src
+            )
+
+        lower = src.lower()
+
+        if (
+            "wp-content/uploads" in lower
+            or "/card/" in lower
+        ):
+            candidates.append(src)
+
+    if candidates:
+        return candidates[0]
+
+    return ""
+
+
 def get_value(lines, label):
 
     for i, line in enumerate(lines):
 
-        if line == label:
+        if line != label:
+            continue
 
-            if i + 1 >= len(lines):
-                return ""
+        if i + 1 >= len(lines):
+            return ""
 
-            value = lines[i + 1]
+        value = lines[i + 1]
 
-            if value in LABELS:
-                return ""
+        if value in LABELS:
+            return ""
 
-            if value == "---":
-                return ""
+        if value == "---":
+            return ""
 
-            return clean(value)
+        return clean(value)
 
     return ""
 
+
+# ==========================================
+# 能力
+# ==========================================
 
 def get_abilities(lines):
 
@@ -114,7 +139,9 @@ def get_abilities(lines):
     for i, line in enumerate(lines):
 
         if line == "特殊能力":
+
             start = i + 1
+
             break
 
     if start is None:
@@ -123,7 +150,9 @@ def get_abilities(lines):
     for i in range(start, len(lines)):
 
         if lines[i] == "フレーバー":
+
             end = i
+
             break
 
     if end is None:
@@ -158,6 +187,10 @@ def get_abilities(lines):
     return abilities
 
 
+# ==========================================
+# フレーバー
+# ==========================================
+
 def get_flavor(lines):
 
     start = None
@@ -165,13 +198,15 @@ def get_flavor(lines):
     for i, line in enumerate(lines):
 
         if line == "フレーバー":
+
             start = i + 1
+
             break
 
     if start is None:
         return ""
 
-    flavor_parts = []
+    parts = []
 
     for line in lines[start:]:
 
@@ -184,10 +219,14 @@ def get_flavor(lines):
         if line == "同名カードが含まれる商品を表示":
             break
 
-        flavor_parts.append(line)
+        parts.append(line)
 
-    return clean(" ".join(flavor_parts))
+    return clean(" ".join(parts))
 
+
+# ==========================================
+# ツインパクトなどの面分割
+# ==========================================
 
 def split_sides(lines):
 
@@ -196,6 +235,7 @@ def split_sides(lines):
     for i, line in enumerate(lines):
 
         if line == "カードの種類":
+
             positions.append(i)
 
     sides = []
@@ -203,25 +243,28 @@ def split_sides(lines):
     for index, start in enumerate(positions):
 
         if index + 1 < len(positions):
+
             end = positions[index + 1]
+
         else:
+
             end = len(lines)
 
         block = lines[start:end]
 
         if "商品情報" in block:
 
-            product_index = block.index("商品情報")
-
-            block = block[:product_index]
+            block = block[
+                :block.index("商品情報")
+            ]
 
         if "同名カードが含まれる商品を表示" in block:
 
-            same_index = block.index(
-                "同名カードが含まれる商品を表示"
-            )
-
-            block = block[:same_index]
+            block = block[
+                :block.index(
+                    "同名カードが含まれる商品を表示"
+                )
+            ]
 
         sides.append(block)
 
@@ -277,12 +320,20 @@ def parse_side(lines):
     }
 
 
-def parse_card_html(html, url):
+# ==========================================
+# カード解析
+# ==========================================
+
+def parse_card(html, url):
 
     soup = BeautifulSoup(
         html,
         "html.parser"
     )
+
+    # --------------------------
+    # タイトル
+    # --------------------------
 
     title = ""
 
@@ -305,33 +356,49 @@ def parse_card_html(html, url):
     if match:
 
         name = match.group(1).strip()
+
         number = match.group(2).strip()
 
     else:
 
         name = title
+
         number = ""
 
-    card_id = url.split(
-        "?id=",
-        1
-    )[1]
+    # --------------------------
+    # ID
+    # --------------------------
 
-    image = get_image(soup)
+    if "?id=" in url:
+
+        card_id = url.split(
+            "?id=",
+            1
+        )[1]
+
+    else:
+
+        card_id = url
+
+    # --------------------------
+    # 本文
+    # --------------------------
 
     lines = get_lines(soup)
 
-    side_blocks = split_sides(lines)
+    blocks = split_sides(lines)
 
     sides = []
 
-    for block in side_blocks:
+    for block in blocks:
 
         side = parse_side(block)
 
         if side["type"]:
 
             sides.append(side)
+
+    # 重複面除去
 
     unique_sides = []
 
@@ -343,22 +410,38 @@ def parse_card_html(html, url):
 
     sides = unique_sides
 
+    # --------------------------
+    # ツインパクト判定
+    # --------------------------
+
     is_twin = (
         len(sides) >= 2
         or "/" in name
     )
 
     card = {
+
         "id": card_id,
+
         "name": name,
+
         "number": number,
+
         "url": url,
-        "image": image,
-        "type": "ツインパクト" if is_twin else "",
+
+        "image": get_image(soup),
+
+        "type": (
+            "ツインパクト"
+            if is_twin
+            else ""
+        ),
+
         "sides": sides,
     }
 
-    # 通常カードは今まで通り
+    # 通常カード
+
     if len(sides) == 1:
 
         side = sides[0]
@@ -404,10 +487,204 @@ def parse_card_html(html, url):
     return card
 
 
-async def get_card_urls(page):
+# ==========================================
+# JSON読み込み
+# ==========================================
+
+def load_existing():
+
+    if not OUT.exists():
+
+        return {}
+
+    try:
+
+        with open(
+            OUT,
+            "r",
+            encoding="utf-8"
+        ) as f:
+
+            data = json.load(f)
+
+        result = {}
+
+        for card in data:
+
+            if card.get("id"):
+
+                result[card["id"]] = card
+
+        print(
+            f"既存データ: {len(result)}枚",
+            flush=True
+        )
+
+        return result
+
+    except Exception as e:
+
+        print(
+            f"既存JSON読み込み失敗: {e}",
+            flush=True
+        )
+
+        return {}
+
+
+# ==========================================
+# JSON保存
+# ==========================================
+
+def save_cards(cards):
+
+    OUT.parent.mkdir(
+        parents=True,
+        exist_ok=True
+    )
+
+    data = list(cards.values())
+
+    data.sort(
+        key=lambda x: (
+            x.get("number", ""),
+            x.get("id", "")
+        )
+    )
+
+    temp = OUT.with_suffix(".tmp")
+
+    with open(
+        temp,
+        "w",
+        encoding="utf-8"
+    ) as f:
+
+        json.dump(
+            data,
+            f,
+            ensure_ascii=False,
+            indent=2
+        )
+
+    temp.replace(OUT)
 
     print(
-        "公式カード一覧を取得中...",
+        f"JSON保存: {len(data)}枚",
+        flush=True
+    )
+
+
+# ==========================================
+# GitHub checkpoint
+# ==========================================
+
+def checkpoint_git():
+
+    try:
+
+        subprocess.run(
+            [
+                "git",
+                "config",
+                "user.name",
+                "github-actions[bot]"
+            ],
+            check=True
+        )
+
+        subprocess.run(
+            [
+                "git",
+                "config",
+                "user.email",
+                "41898282+github-actions[bot]@users.noreply.github.com"
+            ],
+            check=True
+        )
+
+        subprocess.run(
+            [
+                "git",
+                "add",
+                "data/cards.json"
+            ],
+            check=True
+        )
+
+        diff = subprocess.run(
+            [
+                "git",
+                "diff",
+                "--cached",
+                "--quiet"
+            ]
+        )
+
+        if diff.returncode == 0:
+
+            print(
+                "GitHub保存: 変更なし",
+                flush=True
+            )
+
+            return True
+
+        subprocess.run(
+            [
+                "git",
+                "commit",
+                "-m",
+                "自動更新: 公式カードデータ"
+            ],
+            check=True
+        )
+
+        subprocess.run(
+            [
+                "git",
+                "push",
+                "origin",
+                "main"
+            ],
+            check=True
+        )
+
+        print(
+            "GitHub保存: 成功",
+            flush=True
+        )
+
+        return True
+
+    except Exception as e:
+
+        print(
+            f"GitHub保存失敗: {e}",
+            flush=True
+        )
+
+        return False
+
+
+# ==========================================
+# 公式一覧からURL取得
+# ==========================================
+
+async def collect_all_urls(page):
+
+    print(
+        "================================",
+        flush=True
+    )
+
+    print(
+        "★ 公式カードURL全件取得 ★",
+        flush=True
+    )
+
+    print(
+        "================================",
         flush=True
     )
 
@@ -419,88 +696,215 @@ async def get_card_urls(page):
 
     await page.wait_for_timeout(3000)
 
-    links = await page.locator(
-        'a[href*="/card/detail/?id="]'
-    ).evaluate_all(
-        """
-        elements => elements.map(
-            e => e.href
+    urls = set()
+
+    page_number = 1
+
+    while True:
+
+        # --------------------------
+        # 現在ページのカードURL
+        # --------------------------
+
+        current_urls = await page.locator(
+            'a[href*="/card/detail/?id="]'
+        ).evaluate_all(
+            """
+            elements =>
+                elements.map(e => e.href)
+            """
         )
-        """
-    )
 
-    unique = []
+        before = len(urls)
 
-    for url in links:
+        for url in current_urls:
 
-        if url not in unique:
+            if "?id=" in url:
 
-            unique.append(url)
+                urls.add(url)
+
+        added = len(urls) - before
+
+        print(
+            f"一覧ページ {page_number}: "
+            f"+{added} URL / 累計 {len(urls)}",
+            flush=True
+        )
+
+        # --------------------------
+        # 次ページ
+        # --------------------------
+
+        next_number = page_number + 1
+
+        selector = (
+            f'a[data-page="{next_number}"]'
+        )
+
+        next_link = page.locator(
+            selector
+        ).first
+
+        count = await next_link.count()
+
+        if count == 0:
+
+            print(
+                "次ページなし",
+                flush=True
+            )
+
+            break
+
+        try:
+
+            await next_link.click(
+                timeout=30000
+            )
+
+            await page.wait_for_timeout(
+                700
+            )
+
+            page_number += 1
+
+        except Exception as e:
+
+            print(
+                f"ページ移動失敗: {e}",
+                flush=True
+            )
+
+            break
+
+        # 安全装置
+
+        if page_number > 1000:
+
+            print(
+                "ページ数安全上限に到達",
+                flush=True
+            )
+
+            break
+
+    result = sorted(urls)
 
     print(
-        f"一覧から {len(unique)} URL取得",
+        "================================",
         flush=True
     )
 
-    return unique[:LIMIT]
+    print(
+        f"公式URL総数: {len(result)}",
+        flush=True
+    )
+
+    print(
+        "================================",
+        flush=True
+    )
+
+    return result
 
 
-async def scrape_detail(
+# ==========================================
+# 詳細ページ取得
+# ==========================================
+
+async def fetch_card(
     browser,
+    semaphore,
     url,
     index,
     total
 ):
 
-    try:
+    async with semaphore:
 
-        page = await browser.new_page(
-            viewport={
-                "width": 1280,
-                "height": 900
-            }
-        )
+        for attempt in range(
+            1,
+            RETRIES + 1
+        ):
 
-        await page.goto(
-            url,
-            wait_until="domcontentloaded",
-            timeout=120000
-        )
+            page = None
 
-        await page.wait_for_timeout(800)
+            try:
 
-        html = await page.content()
+                page = await browser.new_page(
+                    viewport={
+                        "width": 1280,
+                        "height": 900
+                    }
+                )
 
-        await page.close()
+                await page.goto(
+                    url,
+                    wait_until="domcontentloaded",
+                    timeout=120000
+                )
 
-        card = parse_card_html(
-            html,
-            url
-        )
+                # 必要最低限の待機
 
-        print(
-            f"[{index}/{total}] "
-            f"{card['name']} "
-            f"面数={len(card['sides'])}",
-            flush=True
-        )
+                await page.wait_for_timeout(
+                    400
+                )
 
-        return card
+                html = await page.content()
 
-    except Exception as e:
+                card = parse_card(
+                    html,
+                    url
+                )
 
-        print(
-            f"[{index}/{total}] 失敗: {url}",
-            flush=True
-        )
+                if not card["name"]:
 
-        print(
-            f"  {e}",
-            flush=True
-        )
+                    raise Exception(
+                        "カード名を取得できませんでした"
+                    )
+
+                print(
+                    f"[{index}/{total}] "
+                    f"{card['name']} "
+                    f"面数={len(card['sides'])}",
+                    flush=True
+                )
+
+                return card
+
+            except Exception as e:
+
+                print(
+                    f"[{index}/{total}] "
+                    f"失敗 {attempt}/{RETRIES}: "
+                    f"{url}",
+                    flush=True
+                )
+
+                if attempt < RETRIES:
+
+                    await asyncio.sleep(
+                        attempt * 2
+                    )
+
+            finally:
+
+                if page:
+
+                    try:
+
+                        await page.close()
+
+                    except Exception:
+
+                        pass
 
         return None
 
+
+# ==========================================
+# メイン
+# ==========================================
 
 async def main():
 
@@ -510,12 +914,12 @@ async def main():
     )
 
     print(
-        "★ 公式カード50枚テスト ★",
+        "★ デュエマ公式カード全件更新 ★",
         flush=True
     )
 
     print(
-        "一覧 → 詳細 → JSON",
+        "再開対応 / ツインパクト対応",
         flush=True
     )
 
@@ -524,15 +928,21 @@ async def main():
         flush=True
     )
 
+    cards = load_existing()
+
     async with async_playwright() as p:
 
         browser = await p.chromium.launch(
             headless=True
         )
 
+        # --------------------------
+        # URL全件取得
+        # --------------------------
+
         list_page = await browser.new_page()
 
-        urls = await get_card_urls(
+        urls = await collect_all_urls(
             list_page
         )
 
@@ -549,76 +959,130 @@ async def main():
 
             return
 
-        total = len(urls)
+        # --------------------------
+        # 既存カードを除外
+        # --------------------------
+
+        pending = []
+
+        for url in urls:
+
+            if "?id=" not in url:
+                continue
+
+            card_id = url.split(
+                "?id=",
+                1
+            )[1]
+
+            if card_id in cards:
+
+                continue
+
+            pending.append(url)
 
         print(
-            f"今回取得するカード数: {total}",
+            f"公式URL: {len(urls)}枚",
             flush=True
         )
 
-        # 同時に6枚ずつ取得
-        semaphore = asyncio.Semaphore(6)
-
-        async def worker(index, url):
-
-            async with semaphore:
-
-                return await scrape_detail(
-                    browser,
-                    url,
-                    index,
-                    total
-                )
-
-        tasks = []
-
-        for index, url in enumerate(
-            urls,
-            1
-        ):
-
-            tasks.append(
-                worker(
-                    index,
-                    url
-                )
-            )
-
-        results = await asyncio.gather(
-            *tasks
+        print(
+            f"取得済み: {len(cards)}枚",
+            flush=True
         )
 
-        cards = []
+        print(
+            f"残り: {len(pending)}枚",
+            flush=True
+        )
 
-        for card in results:
+        # --------------------------
+        # 詳細取得
+        # --------------------------
 
-            if card is not None:
+        semaphore = asyncio.Semaphore(
+            CONCURRENCY
+        )
 
-                cards.append(card)
+        completed_since_checkpoint = 0
+
+        total_pending = len(pending)
+
+        for start in range(
+            0,
+            total_pending,
+            CONCURRENCY
+        ):
+
+            batch = pending[
+                start:start + CONCURRENCY
+            ]
+
+            tasks = []
+
+            for offset, url in enumerate(
+                batch
+            ):
+
+                index = start + offset + 1
+
+                tasks.append(
+                    fetch_card(
+                        browser,
+                        semaphore,
+                        url,
+                        index,
+                        total_pending
+                    )
+                )
+
+            results = await asyncio.gather(
+                *tasks
+            )
+
+            for card in results:
+
+                if card is None:
+                    continue
+
+                cards[
+                    card["id"]
+                ] = card
+
+                completed_since_checkpoint += 1
+
+            # --------------------------
+            # 定期保存
+            # --------------------------
+
+            if (
+                completed_since_checkpoint
+                >= CHECKPOINT
+            ):
+
+                save_cards(cards)
+
+                checkpoint_git()
+
+                completed_since_checkpoint = 0
 
         await browser.close()
 
-    OUT.parent.mkdir(
-        parents=True,
-        exist_ok=True
-    )
+    # --------------------------
+    # 最終保存
+    # --------------------------
 
-    with open(
-        OUT,
-        "w",
-        encoding="utf-8"
-    ) as f:
+    save_cards(cards)
 
-        json.dump(
-            cards,
-            f,
-            ensure_ascii=False,
-            indent=2
-        )
+    checkpoint_git()
+
+    # --------------------------
+    # 結果
+    # --------------------------
 
     twin_count = 0
 
-    for card in cards:
+    for card in cards.values():
 
         if len(
             card.get("sides", [])
@@ -632,12 +1096,12 @@ async def main():
     )
 
     print(
-        f"★ TEST COMPLETE ★",
+        "★ 全件処理終了 ★",
         flush=True
     )
 
     print(
-        f"取得成功: {len(cards)}枚",
+        f"総カード数: {len(cards)}枚",
         flush=True
     )
 
@@ -659,6 +1123,4 @@ async def main():
 
 if __name__ == "__main__":
 
-    asyncio.run(
-        main()
-    )
+    asyncio.run(main())

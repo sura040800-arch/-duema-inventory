@@ -3,629 +3,591 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#111827">
+<meta name="theme-color" content="#070a0f">
 <title>デュエマ コレクション</title>
 
 <style>
 *{box-sizing:border-box}
-
-body{
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;
-  background:#f3f4f6;
+html,body{
+  margin:0;padding:0;
+  background:#eef0f2;
   color:#111827;
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif
 }
-
 button,input,select{font:inherit}
 button{cursor:pointer}
+.hidden{display:none!important}
 
+/* ===== 通常画面 ===== */
 header{
-  background:#111827;
+  background:#11151b;
   color:#fff;
-  padding:6px 10px;
+  padding:7px 10px;
   position:sticky;
   top:0;
-  z-index:30;
+  z-index:30
 }
-
 h1{
   font-size:14px;
   line-height:1;
   margin:0 0 6px;
-  font-weight:800;
+  font-weight:800
 }
-
-.headrow{
-  display:flex;
-  gap:6px;
-}
-
+.headrow{display:flex;gap:6px}
 .search{
   flex:1;
   min-width:0;
-  padding:8px 10px;
   border:0;
   border-radius:9px;
+  padding:8px 10px;
   background:#fff;
-  color:#111827;
+  color:#111
 }
-
 .settingsBtn{
   width:38px;
   border:0;
   border-radius:9px;
-  background:#e5e7eb;
-  color:#111827;
-  font-size:18px;
+  background:#e7e9ec;
+  color:#111;
+  font-size:18px
 }
-
-main{
-  max-width:760px;
-  margin:auto;
-  padding:9px;
-}
-
+main{max-width:760px;margin:auto}
 .tabs{
   display:grid;
   grid-template-columns:1fr 1fr 1fr;
-  gap:6px;
-  margin-bottom:9px;
+  gap:5px;
+  padding:7px;
+  background:#eef0f2
 }
-
 .tab{
-  padding:10px 4px;
   border:0;
-  border-radius:11px;
-  background:#e5e7eb;
-  font-weight:700;
-  color:#111827;
-  font-size:13px;
+  border-radius:9px;
+  padding:9px 4px;
+  background:#dfe3e7;
+  color:#111;
+  font-weight:800;
+  font-size:12px
 }
-
-.tab.active{
-  background:#111827;
-  color:#fff;
-}
-
+.tab.active{background:#11151b;color:#fff}
 .status{
-  font-size:12px;
+  font-size:11px;
   color:#6b7280;
-  margin:7px 5px 10px;
+  padding:3px 9px 7px
 }
-
-/* カード一覧 */
-
-.cardwrap{
-  position:relative;
-}
-
+.inventory{padding:0 8px 15px}
+.cardList{display:grid;gap:7px}
 .card{
   display:flex;
   align-items:center;
-  gap:10px;
+  gap:9px;
   background:#fff;
-  border-radius:14px;
-  padding:9px;
-  margin:8px 0;
-  box-shadow:0 2px 8px #00000010;
-  min-height:120px;
+  border-radius:12px;
+  padding:8px;
+  box-shadow:0 1px 6px #0000000d;
+  position:relative
 }
-
 .card-img{
-  flex:none;
-  width:70px;
-  height:98px;
+  width:66px;
+  height:92px;
   object-fit:contain;
-  border-radius:6px;
   background:#eee;
+  border-radius:5px;
+  flex:none
 }
-
-.card-info{
-  flex:1;
-  min-width:0;
-}
-
+.card-info{min-width:0;flex:1}
 .card h3{
-  margin:0 0 4px;
-  font-size:16px;
-  line-height:1.3;
+  font-size:14px;
+  margin:0 0 3px;
+  line-height:1.25
 }
-
 .card-number{
-  display:inline-block;
-  background:#eef0f3;
+  font-size:10px;
   color:#6b7280;
-  border-radius:7px;
-  padding:3px 6px;
-  font-size:11px;
-  margin-bottom:4px;
-  max-width:100%;
-  overflow:hidden;
-  text-overflow:ellipsis;
+  margin-bottom:3px;
   white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis
 }
-
-.meta{
-  font-size:12px;
+.meta,.small{
+  font-size:10px;
   color:#6b7280;
-  line-height:1.55;
+  line-height:1.45
 }
-
-.small{
-  font-size:11px;
-  color:#6b7280;
-}
-
 .qty{
-  flex:none;
   display:flex;
   align-items:center;
   gap:3px;
+  flex:none
 }
-
 .qty button{
-  width:36px;
-  height:36px;
+  width:33px;
+  height:33px;
   border:0;
-  border-radius:10px;
+  border-radius:8px;
   background:#e5e7eb;
-  color:#1677e8;
-  font-size:22px;
+  font-size:20px;
+  color:#1677e8
 }
-
-.qty b{
-  min-width:23px;
-  text-align:center;
-  font-size:17px;
-}
-
+.qty b{min-width:20px;text-align:center}
 .fav{
   position:absolute;
-  right:7px;
-  top:6px;
+  right:5px;
+  top:4px;
+  width:29px;
+  height:29px;
   border:0;
-  background:#fff9;
   border-radius:50%;
-  width:32px;
-  height:32px;
-  font-size:20px;
+  background:#ffffffdd;
+  font-size:19px
 }
 
-/* 共通 */
-
-.empty{
-  background:#fff;
-  border-radius:14px;
-  padding:22px;
-  text-align:center;
-  color:#6b7280;
+/* ===== デッキ画面 ===== */
+#deckView{min-height:calc(100vh - 80px)}
+.deckShell{
+  background:#e8eaec;
+  min-height:calc(100vh - 80px);
+  padding-bottom:75px
 }
 
-.hidden{
-  display:none;
-}
-
-.btn{
-  border:0;
-  border-radius:10px;
-  padding:9px 11px;
-  background:#111827;
+/* 上部 */
+.deckHeader{
+  background:#070a0f;
   color:#fff;
+  padding:8px 8px 0;
+  position:sticky;
+  top:0;
+  z-index:20
 }
-
-.btn.secondary{
-  background:#e5e7eb;
-  color:#111827;
-}
-
-.btn.danger{
-  background:#fee2e2;
-  color:#b91c1c;
-}
-
-/* デッキ一覧 */
-
-.decklist{
-  display:grid;
-  gap:8px;
-}
-
-.deck{
-  background:#fff;
-  border-radius:14px;
-  padding:12px;
-  box-shadow:0 2px 8px #00000010;
-}
-
-.row{
-  display:flex;
-  gap:8px;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.deckActions{
-  display:flex;
-  gap:7px;
-  margin-top:10px;
-}
-
-.deckActions .btn{
-  flex:1;
-}
-
-.deckCount{
-  font-size:12px;
-  color:#6b7280;
-  margin-top:4px;
-}
-
-/* デッキ作成 */
-
-.deckEditor{
-  background:#fff;
-  border-radius:14px;
-  padding:10px;
-}
-
-.deckTop{
+.deckHeaderRow{
   display:flex;
   align-items:center;
-  gap:7px;
-  margin-bottom:8px;
+  gap:6px;
+  height:35px
 }
-
-.deckTop button{
-  flex:none;
+.deckIconBtn{
+  width:35px;
+  height:35px;
+  border:0;
+  border-radius:7px;
+  background:#20252c;
+  color:#fff;
+  font-size:24px
 }
-
-.deckName{
-  font-weight:800;
-  font-size:17px;
+.deckTitle{
+  font-size:15px;
+  font-weight:900;
   flex:1;
   min-width:0;
+  white-space:nowrap;
   overflow:hidden;
-  text-overflow:ellipsis;
-  white-space:nowrap;
+  text-overflow:ellipsis
 }
-
-.deckTotal{
-  font-size:12px;
+.deckHeaderBtn{
+  border:0;
+  background:transparent;
+  color:#fff;
   font-weight:800;
-  color:#6b7280;
-  white-space:nowrap;
+  font-size:12px;
+  padding:7px
 }
 
-.deckSummary{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:5px;
-  margin:7px 0;
+/* メイン/GR/超次元 */
+.deckCounts{
+  display:flex;
+  gap:3px;
+  margin-top:6px
 }
-
-.sumBox{
-  background:#f3f4f6;
-  border-radius:9px;
-  padding:7px;
-  text-align:center;
+.deckCountTab{
+  flex:1;
+  border:0;
+  border-radius:7px 7px 0 0;
+  padding:9px 3px 8px;
+  background:#dce0e4;
+  color:#111;
+  font-size:12px;
+  font-weight:900
 }
-
-.sumBox b{
-  display:block;
-  font-size:15px;
-}
-
-.sumBox span{
+.deckCountTab.active{background:#fff}
+.deckCountTab small{
   font-size:10px;
-  color:#6b7280;
+  font-weight:700
 }
 
-.deckSearch{
+/* オリジナル/アドバンス */
+.deckToolbar{
   display:flex;
   gap:6px;
-  margin-bottom:7px;
+  padding:6px;
+  background:#fff;
+  border-bottom:1px solid #d5d8dc;
+  position:sticky;
+  top:91px;
+  z-index:15
+}
+.formatBtn{
+  border:1px solid #cbd0d5;
+  background:#fff;
+  border-radius:8px;
+  padding:6px 9px;
+  font-size:11px;
+  font-weight:800
+}
+.formatBtn.active{
+  background:#11151b;
+  color:#fff
+}
+.analyzeBtn{
+  margin-left:auto;
+  border:0;
+  border-radius:8px;
+  background:#3ba9ca;
+  color:#fff;
+  padding:6px 11px;
+  font-size:11px;
+  font-weight:800
 }
 
-.deckSearch input{
+/* ===== デッキ内カード ===== */
+.deckArea{
+  background:#fff;
+  padding:5px 4px 8px;
+  border-bottom:5px solid #d4d7da
+}
+.deckSectionTitle{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:2px 5px 5px;
+  font-size:11px;
+  font-weight:900
+}
+.deckHint{
+  font-size:9px;
+  color:#8a9198;
+  font-weight:500
+}
+.cardGrid{
+  display:grid;
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  gap:3px
+}
+.deckTile{
+  position:relative;
+  min-width:0;
+  touch-action:pan-y;
+  user-select:none;
+  -webkit-user-select:none
+}
+.deckTile img{
+  display:block;
+  width:100%;
+  aspect-ratio:.68;
+  object-fit:cover;
+  border-radius:3px;
+  background:#ddd;
+  box-shadow:0 1px 2px #0003
+}
+.deckTile .num{
+  position:absolute;
+  right:2px;
+  bottom:2px;
+  min-width:18px;
+  height:18px;
+  border-radius:9px;
+  background:#111d;
+  color:#fff;
+  font-size:10px;
+  font-weight:900;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 4px
+}
+.emptyDeck{
+  padding:28px 10px;
+  text-align:center;
+  color:#8b9299;
+  font-size:12px
+}
+
+/* スワイプ説明 */
+.swipeNote{
+  background:#11151b;
+  color:#fff;
+  padding:6px 8px;
+  text-align:center;
+  font-size:9px
+}
+
+/* 絞り込み */
+.sectionSwitch{
+  display:flex;
+  gap:4px;
+  padding:5px;
+  background:#edf0f2
+}
+.sectionSwitch button{
+  flex:1;
+  border:0;
+  border-radius:7px;
+  background:#d8dde1;
+  padding:7px 2px;
+  font-size:10px;
+  font-weight:900
+}
+.sectionSwitch button.active{
+  background:#11151b;
+  color:#fff
+}
+
+/* ===== カード検索 ===== */
+.picker{padding:7px 5px 0}
+.pickerSearch{
+  display:flex;
+  gap:5px
+}
+.pickerSearch input{
   flex:1;
   min-width:0;
-  padding:9px;
-  border:1px solid #d1d5db;
+  border:0;
   border-radius:9px;
+  padding:10px 11px;
+  background:#fff;
+  box-shadow:0 1px 4px #0001
 }
-
-.deckFilters{
+.pickerSearch button{
+  width:42px;
+  border:0;
+  border-radius:9px;
+  background:#3ba9ca;
+  color:#fff;
+  font-size:18px
+}
+.pickerFilters{
   display:flex;
   gap:5px;
   overflow:auto;
-  padding-bottom:5px;
-  margin-bottom:7px;
+  padding:6px 0
 }
-
 .chip{
   white-space:nowrap;
   border:0;
   border-radius:999px;
+  background:#d9dde1;
   padding:6px 9px;
-  background:#e5e7eb;
-  font-size:11px;
+  font-size:10px;
+  font-weight:800
 }
-
 .chip.active{
-  background:#111827;
-  color:#fff;
+  background:#11151b;
+  color:#fff
 }
-
-.sectionTabs{
+.pickerGrid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:5px;
-  margin:7px 0;
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  gap:4px;
+  padding-bottom:10px
+}
+.pickTile{
+  position:relative;
+  touch-action:manipulation
+}
+.pickTile img{
+  display:block;
+  width:100%;
+  aspect-ratio:.68;
+  object-fit:cover;
+  border-radius:3px;
+  background:#ddd
+}
+.pickTile .owned{
+  position:absolute;
+  left:2px;
+  bottom:2px;
+  background:#111d;
+  color:#fff;
+  border-radius:8px;
+  padding:2px 4px;
+  font-size:8px;
+  font-weight:800
+}
+.pickTile .plus{
+  position:absolute;
+  right:2px;
+  top:2px;
+  background:#18a05e;
+  color:#fff;
+  width:22px;
+  height:22px;
+  border:0;
+  border-radius:50%;
+  font-size:14px;
+  line-height:22px;
+  padding:0
+}
+.pickerStatus{
+  font-size:9px;
+  color:#777;
+  padding:0 2px 5px
 }
 
-.sectionTab{
+/* ===== デッキ一覧 ===== */
+.deckList{padding:9px}
+.deckListTop{
+  background:#fff;
+  border-radius:12px;
+  padding:10px;
+  margin-bottom:8px
+}
+.btn{
   border:0;
   border-radius:9px;
-  padding:8px 3px;
-  background:#eef0f3;
-  font-size:11px;
-  font-weight:700;
-}
-
-.sectionTab.active{
-  background:#111827;
+  background:#11151b;
   color:#fff;
+  padding:9px 11px;
+  font-weight:800
 }
-
-.deckCards{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:7px;
+.deckItem{
+  background:#fff;
+  border-radius:12px;
+  padding:11px;
+  margin-bottom:8px;
+  box-shadow:0 1px 5px #0001
 }
-
-.miniCard{
-  display:flex;
-  gap:7px;
-  background:#f9fafb;
-  border:1px solid #e5e7eb;
-  border-radius:10px;
-  padding:6px;
-  min-width:0;
-}
-
-.miniCard img{
-  width:42px;
-  height:59px;
-  object-fit:contain;
-  border-radius:4px;
-  background:#eee;
-  flex:none;
-}
-
-.miniInfo{
-  min-width:0;
-  flex:1;
-}
-
-.miniInfo b{
-  display:block;
-  font-size:12px;
-  line-height:1.25;
-  display:-webkit-box;
-  -webkit-line-clamp:2;
-  -webkit-box-orient:vertical;
-  overflow:hidden;
-}
-
-.miniInfo .small{
-  display:block;
-  margin-top:2px;
-}
-
-.miniAdd{
-  margin-top:4px;
-  width:100%;
-  border:0;
-  border-radius:7px;
-  background:#111827;
-  color:#fff;
-  padding:5px;
-  font-size:11px;
-}
-
-.deckSection{
-  margin-top:10px;
-}
-
-.deckSection h3{
-  font-size:13px;
-  margin:8px 2px;
-}
-
-.deckRow{
+.deckItemRow{
   display:flex;
   align-items:center;
-  gap:8px;
-  background:#f9fafb;
-  border-radius:10px;
-  padding:6px;
-  margin:5px 0;
+  gap:7px
 }
-
-.deckRow img{
-  width:38px;
-  height:53px;
-  object-fit:contain;
-  flex:none;
-}
-
-.deckRow .info{
+.deckItemName{
+  font-weight:900;
   flex:1;
   min-width:0;
-}
-
-.deckRow .name{
-  font-size:12px;
-  font-weight:700;
-  white-space:nowrap;
   overflow:hidden;
   text-overflow:ellipsis;
+  white-space:nowrap
 }
-
-.deckRow .sub{
-  font-size:10px;
-  color:#6b7280;
+.deckItemCount{
+  font-size:11px;
+  color:#687078
 }
-
-.deckQty{
+.deckItemActions{
   display:flex;
-  align-items:center;
-  gap:3px;
+  gap:5px;
+  margin-top:8px
 }
+.deckItemActions button{flex:1}
 
-.deckQty button{
-  width:28px;
-  height:28px;
-  border:0;
-  border-radius:7px;
-  background:#e5e7eb;
-}
-
-.backBtn{
-  background:#e5e7eb;
-  color:#111827;
-}
-
-/* 設定 */
-
+/* ===== シート ===== */
 .overlay{
   position:fixed;
   inset:0;
-  background:#0006;
-  z-index:50;
+  background:#0008;
+  z-index:100;
   display:none;
-  align-items:flex-end;
+  align-items:flex-end
 }
-
-.overlay.open{
-  display:flex;
-}
-
+.overlay.open{display:flex}
 .sheet{
   width:100%;
   max-height:88vh;
   overflow:auto;
   background:#fff;
-  border-radius:22px 22px 0 0;
-  padding:18px 16px calc(22px + env(safe-area-inset-bottom));
-  box-shadow:0 -4px 20px #0002;
+  border-radius:20px 20px 0 0;
+  padding:16px 14px calc(22px + env(safe-area-inset-bottom))
 }
-
 .sheetHead{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  margin-bottom:14px;
+  margin-bottom:12px
 }
-
 .sheetHead h2{
-  margin:0;
-  font-size:19px;
+  font-size:18px;
+  margin:0
 }
-
 .close{
+  width:36px;
+  height:36px;
   border:0;
-  background:#eef0f3;
   border-radius:50%;
-  width:38px;
-  height:38px;
-  font-size:20px;
+  background:#eef0f2;
+  font-size:20px
 }
-
-.field{
-  margin:13px 0;
-}
-
+.field{margin:12px 0}
 .field label{
   display:block;
-  font-weight:700;
-  font-size:13px;
-  margin-bottom:6px;
+  font-size:12px;
+  font-weight:800;
+  margin-bottom:5px
 }
-
-.field select,
-.field input{
+.field select,.field input{
   width:100%;
-  padding:11px;
-  border:1px solid #d1d5db;
-  border-radius:10px;
-  background:#fff;
+  padding:10px;
+  border:1px solid #d0d4d8;
+  border-radius:9px;
+  background:#fff
 }
-
 .checkrow{
   display:flex;
+  gap:8px;
   align-items:center;
-  gap:9px;
-  padding:9px 0;
+  padding:8px 0;
+  font-size:12px
 }
-
-.checkrow input{
-  width:19px;
-  height:19px;
-}
-
 .sheetActions{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:8px;
-  margin-top:16px;
+  gap:7px;
+  margin-top:14px
 }
-
 .sheetActions button{
-  padding:12px;
   border:0;
-  border-radius:11px;
-  font-weight:700;
+  border-radius:10px;
+  padding:11px;
+  font-weight:800
 }
-
 .apply{
-  background:#111827;
-  color:#fff;
+  background:#11151b;
+  color:#fff
+}
+.reset{background:#e5e7eb}
+
+.analysisGrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:7px
+}
+.analysisBox{
+  background:#f1f3f4;
+  border-radius:10px;
+  padding:10px
+}
+.analysisBox b{
+  display:block;
+  font-size:18px
+}
+.analysisBox span{
+  font-size:10px;
+  color:#687078
+}
+.colorRow{
+  display:flex;
+  flex-wrap:wrap;
+  gap:5px;
+  margin-top:8px
+}
+.colorTag{
+  padding:5px 8px;
+  border-radius:999px;
+  background:#fff;
+  border:1px solid #ddd;
+  font-size:10px
 }
 
-.reset{
-  background:#e5e7eb;
-  color:#111827;
-}
-
-@media(max-width:430px){
-
-  .card{
-    gap:8px;
-    padding:8px;
-    min-height:116px;
-  }
-
-  .card-img{
-    width:64px;
-    height:90px;
-  }
-
-  .card h3{
-    font-size:15px;
-  }
-
-  .qty button{
-    width:34px;
-    height:34px;
-  }
-
-  .deckCards{
-    grid-template-columns:1fr;
-  }
-
-  .tabs{
-    gap:5px;
+@media(min-width:600px){
+  .cardGrid,.pickerGrid{
+    grid-template-columns:repeat(8,minmax(0,1fr))
   }
 }
 </style>
@@ -633,2702 +595,1865 @@ main{
 
 <body>
 
-<header>
+<header id="mainHeader">
   <h1>デュエマ コレクション</h1>
-
   <div class="headrow">
-    <input
-      id="search"
-      class="search"
-      placeholder="カード名・番号・種族で検索"
-    >
-
+    <input id="search" class="search" placeholder="カード名・番号・種族で検索">
     <button id="settings" class="settingsBtn">⚙️</button>
   </div>
 </header>
 
 <main>
 
-  <div class="tabs">
+<div class="tabs" id="mainTabs">
+  <button class="tab active" id="invTab">📦 所持カード</button>
+  <button class="tab" id="favTab">⭐ お気に入り</button>
+  <button class="tab" id="deckTab">🃏 デッキ</button>
+</div>
 
-    <button class="tab active" id="invTab">
-      📦 所持カード
-    </button>
+<div id="invView" class="inventory">
+  <div class="status" id="status">カードデータを読み込み中…</div>
+  <div id="cards" class="cardList"></div>
+</div>
 
-    <button class="tab" id="favTab">
-      ⭐ お気に入り
-    </button>
+<div id="favView" class="inventory hidden">
+  <div class="status" id="favStatus"></div>
+  <div id="favorites" class="cardList"></div>
+</div>
 
-    <button class="tab" id="deckTab">
-      🃏 デッキ
-    </button>
-
-  </div>
-
-  <div id="invView">
-
-    <div class="status" id="status">
-      カードデータを読み込み中…
-    </div>
-
-    <div id="cards"></div>
-
-  </div>
-
-  <div id="favView" class="hidden">
-
-    <div class="status" id="favStatus"></div>
-
-    <div id="favorites"></div>
-
-  </div>
-
-  <div id="deckView" class="hidden">
-
-    <div id="deckListView"></div>
-
-    <div id="deckEditorView" class="hidden"></div>
-
-  </div>
+<div id="deckView" class="hidden">
+  <div id="deckListView"></div>
+  <div id="deckEditorView" class="hidden"></div>
+</div>
 
 </main>
 
-
 <!-- 設定 -->
-
 <div class="overlay" id="overlay">
+<div class="sheet">
 
-  <div class="sheet">
-
-    <div class="sheetHead">
-
-      <h2>⚙️ 絞り込み・並び替え</h2>
-
-      <button class="close" id="closeSettings">
-        ×
-      </button>
-
-    </div>
-
-
-    <div class="field">
-
-      <label>並び順</label>
-
-      <select id="sort">
-
-        <option value="default">おすすめ順</option>
-
-        <option value="name">名前順</option>
-
-        <option value="cost">コスト順</option>
-
-        <option value="power">パワー順</option>
-
-        <option value="civilization">文明順</option>
-
-        <option value="race">種族順</option>
-
-        <option value="rarity">レアリティ順</option>
-
-        <option value="number">カード番号順</option>
-
-      </select>
-
-    </div>
-
-
-    <div class="field">
-
-      <label>文明</label>
-
-      <select id="civilization">
-
-        <option value="">すべて</option>
-
-      </select>
-
-    </div>
-
-
-    <div class="field">
-
-      <label>種族</label>
-
-      <input
-        id="raceFilter"
-        list="raceList"
-        placeholder="例：ドラゴン"
-      >
-
-      <datalist id="raceList"></datalist>
-
-    </div>
-
-
-    <div class="field">
-
-      <label>カードタイプ</label>
-
-      <select id="type">
-
-        <option value="">すべて</option>
-
-      </select>
-
-    </div>
-
-
-    <div class="field">
-
-      <label>レアリティ</label>
-
-      <select id="rarity">
-
-        <option value="">すべて</option>
-
-      </select>
-
-    </div>
-
-
-    <label class="checkrow">
-
-      <input type="checkbox" id="ownedOnly">
-
-      所持カードだけ表示
-
-    </label>
-
-
-    <label class="checkrow">
-
-      <input type="checkbox" id="unownedOnly">
-
-      未所持カードだけ表示
-
-    </label>
-
-
-    <div class="sheetActions">
-
-      <button class="reset" id="resetSettings">
-        リセット
-      </button>
-
-      <button class="apply" id="applySettings">
-        適用
-      </button>
-
-    </div>
-
-  </div>
-
+<div class="sheetHead">
+  <h2>⚙️ 絞り込み・並び替え</h2>
+  <button class="close" id="closeSettings">×</button>
 </div>
 
+<div class="field">
+<label>並び順</label>
+<select id="sort">
+<option value="default">おすすめ順</option>
+<option value="name">名前順</option>
+<option value="cost">コスト順</option>
+<option value="power">パワー順</option>
+<option value="civilization">文明順</option>
+<option value="race">種族順</option>
+<option value="rarity">レアリティ順</option>
+<option value="number">カード番号順</option>
+</select>
+</div>
+
+<div class="field">
+<label>文明</label>
+<select id="civilization">
+<option value="">すべて</option>
+</select>
+</div>
+
+<div class="field">
+<label>種族</label>
+<input id="raceFilter" list="raceList" placeholder="例：ドラゴン">
+<datalist id="raceList"></datalist>
+</div>
+
+<div class="field">
+<label>カードタイプ</label>
+<select id="type">
+<option value="">すべて</option>
+</select>
+</div>
+
+<div class="field">
+<label>レアリティ</label>
+<select id="rarity">
+<option value="">すべて</option>
+</select>
+</div>
+
+<label class="checkrow">
+<input type="checkbox" id="ownedOnly">
+所持カードだけ表示
+</label>
+
+<label class="checkrow">
+<input type="checkbox" id="unownedOnly">
+未所持カードだけ表示
+</label>
+
+<div class="sheetActions">
+<button class="reset" id="resetSettings">リセット</button>
+<button class="apply" id="applySettings">適用</button>
+</div>
+
+</div>
+</div>
+
+<!-- 分析 -->
+<div class="overlay" id="analysisOverlay">
+<div class="sheet">
+<div class="sheetHead">
+<h2>📊 デッキ分析</h2>
+<button class="close" id="closeAnalysis">×</button>
+</div>
+<div id="analysisContent"></div>
+</div>
+</div>
 
 <script>
 
 const state={
-
-  cards:[],
-
-  owned:JSON.parse(
-    localStorage.getItem('duema_owned_v3')||'{}'
-  ),
-
-  favorites:JSON.parse(
-    localStorage.getItem('duema_favorites_v1')||'{}'
-  ),
-
-  decks:JSON.parse(
-    localStorage.getItem('duema_decks_v3')||'[]'
-  ),
-
-  activeDeck:null,
-
-  deckSearch:'',
-
-  deckFilter:'all',
-
-  deckSection:'main'
-
+cards:[],
+owned:JSON.parse(localStorage.getItem('duema_owned_v3')||'{}'),
+favorites:JSON.parse(localStorage.getItem('duema_favorites_v1')||'{}'),
+decks:JSON.parse(localStorage.getItem('duema_decks_v3')||'[]'),
+activeDeck:null,
+deckSearch:'',
+deckFilter:'all',
+deckSection:'main'
 };
 
+const setting={
+sort:'default',
+civilization:'',
+race:'',
+type:'',
+rarity:'',
+ownedOnly:false,
+unownedOnly:false
+};
 
 const $=id=>document.getElementById(id);
 
-
-const setting={
-
-  sort:'default',
-
-  civilization:'',
-
-  race:'',
-
-  type:'',
-
-  rarity:'',
-
-  ownedOnly:false,
-
-  unownedOnly:false
-
-};
-
-
-const esc=s=>
-
-  String(s??'').replace(
-
-    /[&<>"']/g,
-
-    m=>({
-
-      '&':'&amp;',
-
-      '<':'&lt;',
-
-      '>':'&gt;',
-
-      '"':'&quot;',
-
-      "'":'&#39;'
-
-    }[m])
-
-  );
-
+const esc=s=>String(s??'').replace(
+/[&<>"']/g,
+m=>({
+'&':'&amp;',
+'<':'&lt;',
+'>':'&gt;',
+'"':'&quot;',
+"'":'&#39;'
+}[m])
+);
 
 const faces=c=>
-
-  Array.isArray(c.sides)&&c.sides.length
-
-  ?c.sides
-
-  :[c];
-
+Array.isArray(c.sides)&&c.sides.length
+?c.sides:[c];
 
 function values(c,key){
-
-  return faces(c)
-
-    .flatMap(f=>{
-
-      let v=f[key];
-
-      if(v===undefined||v===null||v==='')return[];
-
-      return Array.isArray(v)?v:[v];
-
-    })
-
-    .map(String);
-
+return faces(c).flatMap(f=>{
+let v=f[key];
+if(v===undefined||v===null||v==='')return[];
+return Array.isArray(v)?v:[v];
+}).map(String);
 }
-
 
 function splitValues(v){
-
-  return String(v||'')
-
-    .split(/[／\/・,、]+/)
-
-    .map(s=>s.trim())
-
-    .filter(Boolean);
-
+return String(v||'')
+.split(/[／\/・,、]+/)
+.map(s=>s.trim())
+.filter(Boolean);
 }
-
 
 function civilizations(c){
-
-  return [
-
-    ...new Set(
-
-      values(c,'civilization')
-
-      .flatMap(splitValues)
-
-    )
-
-  ];
-
+return [...new Set(values(c,'civilization').flatMap(splitValues))];
 }
-
 
 function races(c){
-
-  return [
-
-    ...new Set(
-
-      values(c,'race')
-
-      .flatMap(splitValues)
-
-    )
-
-  ];
-
+return [...new Set(values(c,'race').flatMap(splitValues))];
 }
-
 
 function types(c){
-
-  return [
-
-    ...new Set(
-
-      values(c,'type')
-
-      .flatMap(splitValues)
-
-    )
-
-  ];
-
+return [...new Set(values(c,'type').flatMap(splitValues))];
 }
-
 
 function rarities(c){
-
-  return [
-
-    ...new Set(
-
-      values(c,'rarity')
-
-    )
-
-  ];
-
+return [...new Set(values(c,'rarity'))];
 }
-
 
 function firstValue(c,key){
-
-  return values(c,key)[0]||'';
-
+return values(c,key)[0]||'';
 }
-
 
 function cardName(c){
-
-  return c.name||c._name||c.cardName||'';
-
+return c.name||c._name||c.cardName||'';
 }
-
 
 function cardNumber(c){
-
-  return c.number||c.id||'';
-
+return c.number||c.id||'';
 }
-
 
 function idOf(c){
-
-  return c.id||c.number||'';
-
+return c.id||c.number||'';
 }
-
 
 function cardImage(c){
-
-  const id=idOf(c);
-
-  return id
-
-    ?'https://dm.takaratomy.co.jp/wp-content/card/cardimage/'+encodeURIComponent(id)+'.jpg'
-
-    :'';
-
+const id=idOf(c);
+return id
+?'https://dm.takaratomy.co.jp/wp-content/card/cardimage/'+encodeURIComponent(id)+'.jpg'
+:'';
 }
-
 
 function searchText(c){
-
-  return [
-
-    cardName(c),
-
-    cardNumber(c),
-
-    ...civilizations(c),
-
-    ...races(c),
-
-    ...types(c),
-
-    ...rarities(c)
-
-  ].join(' ').toLowerCase();
-
+return [
+cardName(c),
+cardNumber(c),
+...civilizations(c),
+...races(c),
+...types(c),
+...rarities(c)
+].join(' ').toLowerCase();
 }
-
 
 function costNum(c){
-
-  const n=parseInt(
-
-    firstValue(c,'cost'),
-
-    10
-
-  );
-
-  return Number.isFinite(n)?n:999;
-
+const n=parseInt(firstValue(c,'cost'),10);
+return Number.isFinite(n)?n:999;
 }
-
 
 function powerNum(c){
-
-  const s=
-
-    firstValue(c,'power')
-
-    .replace(/[^0-9]/g,'');
-
-  const n=Number(s);
-
-  return Number.isFinite(n)?n:-1;
-
+const s=firstValue(c,'power').replace(/[^0-9]/g,'');
+const n=Number(s);
+return Number.isFinite(n)?n:-1;
 }
-
 
 function civRank(c){
-
-  const order=[
-
-    '光',
-
-    '水',
-
-    '闇',
-
-    '火',
-
-    '自然'
-
-  ];
-
-  const xs=civilizations(c);
-
-  const i=order.indexOf(xs[0]);
-
-  return i<0?99:i;
-
+const o=['光','水','闇','火','自然','ゼロ'];
+const xs=civilizations(c);
+const i=o.indexOf(xs[0]);
+return i<0?99:i;
 }
-
 
 function save(){
-
-  localStorage.setItem(
-
-    'duema_owned_v3',
-
-    JSON.stringify(state.owned)
-
-  );
-
-  localStorage.setItem(
-
-    'duema_favorites_v1',
-
-    JSON.stringify(state.favorites)
-
-  );
-
-  localStorage.setItem(
-
-    'duema_decks_v3',
-
-    JSON.stringify(state.decks)
-
-  );
-
+localStorage.setItem(
+'duema_owned_v3',
+JSON.stringify(state.owned)
+);
+localStorage.setItem(
+'duema_favorites_v1',
+JSON.stringify(state.favorites)
+);
+localStorage.setItem(
+'duema_decks_v3',
+JSON.stringify(state.decks)
+);
 }
-
 
 function isFav(c){
-
-  return !!state.favorites[idOf(c)];
-
+return !!state.favorites[idOf(c)];
 }
-
 
 function toggleFav(id){
+state.favorites[id]=!state.favorites[id];
 
-  state.favorites[id]=!state.favorites[id];
-
-  if(!state.favorites[id]){
-
-    delete state.favorites[id];
-
-  }
-
-  save();
-
-  renderCurrent();
-
+if(!state.favorites[id]){
+delete state.favorites[id];
 }
 
+save();
+renderCurrent();
+}
+
+/* =========================
+   所持カード検索
+========================= */
 
 function filteredCards(base=state.cards){
 
-  const q=
-
-    $('search').value.trim().toLowerCase();
-
-  let list=base.filter(c=>{
-
-    if(q&&!searchText(c).includes(q))
-
-      return false;
-
-
-    if(
-
-      setting.civilization&&
-
-      !civilizations(c).some(
-
-        x=>x===setting.civilization
-
-      )
-
-    )
-
-      return false;
-
-
-    if(
-
-      setting.race&&
-
-      !races(c).some(
-
-        x=>x.toLowerCase()
-
-          .includes(setting.race)
-
-      )
-
-    )
-
-      return false;
-
-
-    if(
-
-      setting.type&&
-
-      !types(c).some(
-
-        x=>x===setting.type
-
-      )
-
-    )
-
-      return false;
-
-
-    if(
-
-      setting.rarity&&
-
-      !rarities(c).some(
-
-        x=>x===setting.rarity
-
-      )
-
-    )
-
-      return false;
-
-
-    const n=
-
-      state.owned[idOf(c)]||0;
-
-
-    if(setting.ownedOnly&&n<=0)
-
-      return false;
-
-
-    if(setting.unownedOnly&&n>0)
-
-      return false;
-
-
-    return true;
-
-  });
-
-
-  list.sort((a,b)=>{
-
-    switch(setting.sort){
-
-      case'name':
-
-        return cardName(a)
-
-          .localeCompare(
-
-            cardName(b),
-
-            'ja'
-
-          );
-
-
-      case'cost':
-
-        return costNum(a)-costNum(b)||
-
-          cardName(a).localeCompare(
-
-            cardName(b),
-
-            'ja'
-
-          );
-
-
-      case'power':
-
-        return powerNum(a)-powerNum(b)||
-
-          cardName(a).localeCompare(
-
-            cardName(b),
-
-            'ja'
-
-          );
-
-
-      case'civilization':
-
-        return civRank(a)-civRank(b)||
-
-          civilizations(a)
-
-            .join()
-
-            .localeCompare(
-
-              civilizations(b).join(),
-
-              'ja'
-
-            );
-
-
-      case'race':
-
-        return races(a)
-
-          .join()
-
-          .localeCompare(
-
-            races(b).join(),
-
-            'ja'
-
-          );
-
-
-      case'rarity':
-
-        return rarities(a)
-
-          .join()
-
-          .localeCompare(
-
-            rarities(b).join(),
-
-            'ja'
-
-          );
-
-
-      case'number':
-
-        return cardNumber(a)
-
-          .localeCompare(
-
-            cardNumber(b),
-
-            'ja'
-
-          );
-
-
-      default:
-
-        return 0;
-
-    }
-
-  });
-
-
-  return list;
-
+const q=$('search').value.trim().toLowerCase();
+
+let list=base.filter(c=>{
+
+if(q&&!searchText(c).includes(q))
+return false;
+
+if(
+setting.civilization &&
+!civilizations(c).some(
+x=>x===setting.civilization
+)
+)return false;
+
+if(
+setting.race &&
+!races(c).some(
+x=>x.toLowerCase().includes(setting.race)
+)
+)return false;
+
+if(
+setting.type &&
+!types(c).some(
+x=>x===setting.type
+)
+)return false;
+
+if(
+setting.rarity &&
+!rarities(c).some(
+x=>x===setting.rarity
+)
+)return false;
+
+const n=state.owned[idOf(c)]||0;
+
+if(setting.ownedOnly&&n<=0)
+return false;
+
+if(setting.unownedOnly&&n>0)
+return false;
+
+return true;
+});
+
+list.sort((a,b)=>{
+
+switch(setting.sort){
+
+case'name':
+return cardName(a).localeCompare(
+cardName(b),'ja'
+);
+
+case'cost':
+return costNum(a)-costNum(b)||
+cardName(a).localeCompare(
+cardName(b),'ja'
+);
+
+case'power':
+return powerNum(a)-powerNum(b)||
+cardName(a).localeCompare(
+cardName(b),'ja'
+);
+
+case'civilization':
+return civRank(a)-civRank(b)||
+civilizations(a).join()
+.localeCompare(
+civilizations(b).join(),'ja'
+);
+
+case'race':
+return races(a).join()
+.localeCompare(
+races(b).join(),'ja'
+);
+
+case'rarity':
+return rarities(a).join()
+.localeCompare(
+rarities(b).join(),'ja'
+);
+
+case'number':
+return cardNumber(a)
+.localeCompare(
+cardNumber(b),'ja'
+);
+
+default:
+return 0;
 }
 
+});
 
-function cardHtml(c,showQty=true){
-
-  const id=idOf(c);
-
-  const n=state.owned[id]||0;
-
-  const img=cardImage(c);
-
-  const civ=civilizations(c).join('/');
-
-  const typ=types(c).join('/');
-
-  const cost=firstValue(c,'cost');
-
-  const power=firstValue(c,'power');
-
-  const rar=rarities(c).join('/');
-
-
-  return `
-
-  <div class="cardwrap">
-
-    <div class="card">
-
-      <img
-
-        class="card-img"
-
-        src="${img}"
-
-        alt="${esc(cardName(c))}"
-
-        loading="lazy"
-
-        referrerpolicy="no-referrer"
-
-      >
-
-
-      <div class="card-info">
-
-        <h3>${esc(cardName(c))}</h3>
-
-        <div class="card-number">
-
-          ${esc(cardNumber(c))}
-
-        </div>
-
-
-        <div class="meta">
-
-          ${esc(civ)}　${esc(typ)}<br>
-
-          ${cost!==''?'コスト '+esc(cost)+'　':''}
-
-          ${power!==''?'パワー '+esc(power)+'　':''}
-
-          ${esc(rar)}
-
-        </div>
-
-
-        <div class="small">
-
-          ${esc(races(c).join(' / '))}
-
-        </div>
-
-      </div>
-
-
-      ${showQty?`
-
-      <div class="qty">
-
-        <button data-minus="${esc(id)}">
-
-          −
-
-        </button>
-
-        <b>${n}</b>
-
-        <button data-plus="${esc(id)}">
-
-          ＋
-
-        </button>
-
-      </div>
-
-      `:''}
-
-    </div>
-
-
-    <button
-
-      class="fav"
-
-      data-fav="${esc(id)}"
-
-    >
-
-      ${isFav(c)?'★':'☆'}
-
-    </button>
-
-  </div>`;
-
+return list;
 }
 
+function cardHtml(c){
+
+const id=idOf(c);
+const n=state.owned[id]||0;
+
+return `
+<div class="card">
+
+<img
+class="card-img"
+src="${cardImage(c)}"
+alt="${esc(cardName(c))}"
+loading="lazy"
+referrerpolicy="no-referrer">
+
+<div class="card-info">
+
+<h3>${esc(cardName(c))}</h3>
+
+<div class="card-number">
+${esc(cardNumber(c))}
+</div>
+
+<div class="meta">
+${esc(civilizations(c).join('/'))}
+　${esc(types(c).join('/'))}
+<br>
+${firstValue(c,'cost')
+?'コスト '+esc(firstValue(c,'cost'))+'　'
+:''}
+${firstValue(c,'power')
+?'パワー '+esc(firstValue(c,'power'))
+:''}
+</div>
+
+<div class="small">
+${esc(races(c).join(' / '))}
+</div>
+
+</div>
+
+<div class="qty">
+<button data-minus="${esc(id)}">−</button>
+<b>${n}</b>
+<button data-plus="${esc(id)}">＋</button>
+</div>
+
+<button
+class="fav"
+data-fav="${esc(id)}">
+${isFav(c)?'★':'☆'}
+</button>
+
+</div>
+`;
+}
 
 function renderCards(){
 
-  const list=filteredCards();
+const list=filteredCards();
 
-  const total=list.length;
+$('status').textContent=
+`カード ${list.length.toLocaleString()} 枚を表示`+
+(list.length>100?'（先頭100枚）':'');
 
-
-  $('status').textContent=
-
-    `カード ${total.toLocaleString()} 枚を表示`+
-
-    (total>100?'（先頭100枚）':'');
-
-
-  $('cards').innerHTML=
-
-    list.length
-
-    ?list.slice(0,100)
-
-      .map(c=>cardHtml(c,true))
-
-      .join('')
-
-    :'<div class="empty">該当するカードがありません。</div>';
-
+$('cards').innerHTML=list.length
+?list.slice(0,100).map(cardHtml).join('')
+:'<div class="emptyDeck">該当するカードがありません。</div>';
 }
-
 
 function renderFavorites(){
 
-  const q=
+const q=$('search').value.trim().toLowerCase();
 
-    $('search').value.trim().toLowerCase();
+const list=state.cards.filter(c=>
+isFav(c)&&
+(q?searchText(c).includes(q):true)
+);
 
+$('favStatus').textContent=
+`お気に入り ${list.length.toLocaleString()} 枚`;
 
-  const list=
-
-    state.cards.filter(c=>
-
-      isFav(c)&&
-
-      (q?searchText(c).includes(q):true)
-
-    );
-
-
-  $('favStatus').textContent=
-
-    `お気に入り ${list.length.toLocaleString()} 枚`;
-
-
-  $('favorites').innerHTML=
-
-    list.length
-
-    ?list.map(c=>cardHtml(c,true)).join('')
-
-    :`
-
-    <div class="empty">
-
-      お気に入りカードはありません。<br>
-
-      <span class="small">
-
-        カードの☆をタップすると追加できます。
-
-      </span>
-
-    </div>`;
-
+$('favorites').innerHTML=list.length
+?list.map(cardHtml).join('')
+:'<div class="emptyDeck">お気に入りカードはありません。<br>所持カードの☆をタップしてください。</div>';
 }
 
+/* =========================
+   設定
+========================= */
 
 function fillSettings(){
 
-  const civs=[
+const civs=[
+...new Set(
+state.cards.flatMap(c=>civilizations(c))
+)
+].sort();
 
-    ...new Set(
+const race=[
+...new Set(
+state.cards.flatMap(c=>races(c))
+)
+].sort(
+(a,b)=>a.localeCompare(b,'ja')
+);
 
-      state.cards.flatMap(
+const ts=[
+...new Set(
+state.cards.flatMap(c=>types(c))
+)
+].sort(
+(a,b)=>a.localeCompare(b,'ja')
+);
 
-        c=>civilizations(c)
+const rs=[
+...new Set(
+state.cards.flatMap(c=>rarities(c))
+)
+].sort(
+(a,b)=>a.localeCompare(b,'ja')
+);
 
-      )
+$('civilization').innerHTML=
+'<option value="">すべて</option>'+
+civs.map(
+x=>`<option>${esc(x)}</option>`
+).join('');
 
-    )
+$('type').innerHTML=
+'<option value="">すべて</option>'+
+ts.map(
+x=>`<option>${esc(x)}</option>`
+).join('');
 
-  ].sort();
+$('rarity').innerHTML=
+'<option value="">すべて</option>'+
+rs.map(
+x=>`<option>${esc(x)}</option>`
+).join('');
 
-
-  const race=[
-
-    ...new Set(
-
-      state.cards.flatMap(
-
-        c=>races(c)
-
-      )
-
-    )
-
-  ].sort(
-
-    (a,b)=>a.localeCompare(b,'ja')
-
-  );
-
-
-  const ts=[
-
-    ...new Set(
-
-      state.cards.flatMap(
-
-        c=>types(c)
-
-      )
-
-    )
-
-  ].sort(
-
-    (a,b)=>a.localeCompare(b,'ja')
-
-  );
-
-
-  const rs=[
-
-    ...new Set(
-
-      state.cards.flatMap(
-
-        c=>rarities(c)
-
-      )
-
-    )
-
-  ].sort(
-
-    (a,b)=>a.localeCompare(b,'ja')
-
-  );
-
-
-  $('civilization').innerHTML=
-
-    '<option value="">すべて</option>'+
-
-    civs.map(
-
-      x=>`<option value="${esc(x)}">${esc(x)}</option>`
-
-    ).join('');
-
-
-  $('type').innerHTML=
-
-    '<option value="">すべて</option>'+
-
-    ts.map(
-
-      x=>`<option value="${esc(x)}">${esc(x)}</option>`
-
-    ).join('');
-
-
-  $('rarity').innerHTML=
-
-    '<option value="">すべて</option>'+
-
-    rs.map(
-
-      x=>`<option value="${esc(x)}">${esc(x)}</option>`
-
-    ).join('');
-
-
-  $('raceList').innerHTML=
-
-    race.map(
-
-      x=>`<option value="${esc(x)}"></option>`
-
-    ).join('');
-
+$('raceList').innerHTML=
+race.map(
+x=>`<option value="${esc(x)}"></option>`
+).join('');
 }
-
 
 function readTemp(){
 
-  setting.sort=$('sort').value;
-
-  setting.civilization=
-
-    $('civilization').value;
-
-  setting.race=
-
-    $('raceFilter').value
-
-      .trim()
-
-      .toLowerCase();
-
-  setting.type=$('type').value;
-
-  setting.rarity=$('rarity').value;
-
-  setting.ownedOnly=
-
-    $('ownedOnly').checked;
-
-  setting.unownedOnly=
-
-    $('unownedOnly').checked;
-
+setting.sort=$('sort').value;
+setting.civilization=$('civilization').value;
+setting.race=$('raceFilter').value.trim().toLowerCase();
+setting.type=$('type').value;
+setting.rarity=$('rarity').value;
+setting.ownedOnly=$('ownedOnly').checked;
+setting.unownedOnly=$('unownedOnly').checked;
 }
-
 
 function renderCurrent(){
 
-  if(!$('invView').classList.contains('hidden'))
+if(!$('invView').classList.contains('hidden'))
+renderCards();
 
-    renderCards();
+if(!$('favView').classList.contains('hidden'))
+renderFavorites();
 
+if(!$('deckView').classList.contains('hidden')){
 
-  if(!$('favView').classList.contains('hidden'))
-
-    renderFavorites();
-
-
-  if(!$('deckView').classList.contains('hidden')){
-
-    if(state.activeDeck===null)
-
-      renderDeckList();
-
-    else
-
-      renderDeckEditor();
-
-  }
+if(state.activeDeck===null)
+renderDeckList();
+else
+renderDeckEditor();
 
 }
-
+}
 
 function switchTab(tab){
 
-  $('invView').classList.toggle(
+$('invView').classList.toggle(
+'hidden',tab!=='inv'
+);
 
-    'hidden',
+$('favView').classList.toggle(
+'hidden',tab!=='fav'
+);
 
-    tab!=='inv'
+$('deckView').classList.toggle(
+'hidden',tab!=='deck'
+);
 
-  );
+$('mainHeader').classList.toggle(
+'hidden',tab==='deck'
+);
 
+$('mainTabs').classList.toggle(
+'hidden',tab==='deck'
+);
 
-  $('favView').classList.toggle(
+$('invTab').classList.toggle(
+'active',tab==='inv'
+);
 
-    'hidden',
+$('favTab').classList.toggle(
+'active',tab==='fav'
+);
 
-    tab!=='fav'
+$('deckTab').classList.toggle(
+'active',tab==='deck'
+);
 
-  );
-
-
-  $('deckView').classList.toggle(
-
-    'hidden',
-
-    tab!=='deck'
-
-  );
-
-
-  $('invTab').classList.toggle(
-
-    'active',
-
-    tab==='inv'
-
-  );
-
-
-  $('favTab').classList.toggle(
-
-    'active',
-
-    tab==='fav'
-
-  );
-
-
-  $('deckTab').classList.toggle(
-
-    'active',
-
-    tab==='deck'
-
-  );
-
-
-  renderCurrent();
-
+renderCurrent();
 }
 
+/* 所持カード */
+$('cards').addEventListener('click',e=>{
 
-$('cards').addEventListener(
+const p=e.target.dataset.plus;
+const m=e.target.dataset.minus;
+const f=e.target.dataset.fav;
 
-  'click',
+if(p){
+state.owned[p]=(state.owned[p]||0)+1;
+save();
+renderCards();
+}
 
-  e=>{
-
-    const p=e.target.dataset.plus;
-
-    const m=e.target.dataset.minus;
-
-    const f=e.target.dataset.fav;
-
-
-    if(p){
-
-      state.owned[p]=(state.owned[p]||0)+1;
-
-      save();
-
-      renderCards();
-
-    }
-
-
-    if(m){
-
-      state.owned[m]=Math.max(
-
-        0,
-
-        (state.owned[m]||0)-1
-
-      );
-
-      save();
-
-      renderCards();
-
-    }
-
-
-    if(f)
-
-      toggleFav(f);
-
-  }
-
+if(m){
+state.owned[m]=Math.max(
+0,
+(state.owned[m]||0)-1
 );
+save();
+renderCards();
+}
 
+if(f)
+toggleFav(f);
 
-$('favorites').addEventListener(
+});
 
-  'click',
+$('favorites').addEventListener('click',e=>{
 
-  e=>{
+const p=e.target.dataset.plus;
+const m=e.target.dataset.minus;
+const f=e.target.dataset.fav;
 
-    const p=e.target.dataset.plus;
+if(p){
+state.owned[p]=(state.owned[p]||0)+1;
+save();
+renderFavorites();
+}
 
-    const m=e.target.dataset.minus;
-
-    const f=e.target.dataset.fav;
-
-
-    if(p){
-
-      state.owned[p]=(state.owned[p]||0)+1;
-
-      save();
-
-      renderFavorites();
-
-    }
-
-
-    if(m){
-
-      state.owned[m]=Math.max(
-
-        0,
-
-        (state.owned[m]||0)-1
-
-      );
-
-      save();
-
-      renderFavorites();
-
-    }
-
-
-    if(f)
-
-      toggleFav(f);
-
-  }
-
+if(m){
+state.owned[m]=Math.max(
+0,
+(state.owned[m]||0)-1
 );
+save();
+renderFavorites();
+}
 
+if(f)
+toggleFav(f);
+
+});
 
 $('search').addEventListener(
-
-  'input',
-
-  renderCurrent
-
+'input',
+renderCurrent
 );
-
 
 $('settings').onclick=()=>{
 
-  $('sort').value=setting.sort;
+$('sort').value=setting.sort;
+$('civilization').value=setting.civilization;
+$('raceFilter').value=setting.race;
+$('type').value=setting.type;
+$('rarity').value=setting.rarity;
+$('ownedOnly').checked=setting.ownedOnly;
+$('unownedOnly').checked=setting.unownedOnly;
 
-  $('civilization').value=
-
-    setting.civilization;
-
-  $('raceFilter').value=
-
-    setting.race;
-
-  $('type').value=setting.type;
-
-  $('rarity').value=setting.rarity;
-
-  $('ownedOnly').checked=
-
-    setting.ownedOnly;
-
-  $('unownedOnly').checked=
-
-    setting.unownedOnly;
-
-  $('overlay').classList.add('open');
-
+$('overlay').classList.add('open');
 };
-
 
 $('closeSettings').onclick=()=>
-
-  $('overlay').classList.remove('open');
-
+$('overlay').classList.remove('open');
 
 $('overlay').addEventListener(
-
-  'click',
-
-  e=>{
-
-    if(e.target===$('overlay'))
-
-      $('overlay').classList.remove('open');
-
-  }
-
+'click',
+e=>{
+if(e.target===$('overlay'))
+$('overlay').classList.remove('open');
+}
 );
 
-
 $('applySettings').onclick=()=>{
-
-  readTemp();
-
-  $('overlay').classList.remove('open');
-
-  renderCurrent();
-
+readTemp();
+$('overlay').classList.remove('open');
+renderCurrent();
 };
-
 
 $('resetSettings').onclick=()=>{
 
-  $('sort').value='default';
+$('sort').value='default';
+$('civilization').value='';
+$('raceFilter').value='';
+$('type').value='';
+$('rarity').value='';
+$('ownedOnly').checked=false;
+$('unownedOnly').checked=false;
 
-  $('civilization').value='';
-
-  $('raceFilter').value='';
-
-  $('type').value='';
-
-  $('rarity').value='';
-
-  $('ownedOnly').checked=false;
-
-  $('unownedOnly').checked=false;
-
-  readTemp();
-
-  renderCurrent();
-
+readTemp();
+renderCurrent();
 };
 
+$('invTab').onclick=()=>
+switchTab('inv');
 
-$('invTab').onclick=()=>switchTab('inv');
+$('favTab').onclick=()=>
+switchTab('fav');
 
-$('favTab').onclick=()=>switchTab('fav');
-
-$('deckTab').onclick=()=>switchTab('deck');
-
+$('deckTab').onclick=()=>
+switchTab('deck');
 
 /* =========================
-   デッキメーカー部分
+   デッキ
 ========================= */
 
+function newDeck(){
 
-function normalizeDeck(d){
+const n=prompt(
+'デッキ名',
+'新しいデッキ'
+);
 
-  d.cards=(d.cards||[])
+if(n&&n.trim()){
 
-    .map(x=>({
+state.decks.push({
+name:n.trim(),
+format:'オリジナル',
+cards:[],
+gr:[],
+extra:[]
+});
 
-      id:x.id,
+save();
 
-      need:Number(x.need)||0,
+state.activeDeck=
+state.decks.length-1;
 
-      section:x.section||'main'
+state.deckSection='main';
 
-    }))
+renderDeckEditor();
+}
+}
 
-    .filter(x=>x.need>0);
+function ensureDeck(d){
 
-
-  d.cards.forEach(x=>{
-
-    if(
-
-      !['main','gr','extra']
-
-      .includes(x.section)
-
-    )
-
-      x.section='main';
-
-  });
-
-
-  return d;
+d.cards=d.cards||[];
+d.gr=d.gr||[];
+d.extra=d.extra||[];
+d.format=d.format||'オリジナル';
 
 }
 
+function arrForSection(d){
 
-state.decks=
+ensureDeck(d);
 
-  state.decks.map(normalizeDeck);
+if(state.deckSection==='gr')
+return d.gr;
 
+if(state.deckSection==='extra')
+return d.extra;
 
-function deckCards(d,section){
-
-  return (d.cards||[])
-
-    .filter(
-
-      x=>(x.section||'main')===section
-
-    );
-
+return d.cards;
 }
 
+function maxForSection(){
 
-function sectionTotal(d,section){
+if(state.deckSection==='gr')
+return 12;
 
-  return deckCards(d,section)
+if(state.deckSection==='extra')
+return 8;
 
-    .reduce(
-
-      (s,x)=>s+x.need,
-
-      0
-
-    );
-
+return 40;
 }
 
+function totalArr(a){
+
+return a.reduce(
+(s,x)=>s+(x.need||0),
+0
+);
+
+}
 
 function deckTotal(d){
 
-  return sectionTotal(d,'main');
+return totalArr(d.cards||[]);
 
 }
-
-
-function deckKinds(d,section){
-
-  return deckCards(d,section).length;
-
-}
-
 
 function deckCard(id){
 
-  return state.cards.find(
-
-    c=>idOf(c)===id
-
-  );
+return state.cards.find(
+c=>idOf(c)===id
+);
 
 }
 
+function deckAllCount(d){
 
-function sectionLabel(section){
-
-  if(section==='main')
-
-    return 'メインデッキ';
-
-  if(section==='gr')
-
-    return '超GR';
-
-  return '超次元';
+return deckTotal(d)+
+totalArr(d.gr||[])+
+totalArr(d.extra||[]);
 
 }
 
+function sectionLabel(){
 
-function sectionLimit(section){
+if(state.deckSection==='gr')
+return '超GR';
 
-  if(section==='main')
+if(state.deckSection==='extra')
+return '超次元';
 
-    return 40;
-
-  if(section==='gr')
-
-    return 12;
-
-  return 8;
+return 'メイン';
 
 }
 
-
+/* デッキ一覧 */
 function renderDeckList(){
 
-  state.activeDeck=null;
+state.activeDeck=null;
 
-  $('deckEditorView')
+$('deckEditorView').classList.add('hidden');
+$('deckListView').classList.remove('hidden');
 
-    .classList.add('hidden');
+$('deckListView').innerHTML=`
 
-  $('deckListView')
+<div class="deckList">
 
-    .classList.remove('hidden');
+<div class="deckListTop">
+<button class="btn" id="newDeck">
+＋ デッキを作る
+</button>
+</div>
 
+${
+state.decks.length
+?
+state.decks.map((d,i)=>{
 
-  $('deckListView').innerHTML=`
+ensureDeck(d);
 
-    <div
+return `
+<div class="deckItem">
 
-      class="deck"
+<div class="deckItemRow">
 
-      style="margin-bottom:8px"
+<div class="deckItemName">
+${esc(d.name)}
+</div>
 
-    >
+<div class="deckItemCount">
+${deckTotal(d)}/40
+</div>
 
-      <button class="btn" id="newDeck">
+</div>
 
-        ＋ デッキを作る
+<div class="small">
+${esc(d.format)}
+　・　GR ${totalArr(d.gr)}
+　・　超次元 ${totalArr(d.extra)}
+</div>
 
-      </button>
+<div class="deckItemActions">
 
-    </div>
+<button
+class="btn"
+data-open-deck="${i}">
+開く
+</button>
 
+<button
+class="btn"
+style="background:#fee2e2;color:#b91c1c"
+data-delete-deck="${i}">
+削除
+</button>
 
-    <div class="decklist">
+</div>
 
-      ${state.decks.length
+</div>
+`;
 
-        ?state.decks.map(
+}).join('')
 
-          (d,i)=>`
+:
 
-          <div class="deck">
-
-            <div class="row">
-
-              <b>${esc(d.name)}</b>
-
-              <span class="deckCount">
-
-                ${deckTotal(d)}/40枚
-
-              </span>
-
-            </div>
-
-
-            <div class="small">
-
-              ${deckKinds(d,'main')}種類
-
-              ・ 超GR ${sectionTotal(d,'gr')}枚
-
-              ・ 超次元 ${sectionTotal(d,'extra')}枚
-
-            </div>
-
-
-            <div class="deckActions">
-
-              <button
-
-                class="btn"
-
-                data-open-deck="${i}"
-
-              >
-
-                デッキを開く
-
-              </button>
-
-
-              <button
-
-                class="btn danger"
-
-                data-delete-deck="${i}"
-
-              >
-
-                削除
-
-              </button>
-
-            </div>
-
-          </div>`
-
-        ).join('')
-
-        :`
-
-        <div class="empty">
-
-          まだデッキがありません。
-
-        </div>`
-
-      }
-
-    </div>
-
-  `;
-
-
-  $('newDeck').onclick=()=>{
-
-    const n=prompt(
-
-      'デッキ名',
-
-      '新しいデッキ'
-
-    );
-
-
-    if(n&&n.trim()){
-
-      state.decks.push({
-
-        name:n.trim(),
-
-        cards:[]
-
-      });
-
-
-      save();
-
-      renderDeckList();
-
-    }
-
-  };
-
+'<div class="emptyDeck">まだデッキがありません。</div>'
 }
 
+</div>
+`;
 
+$('newDeck').onclick=newDeck;
+}
+
+/* デッキカード */
+function deckTileHtml(x){
+
+const c=deckCard(x.id);
+
+if(!c)
+return '';
+
+return `
+<div
+class="deckTile"
+data-swipe-id="${esc(x.id)}">
+
+<img
+src="${cardImage(c)}"
+alt="${esc(cardName(c))}"
+loading="lazy"
+referrerpolicy="no-referrer">
+
+<span class="num">
+${x.need}
+</span>
+
+</div>
+`;
+}
+
+/* 検索カード */
+function pickerTileHtml(c){
+
+const id=idOf(c);
+const own=state.owned[id]||0;
+
+return `
+<div
+class="pickTile"
+data-picker-id="${esc(id)}">
+
+<img
+src="${cardImage(c)}"
+alt="${esc(cardName(c))}"
+loading="lazy"
+referrerpolicy="no-referrer">
+
+${
+own
+?
+`<span class="owned">所持 ${own}</span>`
+:''
+}
+
+<button
+class="plus"
+data-picker-add="${esc(id)}">
+＋
+</button>
+
+</div>
+`;
+}
+
+/* デッキ編集画面 */
 function renderDeckEditor(){
 
-  const d=
-
-    normalizeDeck(
-
-      state.decks[state.activeDeck]
-
-    );
-
-
-  if(!d){
-
-    renderDeckList();
-
-    return;
-
-  }
-
-
-  $('deckListView')
-
-    .classList.add('hidden');
-
-
-  $('deckEditorView')
-
-    .classList.remove('hidden');
-
-
-  const q=
-
-    state.deckSearch
-
-      .trim()
-
-      .toLowerCase();
-
-
-  const results=
-
-    state.cards
-
-      .filter(c=>{
-
-        if(
-
-          q&&
-
-          !searchText(c).includes(q)
-
-        )
-
-          return false;
-
-
-        if(
-
-          state.deckFilter==='owned'&&
-
-          (state.owned[idOf(c)]||0)<=0
-
-        )
-
-          return false;
-
-
-        if(
-
-          state.deckFilter==='favorite'&&
-
-          !isFav(c)
-
-        )
-
-          return false;
-
-
-        return true;
-
-      })
-
-      .slice(0,80);
-
-
-  const mainN=
-
-    sectionTotal(d,'main');
-
-
-  const grN=
-
-    sectionTotal(d,'gr');
-
-
-  const extraN=
-
-    sectionTotal(d,'extra');
-
-
-  $('deckEditorView').innerHTML=`
-
-    <div class="deckEditor">
-
-
-      <div class="deckTop">
-
-        <button
-
-          class="btn backBtn"
-
-          id="backDeck"
-
-        >
-
-          ←
-
-        </button>
-
-
-        <div class="deckName">
-
-          ${esc(d.name)}
-
-        </div>
-
-
-        <div class="deckTotal">
-
-          ${mainN}/40
-
-        </div>
-
-
-        <button
-
-          class="btn secondary"
-
-          id="renameDeck"
-
-        >
-
-          編集
-
-        </button>
-
-      </div>
-
-
-      <div class="deckSummary">
-
-        <div class="sumBox">
-
-          <b>${mainN}/40</b>
-
-          <span>メイン</span>
-
-        </div>
-
-
-        <div class="sumBox">
-
-          <b>${grN}/12</b>
-
-          <span>超GR</span>
-
-        </div>
-
-
-        <div class="sumBox">
-
-          <b>${extraN}/8</b>
-
-          <span>超次元</span>
-
-        </div>
-
-      </div>
-
-
-      <div class="deckSearch">
-
-        <input
-
-          id="deckSearch"
-
-          value="${esc(state.deckSearch)}"
-
-          placeholder="カード名・番号・種族で検索"
-
-        >
-
-        <button
-
-          class="btn"
-
-          id="clearDeckSearch"
-
-        >
-
-          ×
-
-        </button>
-
-      </div>
-
-
-      <div class="deckFilters">
-
-        <button
-
-          class="chip ${state.deckFilter==='all'?'active':''}"
-
-          data-deck-filter="all"
-
-        >
-
-          すべて
-
-        </button>
-
-
-        <button
-
-          class="chip ${state.deckFilter==='owned'?'active':''}"
-
-          data-deck-filter="owned"
-
-        >
-
-          所持
-
-        </button>
-
-
-        <button
-
-          class="chip ${state.deckFilter==='favorite'?'active':''}"
-
-          data-deck-filter="favorite"
-
-        >
-
-          お気に入り
-
-        </button>
-
-      </div>
-
-
-      <div class="sectionTabs">
-
-        <button
-
-          class="sectionTab ${state.deckSection==='main'?'active':''}"
-
-          data-section="main"
-
-        >
-
-          メイン 40
-
-        </button>
-
-
-        <button
-
-          class="sectionTab ${state.deckSection==='gr'?'active':''}"
-
-          data-section="gr"
-
-        >
-
-          超GR 12
-
-        </button>
-
-
-        <button
-
-          class="sectionTab ${state.deckSection==='extra'?'active':''}"
-
-          data-section="extra"
-
-        >
-
-          超次元 8
-
-        </button>
-
-      </div>
-
-
-      <div
-
-        class="small"
-
-        style="margin:5px 2px 7px"
-
-      >
-
-        追加先：
-
-        ${sectionLabel(state.deckSection)}
-
-       　
-
-        ${sectionTotal(
-
-          d,
-
-          state.deckSection
-
-        )}
-
-        /
-
-        ${sectionLimit(
-
-          state.deckSection
-
-        )}
-
-        枚
-
-      </div>
-
-
-      <div class="deckCards">
-
-        ${results.length
-
-          ?results.map(c=>{
-
-            const id=idOf(c);
-
-            const inDeck=
-
-              deckCards(
-
-                d,
-
-                state.deckSection
-
-              ).find(
-
-                x=>x.id===id
-
-              );
-
-
-            return `
-
-            <div class="miniCard">
-
-              <img
-
-                src="${cardImage(c)}"
-
-                loading="lazy"
-
-                referrerpolicy="no-referrer"
-
-              >
-
-
-              <div class="miniInfo">
-
-                <b>
-
-                  ${esc(cardName(c))}
-
-                </b>
-
-
-                <span class="small">
-
-                  ${esc(cardNumber(c))}
-
-                </span>
-
-
-                <span class="small">
-
-                  所持
-
-                  ${state.owned[id]||0}枚
-
-                  ${inDeck
-
-                    ?'　デッキ '+inDeck.need+'枚'
-
-                    :''}
-
-                </span>
-
-
-                <button
-
-                  class="miniAdd"
-
-                  data-deck-add="${esc(id)}"
-
-                >
-
-                  ＋ 追加
-
-                </button>
-
-              </div>
-
-            </div>`;
-
-          }).join('')
-
-          :`
-
-          <div
-
-            class="empty"
-
-            style="grid-column:1/-1"
-
-          >
-
-            カードがありません。
-
-          </div>`
-
-        }
-
-      </div>
-
-
-      <div class="deckSection">
-
-        <h3>
-
-          ${sectionLabel(
-
-            state.deckSection
-
-          )}の内容
-
-        </h3>
-
-
-        ${deckCards(
-
-          d,
-
-          state.deckSection
-
-        ).length
-
-          ?deckCards(
-
-            d,
-
-            state.deckSection
-
-          ).map(x=>{
-
-            const c=deckCard(x.id);
-
-            if(!c)return '';
-
-
-            return `
-
-            <div class="deckRow">
-
-              <img
-
-                src="${cardImage(c)}"
-
-                loading="lazy"
-
-                referrerpolicy="no-referrer"
-
-              >
-
-
-              <div class="info">
-
-                <div class="name">
-
-                  ${esc(cardName(c))}
-
-                </div>
-
-
-                <div class="sub">
-
-                  ${esc(cardNumber(c))}
-
-                 　
-
-                  所持
-
-                  ${state.owned[x.id]||0}枚
-
-                </div>
-
-              </div>
-
-
-              <div class="deckQty">
-
-                <button
-
-                  data-deck-minus="${esc(x.id)}"
-
-                >
-
-                  −
-
-                </button>
-
-
-                <b>
-
-                  ${x.need}
-
-                </b>
-
-
-                <button
-
-                  data-deck-plus="${esc(x.id)}"
-
-                >
-
-                  ＋
-
-                </button>
-
-              </div>
-
-            </div>`;
-
-          }).join('')
-
-          :`
-
-          <div class="empty">
-
-            まだカードが入っていません。
-
-          </div>`
-
-        }
-
-      </div>
-
-
-    </div>
-
-  `;
-
-
-  $('backDeck').onclick=()=>{
-
-    state.activeDeck=null;
-
-    state.deckSearch='';
-
-    renderDeckList();
-
-  };
-
-
-  $('renameDeck').onclick=()=>{
-
-    const n=prompt(
-
-      'デッキ名',
-
-      d.name
-
-    );
-
-
-    if(n&&n.trim()){
-
-      d.name=n.trim();
-
-      save();
-
-      renderDeckEditor();
-
-    }
-
-  };
-
-
-  $('deckSearch').oninput=e=>{
-
-    state.deckSearch=
-
-      e.target.value;
-
-    renderDeckEditor();
-
-  };
-
-
-  $('clearDeckSearch').onclick=()=>{
-
-    state.deckSearch='';
-
-    renderDeckEditor();
-
-  };
-
-
-  $('deckEditorView')
-
-    .querySelectorAll(
-
-      '[data-deck-filter]'
-
-    )
-
-    .forEach(b=>{
-
-      b.onclick=()=>{
-
-        state.deckFilter=
-
-          b.dataset.deckFilter;
-
-        renderDeckEditor();
-
-      };
-
-    });
-
-
-  $('deckEditorView')
-
-    .querySelectorAll(
-
-      '[data-section]'
-
-    )
-
-    .forEach(b=>{
-
-      b.onclick=()=>{
-
-        state.deckSection=
-
-          b.dataset.section;
-
-        renderDeckEditor();
-
-      };
-
-    });
-
-
-  $('deckEditorView')
-
-    .querySelectorAll(
-
-      '[data-deck-add]'
-
-    )
-
-    .forEach(b=>{
-
-      b.onclick=()=>{
-
-        addToDeck(
-
-          b.dataset.deckAdd
-
-        );
-
-      };
-
-    });
-
-
-  $('deckEditorView')
-
-    .querySelectorAll(
-
-      '[data-deck-plus]'
-
-    )
-
-    .forEach(b=>{
-
-      b.onclick=()=>{
-
-        changeDeckQty(
-
-          b.dataset.deckPlus,
-
-          1
-
-        );
-
-      };
-
-    });
-
-
-  $('deckEditorView')
-
-    .querySelectorAll(
-
-      '[data-deck-minus]'
-
-    )
-
-    .forEach(b=>{
-
-      b.onclick=()=>{
-
-        changeDeckQty(
-
-          b.dataset.deckMinus,
-
-          -1
-
-        );
-
-      };
-
-    });
+const d=state.decks[state.activeDeck];
+
+if(!d){
+renderDeckList();
+return;
+}
+
+ensureDeck(d);
+
+$('deckListView').classList.add('hidden');
+$('deckEditorView').classList.remove('hidden');
+
+const arr=arrForSection(d);
+
+const q=state.deckSearch
+.trim()
+.toLowerCase();
+
+let results=state.cards.filter(c=>{
+
+if(q&&!searchText(c).includes(q))
+return false;
+
+if(
+state.deckFilter==='owned' &&
+(state.owned[idOf(c)]||0)<=0
+)
+return false;
+
+if(
+state.deckFilter==='favorite' &&
+!isFav(c)
+)
+return false;
+
+if(
+state.deckFilter.startsWith('civ:')
+){
+
+const civ=
+state.deckFilter
+.substring(4);
+
+if(
+!civilizations(c).some(
+x=>x===civ
+)
+)
+return false;
 
 }
 
+return true;
+
+}).slice(0,72);
+
+const main=totalArr(d.cards);
+const gr=totalArr(d.gr);
+const extra=totalArr(d.extra);
+
+$('deckEditorView').innerHTML=`
+
+<div class="deckShell">
+
+<!-- 上部 -->
+<div class="deckHeader">
+
+<div class="deckHeaderRow">
+
+<button
+class="deckIconBtn"
+id="backDeck">
+‹
+</button>
+
+<div class="deckTitle">
+${esc(d.name)}
+</div>
+
+<button
+class="deckHeaderBtn"
+id="renameDeck">
+編集
+</button>
+
+<button
+class="deckHeaderBtn"
+id="saveDeck">
+保存
+</button>
+
+</div>
+
+<div class="deckCounts">
+
+<button
+class="deckCountTab ${state.deckSection==='main'?'active':''}"
+data-section="main">
+メイン ${main}
+</button>
+
+<button
+class="deckCountTab ${state.deckSection==='gr'?'active':''}"
+data-section="gr">
+GR ${gr}<small>/12</small>
+</button>
+
+<button
+class="deckCountTab ${state.deckSection==='extra'?'active':''}"
+data-section="extra">
+超次元 ${extra}<small>/8</small>
+</button>
+
+</div>
+
+</div>
+
+<!-- フォーマット -->
+<div class="deckToolbar">
+
+<button
+class="formatBtn ${d.format==='オリジナル'?'active':''}"
+data-format="オリジナル">
+オリジナル
+</button>
+
+<button
+class="formatBtn ${d.format==='アドバンス'?'active':''}"
+data-format="アドバンス">
+アドバンス
+</button>
+
+<button
+class="analyzeBtn"
+id="analysisBtn">
+▥ 分析
+</button>
+
+</div>
+
+<!-- デッキカード -->
+<div class="deckArea">
+
+<div class="deckSectionTitle">
+
+<span>
+${sectionLabel()}
+<b>
+${totalArr(arr)}/${maxForSection()}
+</b>
+</span>
+
+<span class="deckHint">
+カードを左右にスワイプ
+</span>
+
+</div>
+
+${
+arr.length
+?
+`<div class="cardGrid">
+${arr.map(deckTileHtml).join('')}
+</div>`
+:
+`<div class="emptyDeck">
+下のカードをタップして追加
+</div>`
+}
+
+</div>
+
+<div class="swipeNote">
+← 左スワイプで1枚減らす　｜　
+右スワイプで1枚増やす →
+</div>
+
+<!-- 絞り込み -->
+<div class="sectionSwitch">
+
+<button
+class="${state.deckFilter==='all'?'active':''}"
+data-filter="all">
+すべて
+</button>
+
+<button
+class="${state.deckFilter==='owned'?'active':''}"
+data-filter="owned">
+所持のみ
+</button>
+
+<button
+class="${state.deckFilter==='favorite'?'active':''}"
+data-filter="favorite">
+お気に入り
+</button>
+
+</div>
+
+<!-- 検索 -->
+<div class="picker">
+
+<div class="pickerSearch">
+
+<input
+id="deckSearch"
+value="${esc(state.deckSearch)}"
+placeholder="カード名・番号・種族で検索">
+
+<button id="clearDeckSearch">
+×
+</button>
+
+</div>
+
+<div class="pickerFilters">
+
+${['光','水','闇','火','自然','ゼロ'].map(x=>`
+
+<button
+class="chip ${
+state.deckFilter==='civ:'+x
+?'active':''
+}"
+data-civ="${x}">
+${x}
+</button>
+
+`).join('')}
+
+</div>
+
+<div class="pickerStatus">
+${results.length}枚表示中　・　
+${sectionLabel()}に追加
+</div>
+
+<div class="pickerGrid">
+
+${
+results.length
+?
+results.map(pickerTileHtml).join('')
+:
+'<div class="emptyDeck" style="grid-column:1/-1">該当するカードがありません。</div>'
+}
+
+</div>
+
+</div>
+
+</div>
+`;
+
+$('backDeck').onclick=()=>{
+
+state.activeDeck=null;
+state.deckSearch='';
+renderDeckList();
+
+};
+
+$('renameDeck').onclick=()=>{
+
+const n=prompt(
+'デッキ名',
+d.name
+);
+
+if(n&&n.trim()){
+
+d.name=n.trim();
+save();
+renderDeckEditor();
+
+}
+
+};
+
+$('saveDeck').onclick=()=>{
+
+save();
+alert('デッキを保存しました。');
+
+};
+
+$('deckSearch').oninput=e=>{
+
+state.deckSearch=e.target.value;
+renderDeckEditor();
+
+};
+
+$('clearDeckSearch').onclick=()=>{
+
+state.deckSearch='';
+renderDeckEditor();
+
+};
+
+/* メイン/GR/超次元 */
+$('deckEditorView')
+.querySelectorAll('[data-section]')
+.forEach(b=>{
+
+b.onclick=()=>{
+
+state.deckSection=
+b.dataset.section;
+
+renderDeckEditor();
+
+};
+
+});
+
+/* フォーマット */
+$('deckEditorView')
+.querySelectorAll('[data-format]')
+.forEach(b=>{
+
+b.onclick=()=>{
+
+d.format=b.dataset.format;
+
+save();
+renderDeckEditor();
+
+};
+
+});
+
+/* 絞り込み */
+$('deckEditorView')
+.querySelectorAll('[data-filter]')
+.forEach(b=>{
+
+b.onclick=()=>{
+
+state.deckFilter=
+b.dataset.filter;
+
+renderDeckEditor();
+
+};
+
+});
+
+/* 文明 */
+$('deckEditorView')
+.querySelectorAll('[data-civ]')
+.forEach(b=>{
+
+b.onclick=()=>{
+
+state.deckFilter=
+'civ:'+b.dataset.civ;
+
+state.deckSearch='';
+
+renderDeckEditor();
+
+};
+
+});
+
+/* 追加 */
+$('deckEditorView')
+.querySelectorAll('[data-picker-add]')
+.forEach(b=>{
+
+b.onclick=()=>{
+
+addToDeck(
+b.dataset.pickerAdd
+);
+
+};
+
+});
+
+/* 分析 */
+$('analysisBtn').onclick=()=>
+openAnalysis(d);
+
+/* =========================
+   スワイプ
+========================= */
+
+let sx=0;
+let sy=0;
+
+$('deckEditorView')
+.querySelectorAll('[data-swipe-id]')
+.forEach(tile=>{
+
+tile.addEventListener(
+'touchstart',
+e=>{
+
+sx=e.changedTouches[0].clientX;
+sy=e.changedTouches[0].clientY;
+
+},
+{passive:true}
+);
+
+tile.addEventListener(
+'touchend',
+e=>{
+
+const dx=
+e.changedTouches[0].clientX-sx;
+
+const dy=
+e.changedTouches[0].clientY-sy;
+
+if(
+Math.abs(dx)>45 &&
+Math.abs(dx)>Math.abs(dy)
+){
+
+changeDeckQty(
+tile.dataset.swipeId,
+dx>0?1:-1
+);
+
+}
+
+},
+{passive:true}
+);
+
+/* タップで詳細 */
+tile.addEventListener(
+'click',
+e=>{
+
+if(
+Math.abs(e.clientX-sx)<10 &&
+Math.abs(e.clientY-sy)<10
+){
+
+openCardDetail(
+tile.dataset.swipeId
+);
+
+}
+
+});
+
+});
+
+}
+
+/* =========================
+   デッキ追加
+========================= */
 
 function addToDeck(id){
 
-  const d=
+const d=state.decks[state.activeDeck];
 
-    state.decks[state.activeDeck];
+ensureDeck(d);
 
+const a=arrForSection(d);
+const max=maxForSection();
 
-  const section=
+if(totalArr(a)>=max){
 
-    state.deckSection;
+alert(
+`${sectionLabel()}は${max}枚までです。`
+);
 
+return;
+}
 
-  const total=
+const x=a.find(
+x=>x.id===id
+);
 
-    sectionTotal(
+if(x){
 
-      d,
+/* メインのみ4枚制限 */
+if(
+state.deckSection==='main' &&
+x.need>=4
+){
 
-      section
+alert(
+'同じカードは通常4枚までです。'
+);
 
-    );
-
-
-  const limit=
-
-    sectionLimit(
-
-      section
-
-    );
-
-
-  const x=
-
-    d.cards.find(
-
-      x=>
-
-        x.id===id&&
-
-        x.section===section
-
-    );
-
-
-  if(total>=limit){
-
-    alert(
-
-      `${sectionLabel(section)}は${limit}枚までです。`
-
-    );
-
-    return;
-
-  }
-
-
-  if(x){
-
-    if(x.need>=4){
-
-      alert(
-
-        '同じカードは4枚までです。'
-
-      );
-
-      return;
-
-    }
-
-    x.need++;
-
-  }else{
-
-    d.cards.push({
-
-      id:id,
-
-      need:1,
-
-      section:section
-
-    });
-
-  }
-
-
-  save();
-
-  renderDeckEditor();
+return;
 
 }
 
+x.need++;
+
+}else{
+
+a.push({
+id:id,
+need:1
+});
+
+}
+
+save();
+renderDeckEditor();
+
+}
+
+/* =========================
+   枚数変更
+========================= */
 
 function changeDeckQty(id,delta){
 
-  const d=
+const d=state.decks[state.activeDeck];
 
-    state.decks[state.activeDeck];
+ensureDeck(d);
 
+const a=arrForSection(d);
 
-  const section=
+const x=a.find(
+x=>x.id===id
+);
 
-    state.deckSection;
+if(!x)
+return;
 
+/* 4枚 */
+if(
+delta>0 &&
+state.deckSection==='main' &&
+x.need>=4
+){
 
-  const x=
+alert(
+'同じカードは通常4枚までです。'
+);
 
-    d.cards.find(
-
-      x=>
-
-        x.id===id&&
-
-        x.section===section
-
-    );
-
-
-  if(!x)return;
-
-
-  if(
-
-    delta>0&&
-
-    x.need>=4
-
-  ){
-
-    alert(
-
-      '同じカードは4枚までです。'
-
-    );
-
-    return;
-
-  }
-
-
-  x.need+=delta;
-
-
-  if(x.need<=0){
-
-    d.cards=
-
-      d.cards.filter(
-
-        y=>
-
-          !(
-
-            y.id===id&&
-
-            y.section===section
-
-          )
-
-      );
-
-  }
-
-
-  save();
-
-  renderDeckEditor();
+return;
 
 }
 
+/* 上限 */
+if(
+delta>0 &&
+totalArr(a)>=maxForSection()
+)
+return;
 
-$('deckListView').addEventListener(
+x.need+=delta;
 
-  'click',
+if(x.need<=0){
 
-  e=>{
+const i=a.indexOf(x);
 
-    const o=
+a.splice(i,1);
 
-      e.target.dataset.openDeck;
+}
 
+save();
+renderDeckEditor();
 
-    const d=
-
-      e.target.dataset.deleteDeck;
-
-
-    if(o!==undefined){
-
-      state.activeDeck=+o;
-
-      state.deckSearch='';
-
-      state.deckFilter='all';
-
-      state.deckSection='main';
-
-      renderDeckEditor();
-
-    }
-
-
-    if(d!==undefined){
-
-      if(
-
-        confirm(
-
-          'このデッキを削除しますか？'
-
-        )
-
-      ){
-
-        state.decks.splice(
-
-          +d,
-
-          1
-
-        );
-
-        save();
-
-        renderDeckList();
-
-      }
-
-    }
-
-  }
-
-);
-
+}
 
 /* =========================
-   カードデータ読み込み
+   カード詳細
+========================= */
+
+function openCardDetail(id){
+
+const c=deckCard(id);
+
+if(!c)
+return;
+
+const d=state.decks[state.activeDeck];
+
+ensureDeck(d);
+
+const a=arrForSection(d);
+
+const x=a.find(
+x=>x.id===id
+);
+
+const n=x?x.need:0;
+
+$('analysisOverlay').innerHTML=`
+
+<div class="sheet">
+
+<div class="sheetHead">
+
+<h2>
+${esc(cardName(c))}
+</h2>
+
+<button
+class="close"
+id="closeAnalysis">
+×
+</button>
+
+</div>
+
+<img
+src="${cardImage(c)}"
+style="
+display:block;
+width:min(62vw,260px);
+max-height:58vh;
+object-fit:contain;
+margin:0 auto 10px;
+border-radius:7px
+"
+referrerpolicy="no-referrer">
+
+<div
+style="
+text-align:center;
+color:#666;
+font-size:11px;
+margin-bottom:10px
+">
+
+${esc(cardNumber(c))}
+<br>
+
+${esc(civilizations(c).join(' / '))}
+　
+${esc(races(c).join(' / '))}
+
+</div>
+
+<div
+style="
+display:flex;
+align-items:center;
+justify-content:center;
+gap:12px
+">
+
+<button
+class="btn"
+id="detailMinus">
+−
+</button>
+
+<b style="font-size:20px">
+${n}
+</b>
+
+<button
+class="btn"
+id="detailPlus">
+＋
+</button>
+
+</div>
+
+</div>
+`;
+
+$('analysisOverlay')
+.classList.add('open');
+
+$('closeAnalysis').onclick=()=>
+$('analysisOverlay')
+.classList.remove('open');
+
+$('detailMinus').onclick=()=>{
+
+changeDeckQty(id,-1);
+
+$('analysisOverlay')
+.classList.remove('open');
+
+};
+
+$('detailPlus').onclick=()=>{
+
+addToDeck(id);
+
+$('analysisOverlay')
+.classList.remove('open');
+
+};
+
+}
+
+/* =========================
+   分析
+========================= */
+
+function openAnalysis(d){
+
+ensureDeck(d);
+
+const all=[
+...d.cards,
+...d.gr,
+...d.extra
+];
+
+const cost={};
+let total=0;
+
+all.forEach(x=>{
+
+const c=deckCard(x.id);
+
+if(!c)
+return;
+
+const n=x.need||0;
+
+total+=n;
+
+const k=
+firstValue(c,'cost')||'?';
+
+cost[k]=(cost[k]||0)+n;
+
+});
+
+const civ={};
+
+d.cards.forEach(x=>{
+
+const c=deckCard(x.id);
+
+if(c){
+
+civilizations(c).forEach(v=>{
+
+civ[v]=
+(civ[v]||0)+(x.need||0);
+
+});
+
+}
+
+});
+
+$('analysisContent').innerHTML=`
+
+<div class="analysisGrid">
+
+<div class="analysisBox">
+<b>${deckTotal(d)}</b>
+<span>メイン枚数</span>
+</div>
+
+<div class="analysisBox">
+<b>${totalArr(d.gr)}</b>
+<span>超GR</span>
+</div>
+
+<div class="analysisBox">
+<b>${totalArr(d.extra)}</b>
+<span>超次元</span>
+</div>
+
+<div class="analysisBox">
+<b>${[...d.cards,...d.gr,...d.extra].length}</b>
+<span>採用種類</span>
+</div>
+
+</div>
+
+<div class="field">
+
+<label>文明</label>
+
+<div class="colorRow">
+
+${
+Object.entries(civ)
+.map(
+([k,v])=>
+`<span class="colorTag">
+${esc(k)} ${v}
+</span>`
+)
+.join('')
+||'なし'
+}
+
+</div>
+
+</div>
+
+<div class="field">
+
+<label>コスト分布</label>
+
+<div class="colorRow">
+
+${
+Object.entries(cost)
+.sort(
+(a,b)=>(+a[0])-(+b[0])
+)
+.map(
+([k,v])=>
+`<span class="colorTag">
+コスト${esc(k)}：${v}
+</span>`
+)
+.join('')
+||'なし'
+}
+
+</div>
+
+</div>
+`;
+
+$('analysisOverlay')
+.classList.add('open');
+
+$('closeAnalysis').onclick=()=>
+$('analysisOverlay')
+.classList.remove('open');
+
+}
+
+/* =========================
+   デッキ一覧クリック
+========================= */
+
+$('deckListView')
+.addEventListener(
+'click',
+e=>{
+
+const o=
+e.target.dataset.openDeck;
+
+const d=
+e.target.dataset.deleteDeck;
+
+if(o!==undefined){
+
+state.activeDeck=+o;
+state.deckSearch='';
+state.deckFilter='all';
+state.deckSection='main';
+
+renderDeckEditor();
+
+}
+
+if(
+d!==undefined &&
+confirm(
+'このデッキを削除しますか？'
+)
+){
+
+state.decks.splice(+d,1);
+
+save();
+
+renderDeckList();
+
+}
+
+});
+
+/* =========================
+   データ読み込み
 ========================= */
 
 async function load(){
 
-  try{
+try{
 
-    const r=
+const r=
+await fetch(
+'data/cards.json?'+Date.now()
+);
 
-      await fetch(
+if(!r.ok)
+throw new Error('load');
 
-        'data/cards.json?'+Date.now()
+state.cards=
+await r.json();
 
-      );
+fillSettings();
 
+$('status').textContent=
+`カード ${state.cards.length.toLocaleString()} 枚を読み込みました`;
 
-    if(!r.ok)
+renderCards();
+renderFavorites();
+renderDeckList();
 
-      throw new Error('load');
+}catch(e){
 
-
-    state.cards=
-
-      await r.json();
-
-
-    state.decks=
-
-      state.decks.map(
-
-        normalizeDeck
-
-      );
-
-
-    fillSettings();
-
-
-    $('status').textContent=
-
-      `カード ${state.cards.length.toLocaleString()} 枚を読み込みました`;
-
-
-    renderCards();
-
-    renderFavorites();
-
-    renderDeckList();
-
-
-  }catch(e){
-
-    $('status').textContent=
-
-      'カードデータを読み込めません。GitHub Actionsの更新が完了するまで少し待ってください。';
-
-  }
+$('status').textContent=
+'カードデータを読み込めません。GitHub Actionsの更新完了後に再読み込みしてください。';
 
 }
 
+}
 
 load();
 

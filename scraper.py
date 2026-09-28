@@ -27,24 +27,25 @@ scripts = soup.find_all(
 )
 
 print(
-    "\nJavaScript:",
+    "JavaScript:",
     len(scripts),
-    "個\n",
+    "個",
     flush=True
 )
 
 
+# ページ切り替え調査に必要な文字だけ
 words = [
     "data-page",
     "nextpostslink",
     "pagenum",
-    "pagination",
-    "ajax",
-    "page/"
+    "search_cond_add",
+    "location.href",
+    ".page"
 ]
 
 
-found = False
+found = 0
 
 
 for i, script in enumerate(scripts, 1):
@@ -61,11 +62,6 @@ for i, script in enumerate(scripts, 1):
 
     try:
 
-        print(
-            f"[{i}/{len(scripts)}] {js_url}",
-            flush=True
-        )
-
         js = requests.get(
             js_url,
             timeout=30,
@@ -74,50 +70,19 @@ for i, script in enumerate(scripts, 1):
             }
         ).text
 
-    except Exception as e:
+    except Exception:
+        continue
 
-        print(
-            "取得失敗:",
-            e,
-            flush=True
-        )
 
+    # 関係ない外部JSは飛ばす
+    if "dm.takaratomy.co.jp" not in js_url:
         continue
 
 
     for word in words:
 
-        if word not in js:
-            continue
-
-        found = True
-
-        print(
-            "\n========================================",
-            flush=True
-        )
-
-        print(
-            "発見:",
-            word,
-            flush=True
-        )
-
-        print(
-            "JS:",
-            js_url,
-            flush=True
-        )
-
-        print(
-            "========================================",
-            flush=True
-        )
-
-
+        positions = []
         start = 0
-
-        count = 0
 
         while True:
 
@@ -129,47 +94,66 @@ for i, script in enumerate(scripts, 1):
             if pos == -1:
                 break
 
-            count += 1
-
-            print(
-                "\n--- 発見", count, "---",
-                flush=True
-            )
-
-            print(
-                js[
-                    max(0, pos - 1000):
-                    min(len(js), pos + 3000)
-                ],
-                flush=True
-            )
+            positions.append(pos)
 
             start = pos + len(word)
 
-            if count >= 5:
+            if len(positions) >= 3:
                 break
 
 
+        for pos in positions:
+
+            found += 1
+
+            print(
+                "\n"
+                + "=" * 70,
+                flush=True
+            )
+
+            print(
+                "発見:",
+                word,
+                flush=True
+            )
+
+            print(
+                "JS:",
+                js_url,
+                flush=True
+            )
+
+            print(
+                "=" * 70,
+                flush=True
+            )
+
+            snippet = js[
+                max(0, pos - 1200):
+                min(len(js), pos + 2500)
+            ]
+
+            print(
+                snippet,
+                flush=True
+            )
+
+
 print(
-    "\n========================================",
+    "\n"
+    + "=" * 70,
     flush=True
 )
 
-if found:
-
-    print(
-        "ページ切り替え関連のJavaScriptが見つかりました。",
-        flush=True
-    )
-
-else:
-
-    print(
-        "関連文字列が見つかりませんでした。",
-        flush=True
-    )
+print(
+    "重要部分:",
+    found,
+    "件",
+    flush=True
+)
 
 print(
-    "========================================",
+    "=" * 70,
     flush=True
 )

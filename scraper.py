@@ -1,212 +1,175 @@
-from playwright.sync_api import sync_playwright
+import requests
+from bs4 import BeautifulSoup
+from urllib.parse import urljoin
 
 
 URL = "https://dm.takaratomy.co.jp/card/"
 
 
-with sync_playwright() as p:
+print("公式ページを取得中...", flush=True)
 
-    browser = p.chromium.launch(headless=True)
+html = requests.get(
+    URL,
+    timeout=60,
+    headers={
+        "User-Agent": "Mozilla/5.0"
+    }
+).text
 
-    page = browser.new_page(
-        viewport={
-            "width": 1280,
-            "height": 1000
-        }
-    )
+soup = BeautifulSoup(
+    html,
+    "html.parser"
+)
 
-    # =========================
-    # ネットワーク監視
-    # =========================
+scripts = soup.find_all(
+    "script",
+    src=True
+)
 
-    def request_handler(request):
+print(
+    "\nJavaScript:",
+    len(scripts),
+    "個\n",
+    flush=True
+)
 
-        if request.resource_type in ["xhr", "fetch"]:
 
-            print("\n========== REQUEST ==========")
-            print("METHOD:", request.method)
-            print("URL:", request.url)
+words = [
+    "data-page",
+    "nextpostslink",
+    "pagenum",
+    "pagination",
+    "ajax",
+    "page/"
+]
 
-            try:
-                print(
-                    "POST:",
-                    request.post_data
-                )
-            except:
-                pass
 
-    def response_handler(response):
+found = False
 
-        if response.request.resource_type in ["xhr", "fetch"]:
 
-            print("\n========== RESPONSE ==========")
-            print("STATUS:", response.status)
-            print("URL:", response.url)
+for i, script in enumerate(scripts, 1):
 
-    page.on(
-        "request",
-        request_handler
-    )
+    src = script.get("src")
 
-    page.on(
-        "response",
-        response_handler
-    )
+    if not src:
+        continue
 
-    # =========================
-    # ページを開く
-    # =========================
-
-    print(
-        "公式ページを開きます...",
-        flush=True
-    )
-
-    page.goto(
+    js_url = urljoin(
         URL,
-        wait_until="domcontentloaded",
-        timeout=60000
+        src
     )
 
-    page.wait_for_timeout(5000)
-
-    print(
-        "\n========== BEFORE ==========",
-        flush=True
-    )
-
-    print(
-        "URL:",
-        page.url,
-        flush=True
-    )
-
-    print(
-        "カードリンク数:",
-        page.locator(
-            'a[href*="/card/detail/"]'
-        ).count(),
-        flush=True
-    )
-
-    # =========================
-    # 2ページボタン
-    # =========================
-
-    target = page.locator(
-        '[data-page="2"]'
-    ).first
-
-    print(
-        "\n========== PAGE 2 BUTTON ==========",
-        flush=True
-    )
-
-    if target.count() == 0:
+    try:
 
         print(
-            "data-page=2 が見つかりません",
+            f"[{i}/{len(scripts)}] {js_url}",
             flush=True
         )
 
-    else:
+        js = requests.get(
+            js_url,
+            timeout=30,
+            headers={
+                "User-Agent": "Mozilla/5.0"
+            }
+        ).text
+
+    except Exception as e:
 
         print(
-            "TAG:",
-            target.evaluate(
-                "el => el.tagName"
-            ),
+            "取得失敗:",
+            e,
+            flush=True
+        )
+
+        continue
+
+
+    for word in words:
+
+        if word not in js:
+            continue
+
+        found = True
+
+        print(
+            "\n========================================",
             flush=True
         )
 
         print(
-            "HTML:",
-            target.evaluate(
-                "el => el.outerHTML"
-            ),
+            "発見:",
+            word,
             flush=True
         )
 
         print(
-            "href:",
-            target.get_attribute("href"),
+            "JS:",
+            js_url,
             flush=True
         )
 
         print(
-            "class:",
-            target.get_attribute("class"),
+            "========================================",
             flush=True
         )
 
-        print(
-            "data-page:",
-            target.get_attribute("data-page"),
-            flush=True
-        )
 
-        print(
-            "\n2ページ目をクリックします...",
-            flush=True
-        )
+        start = 0
 
-        target.click(
-            force=True,
-            timeout=10000
-        )
+        count = 0
 
-        print(
-            "クリック完了",
-            flush=True
-        )
+        while True:
 
-        page.wait_for_timeout(10000)
-
-        # =========================
-        # 結果
-        # =========================
-
-        print(
-            "\n========== AFTER ==========",
-            flush=True
-        )
-
-        print(
-            "URL:",
-            page.url,
-            flush=True
-        )
-
-        print(
-            "カードリンク数:",
-            page.locator(
-                'a[href*="/card/detail/"]'
-            ).count(),
-            flush=True
-        )
-
-        # 現在表示されているカードIDを取得
-        cards = page.locator(
-            'a[href*="/card/detail/"]'
-        )
-
-        print(
-            "\n========== CARD URLS ==========",
-            flush=True
-        )
-
-        for i in range(
-            min(cards.count(), 10)
-        ):
-
-            href = cards.nth(i).get_attribute(
-                "href"
+            pos = js.find(
+                word,
+                start
             )
 
+            if pos == -1:
+                break
+
+            count += 1
+
             print(
-                i + 1,
-                href,
+                "\n--- 発見", count, "---",
                 flush=True
             )
 
-    browser.close()
+            print(
+                js[
+                    max(0, pos - 1000):
+                    min(len(js), pos + 3000)
+                ],
+                flush=True
+            )
+
+            start = pos + len(word)
+
+            if count >= 5:
+                break
+
+
+print(
+    "\n========================================",
+    flush=True
+)
+
+if found:
+
+    print(
+        "ページ切り替え関連のJavaScriptが見つかりました。",
+        flush=True
+    )
+
+else:
+
+    print(
+        "関連文字列が見つかりませんでした。",
+        flush=True
+    )
+
+print(
+    "========================================",
+    flush=True
+)

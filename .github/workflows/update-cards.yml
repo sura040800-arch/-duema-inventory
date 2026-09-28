@@ -2,8 +2,10 @@ name: デュエマ公式カード自動更新
 
 on:
   workflow_dispatch:
+
   schedule:
     - cron: "30 18 * * *"
+
   push:
     paths:
       - "scraper.py"
@@ -14,11 +16,15 @@ permissions:
   contents: write
 
 jobs:
+
   update:
+
     runs-on: ubuntu-latest
+
     timeout-minutes: 360
 
     steps:
+
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -39,15 +45,24 @@ jobs:
 
       - name: Commit if changed
         run: |
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
+          git fetch origin main
+          git reset --soft origin/main
+
           git add data/cards.json
+          git add data/card_ids.json
 
           if git diff --cached --quiet; then
+
             echo "カードデータに変更なし"
+
           else
-            git commit -m "自動更新: 公式カードデータ"
-            git pull --rebase origin main
+
+            git commit -m "自動更新: 公式カードID"
+
             git push origin main
+
           fi

@@ -6,7 +6,9 @@
 <title>デュエマ コレクション</title>
 
 <style>
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
 body{
   margin:0;
@@ -44,7 +46,7 @@ main{
 .tabs{
   display:flex;
   gap:14px;
-  margin-bottom:20px;
+  margin-bottom:18px;
 }
 
 .tab{
@@ -65,70 +67,90 @@ main{
 .status{
   color:#6b7280;
   margin:12px 4px;
+  font-size:16px;
 }
 
+/* カード一覧 */
 .card{
+  display:flex;
+  align-items:center;
+  gap:14px;
   background:white;
   border-radius:16px;
-  padding:16px;
-  margin:12px 0;
+  padding:12px;
+  margin:10px 0;
   box-shadow:0 2px 8px #00000012;
+  min-height:150px;
 }
 
 .card-img{
-  display:block;
-  width:220px;
-  max-width:100%;
-  height:auto;
-  margin:0 auto 16px;
-  border-radius:10px;
-  box-shadow:0 2px 8px #0002;
+  flex:none;
+  width:86px;
+  height:120px;
+  object-fit:contain;
+  border-radius:7px;
+  background:#eee;
+}
+
+.card-info{
+  flex:1;
+  min-width:0;
 }
 
 .card h3{
-  margin:0 0 8px;
-  font-size:19px;
+  margin:0 0 5px;
+  font-size:17px;
+  line-height:1.35;
 }
 
-.info{
+.card-number{
+  display:inline-block;
   color:#6b7280;
-  font-size:14px;
-  line-height:1.6;
+  background:#f0f1f3;
+  border-radius:6px;
+  padding:3px 6px;
+  font-size:12px;
+  margin-bottom:5px;
 }
 
+.tags{
+  color:#6b7280;
+  font-size:12px;
+  line-height:1.55;
+}
+
+.card-bottom{
+  margin-top:5px;
+  color:#6b7280;
+  font-size:12px;
+}
+
+/* 所持数 */
 .qty{
+  flex:none;
   display:flex;
   align-items:center;
-  gap:10px;
-  margin-top:12px;
+  gap:5px;
 }
 
 .qty button{
-  width:42px;
-  height:42px;
+  width:38px;
+  height:38px;
   border:0;
   border-radius:10px;
   font-size:22px;
   background:#e5e7eb;
+  color:#1683ff;
 }
 
 .qty span{
-  min-width:35px;
+  min-width:25px;
   text-align:center;
-  font-size:20px;
+  font-size:19px;
   font-weight:bold;
 }
 
-.hidden{
-  display:none;
-}
-
-.empty{
-  text-align:center;
-  color:#6b7280;
-  padding:40px 10px;
-}
-
+/* デッキ */
 .deck{
   background:white;
   border-radius:16px;
@@ -148,12 +170,70 @@ main{
   background:#111827;
   color:white;
 }
+
+.hidden{
+  display:none;
+}
+
+.empty{
+  text-align:center;
+  color:#6b7280;
+  padding:40px 10px;
+}
+
+/* スマホ用 */
+@media(max-width:430px){
+
+  main{
+    padding:10px;
+  }
+
+  .card{
+    gap:10px;
+    padding:10px;
+    min-height:135px;
+  }
+
+  .card-img{
+    width:70px;
+    height:100px;
+  }
+
+  .card h3{
+    font-size:15px;
+  }
+
+  .card-number{
+    font-size:11px;
+  }
+
+  .tags,
+  .card-bottom{
+    font-size:11px;
+  }
+
+  .qty{
+    gap:3px;
+  }
+
+  .qty button{
+    width:34px;
+    height:38px;
+    font-size:20px;
+  }
+
+  .qty span{
+    min-width:20px;
+    font-size:17px;
+  }
+}
 </style>
 </head>
 
 <body>
 
 <header>
+
   <h1>デュエマ コレクション</h1>
 
   <input
@@ -162,11 +242,13 @@ main{
     placeholder="カード名・カード番号で検索"
     autocomplete="off"
   >
+
 </header>
 
 <main>
 
   <div class="tabs">
+
     <button id="invTab" class="tab active">
       📦 所持カード
     </button>
@@ -174,6 +256,7 @@ main{
     <button id="deckTab" class="tab">
       🃏 デッキ
     </button>
+
   </div>
 
   <div id="status" class="status">
@@ -187,9 +270,14 @@ main{
   <section id="deckView" class="hidden">
 
     <div class="deck">
-      <button class="primary" onclick="addDeck()">
+
+      <button
+        class="primary"
+        onclick="addDeck()"
+      >
         ＋ デッキを追加
       </button>
+
     </div>
 
     <div id="decks"></div>
@@ -411,15 +499,7 @@ async function loadCards(){
     console.error(error);
 
     statusBox.innerHTML =
-      "カードデータを読み込めませんでした。<br>" +
-      "ページを再読み込みしてください。";
-
-    cardsBox.innerHTML = `
-      <div class="empty">
-        データ読み込みエラー<br><br>
-        ${escapeHtml(error.message)}
-      </div>
-    `;
+      "カードデータを読み込めませんでした。";
 
   }
 
@@ -452,6 +532,7 @@ function renderCards(){
 
   let result = cards;
 
+
   if(keyword){
 
     result =
@@ -482,6 +563,12 @@ function renderCards(){
       );
 
   }
+
+
+  /*
+    最初は200枚まで。
+    検索結果も多すぎないようにする。
+  */
 
   result =
     result.slice(0,200);
@@ -538,57 +625,71 @@ function renderCards(){
             referrerpolicy="no-referrer"
           >
 
-          <h3>
-            ${escapeHtml(card._name)}
-          </h3>
 
-          <div class="info">
+          <div class="card-info">
 
-            カード番号：
-            ${escapeHtml(id)}
+            <h3>
+              ${escapeHtml(card._name)}
+            </h3>
 
-            ${
-              card._type
-              ? "<br>種類：" +
-                escapeHtml(card._type)
-              : ""
-            }
 
-            ${
-              card._civilization
-              ? "<br>文明：" +
-                escapeHtml(
-                  card._civilization
-                )
-              : ""
-            }
+            <div class="card-number">
+              ${escapeHtml(id)}
+            </div>
 
-            ${
-              card._rarity
-              ? "<br>レアリティ：" +
-                escapeHtml(
-                  card._rarity
-                )
-              : ""
-            }
 
-            ${
-              card._power
-              ? "<br>パワー：" +
-                escapeHtml(
-                  card._power
-                )
-              : ""
-            }
+            <div class="tags">
 
-            ${
-              card._cost
-              ? "<br>コスト：" +
-                escapeHtml(
-                  card._cost
-                )
-              : ""
-            }
+              ${
+                card._civilization
+                ? escapeHtml(
+                    card._civilization
+                  )
+                : ""
+              }
+
+              ${
+                card._type
+                ? "　" +
+                  escapeHtml(
+                    card._type
+                  )
+                : ""
+              }
+
+            </div>
+
+
+            <div class="card-bottom">
+
+              ${
+                card._cost
+                ? "コスト " +
+                  escapeHtml(
+                    card._cost
+                  )
+                : ""
+              }
+
+              ${
+                card._power
+                ? "　パワー " +
+                  escapeHtml(
+                    card._power
+                  )
+                : ""
+              }
+
+              ${
+                card._rarity
+                ? "　" +
+                  escapeHtml(
+                    card._rarity
+                  )
+                : ""
+              }
+
+            </div>
 
           </div>
 
@@ -636,6 +737,7 @@ function changeOwned(
   const id =
     decodeURIComponent(encodedId);
 
+
   owned[id] =
     Math.max(
       0,
@@ -667,13 +769,9 @@ invTab.addEventListener(
   "click",
   () => {
 
-    invTab.classList.add(
-      "active"
-    );
+    invTab.classList.add("active");
 
-    deckTab.classList.remove(
-      "active"
-    );
+    deckTab.classList.remove("active");
 
     inventoryView.classList.remove(
       "hidden"
@@ -693,13 +791,9 @@ deckTab.addEventListener(
   "click",
   () => {
 
-    deckTab.classList.add(
-      "active"
-    );
+    deckTab.classList.add("active");
 
-    invTab.classList.remove(
-      "active"
-    );
+    invTab.classList.remove("active");
 
     deckView.classList.remove(
       "hidden"

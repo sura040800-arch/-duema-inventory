@@ -2,73 +2,482 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#111827">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>デュエマ コレクション</title>
+
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;background:#f3f4f6;color:#111827}
-header{background:#111827;color:#fff;padding:16px;position:sticky;top:0;z-index:2}h1{font-size:20px;margin:0 0 10px}
-input,button,select{font:inherit}input{width:100%;padding:12px;border:1px solid #d1d5db;border-radius:10px;background:#fff}
-main{max-width:760px;margin:auto;padding:12px}.tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
-.tab{padding:11px;border:0;border-radius:10px;background:#e5e7eb}.tab.active{background:#111827;color:white}
-.status{font-size:12px;color:#6b7280;margin:8px 0}.card{background:#fff;border-radius:14px;padding:12px;margin:8px 0;box-shadow:0 1px 3px #0001}
-.row{display:flex;gap:8px;align-items:center;justify-content:space-between}.name{font-weight:700}.meta{font-size:12px;color:#6b7280;margin-top:4px}
-.qty{display:flex;align-items:center;gap:8px}.qty button{width:42px;height:42px;border:0;border-radius:10px;background:#e5e7eb;font-size:22px}.qty b{min-width:28px;text-align:center}
-.btn{border:0;border-radius:10px;padding:10px 12px;background:#111827;color:#fff}.btn.secondary{background:#e5e7eb;color:#111827}
-.hidden{display:none}.deck{background:#fff;border-radius:14px;padding:12px;margin:8px 0}.deck input{margin:8px 0}
-.small{font-size:12px;color:#6b7280}.danger{color:#b91c1c}
-@media(max-width:430px){.row{align-items:flex-start}.card .row>div:first-child{min-width:0}.name{overflow-wrap:anywhere}}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+  background:#f2f3f5;
+  color:#111827;
+}
+header{
+  background:#111827;
+  color:white;
+  padding:28px 20px 30px;
+}
+header h1{
+  margin:0 0 20px;
+  font-size:28px;
+}
+#search{
+  width:100%;
+  padding:17px 18px;
+  font-size:20px;
+  border-radius:16px;
+  border:2px solid #ddd;
+  outline:none;
+}
+main{
+  max-width:760px;
+  margin:auto;
+  padding:16px;
+}
+.tabs{
+  display:flex;
+  gap:14px;
+  margin-bottom:20px;
+}
+.tab{
+  flex:1;
+  border:0;
+  border-radius:16px;
+  padding:18px 10px;
+  font-size:20px;
+  font-weight:bold;
+  background:#e5e7eb;
+}
+.tab.active{
+  background:#111827;
+  color:white;
+}
+.status{
+  color:#6b7280;
+  margin:12px 4px;
+}
+.card{
+  background:white;
+  border-radius:16px;
+  padding:16px;
+  margin:12px 0;
+  box-shadow:0 2px 8px #00000012;
+}
+.card h3{
+  margin:0 0 8px;
+  font-size:19px;
+}
+.info{
+  color:#6b7280;
+  font-size:14px;
+  line-height:1.6;
+}
+.qty{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:12px;
+}
+.qty button{
+  width:42px;
+  height:42px;
+  border:0;
+  border-radius:10px;
+  font-size:22px;
+  background:#e5e7eb;
+}
+.qty span{
+  min-width:35px;
+  text-align:center;
+  font-size:20px;
+  font-weight:bold;
+}
+.hidden{display:none}
+.deck{
+  background:white;
+  border-radius:16px;
+  padding:16px;
+  margin:12px 0;
+}
+.deck button{
+  border:0;
+  border-radius:10px;
+  padding:10px 14px;
+  margin:4px;
+  font-size:15px;
+}
+.primary{
+  background:#111827;
+  color:white;
+}
+.empty{
+  text-align:center;
+  color:#6b7280;
+  padding:40px 10px;
+}
 </style>
 </head>
+
 <body>
-<header><h1>デュエマ コレクション</h1><input id="search" placeholder="カード名・カード番号で検索"></header>
+
+<header>
+  <h1>デュエマ コレクション</h1>
+  <input
+    id="search"
+    type="search"
+    placeholder="カード名・カード番号で検索"
+    autocomplete="off"
+  >
+</header>
+
 <main>
-<div class="tabs">
-<button class="tab active" id="invTab">📦 所持カード</button>
-<button class="tab" id="deckTab">🃏 デッキ</button>
-</div>
-<div id="invView">
-<div class="status" id="status">カードデータを読み込み中…</div>
-<div id="cards"></div>
-</div>
-<div id="deckView" class="hidden">
-<div class="card"><button class="btn" id="newDeck">＋ デッキを作る</button></div>
-<div id="decks"></div>
-</div>
+
+  <div class="tabs">
+    <button id="invTab" class="tab active">📦 所持カード</button>
+    <button id="deckTab" class="tab">🃏 デッキ</button>
+  </div>
+
+  <div id="status" class="status">
+    カードデータを読み込み中...
+  </div>
+
+  <section id="inventoryView">
+    <div id="cards"></div>
+  </section>
+
+  <section id="deckView" class="hidden">
+    <div class="deck">
+      <button class="primary" onclick="addDeck()">＋ デッキを追加</button>
+    </div>
+    <div id="decks"></div>
+  </section>
+
 </main>
+
 <script>
-const state={cards:[],owned:JSON.parse(localStorage.getItem('duema_owned_v3')||'{}'),decks:JSON.parse(localStorage.getItem('duema_decks_v3')||'[]')};
-const $=id=>document.getElementById(id);
-function save(){localStorage.setItem('duema_owned_v3',JSON.stringify(state.owned));localStorage.setItem('duema_decks_v3',JSON.stringify(state.decks))}
-function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
-async function load(){
- try{const r=await fetch('data/cards.json?'+Date.now());state.cards=await r.json();$('status').textContent=`公式カード ${state.cards.length.toLocaleString()}枚 / データ更新: ${new Date(document.lastModified).toLocaleDateString('ja-JP')}`;renderCards()}
- catch(e){$('status').textContent='カードデータを読み込めません。GitHub Actionsの更新が完了するまで少し待ってください。'}
+"use strict";
+
+let cards = [];
+let owned = JSON.parse(localStorage.getItem("duema_owned") || "{}");
+let decks = JSON.parse(localStorage.getItem("duema_decks") || "[]");
+
+const search = document.getElementById("search");
+const cardsBox = document.getElementById("cards");
+const statusBox = document.getElementById("status");
+const inventoryView = document.getElementById("inventoryView");
+const deckView = document.getElementById("deckView");
+const invTab = document.getElementById("invTab");
+const deckTab = document.getElementById("deckTab");
+
+function saveOwned(){
+  localStorage.setItem("duema_owned", JSON.stringify(owned));
 }
+
+function saveDecks(){
+  localStorage.setItem("duema_decks", JSON.stringify(decks));
+}
+
+function getId(card){
+  return card.id || card.card_id || card.cardId || card.number || "";
+}
+
+function getName(card){
+  return card.name || card.card_name || card.title || getId(card);
+}
+
+function getType(card){
+  return card.type || card.card_type || "";
+}
+
+function getCivilization(card){
+  return card.civilization || card.civ || "";
+}
+
+function getRarity(card){
+  return card.rarity || "";
+}
+
+function getPower(card){
+  return card.power || "";
+}
+
+function getCost(card){
+  return card.cost ?? "";
+}
+
+function normalizeCard(card){
+  return {
+    ...card,
+    _id:String(getId(card)),
+    _name:String(getName(card)),
+    _type:String(getType(card)),
+    _civilization:String(getCivilization(card)),
+    _rarity:String(getRarity(card)),
+    _power:String(getPower(card)),
+    _cost:String(getCost(card))
+  };
+}
+
+/*
+  30MB近いJSONなので、
+  いきなり画面を大量生成せず、
+  読み込み→検索結果だけ表示する。
+*/
+async function loadCards(){
+
+  try{
+
+    statusBox.textContent = "カードデータを読み込み中...";
+
+    const response = await fetch("./data/cards.json?"+Date.now(), {
+      cache:"no-store"
+    });
+
+    if(!response.ok){
+      throw new Error("HTTP "+response.status);
+    }
+
+    const data = await response.json();
+
+    if(Array.isArray(data)){
+      cards = data;
+    }else if(Array.isArray(data.cards)){
+      cards = data.cards;
+    }else{
+      throw new Error("カードデータの形式が違います");
+    }
+
+    cards = cards.map(normalizeCard);
+
+    statusBox.textContent =
+      "カード "+cards.length.toLocaleString()+" 枚を読み込みました";
+
+    renderCards();
+
+  }catch(error){
+
+    console.error(error);
+
+    statusBox.innerHTML =
+      "カードデータを読み込めませんでした。<br>" +
+      "ページを再読み込みしてください。";
+
+    cardsBox.innerHTML = `
+      <div class="empty">
+        データ読み込みエラー<br><br>
+        ${escapeHtml(error.message)}
+      </div>
+    `;
+  }
+}
+
+function escapeHtml(value){
+  return String(value)
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+}
+
 function renderCards(){
- const q=$('search').value.trim().toLowerCase();
- const list=state.cards.filter(c=>(c.name+' '+c.number).toLowerCase().includes(q)).slice(0,100);
- $('cards').innerHTML=list.length?list.map(c=>{
-  const id=c.id, n=state.owned[id]||0;
-  return `<div class="card"><div class="row"><div><div class="name">${esc(c.name)}</div><div class="meta">${esc(c.number)}${c.civilization?' ・ '+esc(c.civilization):''}${c.cost!==''?' ・ コスト '+esc(c.cost):''}${c.rarity?' ・ '+esc(c.rarity):''}</div></div><div class="qty"><button data-minus="${esc(id)}">−</button><b>${n}</b><button data-plus="${esc(id)}">＋</button></div></div></div>`
- }).join(''):`<div class="card">該当するカードがありません。</div>`;
+
+  const keyword = search.value.trim().toLowerCase();
+
+  let result = cards;
+
+  if(keyword){
+
+    result = cards.filter(card => {
+
+      return (
+        card._name.toLowerCase().includes(keyword) ||
+        card._id.toLowerCase().includes(keyword)
+      );
+
+    });
+
+  }else{
+
+    /*
+      最初から23,000枚全部表示すると重いので、
+      検索前は所持しているカードだけ表示。
+    */
+    result = cards.filter(card => (owned[card._id] || 0) > 0);
+
+  }
+
+  result = result.slice(0,200);
+
+  if(result.length === 0){
+
+    cardsBox.innerHTML = `
+      <div class="empty">
+        ${keyword ? "検索結果がありません" : "所持カードがありません"}
+      </div>
+    `;
+
+    return;
+  }
+
+  cardsBox.innerHTML = result.map(card => {
+
+    const id = card._id;
+    const count = owned[id] || 0;
+
+    return `
+      <div class="card">
+
+        <h3>${escapeHtml(card._name)}</h3>
+
+        <div class="info">
+          カード番号：${escapeHtml(id)}
+          ${card._type ? "<br>種類："+escapeHtml(card._type) : ""}
+          ${card._civilization ? "<br>文明："+escapeHtml(card._civilization) : ""}
+          ${card._rarity ? "<br>レアリティ："+escapeHtml(card._rarity) : ""}
+          ${card._power ? "<br>パワー："+escapeHtml(card._power) : ""}
+          ${card._cost ? "<br>コスト："+escapeHtml(card._cost) : ""}
+        </div>
+
+        <div class="qty">
+          <button onclick="changeOwned('${encodeURIComponent(id)}',-1)">−</button>
+          <span>${count}</span>
+          <button onclick="changeOwned('${encodeURIComponent(id)}',1)">＋</button>
+        </div>
+
+      </div>
+    `;
+
+  }).join("");
 }
-$('cards').addEventListener('click',e=>{const p=e.target.dataset.plus,m=e.target.dataset.minus;if(p){state.owned[p]=(state.owned[p]||0)+1;save();renderCards()}if(m){state.owned[m]=Math.max(0,(state.owned[m]||0)-1);save();renderCards()}});
-$('search').addEventListener('input',renderCards);
-function renderDecks(){
- $('decks').innerHTML=state.decks.length?state.decks.map((d,i)=>{
-  const rows=d.cards.map(x=>{const c=state.cards.find(z=>z.id===x.id);return c?`<div class="row"><span>${esc(c.name)} <span class="small">×${x.need}</span></span><span class="small">所持 ${state.owned[c.id]||0}</span></div>`:''}).join('');
-  return `<div class="deck"><div class="row"><b>${esc(d.name)}</b><button class="btn secondary" data-deldeck="${i}">削除</button></div><div style="margin-top:10px">${rows||'<span class="small">まだカードがありません</span>'}</div><button class="btn" style="margin-top:10px" data-addcard="${i}">カードを追加</button></div>`
- }).join(''):'<div class="card">まだデッキがありません。</div>';
+
+function changeOwned(encodedId, amount){
+
+  const id = decodeURIComponent(encodedId);
+
+  owned[id] = Math.max(0, (owned[id] || 0) + amount);
+
+  if(owned[id] === 0){
+    delete owned[id];
+  }
+
+  saveOwned();
+  renderCards();
 }
-$('newDeck').onclick=()=>{const n=prompt('デッキ名');if(n?.trim()){state.decks.push({name:n.trim(),cards:[]});save();renderDecks()}};
-$('decks').addEventListener('click',e=>{
- const di=e.target.dataset.deldeck, ai=e.target.dataset.addcard;
- if(di!==undefined){state.decks.splice(+di,1);save();renderDecks()}
- if(ai!==undefined){const q=prompt('カード名またはカード番号');if(!q)return;const matches=state.cards.filter(c=>(c.name+' '+c.number).toLowerCase().includes(q.toLowerCase())).slice(0,10);if(!matches.length)return alert('見つかりません');const msg=matches.map((c,i)=>`${i+1}: ${c.name} (${c.number})`).join('\\n');const pick=prompt(msg+'\\n番号を入力');const c=matches[+pick-1];if(!c)return;const need=Number(prompt('必要枚数','4'));if(!Number.isFinite(need)||need<1)return;state.decks[+ai].cards.push({id:c.id,need:Math.floor(need)});save();renderDecks()}}
+
+search.addEventListener("input", renderCards);
+
+invTab.addEventListener("click",()=>{
+
+  invTab.classList.add("active");
+  deckTab.classList.remove("active");
+
+  inventoryView.classList.remove("hidden");
+  deckView.classList.add("hidden");
+
+  renderCards();
 });
-$('invTab').onclick=()=>{ $('invView').classList.remove('hidden');$('deckView').classList.add('hidden');$('invTab').classList.add('active');$('deckTab').classList.remove('active')};
-$('deckTab').onclick=()=>{ $('invView').classList.add('hidden');$('deckView').classList.remove('hidden');$('deckTab').classList.remove('active');$('deckTab').classList.add('active');renderDecks()};
-load();
+
+deckTab.addEventListener("click",()=>{
+
+  deckTab.classList.add("active");
+  invTab.classList.remove("active");
+
+  deckView.classList.remove("hidden");
+  inventoryView.classList.add("hidden");
+
+  renderDecks();
+});
+
+function addDeck(){
+
+  const name = prompt("デッキ名を入力してください");
+
+  if(!name) return;
+
+  decks.push({
+    id:Date.now().toString(),
+    name:name,
+    cards:{}
+  });
+
+  saveDecks();
+  renderDecks();
+}
+
+function renderDecks(){
+
+  const box = document.getElementById("decks");
+
+  if(decks.length === 0){
+
+    box.innerHTML = `
+      <div class="empty">
+        デッキがありません
+      </div>
+    `;
+
+    return;
+  }
+
+  box.innerHTML = decks.map(deck=>`
+
+    <div class="deck">
+
+      <h3>${escapeHtml(deck.name)}</h3>
+
+      <div class="info">
+        デッキカード登録機能は順次追加予定
+      </div>
+
+      <br>
+
+      <button onclick="renameDeck('${deck.id}')">
+        名前変更
+      </button>
+
+      <button onclick="deleteDeck('${deck.id}')">
+        削除
+      </button>
+
+    </div>
+
+  `).join("");
+}
+
+function renameDeck(id){
+
+  const deck = decks.find(x=>x.id===id);
+
+  if(!deck) return;
+
+  const name = prompt("デッキ名",deck.name);
+
+  if(!name) return;
+
+  deck.name = name;
+
+  saveDecks();
+  renderDecks();
+}
+
+function deleteDeck(id){
+
+  if(!confirm("このデッキを削除しますか？")){
+    return;
+  }
+
+  decks = decks.filter(x=>x.id!==id);
+
+  saveDecks();
+  renderDecks();
+}
+
+renderDecks();
+loadCards();
+
 </script>
-</body></html>
+
+</body>
+</html>

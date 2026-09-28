@@ -79,6 +79,7 @@ main{
   display:block;
   width:220px;
   max-width:100%;
+  height:auto;
   margin:0 auto 16px;
   border-radius:10px;
   box-shadow:0 2px 8px #0002;
@@ -534,7 +535,7 @@ function renderCards(){
             src="${imageUrl}"
             alt="${escapeHtml(card._name)}"
             loading="lazy"
-            onerror="this.style.display='none'"
+            referrerpolicy="no-referrer"
           >
 
           <h3>

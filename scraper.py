@@ -2,7 +2,7 @@ import asyncio
 from playwright.async_api import async_playwright
 
 
-BASE_URL = "https://dm.takaratomy.co.jp/card/"
+URL = "https://dm.takaratomy.co.jp/card/"
 
 
 async def main():
@@ -12,59 +12,44 @@ async def main():
         browser = await p.chromium.launch(headless=True)
         page = await browser.new_page()
 
-        print("=" * 70)
-        print("公式カード検索 JavaScript 絞り込み調査")
-        print("=" * 70)
+        print("=" * 60)
+        print("ページ送り処理だけ調査")
+        print("=" * 60)
 
         await page.goto(
-            BASE_URL,
+            URL,
             wait_until="domcontentloaded",
             timeout=120000
         )
 
-        await page.wait_for_timeout(7000)
+        await page.wait_for_timeout(5000)
 
-        # ----------------------------------------
-        # 公式ドメインのJSだけ取得
-        # ----------------------------------------
-
+        # JavaScriptファイル
         scripts = await page.locator(
-            'script[src]'
+            "script[src]"
         ).evaluate_all(
             """
-            els => els
-                .map(e => e.src)
-                .filter(src =>
-                    src.startsWith("https://dm.takaratomy.co.jp/")
-                )
+            els => els.map(e => e.src).filter(Boolean)
             """
         )
 
         scripts = list(dict.fromkeys(scripts))
 
-        print("")
-        print("公式ドメインJS:", len(scripts), "個")
-
-        # ----------------------------------------
-        # 検索する単語
-        # ----------------------------------------
-
         keywords = [
-            "data-page",
             "pagenum",
-            "ajax",
-            "pagination",
-            "card-list",
-            "card_list",
+            "data-page",
             "page_num",
-            "search"
+            "pagination"
         ]
 
         results = []
 
-        # ----------------------------------------
-        # JSを調査
-        # ----------------------------------------
+        print("")
+        print("JSファイル:", len(scripts), "個")
+
+        # --------------------------------
+        # 外部JS
+        # --------------------------------
 
         for src in scripts:
 
@@ -79,97 +64,72 @@ async def main():
 
                 for keyword in keywords:
 
-                    pos = 0
-                    found = 0
+                    pos = text.find(keyword)
 
-                    while True:
+                    if pos == -1:
+                        continue
 
-                        index = text.find(
-                            keyword,
-                            pos
-                        )
+                    snippet = text[
+                        max(0, pos - 700):
+                        pos + 1500
+                    ]
 
-                        if index == -1:
-                            break
-
-                        start = max(
-                            0,
-                            index - 350
-                        )
-
-                        end = min(
-                            len(text),
-                            index + 700
-                        )
-
-                        snippet = text[start:end]
-
-                        results.append({
-                            "file": src,
-                            "keyword": keyword,
-                            "snippet": snippet
-                        })
-
-                        pos = index + len(keyword)
-
-                        found += 1
-
-                        # 同じJSの同じ単語は最大2件
-                        if found >= 2:
-                            break
+                    results.append({
+                        "file": src,
+                        "keyword": keyword,
+                        "snippet": snippet
+                    })
 
             except Exception:
-                continue
+                pass
 
-        # ----------------------------------------
-        # インラインJSも調査
-        # ----------------------------------------
+        # --------------------------------
+        # インラインJS
+        # --------------------------------
 
-        inline_scripts = await page.locator(
+        inline = await page.locator(
             "script:not([src])"
         ).evaluate_all(
             """
-            els => els
-                .map(e => e.textContent || "")
-                .filter(x => x.trim().length > 0)
+            els => els.map(e => e.textContent || "")
             """
         )
 
-        for number, text in enumerate(inline_scripts):
+        for i, text in enumerate(inline):
 
             for keyword in keywords:
 
-                index = text.find(keyword)
+                pos = text.find(keyword)
 
-                if index != -1:
+                if pos == -1:
+                    continue
 
-                    results.append({
-                        "file": "INLINE_" + str(number),
-                        "keyword": keyword,
-                        "snippet": text[
-                            max(0, index - 350):
-                            index + 700
-                        ]
-                    })
+                results.append({
+                    "file": "INLINE_" + str(i),
+                    "keyword": keyword,
+                    "snippet": text[
+                        max(0, pos - 700):
+                        pos + 1500
+                    ]
+                })
 
-        # ----------------------------------------
+        # --------------------------------
         # 結果
-        # ----------------------------------------
+        # --------------------------------
 
         print("")
-        print("=" * 70)
-        print("検索結果")
-        print("=" * 70)
+        print("=" * 60)
+        print("重要な検索結果")
+        print("=" * 60)
 
-        print("該当:", len(results), "件")
+        print("件数:", len(results))
 
-        # 最大30件だけ表示
-        for i, result in enumerate(results[:30]):
+        for i, result in enumerate(results):
 
             print("")
-            print("-" * 70)
+            print("-" * 60)
             print("RESULT", i + 1)
-            print("-" * 70)
+            print("-" * 60)
 
             print("FILE:")
             print(result["file"])
@@ -183,9 +143,9 @@ async def main():
             print(result["snippet"])
 
         print("")
-        print("=" * 70)
+        print("=" * 60)
         print("調査終了")
-        print("=" * 70)
+        print("=" * 60)
 
         await browser.close()
 

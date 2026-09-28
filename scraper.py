@@ -1,5 +1,4 @@
 from playwright.sync_api import sync_playwright
-import json
 
 
 URL = "https://dm.takaratomy.co.jp/card/"
@@ -20,31 +19,48 @@ with sync_playwright() as p:
     # ネットワーク監視
     # =========================
 
-    def on_request(request):
+    def request_handler(request):
 
         if request.resource_type in ["xhr", "fetch"]:
+
             print("\n========== REQUEST ==========")
-            print("METHOD :", request.method)
-            print("URL    :", request.url)
+            print("METHOD:", request.method)
+            print("URL:", request.url)
 
-            if request.post_data:
-                print("POST   :", request.post_data)
+            try:
+                print(
+                    "POST:",
+                    request.post_data
+                )
+            except:
+                pass
 
-    def on_response(response):
+    def response_handler(response):
 
         if response.request.resource_type in ["xhr", "fetch"]:
+
             print("\n========== RESPONSE ==========")
-            print("STATUS :", response.status)
-            print("URL    :", response.url)
+            print("STATUS:", response.status)
+            print("URL:", response.url)
 
-    page.on("request", on_request)
-    page.on("response", on_response)
+    page.on(
+        "request",
+        request_handler
+    )
+
+    page.on(
+        "response",
+        response_handler
+    )
 
     # =========================
-    # 公式ページ
+    # ページを開く
     # =========================
 
-    print("公式ページを開きます...", flush=True)
+    print(
+        "公式ページを開きます...",
+        flush=True
+    )
 
     page.goto(
         URL,
@@ -54,153 +70,105 @@ with sync_playwright() as p:
 
     page.wait_for_timeout(5000)
 
-    print("\n========== BEFORE ==========")
-
-    print("URL:", page.url)
+    print(
+        "\n========== BEFORE ==========",
+        flush=True
+    )
 
     print(
-        "カード数:",
+        "URL:",
+        page.url,
+        flush=True
+    )
+
+    print(
+        "カードリンク数:",
         page.locator(
             'a[href*="/card/detail/"]'
-        ).count()
+        ).count(),
+        flush=True
     )
 
     # =========================
-    # data-page=2
+    # 2ページボタン
     # =========================
 
     target = page.locator(
         '[data-page="2"]'
     ).first
 
-    print("\n========== TARGET ==========")
+    print(
+        "\n========== PAGE 2 BUTTON ==========",
+        flush=True
+    )
 
-    if not target.count():
+    if target.count() == 0:
 
-        print("data-page=2 が見つかりません")
+        print(
+            "data-page=2 が見つかりません",
+            flush=True
+        )
 
     else:
 
         print(
+            "TAG:",
             target.evaluate(
-                """
-                el => ({
-                    outerHTML: el.outerHTML,
-                    tag: el.tagName,
-                    className: el.className,
-                    href: el.getAttribute("href"),
-                    onclick: el.getAttribute("onclick"),
-                    dataPage: el.getAttribute("data-page"),
-                    text: el.textContent
-                })
-                """
-            )
-        )
-
-        # =========================
-        # jQueryイベント調査
-        # =========================
-
-        print("\n========== EVENTS ==========")
-
-        events = page.evaluate(
-            """
-            () => {
-
-                const el =
-                    document.querySelector(
-                        '[data-page="2"]'
-                    );
-
-                if (!el) {
-                    return null;
-                }
-
-                const result = {};
-
-                if (
-                    window.jQuery &&
-                    window.jQuery._data
-                ) {
-
-                    const events =
-                        window.jQuery._data(
-                            el,
-                            "events"
-                        );
-
-                    if (events) {
-
-                        for (
-                            const type in events
-                        ) {
-
-                            result[type] =
-                                events[type].map(
-                                    e => ({
-                                        type: e.type,
-                                        namespace:
-                                            e.namespace || "",
-                                        selector:
-                                            e.selector || "",
-                                        handler:
-                                            e.handler
-                                                ? String(
-                                                    e.handler
-                                                ).substring(
-                                                    0,
-                                                    1000
-                                                )
-                                                : ""
-                                    })
-                                );
-
-                        }
-
-                    }
-                }
-
-                return result;
-            }
-            """
-        )
-
-        print(
-            json.dumps(
-                events,
-                ensure_ascii=False,
-                indent=2
-            )
-        )
-
-        # =========================
-        # クリック
-        # =========================
-
-        print(
-            "\n========== CLICK PAGE 2 ==========\n"
-        )
-
-        target.scroll_into_view_if_needed()
-
-        target.click(
-            force=True
-        )
-
-        print(
-            "クリックしました",
+                "el => el.tagName"
+            ),
             flush=True
         )
 
-        # JS/AJAX待ち
-        page.wait_for_timeout(8000)
+        print(
+            "HTML:",
+            target.evaluate(
+                "el => el.outerHTML"
+            ),
+            flush=True
+        )
+
+        print(
+            "href:",
+            target.get_attribute("href"),
+            flush=True
+        )
+
+        print(
+            "class:",
+            target.get_attribute("class"),
+            flush=True
+        )
+
+        print(
+            "data-page:",
+            target.get_attribute("data-page"),
+            flush=True
+        )
+
+        print(
+            "\n2ページ目をクリックします...",
+            flush=True
+        )
+
+        target.click(
+            force=True,
+            timeout=10000
+        )
+
+        print(
+            "クリック完了",
+            flush=True
+        )
+
+        page.wait_for_timeout(10000)
 
         # =========================
-        # AFTER
+        # 結果
         # =========================
 
         print(
-            "\n========== AFTER ==========\n"
+            "\n========== AFTER ==========",
+            flush=True
         )
 
         print(
@@ -210,51 +178,35 @@ with sync_playwright() as p:
         )
 
         print(
-            "カード数:",
+            "カードリンク数:",
             page.locator(
                 'a[href*="/card/detail/"]'
             ).count(),
             flush=True
         )
 
+        # 現在表示されているカードIDを取得
+        cards = page.locator(
+            'a[href*="/card/detail/"]'
+        )
+
         print(
-            "現在のdata-page:",
-            page.evaluate(
-                """
-                () => {
-
-                    const el =
-                        document.querySelector(
-                            '.current[data-page]'
-                        );
-
-                    return el
-                        ? el.getAttribute("data-page")
-                        : null;
-                }
-                """
-            ),
+            "\n========== CARD URLS ==========",
             flush=True
         )
 
-        # =========================
-        # 現在のページャー
-        # =========================
+        for i in range(
+            min(cards.count(), 10)
+        ):
 
-        print(
-            "\n========== PAGER AFTER ==========\n"
-        )
-
-        print(
-            page.locator(
-                '[data-page]'
-            ).evaluate_all(
-                """
-                els => els.map(
-                    e => e.outerHTML
-                )
-                """
+            href = cards.nth(i).get_attribute(
+                "href"
             )
-        )
+
+            print(
+                i + 1,
+                href,
+                flush=True
+            )
 
     browser.close()

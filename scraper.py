@@ -10,11 +10,10 @@ async def main():
     async with async_playwright() as p:
 
         browser = await p.chromium.launch(headless=True)
-
         page = await browser.new_page()
 
         print("=" * 70)
-        print("公式サイト JavaScript 調査")
+        print("公式カード検索 JavaScript 絞り込み調査")
         print("=" * 70)
 
         await page.goto(
@@ -25,145 +24,147 @@ async def main():
 
         await page.wait_for_timeout(7000)
 
-        print("")
-        print("ページ読み込み完了")
-        print("URL:", page.url)
-
         # ----------------------------------------
-        # JavaScriptファイル一覧
+        # 公式ドメインのJSだけ取得
         # ----------------------------------------
 
-        scripts = await page.locator("script[src]").evaluate_all(
+        scripts = await page.locator(
+            'script[src]'
+        ).evaluate_all(
             """
-            els => els.map(e => e.src).filter(Boolean)
+            els => els
+                .map(e => e.src)
+                .filter(src =>
+                    src.startsWith("https://dm.takaratomy.co.jp/")
+                )
             """
         )
 
         scripts = list(dict.fromkeys(scripts))
 
         print("")
-        print("=" * 70)
-        print("JavaScriptファイル")
-        print("=" * 70)
-
-        print("総数:", len(scripts))
-
-        for i, src in enumerate(scripts):
-            print(i, src)
+        print("公式ドメインJS:", len(scripts), "個")
 
         # ----------------------------------------
-        # JavaScriptの中からページ送り関連を探す
+        # 検索する単語
         # ----------------------------------------
 
-        print("")
-        print("=" * 70)
-        print("ページ送り関連JavaScriptを検索")
-        print("=" * 70)
+        keywords = [
+            "data-page",
+            "pagenum",
+            "ajax",
+            "pagination",
+            "card-list",
+            "card_list",
+            "page_num",
+            "search"
+        ]
 
-        results = await page.evaluate(
+        results = []
+
+        # ----------------------------------------
+        # JSを調査
+        # ----------------------------------------
+
+        for src in scripts:
+
+            try:
+
+                response = await page.request.get(src)
+
+                if not response.ok:
+                    continue
+
+                text = await response.text()
+
+                for keyword in keywords:
+
+                    pos = 0
+                    found = 0
+
+                    while True:
+
+                        index = text.find(
+                            keyword,
+                            pos
+                        )
+
+                        if index == -1:
+                            break
+
+                        start = max(
+                            0,
+                            index - 350
+                        )
+
+                        end = min(
+                            len(text),
+                            index + 700
+                        )
+
+                        snippet = text[start:end]
+
+                        results.append({
+                            "file": src,
+                            "keyword": keyword,
+                            "snippet": snippet
+                        })
+
+                        pos = index + len(keyword)
+
+                        found += 1
+
+                        # 同じJSの同じ単語は最大2件
+                        if found >= 2:
+                            break
+
+            except Exception:
+                continue
+
+        # ----------------------------------------
+        # インラインJSも調査
+        # ----------------------------------------
+
+        inline_scripts = await page.locator(
+            "script:not([src])"
+        ).evaluate_all(
             """
-            async (scripts) => {
-
-                const keywords = [
-                    "data-page",
-                    "pagenum",
-                    "ajax",
-                    "XMLHttpRequest",
-                    "fetch(",
-                    "pagination",
-                    "page_num",
-                    "card-list"
-                ];
-
-                const results = [];
-
-                for (const src of scripts) {
-
-                    try {
-
-                        const response = await fetch(src);
-
-                        if (!response.ok) {
-                            continue;
-                        }
-
-                        const text = await response.text();
-
-                        for (const keyword of keywords) {
-
-                            let start = 0;
-                            let count = 0;
-
-                            while (true) {
-
-                                const pos =
-                                    text.indexOf(
-                                        keyword,
-                                        start
-                                    );
-
-                                if (pos === -1) {
-                                    break;
-                                }
-
-                                const from =
-                                    Math.max(
-                                        0,
-                                        pos - 500
-                                    );
-
-                                const to =
-                                    Math.min(
-                                        text.length,
-                                        pos + 1000
-                                    );
-
-                                results.push({
-                                    src: src,
-                                    keyword: keyword,
-                                    snippet: text.slice(
-                                        from,
-                                        to
-                                    )
-                                });
-
-                                start =
-                                    pos + keyword.length;
-
-                                count++;
-
-                                // 同じファイルの同じキーワードを
-                                // 最大3件まで
-                                if (count >= 3) {
-                                    break;
-                                }
-                            }
-                        }
-
-                    } catch (e) {
-
-                        results.push({
-                            src: src,
-                            keyword: "FETCH_ERROR",
-                            snippet: String(e)
-                        });
-                    }
-                }
-
-                return results;
-            }
-            """,
-            scripts
+            els => els
+                .map(e => e.textContent || "")
+                .filter(x => x.trim().length > 0)
+            """
         )
 
+        for number, text in enumerate(inline_scripts):
+
+            for keyword in keywords:
+
+                index = text.find(keyword)
+
+                if index != -1:
+
+                    results.append({
+                        "file": "INLINE_" + str(number),
+                        "keyword": keyword,
+                        "snippet": text[
+                            max(0, index - 350):
+                            index + 700
+                        ]
+                    })
+
+        # ----------------------------------------
+        # 結果
+        # ----------------------------------------
+
         print("")
-        print("検索結果:", len(results), "件")
+        print("=" * 70)
+        print("検索結果")
+        print("=" * 70)
 
-        # ----------------------------------------
-        # 結果表示
-        # ----------------------------------------
+        print("該当:", len(results), "件")
 
-        for i, result in enumerate(results):
+        # 最大30件だけ表示
+        for i, result in enumerate(results[:30]):
 
             print("")
             print("-" * 70)
@@ -171,7 +172,7 @@ async def main():
             print("-" * 70)
 
             print("FILE:")
-            print(result["src"])
+            print(result["file"])
 
             print("")
             print("KEYWORD:")
@@ -180,46 +181,6 @@ async def main():
             print("")
             print("SNIPPET:")
             print(result["snippet"])
-
-        # ----------------------------------------
-        # インラインJavaScriptも調査
-        # ----------------------------------------
-
-        inline_results = await page.locator(
-            "script:not([src])"
-        ).evaluate_all(
-            """
-            els => els.map(e => e.textContent || "")
-            """
-        )
-
-        print("")
-        print("=" * 70)
-        print("インラインJavaScript調査")
-        print("=" * 70)
-
-        for i, text in enumerate(inline_results):
-
-            for keyword in [
-                "data-page",
-                "pagenum",
-                "pagination"
-            ]:
-
-                pos = text.find(keyword)
-
-                if pos != -1:
-
-                    print("")
-                    print("INLINE", i)
-                    print("KEYWORD:", keyword)
-
-                    print(
-                        text[
-                            max(0, pos - 500):
-                            pos + 1500
-                        ]
-                    )
 
         print("")
         print("=" * 70)

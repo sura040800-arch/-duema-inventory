@@ -5,6 +5,23 @@ from playwright.async_api import async_playwright
 BASE_URL = "https://dm.takaratomy.co.jp/card/"
 
 
+async def get_card_ids(page):
+
+    ids = await page.locator(
+        'a[href*="/card/detail/?id="]'
+    ).evaluate_all(
+        """
+        els => els.map(e => {
+            const href = e.getAttribute("href") || "";
+            const m = href.match(/[?&]id=([^&]+)/);
+            return m ? m[1] : null;
+        }).filter(Boolean)
+        """
+    )
+
+    return list(dict.fromkeys(ids))
+
+
 async def main():
 
     async with async_playwright() as p:
@@ -15,91 +32,35 @@ async def main():
 
         page = await browser.new_page()
 
-        print("=" * 70)
+        print("=" * 60)
         print("公式サイト内部通信調査")
-        print("=" * 70)
+        print("=" * 60)
 
         # --------------------------------
-        # 通信を監視
+        # 通信URLだけ記録
         # --------------------------------
 
-        def on_request(request):
+        def request_handler(request):
 
             if request.resource_type in ["xhr", "fetch"]:
 
-                url = request.url
-
                 print("")
-                print("[REQUEST]")
+                print("[通信]")
                 print("METHOD:", request.method)
-                print("URL:", url)
+                print("URL:", request.url)
 
                 if request.post_data:
-                    print("POST DATA:")
-                    print(request.post_data[:2000])
+                    print("POST:")
+                    print(request.post_data[:1000])
 
-        async def on_response(response):
-
-            if response.request.resource_type not in ["xhr", "fetch"]:
-                return
-
-            print("")
-            print("[RESPONSE]")
-            print("STATUS:", response.status)
-            print("URL:", response.url)
-
-            content_type = response.headers.get(
-                "content-type",
-                ""
-            )
-
-            print("CONTENT-TYPE:", content_type)
-
-            # JSONっぽいレスポンスなら中身も少し見る
-            if (
-                "json" in content_type
-                or "javascript" in content_type
-            ):
-
-                try:
-                    body = await response.text()
-
-                    print("BODY:")
-                    print(body[:3000])
-
-                except Exception as e:
-                    print("BODY取得失敗:", e)
-
-        page.on("request", on_request)
-        page.on("response", on_response)
+        page.on("request", request_handler)
 
         # --------------------------------
-        # コンソールエラーも監視
-        # --------------------------------
-
-        page.on(
-            "console",
-            lambda msg: print(
-                "[CONSOLE]",
-                msg.type,
-                msg.text
-            )
-        )
-
-        page.on(
-            "pageerror",
-            lambda error: print(
-                "[PAGE ERROR]",
-                error
-            )
-        )
-
-        # --------------------------------
-        # 公式サイトを開く
+        # 公式サイト
         # --------------------------------
 
         print("")
-        print("公式カード検索を開いています...")
+        print("公式サイトを開いています...")
 
         await page.goto(
             BASE_URL,
@@ -109,182 +70,101 @@ async def main():
 
         await page.wait_for_timeout(7000)
 
-        print("")
-        print("現在URL:")
-        print(page.url)
-
         # --------------------------------
-        # 現在のカード
+        # ページ1
         # --------------------------------
 
-        async def get_ids():
-
-            ids = await page.locator(
-                'a[href*="/card/detail/?id="]'
-            ).evaluate_all(
-                """
-                els => els.map(e => {
-                    const href = e.getAttribute("href") || "";
-                    const m = href.match(/[?&]id=([^&]+)/);
-                    return m ? m[1] : null;
-                }).filter(Boolean)
-                """
-            )
-
-            return list(dict.fromkeys(ids))
-
-        ids1 = await get_ids()
+        ids1 = await get_card_ids(page)
 
         print("")
+        print("=" * 60)
         print("ページ1")
+        print("=" * 60)
+
         print("カード数:", len(ids1))
-        print("先頭:", ids1[:5])
+
+        for x in ids1[:5]:
+            print(x)
 
         # --------------------------------
-        # ページ2ボタン確認
+        # ページ2ボタン
         # --------------------------------
 
         print("")
-        print("=" * 70)
-        print("ページ2ボタンを調査")
-        print("=" * 70)
+        print("=" * 60)
+        print("ページ2")
+        print("=" * 60)
 
         buttons = page.locator(
-            'a[data-page="2"]'
+            'a[data-page="2"]:visible'
         )
 
         count = await buttons.count()
 
-        print("ページ2ボタン総数:", count)
+        print("ページ2ボタン:", count)
 
-        for i in range(count):
+        if count == 0:
 
-            try:
-
-                visible = await buttons.nth(i).is_visible()
-
-                text = await buttons.nth(i).inner_text()
-
-                href = await buttons.nth(i).get_attribute(
-                    "href"
-                )
-
-                outer = await buttons.nth(i).evaluate(
-                    "el => el.outerHTML"
-                )
-
-                print("")
-                print("BUTTON", i)
-                print("visible:", visible)
-                print("text:", text)
-                print("href:", href)
-                print("HTML:")
-                print(outer[:2000])
-
-            except Exception as e:
-
-                print(
-                    "ボタン情報取得失敗:",
-                    e
-                )
-
-        # --------------------------------
-        # ページ2クリック
-        # --------------------------------
-
-        print("")
-        print("=" * 70)
-        print("ページ2をクリックします")
-        print("=" * 70)
-
-        visible_buttons = page.locator(
-            'a[data-page="2"]:visible'
-        )
-
-        visible_count = await visible_buttons.count()
-
-        print(
-            "表示中のページ2ボタン:",
-            visible_count
-        )
-
-        if visible_count == 0:
-
-            print("")
-            print("★ ページ2ボタンがありません ★")
+            print("ページ2ボタンが見つかりません")
 
             await browser.close()
             return
 
-        before_url = page.url
-
         print("")
-        print("クリック前URL:")
-        print(before_url)
+        print("ページ2をクリックします...")
+        print("通信を監視しています...")
 
-        await visible_buttons.first.click(
+        await buttons.first.click(
             force=True,
             timeout=30000
         )
 
-        print("")
-        print("クリック完了")
-        print("通信完了待ち...")
-
+        # 通信が終わるまで待つ
         await page.wait_for_timeout(10000)
 
         # --------------------------------
-        # 結果
+        # ページ2
         # --------------------------------
 
-        ids2 = await get_ids()
+        ids2 = await get_card_ids(page)
 
         print("")
-        print("=" * 70)
-        print("ページ2クリック後")
-        print("=" * 70)
+        print("=" * 60)
+        print("ページ2結果")
+        print("=" * 60)
 
-        print("URL:")
-        print(page.url)
+        print("カード数:", len(ids2))
 
-        print("")
-        print("カード数:")
-        print(len(ids2))
+        for x in ids2[:5]:
+            print(x)
 
-        print("")
-        print("先頭5枚:")
+        # --------------------------------
+        # 比較
+        # --------------------------------
 
-        for card_id in ids2[:5]:
-            print(card_id)
-
-        print("")
-        print("ページ1との重複:")
-        print(
-            len(set(ids1) & set(ids2))
+        overlap = len(
+            set(ids1) & set(ids2)
         )
 
-        # --------------------------------
-        # 最終判定
-        # --------------------------------
-
         print("")
-        print("=" * 70)
-        print("調査終了")
-        print("=" * 70)
+        print("=" * 60)
+        print("結果")
+        print("=" * 60)
 
-        if ids1 != ids2:
+        print("ページ1:", len(ids1))
+        print("ページ2:", len(ids2))
+        print("重複:", overlap)
+
+        if overlap < len(ids1):
 
             print("")
-            print("★ カード一覧が変化しました ★")
-            print("")
-            print("内部通信を上に表示しています。")
+            print("★ カードが変化しています ★")
+            print("内部通信を確認してください。")
 
         else:
 
             print("")
-            print("★ カード一覧は変化していません ★")
-            print("")
-            print("内部通信またはJavaScript側に問題があります。")
+            print("★ カードが変化していません ★")
 
         await browser.close()
 

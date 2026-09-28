@@ -10,11 +10,44 @@ async def main():
     async with async_playwright() as p:
 
         browser = await p.chromium.launch(headless=True)
+
         page = await browser.new_page()
 
         print("=" * 60)
-        print("ページ送り処理だけ調査")
+        print("ページ2クリック時の通信調査")
         print("=" * 60)
+
+        # --------------------------------
+        # 通信を記録
+        # --------------------------------
+
+        def on_request(request):
+
+            url = request.url
+
+            # 公式サイト関連だけ表示
+            if "dm.takaratomy.co.jp" in url:
+
+                print("")
+                print("[REQUEST]")
+                print("METHOD:", request.method)
+                print("URL:")
+                print(url)
+
+                if request.post_data:
+
+                    print("")
+                    print("POST DATA:")
+                    print(request.post_data[:3000])
+
+        page.on("request", on_request)
+
+        # --------------------------------
+        # 公式サイト
+        # --------------------------------
+
+        print("")
+        print("公式サイトを開いています...")
 
         await page.goto(
             URL,
@@ -22,125 +55,100 @@ async def main():
             timeout=120000
         )
 
-        await page.wait_for_timeout(5000)
+        await page.wait_for_timeout(7000)
 
-        # JavaScriptファイル
-        scripts = await page.locator(
-            "script[src]"
-        ).evaluate_all(
-            """
-            els => els.map(e => e.src).filter(Boolean)
-            """
-        )
+        # --------------------------------
+        # 現在のカードID
+        # --------------------------------
 
-        scripts = list(dict.fromkeys(scripts))
+        async def get_ids():
 
-        keywords = [
-            "pagenum",
-            "data-page",
-            "page_num",
-            "pagination"
-        ]
+            ids = await page.locator(
+                'a[href*="/card/detail/?id="]'
+            ).evaluate_all(
+                """
+                els => els.map(e => {
+                    const href = e.getAttribute("href") || "";
+                    const m = href.match(/[?&]id=([^&]+)/);
+                    return m ? m[1] : null;
+                }).filter(Boolean)
+                """
+            )
 
-        results = []
+            return list(dict.fromkeys(ids))
+
+        ids1 = await get_ids()
 
         print("")
-        print("JSファイル:", len(scripts), "個")
+        print("ページ1カード数:", len(ids1))
+
+        print("ページ1先頭:")
+        for x in ids1[:5]:
+            print(x)
 
         # --------------------------------
-        # 外部JS
+        # ページ2ボタン
         # --------------------------------
 
-        for src in scripts:
+        print("")
+        print("=" * 60)
+        print("ページ2をクリック")
+        print("=" * 60)
 
-            try:
+        button = page.locator(
+            'a[data-page="2"]:visible'
+        ).first
 
-                response = await page.request.get(src)
+        if await button.count() == 0:
 
-                if not response.ok:
-                    continue
+            print("ページ2ボタンが見つかりません")
 
-                text = await response.text()
+            await browser.close()
+            return
 
-                for keyword in keywords:
-
-                    pos = text.find(keyword)
-
-                    if pos == -1:
-                        continue
-
-                    snippet = text[
-                        max(0, pos - 700):
-                        pos + 1500
-                    ]
-
-                    results.append({
-                        "file": src,
-                        "keyword": keyword,
-                        "snippet": snippet
-                    })
-
-            except Exception:
-                pass
+        print("ページ2ボタン発見")
 
         # --------------------------------
-        # インラインJS
+        # クリック
         # --------------------------------
 
-        inline = await page.locator(
-            "script:not([src])"
-        ).evaluate_all(
-            """
-            els => els.map(e => e.textContent || "")
-            """
+        await button.click(
+            force=True,
+            timeout=30000
         )
 
-        for i, text in enumerate(inline):
+        print("")
+        print("クリック完了")
+        print("通信待機中...")
 
-            for keyword in keywords:
-
-                pos = text.find(keyword)
-
-                if pos == -1:
-                    continue
-
-                results.append({
-                    "file": "INLINE_" + str(i),
-                    "keyword": keyword,
-                    "snippet": text[
-                        max(0, pos - 700):
-                        pos + 1500
-                    ]
-                })
+        # JavaScriptによる通信を待つ
+        await page.wait_for_timeout(10000)
 
         # --------------------------------
         # 結果
         # --------------------------------
 
+        ids2 = await get_ids()
+
         print("")
         print("=" * 60)
-        print("重要な検索結果")
+        print("結果")
         print("=" * 60)
 
-        print("件数:", len(results))
+        print("ページ1:", len(ids1))
+        print("ページ2:", len(ids2))
 
-        for i, result in enumerate(results):
+        print("")
+        print("ページ2先頭:")
 
-            print("")
-            print("-" * 60)
-            print("RESULT", i + 1)
-            print("-" * 60)
+        for x in ids2[:5]:
+            print(x)
 
-            print("FILE:")
-            print(result["file"])
-
-            print("")
-            print("KEYWORD:")
-            print(result["keyword"])
-
-            print("")
-            print("SNIPPET:")
-            print(result["snippet"])
+        print("")
+        print("重複:")
+        print(
+            len(set(ids1) & set(ids2))
+        )
 
         print("")
         print("=" * 60)

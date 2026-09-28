@@ -1,54 +1,13 @@
-import json
-import re
-from urllib.parse import quote
-
 from playwright.sync_api import sync_playwright
+import json
 
 
-BASE = "https://dm.takaratomy.co.jp"
-SEARCH = BASE + "/card/"
-
-
-def make_url():
-
-    state = {
-        "suggest": "on",
-        "keyword": "",
-        "keyword_type": [
-            "card_name",
-            "card_ruby",
-            "card_text",
-            "race",
-            "flavor",
-            "illustrator"
-        ],
-        "culture_cond": [
-            "単色",
-            "多色"
-        ],
-        "pagenum": "1",
-        "samename": "show",
-        "sort": "release_new"
-    }
-
-    return (
-        SEARCH
-        + "?v="
-        + quote(
-            json.dumps(
-                state,
-                ensure_ascii=False,
-                separators=(",", ":")
-            )
-        )
-    )
+URL = "https://dm.takaratomy.co.jp/card/"
 
 
 with sync_playwright() as p:
 
-    browser = p.chromium.launch(
-        headless=True
-    )
+    browser = p.chromium.launch(headless=True)
 
     page = browser.new_page(
         viewport={
@@ -57,214 +16,245 @@ with sync_playwright() as p:
         }
     )
 
+    # =========================
+    # ネットワーク監視
+    # =========================
+
+    def on_request(request):
+
+        if request.resource_type in ["xhr", "fetch"]:
+            print("\n========== REQUEST ==========")
+            print("METHOD :", request.method)
+            print("URL    :", request.url)
+
+            if request.post_data:
+                print("POST   :", request.post_data)
+
+    def on_response(response):
+
+        if response.request.resource_type in ["xhr", "fetch"]:
+            print("\n========== RESPONSE ==========")
+            print("STATUS :", response.status)
+            print("URL    :", response.url)
+
+    page.on("request", on_request)
+    page.on("response", on_response)
+
+    # =========================
+    # 公式ページ
+    # =========================
+
     print("公式ページを開きます...", flush=True)
 
     page.goto(
-        make_url(),
+        URL,
         wait_until="domcontentloaded",
         timeout=60000
     )
 
     page.wait_for_timeout(5000)
 
-    print("\n========== PAGE INFO ==========\n")
+    print("\n========== BEFORE ==========")
+
+    print("URL:", page.url)
 
     print(
-        "URL:",
-        page.url,
-        flush=True
+        "カード数:",
+        page.locator(
+            'a[href*="/card/detail/"]'
+        ).count()
     )
 
-    # -----------------------------------------------------
-    # data-pageを全部調査
-    # -----------------------------------------------------
+    # =========================
+    # data-page=2
+    # =========================
 
-    controls = page.locator(
-        "[data-page]"
-    )
+    target = page.locator(
+        '[data-page="2"]'
+    ).first
 
-    count = controls.count()
+    print("\n========== TARGET ==========")
 
-    print(
-        "data-page elements:",
-        count,
-        flush=True
-    )
+    if not target.count():
 
-    for i in range(
-        min(count, 15)
-    ):
-
-        el = controls.nth(i)
-
-        try:
-
-            print(
-                "\n--- CONTROL", i, "---",
-                flush=True
-            )
-
-            print(
-                el.evaluate(
-                    "el => el.outerHTML"
-                ),
-                flush=True
-            )
-
-        except Exception as e:
-
-            print(
-                "ERROR:",
-                e,
-                flush=True
-            )
-
-    # -----------------------------------------------------
-    # ページャー周辺HTML
-    # -----------------------------------------------------
-
-    print(
-        "\n========== PAGER HTML ==========\n",
-        flush=True
-    )
-
-    pager = page.locator(
-        ".wp-pagenavi"
-    )
-
-    if pager.count():
-
-        print(
-            pager.first.evaluate(
-                "el => el.outerHTML"
-            ),
-            flush=True
-        )
+        print("data-page=2 が見つかりません")
 
     else:
 
         print(
-            "wp-pagenavi が見つかりません",
-            flush=True
+            target.evaluate(
+                """
+                el => ({
+                    outerHTML: el.outerHTML,
+                    tag: el.tagName,
+                    className: el.className,
+                    href: el.getAttribute("href"),
+                    onclick: el.getAttribute("onclick"),
+                    dataPage: el.getAttribute("data-page"),
+                    text: el.textContent
+                })
+                """
+            )
         )
 
-    # -----------------------------------------------------
-    # script一覧
-    # -----------------------------------------------------
+        # =========================
+        # jQueryイベント調査
+        # =========================
 
-    print(
-        "\n========== SCRIPT SRC ==========\n",
-        flush=True
-    )
+        print("\n========== EVENTS ==========")
 
-    scripts = page.locator(
-        "script[src]"
-    ).evaluate_all(
-        """
-        els => els.map(
-            e => e.src
-        )
-        """
-    )
+        events = page.evaluate(
+            """
+            () => {
 
-    for src in scripts:
+                const el =
+                    document.querySelector(
+                        '[data-page="2"]'
+                    );
 
-        print(
-            src,
-            flush=True
-        )
+                if (!el) {
+                    return null;
+                }
 
-    # -----------------------------------------------------
-    # ページャー関連JS文字列を検索
-    # -----------------------------------------------------
+                const result = {};
 
-    print(
-        "\n========== JS TEXT SEARCH ==========\n",
-        flush=True
-    )
+                if (
+                    window.jQuery &&
+                    window.jQuery._data
+                ) {
 
-    result = page.evaluate(
-        """
-        () => {
+                    const events =
+                        window.jQuery._data(
+                            el,
+                            "events"
+                        );
 
-            const scripts =
-                Array.from(
-                    document.scripts
-                );
+                    if (events) {
 
-            const words = [
-                "nextpostslink",
-                "data-page",
-                "pagenum",
-                "ajax",
-                "pagination",
-                "wp-pagenavi"
-            ];
-
-            const result = [];
-
-            for (
-                const script of scripts
-            ) {
-
-                if (!script.src &&
-                    script.textContent) {
-
-                    const text =
-                        script.textContent;
-
-                    for (
-                        const word of words
-                    ) {
-
-                        if (
-                            text.includes(word)
+                        for (
+                            const type in events
                         ) {
 
-                            result.push({
-                                word: word,
-                                text:
-                                    text.substring(
-                                        Math.max(
-                                            0,
-                                            text.indexOf(word) - 500
-                                        ),
-                                        Math.min(
-                                            text.length,
-                                            text.indexOf(word) + 1500
-                                        )
-                                    )
-                            });
+                            result[type] =
+                                events[type].map(
+                                    e => ({
+                                        type: e.type,
+                                        namespace:
+                                            e.namespace || "",
+                                        selector:
+                                            e.selector || "",
+                                        handler:
+                                            e.handler
+                                                ? String(
+                                                    e.handler
+                                                ).substring(
+                                                    0,
+                                                    1000
+                                                )
+                                                : ""
+                                    })
+                                );
 
                         }
 
                     }
-
                 }
 
+                return result;
             }
-
-            return result;
-        }
-        """
-    )
-
-    for item in result:
+            """
+        )
 
         print(
-            "\nWORD:",
-            item["word"],
+            json.dumps(
+                events,
+                ensure_ascii=False,
+                indent=2
+            )
+        )
+
+        # =========================
+        # クリック
+        # =========================
+
+        print(
+            "\n========== CLICK PAGE 2 ==========\n"
+        )
+
+        target.scroll_into_view_if_needed()
+
+        target.click(
+            force=True
+        )
+
+        print(
+            "クリックしました",
+            flush=True
+        )
+
+        # JS/AJAX待ち
+        page.wait_for_timeout(8000)
+
+        # =========================
+        # AFTER
+        # =========================
+
+        print(
+            "\n========== AFTER ==========\n"
+        )
+
+        print(
+            "URL:",
+            page.url,
             flush=True
         )
 
         print(
-            item["text"],
+            "カード数:",
+            page.locator(
+                'a[href*="/card/detail/"]'
+            ).count(),
             flush=True
         )
 
-    print(
-        "\n========== END ==========\n",
-        flush=True
-    )
+        print(
+            "現在のdata-page:",
+            page.evaluate(
+                """
+                () => {
+
+                    const el =
+                        document.querySelector(
+                            '.current[data-page]'
+                        );
+
+                    return el
+                        ? el.getAttribute("data-page")
+                        : null;
+                }
+                """
+            ),
+            flush=True
+        )
+
+        # =========================
+        # 現在のページャー
+        # =========================
+
+        print(
+            "\n========== PAGER AFTER ==========\n"
+        )
+
+        print(
+            page.locator(
+                '[data-page]'
+            ).evaluate_all(
+                """
+                els => els.map(
+                    e => e.outerHTML
+                )
+                """
+            )
+        )
 
     browser.close()

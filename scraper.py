@@ -4,8 +4,8 @@ import json
 import time
 import requests
 from bs4 import BeautifulSoup
-from urllib.parse import urljoin, urlparse, parse_qs, urlencode, urlunparse
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from urllib.parse import urlparse, parse_qs, urlencode, urlunparse
 from playwright.sync_api import sync_playwright
 
 
@@ -29,10 +29,6 @@ HEADERS = {
 }
 
 
-# =========================================================
-# 共通
-# =========================================================
-
 def clean_text(value):
     if value is None:
         return ""
@@ -47,58 +43,108 @@ def absolute_url(url):
     if not url:
         return ""
 
-    return urljoin(BASE_URL, url)
+    if url.startswith("http"):
+        return url
+
+    return BASE_URL + url
 
 
 def card_id_from_url(url):
     if not url:
         return None
 
-    m = re.search(r"[?&]id=([^&#]+)", url)
+    match = re.search(r"[?&]id=([^&#]+)", url)
 
-    if not m:
+    if not match:
         return None
 
-    return m.group(1)
+    return match.group(1)
 
 
-# =========================================================
-# 公式検索ページのURLを作る
-# =========================================================
+def extract_card_links(html):
+    soup = BeautifulSoup(html, "html.parser")
 
-def make_page_url(base_url, page_number):
+    result = []
+    seen = set()
 
-    parsed = urlparse(base_url)
+    for a in soup.select('a[href*="/card/detail/"]'):
+        href = a.get("href", "")
+
+        cid = card_id_from_url(href)
+
+        if not cid:
+            continue
+
+        if cid in seen:
+            continue
+
+        seen.add(cid)
+
+        result.append(
+            (
+                cid,
+                absolute_url(href)
+            )
+        )
+
+    return result
+
+
+def get_page_count(html):
+    soup = BeautifulSoup(html, "html.parser")
+
+    pages = []
+
+    for a in soup.select("#cardlist .wp-pagenavi a[data-page]"):
+        value = a.get("data-page")
+
+        try:
+            pages.append(int(value))
+        except Exception:
+            pass
+
+    if pages:
+        return max(pages)
+
+    return 1
+
+
+def change_pagenum(url, page_number):
+    """
+    公式サイトが実際に生成したURLの
+    v=JSONだけを書き換える。
+    """
+
+    parsed = urlparse(url)
 
     query = parse_qs(
         parsed.query,
         keep_blank_values=True
     )
 
-    # 公式サイトの検索条件 v
-    state = {}
+    if "v" not in query:
+        raise RuntimeError(
+            "公式ページからv=検索条件を取得できませんでした"
+        )
 
-    if "v" in query and query["v"]:
-        try:
-            state = json.loads(query["v"][0])
-        except Exception:
-            state = {}
+    try:
+        state = json.loads(query["v"][0])
+    except Exception as e:
+        raise RuntimeError(
+            f"公式v=JSONの解析に失敗しました: {e}"
+        )
 
-    # 初期値
-    state.setdefault("suggest", "on")
-    state.setdefault("samename", "show")
-    state.setdefault("sort", "release_new")
-
-    # ここが重要
     state["pagenum"] = str(page_number)
+
+    new_v = json.dumps(
+        state,
+        ensure_ascii=False,
+        separators=(",", ":")
+    )
 
     new_query = urlencode(
         {
-            "v": json.dumps(
-                state,
-                ensure_ascii=False,
-                separators=(",", ":")
-            )
+            "v": new_v
         }
     )
 
@@ -114,133 +160,164 @@ def make_page_url(base_url, page_number):
     )
 
 
-# =========================================================
-# 一覧ページ解析
-# =========================================================
+def get_real_page2_url():
+    """
+    Playwrightで公式サイトのフォームを実際に送信し、
+    本物の2ページ目URLを取得する。
+    """
 
-def extract_card_links(html):
+    print()
+    print("========================================")
+    print("公式ページング方式を確認")
+    print("========================================")
 
-    soup = BeautifulSoup(
-        html,
-        "html.parser"
-    )
+    with sync_playwright() as p:
 
-    results = []
-
-    # 公式カード詳細リンク
-    for a in soup.select(
-        'a[href*="/card/detail/"]'
-    ):
-
-        href = a.get("href", "")
-
-        cid = card_id_from_url(href)
-
-        if not cid:
-            continue
-
-        url = absolute_url(href)
-
-        results.append(
-            (
-                cid,
-                url
-            )
+        browser = p.chromium.launch(
+            headless=True
         )
 
-    # 重複削除
-    unique = []
-    seen = set()
-
-    for cid, url in results:
-
-        if cid in seen:
-            continue
-
-        seen.add(cid)
-
-        unique.append(
-            (
-                cid,
-                url
-            )
+        page = browser.new_page(
+            user_agent=HEADERS["User-Agent"]
         )
 
-    return unique
+        print("公式1ページ目を開いています...", flush=True)
 
+        page.goto(
+            SEARCH_URL,
+            wait_until="domcontentloaded",
+            timeout=60000
+        )
 
-def get_page_count(html):
+        page.wait_for_timeout(1500)
 
-    soup = BeautifulSoup(
-        html,
-        "html.parser"
-    )
+        # 現在の1ページ目
+        html = page.content()
 
-    pages = []
+        links = extract_card_links(html)
 
-    for a in soup.select(
-        "#cardlist .wp-pagenavi a[data-page]"
-    ):
+        if len(links) == 0:
+            browser.close()
 
-        value = a.get("data-page")
+            raise RuntimeError(
+                "公式1ページ目からカードが取得できませんでした"
+            )
 
+        page_count = get_page_count(html)
+
+        print(
+            f"1ページ目: {len(links)}枚",
+            flush=True
+        )
+
+        print(
+            f"最後のページ: {page_count}",
+            flush=True
+        )
+
+        # pagenum入力欄を探す
+        locator = page.locator(
+            'input[name="pagenum"]'
+        )
+
+        if locator.count() == 0:
+            browser.close()
+
+            raise RuntimeError(
+                "公式サイトのpagenum入力欄が見つかりません"
+            )
+
+        print(
+            "公式フォームから2ページ目へ移動...",
+            flush=True
+        )
+
+        locator.first.fill("2")
+
+        # formを直接submit
+        page.locator(
+            'form'
+        ).filter(
+            has=page.locator(
+                'input[name="pagenum"]'
+            )
+        ).first.evaluate(
+            "(form) => form.submit()"
+        )
+
+        # ページ遷移を待つ
         try:
-            pages.append(
-                int(value)
+            page.wait_for_load_state(
+                "domcontentloaded",
+                timeout=30000
             )
         except Exception:
             pass
 
-    # 最後のページ
-    if pages:
-        return max(pages)
+        page.wait_for_timeout(2000)
 
-    # 念のため別検索
-    text = soup.get_text(
-        " ",
-        strip=True
-    )
+        page2_url = page.url
 
-    m = re.search(
-        r"最後のページ",
-        text
-    )
+        page2_html = page.content()
 
-    if m:
-        for a in soup.select(
-            'a[data-page]'
-        ):
-            value = a.get("data-page")
+        page2_links = extract_card_links(
+            page2_html
+        )
 
-            try:
-                pages.append(
-                    int(value)
+        print(
+            f"2ページ目URL: {page2_url}",
+            flush=True
+        )
+
+        print(
+            f"2ページ目カード数: {len(page2_links)}枚",
+            flush=True
+        )
+
+        browser.close()
+
+        if len(page2_links) == 0:
+            raise RuntimeError(
+                "2ページ目へ移動しましたがカードが取得できませんでした"
+            )
+
+        if len(page2_links) == len(links):
+            first_ids = [x[0] for x in links]
+            second_ids = [x[0] for x in page2_links]
+
+            if first_ids == second_ids:
+                raise RuntimeError(
+                    "2ページ目が1ページ目と同じカードです"
                 )
-            except Exception:
-                pass
 
-    return max(pages) if pages else 1
+        return page2_url, page_count
 
-
-# =========================================================
-# 全ページのカードID取得
-# =========================================================
 
 def discover_all_cards():
-
     print()
     print("========================================")
     print("公式カード一覧を取得")
     print("========================================")
 
-    session = requests.Session()
-    session.headers.update(
-        HEADERS
+    # まずPlaywrightで本物の2ページ目URLを取得
+    page2_url, last_page = get_real_page2_url()
+
+    print()
+    print("========================================")
+    print("ページURL取得成功")
+    print("========================================")
+
+    print(
+        f"総ページ数: {last_page}",
+        flush=True
     )
 
-    # まず1ページ目
+    session = requests.Session()
+    session.headers.update(HEADERS)
+
+    # 1ページ目
     print(
-        "1ページ目を取得中...",
+        "1ページ目を取得...",
         flush=True
     )
 
@@ -251,33 +328,16 @@ def discover_all_cards():
 
     r.raise_for_status()
 
-    first_html = r.text
-
     first_links = extract_card_links(
-        first_html
-    )
-
-    last_page = get_page_count(
-        first_html
-    )
-
-    print(
-        f"1ページ目: {len(first_links)}枚",
-        flush=True
-    )
-
-    print(
-        f"最後のページ: {last_page}",
-        flush=True
+        r.text
     )
 
     if len(first_links) == 0:
         raise RuntimeError(
-            "1ページ目からカードが取得できませんでした"
+            "1ページ目からカードを取得できませんでした"
         )
 
     all_links = {}
-
     release_order = {}
 
     order = 0
@@ -291,21 +351,27 @@ def discover_all_cards():
 
             order += 1
 
-    # ページ2以降
+    print(
+        f"1ページ目: {len(first_links)}枚 / 累計{len(all_links)}枚",
+        flush=True
+    )
+
+    # 2ページ目以降
     for page_number in range(
         2,
         last_page + 1
     ):
 
-        page_url = make_page_url(
-            SEARCH_URL,
-            page_number
-        )
+        if page_number == 2:
 
-        print(
-            f"[{page_number}/{last_page}] 取得中...",
-            flush=True
-        )
+            page_url = page2_url
+
+        else:
+
+            page_url = change_pagenum(
+                page2_url,
+                page_number
+            )
 
         success = False
 
@@ -324,7 +390,6 @@ def discover_all_cards():
                     rr.text
                 )
 
-                # 50枚取れることを期待
                 if len(links) == 0:
                     raise RuntimeError(
                         "カード0枚"
@@ -337,6 +402,7 @@ def discover_all_cards():
                     if cid not in all_links:
 
                         all_links[cid] = url
+
                         release_order[cid] = order
 
                         order += 1
@@ -344,11 +410,15 @@ def discover_all_cards():
                         new_count += 1
 
                 print(
-                    f"  {len(links)}枚 / 新規{new_count}枚 / 累計{len(all_links)}枚",
+                    f"[{page_number}/{last_page}] "
+                    f"{len(links)}枚 / "
+                    f"新規{new_count}枚 / "
+                    f"累計{len(all_links)}枚",
                     flush=True
                 )
 
                 success = True
+
                 break
 
             except Exception as e:
@@ -367,17 +437,13 @@ def discover_all_cards():
             )
 
     print()
-    print(
-        "========================================"
-    )
+    print("========================================")
     print(
         f"一覧取得完了: {len(all_links)}枚"
     )
-    print(
-        "========================================"
-    )
+    print("========================================")
 
-    # 公式表示数と大きく違う場合は停止
+    # 安全装置
     if len(all_links) < 10000:
 
         raise RuntimeError(
@@ -387,11 +453,12 @@ def discover_all_cards():
     return all_links, release_order
 
 
-# =========================================================
-# カード詳細解析
-# =========================================================
-
-def parse_detail(cid, url, html, release_order):
+def parse_detail(
+    cid,
+    url,
+    html,
+    release_order
+):
 
     soup = BeautifulSoup(
         html,
@@ -404,10 +471,12 @@ def parse_detail(cid, url, html, release_order):
 
     if h1:
         title = clean_text(
-            h1.get_text(" ", strip=True)
+            h1.get_text(
+                " ",
+                strip=True
+            )
         )
 
-    # タイトルからカード名を取り出す
     name = title
 
     if "(" in name:
@@ -416,20 +485,23 @@ def parse_detail(cid, url, html, release_order):
             1
         )[0].strip()
 
-    # 画像
     image_url = ""
 
     image = soup.select_one(
-        'main img[src*="/card/"]'
+        'img[src*="/cardimage/"]'
     )
 
     if not image:
+
         image = soup.select_one(
-            'img[src*="/cardimage/"]'
+            'main img'
         )
 
     if not image:
-        image = soup.find("img")
+
+        image = soup.find(
+            "img"
+        )
 
     if image:
 
@@ -437,18 +509,17 @@ def parse_detail(cid, url, html, release_order):
             image.get("src", "")
         )
 
-    # ページ全体から基本情報を取る
     text = soup.get_text(
         "\n",
         strip=True
     )
 
-    def get_after(label):
+    lines = [
+        clean_text(x)
+        for x in text.splitlines()
+    ]
 
-        lines = [
-            clean_text(x)
-            for x in text.splitlines()
-        ]
+    def get_after(label):
 
         for i, line in enumerate(lines):
 
@@ -492,15 +563,12 @@ def parse_detail(cid, url, html, release_order):
         "イラストレーター"
     )
 
-    # 特殊能力
     ability = ""
 
-    marker = "特殊能力"
-
-    if marker in text:
+    if "特殊能力" in text:
 
         part = text.split(
-            marker,
+            "特殊能力",
             1
         )[1]
 
@@ -515,7 +583,6 @@ def parse_detail(cid, url, html, release_order):
             part
         )
 
-    # フレーバー
     flavor = ""
 
     if "フレーバー" in text:
@@ -549,10 +616,6 @@ def parse_detail(cid, url, html, release_order):
     }
 
 
-# =========================================================
-# 詳細ページ取得
-# =========================================================
-
 def fetch_card(item):
 
     cid, url, release_order = item
@@ -584,10 +647,6 @@ def fetch_card(item):
         return None
 
 
-# =========================================================
-# メイン
-# =========================================================
-
 def main():
 
     os.makedirs(
@@ -595,15 +654,7 @@ def main():
         exist_ok=True
     )
 
-    # -----------------------------------------
-    # 一覧
-    # -----------------------------------------
-
     all_links, release_order = discover_all_cards()
-
-    # -----------------------------------------
-    # 既存データ
-    # -----------------------------------------
 
     old_cards = {}
 
@@ -628,9 +679,12 @@ def main():
 
                 for card in old_data:
 
-                    cid = card.get("id")
+                    cid = card.get(
+                        "id"
+                    )
 
                     if cid:
+
                         old_cards[cid] = card
 
         except Exception as e:
@@ -639,21 +693,15 @@ def main():
                 f"既存cards.json読込失敗: {e}"
             )
 
-    print()
     print(
         f"既存カード: {len(old_cards)}枚"
     )
-
-    # -----------------------------------------
-    # 新規カード
-    # -----------------------------------------
 
     targets = []
 
     for cid, url in all_links.items():
 
         if cid in old_cards:
-
             continue
 
         targets.append(
@@ -668,15 +716,10 @@ def main():
         f"新規取得対象: {len(targets)}枚"
     )
 
-    # -----------------------------------------
-    # 新規詳細取得
-    # -----------------------------------------
-
     new_cards = []
 
     if targets:
 
-        print()
         print(
             "新規カード詳細を取得中..."
         )
@@ -710,18 +753,16 @@ def main():
                     )
 
                 if (
-                    completed % 10 == 0
+                    completed % 20 == 0
                     or completed == len(targets)
                 ):
 
                     print(
-                        f"進捗: {completed}/{len(targets)}",
+                        f"進捗: "
+                        f"{completed}/"
+                        f"{len(targets)}",
                         flush=True
                     )
-
-    # -----------------------------------------
-    # 全カード統合
-    # -----------------------------------------
 
     cards = []
 
@@ -731,13 +772,13 @@ def main():
 
             card = old_cards[cid]
 
-            # 最新の順番だけ更新
             card["release_order"] = (
                 release_order[cid]
             )
 
-            # URLが空なら更新
-            card["url"] = all_links[cid]
+            card["url"] = (
+                all_links[cid]
+            )
 
             cards.append(
                 card
@@ -749,32 +790,29 @@ def main():
             card
         )
 
-    # ID重複除去
     unique = {}
 
     for card in cards:
 
-        cid = card.get("id")
+        cid = card.get(
+            "id"
+        )
 
         if cid:
+
             unique[cid] = card
 
     cards = list(
         unique.values()
     )
 
-    # 最新順
     cards.sort(
         key=lambda x:
-            x.get(
-                "release_order",
-                999999999
-            )
+        x.get(
+            "release_order",
+            999999999
+        )
     )
-
-    # -----------------------------------------
-    # 保存
-    # -----------------------------------------
 
     with open(
         CARDS_FILE,
@@ -803,21 +841,14 @@ def main():
         )
 
     print()
-    print(
-        "========================================"
-    )
-    print(
-        "完成"
-    )
-    print(
-        "========================================"
-    )
+    print("========================================")
     print(
         f"カード数: {len(cards)}"
     )
     print(
         f"新規取得: {len(new_cards)}"
     )
+    print("========================================")
 
 
 if __name__ == "__main__":

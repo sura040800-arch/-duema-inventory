@@ -1241,7 +1241,7 @@ async function load(){
     clearTimeout(timer);
     if(!r.ok)throw new Error('HTTP '+r.status);
 
-    if(!r.body){
+    if(true){
       const data=await r.json();
       state.cards=Array.isArray(data)?data:(Array.isArray(data.cards)?data.cards:[]);
       if(!state.cards.length)throw new Error('カードデータが空です');

@@ -514,4 +514,1093 @@ return (patterns[key]||[]).some(re=>re.test(text));
 }
 
 function filteredCards(base=state.cards){
-const q=normalizeSearch($('search').
+const q=normalizeSearch($('search').value);
+
+let list=base.filter(c=>{
+if(q&&!normalizeSearch(searchText(c)).includes(q))return false;
+
+if(setting.civilization &&
+!civilizations(c).some(x=>x===setting.civilization))return false;
+
+if(setting.race &&
+!races(c).some(x=>normalizeSearch(x).includes(normalizeSearch(setting.race))))return false;
+
+if(setting.type &&
+!types(c).some(x=>x===setting.type))return false;
+
+if(setting.rarity &&
+!rarities(c).some(x=>x===setting.rarity))return false;
+
+const n=state.owned[idOf(c)]||0;
+
+if(setting.ownedOnly&&n<=0)return false;
+if(setting.unownedOnly&&n>0)return false;
+
+return true;
+});
+
+list.sort((a,b)=>{
+switch(setting.sort){
+case'latest':
+return cardNumber(b).localeCompare(cardNumber(a),'ja');
+case'name':
+return cardName(a).localeCompare(cardName(b),'ja');
+case'cost':
+return costNum(a)-costNum(b)||cardName(a).localeCompare(cardName(b),'ja');
+case'power':
+return powerNum(a)-powerNum(b)||cardName(a).localeCompare(cardName(b),'ja');
+case'civilization':
+return civRank(a)-civRank(b)||civilizations(a).join().localeCompare(civilizations(b).join(),'ja');
+case'race':
+return races(a).join().localeCompare(races(b).join(),'ja');
+case'rarity':
+return rarities(a).join().localeCompare(rarities(b).join(),'ja');
+case'number':
+return cardNumber(a).localeCompare(cardNumber(b),'ja');
+default:
+return 0;
+}
+});
+
+return list;
+}
+
+function cardHtml(c,showQty=true){
+const id=idOf(c);
+const n=state.owned[id]||0;
+const img=cardImage(c);
+const civ=civilizations(c).join('/');
+const typ=types(c).join('/');
+const cost=firstValue(c,'cost');
+const power=firstValue(c,'power');
+const rar=rarities(c).join('/');
+
+return `
+<div class="cardwrap">
+<div class="card">
+${img
+?`<img class="card-img" src="${img}" alt="${esc(cardName(c))}" loading="lazy" referrerpolicy="no-referrer">`
+:`<div class="card-img noimg">NO IMAGE</div>`}
+<div class="card-info">
+<h3>${esc(cardName(c))}</h3>
+<div class="card-number">${esc(cardNumber(c))}</div>
+<div class="meta">
+${esc(civ)}　${esc(typ)}<br>
+${cost!==''?'コスト '+esc(cost)+'　':''}
+${power!==''?'パワー '+esc(power)+'　':''}
+${esc(rar)}
+</div>
+<div class="small">${esc(races(c).join(' / '))}</div>
+</div>
+${showQty?`
+<div class="qty">
+<button data-minus="${esc(id)}">−</button>
+<b>${n}</b>
+<button data-plus="${esc(id)}">＋</button>
+</div>`:''}
+</div>
+<button class="fav" data-fav="${esc(id)}">${isFav(c)?'★':'☆'}</button>
+</div>`;
+}
+
+function renderCards(){
+const list=filteredCards();
+const total=list.length;
+
+$('status').textContent=
+`カード ${total.toLocaleString()} 枚を表示${total>100?'（先頭100枚）':''}`;
+
+$('cards').innerHTML=list.length
+?list.slice(0,100).map(c=>cardHtml(c,true)).join('')
+:'<div class="empty">該当するカードがありません。</div>';
+}
+
+function renderFavorites(){
+const q=normalizeSearch($('search').value);
+
+let list=state.cards.filter(c=>{
+if(!isFav(c))return false;
+if(q&&!normalizeSearch(searchText(c)).includes(q))return false;
+return true;
+});
+
+$('favStatus').textContent=`お気に入り ${list.length.toLocaleString()} 枚`;
+
+$('favorites').innerHTML=list.length
+?list.map(c=>cardHtml(c,true)).join('')
+:'<div class="empty">お気に入りカードはありません。<br><span class="small">カードの☆をタップすると追加できます。</span></div>';
+}
+
+function fillSettings(){
+const civs=[...new Set(state.cards.flatMap(c=>civilizations(c)))].sort();
+const race=[...new Set(state.cards.flatMap(c=>races(c)))].sort((a,b)=>a.localeCompare(b,'ja'));
+const ts=[...new Set(state.cards.flatMap(c=>types(c)))].sort((a,b)=>a.localeCompare(b,'ja'));
+const rs=[...new Set(state.cards.flatMap(c=>rarities(c)))].sort((a,b)=>a.localeCompare(b,'ja'));
+
+$('civilization').innerHTML=
+'<option value="">すべて</option>'+
+civs.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join('');
+
+$('type').innerHTML=
+'<option value="">すべて</option>'+
+ts.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join('');
+
+$('rarity').innerHTML=
+'<option value="">すべて</option>'+
+rs.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join('');
+
+$('raceList').innerHTML=
+race.map(x=>`<option value="${esc(x)}"></option>`).join('');
+}
+
+function readTemp(){
+setting.sort=$('sort').value;
+setting.civilization=$('civilization').value;
+setting.race=$('raceFilter').value.trim();
+setting.type=$('type').value;
+setting.rarity=$('rarity').value;
+setting.ownedOnly=$('ownedOnly').checked;
+setting.unownedOnly=$('unownedOnly').checked;
+}
+
+function renderCurrent(){
+if(!$('invView').classList.contains('hidden'))renderCards();
+if(!$('favView').classList.contains('hidden'))renderFavorites();
+
+if(!$('deckView').classList.contains('hidden')){
+if(state.activeDeck===null)renderDeckList();
+else renderDeckEditor();
+}
+}
+
+function switchTab(tab){
+$('invView').classList.toggle('hidden',tab!=='inv');
+$('favView').classList.toggle('hidden',tab!=='fav');
+$('deckView').classList.toggle('hidden',tab!=='deck');
+
+$('invTab').classList.toggle('active',tab==='inv');
+$('favTab').classList.toggle('active',tab==='fav');
+$('deckTab').classList.toggle('active',tab==='deck');
+
+renderCurrent();
+}
+
+$('cards').addEventListener('click',e=>{
+const p=e.target.dataset.plus;
+const m=e.target.dataset.minus;
+const f=e.target.dataset.fav;
+
+if(p){
+state.owned[p]=(state.owned[p]||0)+1;
+save();
+renderCards();
+}
+
+if(m){
+state.owned[m]=Math.max(0,(state.owned[m]||0)-1);
+save();
+renderCards();
+}
+
+if(f)toggleFav(f);
+});
+
+$('favorites').addEventListener('click',e=>{
+const p=e.target.dataset.plus;
+const m=e.target.dataset.minus;
+const f=e.target.dataset.fav;
+
+if(p){
+state.owned[p]=(state.owned[p]||0)+1;
+save();
+renderFavorites();
+}
+
+if(m){
+state.owned[m]=Math.max(0,(state.owned[m]||0)-1);
+save();
+renderFavorites();
+}
+
+if(f)toggleFav(f);
+});
+
+$('search').addEventListener('input',()=>{
+renderCurrent();
+});
+
+$('settings').onclick=()=>{
+fillSettings();
+
+$('sort').value=setting.sort;
+$('civilization').value=setting.civilization;
+$('raceFilter').value=setting.race;
+$('type').value=setting.type;
+$('rarity').value=setting.rarity;
+$('ownedOnly').checked=setting.ownedOnly;
+$('unownedOnly').checked=setting.unownedOnly;
+
+$('overlay').classList.add('open');
+};
+
+$('closeSettings').onclick=()=>{
+$('overlay').classList.remove('open');
+};
+
+$('applySettings').onclick=()=>{
+readTemp();
+$('overlay').classList.remove('open');
+renderCurrent();
+};
+
+$('resetSettings').onclick=()=>{
+setting.sort='default';
+setting.civilization='';
+setting.race='';
+setting.type='';
+setting.rarity='';
+setting.ownedOnly=false;
+setting.unownedOnly=false;
+
+$('sort').value='default';
+$('civilization').value='';
+$('raceFilter').value='';
+$('type').value='';
+$('rarity').value='';
+$('ownedOnly').checked=false;
+$('unownedOnly').checked=false;
+};
+
+$('overlay').addEventListener('click',e=>{
+if(e.target===$('overlay'))$('overlay').classList.remove('open');
+});
+
+$('detailClose').onclick=()=>{
+$('detailOverlay').classList.remove('open');
+};
+
+$('detailOverlay').addEventListener('click',e=>{
+if(e.target===$('detailOverlay'))$('detailOverlay').classList.remove('open');
+});
+
+function openCardDetail(id){
+const c=state.cards.find(x=>idOf(x)===String(id));
+if(!c)return;
+
+const img=cardImage(c);
+const abilities=faces(c).map(f=>[
+f.ability,
+f.text,
+f.effect,
+f.specialAbility,
+f.specialAbilities
+].flat().filter(Boolean).join('\n')).filter(Boolean).join('\n\n');
+
+$('detailContent').innerHTML=`
+${img?`<img class="detailImage" src="${img}" alt="${esc(cardName(c))}">`:''}
+<div class="detailName">${esc(cardName(c))}</div>
+<div class="detailNumber">${esc(cardNumber(c))}</div>
+
+<div class="detailMeta">
+<div><b>文明</b><br>${esc(civilizations(c).join(' / ')||'-')}</div>
+<div><b>種族</b><br>${esc(races(c).join(' / ')||'-')}</div>
+<div><b>タイプ</b><br>${esc(types(c).join(' / ')||'-')}</div>
+<div><b>レアリティ</b><br>${esc(rarities(c).join(' / ')||'-')}</div>
+<div><b>コスト</b><br>${esc(firstValue(c,'cost')||'-')}</div>
+<div><b>パワー</b><br>${esc(firstValue(c,'power')||'-')}</div>
+</div>
+
+${abilities?`<div class="detailAbility">${esc(abilities)}</div>`:''}
+
+<div class="detailButtons">
+<button id="detailAdd">＋ 所持数を増やす</button>
+<button class="secondary" id="detailFav">${isFav(c)?'★ お気に入り解除':'☆ お気に入り'}</button>
+</div>
+`;
+
+$('detailAdd').onclick=()=>{
+state.owned[id]=(state.owned[id]||0)+1;
+save();
+$('detailAdd').textContent='＋ 追加しました';
+renderCurrent();
+};
+
+$('detailFav').onclick=()=>{
+toggleFav(id);
+$('detailFav').textContent=isFav(c)?'★ お気に入り解除':'☆ お気に入り';
+};
+
+$('detailOverlay').classList.add('open');
+}
+
+function deckTotal(d){
+return (d.cards||[]).reduce((s,x)=>s+(Number(x.need)||0),0);
+}
+
+function deckCard(id){
+return state.cards.find(c=>idOf(c)===String(id));
+}
+
+function deckCardsForSection(d,section){
+if(section==='main')return d.cards||[];
+if(section==='gr')return d.gr||[];
+if(section==='extra')return d.extra||[];
+return [];
+}
+
+function ensureDeckArrays(d){
+if(!Array.isArray(d.cards))d.cards=[];
+if(!Array.isArray(d.gr))d.gr=[];
+if(!Array.isArray(d.extra))d.extra=[];
+}
+
+function addToDeck(id){
+const d=state.decks[state.activeDeck];
+if(!d)return;
+
+ensureDeckArrays(d);
+
+let arr=d.cards;
+
+if(state.deckSection==='gr')arr=d.gr;
+if(state.deckSection==='extra')arr=d.extra;
+
+let x=arr.find(v=>String(v.id)===String(id));
+
+if(x){
+if(state.deckSection==='main'&&(Number(x.need)||0)>=4){
+alert('同じカードは通常4枚までです。');
+return;
+}
+x.need=(Number(x.need)||0)+1;
+}else{
+arr.push({id:String(id),need:1});
+}
+
+save();
+renderDeckEditor();
+}
+
+function changeDeckQty(id,delta){
+const d=state.decks[state.activeDeck];
+if(!d)return;
+
+ensureDeckArrays(d);
+
+let arr=d.cards;
+if(state.deckSection==='gr')arr=d.gr;
+if(state.deckSection==='extra')arr=d.extra;
+
+const x=arr.find(v=>String(v.id)===String(id));
+if(!x)return;
+
+x.need=(Number(x.need)||0)+delta;
+
+if(x.need<=0){
+arr.splice(arr.indexOf(x),1);
+}
+
+save();
+renderDeckEditor();
+}
+
+function deckSectionTotal(d,section){
+return deckCardsForSection(d,section)
+.reduce((s,x)=>s+(Number(x.need)||0),0);
+}
+
+function pickerSortCards(list){
+const mode=state.pickerSort;
+
+return [...list].sort((a,b)=>{
+if(mode==='name')
+return cardName(a).localeCompare(cardName(b),'ja');
+
+if(mode==='cost')
+return costNum(a)-costNum(b)||cardName(a).localeCompare(cardName(b),'ja');
+
+if(mode==='number')
+return cardNumber(a).localeCompare(cardNumber(b),'ja');
+
+if(mode==='owned')
+return (state.owned[idOf(b)]||0)-(state.owned[idOf(a)]||0);
+
+if(mode==='latest')
+return cardNumber(b).localeCompare(cardNumber(a),'ja');
+
+return 0;
+});
+}
+
+function pickerFilteredCards(){
+const d=state.decks[state.activeDeck];
+if(!d)return[];
+
+const q=normalizeSearch(state.deckSearch);
+
+let list=state.cards.filter(c=>{
+if(q&&!normalizeSearch(searchText(c)).includes(q))return false;
+
+if(state.deckFilter==='owned'&&(state.owned[idOf(c)]||0)<=0)
+return false;
+
+if(state.deckFilter==='favorite'&&!isFav(c))
+return false;
+
+return true;
+});
+
+return pickerSortCards(list);
+}
+
+function renderDeckList(){
+$('deckListView').classList.remove('hidden');
+$('deckEditorView').classList.add('hidden');
+
+$('deckListView').innerHTML=`
+<div class="deck" style="margin-bottom:8px">
+<button class="btn" id="newDeck">＋ デッキを作る</button>
+</div>
+
+<div class="decklist">
+${
+state.decks.length
+?state.decks.map((d,i)=>`
+<div class="deck">
+<div class="row">
+<b>${esc(d.name)}</b>
+<span class="deckCount">${deckTotal(d)}枚</span>
+</div>
+<div class="small">${(d.cards||[]).length}種類</div>
+<div class="deckActions">
+<button class="btn" data-open-deck="${i}">デッキを開く</button>
+<button class="btn danger" data-delete-deck="${i}">削除</button>
+</div>
+</div>
+`).join('')
+:'<div class="empty">まだデッキがありません。</div>'
+}
+</div>
+`;
+
+$('newDeck').onclick=()=>{
+const n=prompt('デッキ名','新しいデッキ');
+
+if(n&&n.trim()){
+state.decks.push({
+name:n.trim(),
+cards:[],
+gr:[],
+extra:[]
+});
+
+save();
+renderDeckList();
+}
+};
+
+$('deckListView').querySelectorAll('[data-open-deck]').forEach(b=>{
+b.onclick=()=>{
+state.activeDeck=Number(b.dataset.openDeck);
+state.deckSearch='';
+state.deckFilter='all';
+state.deckSection='main';
+state.pickerLimit=72;
+renderDeckEditor();
+};
+});
+
+$('deckListView').querySelectorAll('[data-delete-deck]').forEach(b=>{
+b.onclick=()=>{
+const i=Number(b.dataset.deleteDeck);
+
+if(confirm('このデッキを削除しますか？')){
+state.decks.splice(i,1);
+save();
+renderDeckList();
+}
+};
+});
+}
+
+function deckContentCard(x){
+const c=deckCard(x.id);
+if(!c)return '';
+
+return `
+<div class="deckCardItem" data-deck-card="${esc(x.id)}">
+${cardImage(c)
+?`<img src="${cardImage(c)}" loading="lazy" referrerpolicy="no-referrer">`
+:''}
+<div class="deckCardCount">${Number(x.need)||0}</div>
+</div>
+`;
+}
+
+function renderPickerOnly(){
+const box=$('pickerGrid');
+if(!box)return;
+
+const results=pickerFilteredCards();
+const shown=state.showAllDeckCards?results:results.slice(0,state.pickerLimit);
+
+$('pickerStatus').textContent=
+`${results.length.toLocaleString()}枚中 ${shown.length.toLocaleString()}枚を表示`;
+
+box.innerHTML=shown.length
+?shown.map(c=>`
+<div class="pickerCard" data-picker-card="${esc(idOf(c))}">
+${cardImage(c)
+?`<img src="${cardImage(c)}" loading="lazy" referrerpolicy="no-referrer">`
+:''}
+<button class="pickerPlus" data-picker-add="${esc(idOf(c))}">＋</button>
+</div>
+`).join('')
+:'<div class="empty" style="grid-column:1/-1">カードがありません。</div>';
+
+$('pickerMore').style.display=
+(!state.showAllDeckCards&&shown.length<results.length)?'block':'none';
+
+attachPickerTouch();
+}
+
+function renderDeckEditor(){
+const d=state.decks[state.activeDeck];
+
+if(!d){
+renderDeckList();
+return;
+}
+
+ensureDeckArrays(d);
+
+$('deckListView').classList.add('hidden');
+$('deckEditorView').classList.remove('hidden');
+
+const totalMain=deckSectionTotal(d,'main');
+const totalGr=deckSectionTotal(d,'gr');
+const totalExtra=deckSectionTotal(d,'extra');
+
+const currentCards=deckCardsForSection(d,state.deckSection);
+
+$('deckEditorView').innerHTML=`
+<div class="deckEditor">
+
+<div class="deckHeader">
+<div class="deckHeadRow">
+<button id="backDeck">←</button>
+<div class="deckTitle">${esc(d.name)}</div>
+<button id="renameDeck">編集</button>
+</div>
+
+<div class="sectionTabs">
+<button class="sectionTab ${state.deckSection==='main'?'active':''}" data-section="main">
+メイン ${totalMain}/40
+</button>
+<button class="sectionTab ${state.deckSection==='gr'?'active':''}" data-section="gr">
+GR ${totalGr}/12
+</button>
+<button class="sectionTab ${state.deckSection==='extra'?'active':''}" data-section="extra">
+超次元 ${totalExtra}/8
+</button>
+</div>
+</div>
+
+<div class="deckMakerTop">
+<div class="deckMakerStats">
+<div class="deckMakerStat">
+<b>${totalMain}</b>
+<span>メイン</span>
+</div>
+<div class="deckMakerStat">
+<b>${totalGr}</b>
+<span>GR</span>
+</div>
+<div class="deckMakerStat">
+<b>${totalExtra}</b>
+<span>超次元</span>
+</div>
+</div>
+
+<div class="deckMakerActions">
+<button class="primary" id="analysisBtn">📊 分析</button>
+<button id="filterBtn">🔎 絞り込み</button>
+<button id="sortBtn">↕ 並び替え</button>
+</div>
+</div>
+
+<div class="formatRow">
+<button class="formatBtn active">オリジナル</button>
+<button class="formatBtn">アドバンス</button>
+</div>
+
+<div class="deckContents">
+<h3 style="font-size:13px;margin:3px 0 8px">
+デッキ内容
+</h3>
+
+<div class="deckContentGrid">
+${
+currentCards.length
+?currentCards.map(deckContentCard).join('')
+:'<div class="deckEmpty">ここにカードを追加してください<br>下のカード一覧から追加できます</div>'
+}
+</div>
+</div>
+
+<div class="deckPicker">
+
+<div class="pickerSticky">
+
+<div class="pickerSearchRow">
+<input id="deckSearch" value="${esc(state.deckSearch)}" placeholder="カード名・「ドルガン」などで検索">
+<button id="clearDeckSearch">×</button>
+</div>
+
+<div class="pickerSortRow">
+<select id="pickerSort">
+<option value="recommended">おすすめ順</option>
+<option value="latest">新しい順</option>
+<option value="owned">所持枚数順</option>
+<option value="name">名前順</option>
+<option value="cost">コスト順</option>
+<option value="number">カード番号順</option>
+</select>
+
+<button class="pickerFilterBtn" id="pickerFilterBtn">絞り込み</button>
+</div>
+
+<div class="pickerStatus" id="pickerStatus"></div>
+
+<div class="deckTools">
+<button class="${state.deckFilter==='all'?'active':''}" id="showAllDeckCards">すべて</button>
+<button class="${state.deckFilter==='owned'?'active':''}" id="ownedDeckCards">所持</button>
+<button class="${state.deckFilter==='favorite'?'active':''}" id="favoriteDeckCards">お気に入り</button>
+</div>
+
+</div>
+
+<div class="swipeHint">
+カードをタップで詳細表示 ／ 上にスワイプでデッキへ追加
+</div>
+
+<div class="pickerGrid" id="pickerGrid"></div>
+
+<button class="loadMore" id="pickerMore">さらに表示</button>
+
+</div>
+</div>
+`;
+
+$('pickerSort').value=state.pickerSort;
+
+$('backDeck').onclick=()=>{
+state.activeDeck=null;
+state.deckSearch='';
+renderDeckList();
+};
+
+$('renameDeck').onclick=()=>{
+const n=prompt('デッキ名',d.name);
+
+if(n&&n.trim()){
+d.name=n.trim();
+save();
+renderDeckEditor();
+}
+};
+
+$('deckSearch').oninput=e=>{
+state.deckSearch=e.target.value;
+state.pickerLimit=72;
+renderPickerOnly();
+};
+
+$('clearDeckSearch').onclick=()=>{
+state.deckSearch='';
+state.pickerLimit=72;
+renderDeckEditor();
+};
+
+$('pickerSort').onchange=e=>{
+state.pickerSort=e.target.value;
+state.pickerLimit=72;
+renderPickerOnly();
+};
+
+$('pickerMore').onclick=()=>{
+state.pickerLimit+=72;
+renderPickerOnly();
+};
+
+$('showAllDeckCards').onclick=()=>{
+state.deckFilter='all';
+state.pickerLimit=72;
+renderDeckEditor();
+};
+
+$('ownedDeckCards').onclick=()=>{
+state.deckFilter='owned';
+state.pickerLimit=72;
+renderDeckEditor();
+};
+
+$('favoriteDeckCards').onclick=()=>{
+state.deckFilter='favorite';
+state.pickerLimit=72;
+renderDeckEditor();
+};
+
+$('analysisBtn').onclick=()=>{
+renderDeckAnalysis(d);
+};
+
+$('filterBtn').onclick=()=>{
+renderDeckFilter(d);
+};
+
+$('sortBtn').onclick=()=>{
+const order=['recommended','latest','owned','name','cost','number'];
+const i=order.indexOf(state.pickerSort);
+state.pickerSort=order[(i+1)%order.length];
+renderPickerOnly();
+};
+
+document.querySelectorAll('[data-section]').forEach(b=>{
+b.onclick=()=>{
+state.deckSection=b.dataset.section;
+renderDeckEditor();
+};
+});
+
+document.querySelectorAll('[data-deck-card]').forEach(el=>{
+let sx=0,sy=0,moved=false;
+
+el.addEventListener('touchstart',e=>{
+sx=e.touches[0].clientX;
+sy=e.touches[0].clientY;
+moved=false;
+},{passive:true});
+
+el.addEventListener('touchmove',e=>{
+const dx=e.touches[0].clientX-sx;
+const dy=e.touches[0].clientY-sy;
+
+if(Math.abs(dy)>10||Math.abs(dx)>10)moved=true;
+},{passive:true});
+
+el.addEventListener('touchend',e=>{
+if(moved)return;
+openCardDetail(el.dataset.deckCard);
+});
+});
+
+renderPickerOnly();
+}
+
+function renderDeckAnalysis(d){
+const counts={};
+
+(d.cards||[]).forEach(x=>{
+const c=deckCard(x.id);
+if(!c)return;
+const cost=costNum(c);
+counts[cost]=(counts[cost]||0)+(Number(x.need)||0);
+});
+
+const total=deckTotal(d);
+const max=Math.max(...Object.values(counts),1);
+
+$('deckEditorView').innerHTML=`
+<div class="deckEditor">
+<div class="deckHeader">
+<div class="deckHeadRow">
+<button id="analysisBack">←</button>
+<div class="deckTitle">デッキ分析</div>
+</div>
+</div>
+
+<div style="padding:10px">
+<div class="analysisGrid">
+<div class="analysisBox">
+<b>${total}</b>
+<span>メインデッキ枚数</span>
+</div>
+<div class="analysisBox">
+<b>${(d.cards||[]).length}</b>
+<span>カード種類</span>
+</div>
+</div>
+
+<div class="analysisBox" style="margin-top:8px">
+<b>コスト分布</b>
+
+${
+Object.keys(counts).sort((a,b)=>Number(a)-Number(b)).map(k=>`
+<div style="margin-top:8px;font-size:11px">
+コスト ${esc(k)}：${counts[k]}枚
+<div class="bar">
+<i style="width:${Math.round(counts[k]/max*100)}%"></i>
+</div>
+</div>
+`).join('')
+||'<div class="small">まだカードがありません。</div>'
+}
+</div>
+</div>
+</div>
+`;
+
+$('analysisBack').onclick=()=>{
+renderDeckEditor();
+};
+}
+
+function renderDeckFilter(d){
+$('deckEditorView').innerHTML=`
+<div class="deckEditor">
+<div class="deckHeader">
+<div class="deckHeadRow">
+<button id="filterBack">←</button>
+<div class="deckTitle">デッキ絞り込み</div>
+</div>
+</div>
+
+<div style="padding:10px">
+
+<div class="deckFilterSection">
+<h3>カード効果</h3>
+<div class="deckFilterTwo">
+<button class="btn secondary" data-effect="trigger">S・トリガー</button>
+<button class="btn secondary" data-effect="draw">ドロー</button>
+<button class="btn secondary" data-effect="search">サーチ</button>
+<button class="btn secondary" data-effect="removal">除去</button>
+<button class="btn secondary" data-effect="blocker">ブロッカー</button>
+<button class="btn secondary" data-effect="ramp">マナ加速</button>
+<button class="btn secondary" data-effect="discard">ハンデス</button>
+<button class="btn secondary" data-effect="grave">墓地利用</button>
+</div>
+</div>
+
+<div class="deckFilterSection">
+<h3>コスト</h3>
+<div class="rangeRow">
+<input id="deckCostMin" type="number" min="0" placeholder="最小">
+<input id="deckCostMax" type="number" min="0" placeholder="最大">
+</div>
+</div>
+
+<div class="deckFilterSection">
+<h3>文明</h3>
+<div class="deckFilterTwo">
+${['光','水','闇','火','自然','多色'].map(x=>`
+<button class="filterChip" data-civ="${esc(x)}">${esc(x)}</button>
+`).join('')}
+</div>
+</div>
+
+<div class="sheetActions">
+<button class="reset" id="filterReset">リセット</button>
+<button class="apply" id="filterApply">適用</button>
+</div>
+
+</div>
+</div>
+`;
+
+let selectedEffect='';
+let selectedCiv='';
+
+document.querySelectorAll('[data-effect]').forEach(b=>{
+b.onclick=()=>{
+selectedEffect=b.dataset.effect;
+document.querySelectorAll('[data-effect]').forEach(x=>x.classList.remove('active'));
+b.classList.add('active');
+};
+});
+
+document.querySelectorAll('[data-civ]').forEach(b=>{
+b.onclick=()=>{
+selectedCiv=b.dataset.civ;
+document.querySelectorAll('[data-civ]').forEach(x=>x.classList.remove('active'));
+b.classList.add('active');
+};
+});
+
+$('filterBack').onclick=()=>{
+renderDeckEditor();
+};
+
+$('filterReset').onclick=()=>{
+selectedEffect='';
+selectedCiv='';
+$('deckCostMin').value='';
+$('deckCostMax').value='';
+document.querySelectorAll('[data-effect],[data-civ]').forEach(x=>x.classList.remove('active'));
+};
+
+$('filterApply').onclick=()=>{
+state.deckSearch='';
+state.deckFilter='all';
+
+const min=$('deckCostMin').value;
+const max=$('deckCostMax').value;
+
+const filtered=state.cards.filter(c=>{
+if(selectedEffect&&!hasEffect(c,selectedEffect))return false;
+
+const cost=costNum(c);
+
+if(min!==''&&cost<Number(min))return false;
+if(max!==''&&cost>Number(max))return false;
+
+if(selectedCiv){
+if(selectedCiv==='多色'){
+if(civilizations(c).length<2)return false;
+}else if(!civilizations(c).includes(selectedCiv)){
+return false;
+}
+}
+
+return true;
+});
+
+$('deckEditorView').innerHTML=`
+<div class="deckEditor">
+<div class="deckHeader">
+<div class="deckHeadRow">
+<button id="filteredBack">←</button>
+<div class="deckTitle">絞り込み結果</div>
+</div>
+</div>
+
+<div class="pickerStatus" style="padding:8px 10px">
+${filtered.length.toLocaleString()}枚
+</div>
+
+<div class="pickerGrid">
+${
+filtered.slice(0,200).map(c=>`
+<div class="pickerCard" data-filter-card="${esc(idOf(c))}">
+${cardImage(c)
+?`<img src="${cardImage(c)}" loading="lazy" referrerpolicy="no-referrer">`
+:''}
+<button class="pickerPlus" data-filter-add="${esc(idOf(c))}">＋</button>
+</div>
+`).join('')
+||'<div class="empty" style="grid-column:1/-1">該当カードなし</div>'
+}
+</div>
+</div>
+`;
+
+$('filteredBack').onclick=()=>{
+renderDeckEditor();
+};
+
+document.querySelectorAll('[data-filter-add]').forEach(b=>{
+b.onclick=()=>{
+addToDeck(b.dataset.filterAdd);
+};
+});
+
+document.querySelectorAll('[data-filter-card]').forEach(el=>{
+el.onclick=e=>{
+if(e.target.closest('[data-filter-add]'))return;
+openCardDetail(el.dataset.filterCard);
+};
+});
+};
+}
+
+function attachPickerTouch(){
+document.querySelectorAll('#pickerGrid .pickerCard').forEach(el=>{
+let sx=0;
+let sy=0;
+let dx=0;
+let dy=0;
+let moved=false;
+
+el.addEventListener('touchstart',e=>{
+sx=e.touches[0].clientX;
+sy=e.touches[0].clientY;
+dx=0;
+dy=0;
+moved=false;
+},{passive:true});
+
+el.addEventListener('touchmove',e=>{
+dx=e.touches[0].clientX-sx;
+dy=e.touches[0].clientY-sy;
+
+if(Math.abs(dy)>10||Math.abs(dx)>10)moved=true;
+
+if(dy<-10)el.classList.add('swiping');
+},{passive:true});
+
+el.addEventListener('touchend',()=>{
+el.classList.remove('swiping');
+
+if(moved&&dy<-45){
+addToDeck(el.dataset.pickerCard);
+return;
+}
+
+if(!moved){
+openCardDetail(el.dataset.pickerCard);
+}
+},{passive:true});
+});
+}
+
+async function loadCards(){
+try{
+const r=await fetch('./data/cards.json?'+Date.now(),{cache:'no-store'});
+
+if(!r.ok)throw new Error('cards.json '+r.status);
+
+const data=await r.json();
+
+if(Array.isArray(data)){
+state.cards=data;
+}else if(Array.isArray(data.cards)){
+state.cards=data.cards;
+}else{
+throw new Error('カードデータ形式が不明です');
+}
+
+$('status').textContent=
+`公式カード ${state.cards.length.toLocaleString()} 枚`;
+
+renderCards();
+fillSettings();
+
+}catch(e){
+console.error(e);
+$('status').textContent='カードデータを読み込めませんでした';
+$('cards').innerHTML=`
+<div class="empty">
+カードデータの読み込みに失敗しました。<br>
+<span class="small">${esc(e.message)}</span>
+</div>`;
+}
+}
+
+$('invTab').onclick=()=>{
+state.activeDeck=null;
+switchTab('inv');
+};
+
+$('favTab').onclick=()=>{
+state.activeDeck=null;
+switchTab('fav');
+};
+
+$('deckTab').onclick=()=>{
+switchTab('deck');
+};
+
+loadCards();
+</script>
+</body>
+</html>

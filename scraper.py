@@ -1,9 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
-from urllib.parse import urljoin, urlencode, urlparse, parse_qs
+import json
+from urllib.parse import quote
 
 
-URL = "https://dm.takaratomy.co.jp/card/"
+BASE_URL = "https://dm.takaratomy.co.jp/card/"
 
 HEADERS = {
     "User-Agent": (
@@ -18,18 +19,18 @@ HEADERS = {
 def get_cards(html):
     soup = BeautifulSoup(html, "html.parser")
 
-    result = []
+    cards = []
 
     for a in soup.select('a[href*="/card/detail/"]'):
-
         href = a.get("href", "")
 
         if "id=" not in href:
             continue
 
-        result.append(href)
+        if href not in cards:
+            cards.append(href)
 
-    return list(dict.fromkeys(result))
+    return cards
 
 
 def main():
@@ -37,59 +38,57 @@ def main():
     session = requests.Session()
     session.headers.update(HEADERS)
 
-    print("1ページ目を取得中...")
+    # ================================
+    # 1ページ目
+    # ================================
+
+    print("1ページ目を取得中...", flush=True)
 
     r = session.get(
-        URL,
+        BASE_URL,
         timeout=30
     )
 
     r.raise_for_status()
+
+    cards1 = get_cards(r.text)
+
+    print(
+        f"1ページ目: {len(cards1)}枚",
+        flush=True
+    )
+
+    if len(cards1) == 0:
+        raise RuntimeError(
+            "1ページ目のカード取得に失敗しました"
+        )
+
+    # ================================
+    # 公式ページの検索条件を取得
+    # ================================
 
     soup = BeautifulSoup(
         r.text,
         "html.parser"
     )
 
-    cards1 = get_cards(r.text)
-
-    print(
-        f"1ページ目カード数: {len(cards1)}"
-    )
-
-    # --------------------------------
-    # 公式フォーム取得
-    # --------------------------------
-
     form = soup.select_one(
         "form#search_cond"
     )
 
     if not form:
-
-        print(
-            "ERROR: form#search_cond が見つかりません"
+        raise RuntimeError(
+            "公式検索フォームが見つかりません"
         )
 
-        return
-
     print(
-        "公式検索フォームを発見"
+        "公式検索フォームを確認しました",
+        flush=True
     )
 
-    print(
-        "method:",
-        form.get("method")
-    )
-
-    print(
-        "action:",
-        form.get("action")
-    )
-
-    # --------------------------------
-    # フォームの全入力値を取得
-    # --------------------------------
+    # ================================
+    # フォームの値を取得
+    # ================================
 
     params = {}
 
@@ -102,55 +101,34 @@ def main():
         if not name:
             continue
 
-        tag = element.name
-
-        if tag == "select":
+        if element.name == "select":
 
             selected = element.select_one(
                 "option[selected]"
             )
 
             if selected:
-
                 params[name] = selected.get(
                     "value",
                     ""
                 )
 
-            else:
-
-                option = element.select_one(
-                    "option"
-                )
-
-                if option:
-
-                    params[name] = option.get(
-                        "value",
-                        ""
-                    )
-
-        elif tag == "textarea":
+        elif element.name == "textarea":
 
             params[name] = element.get_text()
 
         else:
 
-            input_type = (
-                element.get(
-                    "type",
-                    ""
-                ).lower()
-            )
+            input_type = element.get(
+                "type",
+                ""
+            ).lower()
 
             if input_type in (
                 "checkbox",
                 "radio"
             ):
-
-                if not element.has_attr(
-                    "checked"
-                ):
+                if not element.has_attr("checked"):
                     continue
 
             params[name] = element.get(
@@ -158,71 +136,56 @@ def main():
                 ""
             )
 
-    print()
-    print("取得したフォーム項目:")
+    # ================================
+    # pagenumだけ2にする
+    # ================================
 
-    for key, value in params.items():
-
-        print(
-            f"  {key} = {value}"
-        )
-
-    # --------------------------------
-    # pagenumを2に変更
-    # --------------------------------
-
-    if "pagenum" not in params:
-
-        print(
-            "ERROR: pagenumがフォームにありません"
-        )
-
-        return
+    print(
+        f"元のpagenum: {params.get('pagenum')}",
+        flush=True
+    )
 
     params["pagenum"] = "2"
 
-    # --------------------------------
+    print(
+        "pagenumを2に変更",
+        flush=True
+    )
+
+    # ================================
     # 公式フォームのaction
-    # --------------------------------
+    # ================================
 
-    action = form.get(
-        "action"
-    ) or URL
+    action = form.get("action")
 
-    action = urljoin(
-        URL,
-        action
-    )
+    if not action:
+        action = BASE_URL
 
-    method = (
-        form.get(
-            "method",
-            "get"
-        ).lower()
-    )
-
-    print()
-    print(
-        "2ページ目リクエスト"
-    )
+    if action.startswith("/"):
+        action = "https://dm.takaratomy.co.jp" + action
 
     print(
-        "URL:",
-        action
+        f"action: {action}",
+        flush=True
     )
+
+    # ================================
+    # 公式と同じGET/POSTを実行
+    # ================================
+
+    method = form.get(
+        "method",
+        "get"
+    ).lower()
 
     print(
-        "METHOD:",
-        method
+        f"method: {method}",
+        flush=True
     )
-
-    # --------------------------------
-    # リクエスト
-    # --------------------------------
 
     if method == "post":
 
-        r2 = session.post(
+        response = session.post(
             action,
             data=params,
             timeout=30
@@ -230,72 +193,95 @@ def main():
 
     else:
 
-        r2 = session.get(
+        response = session.get(
             action,
             params=params,
             timeout=30
         )
 
-    r2.raise_for_status()
+    response.raise_for_status()
+
+    # ================================
+    # 2ページ目確認
+    # ================================
 
     cards2 = get_cards(
-        r2.text
+        response.text
     )
 
     print()
     print(
-        "========================================"
+        "========================================",
+        flush=True
     )
 
     print(
-        f"2ページ目カード数: {len(cards2)}"
+        f"2ページ目: {len(cards2)}枚",
+        flush=True
     )
 
     print(
-        f"2ページ目URL: {r2.url}"
+        f"取得URL: {response.url}",
+        flush=True
     )
 
     print(
-        "========================================"
+        "========================================",
+        flush=True
     )
 
-    # --------------------------------
-    # 同じカードか確認
-    # --------------------------------
-
-    if cards1 == cards2:
-
-        print()
-        print(
-            "❌ 1ページ目と2ページ目が同じ"
-        )
-
-        return
+    # ================================
+    # 判定
+    # ================================
 
     if len(cards2) == 0:
 
         print()
         print(
-            "❌ 2ページ目のカードが0枚"
+            "❌ 2ページ目のカードが0枚です",
+            flush=True
+        )
+
+        print()
+        print(
+            "HTML先頭:",
+            response.text[:500],
+            flush=True
+        )
+
+        return
+
+    if cards1 == cards2:
+
+        print()
+        print(
+            "❌ 1ページ目と2ページ目が同じです",
+            flush=True
         )
 
         return
 
     print()
     print(
-        "✅ 2ページ目取得成功"
+        "✅ 2ページ目取得成功！！",
+        flush=True
     )
 
     print()
     print(
-        "1ページ目最初:",
-        cards1[:3]
+        "1ページ目のカード:"
     )
 
+    for card in cards1[:3]:
+        print(card)
+
+    print()
     print(
-        "2ページ目最初:",
-        cards2[:3]
+        "2ページ目のカード:"
     )
+
+    for card in cards2[:3]:
+        print(card)
 
 
 if __name__ == "__main__":

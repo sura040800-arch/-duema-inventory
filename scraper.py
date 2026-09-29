@@ -82,9 +82,7 @@ def extract_card_links(html):
             ""
         )
 
-        cid = card_id_from_url(
-            href
-        )
+        cid = card_id_from_url(href)
 
         if not cid:
             continue
@@ -104,35 +102,131 @@ def extract_card_links(html):
     return result
 
 
-def get_last_page(html):
-    soup = BeautifulSoup(
+def get_total_cards(html):
+    """
+    「23310枚」のような公式表示から
+    総カード数を取得する。
+    """
+
+    text = BeautifulSoup(
         html,
         "html.parser"
+    ).get_text(
+        " ",
+        strip=True
     )
 
-    pages = []
+    patterns = [
+        r"([\d,]+)枚",
+        r"([\d,]+)\s*枚"
+    ]
 
-    for a in soup.select(
-        "#cardlist .wp-pagenavia a[data-page]"
-    ):
+    for pattern in patterns:
+
+        matches = re.findall(
+            pattern,
+            text
+        )
+
+        for value in matches:
+
+            try:
+
+                number = int(
+                    value.replace(
+                        ",",
+                        ""
+                    )
+                )
+
+                if number >= 1000:
+                    return number
+
+            except Exception:
+                pass
+
+    return None
+
+
+def get_real_page_count(page):
+    """
+    公式のページャーまたは総カード数から
+    ページ数を決定する。
+    """
+
+    html = page.content()
+
+    # --------------------------------
+    # data-page を探す
+    # --------------------------------
+
+    values = page.locator(
+        "a[data-page]"
+    ).evaluate_all(
+        """
+        els => els
+            .map(a => a.getAttribute("data-page"))
+            .filter(x => x)
+        """
+    )
+
+    numbers = []
+
+    for value in values:
 
         try:
-            pages.append(
-                int(
-                    a.get("data-page")
-                )
+            numbers.append(
+                int(value)
             )
         except Exception:
             pass
 
-    if not pages:
-        return 1
+    if numbers:
 
-    return max(pages)
+        last_page = max(numbers)
+
+        print(
+            f"ページャーから最終ページ取得: "
+            f"{last_page}",
+            flush=True
+        )
+
+        return last_page
+
+    # --------------------------------
+    # 総カード数から計算
+    # --------------------------------
+
+    total = get_total_cards(
+        html
+    )
+
+    if total:
+
+        last_page = (
+            total + 49
+        ) // 50
+
+        print(
+            f"公式総カード数: {total}枚",
+            flush=True
+        )
+
+        print(
+            f"総カード数から最終ページ計算: "
+            f"{last_page}",
+            flush=True
+        )
+
+        return last_page
+
+    raise RuntimeError(
+        "公式ページからページ数を取得できませんでした"
+    )
 
 
-def get_page_cards(page):
-    return page.locator(
+def get_current_ids(page):
+    links = page.locator(
         '#cardlist a[href*="/card/detail/"]'
     ).evaluate_all(
         """
@@ -140,55 +234,79 @@ def get_page_cards(page):
         """
     )
 
+    ids = []
 
-def wait_for_cards_to_change(
-    page,
-    old_ids,
-    timeout=30000
-):
+    for url in links:
+
+        cid = card_id_from_url(
+            url
+        )
+
+        if cid:
+            ids.append(cid)
+
+    return ids
+
+
+def click_page(page, page_number, old_ids):
     """
-    ページ番号ではなく、
-    実際のカードIDが変わるまで待つ。
+    公式のページャーを実際にクリックする。
     """
+
+    locator = page.locator(
+        f'a[data-page="{page_number}"]'
+    )
+
+    if locator.count() == 0:
+
+        # data-pageが取れない場合は
+        # 表示文字から探す
+        locator = page.locator(
+            f'a.page:has-text("{page_number}")'
+        )
+
+    if locator.count() == 0:
+
+        raise RuntimeError(
+            f"{page_number}ページ目のリンクが見つかりません"
+        )
+
+    print(
+        f"{page_number}ページ目をクリック...",
+        flush=True
+    )
+
+    locator.first.click(
+        force=True
+    )
+
+    # --------------------------------
+    # カード一覧が変わるまで待つ
+    # --------------------------------
 
     start = time.time()
 
     while True:
 
-        links = get_page_cards(
+        new_ids = get_current_ids(
             page
         )
 
-        ids = []
+        if new_ids and new_ids != old_ids:
 
-        for url in links:
+            return new_ids
 
-            cid = card_id_from_url(
-                url
-            )
+        if time.time() - start > 30:
 
-            if cid:
-                ids.append(cid)
-
-        if ids and ids != old_ids:
-            return links
-
-        if (
-            time.time() - start
-            > timeout / 1000
-        ):
             raise RuntimeError(
-                "ページ移動後もカード一覧が変化しませんでした"
+                f"{page_number}ページ目へ移動後、"
+                "カード一覧が変化しませんでした"
             )
 
         time.sleep(0.5)
 
 
 def discover_all_cards():
-    """
-    公式サイトを実ブラウザで操作して
-    全ページのカードURLを取得する。
-    """
 
     print()
     print("========================================")
@@ -222,13 +340,17 @@ def discover_all_cards():
         )
 
         page.wait_for_timeout(
-            1500
+            2000
         )
 
-        first_html = page.content()
+        # --------------------------------
+        # 1ページ目
+        # --------------------------------
+
+        html = page.content()
 
         first_links = extract_card_links(
-            first_html
+            html
         )
 
         if not first_links:
@@ -239,19 +361,22 @@ def discover_all_cards():
                 "1ページ目からカードを取得できませんでした"
             )
 
-        last_page = get_last_page(
-            first_html
-        )
-
         print(
             f"1ページ目: {len(first_links)}枚",
             flush=True
         )
 
-        print(
-            f"最後のページ: {last_page}",
-            flush=True
+        # --------------------------------
+        # 最終ページ
+        # --------------------------------
+
+        last_page = get_real_page_count(
+            page
         )
+
+        # --------------------------------
+        # 1ページ目保存
+        # --------------------------------
 
         order = 0
 
@@ -266,7 +391,7 @@ def discover_all_cards():
                 order += 1
 
         # --------------------------------
-        # ページ2～最後まで
+        # 2ページ目以降
         # --------------------------------
 
         for page_number in range(
@@ -276,81 +401,40 @@ def discover_all_cards():
 
             success = False
 
-            for attempt in range(1, 4):
+            for attempt in range(
+                1,
+                4
+            ):
 
                 try:
 
-                    # 現在ページのカードID
-                    old_links = get_page_cards(
+                    old_ids = get_current_ids(
                         page
                     )
 
-                    old_ids = []
-
-                    for url in old_links:
-
-                        cid = card_id_from_url(
-                            url
-                        )
-
-                        if cid:
-                            old_ids.append(cid)
-
-                    # --------------------------------
-                    # pagenum hidden inputを変更して
-                    # 公式フォームをsubmit
-                    # --------------------------------
-
-                    page.evaluate(
-                        """
-                        (pageNumber) => {
-
-                            const form =
-                                document.querySelector(
-                                    'form#search_cond'
-                                );
-
-                            if (!form) {
-                                throw new Error(
-                                    'form#search_cond がありません'
-                                );
-                            }
-
-                            const input =
-                                form.querySelector(
-                                    'input[name="pagenum"]'
-                                );
-
-                            if (!input) {
-                                throw new Error(
-                                    'pagenum input がありません'
-                                );
-                            }
-
-                            input.value =
-                                String(pageNumber);
-
-                            HTMLFormElement.prototype.submit.call(
-                                form
-                            );
-                        }
-                        """,
-                        page_number
-                    )
-
-                    # --------------------------------
-                    # カードが変わるまで待つ
-                    # --------------------------------
-
-                    links = wait_for_cards_to_change(
+                    new_ids = click_page(
                         page,
-                        old_ids,
-                        timeout=30000
+                        page_number,
+                        old_ids
                     )
 
                     # --------------------------------
-                    # 取得
+                    # 現在ページのURLを取得
                     # --------------------------------
+
+                    links = page.locator(
+                        '#cardlist a[href*="/card/detail/"]'
+                    ).evaluate_all(
+                        """
+                        els => els.map(a => a.href)
+                        """
+                    )
+
+                    if not links:
+
+                        raise RuntimeError(
+                            "カードリンクが0件です"
+                        )
 
                     new_count = 0
 
@@ -365,9 +449,13 @@ def discover_all_cards():
 
                         if cid not in all_links:
 
-                            all_links[cid] = url
+                            all_links[cid] = (
+                                absolute_url(url)
+                            )
 
-                            release_order[cid] = order
+                            release_order[cid] = (
+                                order
+                            )
 
                             order += 1
 
@@ -395,6 +483,35 @@ def discover_all_cards():
 
                     time.sleep(2)
 
+                    # 失敗したらページ1からやり直す
+                    page.goto(
+                        SEARCH_URL,
+                        wait_until="domcontentloaded",
+                        timeout=60000
+                    )
+
+                    page.wait_for_timeout(
+                        1500
+                    )
+
+                    # 必要なページまで戻す
+                    if page_number > 2:
+
+                        for back_page in range(
+                            2,
+                            page_number
+                        ):
+
+                            old_ids = get_current_ids(
+                                page
+                            )
+
+                            click_page(
+                                page,
+                                back_page,
+                                old_ids
+                            )
+
             if not success:
 
                 browser.close()
@@ -412,7 +529,6 @@ def discover_all_cards():
     )
     print("========================================")
 
-    # 安全装置
     if len(all_links) < 10000:
 
         raise RuntimeError(
@@ -434,9 +550,9 @@ def parse_detail(
         "html.parser"
     )
 
-    title = ""
-
     h1 = soup.find("h1")
+
+    title = ""
 
     if h1:
 
@@ -456,10 +572,6 @@ def parse_detail(
             1
         )[0].strip()
 
-    # --------------------------------
-    # 画像
-    # --------------------------------
-
     image_url = ""
 
     image = soup.select_one(
@@ -472,12 +584,6 @@ def parse_detail(
             "main img"
         )
 
-    if not image:
-
-        image = soup.find(
-            "img"
-        )
-
     if image:
 
         image_url = absolute_url(
@@ -486,10 +592,6 @@ def parse_detail(
                 ""
             )
         )
-
-    # --------------------------------
-    # テキスト
-    # --------------------------------
 
     text = soup.get_text(
         "\n",
@@ -512,38 +614,6 @@ def parse_detail(
                     return lines[i + 1]
 
         return ""
-
-    card_type = get_after(
-        "カードの種類"
-    )
-
-    civilization = get_after(
-        "文明"
-    )
-
-    rarity = get_after(
-        "レアリティ"
-    )
-
-    power = get_after(
-        "パワー"
-    )
-
-    cost = get_after(
-        "コスト"
-    )
-
-    mana = get_after(
-        "マナ"
-    )
-
-    race = get_after(
-        "種族"
-    )
-
-    illustrator = get_after(
-        "イラストレーター"
-    )
 
     ability = ""
 
@@ -569,27 +639,25 @@ def parse_detail(
 
     if "フレーバー" in text:
 
-        part = text.split(
-            "フレーバー",
-            1
-        )[1]
-
         flavor = clean_text(
-            part
+            text.split(
+                "フレーバー",
+                1
+            )[1]
         )
 
     return {
         "id": cid,
         "name": name,
         "number": cid,
-        "type": card_type,
-        "civilization": civilization,
-        "rarity": rarity,
-        "power": power,
-        "cost": cost,
-        "mana": mana,
-        "race": race,
-        "illustrator": illustrator,
+        "type": get_after("カードの種類"),
+        "civilization": get_after("文明"),
+        "rarity": get_after("レアリティ"),
+        "power": get_after("パワー"),
+        "cost": get_after("コスト"),
+        "mana": get_after("マナ"),
+        "race": get_after("種族"),
+        "illustrator": get_after("イラストレーター"),
         "text": ability,
         "flavor": flavor,
         "image": image_url,
@@ -636,17 +704,9 @@ def main():
         exist_ok=True
     )
 
-    # --------------------------------
-    # 全カードURL取得
-    # --------------------------------
-
     all_links, release_order = (
         discover_all_cards()
     )
-
-    # --------------------------------
-    # 既存データ
-    # --------------------------------
 
     old_cards = {}
 
@@ -671,9 +731,7 @@ def main():
 
                 for card in old_data:
 
-                    cid = card.get(
-                        "id"
-                    )
+                    cid = card.get("id")
 
                     if cid:
 
@@ -691,24 +749,19 @@ def main():
         flush=True
     )
 
-    # --------------------------------
-    # 新規カードだけ詳細取得
-    # --------------------------------
-
     targets = []
 
     for cid, url in all_links.items():
 
-        if cid in old_cards:
-            continue
+        if cid not in old_cards:
 
-        targets.append(
-            (
-                cid,
-                url,
-                release_order[cid]
+            targets.append(
+                (
+                    cid,
+                    url,
+                    release_order[cid]
+                )
             )
-        )
 
     print(
         f"新規取得対象: {len(targets)}枚",
@@ -718,11 +771,6 @@ def main():
     new_cards = []
 
     if targets:
-
-        print(
-            "新規カード詳細を取得中...",
-            flush=True
-        )
 
         with ThreadPoolExecutor(
             max_workers=MAX_WORKERS
@@ -764,10 +812,6 @@ def main():
                         flush=True
                     )
 
-    # --------------------------------
-    # 既存 + 新規
-    # --------------------------------
-
     cards = []
 
     for cid in all_links:
@@ -784,25 +828,17 @@ def main():
                 all_links[cid]
             )
 
-            cards.append(
-                card
-            )
+            cards.append(card)
 
     cards.extend(
         new_cards
     )
 
-    # --------------------------------
-    # 重複除去
-    # --------------------------------
-
     unique = {}
 
     for card in cards:
 
-        cid = card.get(
-            "id"
-        )
+        cid = card.get("id")
 
         if cid:
 
@@ -812,10 +848,6 @@ def main():
         unique.values()
     )
 
-    # --------------------------------
-    # 最新順
-    # --------------------------------
-
     cards.sort(
         key=lambda x:
         x.get(
@@ -823,10 +855,6 @@ def main():
             999999999
         )
     )
-
-    # --------------------------------
-    # 保存
-    # --------------------------------
 
     with open(
         CARDS_FILE,

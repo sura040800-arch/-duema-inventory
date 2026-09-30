@@ -468,7 +468,7 @@ function aliasText(c){
     if(target===name || name.includes(target) || target.includes(name))aliases.push(alias);
   }
   return aliases.join(' ');
-function searchText(c){
+}function searchText(c){
   return [
     cardName(c),cardNumber(c),
     ...civilizations(c),...races(c),...types(c),...rarities(c),

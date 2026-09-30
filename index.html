@@ -469,13 +469,12 @@ function aliasText(c){
   }
   return aliases.join(' ');
 function searchText(c){
-  if(c.__searchText!==undefined)return c.__searchText;
-  return c.__searchText=normalizeSearch([
+  return [
     cardName(c),cardNumber(c),
     ...civilizations(c),...races(c),...types(c),...rarities(c),
     textOfCard(c),aliasText(c)
-  ].join(' '));
-
+  ].join(' ').toLowerCase();
+}
 function hasEffect(c,key){
   const t=textOfCard(c);
   if(!t)return false;

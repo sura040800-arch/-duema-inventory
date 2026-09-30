@@ -468,14 +468,14 @@ function aliasText(c){
     if(target===name || name.includes(target) || target.includes(name))aliases.push(alias);
   }
   return aliases.join(' ');
-}
 function searchText(c){
-  return [
+  if(c.__searchText!==undefined)return c.__searchText;
+  return c.__searchText=normalizeSearch([
     cardName(c),cardNumber(c),
     ...civilizations(c),...races(c),...types(c),...rarities(c),
     textOfCard(c),aliasText(c)
-  ].join(' ').toLowerCase();
-}
+  ].join(' '));
+
 function hasEffect(c,key){
   const t=textOfCard(c);
   if(!t)return false;

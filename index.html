@@ -1120,7 +1120,9 @@ function addToDeck(id){
     if(state.deckSection==='main' && (Number(x.need)||0)>=4){alert('同じカードは通常4枚までです。');return}
     x.need=(Number(x.need)||0)+1;
   }else arr.push({id:String(id),need:1});
-  save();renderDeckEditor();
+  const scrollLeft=$('pickerGrid')?.scrollLeft||0;
+save();renderDeckEditor();
+$('pickerGrid').scrollLeft=scrollLeft;
 }
 
 function changeDeckQty(id,delta){

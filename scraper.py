@@ -214,7 +214,7 @@ def browser_get_page(
             timeout=30000
         ):
 
-     locator.first.evaluate("(el) => el.click()")
+         locator.first.evaluate("(el) => el.click()")
 
     except Exception:
         # navigationイベントが発生しない場合でも

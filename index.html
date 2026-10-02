@@ -520,7 +520,29 @@ function imageUrl(c){
 function safeImg(c,className=''){
   const src=imageUrl(c);
   if(!src)return `<div class="${className} noimg">画像なし</div>`;
-  return `<div class="imgShell ${className}"><img src="${esc(src)}" alt="${esc(cardName(c))}" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.parentElement.classList.add('broken')"><span>画像なし</span></div>`;
+
+  const candidate=String(idOf(c)||'').trim()
+    .replace(/^https?:\/\/[^/]+\//i,'')
+    .replace(/\s/g,'');
+
+  const base='https://dm.takaratomy.co.jp/wp-content/card/cardimage/';
+  const clean=candidate.replace(/\.jpg$/i,'');
+
+  const fallback=[
+    base+encodeURIComponent(clean)+'a.jpg',
+    base+encodeURIComponent(clean)+'b.jpg',
+    base+encodeURIComponent(clean)+'c.jpg'
+  ];
+
+  return `<div class="imgShell ${className}">
+    <img src="${esc(src)}"
+      alt="${esc(cardName(c))}"
+      loading="lazy"
+      referrerpolicy="no-referrer"
+      data-fallbacks="${esc(JSON.stringify(fallback))}"
+      onerror="const f=JSON.parse(this.dataset.fallbacks||'[]');const n=f.shift();if(n){this.dataset.fallbacks=JSON.stringify(f);this.src=n}else{this.style.display='none';this.parentElement.classList.add('broken')}">
+    <span>画像なし</span>
+  </div>`;
 }
 
 /* 最新順。公式データが releaseIndex を持つ場合はそれを最優先。

@@ -1059,7 +1059,9 @@ function renderPickerOnly(){
   if(!grid)return;
   let results=pickerSort(deckSearchFilter(state.cards));
   const visible=results.slice(0,state.pickerLimit);
-  grid.innerHTML=visible.length?visible.map(c=>pickerCard(c)).join(''):'<div class="deckEmpty">該当するカードがありません</div>';
+  const scrollLeft=grid.scrollLeft;
+grid.innerHTML=visible.length?visible.map(c=>pickerCard(c)).join(''):'<div class="deckEmpty">カードがありません</div>';
+grid.scrollLeft=scrollLeft;
   const old=$('loadMore');
   if(old)old.remove();
   if(state.pickerLimit<results.length){

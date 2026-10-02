@@ -756,13 +756,8 @@ $('favorites').addEventListener('click',e=>{
 });
 
 $('search').addEventListener('input',()=>{
-  if(!$('deckView').classList.contains('hidden') && state.activeDeck!==null){
-    state.deckSearch=$('search').value;
-    state.pickerLimit=72;
-    renderPickerOnly();
-  }else{
-    renderCurrent();
-  }
+  if(!$('deckView').classList.contains('hidden')&&state.activeDeck!==null)return;
+  renderCurrent();
 });
 
 /* 通常設定 */
@@ -785,7 +780,7 @@ $('resetSettings').onclick=()=>{
 $('invTab').onclick=()=>switchTab('inv');
 $('favTab').onclick=()=>switchTab('fav');
 $('deckTab').onclick=()=>{
-  if(state.activeDeck!==null)state.deckSearch=$('search').value;
+
   switchTab('deck');
 };
 
@@ -993,14 +988,14 @@ function renderDeckEditor(){
     state.pickerSort=order[(order.indexOf(now)+1)%order.length];
     renderPickerOnly();
   };
-  $('clearDeckSearch').onclick=()=>{state.deckSearch='';$('search').value='';state.pickerLimit=72;renderDeckEditor()};
+  $('clearDeckSearch').onclick=()=>{state.deckSearch='';state.pickerLimit=72;renderDeckEditor()};
   $('showAllDeckCards').onclick=()=>{deckFilter.ownedOnly=false;state.deckSearch='';state.pickerLimit=72;renderPickerOnly()};
   $('ownedDeckCards').onclick=()=>{deckFilter.ownedOnly=true;state.pickerLimit=72;renderPickerOnly()};
-  $('clearPickerSearch').onclick=()=>{state.deckSearch='';$('search').value='';state.pickerLimit=72;renderDeckEditor()};
+  $('clearPickerSearch').onclick=()=>{state.deckSearch='';state.pickerLimit=72;renderDeckEditor()};
 
   $('deckSearch').addEventListener('input',e=>{
     state.deckSearch=e.target.value;
-    $('search').value=state.deckSearch;
+    
     state.pickerLimit=72;
     renderPickerOnly();
     const input=$('deckSearch');

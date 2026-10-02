@@ -992,17 +992,28 @@ function renderDeckEditor(){
   $('showAllDeckCards').onclick=()=>{deckFilter.ownedOnly=false;state.deckSearch='';state.pickerLimit=72;renderPickerOnly()};
   $('ownedDeckCards').onclick=()=>{deckFilter.ownedOnly=true;state.pickerLimit=72;renderPickerOnly()};
   $('clearPickerSearch').onclick=()=>{state.deckSearch='';state.pickerLimit=72;renderDeckEditor()};
+let deckSearchComposing=false;
 
-  $('deckSearch').addEventListener('input',e=>{
-    state.deckSearch=e.target.value;
-    
-    state.pickerLimit=72;
-    renderPickerOnly();
-    const input=$('deckSearch');
-    input.focus();
-    input.setSelectionRange(input.value.length,input.value.length);
-  });
+$('deckSearch').addEventListener('compositionstart',()=>{
+  deckSearchComposing=true;
+});
 
+$('deckSearch').addEventListener('compositionend',e=>{
+  deckSearchComposing=false;
+  state.deckSearch=e.target.value;
+  state.pickerLimit=72;
+  renderPickerOnly();
+  const input=$('deckSearch');
+  input.focus();
+  input.setSelectionRange(input.value.length,input.value.length);
+});
+
+$('deckSearch').addEventListener('input',e=>{
+  state.deckSearch=e.target.value;
+  if(deckSearchComposing)return;
+  state.pickerLimit=72;
+  renderPickerOnly();
+});
   $('pickerSort').value=state.pickerSort||'recommended';
   $('pickerSort').onchange=()=>{state.pickerSort=$('pickerSort').value;state.pickerLimit=72;renderPickerOnly()};
   $('loadMore')?.addEventListener('click',()=>{state.pickerLimit+=72;renderPickerOnly()});

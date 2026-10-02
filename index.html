@@ -1229,101 +1229,48 @@ $('deckListView').addEventListener('click',e=>{
   }
 });
 
-/* 読み込み：巨大JSONを一括JSON.parseせず、ストリーミングで少しずつ読む */
+/* カードデータ読み込み */
 async function load(){
   const status=$('status');
   try{
-    status.textContent='カードデータへ接続中…';
+    status.textContent='カードデータを読み込み中…';
+
     const controller=new AbortController();
-    const timer=setTimeout(()=>controller.abort(),60000);
-    const r=await fetch('data/cards.json?'+Date.now(),{cache:'no-store',signal:controller.signal});
+    const timer=setTimeout(()=>controller.abort(),120000);
+
+    const r=await fetch('data/cards.json?'+Date.now(),{
+      cache:'no-store',
+      signal:controller.signal
+    });
+
     clearTimeout(timer);
+
     if(!r.ok)throw new Error('HTTP '+r.status);
 
-    if(!r.body){
-      const data=await r.json();
-      state.cards=Array.isArray(data)?data:(Array.isArray(data.cards)?data.cards:[]);
-      if(!state.cards.length)throw new Error('カードデータが空です');
-      fillSettings();
-      status.textContent=`カード ${state.cards.length.toLocaleString()} 枚を読み込みました`;
-      renderCards();renderFavorites();renderDeckList();
-      return;
+    const data=await r.json();
+
+    state.cards=Array.isArray(data)
+      ? data
+      : (Array.isArray(data.cards)?data.cards:[]);
+
+    if(!state.cards.length){
+      throw new Error('カードデータが空です');
     }
 
-    const reader=r.body.getReader();
-    const decoder=new TextDecoder('utf-8');
-    let buffer='';
-    let inObject=false,depth=0,inString=false,escaped=false,objectStart=0;
-    let received=0;
-    let totalBytes=Number(r.headers.get('Content-Length'))||0;
-
-    const consume=chunk=>{
-      buffer+=chunk;
-      let i=0;
-      while(i<buffer.length){
-        const ch=buffer[i];
-        if(!inObject){
-          if(ch==='{'){
-            inObject=true;depth=1;inString=false;escaped=false;objectStart=i;
-          }
-          i++;
-          continue;
-        }
-        if(inString){
-          if(escaped)escaped=false;
-          else if(ch==='\\')escaped=true;
-          else if(ch==="\"")inString=false;
-          i++;
-          continue;
-        }
-        if(ch==='"'){inString=true;i++;continue;}
-        if(ch==='{')depth++;
-        else if(ch==='}'){
-          depth--;
-          if(depth===0){
-            const raw=buffer.slice(objectStart,i+1);
-            try{
-              const card=JSON.parse(raw);
-              if(card&&typeof card==='object'&&card.name)state.cards.push(card);
-            }catch(err){console.warn('カードJSON解析失敗',err)}
-            inObject=false;
-            buffer=buffer.slice(i+1);
-            i=0;
-            objectStart=0;
-            continue;
-          }
-        }
-        i++;
-      }
-      if(!inObject)buffer='';
-    };
-
-    status.textContent='カードデータを読み込み中… 0枚';
-    let lastShown=0;
-    while(true){
-      const {value,done}=await reader.read();
-      if(done)break;
-      received+=value.byteLength;
-      consume(decoder.decode(value,{stream:true}));
-      if(state.cards.length!==lastShown){
-        lastShown=state.cards.length;
-        const pct=totalBytes?`（${Math.min(99,Math.floor(received/totalBytes*100))}%）`:'';
-        status.textContent=`カードデータを読み込み中… ${state.cards.length.toLocaleString()}枚 ${pct}`;
-        if(state.cards.length>=200 && state.cards.length-lastShown<1){}
-      }
-    }
-    const tail=decoder.decode();
-    if(tail)consume(tail);
-
-    if(!state.cards.length)throw new Error('カードデータを解析できませんでした');
     fillSettings();
     status.textContent=`カード ${state.cards.length.toLocaleString()} 枚を読み込みました`;
-    renderCards();renderFavorites();renderDeckList();
+
+    renderCards();
+    renderFavorites();
+    renderDeckList();
+
   }catch(e){
     console.error(e);
+
     const msg=e&&e.name==='AbortError'
-      ?'カードデータの読み込みが60秒でタイムアウトしました。GitHub Pagesのdata/cards.jsonを確認してください。'
+      ?'カードデータの読み込みが120秒でタイムアウトしました。'
       :'カードデータを読み込めませんでした：'+(e&&e.message?e.message:'不明なエラー');
+
     status.textContent=msg;
   }
 }

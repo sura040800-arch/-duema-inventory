@@ -1114,7 +1114,7 @@ function addToDeck(id){
   const arr=sectionArray(d);
   const limit=state.deckSection==='main'?40:state.deckSection==='gr'?12:8;
   const total=deckTotal(d,state.deckSection);
-  if(total>=limit){alert(`${state.deckSection==='main'?'メイン':state.deckSection==='gr'?'GR':'超次元'}は${limit}枚までです。`);return}
+  if(state.deckSection!=='main'&&total>=limit){alert(...)
   const x=arr.find(x=>String(x.id)===String(id));
   if(x){
     if(state.deckSection==='main' && (Number(x.need)||0)>=4){alert('同じカードは通常4枚までです。');return}

@@ -193,7 +193,7 @@ page.wait_for_selector(
 )
 locator = page.locator(selector)
 
-    if locator.count() == 0:
+if locator.count() == 0:
         raise RuntimeError(
             f"{page_number}ページ目の公式リンクがありません"
         )

@@ -191,7 +191,7 @@ page.wait_for_selector(
     selector,
     timeout=30000
 )
-    locator = page.locator(selector)
+locator = page.locator(selector)
 
     if locator.count() == 0:
         raise RuntimeError(

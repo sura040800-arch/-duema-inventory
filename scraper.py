@@ -179,8 +179,8 @@ def browser_get_page(
     previous_ids
 ):
     """
-    現在のページHTMLから、
-    目的のページ番号(data-page)の実リンクを取得して移動する。
+    現在の公式カード一覧ページから
+    指定ページのリンクをクリックして移動する。
     """
 
     print(
@@ -188,54 +188,39 @@ def browser_get_page(
         flush=True
     )
 
+    selector = (
+        f'#cardlist .wp-pagenavi '
+        f'a[data-page="{page_number}"]'
+    )
+
+    locator = page.locator(selector).first
+
+    if locator.count() == 0:
+        raise RuntimeError(
+            f"{page_number}ページ目のリンクが"
+            "見つかりません"
+        )
+
+    locator.dispatch_event(
+        "click"
+    )
+
     start = time.time()
 
     while True:
         html = page.content()
 
-        soup = BeautifulSoup(
-            html,
-            "html.parser"
+        links = extract_card_links(
+            html
         )
 
-        target_link = soup.select_one(
-            f'#cardlist .wp-pagenavi a[data-page="{page_number}"]'
-        )
+        ids = [
+            x[0]
+            for x in links
+        ]
 
-        if target_link:
-            href = target_link.get(
-                "href",
-                ""
-            )
-
-            if href:
-                target_url = absolute_url(
-                    href
-                )
-
-                page.goto(
-                    target_url,
-                    wait_until="domcontentloaded",
-                    timeout=60000
-                )
-
-                page.wait_for_timeout(
-                    2000
-                )
-
-                new_html = page.content()
-
-                links = extract_card_links(
-                    new_html
-                )
-
-                ids = [
-                    x[0]
-                    for x in links
-                ]
-
-                if ids and ids != previous_ids:
-                    return links
+        if ids and ids != previous_ids:
+            return links
 
         if time.time() - start > 30:
             raise RuntimeError(

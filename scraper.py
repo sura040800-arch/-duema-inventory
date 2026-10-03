@@ -173,78 +173,49 @@ def get_page_ids(page):
     )
 
     return links
-
-
 def browser_get_page(
     page,
     page_number,
     previous_ids
 ):
     """
-    公式ページャーのリンク先へ直接移動してカードを取得する。
+    公式カード検索のpagenumを直接指定して取得する。
     """
 
-    selector = (
-        f'#cardlist .wp-pagenavia '
-        f'a[data-page="{page_number}"]'
+    params = {
+        "pagenum": str(page_number)
+    }
+
+    encoded = page.evaluate(
+        "(value) => encodeURIComponent(value)",
+        json.dumps(params, ensure_ascii=False)
     )
 
-    page.wait_for_selector(
-        selector,
-        timeout=30000,
-        state="attached"
+    target_url = (
+        SEARCH_URL
+        + "?v="
+        + encoded
     )
-
-    locator = page.locator(
-        selector
-    )
-
-    if locator.count() == 0:
-        raise RuntimeError(
-            f"{page_number}ページ目の公式リンクがありません"
-        )
 
     print(
         f"{page_number}ページ目へ移動...",
         flush=True
     )
 
-    href = locator.first.get_attribute(
-        "href"
-    )
-
-    if not href:
-        raise RuntimeError(
-            f"{page_number}ページ目のリンク先が取得できません"
-        )
-
-    if href.startswith("http"):
-        target_url = href
-    else:
-        target_url = (
-            BASE_URL.rstrip("/")
-            + "/"
-            + href.lstrip("/")
-        )
-
     page.goto(
         target_url,
         wait_until="domcontentloaded",
-        timeout=30000
+        timeout=60000
     )
 
-    page.wait_for_timeout(
-        1500
-    )
+    page.wait_for_timeout(2000)
 
     start = time.time()
 
     while True:
         html = page.content()
 
-        links = extract_card_links(
-            html
-        )
+        links = extract_card_links(html)
 
         ids = [
             x[0]
@@ -256,13 +227,12 @@ def browser_get_page(
 
         if time.time() - start > 30:
             raise RuntimeError(
-                f"{page_number}ページ目へ移動後、"
-                "カード一覧が変化しませんでした"
+                f"{page_number}ページ目のカード取得が"
+                "タイムアウトしました"
             )
 
         time.sleep(0.5)
 
-       
 
 def discover_all_cards():
 

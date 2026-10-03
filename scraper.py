@@ -187,7 +187,10 @@ def browser_get_page(
     selector = (
         f'#cardlist .wp-pagenavia a[data-page="{page_number}"]'
     )
-
+page.wait_for_selector(
+    selector,
+    timeout=30000
+)
     locator = page.locator(selector)
 
     if locator.count() == 0:

@@ -185,15 +185,20 @@ def browser_get_page(
     """
 
     selector = (
-        f'#cardlist .wp-pagenavia a[data-page="{page_number}"]'
+        f'#cardlist .wp-pagenavia '
+        f'a[data-page="{page_number}"]'
     )
-page.wait_for_selector(
-    selector,
-    timeout=30000
-)
-locator = page.locator(selector)
 
-if locator.count() == 0:
+    page.wait_for_selector(
+        selector,
+        timeout=30000
+    )
+
+    locator = page.locator(
+        selector
+    )
+
+    if locator.count() == 0:
         raise RuntimeError(
             f"{page_number}ページ目の公式リンクがありません"
         )
@@ -203,7 +208,9 @@ if locator.count() == 0:
         flush=True
     )
 
-    href = locator.first.get_attribute("href")
+    href = locator.first.get_attribute(
+        "href"
+    )
 
     if not href:
         raise RuntimeError(
@@ -225,14 +232,18 @@ if locator.count() == 0:
         timeout=30000
     )
 
-    page.wait_for_timeout(1500)
+    page.wait_for_timeout(
+        1500
+    )
 
     start = time.time()
 
     while True:
         html = page.content()
 
-        links = extract_card_links(html)
+        links = extract_card_links(
+            html
+        )
 
         ids = [
             x[0]
@@ -250,6 +261,7 @@ if locator.count() == 0:
 
         time.sleep(0.5)
 
+       
 
 def discover_all_cards():
 

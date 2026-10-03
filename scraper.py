@@ -181,60 +181,55 @@ def browser_get_page(
     previous_ids
 ):
     """
-    公式ページャーを正確に指定してクリック。
-    ナビゲーション完了を待ってからカードを取得する。
+    公式ページャーのリンク先へ直接移動してカードを取得する。
     """
 
     selector = (
-        f'#cardlist .wp-pagenavi '
-        f'a[data-page="{page_number}"]'
+        f'#cardlist .wp-pagenavia a[data-page="{page_number}"]'
     )
 
-    locator = page.locator(
-        selector
-    )
+    locator = page.locator(selector)
 
     if locator.count() == 0:
-
         raise RuntimeError(
             f"{page_number}ページ目の公式リンクがありません"
         )
 
     print(
-        f"{page_number}ページ目を送信...",
+        f"{page_number}ページ目へ移動...",
         flush=True
     )
 
-    # 公式JSのフォーム送信なので、
-    # click + navigation待ちを同時に行う
-    try:
+    href = locator.first.get_attribute("href")
 
-        with page.expect_navigation(
-            wait_until="domcontentloaded",
-            timeout=30000
-        ):
+    if not href:
+        raise RuntimeError(
+            f"{page_number}ページ目のリンク先が取得できません"
+        )
 
-         locator.first.evaluate("(el) => el.click()")
+    if href.startswith("http"):
+        target_url = href
+    else:
+        target_url = (
+            BASE_URL.rstrip("/")
+            + "/"
+            + href.lstrip("/")
+        )
 
-    except Exception:
-        # navigationイベントが発生しない場合でも
-        # 少し待ってDOM更新を確認
-        time.sleep(2)
-
-    page.wait_for_timeout(
-        1500
+    page.goto(
+        target_url,
+        wait_until="domcontentloaded",
+        timeout=30000
     )
 
-    # カードが新しいものになるまで確認
+    page.wait_for_timeout(1500)
+
     start = time.time()
 
     while True:
-
         html = page.content()
 
-        links = extract_card_links(
-            html
-        )
+        links = extract_card_links(html)
 
         ids = [
             x[0]
@@ -242,11 +237,9 @@ def browser_get_page(
         ]
 
         if ids and ids != previous_ids:
-
             return links
 
         if time.time() - start > 30:
-
             raise RuntimeError(
                 f"{page_number}ページ目へ移動後、"
                 "カード一覧が変化しませんでした"

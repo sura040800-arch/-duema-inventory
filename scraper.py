@@ -191,7 +191,8 @@ def browser_get_page(
 
     page.wait_for_selector(
         selector,
-        timeout=30000
+        timeout=30000,
+        state="attached"
     )
 
     locator = page.locator(

@@ -179,8 +179,8 @@ def browser_get_page(
     previous_ids
 ):
     """
-    現在のページに表示されている
-    「次のページ」リンクを使って移動する。
+    現在のページHTMLから、
+    目的のページ番号(data-page)の実リンクを取得して移動する。
     """
 
     print(
@@ -198,59 +198,44 @@ def browser_get_page(
             "html.parser"
         )
 
-        next_link = soup.select_one(
-            '#cardlist .wp-pagenavi a.nextpostslink'
+        target_link = soup.select_one(
+            f'#cardlist .wp-pagenavi a[data-page="{page_number}"]'
         )
 
-        if not next_link:
-            next_link = soup.select_one(
-                '#cardlist .wp-pagenavi a[rel="next"]'
+        if target_link:
+            href = target_link.get(
+                "href",
+                ""
             )
 
-        if not next_link:
-            raise RuntimeError(
-                f"{page_number}ページ目への"
-                "「次のページ」リンクが見つかりません"
-            )
+            if href:
+                target_url = absolute_url(
+                    href
+                )
 
-        href = next_link.get(
-            "href",
-            ""
-        )
+                page.goto(
+                    target_url,
+                    wait_until="domcontentloaded",
+                    timeout=60000
+                )
 
-        if not href:
-            raise RuntimeError(
-                f"{page_number}ページ目への"
-                "リンク先が取得できません"
-            )
+                page.wait_for_timeout(
+                    2000
+                )
 
-        target_url = absolute_url(
-            href
-        )
+                new_html = page.content()
 
-        page.goto(
-            target_url,
-            wait_until="domcontentloaded",
-            timeout=60000
-        )
+                links = extract_card_links(
+                    new_html
+                )
 
-        page.wait_for_timeout(
-            2000
-        )
+                ids = [
+                    x[0]
+                    for x in links
+                ]
 
-        new_html = page.content()
-
-        links = extract_card_links(
-            new_html
-        )
-
-        ids = [
-            x[0]
-            for x in links
-        ]
-
-        if ids and ids != previous_ids:
-            return links
+                if ids and ids != previous_ids:
+                    return links
 
         if time.time() - start > 30:
             raise RuntimeError(
@@ -259,7 +244,6 @@ def browser_get_page(
             )
 
         time.sleep(0.5)
-
 def discover_all_cards():
 
     print()

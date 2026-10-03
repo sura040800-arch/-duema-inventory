@@ -179,43 +179,70 @@ def browser_get_page(
     previous_ids
 ):
     """
-    公式カード検索のpagenumを直接指定して取得する。
+    現在のページに表示されている
+    「次のページ」リンクを使って移動する。
     """
-
-    params = {
-        "pagenum": str(page_number)
-    }
-
-    encoded = page.evaluate(
-        "(value) => encodeURIComponent(value)",
-        json.dumps(params, ensure_ascii=False)
-    )
-
-    target_url = (
-        SEARCH_URL
-        + "?v="
-        + encoded
-    )
 
     print(
         f"{page_number}ページ目へ移動...",
         flush=True
     )
 
-    page.goto(
-        target_url,
-        wait_until="domcontentloaded",
-        timeout=60000
-    )
-
-    page.wait_for_timeout(2000)
-
     start = time.time()
 
     while True:
         html = page.content()
 
-        links = extract_card_links(html)
+        soup = BeautifulSoup(
+            html,
+            "html.parser"
+        )
+
+        next_link = soup.select_one(
+            '#cardlist .wp-pagenavi a.nextpostslink'
+        )
+
+        if not next_link:
+            next_link = soup.select_one(
+                '#cardlist .wp-pagenavi a[rel="next"]'
+            )
+
+        if not next_link:
+            raise RuntimeError(
+                f"{page_number}ページ目への"
+                "「次のページ」リンクが見つかりません"
+            )
+
+        href = next_link.get(
+            "href",
+            ""
+        )
+
+        if not href:
+            raise RuntimeError(
+                f"{page_number}ページ目への"
+                "リンク先が取得できません"
+            )
+
+        target_url = absolute_url(
+            href
+        )
+
+        page.goto(
+            target_url,
+            wait_until="domcontentloaded",
+            timeout=60000
+        )
+
+        page.wait_for_timeout(
+            2000
+        )
+
+        new_html = page.content()
+
+        links = extract_card_links(
+            new_html
+        )
 
         ids = [
             x[0]
@@ -232,7 +259,6 @@ def browser_get_page(
             )
 
         time.sleep(0.5)
-
 
 def discover_all_cards():
 

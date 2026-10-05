@@ -1067,13 +1067,33 @@ function renderPickerOnly(){
 function attachPickerTouch(){
   document.querySelectorAll('#pickerGrid .pickerCard').forEach(el=>{
     let sx=0,sy=0,dx=0,dy=0,moved=false;
-    el.addEventListener('touchstart',e=>{const q=e.touches[0];sx=q.clientX;sy=q.clientY;dx=0;dy=0;moved=false;},{passive:true});
-    el.addEventListener('touchmove',e=>{const q=e.touches[0];dx=q.clientX-sx;dy=q.clientY-sy;if(Math.abs(dy)>20&&Math.abs(dy)>Math.abs(dx))moved=true;},{passive:true});
+    const threshold=8;
+    el.addEventListener('touchstart',e=>{
+      const q=e.touches[0];
+      sx=q.clientX;sy=q.clientY;dx=0;dy=0;moved=false;
+      el.classList.remove('swiping');
+    },{passive:true});
+    el.addEventListener('touchmove',e=>{
+      const q=e.touches[0];
+      dx=q.clientX-sx;dy=q.clientY-sy;
+      if(Math.abs(dx)>threshold||Math.abs(dy)>threshold){
+        moved=true;
+        el.classList.add('swiping');
+      }
+      // 横方向の移動はpickerGridのネイティブ横スクロールに任せる。
+      // 縦方向もページスクロールを邪魔しない。
+    },{passive:true});
     el.addEventListener('touchend',()=>{
+      el.classList.remove('swiping');
       const id=el.querySelector('[data-picker-add]')?.dataset.pickerAdd;
       if(!id)return;
-      if(moved&&dy<-45)addToDeck(id);
-      else if(!moved)openCardDetail(id);
+      // 指を動かした場合は「カード詳細を開く」処理をしない。
+      // 横スワイプはpickerGrid自身がスクロールする。
+      if(!moved)openCardDetail(id);
+    },{passive:true});
+    el.addEventListener('touchcancel',()=>{
+      moved=true;
+      el.classList.remove('swiping');
     },{passive:true});
   });
 }

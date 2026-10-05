@@ -915,7 +915,8 @@ function renderDeckEditor(){
   const visible=results.slice(0,state.pickerLimit);
 
   const sectionLabel=state.deckSection==='main'?'メイン':state.deckSection==='gr'?'GR':'超次元';
-  const max=state.deckSection==='main'?40:state.deckSection==='gr'?12:8;
+  const max=state.deckSection==='main'?Infinity:state.deckSection==='gr'?12:8;
+  const maxLabel=Number.isFinite(max)?String(max):'∞';
 
   $('deckEditorView').innerHTML=`
     <div class="deckEditor">
@@ -927,7 +928,7 @@ function renderDeckEditor(){
           <button class="deckSave" id="saveDeck">保存</button>
         </div>
         <div class="sectionTabs">
-          <button class="sectionTab ${state.deckSection==='main'?'active':''}" data-section="main">メイン ${mainTotal}/40</button>
+          <button class="sectionTab ${state.deckSection==='main'?'active':''}" data-section="main">メイン ${mainTotal}</button>
           <button class="sectionTab ${state.deckSection==='gr'?'active':''}" data-section="gr">GR ${grTotal}/12</button>
           <button class="sectionTab ${state.deckSection==='extra'?'active':''}" data-section="extra">超次元 ${extraTotal}/8</button>
         </div>
@@ -935,7 +936,7 @@ function renderDeckEditor(){
 
       <div class="deckMakerTop">
         <div class="deckMakerStats">
-          <div class="deckMakerStat"><b>${mainTotal}/40</b><span>メインデッキ</span></div>
+          <div class="deckMakerStat"><b>${mainTotal}</b><span>メインデッキ</span></div>
           <div class="deckMakerStat"><b>${grTotal}/12</b><span>超GR</span></div>
           <div class="deckMakerStat"><b>${extraTotal}/8</b><span>超次元</span></div>
         </div>
@@ -981,7 +982,7 @@ function renderDeckEditor(){
             </select>
             <button class="pickerFilterBtn" id="pickerFilterOpen">詳細絞り込み</button>
           </div>
-          <div class="pickerStatus" id="pickerStatus">${results.length.toLocaleString()}件中 ${Math.min(state.pickerLimit,results.length).toLocaleString()}件表示　${sectionLabel} 最大${max}枚</div>
+          <div class="pickerStatus" id="pickerStatus">${results.length.toLocaleString()}件中 ${Math.min(state.pickerLimit,results.length).toLocaleString()}件表示　${sectionLabel} ${Number.isFinite(max)?`最大${max}枚`:`枚数制限なし`}</div>
         </div>
 
         <div class="pickerGrid" id="pickerGrid">

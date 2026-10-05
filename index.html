@@ -105,7 +105,7 @@ main{max-width:760px;margin:auto;padding:10px}
 .deckTools button{flex:1;border:0;border-radius:9px;padding:8px;background:#e5e7eb;font-size:11px;font-weight:700}
 .deckTools button.active{background:#111827;color:#fff}
 .deckContents{padding:9px 9px 2px}
-.deckContentGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px}
+.deckContentGrid{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:5px}
 .deckCardItem{position:relative;touch-action:pan-y;user-select:none;-webkit-user-select:none}
 .deckCardItem img{display:block;width:100%;aspect-ratio:63/88;object-fit:cover;border-radius:6px;background:#e5e7eb;box-shadow:0 1px 4px #0002}
 .deckCardCount{position:absolute;right:3px;bottom:3px;background:#111827dd;color:#fff;border-radius:6px;padding:2px 5px;font-size:11px;font-weight:800}
@@ -120,7 +120,7 @@ main{max-width:760px;margin:auto;padding:10px}
 .pickerFilterBtn{border:0;background:#111827;color:#fff;border-radius:8px;padding:8px 10px;font-size:11px}
 .pickerStatus{font-size:10px;color:#6b7280;margin-top:5px}
 .pickerGrid{display:flex;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;gap:8px;padding:8px 9px 70px;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity}
-.pickerCard{position:relative;flex:0 0 92px;width:92px;touch-action:pan-x pan-y}
+.pickerCard{position:relative;flex:0 0 92px;width:92px;touch-action:pan-x pan-y;scroll-snap-align:start}
 .pickerCard img{display:block;width:100%;aspect-ratio:63/88;object-fit:cover;border-radius:6px;background:#e5e7eb}
 .pickerPlus{position:absolute;right:3px;bottom:3px;width:28px;height:28px;border:0;border-radius:50%;background:#16a34a;color:#fff;font-size:21px;line-height:28px;box-shadow:0 2px 5px #0004}
 .pickerPlus:active{transform:scale(.9)}
@@ -145,8 +145,7 @@ main{max-width:760px;margin:auto;padding:10px}
 .deckMakerActions button.primary{background:#11151b;color:#fff}
 .pickerCard{touch-action:pan-y;position:relative}
 .pickerCard.swiping{transform:scale(.96);opacity:.75}
-.deckContentGrid{grid-template-columns:repeat(8,minmax(0,1fr));gap:6px}
-@media(max-width:430px){.deckContentGrid{grid-template-columns:repeat(8,minmax(0,1fr));gap:5px}}
+.deckContentGrid{grid-template-columns:repeat(8,minmax(0,1fr));gap:5px}
 
 /* 分析 */
 .analysisGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
@@ -161,7 +160,7 @@ main{max-width:760px;margin:auto;padding:10px}
  .card-img{width:62px;height:87px}
  .card h3{font-size:14px}
  .qty button{width:33px;height:33px}
- .deckContentGrid,.pickerGrid{grid-template-columns:repeat(8,minmax(0,1fr))}
+ .deckContentGrid{grid-template-columns:repeat(8,minmax(0,1fr))}
 }
 </style>
 </head>
@@ -468,7 +467,8 @@ function aliasText(c){
     if(target===name || name.includes(target) || target.includes(name))aliases.push(alias);
   }
   return aliases.join(' ');
-}function searchText(c){
+}
+function searchText(c){
   return [
     cardName(c),cardNumber(c),
     ...civilizations(c),...races(c),...types(c),...rarities(c),
@@ -517,32 +517,27 @@ function imageUrl(c){
   }
   return '';
 }
+function handleImgError(img){
+  try{
+    const list=JSON.parse(img.dataset.fallbacks||'[]');
+    const i=Number(img.dataset.i||0)+1;
+    if(i<list.length){img.dataset.i=String(i);img.src=list[i];return;}
+  }catch(e){}
+  img.style.display='none';
+  img.parentElement.classList.add('broken');
+}
 function safeImg(c,className=''){
-  const src=imageUrl(c);
-  if(!src)return `<div class="${className} noimg">画像なし</div>`;
-
-  const candidate=String(idOf(c)||'').trim()
-    .replace(/^https?:\/\/[^/]+\//i,'')
-    .replace(/\s/g,'');
-
-  const base='https://dm.takaratomy.co.jp/wp-content/card/cardimage/';
-  const clean=candidate.replace(/\.jpg$/i,'');
-
-  const fallback=[
-    base+encodeURIComponent(clean)+'a.jpg',
-    base+encodeURIComponent(clean)+'b.jpg',
-    base+encodeURIComponent(clean)+'c.jpg'
-  ];
-
-  return `<div class="imgShell ${className}">
-    <img src="${esc(src)}"
-      alt="${esc(cardName(c))}"
-      loading="lazy"
-      referrerpolicy="no-referrer"
-      data-fallbacks="${esc(JSON.stringify(fallback))}"
-      onerror="const f=JSON.parse(this.dataset.fallbacks||'[]');const n=f.shift();if(n){this.dataset.fallbacks=JSON.stringify(f);this.src=n}else{this.style.display='none';this.parentElement.classList.add('broken')}">
-    <span>画像なし</span>
-  </div>`;
+  const id=String(idOf(c)||c.number||c.id||'').trim();
+  const first=imageUrl(c);
+  const candidates=[];
+  if(first)candidates.push(first);
+  if(id){
+    const clean=id.replace(/^https?:\/\/[^/]+\//i,'').replace(/\s/g,'');
+    for(const path of ['a','b','c']) candidates.push('https://dm.takaratomy.co.jp/wp-content/card/cardimage/'+encodeURIComponent(clean)+'/'+path+'.jpg');
+  }
+  const urls=[...new Set(candidates)];
+  if(!urls.length)return `<div class="${className} noimg">画像なし</div>`;
+  return `<div class="imgShell ${className}"><img src="${esc(urls[0])}" alt="${esc(cardName(c))}" loading="lazy" referrerpolicy="no-referrer" data-i="0" data-fallbacks="${esc(JSON.stringify(urls))}" onerror="handleImgError(this)"><span>画像なし</span></div>`;
 }
 
 /* 最新順。公式データが releaseIndex を持つ場合はそれを最優先。
@@ -778,7 +773,7 @@ $('favorites').addEventListener('click',e=>{
 });
 
 $('search').addEventListener('input',()=>{
-  if(!$('deckView').classList.contains('hidden')&&state.activeDeck!==null)return;
+  if(!$('deckView').classList.contains('hidden') && state.activeDeck!==null)return;
   renderCurrent();
 });
 
@@ -802,7 +797,7 @@ $('resetSettings').onclick=()=>{
 $('invTab').onclick=()=>switchTab('inv');
 $('favTab').onclick=()=>switchTab('fav');
 $('deckTab').onclick=()=>{
-
+  if(state.activeDeck!==null)state.deckSearch=$('search').value;
   switchTab('deck');
 };
 
@@ -1014,28 +1009,22 @@ function renderDeckEditor(){
   $('showAllDeckCards').onclick=()=>{deckFilter.ownedOnly=false;state.deckSearch='';state.pickerLimit=72;renderPickerOnly()};
   $('ownedDeckCards').onclick=()=>{deckFilter.ownedOnly=true;state.pickerLimit=72;renderPickerOnly()};
   $('clearPickerSearch').onclick=()=>{state.deckSearch='';state.pickerLimit=72;renderDeckEditor()};
-let deckSearchComposing=false;
 
-$('deckSearch').addEventListener('compositionstart',()=>{
-  deckSearchComposing=true;
-});
+  let deckSearchComposing=false;
+  $('deckSearch').addEventListener('compositionstart',()=>deckSearchComposing=true);
+  $('deckSearch').addEventListener('compositionend',e=>{
+    deckSearchComposing=false;
+    state.deckSearch=e.target.value;
+    state.pickerLimit=72;
+    renderPickerOnly();
+  });
+  $('deckSearch').addEventListener('input',e=>{
+    state.deckSearch=e.target.value;
+    if(deckSearchComposing)return;
+    state.pickerLimit=72;
+    renderPickerOnly();
+  });
 
-$('deckSearch').addEventListener('compositionend',e=>{
-  deckSearchComposing=false;
-  state.deckSearch=e.target.value;
-  state.pickerLimit=72;
-  renderPickerOnly();
-  const input=$('deckSearch');
-  input.focus();
-  input.setSelectionRange(input.value.length,input.value.length);
-});
-
-$('deckSearch').addEventListener('input',e=>{
-  state.deckSearch=e.target.value;
-  if(deckSearchComposing)return;
-  state.pickerLimit=72;
-  renderPickerOnly();
-});
   $('pickerSort').value=state.pickerSort||'recommended';
   $('pickerSort').onchange=()=>{state.pickerSort=$('pickerSort').value;state.pickerLimit=72;renderPickerOnly()};
   $('loadMore')?.addEventListener('click',()=>{state.pickerLimit+=72;renderPickerOnly()});
@@ -1059,9 +1048,7 @@ function renderPickerOnly(){
   if(!grid)return;
   let results=pickerSort(deckSearchFilter(state.cards));
   const visible=results.slice(0,state.pickerLimit);
-  const scrollLeft=grid.scrollLeft;
-grid.innerHTML=visible.length?visible.map(c=>pickerCard(c)).join(''):'<div class="deckEmpty">カードがありません</div>';
-grid.scrollLeft=scrollLeft;
+  grid.innerHTML=visible.length?visible.map(c=>pickerCard(c)).join(''):'<div class="deckEmpty">該当するカードがありません</div>';
   const old=$('loadMore');
   if(old)old.remove();
   if(state.pickerLimit<results.length){
@@ -1079,10 +1066,9 @@ grid.scrollLeft=scrollLeft;
 function attachPickerTouch(){
   document.querySelectorAll('#pickerGrid .pickerCard').forEach(el=>{
     let sx=0,sy=0,dx=0,dy=0,moved=false;
-    el.addEventListener('touchstart',e=>{const q=e.touches[0];sx=q.clientX;sy=q.clientY;dx=0;dy=0;moved=false},{passive:true});
-    el.addEventListener('touchmove',e=>{const q=e.touches[0];dx=q.clientX-sx;dy=q.clientY-sy;if(Math.abs(dy)>20&&Math.abs(dy)>Math.abs(dx)){moved=true;el.classList.add('swiping')}},{passive:true});
+    el.addEventListener('touchstart',e=>{const q=e.touches[0];sx=q.clientX;sy=q.clientY;dx=0;dy=0;moved=false;},{passive:true});
+    el.addEventListener('touchmove',e=>{const q=e.touches[0];dx=q.clientX-sx;dy=q.clientY-sy;if(Math.abs(dy)>20&&Math.abs(dy)>Math.abs(dx))moved=true;},{passive:true});
     el.addEventListener('touchend',()=>{
-      el.classList.remove('swiping');
       const id=el.querySelector('[data-picker-add]')?.dataset.pickerAdd;
       if(!id)return;
       if(moved&&dy<-45)addToDeck(id);
@@ -1112,17 +1098,17 @@ function addToDeck(id){
   if(!d)return;
   ensureDeck(d);
   const arr=sectionArray(d);
-  const limit=state.deckSection==='main'?40:state.deckSection==='gr'?12:8;
+  const limit=state.deckSection==='main'?Infinity:state.deckSection==='gr'?12:8;
   const total=deckTotal(d,state.deckSection);
-  if(state.deckSection!=='main'&&total>=limit){alert(...)
+  if(state.deckSection!=='main'&&total>=limit){alert(`${state.deckSection==='gr'?'GR':'超次元'}は${limit}枚までです。`);return}
   const x=arr.find(x=>String(x.id)===String(id));
   if(x){
     if(state.deckSection==='main' && (Number(x.need)||0)>=4){alert('同じカードは通常4枚までです。');return}
     x.need=(Number(x.need)||0)+1;
   }else arr.push({id:String(id),need:1});
   const scrollLeft=$('pickerGrid')?.scrollLeft||0;
-save();renderDeckEditor();
-$('pickerGrid').scrollLeft=scrollLeft;
+  save();renderDeckEditor();
+  requestAnimationFrame(()=>{const g=$('pickerGrid');if(g)g.scrollLeft=scrollLeft;});
 }
 
 function changeDeckQty(id,delta){
@@ -1142,26 +1128,13 @@ function changeDeckQty(id,delta){
 function attachDeckContentTouch(){
   $('deckEditorView').querySelectorAll('[data-deck-card]').forEach(el=>{
     let sx=0,sy=0,dx=0,dy=0,moved=false;
-    el.addEventListener('touchstart',e=>{
-      const t=e.touches[0];sx=t.clientX;sy=t.clientY;dx=0;dy=0;moved=false;
-      el.style.transition='none';
-    },{passive:true});
-    el.addEventListener('touchmove',e=>{
-      const t=e.touches[0];dx=t.clientX-sx;dy=t.clientY-sy;
-      if(Math.abs(dy)>Math.abs(dx)&&Math.abs(dy)>8){
-        moved=true;
-        el.style.transform=`translateY(${Math.max(-35,Math.min(35,dy*0.22))}px)`;
-      }
-    },{passive:true});
+    el.addEventListener('touchstart',e=>{const t=e.touches[0];sx=t.clientX;sy=t.clientY;dx=0;dy=0;moved=false;el.style.transition='none';},{passive:true});
+    el.addEventListener('touchmove',e=>{const t=e.touches[0];dx=t.clientX-sx;dy=t.clientY-sy;if(Math.abs(dy)>Math.abs(dx)&&Math.abs(dy)>8){moved=true;el.style.transform=`translateY(${Math.max(-35,Math.min(35,dy*0.22))}px)`;}},{passive:true});
     el.addEventListener('touchend',()=>{
-      el.style.transition='transform .15s ease';
-      el.style.transform='';
+      el.style.transition='transform .15s ease';el.style.transform='';
       const id=el.dataset.deckCard;
-      if(moved&&Math.abs(dy)>=45){
-  changeDeckQty(id,dy<0?1:-1);
-      }else if(!moved){
-        openCardDetail(id);
-      }
+      if(moved&&Math.abs(dy)>=45)changeDeckQty(id,dy<0?1:-1);
+      else if(!moved)openCardDetail(id);
     },{passive:true});
   });
 }
@@ -1261,48 +1234,27 @@ $('deckListView').addEventListener('click',e=>{
   }
 });
 
-/* カードデータ読み込み */
+/* 読み込み：公式カードJSONを確実に読み込む */
 async function load(){
   const status=$('status');
   try{
     status.textContent='カードデータを読み込み中…';
-
     const controller=new AbortController();
     const timer=setTimeout(()=>controller.abort(),120000);
-
-    const r=await fetch('data/cards.json?'+Date.now(),{
-      cache:'no-store',
-      signal:controller.signal
-    });
-
+    const r=await fetch('data/cards.json?'+Date.now(),{cache:'no-store',signal:controller.signal});
     clearTimeout(timer);
-
     if(!r.ok)throw new Error('HTTP '+r.status);
-
     const data=await r.json();
-
-    state.cards=Array.isArray(data)
-      ? data
-      : (Array.isArray(data.cards)?data.cards:[]);
-
-    if(!state.cards.length){
-      throw new Error('カードデータが空です');
-    }
-
+    state.cards=Array.isArray(data)?data:(Array.isArray(data.cards)?data.cards:[]);
+    if(!state.cards.length)throw new Error('カードデータが空です');
     fillSettings();
     status.textContent=`カード ${state.cards.length.toLocaleString()} 枚を読み込みました`;
-
-    renderCards();
-    renderFavorites();
-    renderDeckList();
-
+    renderCards();renderFavorites();renderDeckList();
   }catch(e){
     console.error(e);
-
     const msg=e&&e.name==='AbortError'
       ?'カードデータの読み込みが120秒でタイムアウトしました。'
       :'カードデータを読み込めませんでした：'+(e&&e.message?e.message:'不明なエラー');
-
     status.textContent=msg;
   }
 }

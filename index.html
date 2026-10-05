@@ -882,7 +882,7 @@ function renderDeckList(){
         ensureDeck(d);
         return `<div class="deck">
           <div class="row"><b>${esc(d.name||'無題デッキ')}</b><span class="deckCount">${totalAll(d)}枚</span></div>
-          <div class="small">メイン ${deckTotal(d,'main')}/40　GR ${deckTotal(d,'gr')}/12　超次元 ${deckTotal(d,'extra')}/8</div>
+          <div class="small">メイン ${deckTotal(d,'main')}　GR ${deckTotal(d,'gr')}/12　超次元 ${deckTotal(d,'extra')}/8</div>
           <div class="deckActions">
             <button class="btn" data-open-deck="${i}">デッキを開く</button>
             <button class="btn danger" data-delete-deck="${i}">削除</button>
@@ -1201,7 +1201,7 @@ function openAnalysis(){
   const maxC=Math.max(1,...Object.values(civCounts));
   $('analysisContent').innerHTML=`
     <div class="analysisGrid">
-      <div class="analysisBox"><b>${main}/40</b><span>メイン</span></div>
+      <div class="analysisBox"><b>${main}</b><span>メイン</span></div>
       <div class="analysisBox"><b>${gr}/12</b><span>GR</span></div>
       <div class="analysisBox"><b>${extra}/8</b><span>超次元</span></div>
       <div class="analysisBox"><b>${(d.cards||[]).length}</b><span>メイン種類数</span></div>

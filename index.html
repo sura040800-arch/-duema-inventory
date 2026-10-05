@@ -550,7 +550,8 @@ function safeImg(c,className=''){
   if(first)candidates.push(first);
   if(id){
     const clean=id.replace(/^https?:\/\/[^/]+\//i,'').replace(/\s/g,'');
-    for(const path of ['a','b','c']) candidates.push('https://dm.takaratomy.co.jp/wp-content/card/cardimage/'+encodeURIComponent(clean)+'/'+path+'.jpg');
+   if(clean==='dmbd21-013')candidates.push('https://dm.takaratomy.co.jp/wp-content/card/cardimage/dmbd21-013a.jpg'); 
+   for(const path of ['a','b','c']) candidates.push('https://dm.takaratomy.co.jp/wp-content/card/cardimage/'+encodeURIComponent(clean)+'/'+path+'.jpg');
   }
   const urls=[...new Set(candidates)];
   if(!urls.length)return `<div class="${className} noimg">画像なし</div>`;

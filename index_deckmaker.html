@@ -1,0 +1,1432 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#111827">
+<title>デュエマ コレクション</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;background:#f3f4f6;color:#111827}
+button,input,select{font:inherit}button{cursor:pointer}
+header{background:#111827;color:#fff;padding:8px 12px;position:sticky;top:0;z-index:30}
+h1{font-size:15px;line-height:1;margin:0 0 7px;font-weight:800}
+.headrow{display:flex;gap:7px}
+.search{flex:1;min-width:0;padding:9px 11px;border:0;border-radius:10px;background:#fff;color:#111827}
+.settingsBtn{width:40px;border:0;border-radius:10px;background:#e5e7eb;color:#111827;font-size:19px}
+main{max-width:760px;margin:auto;padding:10px}
+.tabs{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:10px}
+.tab{padding:10px 5px;border:0;border-radius:11px;background:#e5e7eb;font-weight:700;color:#111827;font-size:13px}
+.tab.active{background:#111827;color:#fff}
+.status{font-size:12px;color:#6b7280;margin:7px 5px 10px}
+.hidden{display:none!important}
+.empty{background:#fff;border-radius:14px;padding:24px;text-align:center;color:#6b7280}
+.small{font-size:11px;color:#6b7280}
+
+/* 所持カード */
+.cardwrap{position:relative}
+.card{display:flex;align-items:center;gap:9px;background:#fff;border-radius:14px;padding:8px;margin:8px 0;box-shadow:0 2px 8px #00000010;min-height:116px}
+.card-img{flex:none;width:64px;height:90px;object-fit:contain;border-radius:6px;background:#e5e7eb}
+.card-info{flex:1;min-width:0;padding-right:2px}
+.card h3{margin:0 0 4px;font-size:15px;line-height:1.3}
+.card-number{display:inline-block;background:#eef0f3;color:#6b7280;border-radius:7px;padding:3px 6px;font-size:11px;margin-bottom:4px;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.meta{font-size:12px;color:#6b7280;line-height:1.5}
+.qty{flex:none;display:flex;align-items:center;gap:3px}
+.qty button{width:34px;height:34px;border:0;border-radius:10px;background:#e5e7eb;color:#1677e8;font-size:22px}
+.qty b{min-width:23px;text-align:center;font-size:17px}
+.fav{position:absolute;right:5px;top:4px;border:0;background:#ffffffd9;border-radius:50%;width:32px;height:32px;font-size:20px;color:#1677e8;z-index:2}
+
+/* 画像なし */
+.noimg{display:flex;align-items:center;justify-content:center;text-align:center;color:#9ca3af;font-size:10px;font-weight:700;background:#e5e7eb;border-radius:6px;overflow:hidden}
+.imgShell{position:relative;display:flex;align-items:center;justify-content:center;background:#e5e7eb;border-radius:6px;overflow:hidden}.imgShell img{display:block;width:100%;height:100%;object-fit:cover}.imgShell>span{display:none;color:#9ca3af;font-size:10px;font-weight:700}.imgShell.broken>span{display:block}.card-img{width:64px;height:90px;flex:none}.detailImage{width:min(82vw,420px);height:auto;min-height:100px}.pickerCard .imgShell{width:100%;aspect-ratio:63/88}.deckCardItem .imgShell{width:100%;aspect-ratio:63/88}.pickerCard .imgShell img,.deckCardItem .imgShell img{width:100%;height:100%}
+
+/* 設定 */
+.overlay{position:fixed;inset:0;background:#0008;z-index:80;display:none;align-items:flex-end}
+.overlay.open{display:flex}
+.sheet{width:100%;max-height:91vh;overflow:auto;background:#fff;border-radius:22px 22px 0 0;padding:16px 15px calc(22px + env(safe-area-inset-bottom));box-shadow:0 -4px 20px #0003}
+.sheetHead{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.sheetHead h2{margin:0;font-size:19px}
+.close{border:0;background:#eef0f3;border-radius:50%;width:38px;height:38px;font-size:20px}
+.field{margin:12px 0}
+.field label{display:block;font-weight:700;font-size:13px;margin-bottom:6px}
+.field select,.field input{width:100%;padding:11px;border:1px solid #d1d5db;border-radius:10px;background:#fff}
+.checkrow{display:flex;align-items:center;gap:9px;padding:8px 0}
+.checkrow input{width:19px;height:19px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.filterChip{border:1px solid #d1d5db;background:#fff;border-radius:999px;padding:7px 10px;font-size:12px}
+.filterChip.active{background:#111827;color:#fff;border-color:#111827;box-shadow:0 0 0 2px #11182722}.filterChip.active::before{content:"✓ ";font-weight:900}
+.filterSummary{margin-top:7px;padding:7px 9px;border-radius:8px;background:#f3f4f6;color:#6b7280;font-size:11px;min-height:30px}.filterSummary.has{background:#eef2ff;color:#111827;font-weight:700}
+.sheetActions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:15px}
+.sheetActions button{padding:12px;border:0;border-radius:11px;font-weight:700}
+.apply{background:#111827;color:#fff}
+.reset{background:#e5e7eb;color:#111827}
+
+/* 詳細 */
+.detailOverlay{position:fixed;inset:0;background:#000c;z-index:100;display:none;align-items:center;justify-content:center;padding:16px}
+.detailOverlay.open{display:flex}
+.detailBox{width:min(560px,100%);max-height:94vh;overflow:auto;background:#fff;border-radius:18px;padding:14px}
+.detailTop{display:flex;justify-content:flex-end}
+.detailClose{border:0;background:#eef0f3;border-radius:50%;width:38px;height:38px;font-size:22px}
+.detailImage{display:block;width:min(82vw,420px);height:auto;max-height:62vh;object-fit:contain;margin:0 auto 12px;border-radius:10px;background:#eee}
+.detailName{text-align:center;font-size:19px;font-weight:800;margin:5px 0}
+.detailNumber{text-align:center;color:#6b7280;font-size:12px;margin-bottom:10px}
+.detailMeta{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:10px}
+.detailMeta div{background:#f3f4f6;border-radius:9px;padding:8px;font-size:12px}
+.detailAbility{margin-top:12px;background:#f9fafb;border-radius:10px;padding:10px;font-size:12px;line-height:1.65;white-space:pre-wrap}
+.detailButtons{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.detailButtons button{border:0;border-radius:10px;padding:11px;background:#111827;color:#fff}
+.detailButtons button.secondary{background:#e5e7eb;color:#111827}
+
+/* デッキ一覧 */
+.decklist{display:grid;gap:8px}
+.deck{background:#fff;border-radius:14px;padding:12px;box-shadow:0 2px 8px #00000010}
+.row{display:flex;gap:8px;align-items:center;justify-content:space-between}
+.deckActions{display:flex;gap:7px;margin-top:10px}
+.deckActions .btn{flex:1}
+.deckCount{font-size:12px;color:#6b7280}
+.btn{border:0;border-radius:10px;padding:9px 11px;background:#111827;color:#fff}
+.btn.secondary{background:#e5e7eb;color:#111827}
+.btn.danger{background:#fee2e2;color:#b91c1c}
+
+/* デッキメーカー風 */
+.deckEditor{background:#fff;border-radius:14px;overflow:hidden}
+.deckHeader{background:#111827;color:#fff;padding:9px 10px;position:sticky;top:0;z-index:15}
+.deckHeadRow{display:flex;align-items:center;gap:7px}
+.deckHeadRow button{border:0;border-radius:8px;padding:7px 9px;background:#374151;color:#fff}
+.deckTitle{flex:1;min-width:0;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center}
+.deckSave{background:#16a34a!important}
+.sectionTabs{display:grid;grid-template-columns:1fr 1fr 1fr;margin-top:8px;gap:4px}
+.sectionTab{border:0;background:#374151;color:#d1d5db;border-radius:7px;padding:7px 3px;font-size:11px}
+.sectionTab.active{background:#fff;color:#111827}
+.formatRow{display:flex;gap:5px;padding:8px 10px;background:#f3f4f6}
+.formatBtn{flex:1;border:1px solid #d1d5db;background:#fff;border-radius:8px;padding:7px;font-size:11px}
+.formatBtn.active{background:#111827;color:#fff;border-color:#111827}
+.deckTools{display:flex;gap:6px;padding:8px 10px;border-bottom:1px solid #e5e7eb}
+.deckTools button{flex:1;border:0;border-radius:9px;padding:8px;background:#e5e7eb;font-size:11px;font-weight:700}
+.deckTools button.active{background:#111827;color:#fff}
+.deckContents{padding:9px 9px 2px}
+.deckContentGrid{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:5px}
+.deckCardItem{position:relative;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.deckCardItem img{display:block;width:100%;aspect-ratio:63/88;object-fit:cover;border-radius:6px;background:#e5e7eb;box-shadow:0 1px 4px #0002}
+.deckCardCount{position:absolute;right:3px;bottom:3px;background:#111827dd;color:#fff;border-radius:6px;padding:2px 5px;font-size:11px;font-weight:800}
+.deckEmpty{background:#f3f4f6;border-radius:10px;padding:25px 10px;text-align:center;color:#6b7280;font-size:12px;grid-column:1/-1}
+.deckPicker{border-top:1px solid #d1d5db;background:#fff;margin-top:8px}
+.pickerSticky{position:sticky;top:0;background:#fff;z-index:10;padding:8px 9px;border-bottom:1px solid #e5e7eb}
+.pickerSearchRow{display:flex;gap:6px}
+.pickerSearchRow input{flex:1;min-width:0;padding:9px;border:1px solid #d1d5db;border-radius:9px}
+.pickerSearchRow button{border:0;border-radius:9px;background:#e5e7eb;padding:0 12px}
+.pickerSortRow{display:flex;gap:5px;margin-top:6px}
+.pickerSortRow select{flex:1;padding:8px;border:1px solid #d1d5db;border-radius:8px;font-size:11px}
+.quickFilters{display:flex;flex-wrap:wrap;gap:5px;padding-top:6px;align-items:center}.quickFilter{flex:0 0 auto;border:1px solid #d1d5db;background:#fff;border-radius:999px;padding:6px 9px;font-size:10px;white-space:nowrap}.quickFilter.active{background:#111827;color:#fff;border-color:#111827}.quickFilter.civActive{background:#111827;color:#fff;border-color:#111827}.raceQuickFilters{border-top:1px solid #eef0f2;margin-top:6px;padding-top:6px}
+.pickerFilterBtn{border:0;background:#111827;color:#fff;border-radius:8px;padding:8px 10px;font-size:11px}
+.pickerStatus{font-size:10px;color:#6b7280;margin-top:5px}
+.pickerGrid{display:flex;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;gap:8px;padding:8px 9px 70px;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity}
+.pickerCard{position:relative;flex:0 0 92px;width:92px;touch-action:pan-x pan-y;scroll-snap-align:start}
+.pickerCard img{display:block;width:100%;aspect-ratio:63/88;object-fit:cover;border-radius:6px;background:#e5e7eb}
+.pickerPlus{position:absolute;right:3px;bottom:3px;width:28px;height:28px;border:0;border-radius:50%;background:#16a34a;color:#fff;font-size:21px;line-height:28px;box-shadow:0 2px 5px #0004}
+.pickerPlus:active{transform:scale(.9)}
+.loadMore{display:block;margin:4px auto 12px;border:0;border-radius:9px;padding:9px 18px;background:#111827;color:#fff;font-size:11px}
+.swipeHint{text-align:center;font-size:10px;color:#9ca3af;padding:5px 0 8px}
+
+/* デッキ絞り込み */
+.deckFilterSection{margin:13px 0}
+.deckFilterSection h3{font-size:13px;margin:0 0 7px}
+.deckFilterTwo{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.rangeRow{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.rangeRow input{width:100%}
+
+/* DECK MAKER風のデッキ作成UI */
+.deckMakerTop{background:#fff;border-bottom:1px solid #d7dbe0;padding:8px 9px;position:sticky;top:0;z-index:14}
+.deckMakerStats{display:grid;grid-template-columns:2fr 1fr 1fr;gap:5px}
+.deckMakerStat{background:#f0f2f4;border-radius:9px;padding:7px 5px;text-align:center;font-size:10px}
+.deckMakerStat b{display:block;font-size:17px;line-height:1.05}
+.deckMakerStat span{color:#687078}
+.deckMakerActions{display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px;margin-top:6px}
+.deckMakerActions button{border:0;border-radius:8px;background:#e7e9ec;padding:8px 3px;font-size:10px;font-weight:800}
+.deckMakerActions button.primary{background:#11151b;color:#fff}
+.pickerCard{touch-action:pan-x pan-y;position:relative}
+.pickerCard.swiping{transform:scale(.96);opacity:.75}
+.deckContentGrid{grid-template-columns:repeat(8,minmax(0,1fr));gap:5px}
+
+.drawHand{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px}.drawCard{position:relative}.drawCard .imgShell{width:100%;aspect-ratio:63/88}.drawCard small{display:block;text-align:center;font-size:9px;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* 分析 */
+.analysisGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.analysisBox{background:#f3f4f6;border-radius:10px;padding:10px}
+.analysisBox b{display:block;font-size:18px}
+.analysisBox span{font-size:11px;color:#6b7280}
+.bar{height:8px;border-radius:99px;background:#e5e7eb;overflow:hidden;margin-top:5px}
+.bar i{display:block;height:100%;background:#111827}
+
+@media(max-width:430px){
+ .card{gap:7px;padding:8px;min-height:114px}
+ .card-img{width:62px;height:87px}
+ .card h3{font-size:14px}
+ .qty button{width:33px;height:33px}
+ .deckContentGrid{grid-template-columns:repeat(8,minmax(0,1fr))}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>デュエマ コレクション</h1>
+  <div class="headrow">
+    <input id="search" class="search" placeholder="カード名・番号・種族で検索">
+    <button id="settings" class="settingsBtn">⚙️</button>
+  </div>
+</header>
+
+<main>
+  <div class="tabs">
+    <button class="tab active" id="invTab">📦 所持カード</button>
+    <button class="tab" id="favTab">⭐ お気に入り</button>
+    <button class="tab" id="deckTab">🃏 デッキ</button>
+  </div>
+
+  <div id="invView">
+    <div class="status" id="status">カードデータを読み込み中…</div>
+    <div id="cards"></div>
+  </div>
+
+  <div id="favView" class="hidden">
+    <div class="status" id="favStatus"></div>
+    <div id="favorites"></div>
+  </div>
+
+  <div id="deckView" class="hidden">
+    <div id="deckListView"></div>
+    <div id="deckEditorView" class="hidden"></div>
+  </div>
+</main>
+
+<!-- 通常の絞り込み -->
+<div class="overlay" id="overlay">
+  <div class="sheet">
+    <div class="sheetHead">
+      <h2>⚙️ 絞り込み・並び替え</h2>
+      <button class="close" id="closeSettings">×</button>
+    </div>
+
+    <div class="field">
+      <label>並び順</label>
+      <select id="sort">
+        <option value="default">おすすめ順</option>
+        <option value="latest">最新カード順</option>
+        <option value="name">名前順</option>
+        <option value="cost">コスト順</option>
+        <option value="power">パワー順</option>
+        <option value="civilization">文明順</option>
+        <option value="race">種族順</option>
+        <option value="rarity">レアリティ順</option>
+        <option value="number">カード番号順</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>文明</label>
+      <select id="civilization">
+        <option value="">すべて</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>種族</label>
+      <input id="raceFilter" list="raceList" placeholder="例：ドラゴン">
+      <datalist id="raceList"></datalist>
+    </div>
+
+    <div class="field">
+      <label>カードタイプ</label>
+      <select id="type"><option value="">すべて</option></select>
+    </div>
+
+    <div class="field">
+      <label>レアリティ</label>
+      <select id="rarity"><option value="">すべて</option></select>
+    </div>
+
+    <div class="field">
+      <label>コスト</label>
+      <div class="rangeRow">
+        <input id="costMin" type="number" min="0" placeholder="下限">
+        <input id="costMax" type="number" min="0" placeholder="上限">
+      </div>
+    </div>
+
+    <div class="field">
+      <label>カード効果</label>
+      <div class="chips" id="effectChips"></div><div class="filterSummary" id="effectSummary">選択なし</div>
+    </div>
+
+    <label class="checkrow"><input type="checkbox" id="ownedOnly"> 所持カードだけ表示</label>
+    <label class="checkrow"><input type="checkbox" id="unownedOnly"> 未所持カードだけ表示</label>
+
+    <div class="sheetActions">
+      <button class="reset" id="resetSettings">リセット</button>
+      <button class="apply" id="applySettings">適用</button>
+    </div>
+  </div>
+</div>
+
+<!-- カード詳細 -->
+<div class="detailOverlay" id="detailOverlay">
+  <div class="detailBox" id="detailBox"></div>
+</div>
+
+<!-- デッキ絞り込み -->
+<div class="overlay" id="deckFilterOverlay">
+  <div class="sheet">
+    <div class="sheetHead">
+      <h2>🔎 デッキ検索・絞り込み</h2>
+      <button class="close" id="closeDeckFilter">×</button>
+    </div>
+
+    <div class="deckFilterSection">
+      <h3>文明</h3>
+      <div class="chips" id="deckCivChips"></div>
+    </div>
+
+    <div class="deckFilterSection">
+      <h3>カードタイプ</h3>
+      <select id="deckType"><option value="">すべて</option></select>
+    </div>
+
+    <div class="deckFilterSection">
+      <h3>レアリティ</h3>
+      <select id="deckRarity"><option value="">すべて</option></select>
+    </div>
+
+    <div class="deckFilterSection">
+      <h3>種族</h3>
+      <input id="deckRace" list="raceList" placeholder="例：ドラゴン、ジョーカーズ">
+    </div>
+
+    <div class="deckFilterSection">
+      <h3>コスト</h3>
+      <div class="rangeRow">
+        <input id="deckCostMin" type="number" min="0" placeholder="下限">
+        <input id="deckCostMax" type="number" min="0" placeholder="上限">
+      </div>
+    </div>
+
+    <div class="deckFilterSection">
+      <h3>パワー</h3>
+      <div class="rangeRow">
+        <input id="deckPowerMin" type="number" min="0" placeholder="下限">
+        <input id="deckPowerMax" type="number" min="0" placeholder="上限">
+      </div>
+    </div>
+
+    <div class="deckFilterSection">
+      <h3>効果</h3>
+      <div class="chips" id="deckEffectChips"></div><div class="filterSummary" id="deckEffectSummary">選択なし</div>
+    </div>
+
+    <label class="checkrow"><input type="checkbox" id="deckOwnedOnly"> 所持カードのみ</label>
+    <label class="checkrow"><input type="checkbox" id="deckFavOnly"> お気に入りのみ</label>
+    <label class="checkrow"><input type="checkbox" id="deckInOnly"> すでにデッキに入っているカード</label>
+
+    <div class="sheetActions">
+      <button class="reset" id="resetDeckFilter">リセット</button>
+      <button class="apply" id="applyDeckFilter">適用</button>
+    </div>
+  </div>
+</div>
+
+<!-- 初手ドロー -->
+<div class="overlay" id="drawOverlay">
+  <div class="sheet">
+    <div class="sheetHead"><h2>🃏 初手ドロー</h2><button class="close" id="closeDraw">×</button></div>
+    <div id="drawContent"></div>
+    <button class="btn" id="redrawHand" style="width:100%;margin-top:10px">もう一度引く</button>
+  </div>
+</div>
+
+<!-- 分析 -->
+<div class="overlay" id="analysisOverlay">
+  <div class="sheet">
+    <div class="sheetHead">
+      <h2>📊 デッキ分析</h2>
+      <button class="close" id="closeAnalysis">×</button>
+    </div>
+    <div id="analysisContent"></div>
+  </div>
+</div>
+
+<script>
+const state={
+  cards:[],
+  owned:JSON.parse(localStorage.getItem('duema_owned_v3')||'{}'),
+  favorites:JSON.parse(localStorage.getItem('duema_favorites_v1')||'{}'),
+  decks:JSON.parse(localStorage.getItem('duema_decks_v3')||'[]'),
+  activeDeck:null,
+  deckSection:'main',
+  format:'オリジナル',
+  deckSearch:'',
+  pickerLimit:72
+};
+
+const setting={
+  sort:'default',
+  civilization:'',
+  race:'',
+  type:'',
+  rarity:'',
+  costMin:'',
+  costMax:'',
+  powerMin:'',
+  powerMax:'',
+  race:'',
+  effects:[],
+  ownedOnly:false,
+  unownedOnly:false
+};
+
+const deckFilter={
+  civilization:'',
+  type:'',
+  rarity:'',
+  costMin:'',
+  costMax:'',
+  effects:[],
+  ownedOnly:false,
+  favoriteOnly:false,
+  inDeckOnly:false
+};
+
+const EFFECTS=[
+  ['st','S・トリガー',['s・トリガー','s･トリガー','s・トリガー・プラス','s･トリガー・プラス']],
+  ['draw','ドロー',['カードを引く','カードを１枚引く','カードを2枚引く','カードを２枚引く','引く']],
+  ['search','サーチ',['山札から','手札に加える','サーチ']],
+  ['removal','除去',['破壊する','破壊','手札に戻す','持ち主の手札に戻す','シールド化','マナゾーンに置く']],
+  ['blocker','ブロッカー',['ブロッカー']],
+  ['ramp','マナ加速',['マナゾーンに置く','マナを増やす','マナゾーンに置いてもよい']],
+  ['discard','ハンデス',['手札を捨てる','手札を1枚捨てる','手札を２枚捨てる','捨てる']],
+  ['grave','墓地回収',['墓地から手札に戻す','墓地から出す','墓地から','墓地の']],
+  ['bounce','バウンス',['手札に戻す','持ち主の手札']],
+  ['tap','タップ',['タップする','タップしてもよい','タップされて']],
+  ['lock','ロック',['攻撃できない','ブロックできない','できない','ロック']],
+  ['attack','攻撃強化',['追加で攻撃','攻撃する時','攻撃した時','攻撃できる']],
+  ['cheat','踏み倒し',['コストを支払わず','コストを支払わない','出してもよい','出す']],
+  ['recovery','シールド追加',['シールド化','シールドを追加','シールドを増やす']],
+  ['protection','耐性',['離れない','破壊されない','選ばれない','攻撃されない']],
+  ['revolution','革命チェンジ',['革命チェンジ']],
+  ['gstrike','G・ストライク',['G・ストライク']],
+  ['graveyard','墓地利用',['墓地に置く','墓地を利用','墓地から']]
+];
+
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+const faces=c=>Array.isArray(c.sides)&&c.sides.length?c.sides:[c];
+
+function values(c,key){
+  return faces(c).flatMap(f=>{
+    const v=f?.[key];
+    if(v===undefined||v===null||v==='')return[];
+    return Array.isArray(v)?v:[v];
+  });
+}
+function splitValues(v){
+  if(v===undefined||v===null||v==='')return[];
+  if(Array.isArray(v))return v.flatMap(splitValues);
+  if(typeof v==='object')return Object.values(v).flatMap(splitValues);
+  const s=String(v).trim();
+  if(!s||s==='undefined'||s==='null'||s==='[object Object]')return[];
+  return s.split(/[／\/・,、\s]+/).map(x=>x.trim()).filter(x=>x&&x!=='undefined'&&x!=='null'&&x!=='[object Object]');
+}
+function civilizations(c){
+  return [...new Set(values(c,'civilization').flatMap(splitValues))];
+}
+function races(c){
+  const keys=['race','species','species_name','raceName','tribe'];
+  return [...new Set(keys.flatMap(k=>values(c,k).flatMap(splitValues)))];
+}
+function types(c){
+  return [...new Set([...values(c,'type'),...values(c,'card_type'),...values(c,'cardType')].flatMap(splitValues))];
+}
+function rarities(c){
+  return [...new Set(values(c,'rarity').flatMap(splitValues))];
+}
+function firstValue(c,key){return values(c,key)[0]||''}
+function cardName(c){return c.name||c._name||c.cardName||''}
+function cardNumber(c){return c.number||c.id||''}
+function idOf(c){return String(c.id||c.number||'')}
+function costNum(c){
+  const n=parseInt(firstValue(c,'cost'),10);
+  return Number.isFinite(n)?n:999;
+}
+function powerNum(c){
+  const s=firstValue(c,'power').replace(/[^0-9]/g,'');
+  const n=Number(s);
+  return Number.isFinite(n)?n:-1;
+}
+function textOfCard(c){
+  const keys=['specialAbility','special_ability','specialAbilities','abilities','ability','card_text','text','effect','effects'];
+  const out=[];
+  faces(c).forEach(f=>{
+    keys.forEach(k=>{
+      const v=f?.[k];
+      if(Array.isArray(v))out.push(v.join(' '));
+      else if(v)out.push(String(v));
+    });
+  });
+  return out.join(' ');
+}
+function normalizeSearch(s){
+  return String(s??'').toLowerCase()
+    .normalize('NFKC')
+    .replace(/[\s　・･\-‐‑–—ー_「」『』【】〔〕（）()［］\[\]“”‘’'’]/g,'')
+    .replace(/[ぁ-ゖ]/g,ch=>String.fromCharCode(ch.charCodeAt(0)+0x60));
+}
+
+/* DECK MAKER系の通称検索。公式カード名は変更せず、検索時だけ別名を使う。 */
+const CARD_ALIASES={
+  '龍装チュリス':['ドル','ドルガン','ドルガンチュリス','龍装チュリス','“龍装”チュリス'],
+  '蒼き団長ドギラゴン剣':['ドギ剣','ドギラゴン剣'],
+  '天災デドダム':['デドダム'],
+  '流星のガイアッシュカイザー':['ガイアッシュ','ガイアッシュカイザー'],
+  '龍風混成ザーディクリカ':['ザーディ','ザーディクリカ'],
+  '飛翔龍5000VT':['5000vt','5000ＶＴ','ファイブブイティー'],
+  'アーテルゴルギーニ':['アーテル'],
+  '同期の妖精':['同期'],
+  '終末縫合王ザキラーキーナリー':['ザキラーキーナリー','キーナリー'],
+  '邪幽ジャガイスト':['ジャガイスト'],
+  'ブルーインパルス「真実を見極めよ、ジョニー！」':['ブルーインパルス'],
+  '鬼ヶ大王ジャオウガ':['ジャオウガ'],
+  '百鬼の邪王門':['邪王門'],
+  '絶望と反魂と滅殺の決断':['パーフェクトダーク','パーフェクト・ダークネス'],
+  '「必勝」の頂カイザー「刃鬼」':['刃鬼','カイザー刃鬼'],
+  'ボルシャック・栄光・ルピア':['栄光ルピア'],
+  'フェアリー・Re：ライフ':['フェアリーライフ','リライフ']
+};
+const ALIAS_INDEX=Object.entries(CARD_ALIASES).flatMap(([name,aliases])=>aliases.map(a=>[normalizeSearch(a),normalizeSearch(name)]));
+
+function aliasText(c){
+  const name=normalizeSearch(cardName(c));
+  const aliases=[];
+  for(const [alias,target] of ALIAS_INDEX){
+    if(target===name || name.includes(target) || target.includes(name))aliases.push(alias);
+  }
+  return aliases.join(' ');
+}
+function searchText(c){
+  return [
+    cardName(c),cardNumber(c),
+    ...civilizations(c),...races(c),...types(c),...rarities(c),
+    textOfCard(c),aliasText(c)
+  ].join(' ');
+}
+function hasEffect(c,key){
+  const t=textOfCard(c);
+  if(!t)return false;
+  const patterns={
+    st:/(?:^|[\n*・])\s*(?:\{GS\}\s*)?(?:スーパー・)?S[・･]?トリガー(?:・プラス)?/i,
+    draw:/(?:カードを|山札から)?[0-9０-９一二三四五六七八九十]+枚?引く|カードを引く|引くことができる/i,
+    search:/(山札|デッキ).{0,45}(探す|手札に加える|手札へ加える)/,
+    removal:/(破壊する|手札に戻す|持ち主の手札に戻す|シールドゾーンに置く|マナゾーンに置く)/,
+    blocker:/ブロッカー/,
+    ramp:/(マナゾーンに置く|マナを[0-9０-９一二三四五六七八九十]+増やす|マナを増やす)/,
+    discard:/(手札を[0-9０-９一二三四五六七八九十]*枚?(?:捨てる|墓地に置く)|手札を捨てる)/,
+    grave:/(墓地から.{0,40}(手札に戻す|出す|加える)|墓地の.{0,30}(手札に加える|カードを))/,
+    bounce:/(持ち主の手札に戻す|手札に戻す)/,
+    tap:/(タップする|タップしてもよい|タップされて)/,
+    lock:/(攻撃できない|ブロックできない|呪文を唱えられない|能力を使えない)/,
+    attack:/(追加で攻撃|もう一度攻撃|攻撃した時|攻撃する時|攻撃できる)/,
+    cheat:/(コストを支払わずに|コストを支払わず|コストを支払わないで).{0,30}(出す|召喚)/,
+    recovery:/(シールドを[0-9０-９一二三四五六七八九十]*枚?(?:追加|増やす)|シールドを追加|シールド化)/,
+    protection:/(離れない|破壊されない|選ばれない|攻撃されない)/,
+    revolution:/革命チェンジ/,
+    gstrike:/G[・･]?ストライク/,
+    graveyard:/(墓地に置く|墓地を利用|墓地から)/
+  };
+  return !!patterns[key]?.test(t);
+}
+
+/* 画像：データ内のimageを最優先。無い場合だけ公式URLを組み立てる。 */
+function imageUrl(c){
+  const raw=String(c.image||'').trim();
+  if(raw){
+    if(/^https?:\/\//i.test(raw))return raw;
+    if(raw.startsWith('//'))return 'https:'+raw;
+    if(raw.startsWith('/'))return 'https://dm.takaratomy.co.jp'+raw;
+    if(raw.startsWith('wp-content/'))return 'https://dm.takaratomy.co.jp/'+raw;
+  }
+  const candidate=String(c.number||c.id||'').trim();
+  if(candidate){
+    const clean=candidate.replace(/^https?:\/\/[^/]+\//i,'').replace(/\s/g,'');
+    return 'https://dm.takaratomy.co.jp/wp-content/card/cardimage/'+encodeURIComponent(clean)+'.jpg';
+  }
+  return '';
+}
+function imageCandidates(c){
+  const out=[];
+  const add=u=>{if(u&&!out.includes(u))out.push(u)};
+  const raw=String(c.image||'').trim();
+  if(raw){
+    if(/^https?:\/\//i.test(raw))add(raw);
+    else if(raw.startsWith('//'))add('https:'+raw);
+    else if(raw.startsWith('/'))add('https://dm.takaratomy.co.jp'+raw);
+    else if(raw.startsWith('wp-content/'))add('https://dm.takaratomy.co.jp/'+raw);
+  }
+  const base=String(c.number||c.id||'').trim().replace(/^https?:\/\/[^/]+\//i,'').replace(/\s/g,'');
+  if(base){
+    const root='https://dm.takaratomy.co.jp/wp-content/card/cardimage/';
+    const e=encodeURIComponent(base);
+    add(root+e+'.jpg');
+    add(root+e+'a.jpg');
+    add(root+e+'b.jpg');
+    add(root+e+'c.jpg');
+  }
+  return out;
+}
+function handleImgError(img){
+  try{
+    const list=JSON.parse(img.dataset.fallbacks||'[]');
+    const i=Number(img.dataset.i||0)+1;
+    if(i<list.length){img.dataset.i=String(i);img.src=list[i];return;}
+  }catch(e){}
+  img.style.display='none';
+  img.parentElement.classList.add('broken');
+}
+function safeImg(c,className=''){
+  const urls=imageCandidates(c);
+  if(!urls.length)return `<div class="${className} noimg">画像なし</div>`;
+  return `<div class="imgShell ${className}"><img src="${esc(urls[0])}" alt="${esc(cardName(c))}" loading="lazy" referrerpolicy="no-referrer" data-i="0" data-fallbacks="${esc(JSON.stringify(urls))}" onerror="handleImgError(this)"><span>画像なし</span></div>`;
+}
+
+
+/* 最新順。公式データが releaseIndex を持つ場合はそれを最優先。
+   無い場合はカードIDの商品コードを使って新しいセットを上にする。 */
+function latestKey(c){
+  if(Number.isFinite(Number(c.releaseIndex)))return Number(c.releaseIndex);
+  const id=idOf(c).toLowerCase();
+  const m=id.match(/dm(\d{2})([a-z]+)(\d+)/i);
+  if(!m)return -1;
+  const year=Number(m[1]);
+  const code=m[2];
+  const no=Number(m[3]);
+  const rank={rp:50,sd:45,ex:40,bd:35,sp:30,art:20};
+  const r=rank[code]||10;
+  return year*10000+r*100+no;
+}
+
+function isFav(c){return !!state.favorites[idOf(c)]}
+function save(){
+  localStorage.setItem('duema_owned_v3',JSON.stringify(state.owned));
+  localStorage.setItem('duema_favorites_v1',JSON.stringify(state.favorites));
+  localStorage.setItem('duema_decks_v3',JSON.stringify(state.decks));
+}
+
+function civRank(c){
+  const order=['光','水','闇','火','自然','ゼロ'];
+  const xs=civilizations(c);
+  const i=order.indexOf(xs[0]);
+  return i<0?99:i;
+}
+
+function effectMatches(c,selected){
+  return !selected.length || selected.every(k=>hasEffect(c,k));
+}
+
+function filteredCards(base=state.cards){
+  const q=normalizeSearch($('search').value.trim());
+  let list=base.filter(c=>{
+    if(q&&!normalizeSearch(searchText(c)).includes(q))return false;
+    if(setting.civilization&&!civilizations(c).includes(setting.civilization))return false;
+    if(setting.race&&!races(c).some(x=>x.toLowerCase().includes(setting.race)))return false;
+    if(setting.type&&!types(c).includes(setting.type))return false;
+    if(setting.rarity&&!rarities(c).includes(setting.rarity))return false;
+    const cost=costNum(c);
+    if(setting.costMin!==''&&cost<Number(setting.costMin))return false;
+    if(setting.costMax!==''&&cost>Number(setting.costMax))return false;
+    if(!effectMatches(c,setting.effects))return false;
+    const n=state.owned[idOf(c)]||0;
+    if(setting.ownedOnly&&n<=0)return false;
+    if(setting.unownedOnly&&n>0)return false;
+    return true;
+  });
+
+  list.sort((a,b)=>{
+    switch(setting.sort){
+      case'latest':return latestKey(b)-latestKey(a)||cardNumber(b).localeCompare(cardNumber(a),'ja');
+      case'name':return cardName(a).localeCompare(cardName(b),'ja');
+      case'cost':return costNum(a)-costNum(b)||cardName(a).localeCompare(cardName(b),'ja');
+      case'power':return powerNum(a)-powerNum(b)||cardName(a).localeCompare(cardName(b),'ja');
+      case'civilization':return civRank(a)-civRank(b)||civilizations(a).join().localeCompare(civilizations(b).join(),'ja');
+      case'race':return races(a).join().localeCompare(races(b).join(),'ja');
+      case'rarity':return rarities(a).join().localeCompare(rarities(b).join(),'ja');
+      case'number':return cardNumber(a).localeCompare(cardNumber(b),'ja');
+      default:return 0;
+    }
+  });
+  return list;
+}
+
+function cardHtml(c,showQty=true){
+  const id=idOf(c),n=state.owned[id]||0;
+  const civ=civilizations(c).join('/');
+  const typ=types(c).join('/');
+  const cost=firstValue(c,'cost');
+  const power=firstValue(c,'power');
+  const rar=rarities(c).join('/');
+  return `<div class="cardwrap">
+    <div class="card" data-card-detail="${esc(id)}">
+      ${safeImg(c,'card-img')}
+      <div class="card-info">
+        <h3>${esc(cardName(c))}</h3>
+        <div class="card-number">${esc(cardNumber(c))}</div>
+        <div class="meta">${esc(civ)}　${esc(typ)}<br>${cost!==''?'コスト '+esc(cost)+'　':''}${power!==''?'パワー '+esc(power)+'　':''}${esc(rar)}</div>
+        <div class="small">${esc(races(c).join(' / '))}</div>
+      </div>
+      ${showQty?`<div class="qty" onclick="event.stopPropagation()">
+        <button data-minus="${esc(id)}">−</button><b>${n}</b><button data-plus="${esc(id)}">＋</button>
+      </div>`:''}
+    </div>
+    <button class="fav" data-fav="${esc(id)}" onclick="event.stopPropagation()">${isFav(c)?'★':'☆'}</button>
+  </div>`;
+}
+
+function renderCards(){
+  const list=filteredCards();
+  const show=list.slice(0,150);
+  $('status').textContent=`カード ${list.length.toLocaleString()} 枚を表示${list.length>150?'（先頭150枚）':''}`;
+  $('cards').innerHTML=show.length?show.map(c=>cardHtml(c,true)).join(''):'<div class="empty">該当するカードがありません。</div>';
+}
+
+function renderFavorites(){
+  const q=$('search').value.trim().toLowerCase();
+  let list=state.cards.filter(c=>isFav(c)&&(q?searchText(c).includes(q):true));
+  if(setting.sort==='latest')list.sort((a,b)=>latestKey(b)-latestKey(a));
+  $('favStatus').textContent=`お気に入り ${list.length.toLocaleString()} 枚`;
+  $('favorites').innerHTML=list.length?list.map(c=>cardHtml(c,true)).join(''):'<div class="empty">お気に入りカードはありません。<br><span class="small">カードの☆をタップすると追加できます。</span></div>';
+}
+
+function fillSelect(id,arr,current=''){
+  $(id).innerHTML='<option value="">すべて</option>'+arr.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join('');
+  $(id).value=current;
+}
+function uniqueSorted(fn){
+  return [...new Set(state.cards.flatMap(fn))].filter(Boolean).sort((a,b)=>String(a).localeCompare(String(b),'ja'));
+}
+function renderEffectChips(containerId,selected){
+  $(containerId).innerHTML=EFFECTS.map(e=>`<button type="button" class="filterChip ${selected.includes(e[0])?'active':''}" data-effect="${e[0]}" aria-pressed="${selected.includes(e[0])}">${e[1]}</button>`).join('');
+  const summaryId=containerId==='effectChips'?'effectSummary':'deckEffectSummary';
+  const update=()=>{
+    const names=[...$(containerId).querySelectorAll('.filterChip.active')].map(b=>b.textContent.replace(/^✓\s*/,'').trim());
+    const box=$(summaryId);
+    if(!box)return;
+    box.textContent=names.length?`選択中：${names.join(' / ')}`:'選択なし';
+    box.classList.toggle('has',names.length>0);
+  };
+  $(containerId).querySelectorAll('[data-effect]').forEach(b=>{
+    b.onclick=()=>{
+      b.classList.toggle('active');
+      b.setAttribute('aria-pressed',b.classList.contains('active'));
+      update();
+    };
+  });
+  update();
+}
+function readEffectChips(containerId){
+  return [...$(containerId).querySelectorAll('.active')].map(x=>x.dataset.effect);
+}
+function fillSettings(){
+  fillSelect('civilization',uniqueSorted(civilizations),setting.civilization);
+  fillSelect('type',uniqueSorted(types),setting.type);
+  fillSelect('rarity',uniqueSorted(rarities),setting.rarity);
+  $('raceList').innerHTML=uniqueSorted(races).map(x=>`<option value="${esc(x)}"></option>`).join('');
+  renderEffectChips('effectChips',setting.effects);
+}
+function readSettingsTemp(){
+  setting.sort=$('sort').value;
+  setting.civilization=$('civilization').value;
+  setting.race=$('raceFilter').value.trim().toLowerCase();
+  setting.type=$('type').value;
+  setting.rarity=$('rarity').value;
+  setting.costMin=$('costMin').value;
+  setting.costMax=$('costMax').value;
+  setting.effects=readEffectChips('effectChips');
+  setting.ownedOnly=$('ownedOnly').checked;
+  setting.unownedOnly=$('unownedOnly').checked;
+}
+function putSettingsTemp(){
+  $('sort').value=setting.sort;
+  $('civilization').value=setting.civilization;
+  $('raceFilter').value=setting.race;
+  $('type').value=setting.type;
+  $('rarity').value=setting.rarity;
+  $('costMin').value=setting.costMin;
+  $('costMax').value=setting.costMax;
+  $('ownedOnly').checked=setting.ownedOnly;
+  $('unownedOnly').checked=setting.unownedOnly;
+  renderEffectChips('effectChips',setting.effects);
+}
+
+function renderCurrent(){
+  if(!$('invView').classList.contains('hidden'))renderCards();
+  if(!$('favView').classList.contains('hidden'))renderFavorites();
+  if(!$('deckView').classList.contains('hidden')){
+    if(state.activeDeck===null)renderDeckList();
+    else renderDeckEditor();
+  }
+}
+
+function switchTab(tab){
+  $('invView').classList.toggle('hidden',tab!=='inv');
+  $('favView').classList.toggle('hidden',tab!=='fav');
+  $('deckView').classList.toggle('hidden',tab!=='deck');
+  $('invTab').classList.toggle('active',tab==='inv');
+  $('favTab').classList.toggle('active',tab==='fav');
+  $('deckTab').classList.toggle('active',tab==='deck');
+  renderCurrent();
+}
+
+/* カードクリック */
+function openCardDetail(id){
+  const c=state.cards.find(x=>idOf(x)===id);
+  if(!c)return;
+  const abilityText=textOfCard(c);
+  $('detailBox').innerHTML=`
+    <div class="detailTop"><button class="detailClose" id="detailClose">×</button></div>
+    ${safeImg(c,'detailImage')}
+    <div class="detailName">${esc(cardName(c))}</div>
+    <div class="detailNumber">${esc(cardNumber(c))}</div>
+    <div class="detailMeta">
+      <div><b>文明</b><br>${esc(civilizations(c).join(' / ')||'—')}</div>
+      <div><b>カードタイプ</b><br>${esc(types(c).join(' / ')||'—')}</div>
+      <div><b>種族</b><br>${esc(races(c).join(' / ')||'—')}</div>
+      <div><b>レアリティ</b><br>${esc(rarities(c).join(' / ')||'—')}</div>
+      <div><b>コスト</b><br>${esc(firstValue(c,'cost')||'—')}</div>
+      <div><b>パワー</b><br>${esc(firstValue(c,'power')||'—')}</div>
+    </div>
+    ${abilityText?`<div class="detailAbility"><b>特殊能力・テキスト</b><br>${esc(abilityText)}</div>`:''}
+    <div class="detailButtons">
+      <button id="detailMinus">− 所持を減らす</button>
+      <button id="detailPlus">＋ 所持を増やす</button>
+    </div>`;
+  $('detailOverlay').classList.add('open');
+  $('detailClose').onclick=closeDetail;
+  $('detailOverlay').onclick=e=>{if(e.target===$('detailOverlay'))closeDetail()};
+  $('detailPlus').onclick=()=>{state.owned[id]=(state.owned[id]||0)+1;save();renderCurrent();openCardDetail(id)};
+  $('detailMinus').onclick=()=>{state.owned[id]=Math.max(0,(state.owned[id]||0)-1);save();renderCurrent();openCardDetail(id)};
+}
+function closeDetail(){$('detailOverlay').classList.remove('open')}
+
+$('cards').addEventListener('click',e=>{
+  const p=e.target.dataset.plus,m=e.target.dataset.minus,f=e.target.dataset.fav,detail=e.target.closest('[data-card-detail]');
+  if(p){state.owned[p]=(state.owned[p]||0)+1;save();renderCards();return}
+  if(m){state.owned[m]=Math.max(0,(state.owned[m]||0)-1);save();renderCards();return}
+  if(f){state.favorites[f]=!state.favorites[f];if(!state.favorites[f])delete state.favorites[f];save();renderCards();return}
+  if(detail)openCardDetail(detail.dataset.cardDetail);
+});
+$('favorites').addEventListener('click',e=>{
+  const p=e.target.dataset.plus,m=e.target.dataset.minus,f=e.target.dataset.fav,detail=e.target.closest('[data-card-detail]');
+  if(p){state.owned[p]=(state.owned[p]||0)+1;save();renderFavorites();return}
+  if(m){state.owned[m]=Math.max(0,(state.owned[m]||0)-1);save();renderFavorites();return}
+  if(f){state.favorites[f]=!state.favorites[f];if(!state.favorites[f])delete state.favorites[f];save();renderFavorites();return}
+  if(detail)openCardDetail(detail.dataset.cardDetail);
+});
+
+$('search').addEventListener('input',()=>{
+  if(!$('deckView').classList.contains('hidden') && state.activeDeck!==null)return;
+  renderCurrent();
+});
+
+/* 通常設定 */
+$('settings').onclick=()=>{
+  putSettingsTemp();
+  $('overlay').classList.add('open');
+};
+$('closeSettings').onclick=()=>$('overlay').classList.remove('open');
+$('overlay').addEventListener('click',e=>{if(e.target===$('overlay'))$('overlay').classList.remove('open')});
+$('applySettings').onclick=()=>{
+  readSettingsTemp();
+  $('overlay').classList.remove('open');
+  renderCurrent();
+};
+$('resetSettings').onclick=()=>{
+  Object.assign(setting,{sort:'default',civilization:'',race:'',type:'',rarity:'',costMin:'',costMax:'',effects:[],ownedOnly:false,unownedOnly:false});
+  putSettingsTemp();
+};
+
+$('invTab').onclick=()=>switchTab('inv');
+$('favTab').onclick=()=>switchTab('fav');
+$('deckTab').onclick=()=>{
+  if(state.activeDeck!==null)state.deckSearch=$('search').value;
+  switchTab('deck');
+};
+
+/* デッキ */
+function deckTotal(d,section='main'){
+  const arr=section==='main'?(d.cards||[]):section==='gr'?(d.gr||[]):(d.extra||[]);
+  return arr.reduce((s,x)=>s+(Number(x.need)||0),0);
+}
+function deckCard(id){return state.cards.find(c=>idOf(c)===String(id))}
+function sectionArray(d){
+  if(state.deckSection==='gr')return d.gr||(d.gr=[]);
+  if(state.deckSection==='extra')return d.extra||(d.extra=[]);
+  return d.cards||(d.cards=[]);
+}
+function ensureDeck(d){
+  if(!Array.isArray(d.cards))d.cards=[];
+  if(!Array.isArray(d.gr))d.gr=[];
+  if(!Array.isArray(d.extra))d.extra=[];
+  if(!d.format)d.format='オリジナル';
+}
+function totalAll(d){return deckTotal(d,'main')+deckTotal(d,'gr')+deckTotal(d,'extra')}
+
+function usageStats(){
+  const decks=new Map(),copies=new Map();
+  state.decks.forEach(d=>{
+    [...(d.cards||[]),...(d.gr||[]),...(d.extra||[])].forEach(x=>{
+      decks.set(x.id,(decks.get(x.id)||0)+1);
+      copies.set(x.id,(copies.get(x.id)||0)+(Number(x.need)||0));
+    });
+  });
+  return {decks,copies};
+}
+
+function deckRecommendedSort(list){
+  const u=usageStats();
+  return [...list].sort((a,b)=>{
+    const ad=u.decks.get(idOf(a))||0,bd=u.decks.get(idOf(b))||0;
+    const ac=u.copies.get(idOf(a))||0,bc=u.copies.get(idOf(b))||0;
+    return bd-ad||bc-ac||(state.owned[idOf(b)]||0)-(state.owned[idOf(a)]||0)||latestKey(b)-latestKey(a);
+  });
+}
+
+function deckSearchFilter(list){
+  const d=state.decks[state.activeDeck];
+  const q=normalizeSearch(state.deckSearch.trim());
+  return list.filter(c=>{
+    if(q&&!normalizeSearch(searchText(c)).includes(q))return false;
+    if(deckFilter.civilization&&!civilizations(c).includes(deckFilter.civilization))return false;
+    if(deckFilter.type&&!types(c).includes(deckFilter.type))return false;
+    if(deckFilter.rarity&&!rarities(c).includes(deckFilter.rarity))return false;
+    if(deckFilter.race&&!races(c).some(x=>normalizeSearch(x).includes(normalizeSearch(deckFilter.race))))return false;
+    const cost=costNum(c);
+    if(deckFilter.costMin!==''&&cost<Number(deckFilter.costMin))return false;
+    if(deckFilter.costMax!==''&&cost>Number(deckFilter.costMax))return false;
+    const power=powerNum(c);
+    if(deckFilter.powerMin!==''&&(power>=999999||power<Number(deckFilter.powerMin)))return false;
+    if(deckFilter.powerMax!==''&&(power>=999999||power>Number(deckFilter.powerMax)))return false;
+    if(!effectMatches(c,deckFilter.effects))return false;
+    if(deckFilter.ownedOnly&&(state.owned[idOf(c)]||0)<=0)return false;
+    if(deckFilter.favoriteOnly&&!isFav(c))return false;
+    if(deckFilter.inDeckOnly&&!sectionArray(d).some(x=>String(x.id)===idOf(c)))return false;
+    return true;
+  });
+}
+
+function pickerSort(list){
+  const sort=$('pickerSort')?.value||'recommended';
+  if(sort==='latest')return list.sort((a,b)=>latestKey(b)-latestKey(a));
+  if(sort==='name')return list.sort((a,b)=>cardName(a).localeCompare(cardName(b),'ja'));
+  if(sort==='cost')return list.sort((a,b)=>costNum(a)-costNum(b)||cardName(a).localeCompare(cardName(b),'ja'));
+  if(sort==='number')return list.sort((a,b)=>cardNumber(a).localeCompare(cardNumber(b),'ja'));
+  if(sort==='owned')return list.sort((a,b)=>(state.owned[idOf(b)]||0)-(state.owned[idOf(a)]||0));
+  if(sort==='civilization')return list.sort((a,b)=>civRank(a)-civRank(b)||civilizations(a).join().localeCompare(civilizations(b).join(),'ja')||cardName(a).localeCompare(cardName(b),'ja'));
+  if(sort==='race')return list.sort((a,b)=>races(a).join().localeCompare(races(b).join(),'ja')||cardName(a).localeCompare(cardName(b),'ja'));
+  return deckRecommendedSort(list);
+}
+
+function renderDeckList(){
+  state.activeDeck=null;
+  $('deckEditorView').classList.add('hidden');
+  $('deckListView').classList.remove('hidden');
+  $('deckListView').innerHTML=`
+    <div class="deck" style="margin-bottom:8px">
+      <button class="btn" id="newDeck">＋ デッキを作る</button>
+    </div>
+    <div class="decklist">
+      ${state.decks.length?state.decks.map((d,i)=>{
+        ensureDeck(d);
+        return `<div class="deck">
+          <div class="row"><b>${esc(d.name||'無題デッキ')}</b><span class="deckCount">${totalAll(d)}枚</span></div>
+          <div class="small">メイン ${deckTotal(d,'main')}　GR ${deckTotal(d,'gr')}/12　超次元 ${deckTotal(d,'extra')}/8</div>
+          <div class="deckActions">
+            <button class="btn" data-open-deck="${i}">デッキを開く</button>
+            <button class="btn danger" data-delete-deck="${i}">削除</button>
+          </div>
+        </div>`;
+      }).join(''):'<div class="empty">まだデッキがありません。</div>'}
+    </div>`;
+  $('newDeck').onclick=()=>{
+    const n=prompt('デッキ名','新しいデッキ');
+    if(n&&n.trim()){
+      state.decks.push({name:n.trim(),cards:[],gr:[],extra:[],format:'オリジナル'});
+      save();renderDeckList();
+    }
+  };
+}
+
+function renderDeckEditor(){
+  const d=state.decks[state.activeDeck];
+  if(!d){renderDeckList();return}
+  ensureDeck(d);
+  $('deckListView').classList.add('hidden');
+  $('deckEditorView').classList.remove('hidden');
+
+  const mainTotal=deckTotal(d,'main'),grTotal=deckTotal(d,'gr'),extraTotal=deckTotal(d,'extra');
+  const arr=sectionArray(d);
+  const q=state.deckSearch.trim().toLowerCase();
+
+  let results=deckSearchFilter(state.cards);
+  results=pickerSort(results);
+  const visible=results.slice(0,state.pickerLimit);
+
+  const sectionLabel=state.deckSection==='main'?'メイン':state.deckSection==='gr'?'GR':'超次元';
+  const max=state.deckSection==='main'?Infinity:state.deckSection==='gr'?12:8;
+  const maxLabel=Number.isFinite(max)?String(max):'∞';
+
+  $('deckEditorView').innerHTML=`
+    <div class="deckEditor">
+      <div class="deckHeader">
+        <div class="deckHeadRow">
+          <button id="backDeck">←</button>
+          <div class="deckTitle">${esc(d.name||'無題デッキ')}</div>
+          <button id="renameDeck">編集</button>
+          <button class="deckSave" id="saveDeck">保存</button>
+        </div>
+        <div class="sectionTabs">
+          <button class="sectionTab ${state.deckSection==='main'?'active':''}" data-section="main">メイン ${mainTotal}</button>
+          <button class="sectionTab ${state.deckSection==='gr'?'active':''}" data-section="gr">GR ${grTotal}/12</button>
+          <button class="sectionTab ${state.deckSection==='extra'?'active':''}" data-section="extra">超次元 ${extraTotal}/8</button>
+        </div>
+      </div>
+
+      <div class="deckMakerTop">
+        <div class="deckMakerStats">
+          <div class="deckMakerStat"><b>${mainTotal}</b><span>メインデッキ</span></div>
+          <div class="deckMakerStat"><b>${grTotal}/12</b><span>超GR</span></div>
+          <div class="deckMakerStat"><b>${extraTotal}/8</b><span>超次元</span></div>
+        </div>
+        <div class="deckMakerActions">
+          <button class="primary" id="analysisBtnTop">📊 分析</button>
+          <button id="drawBtnTop">🃏 初手ドロー</button>
+          <button id="deckFilterBtnTop">🔎 絞り込み</button>
+          <button id="deckSortBtnTop">↕ 並び順</button>
+        </div>
+      </div>
+
+      <div class="formatRow">
+        <button class="formatBtn ${d.format==='オリジナル'?'active':''}" data-format="オリジナル">オリジナル</button>
+        <button class="formatBtn ${d.format==='アドバンス'?'active':''}" data-format="アドバンス">アドバンス</button>
+      </div>
+
+      <div class="deckTools">
+        <button id="clearDeckSearch">検索クリア</button>
+        <button id="showAllDeckCards">全カード</button>
+        <button id="ownedDeckCards">所持カード</button>
+      </div>
+
+      <div class="deckContents">
+        <div class="swipeHint">${sectionLabel}：右スワイプで＋1 / 左スワイプで−1 / タップで詳細</div>
+        <div class="deckContentGrid">
+          ${arr.length?arr.map(x=>deckContentCard(x)).join(''):`<div class="deckEmpty">${sectionLabel}にカードがありません</div>`}
+        </div>
+      </div>
+
+      <div class="deckPicker">
+        <div class="pickerSticky">
+          <div class="pickerSearchRow">
+            <input id="deckSearch" value="${esc(state.deckSearch)}" placeholder="カード名・番号・種族・効果で検索">
+            <button id="clearPickerSearch">×</button>
+          </div>
+          <div class="pickerSortRow">
+            <select id="pickerSort">
+              <option value="recommended">おすすめ・使用頻度順</option>
+              <option value="latest">最新カード順</option>
+              <option value="owned">所持枚数順</option>
+              <option value="name">名前順</option>
+              <option value="cost">コスト順</option>
+              <option value="number">カード番号順</option>
+              <option value="civilization">文明順</option>
+              <option value="race">種族順</option>
+            </select>
+            <button class="pickerFilterBtn" id="pickerFilterOpen">詳細絞り込み</button>
+          </div>
+          <div class="quickFilters" id="quickFilters">
+            <button class="quickFilter ${state.pickerSort==='recommended'?'active':''}" data-quick-sort="recommended">使用頻度</button>
+            <button class="quickFilter ${state.pickerSort==='latest'?'active':''}" data-quick-sort="latest">最新</button>
+            <button class="quickFilter ${state.pickerSort==='civilization'?'active':''}" data-quick-sort="civilization">文明順</button>
+            <button class="quickFilter ${state.pickerSort==='race'?'active':''}" data-quick-sort="race">種族順</button>
+            <button class="quickFilter ${normalizeSearch(state.deckSearch)==='どらごん'?'active':''}" data-quick-query="ドラゴン">🐉 ドラゴン</button>
+            <button class="quickFilter ${deckFilter.civilization===''?'civActive':''}" data-quick-civ="">全文明</button>
+            <button class="quickFilter ${deckFilter.civilization==='光'?'civActive':''}" data-quick-civ="光">光</button>
+            <button class="quickFilter ${deckFilter.civilization==='水'?'civActive':''}" data-quick-civ="水">水</button>
+            <button class="quickFilter ${deckFilter.civilization==='闇'?'civActive':''}" data-quick-civ="闇">闇</button>
+            <button class="quickFilter ${deckFilter.civilization==='火'?'civActive':''}" data-quick-civ="火">火</button>
+            <button class="quickFilter ${deckFilter.civilization==='自然'?'civActive':''}" data-quick-civ="自然">自然</button>
+            <button class="quickFilter ${deckFilter.civilization==='ゼロ'?'civActive':''}" data-quick-civ="ゼロ">ゼロ</button>
+          </div>
+          <div class="quickFilters raceQuickFilters" id="raceQuickFilters"></div>
+          <div class="pickerStatus" id="pickerStatus">${results.length.toLocaleString()}件中 ${Math.min(state.pickerLimit,results.length).toLocaleString()}件表示　${sectionLabel} ${Number.isFinite(max)?`最大${max}枚`:`枚数制限なし`}</div>
+        </div>
+
+        <div class="pickerGrid" id="pickerGrid">
+          ${visible.length?visible.map(c=>pickerCard(c)).join(''):'<div class="deckEmpty">該当するカードがありません</div>'}
+        </div>
+        ${state.pickerLimit<results.length?`<button class="loadMore" id="loadMore">さらに読み込む</button>`:''}
+      </div>
+    </div>`;
+
+  $('backDeck').onclick=()=>{state.activeDeck=null;state.deckSearch='';state.pickerLimit=72;renderDeckList()};
+  $('renameDeck').onclick=()=>{
+    const n=prompt('デッキ名',d.name);
+    if(n&&n.trim()){d.name=n.trim();save();renderDeckEditor()}
+  };
+  $('saveDeck').onclick=()=>{save();alert('保存しました')};
+  $('analysisBtnTop').onclick=openAnalysis;
+  $('drawBtnTop').onclick=()=>openDraw(d);
+  $('deckFilterBtnTop').onclick=openDeckFilter;
+  $('deckSortBtnTop').onclick=()=>{
+    const order=['recommended','latest','owned','name','cost','number','civilization','race'];
+    const now=state.pickerSort||'recommended';
+    state.pickerSort=order[(order.indexOf(now)+1)%order.length];
+    renderPickerOnly();
+  };
+  $('clearDeckSearch').onclick=()=>{state.deckSearch='';state.pickerLimit=72;renderDeckEditor()};
+  $('showAllDeckCards').onclick=()=>{deckFilter.ownedOnly=false;state.deckSearch='';state.pickerLimit=72;renderPickerOnly()};
+  $('ownedDeckCards').onclick=()=>{deckFilter.ownedOnly=true;state.pickerLimit=72;renderPickerOnly()};
+  $('clearPickerSearch').onclick=()=>{state.deckSearch='';state.pickerLimit=72;renderDeckEditor()};
+
+  let deckSearchComposing=false;
+  $('deckSearch').addEventListener('compositionstart',()=>deckSearchComposing=true);
+  $('deckSearch').addEventListener('compositionend',e=>{
+    deckSearchComposing=false;
+    state.deckSearch=e.target.value;
+    state.pickerLimit=72;
+    renderPickerOnly();
+  });
+  $('deckSearch').addEventListener('input',e=>{
+    state.deckSearch=e.target.value;
+    if(deckSearchComposing)return;
+    state.pickerLimit=72;
+    renderPickerOnly();
+  });
+
+  $('pickerSort').value=state.pickerSort||'recommended';
+  $('pickerSort').onchange=()=>{state.pickerSort=$('pickerSort').value;state.pickerLimit=72;renderPickerOnly()};
+  $('quickFilters').querySelectorAll('[data-quick-sort]').forEach(b=>b.onclick=()=>{
+    state.pickerSort=b.dataset.quickSort;
+    state.deckSearch='';
+    deckFilter.civilization='';
+    state.pickerLimit=72;
+    renderPickerOnly();
+  });
+  $('quickFilters').querySelectorAll('[data-quick-query]').forEach(b=>b.onclick=()=>{
+    state.deckSearch=b.dataset.quickQuery;
+    state.pickerLimit=72;
+    renderPickerOnly();
+  });
+  $('quickFilters').querySelectorAll('[data-quick-civ]').forEach(b=>b.onclick=()=>{
+    deckFilter.civilization=deckFilter.civilization===b.dataset.quickCiv?'':b.dataset.quickCiv;
+    state.deckSearch='';
+    state.pickerLimit=72;
+    renderPickerOnly();
+  });
+  renderRaceQuickFilters();
+  $('loadMore')?.addEventListener('click',()=>{state.pickerLimit+=72;renderPickerOnly()});
+  $('pickerFilterOpen').onclick=openDeckFilter;
+
+  $('deckEditorView').querySelectorAll('[data-section]').forEach(b=>b.onclick=()=>{
+    state.deckSection=b.dataset.section;renderDeckEditor();
+  });
+  $('deckEditorView').querySelectorAll('[data-format]').forEach(b=>b.onclick=()=>{
+    d.format=b.dataset.format;state.format=d.format;save();renderDeckEditor();
+  });
+  attachDeckContentTouch();
+  $('deckEditorView').querySelectorAll('[data-picker-add]').forEach(b=>b.onclick=e=>{e.stopPropagation();addToDeck(b.dataset.pickerAdd)});
+  attachPickerTouch();
+}
+
+function renderRaceQuickFilters(){
+  const box=$('raceQuickFilters');
+  if(!box)return;
+  const counts=new Map();
+  state.cards.forEach(c=>races(c).forEach(r=>counts.set(r,(counts.get(r)||0)+1)));
+  const common=[...counts.entries()].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0],'ja')).slice(0,10).map(x=>x[0]);
+  box.innerHTML=common.map(r=>`<button class="quickFilter ${deckFilter.race===r?'active':''}" data-quick-race="${esc(r)}">${esc(r)}</button>`).join('');
+  box.querySelectorAll('[data-quick-race]').forEach(b=>b.onclick=()=>{
+    deckFilter.race=deckFilter.race===b.dataset.quickRace?'':b.dataset.quickRace;
+    state.deckSearch='';
+    state.pickerLimit=72;
+    renderPickerOnly();
+  });
+}
+
+function renderPickerOnly(){
+  const d=state.decks[state.activeDeck];
+  if(!d)return;
+  const grid=$('pickerGrid');
+  if(!grid)return;
+  let results=pickerSort(deckSearchFilter(state.cards));
+  const visible=results.slice(0,state.pickerLimit);
+  grid.innerHTML=visible.length?visible.map(c=>pickerCard(c)).join(''):'<div class="deckEmpty">該当するカードがありません</div>';
+  const old=$('loadMore');
+  if(old)old.remove();
+  if(state.pickerLimit<results.length){
+    const b=document.createElement('button');
+    b.className='loadMore';b.id='loadMore';b.textContent='さらに読み込む';
+    b.onclick=()=>{state.pickerLimit+=72;renderPickerOnly()};
+    $('pickerGrid').after(b);
+  }
+  $('pickerSort').value=state.pickerSort||'recommended';
+  renderRaceQuickFilters();
+  $('pickerStatus').textContent=`${results.length.toLocaleString()}件中 ${Math.min(state.pickerLimit,results.length).toLocaleString()}件表示`;
+  grid.querySelectorAll('[data-picker-add]').forEach(b=>b.onclick=e=>{e.stopPropagation();addToDeck(b.dataset.pickerAdd)});
+  attachPickerTouch();
+}
+
+function attachPickerTouch(){
+  document.querySelectorAll('#pickerGrid .pickerCard').forEach(el=>{
+    let sx=0,sy=0,dx=0,dy=0,moved=false;
+    const threshold=8;
+    el.addEventListener('touchstart',e=>{
+      const q=e.touches[0];
+      sx=q.clientX;sy=q.clientY;dx=0;dy=0;moved=false;
+      el.classList.remove('swiping');
+    },{passive:true});
+    el.addEventListener('touchmove',e=>{
+      const q=e.touches[0];
+      dx=q.clientX-sx;dy=q.clientY-sy;
+      if(Math.abs(dx)>threshold||Math.abs(dy)>threshold){
+        moved=true;
+        el.classList.add('swiping');
+      }
+      // 横方向の移動はpickerGridのネイティブ横スクロールに任せる。
+      // 縦方向もページスクロールを邪魔しない。
+    },{passive:true});
+    el.addEventListener('touchend',()=>{
+      el.classList.remove('swiping');
+      const id=el.querySelector('[data-picker-add]')?.dataset.pickerAdd;
+      if(!id)return;
+      // 上スワイプだけカード追加。左右スワイプは横スクロールに任せる。
+      if(moved && Math.abs(dy)>Math.abs(dx) && dy < -45){addToDeck(id);return;}
+      // 指を動かした場合はカード詳細を開かない。
+      if(!moved)openCardDetail(id);
+    },{passive:true});
+    el.addEventListener('touchcancel',()=>{
+      moved=true;
+      el.classList.remove('swiping');
+    },{passive:true});
+  });
+}
+
+function pickerCard(c){
+  return `<div class="pickerCard">
+    ${safeImg(c,'')}
+    <button class="pickerPlus" data-picker-add="${esc(idOf(c))}">＋</button>
+  </div>`;
+}
+
+function deckContentCard(x){
+  const c=deckCard(x.id);
+  if(!c)return '';
+  return `<div class="deckCardItem" data-deck-card="${esc(x.id)}" data-need="${Number(x.need)||0}">
+    ${safeImg(c,'')}
+    <span class="deckCardCount">${Number(x.need)||0}</span>
+  </div>`;
+}
+
+function addToDeck(id){
+  const d=state.decks[state.activeDeck];
+  if(!d)return;
+  ensureDeck(d);
+  const arr=sectionArray(d);
+  const limit=state.deckSection==='main'?Infinity:state.deckSection==='gr'?12:8;
+  const total=deckTotal(d,state.deckSection);
+  if(state.deckSection!=='main'&&total>=limit){alert(`${state.deckSection==='gr'?'GR':'超次元'}は${limit}枚までです。`);return}
+  const x=arr.find(x=>String(x.id)===String(id));
+  if(x){
+    if(state.deckSection==='main' && (Number(x.need)||0)>=4){alert('同じカードは通常4枚までです。');return}
+    x.need=(Number(x.need)||0)+1;
+  }else arr.push({id:String(id),need:1});
+  const scrollLeft=$('pickerGrid')?.scrollLeft||0;
+  save();renderDeckEditor();
+  requestAnimationFrame(()=>{const g=$('pickerGrid');if(g)g.scrollLeft=scrollLeft;});
+}
+
+function changeDeckQty(id,delta){
+  const d=state.decks[state.activeDeck];
+  if(!d)return;
+  const arr=sectionArray(d);
+  const x=arr.find(x=>String(x.id)===String(id));
+  if(!x)return;
+  x.need=(Number(x.need)||0)+delta;
+  if(x.need<=0){
+    const i=arr.indexOf(x);arr.splice(i,1);
+  }
+  save();renderDeckEditor();
+}
+
+/* デッキカードのスワイプ */
+function attachDeckContentTouch(){
+  $('deckEditorView').querySelectorAll('[data-deck-card]').forEach(el=>{
+    let sx=0,sy=0,dx=0,dy=0,moved=false;
+    el.addEventListener('touchstart',e=>{const t=e.touches[0];sx=t.clientX;sy=t.clientY;dx=0;dy=0;moved=false;el.style.transition='none';},{passive:true});
+    el.addEventListener('touchmove',e=>{const t=e.touches[0];dx=t.clientX-sx;dy=t.clientY-sy;if(Math.abs(dy)>Math.abs(dx)&&Math.abs(dy)>8){moved=true;el.style.transform=`translateY(${Math.max(-35,Math.min(35,dy*0.22))}px)`;}},{passive:true});
+    el.addEventListener('touchend',()=>{
+      el.style.transition='transform .15s ease';el.style.transform='';
+      const id=el.dataset.deckCard;
+      if(moved&&Math.abs(dy)>=45)changeDeckQty(id,dy<0?1:-1);
+      else if(!moved)openCardDetail(id);
+    },{passive:true});
+  });
+}
+
+/* デッキ検索フィルター */
+function openDeckFilter(){
+  $('deckCivChips').innerHTML=['','光','水','闇','火','自然','ゼロ'].map(x=>`<button class="filterChip ${deckFilter.civilization===x?'active':''}" data-deck-civ="${esc(x)}">${x||'すべて'}</button>`).join('');
+  $('deckCivChips').querySelectorAll('[data-deck-civ]').forEach(b=>b.onclick=()=>{
+    deckFilter.civilization=b.dataset.deckCiv;
+    $('deckCivChips').querySelectorAll('[data-deck-civ]').forEach(x=>x.classList.toggle('active',x===b));
+  });
+
+  fillSelect('deckType',uniqueSorted(types),deckFilter.type);
+  fillSelect('deckRarity',uniqueSorted(rarities),deckFilter.rarity);
+  $('deckRace').value=deckFilter.race;
+  $('deckCostMin').value=deckFilter.costMin;
+  $('deckCostMax').value=deckFilter.costMax;
+  $('deckPowerMin').value=deckFilter.powerMin;
+  $('deckPowerMax').value=deckFilter.powerMax;
+  $('deckOwnedOnly').checked=deckFilter.ownedOnly;
+  $('deckFavOnly').checked=deckFilter.favoriteOnly;
+  $('deckInOnly').checked=deckFilter.inDeckOnly;
+  renderEffectChips('deckEffectChips',deckFilter.effects);
+  $('deckFilterOverlay').classList.add('open');
+  const active=[];
+  if(deckFilter.civilization)active.push('文明:'+deckFilter.civilization);
+  if(deckFilter.type)active.push('タイプ:'+deckFilter.type);
+  if(deckFilter.rarity)active.push('レアリティ:'+deckFilter.rarity);
+  if(deckFilter.race)active.push('種族:'+deckFilter.race);
+  if(deckFilter.costMin!==''||deckFilter.costMax!=='')active.push('コスト:'+deckFilter.costMin+'～'+deckFilter.costMax);
+  if(deckFilter.powerMin!==''||deckFilter.powerMax!=='')active.push('パワー:'+deckFilter.powerMin+'～'+deckFilter.powerMax);
+  if(deckFilter.effects.length)active.push('効果:'+deckFilter.effects.map(k=>(EFFECTS.find(x=>x[0]===k)||['',''])[1]).join(' / '));
+  $('deckEffectSummary').textContent=active.length?'現在の条件：'+active.join(' / '):'現在の条件：なし';
+}
+$('closeDeckFilter').onclick=()=>$('deckFilterOverlay').classList.remove('open');
+$('deckFilterOverlay').addEventListener('click',e=>{if(e.target===$('deckFilterOverlay'))$('deckFilterOverlay').classList.remove('open')});
+$('applyDeckFilter').onclick=()=>{
+  deckFilter.type=$('deckType').value;
+  deckFilter.rarity=$('deckRarity').value;
+  deckFilter.race=$('deckRace').value.trim();
+  deckFilter.costMin=$('deckCostMin').value;
+  deckFilter.costMax=$('deckCostMax').value;
+  deckFilter.powerMin=$('deckPowerMin').value;
+  deckFilter.powerMax=$('deckPowerMax').value;
+  deckFilter.effects=readEffectChips('deckEffectChips');
+  deckFilter.ownedOnly=$('deckOwnedOnly').checked;
+  deckFilter.favoriteOnly=$('deckFavOnly').checked;
+  deckFilter.inDeckOnly=$('deckInOnly').checked;
+  $('deckFilterOverlay').classList.remove('open');
+  state.pickerLimit=72;
+  renderPickerOnly();
+};
+$('resetDeckFilter').onclick=()=>{
+  Object.assign(deckFilter,{civilization:'',type:'',rarity:'',race:'',costMin:'',costMax:'',powerMin:'',powerMax:'',effects:[],ownedOnly:false,favoriteOnly:false,inDeckOnly:false});
+  openDeckFilter();
+};
+
+/* 初手ドロー */
+function openDraw(d){
+  ensureDeck(d);
+  const pool=[];
+  (d.cards||[]).forEach(x=>{
+    const c=deckCard(x.id);
+    const n=Math.max(0,Number(x.need)||0);
+    for(let i=0;i<n;i++)if(c)pool.push(c);
+  });
+  const draw=()=>{
+    const a=pool.slice();
+    for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
+    const hand=a.slice(0,5);
+    $('drawContent').innerHTML=hand.length?`<div class="drawHand">${hand.map(c=>`<div class="drawCard">${safeImg(c,'')}<small>${esc(cardName(c))}</small></div>`).join('')}</div><div class="small" style="margin-top:10px;text-align:center">メインデッキ ${deckTotal(d,'main')}枚から5枚</div>`:'<div class="empty">メインデッキにカードがありません。</div>';
+  };
+  draw();
+  $('drawOverlay').classList.add('open');
+  $('redrawHand').onclick=draw;
+}
+$('closeDraw').onclick=()=>$('drawOverlay').classList.remove('open');
+$('drawOverlay').addEventListener('click',e=>{if(e.target===$('drawOverlay'))$('drawOverlay').classList.remove('open')});
+
+/* 分析 */
+function openAnalysis(){
+  const d=state.decks[state.activeDeck];
+  if(!d)return;
+  ensureDeck(d);
+  const main=deckTotal(d,'main'),gr=deckTotal(d,'gr'),extra=deckTotal(d,'extra');
+  const civCounts={};
+  const costCounts={};
+  d.cards.forEach(x=>{
+    const c=deckCard(x.id);if(!c)return;
+    civilizations(c).forEach(cv=>civCounts[cv]=(civCounts[cv]||0)+(Number(x.need)||0));
+    const cost=costNum(c);if(cost<999)costCounts[cost]=(costCounts[cost]||0)+(Number(x.need)||0);
+  });
+  const maxC=Math.max(1,...Object.values(civCounts));
+  $('analysisContent').innerHTML=`
+    <div class="analysisGrid">
+      <div class="analysisBox"><b>${main}</b><span>メイン</span></div>
+      <div class="analysisBox"><b>${gr}/12</b><span>GR</span></div>
+      <div class="analysisBox"><b>${extra}/8</b><span>超次元</span></div>
+      <div class="analysisBox"><b>${(d.cards||[]).length}</b><span>メイン種類数</span></div>
+    </div>
+    <div class="deckFilterSection"><h3>文明比率</h3>
+      ${Object.entries(civCounts).map(([k,v])=>`<div style="margin:8px 0;font-size:12px"><div>${esc(k)}　${v}枚</div><div class="bar"><i style="width:${v/maxC*100}%"></i></div></div>`).join('')||'<div class="small">データなし</div>'}
+    </div>
+    <div class="deckFilterSection"><h3>コスト分布</h3>
+      ${Object.keys(costCounts).sort((a,b)=>Number(a)-Number(b)).map(k=>`<div style="font-size:12px;margin:4px 0">コスト${k}：${costCounts[k]}枚</div>`).join('')||'<div class="small">データなし</div>'}
+    </div>`;
+  $('analysisOverlay').classList.add('open');
+}
+$('closeAnalysis').onclick=()=>$('analysisOverlay').classList.remove('open');
+$('analysisOverlay').addEventListener('click',e=>{if(e.target===$('analysisOverlay'))$('analysisOverlay').classList.remove('open')});
+
+/* デッキ一覧クリック */
+$('deckListView').addEventListener('click',e=>{
+  const o=e.target.dataset.openDeck,d=e.target.dataset.deleteDeck;
+  if(o!==undefined){
+    state.activeDeck=Number(o);
+    state.deckSearch=$('search').value;
+    state.pickerLimit=72;
+    state.deckSection='main';
+    state.pickerSort='recommended';
+    renderDeckEditor();
+  }
+  if(d!==undefined){
+    if(confirm('このデッキを削除しますか？')){
+      state.decks.splice(Number(d),1);save();renderDeckList();
+    }
+  }
+});
+
+/* 読み込み：公式カードJSONを確実に読み込む */
+async function load(){
+  const status=$('status');
+  try{
+    status.textContent='カードデータを読み込み中…';
+    const controller=new AbortController();
+    const timer=setTimeout(()=>controller.abort(),120000);
+    const r=await fetch('data/cards.json?'+Date.now(),{cache:'no-store',signal:controller.signal});
+    clearTimeout(timer);
+    if(!r.ok)throw new Error('HTTP '+r.status);
+    const data=await r.json();
+    state.cards=Array.isArray(data)?data:(Array.isArray(data.cards)?data.cards:[]);
+    if(!state.cards.length)throw new Error('カードデータが空です');
+    fillSettings();
+    status.textContent=`カード ${state.cards.length.toLocaleString()} 枚を読み込みました`;
+    renderCards();renderFavorites();renderDeckList();
+  }catch(e){
+    console.error(e);
+    const msg=e&&e.name==='AbortError'
+      ?'カードデータの読み込みが120秒でタイムアウトしました。'
+      :'カードデータを読み込めませんでした：'+(e&&e.message?e.message:'不明なエラー');
+    status.textContent=msg;
+  }
+}
+load();
+</script>
+</body>
+</html>

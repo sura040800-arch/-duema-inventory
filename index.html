@@ -117,7 +117,7 @@ main{max-width:760px;margin:auto;padding:10px}
 .pickerSearchRow button{border:0;border-radius:9px;background:#e5e7eb;padding:0 12px}
 .pickerSortRow{display:flex;gap:5px;margin-top:6px}
 .pickerSortRow select{flex:1;padding:8px;border:1px solid #d1d5db;border-radius:8px;font-size:11px}
-.quickFilters{display:flex;gap:5px;overflow-x:auto;padding-top:6px;-webkit-overflow-scrolling:touch;scrollbar-width:none}.quickFilters::-webkit-scrollbar{display:none}.quickFilter{flex:0 0 auto;border:1px solid #d1d5db;background:#fff;border-radius:999px;padding:6px 9px;font-size:10px;white-space:nowrap}.quickFilter.active{background:#111827;color:#fff;border-color:#111827}
+.quickFilters{display:flex;flex-wrap:wrap;gap:5px;padding-top:6px;align-items:center}.quickFilter{flex:0 0 auto;border:1px solid #d1d5db;background:#fff;border-radius:999px;padding:6px 9px;font-size:10px;white-space:nowrap}.quickFilter.active{background:#111827;color:#fff;border-color:#111827}.quickFilter.civActive{background:#111827;color:#fff;border-color:#111827}
 .pickerFilterBtn{border:0;background:#111827;color:#fff;border-radius:8px;padding:8px 10px;font-size:11px}
 .pickerStatus{font-size:10px;color:#6b7280;margin-top:5px}
 .pickerGrid{display:flex;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;gap:8px;padding:8px 9px 70px;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity}
@@ -988,16 +988,18 @@ function renderDeckEditor(){
             <button class="pickerFilterBtn" id="pickerFilterOpen">詳細絞り込み</button>
           </div>
           <div class="quickFilters" id="quickFilters">
-            <button class="quickFilter" data-quick-sort="recommended">使用頻度</button>
-            <button class="quickFilter" data-quick-sort="latest">最新</button>
-            <button class="quickFilter" data-quick-sort="civilization">文明順</button>
-            <button class="quickFilter" data-quick-sort="race">種族順</button>
-            <button class="quickFilter" data-quick-query="ドラゴン">🐉 ドラゴン</button>
-            <button class="quickFilter" data-quick-civ="光">光</button>
-            <button class="quickFilter" data-quick-civ="水">水</button>
-            <button class="quickFilter" data-quick-civ="闇">闇</button>
-            <button class="quickFilter" data-quick-civ="火">火</button>
-            <button class="quickFilter" data-quick-civ="自然">自然</button>
+            <button class="quickFilter ${state.pickerSort==='recommended'?'active':''}" data-quick-sort="recommended">使用頻度</button>
+            <button class="quickFilter ${state.pickerSort==='latest'?'active':''}" data-quick-sort="latest">最新</button>
+            <button class="quickFilter ${state.pickerSort==='civilization'?'active':''}" data-quick-sort="civilization">文明順</button>
+            <button class="quickFilter ${state.pickerSort==='race'?'active':''}" data-quick-sort="race">種族順</button>
+            <button class="quickFilter ${normalizeSearch(state.deckSearch)==='どらごん'?'active':''}" data-quick-query="ドラゴン">🐉 ドラゴン</button>
+            <button class="quickFilter ${deckFilter.civilization===''?'civActive':''}" data-quick-civ="">全文明</button>
+            <button class="quickFilter ${deckFilter.civilization==='光'?'civActive':''}" data-quick-civ="光">光</button>
+            <button class="quickFilter ${deckFilter.civilization==='水'?'civActive':''}" data-quick-civ="水">水</button>
+            <button class="quickFilter ${deckFilter.civilization==='闇'?'civActive':''}" data-quick-civ="闇">闇</button>
+            <button class="quickFilter ${deckFilter.civilization==='火'?'civActive':''}" data-quick-civ="火">火</button>
+            <button class="quickFilter ${deckFilter.civilization==='自然'?'civActive':''}" data-quick-civ="自然">自然</button>
+            <button class="quickFilter ${deckFilter.civilization==='ゼロ'?'civActive':''}" data-quick-civ="ゼロ">ゼロ</button>
           </div>
           <div class="pickerStatus" id="pickerStatus">${results.length.toLocaleString()}件中 ${Math.min(state.pickerLimit,results.length).toLocaleString()}件表示　${sectionLabel} ${Number.isFinite(max)?`最大${max}枚`:`枚数制限なし`}</div>
         </div>

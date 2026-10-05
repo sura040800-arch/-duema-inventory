@@ -117,6 +117,7 @@ main{max-width:760px;margin:auto;padding:10px}
 .pickerSearchRow button{border:0;border-radius:9px;background:#e5e7eb;padding:0 12px}
 .pickerSortRow{display:flex;gap:5px;margin-top:6px}
 .pickerSortRow select{flex:1;padding:8px;border:1px solid #d1d5db;border-radius:8px;font-size:11px}
+.quickFilters{display:flex;gap:5px;overflow-x:auto;padding-top:6px;-webkit-overflow-scrolling:touch;scrollbar-width:none}.quickFilters::-webkit-scrollbar{display:none}.quickFilter{flex:0 0 auto;border:1px solid #d1d5db;background:#fff;border-radius:999px;padding:6px 9px;font-size:10px;white-space:nowrap}.quickFilter.active{background:#111827;color:#fff;border-color:#111827}
 .pickerFilterBtn{border:0;background:#111827;color:#fff;border-radius:8px;padding:8px 10px;font-size:11px}
 .pickerStatus{font-size:10px;color:#6b7280;margin-top:5px}
 .pickerGrid{display:flex;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;gap:8px;padding:8px 9px 70px;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity}
@@ -866,6 +867,8 @@ function pickerSort(list){
   if(sort==='cost')return list.sort((a,b)=>costNum(a)-costNum(b)||cardName(a).localeCompare(cardName(b),'ja'));
   if(sort==='number')return list.sort((a,b)=>cardNumber(a).localeCompare(cardNumber(b),'ja'));
   if(sort==='owned')return list.sort((a,b)=>(state.owned[idOf(b)]||0)-(state.owned[idOf(a)]||0));
+  if(sort==='civilization')return list.sort((a,b)=>civRank(a)-civRank(b)||civilizations(a).join().localeCompare(civilizations(b).join(),'ja')||cardName(a).localeCompare(cardName(b),'ja'));
+  if(sort==='race')return list.sort((a,b)=>races(a).join().localeCompare(races(b).join(),'ja')||cardName(a).localeCompare(cardName(b),'ja'));
   return deckRecommendedSort(list);
 }
 
@@ -979,8 +982,22 @@ function renderDeckEditor(){
               <option value="name">名前順</option>
               <option value="cost">コスト順</option>
               <option value="number">カード番号順</option>
+              <option value="civilization">文明順</option>
+              <option value="race">種族順</option>
             </select>
             <button class="pickerFilterBtn" id="pickerFilterOpen">詳細絞り込み</button>
+          </div>
+          <div class="quickFilters" id="quickFilters">
+            <button class="quickFilter" data-quick-sort="recommended">使用頻度</button>
+            <button class="quickFilter" data-quick-sort="latest">最新</button>
+            <button class="quickFilter" data-quick-sort="civilization">文明順</button>
+            <button class="quickFilter" data-quick-sort="race">種族順</button>
+            <button class="quickFilter" data-quick-query="ドラゴン">🐉 ドラゴン</button>
+            <button class="quickFilter" data-quick-civ="光">光</button>
+            <button class="quickFilter" data-quick-civ="水">水</button>
+            <button class="quickFilter" data-quick-civ="闇">闇</button>
+            <button class="quickFilter" data-quick-civ="火">火</button>
+            <button class="quickFilter" data-quick-civ="自然">自然</button>
           </div>
           <div class="pickerStatus" id="pickerStatus">${results.length.toLocaleString()}件中 ${Math.min(state.pickerLimit,results.length).toLocaleString()}件表示　${sectionLabel} ${Number.isFinite(max)?`最大${max}枚`:`枚数制限なし`}</div>
         </div>
@@ -1001,7 +1018,7 @@ function renderDeckEditor(){
   $('analysisBtnTop').onclick=openAnalysis;
   $('deckFilterBtnTop').onclick=openDeckFilter;
   $('deckSortBtnTop').onclick=()=>{
-    const order=['recommended','latest','owned','name','cost','number'];
+    const order=['recommended','latest','owned','name','cost','number','civilization','race'];
     const now=state.pickerSort||'recommended';
     state.pickerSort=order[(order.indexOf(now)+1)%order.length];
     renderPickerOnly();
@@ -1028,6 +1045,24 @@ function renderDeckEditor(){
 
   $('pickerSort').value=state.pickerSort||'recommended';
   $('pickerSort').onchange=()=>{state.pickerSort=$('pickerSort').value;state.pickerLimit=72;renderPickerOnly()};
+  $('quickFilters').querySelectorAll('[data-quick-sort]').forEach(b=>b.onclick=()=>{
+    state.pickerSort=b.dataset.quickSort;
+    state.deckSearch='';
+    deckFilter.civilization='';
+    state.pickerLimit=72;
+    renderPickerOnly();
+  });
+  $('quickFilters').querySelectorAll('[data-quick-query]').forEach(b=>b.onclick=()=>{
+    state.deckSearch=b.dataset.quickQuery;
+    state.pickerLimit=72;
+    renderPickerOnly();
+  });
+  $('quickFilters').querySelectorAll('[data-quick-civ]').forEach(b=>b.onclick=()=>{
+    deckFilter.civilization=deckFilter.civilization===b.dataset.quickCiv?'':b.dataset.quickCiv;
+    state.deckSearch='';
+    state.pickerLimit=72;
+    renderPickerOnly();
+  });
   $('loadMore')?.addEventListener('click',()=>{state.pickerLimit+=72;renderPickerOnly()});
   $('pickerFilterOpen').onclick=openDeckFilter;
 
@@ -1087,8 +1122,9 @@ function attachPickerTouch(){
       el.classList.remove('swiping');
       const id=el.querySelector('[data-picker-add]')?.dataset.pickerAdd;
       if(!id)return;
-      // 指を動かした場合は「カード詳細を開く」処理をしない。
-      // 横スワイプはpickerGrid自身がスクロールする。
+      // 上スワイプだけカード追加。左右スワイプは横スクロールに任せる。
+      if(moved && Math.abs(dy)>Math.abs(dx) && dy < -45){addToDeck(id);return;}
+      // 指を動かした場合はカード詳細を開かない。
       if(!moved)openCardDetail(id);
     },{passive:true});
     el.addEventListener('touchcancel',()=>{

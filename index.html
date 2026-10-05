@@ -296,10 +296,23 @@ main{max-width:760px;margin:auto;padding:10px}
     </div>
 
     <div class="deckFilterSection">
+      <h3>種族</h3>
+      <input id="deckRace" list="raceList" placeholder="例：ドラゴン、ジョーカーズ">
+    </div>
+
+    <div class="deckFilterSection">
       <h3>コスト</h3>
       <div class="rangeRow">
         <input id="deckCostMin" type="number" min="0" placeholder="下限">
         <input id="deckCostMax" type="number" min="0" placeholder="上限">
+      </div>
+    </div>
+
+    <div class="deckFilterSection">
+      <h3>パワー</h3>
+      <div class="rangeRow">
+        <input id="deckPowerMin" type="number" min="0" placeholder="下限">
+        <input id="deckPowerMax" type="number" min="0" placeholder="上限">
       </div>
     </div>
 
@@ -351,6 +364,9 @@ const setting={
   rarity:'',
   costMin:'',
   costMax:'',
+  powerMin:'',
+  powerMax:'',
+  race:'',
   effects:[],
   ownedOnly:false,
   unownedOnly:false
@@ -849,9 +865,13 @@ function deckSearchFilter(list){
     if(deckFilter.civilization&&!civilizations(c).includes(deckFilter.civilization))return false;
     if(deckFilter.type&&!types(c).includes(deckFilter.type))return false;
     if(deckFilter.rarity&&!rarities(c).includes(deckFilter.rarity))return false;
+    if(deckFilter.race&&!races(c).some(x=>normalizeSearch(x).includes(normalizeSearch(deckFilter.race))))return false;
     const cost=costNum(c);
     if(deckFilter.costMin!==''&&cost<Number(deckFilter.costMin))return false;
     if(deckFilter.costMax!==''&&cost>Number(deckFilter.costMax))return false;
+    const power=powerNum(c);
+    if(deckFilter.powerMin!==''&&(power>=999999||power<Number(deckFilter.powerMin)))return false;
+    if(deckFilter.powerMax!==''&&(power>=999999||power>Number(deckFilter.powerMax)))return false;
     if(!effectMatches(c,deckFilter.effects))return false;
     if(deckFilter.ownedOnly&&(state.owned[idOf(c)]||0)<=0)return false;
     if(deckFilter.favoriteOnly&&!isFav(c))return false;
@@ -1208,8 +1228,11 @@ function openDeckFilter(){
 
   fillSelect('deckType',uniqueSorted(types),deckFilter.type);
   fillSelect('deckRarity',uniqueSorted(rarities),deckFilter.rarity);
+  $('deckRace').value=deckFilter.race;
   $('deckCostMin').value=deckFilter.costMin;
   $('deckCostMax').value=deckFilter.costMax;
+  $('deckPowerMin').value=deckFilter.powerMin;
+  $('deckPowerMax').value=deckFilter.powerMax;
   $('deckOwnedOnly').checked=deckFilter.ownedOnly;
   $('deckFavOnly').checked=deckFilter.favoriteOnly;
   $('deckInOnly').checked=deckFilter.inDeckOnly;
@@ -1219,7 +1242,9 @@ function openDeckFilter(){
   if(deckFilter.civilization)active.push('文明:'+deckFilter.civilization);
   if(deckFilter.type)active.push('タイプ:'+deckFilter.type);
   if(deckFilter.rarity)active.push('レアリティ:'+deckFilter.rarity);
+  if(deckFilter.race)active.push('種族:'+deckFilter.race);
   if(deckFilter.costMin!==''||deckFilter.costMax!=='')active.push('コスト:'+deckFilter.costMin+'～'+deckFilter.costMax);
+  if(deckFilter.powerMin!==''||deckFilter.powerMax!=='')active.push('パワー:'+deckFilter.powerMin+'～'+deckFilter.powerMax);
   if(deckFilter.effects.length)active.push('効果:'+deckFilter.effects.map(k=>(EFFECTS.find(x=>x[0]===k)||['',''])[1]).join(' / '));
   $('deckEffectSummary').textContent=active.length?'現在の条件：'+active.join(' / '):'現在の条件：なし';
 }
@@ -1228,8 +1253,11 @@ $('deckFilterOverlay').addEventListener('click',e=>{if(e.target===$('deckFilterO
 $('applyDeckFilter').onclick=()=>{
   deckFilter.type=$('deckType').value;
   deckFilter.rarity=$('deckRarity').value;
+  deckFilter.race=$('deckRace').value.trim();
   deckFilter.costMin=$('deckCostMin').value;
   deckFilter.costMax=$('deckCostMax').value;
+  deckFilter.powerMin=$('deckPowerMin').value;
+  deckFilter.powerMax=$('deckPowerMax').value;
   deckFilter.effects=readEffectChips('deckEffectChips');
   deckFilter.ownedOnly=$('deckOwnedOnly').checked;
   deckFilter.favoriteOnly=$('deckFavOnly').checked;
@@ -1239,7 +1267,7 @@ $('applyDeckFilter').onclick=()=>{
   renderPickerOnly();
 };
 $('resetDeckFilter').onclick=()=>{
-  Object.assign(deckFilter,{civilization:'',type:'',rarity:'',costMin:'',costMax:'',effects:[],ownedOnly:false,favoriteOnly:false,inDeckOnly:false});
+  Object.assign(deckFilter,{civilization:'',type:'',rarity:'',race:'',costMin:'',costMax:'',powerMin:'',powerMax:'',effects:[],ownedOnly:false,favoriteOnly:false,inDeckOnly:false});
   openDeckFilter();
 };
 

@@ -609,3 +609,101 @@ body.deck-mode .board-grid:not(.many-cards) .dcard img{height:auto!important;asp
   }
 }
 </style>
+<style>
+/* Actual final override for iPhone deck editor: fit five deck rows and show about six picker cards. */
+@media (max-width: 700px) {
+  body.deck-mode .dm {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-height: 100dvh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+  }
+  body.deck-mode .dm-head { flex: 0 0 auto !important; }
+  body.deck-mode .board-wrap {
+    flex: 0 0 41dvh !important;
+    height: 41dvh !important;
+    max-height: 41dvh !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+  }
+  body.deck-mode .board {
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding: 4px !important;
+  }
+  body.deck-mode .board-grid {
+    display: grid !important;
+    grid-template-columns: repeat(8, minmax(0, 1fr)) !important;
+    grid-auto-rows: max-content !important;
+    gap: 3px !important;
+    align-content: start !important;
+  }
+  /* 40 or fewer: keep 8 columns, and make five rows fit in the board area. */
+  body.deck-mode .board-grid:not(.many-cards) .dcard img {
+    width: 100% !important;
+    height: clamp(48px, 6.2dvh, 56px) !important;
+    aspect-ratio: auto !important;
+    object-fit: fill !important;
+  }
+  /* More than 40: same 8-column layout, slightly smaller cards; the board scrolls vertically. */
+  body.deck-mode .board-grid.many-cards {
+    grid-template-columns: repeat(8, minmax(0, 1fr)) !important;
+    gap: 3px !important;
+  }
+  body.deck-mode .board-grid.many-cards .dcard img {
+    width: 100% !important;
+    height: clamp(40px, 5.2dvh, 48px) !important;
+    aspect-ratio: auto !important;
+    object-fit: fill !important;
+  }
+  /* Let the picker use the remaining height instead of leaving unused space after it. */
+  body.deck-mode .picker {
+    flex: 1 1 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column-reverse !important;
+    border-top-width: 6px !important;
+  }
+  body.deck-mode .picker-top {
+    flex: 0 0 auto !important;
+    position: relative !important;
+    top: auto !important;
+    padding: 7px 8px !important;
+  }
+  body.deck-mode .picker-grid {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    height: auto !important;
+    max-height: none !important;
+    display: flex !important;
+    flex-flow: row nowrap !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    gap: 5px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    padding: 6px 7px !important;
+    touch-action: pan-x !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  body.deck-mode .pcard {
+    flex: 0 0 72px !important;
+    width: 72px !important;
+    min-width: 72px !important;
+  }
+  body.deck-mode .pcard img {
+    width: 100% !important;
+    height: clamp(100px, 14dvh, 118px) !important;
+    aspect-ratio: auto !important;
+    object-fit: cover !important;
+  }
+}
+</style>

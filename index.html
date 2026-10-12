@@ -164,6 +164,33 @@ body.deck-mode .board-grid{height:auto!important;max-height:none!important}
 body.deck-mode .board-grid{grid-template-columns:repeat(8,minmax(0,1fr))!important}
 body.deck-mode .board-grid.many-cards{grid-template-columns:repeat(10,minmax(0,1fr))!important;gap:4px}
 body.deck-mode .board-grid.many-cards .dcard img{border-radius:2px}
+
+/* Final fixes from the iPhone screenshots: no sticky collection header, no dead gray area, fit deck rows. */
+body:not(.deck-mode)>header{position:static!important;top:auto!important}
+body:not(.deck-mode) main>.tabs{position:static!important;top:auto!important}
+body:not(.deck-mode){overflow-x:hidden}
+body.deck-mode .dm{height:100dvh!important;min-height:0!important;max-height:100dvh!important;display:flex!important;flex-direction:column!important;overflow:hidden!important;padding-bottom:env(safe-area-inset-bottom)!important}
+body.deck-mode .dm-head{flex:0 0 auto!important}
+/* Give the deck board the majority of the screen; keep the picker compact instead of stretching a blank gray panel. */
+body.deck-mode .board-wrap{flex:1 1 auto!important;min-height:0!important;height:auto!important;max-height:none!important;overflow:hidden!important}
+body.deck-mode .board{height:100%!important;max-height:none!important;min-height:0!important;overflow-y:auto!important;overflow-x:hidden!important;padding:6px 5px!important}
+body.deck-mode .board-grid{grid-template-columns:repeat(8,minmax(0,1fr))!important;grid-auto-rows:max-content!important;gap:3px!important;align-content:start!important}
+body.deck-mode .board-grid:not(.many-cards) .dcard img{height:clamp(62px,10.5dvh,100px)!important;aspect-ratio:auto!important;object-fit:fill!important}
+body.deck-mode .board-grid.many-cards{grid-template-columns:repeat(10,minmax(0,1fr))!important;gap:3px!important}
+body.deck-mode .board-grid.many-cards .dcard img{height:clamp(48px,7.8dvh,72px)!important;aspect-ratio:auto!important;object-fit:fill!important}
+body.deck-mode .picker{flex:0 0 27dvh!important;height:27dvh!important;min-height:0!important;max-height:27dvh!important;overflow:hidden!important;display:flex!important;flex-direction:column!important}
+body.deck-mode .picker-top{flex:0 0 auto!important;position:relative!important;top:auto!important}
+body.deck-mode .picker-grid{flex:1 1 auto!important;height:auto!important;min-height:0!important;max-height:none!important;overflow-x:auto!important;overflow-y:hidden!important;align-items:center!important;justify-content:flex-start!important;padding:6px 8px calc(6px + env(safe-area-inset-bottom))!important;touch-action:pan-x pan-y!important}
+body.deck-mode .pcard{flex:0 0 104px!important;width:104px!important;min-width:104px!important}
+body.deck-mode .pcard img{width:100%!important;height:clamp(115px,19dvh,150px)!important;object-fit:cover!important}
+@media(max-width:430px){
+ body.deck-mode .dm-brand{height:54px!important}
+ body.deck-mode .board-grid:not(.many-cards) .dcard img{height:clamp(58px,10dvh,86px)!important}
+ body.deck-mode .board-grid.many-cards .dcard img{height:clamp(42px,7dvh,60px)!important}
+ body.deck-mode .picker{flex-basis:26dvh!important;height:26dvh!important;max-height:26dvh!important}
+ body.deck-mode .pcard{flex-basis:100px!important;width:100px!important;min-width:100px!important}
+ body.deck-mode .pcard img{height:clamp(108px,17dvh,132px)!important}
+}
 </style>
 </head>
 <body>

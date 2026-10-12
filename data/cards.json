@@ -660517,35 +660517,22 @@
     "url": "https://dm.takaratomy.co.jp/card/detail/?id=promoy18-087"
   },
   {
-    "id": "promoy18-csp",
-    "name": "(DM /) | デュエル・マスターズ",
-    "type": "",
-    "civilization": "",
-    "rarity": "",
-    "power": "",
-    "cost": "",
-    "mana": "姉と学ぼう！",
-    "race": "",
-    "ability": "",
-    "flavor": "",
-    "illustrator": "",
-    "sides": [
-      {
-        "type": "",
-        "name": "(DM /) | デュエル・マスターズ",
-        "civilization": "",
-        "rarity": "",
-        "power": "",
-        "cost": "",
-        "mana": "姉と学ぼう！",
-        "race": "",
-        "ability": "",
-        "flavor": "",
-        "illustrator": ""
-      }
-    ],
-    "release_order": 22555,
-    "url": "https://dm.takaratomy.co.jp/card/detail/?id=promoy18-csp"
+    "id": "promoy18-csp1",
+    "name": "",
+    "number": "promoy18-csp1",
+    "type": "GRクリーチャー",
+    "civilization": "ゼロ",
+    "rarity": "MAS",
+    "power": "3000",
+    "cost": "5",
+    "mana": "-",
+    "race": "マスター・ドラゴン/ジョーカーズ/ワンダフォース",
+    "illustrator": "YOICHI ITO",
+    "text": "バトルゾーンまたはマナゾーンに自分のジョーカーズが合計５枚以上あれば、このクリーチャーはバトルゾーンに出たターン、相手プレイヤーを攻撃できる。 超天フィーバー：バトルゾーンまたはマナゾーンに自分のジョーカーズが合計10枚以上あれば、このクリーチャーのパワーを+8000し、「W・ブレイカー」を与え、このクリーチャーが攻撃する時、好きな枚数のジョーカーズ・クリーチャーを自分の手札から捨てる。こうして捨てたジョーカーズ１体につき、相手のパワー10000以下のクリーチャーを１体破壊する。",
+    "flavor": "同名カードが含まれる商品を表示 DMEX-19 マスター・ファイナル・メモリアル・パック DMEX-05 100%新世界！超GRパック100 DMRP-09 超天篇 拡張パック第１弾 新世界ガチ誕！超ＧＲとオレガ・オーラ!! プロモ限定カード 18期",
+    "image": "https://dm.takaratomy.co.jp/wp-content/card/cardimage/promoy18-csp1.jpg",
+    "url": "https://dm.takaratomy.co.jp/card/detail/?id=promoy18-csp1",
+    "release_order": 22555
   },
   {
     "id": "promoy17-001",

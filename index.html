@@ -279,18 +279,24 @@ function deckNameSearch(c){return deckNameTerms(c).join(' ')}
 function deckNameMatches(c,query){
  const q=norm(query);if(!q)return true;
  const cardName=norm(name(c));
- // First match the actual printed name and cached aliases.
- if(deckNameTerms(c).some(term=>term.includes(q)||(q.length>=3&&q.includes(term))))return true;
- // Resolve a typed nickname to its canonical card name (e.g. ドルガン -> 龍装チュリス)
- // before testing the card name. This is query-side mapping, so it works even if a card
- // record's stored name contains extra punctuation or a suffix.
+ // First match the printed name and cached card-specific nickname terms.
+ if(deckNameTerms(c).some(term=>term===q||term.includes(q)||(q.length>=3&&q.includes(term))))return true;
+ // Expand a nickname into its official card name before searching the data.
+ // Keep this check independent of card-side alias detection: the official name may
+ // be stored with a set suffix, punctuation, or alternate face metadata.
  for(const [canonical,nicknames] of Object.entries(aliases)){
    const cn=norm(canonical);
-   if(nicknames.some(alias=>{const a=norm(alias);return q===a||a.includes(q)||(q.length>=3&&q.includes(a));})){
-     if(cardName.includes(cn)||cn.includes(cardName))return true;
-     const terms=deckNameTerms(c);
-     if(terms.some(term=>term.includes(cn)||cn.includes(term)))return true;
-   }
+   const aliasMatch=nicknames.some(alias=>{
+     const a=norm(alias);
+     return q===a || (q.length>=3 && (a.includes(q)||q.includes(a)));
+   });
+   if(!aliasMatch)continue;
+   const candidateNames=[name(c),c.cardName,c.card_name,c._name,c.title,c.displayName,c.display_name];
+   const allNames=norm(candidateNames.filter(v=>typeof v==='string').join(' '));
+   if(allNames.includes(cn)||cn.includes(cardName)||allNames.includes(cn))return true;
+   // Some data records nest the printed name under a face/card object.
+   const nested=faces(c).map(f=>norm(f?.name||f?.cardName||f?.card_name||f?.title||'')).join(' ');
+   if(nested.includes(cn))return true;
  }
  return false;
 }
@@ -389,7 +395,7 @@ $('decks').innerHTML=`<div class="dm">
 <div class="zone-tabs"><button class="${S.zone==='main'?'active':''}" data-zone="main">メイン ${mainCount}</button><div class="zone-combined"><button class="${S.zone==='gr'?'active':''}" data-zone="gr">GR ${totalZone(d.gr)}／12</button><button class="${S.zone==='extra'?'active':''}" data-zone="extra">超次元 ${totalZone(d.extra)}／8</button></div></div></div>
 <div class="board-wrap"><div class="board"><div class="board-grid ${totalZone(currentZone())>40?'many-cards':''}">${cards.length?cards.flatMap(({c,q})=>Array.from({length:q},()=>`<div class="dcard" data-deck-card="${esc(id(c))}"><img src="${esc(image(c))}" loading="lazy" data-detail="${esc(id(c))}" alt="${esc(name(c))}" onerror="this.style.visibility='hidden'"></div>`)).join(''):`<div class="empty-board">カードを追加</div>`}</div></div></div>
 
-<div class="picker"><div class="picker-top"><div class="quick-controls"><div class="quick-civs"><button type="button" data-quick-civ="" class="${!(S.deckFilter?.civs?.length)&&!S.deckFilter?.civ?'on':''}">ALL</button>${['光','水','闇','火','自然','ゼロ'].map(x=>`<button type="button" data-quick-civ="${x}" class="${(S.deckFilter?.civs||[]).includes(x)||S.deckFilter?.civ===x?'on':''}">${x}</button>`).join('')}</div><div class="quick-cost-label"><span>COST</span><select id="quickCostMin" aria-label="コスト最小"><option value="">最小</option>${Array.from({length:16},(_,i)=>`<option value="${i}" ${String(S.deckFilter?.costMin??'')===String(i)?'selected':''}>${i}</option>`).join('')}</select><span>〜</span><select id="quickCostMax" aria-label="コスト最大"><option value="">最大</option>${Array.from({length:16},(_,i)=>`<option value="${i}" ${String(S.deckFilter?.costMax??'')===String(i)?'selected':''}>${i}</option>`).join('')}</select></div></div><div class="picker-search"><input id="deckSearch" value="${esc(S.q)}" placeholder="⌕　カード名"><div class="picker-actions"><button id="deckFilterBtn">絞り込み</button><button id="deckSortBtn">並べ替え</button><button type="button" id="quickFilterReset" title="文明・コストをリセット">リセット</button></div></div></div>
+<div class="picker"><div class="picker-top"><div class="quick-controls"><div class="quick-civs"><button type="button" data-quick-civ="" class="${!(S.deckFilter?.civs?.length)&&!S.deckFilter?.civ?'on':''}">ALL</button>${['火','水','自然','光','闇','ゼロ'].map(x=>`<button type="button" data-quick-civ="${x}" class="${(S.deckFilter?.civs||[]).includes(x)||S.deckFilter?.civ===x?'on':''}">${x}</button>`).join('')}</div><div class="quick-cost-label"><span>COST</span><select id="quickCostMin" aria-label="コスト最小"><option value="">最小</option>${Array.from({length:16},(_,i)=>`<option value="${i}" ${String(S.deckFilter?.costMin??'')===String(i)?'selected':''}>${i}</option>`).join('')}</select><span>〜</span><select id="quickCostMax" aria-label="コスト最大"><option value="">最大</option>${Array.from({length:16},(_,i)=>`<option value="${i}" ${String(S.deckFilter?.costMax??'')===String(i)?'selected':''}>${i}</option>`).join('')}</select><button type="button" id="quickFilterReset" title="文明・コストをリセット">リセット</button></div></div><div class="picker-search"><input id="deckSearch" value="${esc(S.q)}" placeholder="⌕　カード名"><div class="picker-actions"><button id="deckFilterBtn">絞り込み</button><button id="deckSortBtn">並べ替え</button></div></div></div>
 <div class="picker-grid">${vis.map(c=>`<div class="pcard"><img src="${esc(image(c))}" loading="lazy" data-detail="${esc(id(c))}" onerror="this.style.visibility='hidden'">${S.owned[id(c)]?`<span class="owned">所持 ${S.owned[id(c)]}</span>`:''}</div>`).join('')||'<div class="status">該当カードがありません</div>'}</div></div>
 </div>`;
 $('save').onclick=()=>{save();alert('保存しました')};
@@ -1013,4 +1019,18 @@ body.deck-mode .picker-top{padding:6px 7px 7px!important}
  body.deck-mode #deckSortBtn{width:49px!important}
  body.deck-mode #quickFilterReset{width:45px!important;padding-left:2px!important;padding-right:2px!important}
 }
+</style>
+
+<style id="final-alias-and-picker-layout-fix">
+/* Quick filters: requested order 火・水・自然・光・闇・ゼロ, all visible */
+body.deck-mode .quick-civs{display:grid!important;grid-template-columns:repeat(7,minmax(0,1fr))!important;gap:4px!important;overflow:visible!important}
+body.deck-mode .quick-civs button{width:100%!important;min-width:0!important;padding:7px 1px!important;font-size:11px!important}
+body.deck-mode .quick-cost-label{display:flex!important;align-items:center!important;gap:5px!important;flex-wrap:nowrap!important}
+body.deck-mode #quickFilterReset{position:static!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;flex:0 0 58px!important;width:58px!important;max-width:58px!important;height:34px!important;min-height:34px!important;margin-left:2px!important;padding:0 4px!important;border:1px solid #5c6a77!important;border-radius:7px!important;background:#344252!important;color:#fff!important;font-size:11px!important;font-weight:800!important;white-space:nowrap!important}
+body.deck-mode .picker-search{display:flex!important;gap:5px!important;align-items:stretch!important}
+body.deck-mode .picker-search input{flex:1 1 auto!important;min-width:0!important;width:0!important}
+body.deck-mode .picker-actions{display:flex!important;flex:0 0 auto!important;gap:5px!important}
+body.deck-mode #deckFilterBtn{flex:0 0 76px!important;width:76px!important;max-width:76px!important}
+body.deck-mode #deckSortBtn{flex:0 0 68px!important;width:68px!important;max-width:68px!important}
+@media(max-width:430px){body.deck-mode .quick-civs{grid-template-columns:repeat(7,minmax(0,1fr))!important;gap:3px!important}body.deck-mode .quick-civs button{font-size:10px!important;padding:7px 0!important}body.deck-mode #quickCostMin,body.deck-mode #quickCostMax{width:65px!important;max-width:65px!important}body.deck-mode #quickFilterReset{flex-basis:54px!important;width:54px!important;max-width:54px!important;font-size:10px!important}body.deck-mode #deckFilterBtn{flex-basis:72px!important;width:72px!important}body.deck-mode #deckSortBtn{flex-basis:65px!important;width:65px!important}}
 </style>

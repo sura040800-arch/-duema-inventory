@@ -103,6 +103,29 @@ body.deck-mode{background:#fff}body.deck-mode>header,body.deck-mode main>.tabs{d
 .dm .picker-search input{min-width:0}
 @media(max-width:430px){.dm .picker-grid{min-height:180px;gap:7px}.dm .pcard{flex-basis:104px;width:104px;min-width:104px}.dm .pcard img{height:146px}.dm .board{max-height:28dvh}.dm .picker-actions button{font-size:10px;padding:9px 5px}}
 
+
+/* Final touch interaction and viewport fit */
+body.deck-mode{height:100dvh;overflow:hidden}
+body.deck-mode main{height:100dvh;overflow:hidden}
+.dm{height:100dvh;min-height:100dvh;display:flex;flex-direction:column;overflow:hidden;padding-bottom:env(safe-area-inset-bottom)}
+.dm-head{flex:0 0 auto}
+.dm-brand{justify-content:flex-start;gap:10px}
+.dm-back{flex:0 0 auto;border:1px solid #5b626b;background:#222832;color:#fff;border-radius:7px;padding:7px 9px;font-size:12px;font-weight:800;white-space:nowrap}
+.dm-brandmark{flex:1;text-align:left;font-size:19px}
+.dm-topactions{flex:0 0 auto;gap:13px}
+.board-wrap{flex:0 0 auto;min-height:0}
+.board{max-height:31dvh;min-height:0;padding:9px 8px}
+.board-grid{grid-template-columns:repeat(8,minmax(0,1fr));gap:5px}
+.dcard img{width:100%;aspect-ratio:63/88;object-fit:cover}
+.picker{flex:1 1 auto;min-height:0;display:flex;flex-direction:column;border-top:6px solid #e5e7eb;overflow:hidden}
+.dm .picker-top{order:0;flex:0 0 auto}
+.dm .picker-grid{order:1;flex:1 1 auto;min-height:0;height:auto;max-height:none;align-content:flex-start;overflow-x:auto;overflow-y:hidden;touch-action:pan-x pan-y}
+.dm .pcard{flex-basis:122px;width:122px;min-width:122px}
+.dm .pcard img{height:172px}
+.dm .pcard button{display:none!important}
+.dm .dcard .remove{display:none!important}
+@media(max-width:430px){.dm-brand{gap:7px;padding:0 9px}.dm-back{padding:7px 7px;font-size:11px}.dm-brandmark{font-size:17px}.dm-brandmark small{font-size:9px}.dm-topactions{gap:10px}.board{max-height:31dvh}.dm .pcard{flex-basis:120px;width:120px;min-width:120px}.dm .pcard img{height:168px}.dm .picker-grid{padding:10px 9px calc(12px + env(safe-area-inset-bottom))}}
+
 </style>
 </head>
 <body>
@@ -267,30 +290,33 @@ let results=S.cards.filter(c=>{let q=norm(S.q);if(q&&!deckNameSearch(c).includes
 if(S.sort==='latest')results=results.slice().reverse();if(S.sort==='name')results=results.slice().sort((a,b)=>name(a).localeCompare(name(b),'ja'));if(S.sort==='cost')results=results.slice().sort((a,b)=>cost(a)-cost(b));if(S.sort==='owned')results=results.slice().sort((a,b)=>(Number(S.owned[id(b)]||0)-Number(S.owned[id(a)]||0))||name(a).localeCompare(name(b),'ja'));
 let vis=results.slice(0,100),mainCount=totalZone(d.main);
 $('decks').innerHTML=`<div class="dm">
-<div class="dm-head"><div class="dm-brand"><div class="dm-brandmark">≋ DECK MAKER<small>デュエル・マスターズ</small></div><div class="dm-topactions"><button id="clearZone"><strong>▤</strong>全削除</button><button id="save"><strong>☑</strong>保存</button></div></div>
+<div class="dm-head"><div class="dm-brand"><button class="dm-back" id="deckBack" aria-label="デッキ一覧に戻る">‹ 戻る</button><div class="dm-brandmark">≋ DECK MAKER<small>デュエル・マスターズ</small></div><div class="dm-topactions"><button id="clearZone"><strong>▤</strong>全削除</button><button id="save"><strong>☑</strong>保存</button></div></div>
 <div class="zone-tabs"><button class="${S.zone==='main'?'active':''}" data-zone="main">メイン ${mainCount}</button><div class="zone-combined"><button class="${S.zone==='gr'?'active':''}" data-zone="gr">GR ${totalZone(d.gr)}／12</button><button class="${S.zone==='extra'?'active':''}" data-zone="extra">超次元 ${totalZone(d.extra)}／8</button></div></div></div>
-<div class="board-wrap"><div class="board"><div class="board-grid">${cards.length?cards.flatMap(({c,q})=>Array.from({length:q},()=>`<div class="dcard"><img src="${esc(image(c))}" loading="lazy" data-detail="${esc(id(c))}" alt="${esc(name(c))}" onerror="this.style.visibility='hidden'"><button class="remove" data-rem="${esc(id(c))}" aria-label="${esc(name(c))}を1枚減らす">−</button></div>`)).join(''):`<div class="empty-board">カードを追加</div>`}</div></div></div>
+<div class="board-wrap"><div class="board"><div class="board-grid">${cards.length?cards.flatMap(({c,q})=>Array.from({length:q},()=>`<div class="dcard" data-deck-card="${esc(id(c))}"><img src="${esc(image(c))}" loading="lazy" data-detail="${esc(id(c))}" alt="${esc(name(c))}" onerror="this.style.visibility='hidden'"></div>`)).join(''):`<div class="empty-board">カードを追加</div>`}</div></div></div>
 
 <div class="picker"><div class="picker-top"><div class="picker-search"><input id="deckSearch" value="${esc(S.q)}" placeholder="⌕　カード名"><div class="picker-actions"><button id="deckFilterBtn">☷ 絞り込み</button><button id="deckSortBtn">⇅ 並べ替え：${({'recommended':'カードデータ順','owned':'所持数順','name':'カード名順','cost':'コスト順','latest':'データ逆順'})[S.sort]||'おすすめ順'}</button></div></div></div>
-<div class="picker-grid">${vis.map(c=>`<div class="pcard"><img src="${esc(image(c))}" loading="lazy" data-detail="${esc(id(c))}" onerror="this.style.visibility='hidden'">${S.owned[id(c)]?`<span class="owned">所持 ${S.owned[id(c)]}</span>`:''}<button data-add="${esc(id(c))}">＋</button></div>`).join('')||'<div class="status">該当カードがありません</div>'}</div></div>
+<div class="picker-grid">${vis.map(c=>`<div class="pcard"><img src="${esc(image(c))}" loading="lazy" data-detail="${esc(id(c))}" onerror="this.style.visibility='hidden'">${S.owned[id(c)]?`<span class="owned">所持 ${S.owned[id(c)]}</span>`:''}</div>`).join('')||'<div class="status">該当カードがありません</div>'}</div></div>
 </div>`;
 $('save').onclick=()=>{save();alert('保存しました')};
 $('clearZone').onclick=()=>{if(confirm('メイン・GR・超次元のカードをすべて削除しますか？')){d.main={};d.gr={};d.extra={};save();renderEditor()}};
-$('decks').querySelector('.dm-brandmark').title='デッキ一覧に戻る';$('decks').querySelector('.dm-brandmark').onclick=()=>{S.deck=null;document.body.classList.remove('deck-mode');renderDecks()};
+const goDeckList=()=>{S.deck=null;document.body.classList.remove('deck-mode');renderDecks()};$('deckBack').onclick=goDeckList;$('decks').querySelector('.dm-brandmark').title='デッキ一覧に戻る';$('decks').querySelector('.dm-brandmark').onclick=goDeckList;
 $('decks').querySelectorAll('[data-zone]').forEach(b=>b.onclick=()=>{S.zone=b.dataset.zone==='special'?'extra':b.dataset.zone;renderEditor()});
 $('decks').querySelectorAll('[data-format]').forEach(b=>b.onclick=()=>{d.format=b.dataset.format;save();renderEditor()});
-$('decks').querySelectorAll('[data-rem]').forEach(b=>b.onclick=()=>remove(b.dataset.rem));
-$('decks').querySelectorAll('[data-add]').forEach(b=>b.onclick=()=>add(b.dataset.add));
-// Official-style gesture: swipe a card upward to add it to the active deck zone.
-let swipeStart=null,ignorePickerClickUntil=0;
+
+// Deck Maker gestures: picker card swipe up = add; deck card swipe down = remove one.
+let swipeStart=null,ignoreGestureClickUntil=0;
 const picker=document.querySelector('.picker-grid');
 if(picker){
  picker.querySelectorAll('.pcard').forEach(card=>{
-  card.addEventListener('touchstart',e=>{const t=e.touches&&e.touches[0];if(t)swipeStart={x:t.clientX,y:t.clientY,id:card.querySelector('[data-add]')?.dataset.add||card.querySelector('[data-detail]')?.dataset.detail};},{passive:true});
-  card.addEventListener('touchend',e=>{if(!swipeStart)return;const t=e.changedTouches&&e.changedTouches[0];if(!t){swipeStart=null;return}const dx=t.clientX-swipeStart.x,dy=t.clientY-swipeStart.y,id0=swipeStart.id;swipeStart=null;if(id0&&dy<-32&&Math.abs(dy)>Math.abs(dx)*1.15){ignorePickerClickUntil=Date.now()+450;e.preventDefault();add(id0)}},{passive:false});
+  card.addEventListener('touchstart',e=>{const t=e.touches&&e.touches[0];if(t)swipeStart={kind:'add',x:t.clientX,y:t.clientY,id:card.querySelector('[data-detail]')?.dataset.detail};},{passive:true});
+  card.addEventListener('touchend',e=>{if(!swipeStart||swipeStart.kind!=='add')return;const t=e.changedTouches&&e.changedTouches[0];if(!t){swipeStart=null;return}const dx=t.clientX-swipeStart.x,dy=t.clientY-swipeStart.y,id0=swipeStart.id;swipeStart=null;if(id0&&dy<-32&&Math.abs(dy)>Math.abs(dx)*1.15){ignoreGestureClickUntil=Date.now()+550;e.preventDefault();add(id0)}},{passive:false});
  });
- picker.addEventListener('click',e=>{if(Date.now()<ignorePickerClickUntil){e.preventDefault();e.stopPropagation()}},true);
 }
+document.querySelectorAll('.dcard[data-deck-card]').forEach(card=>{
+ card.addEventListener('touchstart',e=>{const t=e.touches&&e.touches[0];if(t)swipeStart={kind:'remove',x:t.clientX,y:t.clientY,id:card.dataset.deckCard};},{passive:true});
+ card.addEventListener('touchend',e=>{if(!swipeStart||swipeStart.kind!=='remove')return;const t=e.changedTouches&&e.changedTouches[0];if(!t){swipeStart=null;return}const dx=t.clientX-swipeStart.x,dy=t.clientY-swipeStart.y,id0=swipeStart.id;swipeStart=null;if(id0&&dy>32&&Math.abs(dy)>Math.abs(dx)*1.15){ignoreGestureClickUntil=Date.now()+550;e.preventDefault();remove(id0)}},{passive:false});
+});
+document.addEventListener('click',e=>{if(Date.now()<ignoreGestureClickUntil){e.preventDefault();e.stopPropagation();e.stopImmediatePropagation()}},true);
 $('decks').querySelectorAll('[data-detail]').forEach(b=>b.onclick=()=>showCardDetail(b.dataset.detail));
 $('deckFilterBtn').onclick=()=>openDeckFilter();$('deckSortBtn').onclick=()=>openDeckSort();
 let composing=false;$('deckSearch').addEventListener('compositionstart',()=>composing=true);$('deckSearch').addEventListener('compositionend',e=>{composing=false;S.q=e.target.value;renderEditor();let el=$('deckSearch');if(el){el.focus();el.setSelectionRange(el.value.length,el.value.length)}});$('deckSearch').addEventListener('input',e=>{if(composing)return;S.q=e.target.value;let pos=e.target.selectionStart;renderEditor();let el=$('deckSearch');if(el){el.focus();try{el.setSelectionRange(pos,pos)}catch(_){}}});

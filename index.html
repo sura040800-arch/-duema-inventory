@@ -830,3 +830,31 @@ body.deck-mode .board-grid:not(.many-cards) .dcard img{height:auto!important;asp
   }
 }
 </style>
+<style id="picker-no-crop-final-fix">
+/* Final correction: show complete card images in the horizontal picker and remove the oversized blank panel. */
+@media (max-width: 700px) {
+  body.deck-mode .dm { height: 100dvh !important; min-height: 0 !important; max-height: 100dvh !important; overflow: hidden !important; display: flex !important; flex-direction: column !important; }
+  body.deck-mode .dm-head { flex: 0 0 auto !important; }
+  body.deck-mode .board-wrap { flex: 1 1 auto !important; height: auto !important; min-height: 0 !important; max-height: none !important; overflow: hidden !important; }
+  body.deck-mode .board { height: 100% !important; max-height: none !important; min-height: 0 !important; overflow-y: auto !important; overflow-x: hidden !important; }
+  body.deck-mode .board-grid { grid-template-columns: repeat(8,minmax(0,1fr)) !important; align-content: start !important; }
+  body.deck-mode .picker {
+    flex: 0 0 auto !important; height: auto !important; min-height: 0 !important; max-height: none !important;
+    overflow: hidden !important; display: flex !important; flex-direction: column-reverse !important;
+    margin: 0 !important; border-top: 6px solid #e5e7eb !important;
+  }
+  body.deck-mode .picker-top { flex: 0 0 auto !important; position: relative !important; top: auto !important; padding: 7px 8px !important; }
+  body.deck-mode .picker-grid {
+    flex: 0 0 auto !important; height: calc(15.5dvh + 12px) !important; min-height: 0 !important; max-height: none !important;
+    display: flex !important; flex-flow: row nowrap !important; align-items: flex-start !important; justify-content: flex-start !important;
+    gap: 7px !important; overflow-x: auto !important; overflow-y: hidden !important;
+    padding: 5px 8px 7px !important; margin: 0 !important; touch-action: pan-x !important; -webkit-overflow-scrolling: touch !important;
+  }
+  body.deck-mode .pcard { flex: 0 0 88px !important; width: 88px !important; min-width: 88px !important; height: auto !important; align-self: flex-start !important; overflow: visible !important; }
+  body.deck-mode .pcard img {
+    display: block !important; width: 88px !important; min-width: 88px !important; height: auto !important; max-height: none !important;
+    aspect-ratio: 63 / 88 !important; object-fit: contain !important; border-radius: 4px !important;
+  }
+  body.deck-mode .pcard .owned { max-width: 82px !important; font-size: 9px !important; }
+}
+</style>

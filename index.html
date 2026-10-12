@@ -474,3 +474,29 @@ body.deck-mode .board-grid:not(.many-cards) .dcard img{height:auto!important;asp
  body.deck-mode .board-grid.many-cards .dcard img{height:clamp(58px,10.5dvh,88px)!important}
 }
 </style>
+<style>
+/* Final iPhone layout corrections: reserve less space for the deck board and make the collection tabs reachable while scrolling. */
+@media (max-width: 700px) {
+  /* Keep the collection tabs visible below the sticky search header, so Favorites and Deck are always reachable. */
+  body:not(.deck-mode) main > .tabs {
+    position: sticky !important;
+    top: 88px !important;
+    z-index: 45 !important;
+    background: #f1f3f5 !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+  body:not(.deck-mode) > header { position: sticky !important; top: 0 !important; z-index: 50 !important; }
+  /* Deck editor: don't let the board stretch into a large blank gray panel. */
+  body.deck-mode .dm { height: 100dvh !important; min-height: 0 !important; max-height: 100dvh !important; overflow: hidden !important; }
+  body.deck-mode .dm-head { flex: 0 0 auto !important; }
+  body.deck-mode .board-wrap { flex: 0 0 41dvh !important; height: 41dvh !important; max-height: 41dvh !important; min-height: 0 !important; overflow: hidden !important; }
+  body.deck-mode .board { height: 100% !important; min-height: 0 !important; max-height: none !important; overflow-y: auto !important; overflow-x: hidden !important; }
+  /* The picker gets more height, while cards stay compact enough that the search controls remain visible. */
+  body.deck-mode .picker { flex: 0 0 34dvh !important; height: 34dvh !important; max-height: 34dvh !important; min-height: 0 !important; overflow: hidden !important; }
+  body.deck-mode .picker-top { flex: 0 0 auto !important; }
+  body.deck-mode .picker-grid { flex: 1 1 auto !important; min-height: 0 !important; height: auto !important; overflow-x: auto !important; overflow-y: hidden !important; align-items: center !important; padding: 5px 8px calc(5px + env(safe-area-inset-bottom)) !important; }
+  body.deck-mode .pcard { flex: 0 0 94px !important; width: 94px !important; min-width: 94px !important; }
+  body.deck-mode .pcard img { width: 100% !important; height: clamp(100px, 15dvh, 124px) !important; object-fit: cover !important; }
+}
+</style>

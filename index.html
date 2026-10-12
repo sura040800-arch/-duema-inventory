@@ -355,7 +355,7 @@ let results=S.cards.filter(c=>{let q=norm(S.q);if(q&&!deckNameSearch(c).includes
 if(S.sort==='latest')results=results.slice().reverse();if(S.sort==='name')results=results.slice().sort((a,b)=>name(a).localeCompare(name(b),'ja'));if(S.sort==='cost')results=results.slice().sort((a,b)=>cost(a)-cost(b));if(S.sort==='owned')results=results.slice().sort((a,b)=>(Number(S.owned[id(b)]||0)-Number(S.owned[id(a)]||0))||name(a).localeCompare(name(b),'ja'));
 let vis=results.slice(0,100),mainCount=totalZone(d.main);
 $('decks').innerHTML=`<div class="dm">
-<div class="dm-head"><div class="dm-brand"><button class="dm-back" id="deckBack" aria-label="デッキ一覧に戻る">‹ 戻る</button><div class="dm-brandmark"><span class="forge-mark">✦</span> CHAPPY’S DECK FORGE<small>DUEL MASTERS　•　DECK BUILDER</small></div><div class="dm-topactions"><button id="clearZone"><strong>▤</strong>全削除</button><button id="save"><strong>☑</strong>保存</button></div></div>
+<div class="dm-head"><div class="dm-brand"><button class="dm-back" id="deckBack" aria-label="デッキ一覧に戻る">‹ 戻る</button><div class="dm-brandmark"><span class="forge-mark">✦</span> ARCANE DECKWORKS<small>DUEL MASTERS　/　STRATEGY LAB</small></div><div class="dm-topactions"><button id="clearZone"><strong>▤</strong>全削除</button><button id="save"><strong>☑</strong>保存</button></div></div>
 <div class="zone-tabs"><button class="${S.zone==='main'?'active':''}" data-zone="main">メイン ${mainCount}</button><div class="zone-combined"><button class="${S.zone==='gr'?'active':''}" data-zone="gr">GR ${totalZone(d.gr)}／12</button><button class="${S.zone==='extra'?'active':''}" data-zone="extra">超次元 ${totalZone(d.extra)}／8</button></div></div></div>
 <div class="board-wrap"><div class="board"><div class="board-grid ${totalZone(currentZone())>40?'many-cards':''}">${cards.length?cards.flatMap(({c,q})=>Array.from({length:q},()=>`<div class="dcard" data-deck-card="${esc(id(c))}"><img src="${esc(image(c))}" loading="lazy" data-detail="${esc(id(c))}" alt="${esc(name(c))}" onerror="this.style.visibility='hidden'"></div>`)).join(''):`<div class="empty-board">カードを追加</div>`}</div></div></div>
 
@@ -893,5 +893,31 @@ body.deck-mode .pcard .owned{max-width:52px!important;font-size:7px!important;pa
  body.deck-mode .pcard,body.deck-mode .pcard img{flex-basis:56px!important;width:56px!important;min-width:56px!important}
  body.deck-mode .pcard img{height:auto!important}
  body.deck-mode .dm-brandmark{font-size:clamp(12px,3.7vw,16px)!important}
+}
+</style>
+
+<style id="arcane-deckworks-ui-tuning">
+/* Refined brand, taller quick filters, and six-card picker sizing. */
+@media (max-width:700px){
+ body.deck-mode .dm-brand{gap:6px!important;padding-left:7px!important;padding-right:8px!important}
+ body.deck-mode .dm-brandmark{
+   font-family:Impact,"Arial Black",system-ui,sans-serif!important;
+   font-size:clamp(13px,3.85vw,17px)!important;font-weight:950!important;
+   letter-spacing:1px!important;color:#f7fbff!important;
+   text-shadow:0 1px 0 #53616d,0 2px 0 #25313b,0 0 9px #30c7e9a8!important;
+   line-height:1.05!important;white-space:nowrap!important
+ }
+ body.deck-mode .dm-brandmark .forge-mark{color:#7be8ff!important;text-shadow:0 0 5px #31c9f5,0 0 12px #31c9f5!important}
+ body.deck-mode .dm-brandmark small{font-family:system-ui,sans-serif!important;font-size:7px!important;letter-spacing:2px!important;color:#8cdced!important;font-weight:800!important;margin-top:4px!important}
+ body.deck-mode .quick-controls{align-items:stretch!important;gap:7px!important;margin:0 0 7px!important}
+ body.deck-mode .quick-civs{gap:5px!important;align-items:stretch!important}
+ body.deck-mode .quick-civs button{min-height:34px!important;padding:7px 9px!important;font-size:12px!important;line-height:1.1!important;border-radius:7px!important;font-weight:850!important}
+ body.deck-mode .quick-cost-label{font-size:11px!important;gap:5px!important;align-items:center!important}
+ body.deck-mode #quickCost{height:34px!important;min-height:34px!important;max-width:84px!important;padding:5px 6px!important;font-size:12px!important;border-radius:7px!important}
+ /* Give the picker six comfortably-sized full cards across, not seven tiny cards. */
+ body.deck-mode .picker-grid{height:clamp(96px,12.2dvh,112px)!important;gap:6px!important;padding:5px 8px 7px!important;align-items:flex-start!important}
+ body.deck-mode .pcard{flex:0 0 61px!important;width:61px!important;min-width:61px!important;height:auto!important;overflow:visible!important}
+ body.deck-mode .pcard img{width:61px!important;min-width:61px!important;height:auto!important;max-height:none!important;aspect-ratio:63/88!important;object-fit:contain!important}
+ body.deck-mode .pcard .owned{max-width:57px!important;font-size:7px!important}
 }
 </style>

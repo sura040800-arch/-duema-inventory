@@ -764,3 +764,69 @@ body.deck-mode .board-grid:not(.many-cards) .dcard img{height:auto!important;asp
   }
 }
 </style>
+<style id="final-iphone-deck-layout-fix">
+/* Final override: use the screen for the deck and picker, not empty gray space. */
+@media (max-width: 700px) {
+  body.deck-mode { overflow: hidden !important; }
+  body.deck-mode #decks { height: 100dvh !important; min-height: 0 !important; overflow: hidden !important; }
+  body.deck-mode .dm {
+    height: 100dvh !important; min-height: 0 !important; max-height: 100dvh !important;
+    display: flex !important; flex-direction: column !important; overflow: hidden !important;
+  }
+  body.deck-mode .dm-head { flex: 0 0 auto !important; }
+  /* The board gets the larger share of the viewport. */
+  body.deck-mode .board-wrap {
+    flex: 1 1 0 !important; height: auto !important; min-height: 0 !important;
+    max-height: none !important; overflow: hidden !important;
+  }
+  body.deck-mode .board {
+    width: 100% !important; height: 100% !important; min-height: 0 !important;
+    max-height: none !important; overflow-x: hidden !important; overflow-y: auto !important;
+    padding: 5px !important; -webkit-overflow-scrolling: touch !important;
+  }
+  body.deck-mode .board-grid {
+    display: grid !important; grid-template-columns: repeat(8,minmax(0,1fr)) !important;
+    grid-auto-rows: max-content !important; align-content: start !important; gap: 4px !important;
+    height: auto !important; max-height: none !important;
+  }
+  /* Up to 40 cards: keep a readable, normal card proportion in the 8 x 5 layout. */
+  body.deck-mode .board-grid:not(.many-cards) .dcard img {
+    display: block !important; width: 100% !important; height: auto !important;
+    aspect-ratio: 63 / 88 !important; object-fit: cover !important;
+  }
+  /* Above 40 cards: compact cards slightly, while allowing vertical scrolling. */
+  body.deck-mode .board-grid.many-cards {
+    grid-template-columns: repeat(8,minmax(0,1fr)) !important; gap: 3px !important;
+  }
+  body.deck-mode .board-grid.many-cards .dcard img {
+    display: block !important; width: 100% !important; height: auto !important;
+    aspect-ratio: 63 / 88 !important; object-fit: cover !important;
+  }
+  /* Picker is limited to its content; no large blank panel under the cards. */
+  body.deck-mode .picker {
+    flex: 0 0 34dvh !important; height: 34dvh !important; min-height: 0 !important;
+    max-height: 34dvh !important; overflow: hidden !important;
+    display: flex !important; flex-direction: column-reverse !important;
+  }
+  body.deck-mode .picker-top {
+    flex: 0 0 auto !important; position: relative !important; top: auto !important;
+    padding: 6px 8px !important;
+  }
+  body.deck-mode .picker-grid {
+    flex: 1 1 auto !important; height: auto !important; min-height: 0 !important;
+    max-height: none !important; display: flex !important; flex-flow: row nowrap !important;
+    align-items: flex-start !important; justify-content: flex-start !important; gap: 5px !important;
+    overflow-x: auto !important; overflow-y: hidden !important;
+    padding: 5px 7px !important; touch-action: pan-x !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  body.deck-mode .pcard {
+    flex: 0 0 72px !important; width: 72px !important; min-width: 72px !important;
+    align-self: flex-start !important;
+  }
+  body.deck-mode .pcard img {
+    display: block !important; width: 100% !important; height: 18dvh !important;
+    max-height: 165px !important; object-fit: cover !important;
+  }
+}
+</style>

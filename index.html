@@ -521,3 +521,91 @@ body.deck-mode .board-grid:not(.many-cards) .dcard img{height:auto!important;asp
   body.deck-mode .picker-grid{flex:1 1 auto!important;min-height:0!important;height:auto!important;overflow-x:auto!important;overflow-y:hidden!important;align-items:center!important;justify-content:flex-start!important}
 }
 </style>
+<style>
+/* Final deck-maker sizing: show the whole 40-card board, and more cards in the horizontal picker. */
+@media (max-width: 700px) {
+  body.deck-mode .dm {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-height: 100dvh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+  }
+  body.deck-mode .dm-head { flex: 0 0 auto !important; }
+  /* Board gets enough height for 5 rows at 40 cards and 6 smaller rows above 40. */
+  body.deck-mode .board-wrap {
+    flex: 0 0 41dvh !important;
+    height: 41dvh !important;
+    max-height: 41dvh !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+  }
+  body.deck-mode .board {
+    height: 100% !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding: 5px 5px !important;
+  }
+  body.deck-mode .board-grid {
+    display: grid !important;
+    grid-template-columns: repeat(8, minmax(0, 1fr)) !important;
+    grid-auto-rows: max-content !important;
+    gap: 3px !important;
+    align-content: start !important;
+  }
+  body.deck-mode .board-grid:not(.many-cards) .dcard img {
+    width: 100% !important;
+    height: clamp(72px, 7.1dvh, 94px) !important;
+    aspect-ratio: auto !important;
+    object-fit: fill !important;
+  }
+  /* Keep 8 columns like the reference; make cards smaller only after 40. */
+  body.deck-mode .board-grid.many-cards {
+    grid-template-columns: repeat(8, minmax(0, 1fr)) !important;
+    gap: 3px !important;
+  }
+  body.deck-mode .board-grid.many-cards .dcard img {
+    width: 100% !important;
+    height: clamp(58px, 5.9dvh, 78px) !important;
+    aspect-ratio: auto !important;
+    object-fit: fill !important;
+  }
+  /* Increase picker height while reducing card width so around six cards are visible. */
+  body.deck-mode .picker {
+    flex: 0 0 35dvh !important;
+    height: 35dvh !important;
+    max-height: 35dvh !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  body.deck-mode .picker-top { flex: 0 0 auto !important; position: relative !important; top: auto !important; }
+  body.deck-mode .picker-grid {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 6px !important;
+    padding: 5px 7px calc(5px + env(safe-area-inset-bottom)) !important;
+    touch-action: pan-x !important;
+  }
+  body.deck-mode .pcard {
+    flex: 0 0 96px !important;
+    width: 96px !important;
+    min-width: 96px !important;
+  }
+  body.deck-mode .pcard img {
+    width: 100% !important;
+    height: clamp(116px, 16dvh, 150px) !important;
+    object-fit: cover !important;
+  }
+}
+</style>

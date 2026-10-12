@@ -429,18 +429,43 @@ requestAnimationFrame(()=>{let pg=document.querySelector('.picker-grid'),bd=docu
 }
 function openDeckSort(){
  const options=[
-  ['recommended','カードデータ順','カードデータに登録されている順番'],
-  ['owned','所持数が多い順','所持カードが多いものを先に表示'],
-  ['name','カード名順','カード名の五十音順'],
-  ['cost','コストが低い順','コストの小さいカードから表示'],
-  ['latest','カードデータ逆順','カードデータを逆から表示']
+  ['name','カード名順','デッキ欄のカードを名前の五十音順に並べる'],
+  ['cost','コストが低い順','コストの小さいカードから並べる'],
+  ['civilization','文明順','文明の順番で並べる'],
+  ['number','カード番号順','カード番号の順番で並べる'],
+  ['power','パワーが高い順','パワーの高いカードから並べる']
  ];
  let overlay=document.getElementById('deckSortOverlay');
- if(!overlay){overlay=document.createElement('div');overlay.className='overlay';overlay.id='deckSortOverlay';overlay.innerHTML=`<div class="sheet"><div class="sheet-head"><h2>並べ替え</h2><button class="close" id="dsClose">×</button></div><p style="font-size:13px;color:#687078;margin:0 0 10px">カード一覧の表示順を選んでください。</p><div id="dsOptions" class="sort-options"></div><button class="btn" id="dsApply" style="width:100%;margin-top:12px">この順番にする</button></div>`;document.body.appendChild(overlay)}
- $('dsOptions').innerHTML=options.map(([value,label,desc])=>`<button type="button" class="sort-option ${S.sort===value?'on':''}" data-sort="${value}"><span class="sort-radio">${S.sort===value?'●':'○'}</span><span><b>${label}</b><small>${desc}</small></span></button>`).join('');
- overlay.classList.add('open');$('dsClose').onclick=()=>overlay.classList.remove('open');overlay.querySelectorAll('[data-sort]').forEach(b=>b.onclick=()=>{S.pendingSort=b.dataset.sort;overlay.querySelectorAll('[data-sort]').forEach(x=>{x.classList.toggle('on',x.dataset.sort===S.pendingSort);x.querySelector('.sort-radio').textContent=x.dataset.sort===S.pendingSort?'●':'○'})});
- // Initialise the pending choice every time the sheet opens.
- S.pendingSort=S.sort; $('dsApply').onclick=()=>{S.sort=S.pendingSort||S.sort;overlay.classList.remove('open');renderEditor()};
+ if(!overlay){overlay=document.createElement('div');overlay.className='overlay';overlay.id='deckSortOverlay';overlay.innerHTML=`<div class="sheet"><div class="sheet-head"><h2>デッキ欄の並べ替え</h2><button class="close" id="dsClose">×</button></div><p style="font-size:13px;color:#687078;margin:0 0 10px">カード一覧ではなく、上のデッキ欄を並べ替えます。</p><div id="dsOptions" class="sort-options"></div><button class="btn" id="dsApply" style="width:100%;margin-top:12px">デッキを並べ替える</button></div>`;document.body.appendChild(overlay)}
+ $('dsOptions').innerHTML=options.map(([value,label,desc])=>`<button type="button" class="sort-option ${S.pendingDeckSort===value?'on':''}" data-deck-sort="${value}"><span class="sort-radio">${S.pendingDeckSort===value?'●':'○'}</span><span><b>${label}</b><small>${desc}</small></span></button>`).join('');
+ overlay.classList.add('open');$('dsClose').onclick=()=>overlay.classList.remove('open');
+ overlay.querySelectorAll('[data-deck-sort]').forEach(b=>b.onclick=()=>{S.pendingDeckSort=b.dataset.deckSort;overlay.querySelectorAll('[data-deck-sort]').forEach(x=>{x.classList.toggle('on',x.dataset.deckSort===S.pendingDeckSort);x.querySelector('.sort-radio').textContent=x.dataset.deckSort===S.pendingDeckSort?'●':'○'})});
+ $('dsApply').onclick=()=>{
+  const mode=S.pendingDeckSort||'name',z=currentZone();
+  const entries=Object.entries(z).map(([k,q],i)=>({k,q:Number(q),i,c:S.cards.find(x=>id(x)===k)}));
+  const civOrder=['火','水','自然','光','闇','ゼロ'];
+  const cardNumber=c=>String(num(c)||'');
+  entries.sort((a,b)=>{
+   const x=a.c,y=b.c;
+   if(!x||!y)return a.i-b.i;
+   if(mode==='name')return name(x).localeCompare(name(y),'ja')||a.i-b.i;
+   if(mode==='cost')return cost(x)-cost(y)||name(x).localeCompare(name(y),'ja')||a.i-b.i;
+   if(mode==='civilization'){
+    const cx=civ(x).map(v=>civOrder.indexOf(v)<0?99:civOrder.indexOf(v));
+    const cy=civ(y).map(v=>civOrder.indexOf(v)<0?99:civOrder.indexOf(v));
+    const sx=cx.join(','),sy=cy.join(',');
+    return sx.localeCompare(sy,undefined,{numeric:true})||name(x).localeCompare(name(y),'ja')||a.i-b.i;
+   }
+   if(mode==='number')return cardNumber(x).localeCompare(cardNumber(y),'ja',{numeric:true})||a.i-b.i;
+   if(mode==='power'){
+    const px=Number.parseInt(vals(x,'power')[0],10),py=Number.parseInt(vals(y,'power')[0],10);
+    return (Number.isFinite(py)?py:-1)-(Number.isFinite(px)?px:-1)||name(x).localeCompare(name(y),'ja')||a.i-b.i;
+   }
+   return a.i-b.i;
+  });
+  Object.keys(z).forEach(k=>delete z[k]);entries.forEach(e=>{z[e.k]=e.q});
+  save();overlay.classList.remove('open');renderEditor();
+ };
 }
 function openDeckFilter(){
  let old=S.deckFilter||{};

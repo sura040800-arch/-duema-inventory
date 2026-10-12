@@ -457,6 +457,63 @@ try{let r=await fetch('data/cards.json?'+Date.now(),{cache:'no-store'});let j=aw
 }
 load();
 </script>
+
+<style>
+/* Final mobile layout correction: larger deck cards, compact picker, less dead space. */
+@media (max-width: 700px) {
+  body.deck-mode .dm {
+    height: 100dvh !important; min-height: 0 !important; max-height: 100dvh !important;
+    display: flex !important; flex-direction: column !important; overflow: hidden !important;
+  }
+  body.deck-mode .dm-head { flex: 0 0 auto !important; }
+  body.deck-mode .board-wrap {
+    flex: 0 0 51dvh !important; height: 51dvh !important; max-height: 51dvh !important;
+    min-height: 0 !important; overflow: hidden !important;
+  }
+  body.deck-mode .board {
+    height: 100% !important; min-height: 0 !important; max-height: none !important;
+    overflow-y: auto !important; overflow-x: hidden !important; padding: 4px !important;
+  }
+  body.deck-mode .board-grid {
+    display: grid !important; grid-template-columns: repeat(8,minmax(0,1fr)) !important;
+    grid-auto-rows: max-content !important; gap: 3px !important; align-content: start !important;
+  }
+  /* Up to 40 cards: readable cards, about five rows visible. */
+  body.deck-mode .board-grid:not(.many-cards) .dcard img {
+    display: block !important; width: 100% !important; height: clamp(66px,9dvh,80px) !important;
+    aspect-ratio: auto !important; object-fit: fill !important;
+  }
+  /* Above 40: shrink moderately but keep eight columns and allow vertical scrolling. */
+  body.deck-mode .board-grid.many-cards { grid-template-columns: repeat(8,minmax(0,1fr)) !important; gap: 3px !important; }
+  body.deck-mode .board-grid.many-cards .dcard img {
+    display: block !important; width: 100% !important; height: clamp(56px,7.4dvh,66px) !important;
+    aspect-ratio: auto !important; object-fit: fill !important;
+  }
+  /* Do not stretch the picker to fill all leftover space: reserve only enough for cards and controls. */
+  body.deck-mode .picker {
+    flex: 0 0 29dvh !important; height: 29dvh !important; min-height: 0 !important;
+    max-height: 29dvh !important; overflow: hidden !important; display: flex !important;
+    flex-direction: column-reverse !important; border-top-width: 5px !important;
+  }
+  body.deck-mode .picker-top {
+    flex: 0 0 auto !important; position: relative !important; top: auto !important;
+    padding: 6px 7px !important;
+  }
+  body.deck-mode .picker-grid {
+    flex: 1 1 auto !important; height: auto !important; min-height: 0 !important; max-height: none !important;
+    display: flex !important; flex-flow: row nowrap !important; align-items: center !important;
+    justify-content: flex-start !important; gap: 5px !important; overflow-x: auto !important;
+    overflow-y: hidden !important; padding: 4px 6px !important; touch-action: pan-x !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  body.deck-mode .pcard { flex: 0 0 59px !important; width: 59px !important; min-width: 59px !important; }
+  body.deck-mode .pcard img {
+    display: block !important; width: 100% !important; height: clamp(88px,12dvh,104px) !important;
+    aspect-ratio: auto !important; object-fit: cover !important;
+  }
+}
+</style>
+
 </body>
 </html>
 <style>

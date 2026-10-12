@@ -87,7 +87,22 @@ body.deck-mode{background:#fff}body.deck-mode>header,body.deck-mode main>.tabs{d
 
 
 /* Deck Maker filter refinements */
-.deck-filter-sheet{overflow-y:auto;overscroll-behavior:contain}.choice-chips{max-height:145px;overflow:auto;padding:2px 1px}.choice-chips .chip{font-size:12px}.range-fields{display:grid;grid-template-columns:1fr 1fr;gap:8px}.tag-mode{margin-top:8px}.filter-footer{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:sticky;bottom:-18px;background:#fff;padding:10px 0 2px}.filter-footer .btn{min-height:44px}.muted{color:#6b7280;font-size:12px}
+.deck-filter-sheet{overflow-y:auto;overscroll-behavior:contain}.choice-chips{max-height:145px;overflow:auto;padding:2px 1px}.choice-chips .chip{font-size:12px}.range-fields{display:grid;grid-template-columns:1fr 1fr;gap:8px}.tag-mode{margin:8px 0;display:flex;justify-content:flex-end;gap:8px}.tag-list{max-height:260px;overflow:auto;border-top:1px solid #d1d5db;border-bottom:1px solid #d1d5db}.tag-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 4px;border-bottom:1px solid #e5e7eb;font-size:14px}.tag-row:last-child{border-bottom:0}.tag-row input{width:24px;height:24px;accent-color:#36a5bf;flex:0 0 auto}.filter-footer{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:sticky;bottom:-18px;background:#fff;padding:10px 0 2px}.filter-footer .btn{min-height:44px}.muted{color:#6b7280;font-size:12px}
+
+/* Deck Maker interaction: horizontal card rail + swipe upward to add */
+.dm .format{display:none!important}
+.dm .picker{display:flex;flex-direction:column;background:#fff;border-top:6px solid #e5e7eb}
+.dm .picker-top{order:0;position:sticky;top:0;z-index:22}
+.dm .picker-grid{order:1;display:flex;flex-flow:row nowrap;align-items:flex-start;gap:8px;overflow-x:auto;overflow-y:hidden;width:100%;max-height:none;min-height:190px;padding:10px;background:#e6e7e8;scroll-snap-type:x proximity;overscroll-behavior-x:contain;overscroll-behavior-y:none;touch-action:pan-x;-webkit-overflow-scrolling:touch}
+.dm .pcard{position:relative;flex:0 0 112px;width:112px;min-width:112px;scroll-snap-align:start;user-select:none;-webkit-user-select:none;touch-action:pan-x pan-y}
+.dm .pcard img{display:block;width:100%;height:156px;aspect-ratio:63/88;object-fit:cover;-webkit-user-drag:none;user-select:none}
+.dm .pcard button{width:30px;height:30px;line-height:30px;font-size:23px;right:3px;bottom:3px;box-shadow:0 1px 3px #0004}
+.dm .board{max-height:31dvh;min-height:100px;overflow-y:auto}
+.dm .dcard .remove{opacity:1;display:flex;align-items:center;justify-content:center;width:22px;height:22px;border:1px solid #fff}
+.dm .empty-board{height:90px;min-height:90px;color:#6b7280;background:transparent;padding:25px 8px}
+.dm .picker-search input{min-width:0}
+@media(max-width:430px){.dm .picker-grid{min-height:180px;gap:7px}.dm .pcard{flex-basis:104px;width:104px;min-width:104px}.dm .pcard img{height:146px}.dm .board{max-height:28dvh}.dm .picker-actions button{font-size:10px;padding:9px 5px}}
+
 </style>
 </head>
 <body>
@@ -133,15 +148,27 @@ const $=id=>document.getElementById(id);
 const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 function save(){localStorage.setItem('duema_owned_v3',JSON.stringify(S.owned));localStorage.setItem('duema_favorites_v1',JSON.stringify(S.favs));localStorage.setItem('duema_decks_v3',JSON.stringify(S.decks))}
 function faces(c){return Array.isArray(c?.sides)&&c.sides.length?c.sides:[c]}
-function vals(c,k){return faces(c).flatMap(f=>{let v=f?.[k];return v==null||v===''?[]:(Array.isArray(v)?v:[v])})}
-function split(v){if(v==null)return[];if(Array.isArray(v))return v.flatMap(split);if(typeof v==='object')return Object.values(v).flatMap(split);return String(v).split(/[／\/・,、\s]+/).map(x=>x.trim()).filter(Boolean)}
+function vals(c,k){
+ const out=[]; const containers=['data','detail','details','card','cardData','card_data','metadata','info','attributes'];
+ for(const face of [...new Set([c,...faces(c)])]){
+  const roots=[face];
+  for(let i=0;i<roots.length;i++){
+   const root=roots[i]; if(!root||typeof root!=='object')continue;
+   const value=root[k]; if(value!=null&&value!=='')out.push(...(Array.isArray(value)?value:[value]));
+   if(i===0)for(const key of containers)if(root[key]&&typeof root[key]==='object')roots.push(root[key]);
+  }
+ }
+ return out;
+}
+function split(v){if(v==null)return[];if(Array.isArray(v))return v.flatMap(split);if(typeof v==='object')return Object.values(v).flatMap(split);return String(v).split(/[／\/,、;；\n\r]+/).map(x=>x.trim()).filter(Boolean)}
+function splitCiv(v){if(v==null)return[];if(Array.isArray(v))return v.flatMap(splitCiv);if(typeof v==='object')return Object.values(v).flatMap(splitCiv);return String(v).split(/[／\/・･,、;；\s]+/).map(x=>x.trim()).filter(Boolean)}
 function name(c){return c.name||c._name||c.cardName||''}
 function num(c){return c.number||c.id||''}
 function id(c){return String(c.id||c.number||'')}
-function civ(c){return [...new Set(vals(c,'civilization').flatMap(split))]}
-function race(c){return [...new Set(['race','species','species_name','raceName','tribe'].flatMap(k=>vals(c,k).flatMap(split)))]}
-function rare(c){return [...new Set(vals(c,'rarity').flatMap(split))]}
-function type(c){return [...new Set(['type','card_type','cardType'].flatMap(k=>vals(c,k).flatMap(split)))]}
+function civ(c){return [...new Set(['civilization','civilizations','civility','culture','文明','文明名','civilization_name'].flatMap(k=>vals(c,k).flatMap(splitCiv)))]}
+function race(c){return [...new Set(['race','races','species','species_name','speciesName','raceName','race_name','tribe','tribes','tribeName','tribe_name','種族','種族名'].flatMap(k=>vals(c,k).flatMap(split)))]}
+function rare(c){return [...new Set(['rarity','rare','レアリティ'].flatMap(k=>vals(c,k).flatMap(split)))]}
+function type(c){return [...new Set(['type','types','card_type','cardType','card_type_name','cardTypeName','card_types','cardTypes','kind','card_kind','cardKind','type_name','typeName','カードタイプ','カード種別','種類'].flatMap(k=>vals(c,k).flatMap(split)))]}
 function cost(c){let n=parseInt(vals(c,'cost')[0],10);return Number.isFinite(n)?n:999}
 function text(c){let ks=['specialAbility','special_ability','specialAbilities','abilities','ability','card_text','text','effect','effects'];let a=[];faces(c).forEach(f=>ks.forEach(k=>{let v=f?.[k];if(Array.isArray(v))a.push(v.join(' '));else if(v)a.push(String(v))}));return a.join(' ')}
 const aliases={'龍装チュリス':['ドルガン','ドル','ドルガンチュリス'],'蒼き団長ドギラゴン剣':['ドギ剣'],'天災デドダム':['デドダム'],'流星のガイアッシュカイザー':['ガイアッシュ'],'飛翔龍5000VT':['5000vt','5000ＶＴ'],'アーテルゴルギーニ':['アーテル'],'邪幽ジャガイスト':['ジャガイスト']};
@@ -168,12 +195,73 @@ function currentZone(){let d=S.decks[S.deck];return S.zone==='main'?d.main:S.zon
 function zoneMax(){return S.zone==='main'?Infinity:S.zone==='gr'?12:8}
 function zoneLabel(){return S.zone==='main'?'メイン':S.zone==='gr'?'GR':'超次元'}
 function zoneTotal(){return totalZone(currentZone())}
-function hasTag(c,t){if(t==='ドラゴン')return race(c).some(x=>norm(x).includes(norm('ドラゴン')));if(t==='コマンド')return race(c).some(x=>norm(x).includes(norm('コマンド')));let hay=norm([text(c),...type(c),...race(c),name(c)].join(' '));let aliases={'S・トリガー':['sトリガー','シールドトリガー','strigger'],'G・ストライク':['gストライク','gstrike']};return (aliases[t]||[t]).some(x=>hay.includes(norm(x)))}
+function hasTag(c,t){
+ const effect=norm(text(c)), races=race(c).map(norm), types=type(c).map(norm);
+ const has=(...terms)=>terms.some(x=>effect.includes(norm(x)));
+ const directTags=['tags','tag','ability_tags','abilityTags','keyword_abilities','keywordAbilities','keywords','能力タグ','タグ'].flatMap(k=>vals(c,k).flatMap(split)).map(norm);
+ const directAliases={ 'サーチ（カード対象）':['サーチ','カードサーチ','サーチ（カード）'], 'サーチ（クリーチャー対象）':['クリーチャーサーチ'], 'サーチ（呪文対象）':['呪文サーチ'], 'サーチ（その他）':['その他サーチ'], 'ドラゴン':['ドラゴンを含む種族'], 'コマンド':['コマンドを含む種族'] };
+ if(directTags.some(v=>v===norm(t)||(directAliases[t]||[]).some(a=>v===norm(a))))return true;
+ if(t==='ドラゴン')return races.some(x=>x.includes(norm('ドラゴン')));
+ if(t==='コマンド')return races.some(x=>x.includes(norm('コマンド')));
+ if(t==='サーチ（カード対象）')return has('山札を見る','山札から','山札の中から','山札を見て')&&has('カードを1枚','カードを一枚','カードを手札に','カードを加える','カードを選び');
+ if(t==='サーチ（クリーチャー対象）')return has('山札を見る','山札から','山札の中から','山札を見て')&&has('クリーチャーを1体','クリーチャーを一体','クリーチャーを手札に','クリーチャーを加える','クリーチャーを選び');
+ if(t==='サーチ（呪文対象）')return has('山札を見る','山札から','山札の中から','山札を見て')&&has('呪文を1枚','呪文を一枚','呪文を手札に','呪文を加える','呪文を選び');
+ if(t==='サーチ（その他）')return has('山札を見る','山札から','山札の中から','山札を見て')&&has('進化','タマシード','ツインパクト','ドラゴン','種族');
+ if(t==='ドロー')return has('カードを引く','カードを1枚引く','カードを一枚引く','カードを2枚引く','カードを二枚引く','カードを3枚引く','カードを三枚引く','カードを引いて');
+ if(t==='ブロッカー')return has('ブロッカー')||effect.includes(norm('ブロックできる'));
+ if(t==='アンタップ')return has('アンタップする','アンタップさせる');
+ if(t==='マナ回収')return has('マナゾーンから')&&has('手札に戻す','手札に加える','手札に戻して');
+ if(t==='手札補充')return has('カードを引く','カードを手札に加える','手札に加える');
+ if(t==='シールド回収')return has('シールドを手札に加える','シールドを手札に戻す');
+ if(t==='ニンジャ・ストライク')return has('ニンジャ・ストライク');
+ if(t==='革命チェンジ')return has('革命チェンジ');
+ if(t==='侵略')return has('侵略');
+ if(t==='連鎖')return has('連鎖');
+ if(t==='マナ武装')return has('マナ武装');
+ if(t==='革命')return has('革命');
+ if(t==='ジョーカーズ')return races.some(x=>x.includes(norm('ジョーカーズ')));
+ if(t==='メタ')return has('できない','させない','無視する','禁止する');
+ if(t==='ロック')return has('できない','使えない','攻撃できない','唱えられない');
+ if(t==='ブロックされない')return has('ブロックされない','ブロックされない');
+ if(t==='破壊されない')return has('破壊されない','破壊されなくなる');
+ if(t==='選ばれない')return has('選ばれない','選ぶことができない');
+ if(t==='EXライフ')return has('exライフ');
+ if(t==='エスケープ')return has('エスケープ');
+ if(t==='離れない')return has('離れない','バトルゾーンを離れない');
+ if(t==='Q・ブレイカー')return has('qブレイカー','クアドラプルブレイカー');
+ if(t==='ワールド・ブレイカー')return has('ワールドブレイカー');
+ if(t==='進化')return types.some(x=>x.includes(norm('進化')))||has('進化クリーチャー');
+ if(t==='ツインパクト')return types.some(x=>x.includes(norm('ツインパクト'))) || (faces(c).length>1);
+ if(t==='墓地肥やし')return has('墓地に置く','墓地に落とす','墓地を肥やす');
+ if(t==='山札操作')return has('山札の上','山札の下','山札を見て');
+ if(t==='コスト軽減')return has('コストを少なく','コストを少なくする','コストを支払わず');
+ if(t==='コスト踏み倒し')return has('コストを支払わず','コストを支払わないで','コストを払わず');
+ if(t==='追加ターン')return has('追加ターン');
+ if(t==='敗北回避')return has('ゲームに負けない','敗北しない','負けない');
+ if(t==='除去')return has('破壊する','持ち主の手札に戻す','山札の一番下','マナゾーンに置く','シールド化する','封印する','超次元ゾーンに置く');
+ if(t==='破壊')return has('破壊する','破壊された時','破壊される');
+ if(t==='バウンス')return has('手札に戻す','持ち主の手札に戻す');
+ if(t==='タップ')return has('タップする','タップさせる');
+ if(t==='マナ加速')return has('マナゾーンに置く','マナを加える','マナゾーンに加える');
+ if(t==='墓地回収')return has('墓地から','墓地にある','墓地の')&&has('手札に戻す','手札に加える','手札に戻して');
+ if(t==='蘇生')return has('墓地からバトルゾーン','墓地から出す','墓地から召喚');
+ if(t==='ハンデス')return has('手札を捨てる','捨てさせる','相手の手札');
+ if(t==='シールド追加')return has('シールドを1つ','シールドを一つ','シールド化する','シールドゾーンに置く');
+ if(t==='シールド焼却')return has('シールドをブレイクすることはできない','シールドを墓地に置く','シールドを手札に加える');
+ if(t==='スピードアタッカー')return has('スピードアタッカー');
+ if(t==='マッハファイター')return has('マッハファイター');
+ if(t==='ジャストダイバー')return has('ジャストダイバー');
+ if(t==='W・ブレイカー')return has('wブレイカー','ダブルブレイカー');
+ if(t==='T・ブレイカー')return has('tブレイカー','トリプルブレイカー');
+ if(t==='S・トリガー')return has('sトリガー','シールドトリガー');
+ if(t==='G・ストライク')return has('gストライク');
+ return has(t);
+}
 function deckCards(){let z=currentZone();return Object.entries(z).map(([k,q])=>{let c=S.cards.find(x=>id(x)===k);return c?{c,q:Number(q)}:null}).filter(Boolean)}
 function add(k){let z=currentZone();let cur=Number(z[k]||0);if(zoneMax()!==Infinity&&zoneTotal()>=zoneMax())return;if(S.zone==='main'&&cur>=4)return;z[k]=cur+1;save();renderEditor()}
 function remove(k){let z=currentZone();if(!z[k])return;z[k]--;if(z[k]<=0)delete z[k];save();renderEditor()}
 function renderEditor(){
-const oldPicker=document.querySelector('.picker-grid');const oldBoard=document.querySelector('.board');const pickerLeft=oldPicker?oldPicker.scrollLeft:0;const boardTop=oldBoard?oldBoard.scrollTop:0;const pageY=window.scrollY||0;
+const oldPicker=document.querySelector('.picker-grid');const oldBoard=document.querySelector('.board');const pickerTop=oldPicker?oldPicker.scrollTop:0;const pickerLeft=oldPicker?oldPicker.scrollLeft:0;const boardTop=oldBoard?oldBoard.scrollTop:0;const pageY=window.scrollY||0;
 let d=S.decks[S.deck],cards=deckCards();
 let results=S.cards.filter(c=>{let q=norm(S.q);if(q&&!deckNameSearch(c).includes(q))return false;let f=S.deckFilter||{};let selectedCivs=Array.isArray(f.civs)&&f.civs.length?f.civs:(f.civ?[f.civ]:[]);if(selectedCivs.length&&!selectedCivs.some(x=>civ(c).includes(x)))return false;if(f.colorMode==='single'&&civ(c).length!==1)return false;if(f.colorMode==='multi'&&civ(c).length<2)return false;let selectedTypes=Array.isArray(f.types)?f.types:(f.type?[f.type]:[]);if(selectedTypes.length&&!selectedTypes.some(x=>type(c).some(t=>norm(t).includes(norm(x)))))return false;let selectedRaces=Array.isArray(f.races)?f.races:(f.race?[f.race]:[]);if(selectedRaces.length&&!selectedRaces.some(x=>race(c).some(r=>norm(r).includes(norm(x)))))return false;if(f.costMin!==''&&f.costMin!=null&&cost(c)<Number(f.costMin))return false;if(f.costMax!==''&&f.costMax!=null&&cost(c)>Number(f.costMax))return false;let power=Number.parseInt(vals(c,'power')[0],10);if(f.powerMin!==''&&f.powerMin!=null&&(!Number.isFinite(power)||power<Number(f.powerMin)))return false;if(f.powerMax!==''&&f.powerMax!=null&&(!Number.isFinite(power)||power>Number(f.powerMax)))return false;if(f.text&&!norm(text(c)).includes(norm(f.text)))return false;let selectedTags=Array.isArray(f.tags)?f.tags:(f.tag?[f.tag]:[]);if(selectedTags.length){let matches=selectedTags.map(t=>hasTag(c,t));if((f.tagMode||'or')==='and'?!matches.every(Boolean):!matches.some(Boolean))return false}return true});
 if(S.sort==='latest')results=results.slice().reverse();if(S.sort==='name')results=results.slice().sort((a,b)=>name(a).localeCompare(name(b),'ja'));if(S.sort==='cost')results=results.slice().sort((a,b)=>cost(a)-cost(b));if(S.sort==='owned')results=results.slice().sort((a,b)=>(Number(S.owned[id(b)]||0)-Number(S.owned[id(a)]||0))||name(a).localeCompare(name(b),'ja'));
@@ -182,8 +270,8 @@ $('decks').innerHTML=`<div class="dm">
 <div class="dm-head"><div class="dm-brand"><div class="dm-brandmark">≋ DECK MAKER<small>デュエル・マスターズ</small></div><div class="dm-topactions"><button id="clearZone"><strong>▤</strong>全削除</button><button id="save"><strong>☑</strong>保存</button></div></div>
 <div class="zone-tabs"><button class="${S.zone==='main'?'active':''}" data-zone="main">メイン ${mainCount}</button><div class="zone-combined"><button class="${S.zone==='gr'?'active':''}" data-zone="gr">GR ${totalZone(d.gr)}／12</button><button class="${S.zone==='extra'?'active':''}" data-zone="extra">超次元 ${totalZone(d.extra)}／8</button></div></div></div>
 <div class="board-wrap"><div class="board"><div class="board-grid">${cards.length?cards.flatMap(({c,q})=>Array.from({length:q},()=>`<div class="dcard"><img src="${esc(image(c))}" loading="lazy" data-detail="${esc(id(c))}" alt="${esc(name(c))}" onerror="this.style.visibility='hidden'"><button class="remove" data-rem="${esc(id(c))}" aria-label="${esc(name(c))}を1枚減らす">−</button></div>`)).join(''):`<div class="empty-board">カードを追加</div>`}</div></div></div>
-<div class="format"><button class="${d.format==='オリジナル'?'on':''}" data-format="オリジナル">オリジナル</button><button class="${d.format==='アドバンス'?'on':''}" data-format="アドバンス">アドバンス</button></div>
-<div class="picker"><div class="picker-top"><div class="picker-search"><input id="deckSearch" value="${esc(S.q)}" placeholder="⌕　カード名"><div class="picker-actions"><button id="deckFilterBtn">☷ 絞り込み</button><button id="deckSortBtn">⇅ 並べ替え：${({'recommended':'おすすめ順','owned':'所持数順','name':'カード名順','cost':'コスト順','latest':'データ逆順'})[S.sort]||'おすすめ順'}</button></div></div></div>
+
+<div class="picker"><div class="picker-top"><div class="picker-search"><input id="deckSearch" value="${esc(S.q)}" placeholder="⌕　カード名"><div class="picker-actions"><button id="deckFilterBtn">☷ 絞り込み</button><button id="deckSortBtn">⇅ 並べ替え：${({'recommended':'カードデータ順','owned':'所持数順','name':'カード名順','cost':'コスト順','latest':'データ逆順'})[S.sort]||'おすすめ順'}</button></div></div></div>
 <div class="picker-grid">${vis.map(c=>`<div class="pcard"><img src="${esc(image(c))}" loading="lazy" data-detail="${esc(id(c))}" onerror="this.style.visibility='hidden'">${S.owned[id(c)]?`<span class="owned">所持 ${S.owned[id(c)]}</span>`:''}<button data-add="${esc(id(c))}">＋</button></div>`).join('')||'<div class="status">該当カードがありません</div>'}</div></div>
 </div>`;
 $('save').onclick=()=>{save();alert('保存しました')};
@@ -193,14 +281,24 @@ $('decks').querySelectorAll('[data-zone]').forEach(b=>b.onclick=()=>{S.zone=b.da
 $('decks').querySelectorAll('[data-format]').forEach(b=>b.onclick=()=>{d.format=b.dataset.format;save();renderEditor()});
 $('decks').querySelectorAll('[data-rem]').forEach(b=>b.onclick=()=>remove(b.dataset.rem));
 $('decks').querySelectorAll('[data-add]').forEach(b=>b.onclick=()=>add(b.dataset.add));
+// Official-style gesture: swipe a card upward to add it to the active deck zone.
+let swipeStart=null,ignorePickerClickUntil=0;
+const picker=document.querySelector('.picker-grid');
+if(picker){
+ picker.querySelectorAll('.pcard').forEach(card=>{
+  card.addEventListener('touchstart',e=>{const t=e.touches&&e.touches[0];if(t)swipeStart={x:t.clientX,y:t.clientY,id:card.querySelector('[data-add]')?.dataset.add||card.querySelector('[data-detail]')?.dataset.detail};},{passive:true});
+  card.addEventListener('touchend',e=>{if(!swipeStart)return;const t=e.changedTouches&&e.changedTouches[0];if(!t){swipeStart=null;return}const dx=t.clientX-swipeStart.x,dy=t.clientY-swipeStart.y,id0=swipeStart.id;swipeStart=null;if(id0&&dy<-32&&Math.abs(dy)>Math.abs(dx)*1.15){ignorePickerClickUntil=Date.now()+450;e.preventDefault();add(id0)}},{passive:false});
+ });
+ picker.addEventListener('click',e=>{if(Date.now()<ignorePickerClickUntil){e.preventDefault();e.stopPropagation()}},true);
+}
 $('decks').querySelectorAll('[data-detail]').forEach(b=>b.onclick=()=>showCardDetail(b.dataset.detail));
 $('deckFilterBtn').onclick=()=>openDeckFilter();$('deckSortBtn').onclick=()=>openDeckSort();
 let composing=false;$('deckSearch').addEventListener('compositionstart',()=>composing=true);$('deckSearch').addEventListener('compositionend',e=>{composing=false;S.q=e.target.value;renderEditor();let el=$('deckSearch');if(el){el.focus();el.setSelectionRange(el.value.length,el.value.length)}});$('deckSearch').addEventListener('input',e=>{if(composing)return;S.q=e.target.value;let pos=e.target.selectionStart;renderEditor();let el=$('deckSearch');if(el){el.focus();try{el.setSelectionRange(pos,pos)}catch(_){}}});
-requestAnimationFrame(()=>{let pg=document.querySelector('.picker-grid'),bd=document.querySelector('.board');if(pg)pg.scrollLeft=pickerLeft;if(bd)bd.scrollTop=boardTop;window.scrollTo(0,pageY)});
+requestAnimationFrame(()=>{let pg=document.querySelector('.picker-grid'),bd=document.querySelector('.board');if(pg){pg.scrollTop=pickerTop;pg.scrollLeft=pickerLeft}if(bd)bd.scrollTop=boardTop;window.scrollTo(0,pageY)});
 }
 function openDeckSort(){
  const options=[
-  ['recommended','おすすめ順','カードデータの並びを使用'],
+  ['recommended','カードデータ順','カードデータに登録されている順番'],
   ['owned','所持数が多い順','所持カードが多いものを先に表示'],
   ['name','カード名順','カード名の五十音順'],
   ['cost','コストが低い順','コストの小さいカードから表示'],
@@ -219,7 +317,7 @@ function openDeckFilter(){
  const civs=['光','水','闇','火','自然','ゼロ'];
  const types=[...new Set(S.cards.flatMap(type))].filter(Boolean).sort((a,b)=>a.localeCompare(b,'ja'));
  const races=[...new Set(S.cards.flatMap(race))].filter(Boolean).sort((a,b)=>a.localeCompare(b,'ja'));
- const tagDefs=[['S・トリガー','S・トリガー'],['G・ストライク','G・ストライク'],['ドラゴン','ドラゴンを含む種族'],['コマンド','コマンドを含む種族'],['ブロッカー','ブロッカー'],['マッハファイター','マッハファイター'],['スピードアタッカー','スピードアタッカー'],['ジャストダイバー','ジャストダイバー'],['W・ブレイカー','W・ブレイカー'],['T・ブレイカー','T・ブレイカー']];
+ const tagDefs=[['ドロー','ドロー'],['サーチ（カード対象）','サーチ（カード対象）'],['サーチ（クリーチャー対象）','サーチ（クリーチャー対象）'],['サーチ（呪文対象）','サーチ（呪文対象）'],['サーチ（その他）','サーチ（その他）'],['ブロッカー','ブロッカー'],['除去','除去'],['破壊','破壊'],['バウンス','バウンス（手札に戻す）'],['タップ','タップ'],['アンタップ','アンタップ'],['マナ加速','マナ加速'],['マナ回収','マナ回収'],['墓地回収','墓地回収'],['蘇生','蘇生'],['ハンデス','ハンデス'],['手札補充','手札補充'],['シールド追加','シールド追加'],['シールド焼却','シールド焼却'],['シールド回収','シールド回収'],['S・トリガー','S・トリガー'],['G・ストライク','G・ストライク'],['ニンジャ・ストライク','ニンジャ・ストライク'],['革命チェンジ','革命チェンジ'],['侵略','侵略'],['連鎖','連鎖'],['マナ武装','マナ武装'],['革命','革命'],['ドラゴン','ドラゴンを含む種族'],['コマンド','コマンドを含む種族'],['ジョーカーズ','ジョーカーズ'],['メタ','メタ・妨害'],['ロック','ロック'],['マッハファイター','マッハファイター'],['スピードアタッカー','スピードアタッカー'],['ジャストダイバー','ジャストダイバー'],['ブロックされない','ブロックされない'],['破壊されない','破壊されない'],['選ばれない','選ばれない'],['EXライフ','EXライフ'],['エスケープ','エスケープ'],['離れない','離れない'],['W・ブレイカー','W・ブレイカー'],['T・ブレイカー','T・ブレイカー'],['Q・ブレイカー','Q・ブレイカー'],['ワールド・ブレイカー','ワールド・ブレイカー'],['進化','進化'],['ツインパクト','ツインパクト'],['墓地肥やし','墓地肥やし'],['山札操作','山札操作'],['コスト軽減','コスト軽減'],['コスト踏み倒し','コスト踏み倒し'],['追加ターン','追加ターン'],['敗北回避','敗北回避']];
  let overlay=document.getElementById('deckFilterOverlay');
  if(!overlay){overlay=document.createElement('div');overlay.className='overlay';overlay.id='deckFilterOverlay';overlay.innerHTML=`<div class="sheet deck-filter-sheet"><div class="sheet-head"><h2>絞り込み</h2><button class="close" id="deckFilterClose">×</button></div>
  <div class="field"><label>文明（複数選択可）</label><div class="chips" id="dfCiv"></div></div>
@@ -228,7 +326,7 @@ function openDeckFilter(){
  <div class="field"><label>種族（複数選択可）</label><input id="dfRaceSearch" placeholder="種族名を検索"><div class="chips choice-chips" id="dfRaceChoices"></div></div>
  <div class="field"><label>コスト（最小〜最大）</label><div class="range-fields"><select id="dfMin"><option value="">指定なし</option></select><select id="dfMax"><option value="">指定なし</option></select></div></div>
  <div class="field"><label>パワー（最小〜最大）</label><div class="range-fields"><select id="dfPowerMin"><option value="">指定なし</option></select><select id="dfPowerMax"><option value="">指定なし</option></select></div></div>
- <div class="field"><label>能力タグ</label><div class="chips" id="dfTags"></div><div class="chips tag-mode" id="dfTagMode"><button type="button" class="chip" data-tagmode="or">いずれかに一致</button><button type="button" class="chip" data-tagmode="and">すべてに一致</button></div></div>
+ <div class="field"><label>タグ</label><div class="tag-mode" id="dfTagMode"><button type="button" class="chip" data-tagmode="or">or（いずれか）</button><button type="button" class="chip" data-tagmode="and">and（すべて）</button></div><input id="dfTagSearch" placeholder="タグ名を入力して検索"><div class="tag-list" id="dfTags"></div><small class="muted" id="dfTagCount"></small></div>
  <div class="field"><label>効果テキスト</label><input id="dfText" placeholder="カード効果の一部を入力"></div>
  <div class="filter-footer"><button class="btn gray" id="dfClear">全条件クリア</button><button class="btn" id="dfApply">決定</button></div></div>`;document.body.appendChild(overlay)}
  const makeChips=(id,items,selected,attr)=>{$(id).innerHTML=items.map(([value,label])=>`<button type="button" class="chip ${selected.includes(value)?'on':''}" ${attr}="${esc(value)}">${esc(label)}</button>`).join('')||'<span class="muted">該当項目なし</span>'};
@@ -236,7 +334,7 @@ function openDeckFilter(){
  $('dfColorMode').querySelectorAll('[data-colormode]').forEach(b=>b.classList.toggle('on',b.dataset.colormode===f.colorMode));
  makeChips('dfTypeChoices',types.map(x=>[x,x]),f.types,'data-dftype');
  makeChips('dfRaceChoices',races.map(x=>[x,x]),f.races,'data-dfrace');
- makeChips('dfTags',tagDefs,f.tags,'data-dftag');
+ const renderTagList=()=>{let q=norm($('dfTagSearch').value);let shown=tagDefs.filter(([v,l])=>!q||norm(v+' '+l).includes(q));$('dfTags').innerHTML=shown.map(([v,l])=>`<label class="tag-row"><span>${esc(l)}</span><input type="checkbox" data-dftag="${esc(v)}" ${f.tags.includes(v)?'checked':''}></label>`).join('')||'<div class="muted" style="padding:12px">該当するタグがありません</div>'; $('dfTagCount').textContent=`${f.tags.length}件選択中`; $('dfTags').querySelectorAll('[data-dftag]').forEach(el=>el.onchange=()=>{let v=el.dataset.dftag;f.tags=el.checked?[...f.tags,v]:f.tags.filter(x=>x!==v);renderTagList()})}; $('dfTagSearch').value='';renderTagList(); $('dfTagSearch').oninput=renderTagList;
  const costs=Array.from({length:16},(_,i)=>String(i));for(const id0 of ['dfMin','dfMax'])$(id0).innerHTML='<option value="">指定なし</option>'+costs.map(v=>`<option value="${v}" ${(id0==='dfMin'?String(f.costMin):String(f.costMax))===v?'selected':''}>${v}</option>`).join('');
  const powers=['0','1000','2000','3000','4000','5000','6000','7000','8000','9000','10000','12000','15000','20000','30000','50000','60000'];for(const id0 of ['dfPowerMin','dfPowerMax'])$(id0).innerHTML='<option value="">指定なし</option>'+powers.map(v=>`<option value="${v}" ${(id0==='dfPowerMin'?String(f.powerMin):String(f.powerMax))===v?'selected':''}>${Number(v).toLocaleString('ja-JP')}</option>`).join('');
  $('dfText').value=f.text;overlay.querySelectorAll('[data-tagmode]').forEach(b=>b.classList.toggle('on',b.dataset.tagmode===f.tagMode));
@@ -247,7 +345,7 @@ function openDeckFilter(){
  $('dfRaceChoices').querySelectorAll('[data-dfrace]').forEach(b=>b.onclick=()=>{let v=b.dataset.dfrace;f.races=f.races.includes(v)?f.races.filter(x=>x!==v):[...f.races,v];filterChips('dfRaceSearch','dfRaceChoices',races,f.races,'data-dfrace')});
  $('dfCiv').querySelectorAll('[data-dfciv]').forEach(b=>b.onclick=()=>{let v=b.dataset.dfciv;if(!v)f.civs=[];else f.civs=f.civs.includes(v)?f.civs.filter(x=>x!==v):[...f.civs,v];$('dfCiv').querySelectorAll('[data-dfciv]').forEach(x=>x.classList.toggle('on',x.dataset.dfciv===''?f.civs.length===0:f.civs.includes(x.dataset.dfciv)))});
  $('dfColorMode').querySelectorAll('[data-colormode]').forEach(b=>b.onclick=()=>{f.colorMode=b.dataset.colormode;$('dfColorMode').querySelectorAll('[data-colormode]').forEach(x=>x.classList.toggle('on',x.dataset.colormode===f.colorMode))});
- $('dfTags').querySelectorAll('[data-dftag]').forEach(b=>b.onclick=()=>{let v=b.dataset.dftag;f.tags=f.tags.includes(v)?f.tags.filter(x=>x!==v):[...f.tags,v];$('dfTags').querySelectorAll('[data-dftag]').forEach(x=>x.classList.toggle('on',f.tags.includes(x.dataset.dftag)))});
+ // Tag checkboxes are wired by renderTagList().
  $('dfTagMode').querySelectorAll('[data-tagmode]').forEach(b=>b.onclick=()=>{f.tagMode=b.dataset.tagmode;$('dfTagMode').querySelectorAll('[data-tagmode]').forEach(x=>x.classList.toggle('on',x.dataset.tagmode===f.tagMode))});
  overlay.classList.add('open');$('deckFilterClose').onclick=()=>overlay.classList.remove('open');
  $('dfClear').onclick=()=>{S.deckFilter={civ:'',civs:[],colorMode:'all',types:[],races:[],costMin:'',costMax:'',powerMin:'',powerMax:'',text:'',tags:[],tagMode:'or'};overlay.classList.remove('open');renderEditor()};

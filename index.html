@@ -126,6 +126,44 @@ body.deck-mode main{height:100dvh;overflow:hidden}
 .dm .dcard .remove{display:none!important}
 @media(max-width:430px){.dm-brand{gap:7px;padding:0 9px}.dm-back{padding:7px 7px;font-size:11px}.dm-brandmark{font-size:17px}.dm-brandmark small{font-size:9px}.dm-topactions{gap:10px}.board{max-height:31dvh}.dm .pcard{flex-basis:120px;width:120px;min-width:120px}.dm .pcard img{height:168px}.dm .picker-grid{padding:10px 9px calc(12px + env(safe-area-inset-bottom))}}
 
+
+
+/* Oct 12 refinements: reclaim viewport space, scroll the whole deck board, and keep collection tabs in normal flow */
+body:not(.deck-mode)>header{position:relative;top:auto}
+body:not(.deck-mode)>.tabs,body:not(.deck-mode) main>.tabs{position:relative;top:auto}
+body.deck-mode .dm{height:100dvh;min-height:100dvh;overflow:hidden}
+body.deck-mode .dm-head{flex:0 0 auto}
+body.deck-mode .board-wrap{flex:1 1 49dvh;min-height:0;max-height:49dvh;overflow:hidden}
+body.deck-mode .board{height:100%;max-height:none;min-height:0;overflow-y:auto;overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch;padding:8px 7px}
+body.deck-mode .board-grid{grid-template-columns:repeat(8,minmax(0,1fr));grid-auto-rows:max-content;gap:5px;align-content:start;min-height:max-content}
+body.deck-mode .dcard{cursor:pointer;touch-action:pan-y}
+body.deck-mode .dcard img{width:100%;height:auto;aspect-ratio:63/88;object-fit:cover}
+body.deck-mode .picker{flex:0 0 25dvh;min-height:0;max-height:25dvh}
+body.deck-mode .picker-grid{height:100%;min-height:0;align-items:center;justify-content:flex-start;padding:8px 9px 12px;overscroll-behavior-x:contain}
+body.deck-mode .pcard{flex-basis:132px;width:132px;min-width:132px}
+body.deck-mode .pcard img{height:190px;width:100%;object-fit:cover}
+body.deck-mode .picker-top{padding:7px 8px 8px}
+body.deck-mode .picker-search input{padding:10px 11px}
+body.deck-mode .dm-brand{height:54px}
+body.deck-mode .zone-tabs button{padding-top:11px;padding-bottom:10px}
+/* Collection quantities are intentionally unlimited; only deck-building rules have copy limits. */
+@media(max-width:430px){
+ body.deck-mode .board-wrap{flex-basis:49dvh;max-height:49dvh}
+ body.deck-mode .picker{flex-basis:25dvh;max-height:25dvh}
+ body.deck-mode .pcard{flex-basis:132px;width:132px;min-width:132px}
+ body.deck-mode .pcard img{height:190px}
+ body.deck-mode .dm-brandmark{font-size:18px}
+ body.deck-mode .dm-brand{padding:0 10px;gap:7px}
+ body.deck-mode .dm-topactions{gap:10px}
+}
+
+/* Allow every deck card (40, 60, or more) to be reached by vertical scrolling; no 24-card display cap. */
+body.deck-mode .board{overflow-y:auto!important;overflow-x:hidden!important;touch-action:pan-y;-webkit-overflow-scrolling:touch}
+body.deck-mode .board-grid{height:auto!important;max-height:none!important}
+/* Dynamic deck sizing: larger 8-column cards through 40 copies; compact 10-column cards above 40. */
+body.deck-mode .board-grid{grid-template-columns:repeat(8,minmax(0,1fr))!important}
+body.deck-mode .board-grid.many-cards{grid-template-columns:repeat(10,minmax(0,1fr))!important;gap:4px}
+body.deck-mode .board-grid.many-cards .dcard img{border-radius:2px}
 </style>
 </head>
 <body>
@@ -292,7 +330,7 @@ let vis=results.slice(0,100),mainCount=totalZone(d.main);
 $('decks').innerHTML=`<div class="dm">
 <div class="dm-head"><div class="dm-brand"><button class="dm-back" id="deckBack" aria-label="デッキ一覧に戻る">‹ 戻る</button><div class="dm-brandmark">≋ DECK MAKER<small>デュエル・マスターズ</small></div><div class="dm-topactions"><button id="clearZone"><strong>▤</strong>全削除</button><button id="save"><strong>☑</strong>保存</button></div></div>
 <div class="zone-tabs"><button class="${S.zone==='main'?'active':''}" data-zone="main">メイン ${mainCount}</button><div class="zone-combined"><button class="${S.zone==='gr'?'active':''}" data-zone="gr">GR ${totalZone(d.gr)}／12</button><button class="${S.zone==='extra'?'active':''}" data-zone="extra">超次元 ${totalZone(d.extra)}／8</button></div></div></div>
-<div class="board-wrap"><div class="board"><div class="board-grid">${cards.length?cards.flatMap(({c,q})=>Array.from({length:q},()=>`<div class="dcard" data-deck-card="${esc(id(c))}"><img src="${esc(image(c))}" loading="lazy" data-detail="${esc(id(c))}" alt="${esc(name(c))}" onerror="this.style.visibility='hidden'"></div>`)).join(''):`<div class="empty-board">カードを追加</div>`}</div></div></div>
+<div class="board-wrap"><div class="board"><div class="board-grid ${totalZone(currentZone())>40?'many-cards':''}">${cards.length?cards.flatMap(({c,q})=>Array.from({length:q},()=>`<div class="dcard" data-deck-card="${esc(id(c))}"><img src="${esc(image(c))}" loading="lazy" data-detail="${esc(id(c))}" alt="${esc(name(c))}" onerror="this.style.visibility='hidden'"></div>`)).join(''):`<div class="empty-board">カードを追加</div>`}</div></div></div>
 
 <div class="picker"><div class="picker-top"><div class="picker-search"><input id="deckSearch" value="${esc(S.q)}" placeholder="⌕　カード名"><div class="picker-actions"><button id="deckFilterBtn">☷ 絞り込み</button><button id="deckSortBtn">⇅ 並べ替え：${({'recommended':'カードデータ順','owned':'所持数順','name':'カード名順','cost':'コスト順','latest':'データ逆順'})[S.sort]||'おすすめ順'}</button></div></div></div>
 <div class="picker-grid">${vis.map(c=>`<div class="pcard"><img src="${esc(image(c))}" loading="lazy" data-detail="${esc(id(c))}" onerror="this.style.visibility='hidden'">${S.owned[id(c)]?`<span class="owned">所持 ${S.owned[id(c)]}</span>`:''}</div>`).join('')||'<div class="status">該当カードがありません</div>'}</div></div>
@@ -394,3 +432,18 @@ load();
 </script>
 </body>
 </html>
+<style>
+/* Responsive deck board: use the available viewport instead of leaving a blank block below it. */
+body.deck-mode .dm{height:100dvh!important;min-height:100dvh!important;display:flex!important;flex-direction:column!important}
+body.deck-mode .board-wrap{flex:1 1 auto!important;min-height:0!important;max-height:none!important;overflow:hidden!important}
+body.deck-mode .board{height:100%!important;max-height:none!important;min-height:0!important;overflow-y:auto!important;overflow-x:hidden!important}
+body.deck-mode .board-grid{grid-template-columns:repeat(8,minmax(0,1fr))!important;grid-auto-rows:max-content!important;align-content:start!important}
+/* Above 40 cards, keep the familiar 8-column layout but shorten the card images so more rows fit. */
+body.deck-mode .board-grid.many-cards{grid-template-columns:repeat(8,minmax(0,1fr))!important;gap:4px!important}
+body.deck-mode .board-grid.many-cards .dcard img{height:clamp(58px,10.5dvh,88px)!important;aspect-ratio:auto!important;object-fit:fill!important}
+body.deck-mode .board-grid:not(.many-cards) .dcard img{height:auto!important;aspect-ratio:63/88!important;object-fit:cover!important}
+@media(max-width:430px){
+ body.deck-mode .picker{flex:0 0 25dvh!important;max-height:25dvh!important}
+ body.deck-mode .board-grid.many-cards .dcard img{height:clamp(58px,10.5dvh,88px)!important}
+}
+</style>

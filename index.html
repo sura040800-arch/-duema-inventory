@@ -355,11 +355,11 @@ let results=S.cards.filter(c=>{let q=norm(S.q);if(q&&!deckNameSearch(c).includes
 if(S.sort==='latest')results=results.slice().reverse();if(S.sort==='name')results=results.slice().sort((a,b)=>name(a).localeCompare(name(b),'ja'));if(S.sort==='cost')results=results.slice().sort((a,b)=>cost(a)-cost(b));if(S.sort==='owned')results=results.slice().sort((a,b)=>(Number(S.owned[id(b)]||0)-Number(S.owned[id(a)]||0))||name(a).localeCompare(name(b),'ja'));
 let vis=results.slice(0,100),mainCount=totalZone(d.main);
 $('decks').innerHTML=`<div class="dm">
-<div class="dm-head"><div class="dm-brand"><button class="dm-back" id="deckBack" aria-label="デッキ一覧に戻る">‹ 戻る</button><div class="dm-brandmark">≋ DECK MAKER<small>デュエル・マスターズ</small></div><div class="dm-topactions"><button id="clearZone"><strong>▤</strong>全削除</button><button id="save"><strong>☑</strong>保存</button></div></div>
+<div class="dm-head"><div class="dm-brand"><button class="dm-back" id="deckBack" aria-label="デッキ一覧に戻る">‹ 戻る</button><div class="dm-brandmark"><span class="forge-mark">✦</span> CHAPPY’S DECK FORGE<small>DUEL MASTERS　•　DECK BUILDER</small></div><div class="dm-topactions"><button id="clearZone"><strong>▤</strong>全削除</button><button id="save"><strong>☑</strong>保存</button></div></div>
 <div class="zone-tabs"><button class="${S.zone==='main'?'active':''}" data-zone="main">メイン ${mainCount}</button><div class="zone-combined"><button class="${S.zone==='gr'?'active':''}" data-zone="gr">GR ${totalZone(d.gr)}／12</button><button class="${S.zone==='extra'?'active':''}" data-zone="extra">超次元 ${totalZone(d.extra)}／8</button></div></div></div>
 <div class="board-wrap"><div class="board"><div class="board-grid ${totalZone(currentZone())>40?'many-cards':''}">${cards.length?cards.flatMap(({c,q})=>Array.from({length:q},()=>`<div class="dcard" data-deck-card="${esc(id(c))}"><img src="${esc(image(c))}" loading="lazy" data-detail="${esc(id(c))}" alt="${esc(name(c))}" onerror="this.style.visibility='hidden'"></div>`)).join(''):`<div class="empty-board">カードを追加</div>`}</div></div></div>
 
-<div class="picker"><div class="picker-top"><div class="picker-search"><input id="deckSearch" value="${esc(S.q)}" placeholder="⌕　カード名"><div class="picker-actions"><button id="deckFilterBtn">☷ 絞り込み</button><button id="deckSortBtn">⇅ 並べ替え：${({'recommended':'カードデータ順','owned':'所持数順','name':'カード名順','cost':'コスト順','latest':'データ逆順'})[S.sort]||'おすすめ順'}</button></div></div></div>
+<div class="picker"><div class="picker-top"><div class="quick-controls"><div class="quick-civs"><button type="button" data-quick-civ="" class="${!(S.deckFilter?.civs?.length)&&!S.deckFilter?.civ?'on':''}">ALL</button>${['光','水','闇','火','自然','ゼロ'].map(x=>`<button type="button" data-quick-civ="${x}" class="${(S.deckFilter?.civs||[]).includes(x)||S.deckFilter?.civ===x?'on':''}">${x}</button>`).join('')}</div><label class="quick-cost-label">COST <select id="quickCost"><option value="all">すべて</option><option value="0-3" ${S.deckFilter?.costMin==='0'&&S.deckFilter?.costMax==='3'?'selected':''}>0–3</option><option value="4-6" ${S.deckFilter?.costMin==='4'&&S.deckFilter?.costMax==='6'?'selected':''}>4–6</option><option value="7-9" ${S.deckFilter?.costMin==='7'&&S.deckFilter?.costMax==='9'?'selected':''}>7–9</option><option value="10+" ${S.deckFilter?.costMin==='10'&&S.deckFilter?.costMax===''?'selected':''}>10+</option></select></label></div><div class="picker-search"><input id="deckSearch" value="${esc(S.q)}" placeholder="⌕　カード名"><div class="picker-actions"><button id="deckFilterBtn">☷ 絞り込み</button><button id="deckSortBtn">⇅ 並べ替え：${({'recommended':'カードデータ順','owned':'所持数順','name':'カード名順','cost':'コスト順','latest':'データ逆順'})[S.sort]||'おすすめ順'}</button></div></div></div>
 <div class="picker-grid">${vis.map(c=>`<div class="pcard"><img src="${esc(image(c))}" loading="lazy" data-detail="${esc(id(c))}" onerror="this.style.visibility='hidden'">${S.owned[id(c)]?`<span class="owned">所持 ${S.owned[id(c)]}</span>`:''}</div>`).join('')||'<div class="status">該当カードがありません</div>'}</div></div>
 </div>`;
 $('save').onclick=()=>{save();alert('保存しました')};
@@ -384,6 +384,9 @@ document.querySelectorAll('.dcard[data-deck-card]').forEach(card=>{
 document.addEventListener('click',e=>{if(Date.now()<ignoreGestureClickUntil){e.preventDefault();e.stopPropagation();e.stopImmediatePropagation()}},true);
 $('decks').querySelectorAll('[data-detail]').forEach(b=>b.onclick=()=>showCardDetail(b.dataset.detail));
 $('deckFilterBtn').onclick=()=>openDeckFilter();$('deckSortBtn').onclick=()=>openDeckSort();
+// Compact quick filters for civilization and cost.
+document.querySelectorAll('[data-quick-civ]').forEach(b=>b.onclick=()=>{let v=b.dataset.quickCiv;let f=S.deckFilter||(S.deckFilter={civ:'',civs:[],colorMode:'all',types:[],races:[],costMin:'',costMax:'',powerMin:'',powerMax:'',text:'',tags:[],tagMode:'or'});if(!v){f.civs=[];f.civ=''}else{f.civs=f.civs||[];f.civs=f.civs.includes(v)?f.civs.filter(x=>x!==v):[...f.civs,v];f.civ=''}renderEditor()});
+const quickCost=$('quickCost');if(quickCost)quickCost.onchange=()=>{let f=S.deckFilter||(S.deckFilter={});const v=quickCost.value;if(v==='all'){f.costMin='';f.costMax=''}else if(v==='10+'){f.costMin='10';f.costMax=''}else{[f.costMin,f.costMax]=v.split('-')}renderEditor()};
 let composing=false;$('deckSearch').addEventListener('compositionstart',()=>composing=true);$('deckSearch').addEventListener('compositionend',e=>{composing=false;S.q=e.target.value;renderEditor();let el=$('deckSearch');if(el){el.focus();el.setSelectionRange(el.value.length,el.value.length)}});$('deckSearch').addEventListener('input',e=>{if(composing)return;S.q=e.target.value;let pos=e.target.selectionStart;renderEditor();let el=$('deckSearch');if(el){el.focus();try{el.setSelectionRange(pos,pos)}catch(_){}}});
 requestAnimationFrame(()=>{let pg=document.querySelector('.picker-grid'),bd=document.querySelector('.board');if(pg){pg.scrollTop=pickerTop;pg.scrollLeft=pickerLeft}if(bd)bd.scrollTop=boardTop;window.scrollTo(0,pageY)});
 }
@@ -856,5 +859,39 @@ body.deck-mode .board-grid:not(.many-cards) .dcard img{height:auto!important;asp
     aspect-ratio: 63 / 88 !important; object-fit: contain !important; border-radius: 4px !important;
   }
   body.deck-mode .pcard .owned { max-width: 82px !important; font-size: 9px !important; }
+}
+</style>
+
+<style id="chappy-forge-final-polish">
+/* CHAPPY'S DECK FORGE: compact, complete card strip plus quick civilization/cost filters. */
+body.deck-mode .dm-brandmark{font-size:clamp(13px,4vw,17px)!important;letter-spacing:.55px!important;font-weight:950!important;color:#f7fbff!important;text-shadow:0 1px 0 #607080,0 0 12px #28b6d1aa!important;line-height:1.05!important}
+body.deck-mode .dm-brandmark .forge-mark{color:#55d8f0!important;margin-right:3px!important;text-shadow:0 0 8px #32c8f5!important}
+body.deck-mode .dm-brandmark small{font-size:8px!important;letter-spacing:1.7px!important;color:#91dff0!important;margin-top:4px!important;text-align:left!important}
+body.deck-mode .dm-brand{gap:7px!important;padding-left:8px!important;padding-right:9px!important}
+body.deck-mode .dm-back{font-size:10px!important;padding:7px 6px!important}
+body.deck-mode .dm-topactions{gap:9px!important}
+body.deck-mode .picker{flex:0 0 25dvh!important;height:25dvh!important;min-height:0!important;max-height:25dvh!important;display:flex!important;flex-direction:column-reverse!important;overflow:hidden!important;border-top:4px solid #e5e7eb!important}
+body.deck-mode .picker-top{flex:0 0 auto!important;padding:5px 7px 6px!important;background:#05070a!important}
+body.deck-mode .quick-controls{display:flex!important;align-items:center!important;gap:6px!important;margin:0 0 5px!important;min-width:0!important}
+body.deck-mode .quick-civs{display:flex!important;align-items:center!important;gap:4px!important;min-width:0!important;flex:1 1 auto!important;overflow-x:auto!important;white-space:nowrap!important;scrollbar-width:none!important;-webkit-overflow-scrolling:touch!important}
+body.deck-mode .quick-civs::-webkit-scrollbar{display:none!important}
+body.deck-mode .quick-civs button{flex:0 0 auto!important;border:1px solid #586472!important;border-radius:5px!important;background:#1b2530!important;color:#edf7ff!important;padding:4px 7px!important;font-size:10px!important;line-height:1.15!important;font-weight:800!important;white-space:nowrap!important}
+body.deck-mode .quick-civs button.on{background:#37a8c2!important;border-color:#67d8ef!important;color:#06131a!important}
+body.deck-mode .quick-cost-label{display:flex!important;align-items:center!important;gap:4px!important;color:#9ee8f7!important;font-size:9px!important;font-weight:900!important;flex:0 0 auto!important}
+body.deck-mode #quickCost{max-width:76px!important;border:1px solid #5c6a77!important;border-radius:5px!important;background:#1b2530!important;color:#fff!important;font-size:10px!important;padding:4px 3px!important}
+body.deck-mode .picker-search{gap:5px!important;align-items:stretch!important}
+body.deck-mode .picker-search input{height:36px!important;min-height:36px!important;padding:7px 9px!important;font-size:13px!important}
+body.deck-mode .picker-actions{gap:4px!important}
+body.deck-mode .picker-actions button{font-size:10px!important;min-width:0!important;padding:7px 6px!important;line-height:1.15!important}
+body.deck-mode .picker-grid{flex:0 0 auto!important;height:clamp(88px,11.5dvh,105px)!important;min-height:0!important;max-height:none!important;align-items:flex-start!important;gap:5px!important;padding:4px 7px 5px!important;overflow-x:auto!important;overflow-y:hidden!important;touch-action:pan-x!important;-webkit-overflow-scrolling:touch!important}
+body.deck-mode .pcard{flex:0 0 56px!important;width:56px!important;min-width:56px!important;height:auto!important;align-self:flex-start!important;overflow:visible!important}
+body.deck-mode .pcard img{display:block!important;width:56px!important;height:auto!important;max-height:none!important;aspect-ratio:63/88!important;object-fit:contain!important;border-radius:3px!important}
+body.deck-mode .pcard .owned{max-width:52px!important;font-size:7px!important;padding:1px 2px!important}
+@media(max-width:430px){
+ body.deck-mode .picker{flex-basis:25dvh!important;height:25dvh!important;max-height:25dvh!important}
+ body.deck-mode .picker-grid{height:clamp(82px,11dvh,96px)!important}
+ body.deck-mode .pcard,body.deck-mode .pcard img{flex-basis:56px!important;width:56px!important;min-width:56px!important}
+ body.deck-mode .pcard img{height:auto!important}
+ body.deck-mode .dm-brandmark{font-size:clamp(12px,3.7vw,16px)!important}
 }
 </style>

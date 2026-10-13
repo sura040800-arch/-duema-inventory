@@ -229,7 +229,7 @@ const S={
 cards:[],owned:JSON.parse(localStorage.getItem('duema_owned_v3')||'{}'),
 favs:JSON.parse(localStorage.getItem('duema_favorites_v1')||'{}'),
 decks:JSON.parse(localStorage.getItem('duema_decks_v3')||'[]'),
-deck:null,zone:'main',q:'',limit:72,sort:'cost',
+deck:null,zone:'main',q:'',inventoryQ:'',limit:72,sort:'cost',
 filter:{civ:'',race:'',rare:'',cost:''},deckFilter:{civ:'',civs:[],colorMode:'all',types:[],races:[],costMin:'',costMax:'',powerMin:'',powerMax:'',text:'',tags:[],tagMode:'or'},detailId:null
 };
 const $=id=>document.getElementById(id);
@@ -308,7 +308,7 @@ function deckNameMatches(c,query){
 }
 function image(c){let u=String(c.image||'').trim();if(u){if(/^https?:\/\//i.test(u))return u;if(u.startsWith('//'))return 'https:'+u;if(u.startsWith('/'))return 'https://dm.takaratomy.co.jp'+u;if(u.startsWith('wp-content/'))return 'https://dm.takaratomy.co.jp/'+u}let x=String(c.number||c.id||'').trim();return x?'https://dm.takaratomy.co.jp/wp-content/card/cardimage/'+encodeURIComponent(x)+'.jpg':''}
 function img(c,cls=''){return `<img class="${cls}" loading="lazy" src="${esc(image(c))}" onerror="this.style.visibility='hidden'">`}
-function filtered(){let q=norm(S.q),f=S.filter;return S.cards.filter(c=>{let st=searchText(c);if(q&&!st.includes(q))return false;if(f.civ&&!civ(c).includes(f.civ))return false;if(f.race&&!race(c).some(x=>norm(x).includes(norm(f.race))))return false;if(f.rare&&!rare(c).includes(f.rare))return false;if(f.cost!==''&&cost(c)!==Number(f.cost))return false;return true})}
+function filtered(){let q=norm(S.inventoryQ),f=S.filter;return S.cards.filter(c=>{let st=searchText(c);if(q&&!st.includes(q))return false;if(f.civ&&!civ(c).includes(f.civ))return false;if(f.race&&!race(c).some(x=>norm(x).includes(norm(f.race))))return false;if(f.rare&&!rare(c).includes(f.rare))return false;if(f.cost!==''&&cost(c)!==Number(f.cost))return false;return true})}
 function cardHtml(c){let k=id(c),n=S.owned[k]||0;return `<div class="card" data-id="${esc(k)}">${img(c)}<div class="info"><h3>${esc(name(c))}</h3><span class="tag">${esc(num(c))}</span><div class="meta">${esc(civ(c).join(' / '))}　${esc(type(c).join(' / '))}<br>コスト ${esc(vals(c,'cost')[0]||'—')}　${esc(vals(c,'power')[0]||'')}</div></div><button class="fav" data-fav="${esc(k)}">${S.favs[k]?'★':'☆'}</button><div class="qty"><button data-minus="${esc(k)}">−</button><b>${n}</b><button data-plus="${esc(k)}">＋</button></div></div>`}
 function renderInventory(){let a=filtered(),show=a.slice(0,150);$('invStatus').textContent=`カード ${a.length.toLocaleString()} 枚を表示${a.length>150?'（先頭150枚）':''}`;$('cards').innerHTML=show.map(cardHtml).join('')||'<div class="status">該当カードなし</div>'}
 function renderFav(){let a=S.cards.filter(c=>S.favs[id(c)]);$('favStatus').textContent=`お気に入り ${a.length} 枚`;$('favCards').innerHTML=a.map(cardHtml).join('')||'<div class="status">お気に入りカードはありません</div>'}
@@ -495,7 +495,7 @@ function drawHand(){let d=S.decks[S.deck],a=[];Object.entries(d.main).forEach(([
 function closeOverlay(id){$(id).classList.remove('open')}
 function populateFilters(){let cs=[...new Set(S.cards.flatMap(civ))].filter(Boolean).sort();$('fCiv').innerHTML='<option value="">すべて</option>'+cs.map(x=>`<option>${esc(x)}</option>`).join('');let rs=[...new Set(S.cards.flatMap(rare))].filter(Boolean).sort();$('fRare').innerHTML='<option value="">すべて</option>'+rs.map(x=>`<option>${esc(x)}</option>`).join('')}
 let inventorySearchTimer=null;
-$('globalSearch').addEventListener('input',e=>{S.q=e.target.value;clearTimeout(inventorySearchTimer);inventorySearchTimer=setTimeout(()=>renderInventory(),140)});
+$('globalSearch').addEventListener('input',e=>{S.inventoryQ=e.target.value;clearTimeout(inventorySearchTimer);inventorySearchTimer=setTimeout(()=>renderInventory(),140)});
 $('settingsBtn').onclick=()=>{if(!$('inventory').classList.contains('hidden'))$('filterOverlay').classList.add('open')};
 $('applyFilter').onclick=()=>{S.filter={civ:$('fCiv').value,race:$('fRace').value.trim(),rare:$('fRare').value,cost:$('fCost').value};closeOverlay('filterOverlay');renderInventory()};
 $('invTab').onclick=()=>switchTab('inv');$('favTab').onclick=()=>switchTab('fav');$('deckTab').onclick=()=>switchTab('deck');

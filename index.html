@@ -272,9 +272,11 @@ function deckNameTerms(c){
  const n=normalizedCardName(c),terms=[n];
  for(const [canonical,as] of Object.entries(aliases)){
   const cn=norm(canonical),nas=as.map(norm);
+  // Only attach nicknames to the canonical card itself. A different card whose
+  // printed name merely contains a nickname (e.g. バクアドルガン) must not
+  // inherit the alias for 龍装チュリス.
   const isCanonical=n.includes(cn)||(n.length>=4&&cn.includes(n));
-  const isAlias=nas.some(a=>n===a||n.includes(a));
-  if(isCanonical||isAlias)terms.push(cn,...nas);
+  if(isCanonical)terms.push(cn,...nas);
  }
  cached=[...new Set(terms.filter(Boolean))];deckNameCache.set(c,cached);return cached;
 }
@@ -431,7 +433,7 @@ $('deckFilterBtn').onclick=()=>openDeckFilter();$('deckSortBtn').onclick=()=>ope
 document.querySelectorAll('[data-quick-civ]').forEach(b=>b.onclick=()=>{let v=b.dataset.quickCiv;let f=S.deckFilter||(S.deckFilter={civ:'',civs:[],colorMode:'all',types:[],races:[],costMin:'',costMax:'',powerMin:'',powerMax:'',text:'',tags:[],tagMode:'or'});if(!v){f.civs=[];f.civ=''}else{f.civs=f.civs||[];f.civs=f.civs.includes(v)?f.civs.filter(x=>x!==v):[...f.civs,v];f.civ=''}renderEditor()});
 const quickCostMin=$('quickCostMin'),quickCostMax=$('quickCostMax');const applyQuickCost=()=>{let f=S.deckFilter||(S.deckFilter={});f.costMin=quickCostMin?.value??'';f.costMax=quickCostMax?.value??'';if(f.costMin!==''&&f.costMax!==''&&Number(f.costMin)>Number(f.costMax)){if(document.activeElement===quickCostMin)f.costMax=f.costMin;else f.costMin=f.costMax}renderEditor()};if(quickCostMin)quickCostMin.onchange=applyQuickCost;if(quickCostMax)quickCostMax.onchange=applyQuickCost;
 const quickReset=$('quickFilterReset');if(quickReset)quickReset.onclick=()=>{let f=S.deckFilter||(S.deckFilter={});f.civ='';f.civs=[];f.costMin='';f.costMax='';S.q='';clearTimeout(searchTimer);renderEditor()};
-let composing=false,searchTimer=null;const applyDeckSearch=(value,pos,immediate=false)=>{S.q=value;clearTimeout(searchTimer);const update=()=>{renderEditor();const el=$('deckSearch');if(el){el.focus({preventScroll:true});try{el.setSelectionRange(pos??el.value.length,pos??el.value.length)}catch(_){}}};if(immediate)update();else searchTimer=setTimeout(update,120)};const deckSearchInput=$('deckSearch');deckSearchInput.addEventListener('compositionstart',()=>{composing=true;clearTimeout(searchTimer)});deckSearchInput.addEventListener('compositionend',e=>{composing=false;const v=e.target.value;applyDeckSearch(v,v.length,true)});deckSearchInput.addEventListener('input',e=>{if(composing)return;const value=e.target.value,pos=e.target.selectionStart;applyDeckSearch(value,pos)});deckSearchInput.addEventListener('change',e=>{if(!composing)applyDeckSearch(e.target.value,e.target.value.length,true)});deckSearchInput.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();applyDeckSearch(e.target.value,e.target.value.length,true)}});
+let composing=false,searchTimer=null;const applyDeckSearch=(value,pos,immediate=false)=>{S.q=value;clearTimeout(searchTimer);const update=()=>{renderEditor();const el=$('deckSearch');if(el){el.focus({preventScroll:true});try{el.setSelectionRange(pos??el.value.length,pos??el.value.length)}catch(_){}}};if(immediate)update();else searchTimer=setTimeout(update,80)};const deckSearchInput=$('deckSearch');deckSearchInput.addEventListener('compositionstart',()=>{composing=true;clearTimeout(searchTimer)});deckSearchInput.addEventListener('compositionend',e=>{composing=false;const v=e.target.value;applyDeckSearch(v,v.length,true)});deckSearchInput.addEventListener('input',e=>{if(composing)return;const value=e.target.value,pos=e.target.selectionStart;applyDeckSearch(value,pos)});deckSearchInput.addEventListener('change',e=>{if(!composing)applyDeckSearch(e.target.value,e.target.value.length,true)});deckSearchInput.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();applyDeckSearch(e.target.value,e.target.value.length,true)}});
 requestAnimationFrame(()=>{let pg=document.querySelector('.picker-grid'),bd=document.querySelector('.board');if(pg){pg.scrollTop=pickerTop;pg.scrollLeft=pickerLeft}if(bd)bd.scrollTop=boardTop;window.scrollTo(0,pageY)});
 }
 function openDeckSort(){

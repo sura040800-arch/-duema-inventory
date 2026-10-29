@@ -263,7 +263,20 @@ function text(c){let ks=['specialAbility','special_ability','specialAbilities','
 const aliases={'龍装チュリス':['ドルガン','ドル','ドルガンチュリス','どるがんちゅりす','DORUGANCHURISU'],'蒼き団長ドギラゴン剣':['ドギ剣'],'天災デドダム':['デドダム'],'流星のガイアッシュカイザー':['ガイアッシュ'],'飛翔龍5000VT':['5000vt','5000ＶＴ'],'アーテルゴルギーニ':['アーテル'],'邪幽ジャガイスト':['ジャガイスト']};
 function norm(s){return String(s||'').toLowerCase().normalize('NFKC').replace(/[\s　・･\-‐‑–—ー_「」『』【】〔〕（）()\[\]“”‘’"'’]/g,'').replace(/[ぁ-ゖ]/g,ch=>String.fromCharCode(ch.charCodeAt(0)+96))}
 const searchTextCache=new WeakMap();
-function searchText(c){let cached=searchTextCache.get(c);if(cached!==undefined)return cached;let a=[name(c),num(c),...civ(c),...race(c),...rare(c),...type(c),text(c)];Object.entries(aliases).forEach(([n,as])=>{if(norm(name(c)).includes(norm(n))||norm(n).includes(norm(name(c))))a.push(...as)});cached=norm(a.join(' '));searchTextCache.set(c,cached);return cached}
+function searchText(c){
+ let cached=searchTextCache.get(c);if(cached!==undefined)return cached;
+ // Search across the printed name and all face/nested name fields so split-card and
+ // alternate data layouts are searchable too; retain metadata/effect search.
+ const nameParts=[name(c),c.cardName,c.card_name,c.title,c.displayName,c.display_name];
+ for(const f of faces(c))nameParts.push(f?.name,f?.cardName,f?.card_name,f?.title,f?.displayName,f?.display_name);
+ const names=nameParts.filter(v=>typeof v==='string'&&v.trim());
+ const a=[...names,num(c),...civ(c),...race(c),...rare(c),...type(c),text(c)];
+ // Attach registered nicknames only to their matching canonical card, never to a
+ // different card whose name happens to contain the nickname.
+ const allNames=names.map(norm);
+ Object.entries(aliases).forEach(([canonical,as])=>{const cn=norm(canonical);if(allNames.some(n=>n===cn||n.includes(cn)))a.push(...as)});
+ cached=norm(a.join(' '));searchTextCache.set(c,cached);return cached
+}
 // デッキメーカーのカード名検索は、種族・効果・カード番号ではなくカード名だけを対象にする。既知の通称は検索語としてのみ補助する。
 const deckNameCache=new WeakMap();
 const normalizedCardNameCache=new WeakMap();
@@ -309,7 +322,11 @@ function deckNameMatches(c,query){
  }
  return false;
 }
-function image(c){let u=String(c.image||'').trim();if(u){if(/^https?:\/\//i.test(u))return u;if(u.startsWith('//'))return 'https:'+u;if(u.startsWith('/'))return 'https://dm.takaratomy.co.jp'+u;if(u.startsWith('wp-content/'))return 'https://dm.takaratomy.co.jp/'+u}let x=String(c.number||c.id||'').trim();return x?'https://dm.takaratomy.co.jp/wp-content/card/cardimage/'+encodeURIComponent(x)+'.jpg':''}
+function image(c){
+ const candidates=[c.image,c.imageUrl,c.image_url,c.cardImage,c.card_image,c.img,c.thumbnail,c.thumbnailUrl,c.thumbnail_url,...faces(c).flatMap(f=>[f?.image,f?.imageUrl,f?.image_url,f?.cardImage,f?.card_image,f?.img,f?.thumbnail,f?.thumbnailUrl,f?.thumbnail_url])];
+ for(const raw of candidates){let u=String(raw||'').trim();if(!u)continue;if(/^https?:\/\//i.test(u))return u;if(u.startsWith('//'))return 'https:'+u;if(u.startsWith('/'))return 'https://dm.takaratomy.co.jp'+u;if(u.startsWith('wp-content/'))return 'https://dm.takaratomy.co.jp/'+u}
+ let x=String(c.number||c.id||'').trim();return x?'https://dm.takaratomy.co.jp/wp-content/card/cardimage/'+encodeURIComponent(x)+'.jpg':''
+}
 function img(c,cls=''){return `<img class="${cls}" loading="lazy" src="${esc(image(c))}" onerror="this.style.visibility='hidden'">`}
 function filtered(){let q=norm(S.inventoryQ),f=S.filter;return S.cards.filter(c=>{let st=searchText(c);if(q&&!st.includes(q))return false;if(f.civ&&!civ(c).includes(f.civ))return false;if(f.race&&!race(c).some(x=>norm(x).includes(norm(f.race))))return false;if(f.rare&&!rare(c).includes(f.rare))return false;if(f.cost!==''&&cost(c)!==Number(f.cost))return false;return true})}
 function cardHtml(c,versions=[]){let k=id(c),n=S.owned[k]||0;return `<div class="card" data-id="${esc(k)}" data-versions="${esc(versions.map(id).join('|'))}">${img(c)}<div class="info"><h3>${esc(name(c))}</h3><span class="tag">${esc(num(c))}${versions.length>1?`　ほか${versions.length-1}版`:''}</span><div class="meta">${esc(civ(c).join(' / '))}　${esc(type(c).join(' / '))}<br>コスト ${esc(vals(c,'cost')[0]||'—')}　${esc(vals(c,'power')[0]||'')}</div></div><button class="fav" data-fav="${esc(k)}">${S.favs[k]?'★':'☆'}</button><div class="qty"><button data-minus="${esc(k)}">−</button><b>${n}</b><button data-plus="${esc(k)}">＋</button></div></div>`}

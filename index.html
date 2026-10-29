@@ -288,7 +288,7 @@ function deckNameMatches(c,query){
  // which can make unrelated cards appear for a nickname such as ドルガン.
  const cardName=normalizedCardName(c);
  // First match the printed name and cached card-specific nickname terms.
- if(deckNameTerms(c).some(term=>term===q||term.includes(q)||(q.length>=3&&q.includes(term))))return true;
+ if(deckNameTerms(c).some(term=>term===q||term.includes(q)))return true;
  // Expand a nickname into its official card name before searching the data.
  // Keep this check independent of card-side alias detection: the official name may
  // be stored with a set suffix, punctuation, or alternate face metadata.

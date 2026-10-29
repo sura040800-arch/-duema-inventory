@@ -275,7 +275,7 @@ function deckNameTerms(c){
   // Only attach nicknames to the canonical card itself. A different card whose
   // printed name merely contains a nickname (e.g. バクアドルガン) must not
   // inherit the alias for 龍装チュリス.
-  const isCanonical=n.includes(cn)||(n.length>=4&&cn.includes(n));
+  const isCanonical=n.includes(cn);
   if(isCanonical)terms.push(cn,...nas);
  }
  cached=[...new Set(terms.filter(Boolean))];deckNameCache.set(c,cached);return cached;
@@ -301,7 +301,7 @@ function deckNameMatches(c,query){
    if(!aliasMatch)continue;
    const candidateNames=[name(c),c.cardName,c.card_name,c._name,c.title,c.displayName,c.display_name];
    const allNames=norm(candidateNames.filter(v=>typeof v==='string').join(' '));
-   if(allNames.includes(cn)||cn.includes(cardName)||allNames.includes(cn))return true;
+   if(allNames.includes(cn))return true;
    // Some data records nest the printed name under a face/card object.
    const nested=faces(c).map(f=>norm(f?.name||f?.cardName||f?.card_name||f?.title||'')).join(' ');
    if(nested.includes(cn))return true;

@@ -12,6 +12,12 @@ from bs4 import BeautifulSoup
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from playwright.sync_api import sync_playwright
 
+try:
+    from pykakasi import kakasi
+    _kana_converter = kakasi()
+except ImportError:
+    _kana_converter = None
+
 
 BASE_URL = "https://dm.takaratomy.co.jp"
 SEARCH_URL = BASE_URL + "/card/"
@@ -26,7 +32,7 @@ REQUEST_INTERVAL = 0.25
 WIKI_BASE_URL = "https://dmwiki.net/"
 WIKI_REQUEST_INTERVAL = 0.75
 WIKI_MAX_WORKERS = 5
-RUBY_RETRY_DAYS = 30
+RUBY_RETRY_DAYS = 7
 _request_lock = threading.Lock()
 _last_request_at = 0.0
 _wiki_request_lock = threading.Lock()
@@ -115,63 +121,33 @@ def extract_card_links(html):
 
 
 def get_page_count(html):
-    soup = BeautifulSoup(
-        html,
-        "html.parser"
-    )
+    """公式ページャーの最終ページを優先し、なければ実ページ件数から計算する。"""
+    soup = BeautifulSoup(html, "html.parser")
 
-    values = []
-
-    for a in soup.select(
-        "#cardlist .wp-pagenavia a[data-page]"
+    # WP-PageNaviに最終ページが明示されていれば、それが最も確実。
+    for selector in (
+        "#cardlist .wp-pagenavi a.last[data-page]",
+        "#cardlist .wp-pagenavi a.last",
+        "#cardlist .wp-pagenavi a[aria-label*='最後']",
     ):
-        value = a.get(
-            "data-page"
-        )
+        node = soup.select_one(selector)
+        if node:
+            raw = node.get("data-page")
+            if raw and str(raw).isdigit():
+                return int(raw)
+            href = node.get("href", "")
+            match = re.search(r"[?&](?:paged|page|pagenum)=([0-9]+)", href)
+            if match:
+                return int(match.group(1))
 
-        try:
-            values.append(
-                int(value)
-            )
-        except Exception:
-            pass
+    total = get_total_card_count(html)
+    first_page_count = len(extract_card_links(html))
+    if total and first_page_count:
+        return (total + first_page_count - 1) // first_page_count
 
-    if values:
-        return max(values)
-
-    text = soup.get_text(
-        " ",
-        strip=True
-    )
-
-    matches = re.findall(
-        r"([\d,]+)\s*枚",
-        text
-    )
-
-    for value in matches:
-
-        try:
-
-            total = int(
-                value.replace(
-                    ",",
-                    ""
-                )
-            )
-
-            if total >= 1000:
-                return (
-                    total + 49
-                ) // 50
-
-        except Exception:
-            pass
-
-    raise RuntimeError(
-        "最終ページ数を取得できませんでした"
-    )
-
+    # 最終リンクが存在しないテーマ向けの保険。近傍リンク最大値を
+    # 最終ページと誤認しないよう、総枚数がない場合は処理を止める。
+    raise RuntimeError("公式カード一覧の最終ページ数を確定できませんでした")
 
 def get_page_ids(page):
     links = page.locator(
@@ -186,62 +162,81 @@ def get_page_ids(page):
     )
 
     return links
-def browser_get_page(
-    page,
-    page_number,
-    previous_ids
-):
+def browser_get_page(page, page_number, previous_ids):
+    """WP-PageNaviの「次へ」をたどって指定ページへ移動する。
+
+    ページ番号リンクは通常、近傍の数ページ分しかDOMに存在しないため、
+    a[data-page="N"]を直接探す方式だと途中で巡回が止まる。
     """
-    現在の公式カード一覧ページから
-    指定ページのリンクをクリックして移動する。
-    """
+    print(f"{page_number}ページ目へ移動...", flush=True)
 
-    print(
-        f"{page_number}ページ目へ移動...",
-        flush=True
-    )
+    pager = page.locator("#cardlist .wp-pagenavi")
+    if pager.count() == 0:
+        raise RuntimeError("ページ送りが見つかりません")
 
-    selector = (
-        f'#cardlist .wp-pagenavi '
-        f'a[data-page="{page_number}"]'
-    )
+    anchors = pager.locator("a")
+    next_locator = pager.locator(
+        'a[rel="next"], a.nextpostslink, a.next, a[aria-label*="次"], a[title*="次"]'
+    ).first
 
-    locator = page.locator(selector).first
+    if next_locator.count() == 0:
+        # クラス名に依存せず「次へ」記号のリンクを探す。
+        link_info = anchors.evaluate_all("""
+            els => els.map((a, index) => ({
+              index,
+              page: Number(a.getAttribute('data-page')),
+              text: (a.innerText || '').trim(),
+              cls: String(a.className || ''),
+              rel: String(a.getAttribute('rel') || '')
+            }))
+        """)
+        next_info = next((x for x in link_info if
+            x['rel'].lower() == 'next' or
+            'next' in x['cls'].lower() or
+            re.search(r'^(次へ|next|›|»|→|＞|〉)$', x['text'], re.I)
+        ), None)
+        if next_info:
+            next_locator = anchors.nth(next_info['index'])
+        else:
+            current = page_number - 1
+            target = current + 1
+            target_info = next((x for x in link_info if x['page'] == target), None)
+            if not target_info:
+                raise RuntimeError(
+                    f"{page_number}ページ目への連続したページリンクがありません。"
+                    "飛びページを誤取得しないため中止します。"
+                )
+            next_locator = anchors.nth(target_info['index'])
 
-    if locator.count() == 0:
-        raise RuntimeError(
-            f"{page_number}ページ目のリンクが"
-            "見つかりません"
-        )
+    if next_locator.count() == 0:
+        raise RuntimeError(f"{page_number}ページ目の次リンクが見つかりません")
 
-    locator.dispatch_event(
-        "click"
-    )
-
-    start = time.time()
-
-    while True:
+    next_locator.click(timeout=15000)
+    start_time = time.time()
+    while time.time() - start_time < 40:
         html = page.content()
-
-        links = extract_card_links(
-            html
-        )
-
-        ids = [
-            x[0]
-            for x in links
-        ]
-
+        links = extract_card_links(html)
+        ids = [x[0] for x in links]
         if ids and ids != previous_ids:
             return links
+        time.sleep(0.4)
+    raise RuntimeError(f"{page_number}ページ目のカード取得がタイムアウトしました")
 
-        if time.time() - start > 30:
-            raise RuntimeError(
-                f"{page_number}ページ目のカード取得が"
-                "タイムアウトしました"
-            )
 
-        time.sleep(0.5)
+def get_total_card_count(html):
+    """公式一覧に表示される総カード枚数を取得する。"""
+    soup = BeautifulSoup(html, "html.parser")
+    text = soup.get_text(" ", strip=True)
+    matches = re.findall(r"([\d,]+)\s*枚", text)
+    for value in matches:
+        try:
+            total = int(value.replace(",", ""))
+            if total >= 1000:
+                return total
+        except ValueError:
+            pass
+    return None
+
 def discover_all_cards():
 
     print()
@@ -297,19 +292,17 @@ def discover_all_cards():
                 "1ページ目からカードを取得できませんでした"
             )
 
-        last_page = get_page_count(
-            html
-        )
+        last_page = get_page_count(html)
+        expected_total = get_total_card_count(html)
 
         print(
             f"1ページ目: {len(first_links)}枚",
             flush=True
         )
 
-        print(
-            f"最終ページ: {last_page}",
-            flush=True
-        )
+        print(f"最終ページ: {last_page}", flush=True)
+        if expected_total:
+            print(f"公式掲載総数: {expected_total}枚", flush=True)
 
         order = 0
 
@@ -386,41 +379,13 @@ def discover_all_cards():
 
                     time.sleep(2)
 
-                    # ページ1に戻す
-                    page.goto(
-                        SEARCH_URL,
-                        wait_until="domcontentloaded",
-                        timeout=60000
-                    )
-
-                    page.wait_for_timeout(
-                        1500
-                    )
-
-                    current_links = (
-                        extract_card_links(
-                            page.content()
-                        )
-                    )
-
-                    # 失敗ページまで戻す
-                    for back in range(
-                        2,
-                        page_number
-                    ):
-
-                        previous_ids = [
-                            x[0]
-                            for x in current_links
-                        ]
-
-                        current_links = (
-                            browser_get_page(
-                                page,
-                                back,
-                                previous_ids
-                            )
-                        )
+                    # ページ1へ戻し、次へリンクを順番にたどって再開位置まで復帰。
+                    page.goto(SEARCH_URL, wait_until="domcontentloaded", timeout=60000)
+                    page.wait_for_timeout(1500)
+                    current_links = extract_card_links(page.content())
+                    for back in range(2, page_number):
+                        previous_ids = [x[0] for x in current_links]
+                        current_links = browser_get_page(page, back, previous_ids)
 
             if not success:
 
@@ -440,9 +405,11 @@ def discover_all_cards():
     print("========================================")
 
     if len(all_links) < 10000:
-
+        raise RuntimeError(f"取得枚数が少なすぎます: {len(all_links)}")
+    if expected_total and len(all_links) != expected_total:
         raise RuntimeError(
-            f"取得枚数が少なすぎます: {len(all_links)}"
+            f"公式掲載数と取得数が一致しません: 公式{expected_total}枚 / 取得{len(all_links)}枚。"
+            "不完全な一覧でcards.jsonを上書きしないため中止します。"
         )
 
     return all_links, release_order
@@ -466,6 +433,11 @@ def normalize_card_title(value):
     return re.sub(r"[^0-9a-zぁ-ゖァ-ヺ一-龯々〆ヵヶ]", "", value)
 
 
+def clean_reading_punctuation(value):
+    """読み文字列に残るカード名用の括弧・引用符を取り除く。"""
+    return re.sub(r"[《》「」『』“”‘’]", "", str(value or "")).strip()
+
+
 def ruby_heading_text(node):
     """Wiki見出しのruby/括弧ルビを読みへ置換した文字列を返す。"""
     clone = BeautifulSoup(str(node), "html.parser")
@@ -483,11 +455,11 @@ def ruby_heading_text(node):
     value = clean_text(clone.get_text("", strip=True))
     # Wiki側の表示形式が「漢字(かな)」のテキストになっている場合も処理。
     value = re.sub(
-        r"([一-龯々〆ヵヶ]+)[（(]([ぁ-ゖァ-ヺー]+)[）)]",
+        r"([一-龯々〆ヵヶ]+[”’」』】〕]*)[（(]([ぁ-ゖァ-ヺー]+)[）)]",
         lambda m: m.group(2),
         value,
     )
-    return value.strip("《》「」『』")
+    return re.sub(r"\[\s*編集\s*\]", "", clean_reading_punctuation(value))
 
 
 def extract_wiki_card_reading(html, card_name):
@@ -501,59 +473,86 @@ def extract_wiki_card_reading(html, card_name):
     base = BeautifulSoup(str(heading), "html.parser")
     for tag in base.find_all(("rt", "rp")):
         tag.decompose()
-    base_text = clean_text(base.get_text("", strip=True)).strip("《》")
+    base_text = re.sub(r"\[\s*編集\s*\]", "", clean_text(base.get_text("", strip=True))).strip("《》")
     # 括弧ルビ形式も比較用に取り除く。
-    base_text = re.sub(r"([一-龯々〆ヵヶ]+)[（(][ぁ-ゖァ-ヺー]+[）)]", r"\1", base_text)
+    base_text = re.sub(r"([一-龯々〆ヵヶ]+[”’」』】〕]*)[（(][ぁ-ゖァ-ヺー]+[）)]", r"\1", base_text)
     if normalize_card_title(base_text) != normalize_card_title(card_name):
         return ""
 
     has_ruby = bool(heading.find("ruby")) or bool(
-        re.search(r"[一-龯々〆ヵヶ]+[（(][ぁ-ゖァ-ヺー]+[）)]", heading.get_text("", strip=True))
+        re.search(r"[一-龯々〆ヵヶ]+[”’」』】〕]*[（(][ぁ-ゖァ-ヺー]+[）)]", heading.get_text("", strip=True))
     )
     if not has_ruby:
         return ""
     reading = ruby_heading_text(heading)
-    return reading if reading and normalize_card_title(reading) != normalize_card_title(card_name) else ""
+    return clean_reading_punctuation(reading) if reading and normalize_card_title(reading) != normalize_card_title(card_name) else ""
+
+
+def _wiki_get(url, params=None):
+    """Wikiへのアクセスを全ワーカーで共有レート制限する。"""
+    global _last_wiki_request_at
+    with _wiki_request_lock:
+        now = time.monotonic()
+        wait = WIKI_REQUEST_INTERVAL - (now - _last_wiki_request_at)
+        if wait > 0:
+            time.sleep(wait)
+        _last_wiki_request_at = time.monotonic()
+    response = requests.get(
+        url,
+        params=params,
+        headers={**HEADERS, "Referer": "https://dmwiki.net/"},
+        timeout=TIMEOUT,
+    )
+    response.raise_for_status()
+    return response
 
 
 def fetch_wiki_reading(card_name):
-    """カード名に対応するDM Wiki記事からルビ読みを取得。"""
-    global _last_wiki_request_at
+    """DM Wikiのカード記事から読みを取得。URL直引きに失敗した場合はMediaWiki APIも使う。"""
     title = f"《{card_name}》"
+    encoded_title = quote(title, safe="")
     urls = (
-        WIKI_BASE_URL + quote(title, safe=""),
-        "https://dmwiki.net/index.php?title=" + quote(title, safe=""),
+        WIKI_BASE_URL + encoded_title,
+        "https://m.dmwiki.net/" + encoded_title,
     )
     for url in urls:
         try:
-            with _wiki_request_lock:
-                now = time.monotonic()
-                wait = WIKI_REQUEST_INTERVAL - (now - _last_wiki_request_at)
-                if wait > 0:
-                    time.sleep(wait)
-                _last_wiki_request_at = time.monotonic()
-            response = requests.get(
-                url,
-                headers={**HEADERS, "Referer": "https://dmwiki.net/"},
-                timeout=TIMEOUT,
-            )
-            if response.status_code == 404:
-                continue
-            response.raise_for_status()
+            response = _wiki_get(url)
             reading = extract_wiki_card_reading(response.text, card_name)
             if reading:
                 return reading
-            # 200でも別ページ/リダイレクトで見出しが一致しなければ次URLへ。
         except requests.RequestException as exc:
             print(f"Wiki読み取得失敗: {card_name}: {exc}", flush=True)
         except Exception as exc:
             print(f"Wiki読み解析失敗: {card_name}: {exc}", flush=True)
+
+    # URLエンコードや記事名の差異で直接URLが解決できない場合にAPIで正確な記事を探す。
+    api_url = "https://dmwiki.net/api.php"
+    title_candidates = (title, card_name)
+    for candidate in title_candidates:
+        try:
+            response = _wiki_get(api_url, {
+                "action": "parse", "page": candidate, "prop": "text",
+                "format": "json", "formatversion": 2,
+            })
+            payload = response.json()
+            html = payload.get("parse", {}).get("text", "")
+            if html:
+                reading = extract_wiki_card_reading(html, card_name)
+                if reading:
+                    return reading
+        except requests.RequestException as exc:
+            print(f"Wiki API読み取得失敗: {card_name}: {exc}", flush=True)
+        except (ValueError, TypeError, AttributeError) as exc:
+            print(f"Wiki API読み解析失敗: {card_name}: {exc}", flush=True)
+
     return ""
 
 
 def ruby_attempt_is_recent(card, now=None):
-    """読み未発見カードの連日再取得を避ける。成功済みは永久に再取得しない。"""
-    if card.get("card_ruby"):
+    """Wiki等の確定読みは保持し、機械生成読みは定期的に再照合する。"""
+    source = card.get("ruby_source", "")
+    if card.get("card_ruby") and source not in ("generated", "fallback"):
         return True
     stamp = card.get("ruby_attempted_at")
     if not stamp:
@@ -569,11 +568,16 @@ def ruby_attempt_is_recent(card, now=None):
 
 
 def extract_ruby_base_text(node):
-    """ruby注釈(rt/rp)を除いた、カードに印刷された正式名称を返す。"""
+    """ruby注釈(rt/rp)や括弧ルビを除いた正式名称を返す。"""
     clone = BeautifulSoup(str(node), "html.parser")
     for tag in clone.find_all(("rt", "rp")):
         tag.decompose()
-    return clean_text(clone.get_text("", strip=True))
+    value = clean_text(clone.get_text("", strip=True))
+    return re.sub(
+        r"([一-龯々〆ヵヶ]+[”’」』】〕]*)[（(]([ぁ-ゖァ-ヺー]+)[）)]",
+        r"\1",
+        value,
+    )
 
 
 def extract_ruby_reading(node):
@@ -590,7 +594,12 @@ def extract_ruby_reading(node):
             ruby.replace_with(base)
     for tag in clone.find_all(("rt", "rp")):
         tag.decompose()
-    return clean_text(clone.get_text("", strip=True))
+    value = clean_text(clone.get_text("", strip=True))
+    return re.sub(
+        r"([一-龯々〆ヵヶ]+[”’」』】〕]*)[（(]([ぁ-ゖァ-ヺー]+)[）)]",
+        lambda m: m.group(2),
+        value,
+    )
 
 
 def extract_card_ruby(soup, title=""):
@@ -603,6 +612,11 @@ def extract_card_ruby(soup, title=""):
     if heading:
         ruby_nodes = heading.find_all("ruby")
         if ruby_nodes:
+            value = extract_ruby_reading(heading)
+            if value:
+                return value
+        heading_text = clean_text(heading.get_text("", strip=True))
+        if re.search(r"[一-龯々〆ヵヶ]+[”’」』】〕]*[（(][ぁ-ゖァ-ヺー]+[）)]", heading_text):
             value = extract_ruby_reading(heading)
             if value:
                 return value
@@ -740,7 +754,7 @@ def parse_detail(
         "id": cid,
         "name": name,
         "card_ruby": card_ruby,
-        "ruby_checked": True,
+        "ruby_checked": bool(card_ruby),
         "number": cid,
         "type": get_after("カードの種類"),
         "civilization": get_after("文明"),
@@ -750,8 +764,21 @@ def parse_detail(
         "mana": get_after("マナ"),
         "race": get_after("種族"),
         "illustrator": get_after("イラストレーター"),
+        "abilities": [x.strip() for x in re.split(r"\n+", ability) if x.strip()],
         "text": ability,
         "flavor": flavor,
+        "sides": [{
+            "type": get_after("カードの種類"),
+            "civilization": get_after("文明"),
+            "rarity": get_after("レアリティ"),
+            "power": get_after("パワー"),
+            "cost": get_after("コスト"),
+            "mana": get_after("マナ"),
+            "race": get_after("種族"),
+            "illustrator": get_after("イラストレーター"),
+            "abilities": [x.strip() for x in re.split(r"\n+", ability) if x.strip()],
+            "flavor": flavor
+        }],
         "image": image_url,
         "url": url,
         "release_order": release_order
@@ -759,46 +786,59 @@ def parse_detail(
 
 
 def fetch_card(item):
-
+    """新規カード詳細を最大3回取得。失敗カードを黙って欠落させない。"""
     global _last_request_at
     cid, url, release_order = item
+    last_error = None
 
+    for attempt in range(1, 4):
+        try:
+            with _request_lock:
+                now = time.monotonic()
+                wait = REQUEST_INTERVAL - (now - _last_request_at)
+                if wait > 0:
+                    time.sleep(wait)
+                _last_request_at = time.monotonic()
+
+            response = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
+            response.raise_for_status()
+            card = parse_detail(cid, url, response.text, release_order)
+            if not card.get("name"):
+                raise RuntimeError("カード名を抽出できません")
+            return card
+        except Exception as exc:
+            last_error = exc
+            print(f"詳細取得失敗 {cid} retry {attempt}/3: {exc}", flush=True)
+            if attempt < 3:
+                time.sleep(attempt * 2)
+
+    print(f"詳細取得を断念: {cid}: {last_error}", flush=True)
+    return None
+
+
+
+def generate_fallback_reading(card_name):
+    """確定ルビが見つからないカード向けの読み仮名フォールバック。
+
+    pykakasiは一般的な漢字読みを生成する。特殊な当て字・固有読みはDM Wikiの
+    ルビを優先し、機械生成した読みにはruby_source=generatedを付けて区別する。
+    """
+    if not card_name:
+        return ""
+    if _kana_converter is None:
+        return ""
     try:
-        # 公式サイトへのアクセスを一定間隔に制限し、初回の全件読み取得で
-        # 短時間に大量リクエストを送らない。
-        with _request_lock:
-            now = time.monotonic()
-            wait = REQUEST_INTERVAL - (now - _last_request_at)
-            if wait > 0:
-                time.sleep(wait)
-            _last_request_at = time.monotonic()
-
-        r = requests.get(
-            url,
-            headers=HEADERS,
-            timeout=TIMEOUT
-        )
-
-        r.raise_for_status()
-
-        return parse_detail(
-            cid,
-            url,
-            r.text,
-            release_order
-        )
-
-    except Exception as e:
-
-        print(
-            f"失敗: {cid} {e}",
-            flush=True
-        )
-
-        return None
+        parts = _kana_converter.convert(card_name)
+        reading = "".join(str(part.get("hira", part.get("orig", ""))) for part in parts)
+        return clean_text(reading) or card_name
+    except Exception as exc:
+        print(f"読み仮名フォールバック失敗: {card_name}: {exc}", flush=True)
+        return card_name
 
 
 def main():
+    if _kana_converter is None:
+        raise RuntimeError("読み仮名生成に必要な pykakasi がありません。依存パッケージをインストールしてください")
     os.makedirs(DATA_DIR, exist_ok=True)
     all_links, release_order = discover_all_cards()
 
@@ -813,7 +853,10 @@ def main():
                     if cid:
                         old_cards[cid] = card
         except Exception as exc:
-            print(f"既存cards.json読込失敗: {exc}", flush=True)
+            # 既存データを読めない状態で空のカード一覧を作って上書きしない。
+            raise RuntimeError(f"既存cards.jsonを安全に読み込めません。上書きを中止します: {exc}") from exc
+        if not isinstance(old_data, list):
+            raise RuntimeError("既存cards.jsonが配列形式ではありません。上書きを中止します")
 
     print(f"既存カード: {len(old_cards)}枚", flush=True)
     new_targets = [
@@ -845,7 +888,28 @@ def main():
     for card in new_cards:
         cid = card.get("id")
         if cid:
+            card["official_listed"] = True
             cards_by_id[cid] = card
+
+    # 公式検索から一時的に消えた既存カードも削除しない。
+    # 所持カード・デッキの参照切れを防ぎ、一覧復帰時は通常データへ戻す。
+    archived_count = 0
+    for cid, card in old_cards.items():
+        if cid not in cards_by_id:
+            card["official_listed"] = False
+            cards_by_id[cid] = card
+            archived_count += 1
+    for cid in all_links:
+        if cid in cards_by_id:
+            cards_by_id[cid]["official_listed"] = True
+
+    missing_ids = set(all_links) - set(cards_by_id)
+    if missing_ids:
+        sample = ", ".join(sorted(missing_ids)[:10])
+        raise RuntimeError(
+            f"新規カード詳細の取得漏れが{len(missing_ids)}枚あります（例: {sample}）。"
+            "不完全なカードデータで既存cards.jsonを上書きしないため中止します。"
+        )
 
     # 読み取得は印刷版ごとではなく、同じ正式カード名ごとに1回だけ行う。
     groups = {}
@@ -858,8 +922,12 @@ def main():
     now = datetime.now(timezone.utc)
     wiki_targets = []
     for card_name, group in groups.items():
-        # すでに読みがある版があれば同名の全印刷版へ伝播。
-        existing_reading = next((c.get("card_ruby") for c in group if c.get("card_ruby")), "")
+        # Wiki等で確認済みの読みがあれば同名の全印刷版へ伝播。
+        # 機械生成読みは確定扱いせず、7日ごとにWikiの特殊読みで上書きできるようにする。
+        existing_reading = next((
+            c.get("card_ruby") for c in group
+            if c.get("card_ruby") and c.get("ruby_source") not in ("generated", "fallback")
+        ), "")
         if existing_reading:
             for card in group:
                 card["card_ruby"] = existing_reading
@@ -867,11 +935,12 @@ def main():
                 card["ruby_source"] = card.get("ruby_source") or "existing"
             continue
 
-        # かな/英数字だけの名前には漢字ルビ照合が不要。
+        # 漢字を含まない名前は名前自体を読み検索語として保持する。
         if not re.search(r"[一-龯々〆ヵヶ]", card_name):
             for card in group:
+                card["card_ruby"] = card_name
                 card["ruby_checked"] = True
-                card["ruby_source"] = "not_required"
+                card["ruby_source"] = "identity"
             continue
 
         # 旧版で ruby_checked=True なのに空欄になったカードも、成功扱いにせず再試行する。
@@ -905,28 +974,48 @@ def main():
                     card["ruby_checked"] = True
                     card["ruby_source"] = "dmwiki"
                 else:
-                    # 取得できなかったものを成功済み扱いにしない。30日後に再試行。
-                    card["ruby_checked"] = False
-                    card["ruby_source"] = "not_found"
-        elif any(c.get("card_ruby") for c in group):
-            reading = next(c["card_ruby"] for c in group if c.get("card_ruby"))
+                    fallback = generate_fallback_reading(card_name)
+                    card["card_ruby"] = fallback
+                    card["ruby_checked"] = bool(fallback)
+                    card["ruby_source"] = "generated" if fallback else "not_found"
+        elif any(c.get("card_ruby") and c.get("ruby_source") not in ("generated", "fallback") for c in group):
+            reading = next(c["card_ruby"] for c in group if c.get("card_ruby") and c.get("ruby_source") not in ("generated", "fallback"))
             for card in group:
                 card["card_ruby"] = reading
                 card["ruby_checked"] = True
+                card["ruby_source"] = card.get("ruby_source") or "existing"
+        elif any(re.search(r"[一-龯々〆ヵヶ]", card_name) for _ in (0,)):
+            fallback = generate_fallback_reading(card_name)
+            for card in group:
+                card["card_ruby"] = fallback
+                card["ruby_checked"] = bool(fallback)
+                card["ruby_source"] = "generated" if fallback else "not_found"
 
     cards = list(cards_by_id.values())
     cards.sort(key=lambda x: x.get("release_order", 999999999))
 
-    with open(CARDS_FILE, "w", encoding="utf-8") as f:
+    # 一時ファイルへ完全に書き込んでから置換し、途中失敗でJSONを壊さない。
+    cards_tmp = CARDS_FILE + ".tmp"
+    ids_tmp = IDS_FILE + ".tmp"
+    with open(cards_tmp, "w", encoding="utf-8") as f:
         json.dump(cards, f, ensure_ascii=False, indent=2)
-    with open(IDS_FILE, "w", encoding="utf-8") as f:
+    with open(ids_tmp, "w", encoding="utf-8") as f:
         json.dump(list(all_links.keys()), f, ensure_ascii=False, indent=2)
+    os.replace(cards_tmp, CARDS_FILE)
+    os.replace(ids_tmp, IDS_FILE)
 
     found_unique = sum(1 for group in groups.values() if any(c.get("card_ruby") for c in group))
+    wiki_unique = sum(1 for group in groups.values() if any(c.get("ruby_source") == "dmwiki" for c in group))
+    generated_unique = sum(1 for group in groups.values() if any(c.get("ruby_source") == "generated" for c in group))
+    missing_ruby = len(groups) - found_unique
     print("========================================", flush=True)
     print(f"カード数: {len(cards)}枚", flush=True)
     print(f"新規取得: {len(new_cards)}枚", flush=True)
+    print(f"公式一覧外として保持: {archived_count}枚", flush=True)
     print(f"読みあり: {found_unique}/{len(groups)}種類", flush=True)
+    print(f"Wiki確認ルビ: {wiki_unique}種類", flush=True)
+    print(f"機械生成ルビ: {generated_unique}種類", flush=True)
+    print(f"読み未取得: {missing_ruby}種類（7日後に再試行）", flush=True)
     print("========================================", flush=True)
 
 

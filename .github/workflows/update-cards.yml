@@ -15,6 +15,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: duelmasters-card-data-update
+  cancel-in-progress: false
+
 jobs:
 
   update:
@@ -37,10 +41,12 @@ jobs:
 
       - name: Install Python packages
         run: |
-          pip install requests beautifulsoup4 playwright
+          pip install requests beautifulsoup4 playwright pykakasi
           python -m playwright install --with-deps chromium
 
       - name: Scrape official card list
+        env:
+          PYTHONUNBUFFERED: "1"
         run: python scraper.py
 
       - name: Commit if changed

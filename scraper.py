@@ -2,7 +2,11 @@ import os
 import re
 import json
 import time
+import threading
+import unicodedata
 import requests
+from urllib.parse import quote
+from datetime import datetime, timezone, timedelta
 
 from bs4 import BeautifulSoup
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -16,8 +20,17 @@ DATA_DIR = "data"
 CARDS_FILE = os.path.join(DATA_DIR, "cards.json")
 IDS_FILE = os.path.join(DATA_DIR, "card_ids.json")
 
-MAX_WORKERS = 12
+MAX_WORKERS = 6
 TIMEOUT = 30
+REQUEST_INTERVAL = 0.25
+WIKI_BASE_URL = "https://dmwiki.net/"
+WIKI_REQUEST_INTERVAL = 0.75
+WIKI_MAX_WORKERS = 5
+RUBY_RETRY_DAYS = 30
+_request_lock = threading.Lock()
+_last_request_at = 0.0
+_wiki_request_lock = threading.Lock()
+_last_wiki_request_at = 0.0
 
 HEADERS = {
     "User-Agent": (
@@ -435,6 +448,194 @@ def discover_all_cards():
     return all_links, release_order
 
 
+def clean_card_name(value):
+    """カード番号・商品情報などの末尾を除いたカード名。"""
+    value = clean_text(value)
+    value = re.sub(r"\s*\|\s*デュエル・マスターズ\s*$", "", value)
+    value = re.sub(
+        r"\s*[（(]\s*DM[A-Z0-9-]*\s+[^()（）]*?/[^()（）]*?[）)]\s*$",
+        "",
+        value,
+        flags=re.I,
+    )
+    return value.strip()
+
+
+def normalize_card_title(value):
+    value = unicodedata.normalize("NFKC", str(value or "")).lower()
+    return re.sub(r"[^0-9a-zぁ-ゖァ-ヺ一-龯々〆ヵヶ]", "", value)
+
+
+def ruby_heading_text(node):
+    """Wiki見出しのruby/括弧ルビを読みへ置換した文字列を返す。"""
+    clone = BeautifulSoup(str(node), "html.parser")
+    for ruby in clone.find_all("ruby"):
+        rt = ruby.find("rt")
+        rb = ruby.find("rb")
+        reading = clean_text(rt.get_text("", strip=True)) if rt else ""
+        base = clean_text(rb.get_text("", strip=True)) if rb else ""
+        if reading:
+            ruby.replace_with(reading)
+        elif base:
+            ruby.replace_with(base)
+    for tag in clone.find_all(("rt", "rp")):
+        tag.decompose()
+    value = clean_text(clone.get_text("", strip=True))
+    # Wiki側の表示形式が「漢字(かな)」のテキストになっている場合も処理。
+    value = re.sub(
+        r"([一-龯々〆ヵヶ]+)[（(]([ぁ-ゖァ-ヺー]+)[）)]",
+        lambda m: m.group(2),
+        value,
+    )
+    return value.strip("《》「」『』")
+
+
+def extract_wiki_card_reading(html, card_name):
+    """DM Wikiのカード記事見出しから、カード名全体のルビ読みを抽出。"""
+    soup = BeautifulSoup(html, "html.parser")
+    heading = soup.select_one("h1#firstHeading, h1.mw-first-heading, h1")
+    if not heading:
+        return ""
+
+    # ルビを外した見出しが、照合対象の正式カード名と一致する場合のみ採用。
+    base = BeautifulSoup(str(heading), "html.parser")
+    for tag in base.find_all(("rt", "rp")):
+        tag.decompose()
+    base_text = clean_text(base.get_text("", strip=True)).strip("《》")
+    # 括弧ルビ形式も比較用に取り除く。
+    base_text = re.sub(r"([一-龯々〆ヵヶ]+)[（(][ぁ-ゖァ-ヺー]+[）)]", r"\1", base_text)
+    if normalize_card_title(base_text) != normalize_card_title(card_name):
+        return ""
+
+    has_ruby = bool(heading.find("ruby")) or bool(
+        re.search(r"[一-龯々〆ヵヶ]+[（(][ぁ-ゖァ-ヺー]+[）)]", heading.get_text("", strip=True))
+    )
+    if not has_ruby:
+        return ""
+    reading = ruby_heading_text(heading)
+    return reading if reading and normalize_card_title(reading) != normalize_card_title(card_name) else ""
+
+
+def fetch_wiki_reading(card_name):
+    """カード名に対応するDM Wiki記事からルビ読みを取得。"""
+    global _last_wiki_request_at
+    title = f"《{card_name}》"
+    urls = (
+        WIKI_BASE_URL + quote(title, safe=""),
+        "https://dmwiki.net/index.php?title=" + quote(title, safe=""),
+    )
+    for url in urls:
+        try:
+            with _wiki_request_lock:
+                now = time.monotonic()
+                wait = WIKI_REQUEST_INTERVAL - (now - _last_wiki_request_at)
+                if wait > 0:
+                    time.sleep(wait)
+                _last_wiki_request_at = time.monotonic()
+            response = requests.get(
+                url,
+                headers={**HEADERS, "Referer": "https://dmwiki.net/"},
+                timeout=TIMEOUT,
+            )
+            if response.status_code == 404:
+                continue
+            response.raise_for_status()
+            reading = extract_wiki_card_reading(response.text, card_name)
+            if reading:
+                return reading
+            # 200でも別ページ/リダイレクトで見出しが一致しなければ次URLへ。
+        except requests.RequestException as exc:
+            print(f"Wiki読み取得失敗: {card_name}: {exc}", flush=True)
+        except Exception as exc:
+            print(f"Wiki読み解析失敗: {card_name}: {exc}", flush=True)
+    return ""
+
+
+def ruby_attempt_is_recent(card, now=None):
+    """読み未発見カードの連日再取得を避ける。成功済みは永久に再取得しない。"""
+    if card.get("card_ruby"):
+        return True
+    stamp = card.get("ruby_attempted_at")
+    if not stamp:
+        return False
+    try:
+        attempted = datetime.fromisoformat(stamp.replace("Z", "+00:00"))
+        if attempted.tzinfo is None:
+            attempted = attempted.replace(tzinfo=timezone.utc)
+        now = now or datetime.now(timezone.utc)
+        return now - attempted < timedelta(days=RUBY_RETRY_DAYS)
+    except Exception:
+        return False
+
+
+def extract_ruby_base_text(node):
+    """ruby注釈(rt/rp)を除いた、カードに印刷された正式名称を返す。"""
+    clone = BeautifulSoup(str(node), "html.parser")
+    for tag in clone.find_all(("rt", "rp")):
+        tag.decompose()
+    return clean_text(clone.get_text("", strip=True))
+
+
+def extract_ruby_reading(node):
+    """ruby注釈を読みへ置き換えた名称を返す。"""
+    clone = BeautifulSoup(str(node), "html.parser")
+    for ruby in clone.find_all("ruby"):
+        rt = ruby.find("rt")
+        rb = ruby.find("rb")
+        reading = clean_text(rt.get_text("", strip=True)) if rt else ""
+        base = clean_text(rb.get_text("", strip=True)) if rb else ""
+        if reading:
+            ruby.replace_with(reading)
+        elif base:
+            ruby.replace_with(base)
+    for tag in clone.find_all(("rt", "rp")):
+        tag.decompose()
+    return clean_text(clone.get_text("", strip=True))
+
+
+def extract_card_ruby(soup, title=""):
+    """公式カード詳細HTMLからカード名の読み（ruby/rt等）を抽出する。
+
+    カード名見出しにあるルビを最優先し、補助的にdata属性・埋め込みJSONを確認する。
+    見出し以外のページ内ruby（ナビゲーション等）を誤って読みとして採用しない。
+    """
+    heading = soup.find("h1")
+    if heading:
+        ruby_nodes = heading.find_all("ruby")
+        if ruby_nodes:
+            value = extract_ruby_reading(heading)
+            if value:
+                return value
+
+    # 公式ページのHTML属性に読みが保持されている場合
+    for node in (heading, *soup.select("[data-card-ruby], [data-ruby], [data-reading], [data-yomi]")):
+        if not node:
+            continue
+        for attr in ("data-card-ruby", "data-ruby", "data-reading", "data-yomi", "aria-label"):
+            value = node.get(attr)
+            if isinstance(value, str):
+                value = clean_text(value)
+                if value and (attr != "aria-label" or (title and title in value)):
+                    return value
+
+    # WordPress側の埋め込みJSON/JSにある公式読みキー
+    patterns = (
+        r'["\'](?:card_ruby|cardRuby|ruby|reading|yomi)["\']\s*:\s*["\']([^"\']+)["\']',
+    )
+    for script in soup.find_all("script"):
+        raw = script.string or script.get_text("", strip=True)
+        if not raw or not any(k in raw.lower() for k in ("card_ruby", "cardruby", "reading", "yomi")):
+            continue
+        for pattern in patterns:
+            match = re.search(pattern, raw, re.I)
+            if match:
+                value = clean_text(match.group(1))
+                if value:
+                    return value
+
+    return ""
+
+
 def parse_detail(
     cid,
     url,
@@ -448,16 +649,13 @@ def parse_detail(
     )
 
     h1 = soup.find("h1")
+    card_ruby = extract_card_ruby(soup)
 
     title = ""
 
     if h1:
-        title = clean_text(
-            h1.get_text(
-                " ",
-                strip=True
-            )
-        )
+        # rubyのrt（読み）を正式カード名に混ぜない。
+        title = extract_ruby_base_text(h1)
 
     name = title
 
@@ -541,6 +739,8 @@ def parse_detail(
     return {
         "id": cid,
         "name": name,
+        "card_ruby": card_ruby,
+        "ruby_checked": True,
         "number": cid,
         "type": get_after("カードの種類"),
         "civilization": get_after("文明"),
@@ -560,9 +760,18 @@ def parse_detail(
 
 def fetch_card(item):
 
+    global _last_request_at
     cid, url, release_order = item
 
     try:
+        # 公式サイトへのアクセスを一定間隔に制限し、初回の全件読み取得で
+        # 短時間に大量リクエストを送らない。
+        with _request_lock:
+            now = time.monotonic()
+            wait = REQUEST_INTERVAL - (now - _last_request_at)
+            if wait > 0:
+                time.sleep(wait)
+            _last_request_at = time.monotonic()
 
         r = requests.get(
             url,
@@ -590,193 +799,135 @@ def fetch_card(item):
 
 
 def main():
-
-    os.makedirs(
-        DATA_DIR,
-        exist_ok=True
-    )
-
-    all_links, release_order = (
-        discover_all_cards()
-    )
+    os.makedirs(DATA_DIR, exist_ok=True)
+    all_links, release_order = discover_all_cards()
 
     old_cards = {}
-
-    if os.path.exists(
-        CARDS_FILE
-    ):
-
+    if os.path.exists(CARDS_FILE):
         try:
-
-            with open(
-                CARDS_FILE,
-                "r",
-                encoding="utf-8"
-            ) as f:
-
+            with open(CARDS_FILE, "r", encoding="utf-8") as f:
                 old_data = json.load(f)
-
-            if isinstance(
-                old_data,
-                list
-            ):
-
+            if isinstance(old_data, list):
                 for card in old_data:
-
-                    cid = card.get(
-                        "id"
-                    )
-
+                    cid = card.get("id")
                     if cid:
                         old_cards[cid] = card
+        except Exception as exc:
+            print(f"既存cards.json読込失敗: {exc}", flush=True)
 
-        except Exception as e:
-
-            print(
-                f"既存cards.json読込失敗: {e}"
-            )
-
-    print(
-        f"既存カード: {len(old_cards)}枚"
-    )
-
-    targets = []
-
-    for cid, url in all_links.items():
-
-        if cid not in old_cards:
-
-            targets.append(
-                (
-                    cid,
-                    url,
-                    release_order[cid]
-                )
-            )
-
-    print(
-        f"新規取得対象: {len(targets)}枚"
-    )
+    print(f"既存カード: {len(old_cards)}枚", flush=True)
+    new_targets = [
+        (cid, url, release_order[cid])
+        for cid, url in all_links.items()
+        if cid not in old_cards
+    ]
+    print(f"新規カード詳細取得対象: {len(new_targets)}枚", flush=True)
 
     new_cards = []
-
-    if targets:
-
-        with ThreadPoolExecutor(
-            max_workers=MAX_WORKERS
-        ) as executor:
-
-            futures = [
-                executor.submit(
-                    fetch_card,
-                    item
-                )
-                for item in targets
-            ]
-
-            completed = 0
-
-            for future in as_completed(
-                futures
-            ):
-
-                completed += 1
-
+    if new_targets:
+        with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+            futures = {executor.submit(fetch_card, item): item for item in new_targets}
+            for index, future in enumerate(as_completed(futures), 1):
                 card = future.result()
-
                 if card:
                     new_cards.append(card)
+                if index % 100 == 0 or index == len(futures):
+                    print(f"新規カード詳細取得: {index}/{len(futures)}", flush=True)
 
-                if (
-                    completed % 20 == 0
-                    or completed == len(targets)
-                ):
-
-                    print(
-                        f"詳細取得: "
-                        f"{completed}/"
-                        f"{len(targets)}",
-                        flush=True
-                    )
-
-    cards = []
-
-    for cid in all_links:
-
+    # 既存カードの情報を保持し、一覧側で変わったURL/発売順だけ更新。
+    cards_by_id = {}
+    for cid, url in all_links.items():
         if cid in old_cards:
-
             card = old_cards[cid]
-
-            card["release_order"] = (
-                release_order[cid]
-            )
-
-            card["url"] = (
-                all_links[cid]
-            )
-
-            cards.append(card)
-
-    cards.extend(
-        new_cards
-    )
-
-    unique = {}
-
-    for card in cards:
-
+            card["release_order"] = release_order[cid]
+            card["url"] = url
+            cards_by_id[cid] = card
+    for card in new_cards:
         cid = card.get("id")
-
         if cid:
-            unique[cid] = card
+            cards_by_id[cid] = card
 
-    cards = list(
-        unique.values()
-    )
+    # 読み取得は印刷版ごとではなく、同じ正式カード名ごとに1回だけ行う。
+    groups = {}
+    for card in cards_by_id.values():
+        card_name = clean_card_name(card.get("name", ""))
+        if not card_name:
+            continue
+        groups.setdefault(card_name, []).append(card)
 
-    cards.sort(
-        key=lambda x:
-        x.get(
-            "release_order",
-            999999999
-        )
-    )
+    now = datetime.now(timezone.utc)
+    wiki_targets = []
+    for card_name, group in groups.items():
+        # すでに読みがある版があれば同名の全印刷版へ伝播。
+        existing_reading = next((c.get("card_ruby") for c in group if c.get("card_ruby")), "")
+        if existing_reading:
+            for card in group:
+                card["card_ruby"] = existing_reading
+                card["ruby_checked"] = True
+                card["ruby_source"] = card.get("ruby_source") or "existing"
+            continue
 
-    with open(
-        CARDS_FILE,
-        "w",
-        encoding="utf-8"
-    ) as f:
+        # かな/英数字だけの名前には漢字ルビ照合が不要。
+        if not re.search(r"[一-龯々〆ヵヶ]", card_name):
+            for card in group:
+                card["ruby_checked"] = True
+                card["ruby_source"] = "not_required"
+            continue
 
-        json.dump(
-            cards,
-            f,
-            ensure_ascii=False,
-            indent=2
-        )
+        # 旧版で ruby_checked=True なのに空欄になったカードも、成功扱いにせず再試行する。
+        if any(not ruby_attempt_is_recent(card, now) for card in group):
+            wiki_targets.append(card_name)
 
-    with open(
-        IDS_FILE,
-        "w",
-        encoding="utf-8"
-    ) as f:
+    print(f"DM Wiki読み取得対象: {len(wiki_targets)}種類", flush=True)
+    wiki_results = {}
+    if wiki_targets:
+        with ThreadPoolExecutor(max_workers=WIKI_MAX_WORKERS) as executor:
+            futures = {executor.submit(fetch_wiki_reading, name): name for name in wiki_targets}
+            for index, future in enumerate(as_completed(futures), 1):
+                card_name = futures[future]
+                try:
+                    wiki_results[card_name] = future.result() or ""
+                except Exception as exc:
+                    print(f"Wiki取得エラー {card_name}: {exc}", flush=True)
+                    wiki_results[card_name] = ""
+                if index % 100 == 0 or index == len(futures):
+                    found = sum(bool(v) for v in wiki_results.values())
+                    print(f"読み取得: {index}/{len(futures)} / 成功{found}", flush=True)
 
-        json.dump(
-            list(all_links.keys()),
-            f,
-            ensure_ascii=False,
-            indent=2
-        )
+    attempted_at = now.isoformat(timespec="seconds")
+    for card_name, group in groups.items():
+        if card_name in wiki_results:
+            reading = wiki_results[card_name]
+            for card in group:
+                card["ruby_attempted_at"] = attempted_at
+                if reading:
+                    card["card_ruby"] = reading
+                    card["ruby_checked"] = True
+                    card["ruby_source"] = "dmwiki"
+                else:
+                    # 取得できなかったものを成功済み扱いにしない。30日後に再試行。
+                    card["ruby_checked"] = False
+                    card["ruby_source"] = "not_found"
+        elif any(c.get("card_ruby") for c in group):
+            reading = next(c["card_ruby"] for c in group if c.get("card_ruby"))
+            for card in group:
+                card["card_ruby"] = reading
+                card["ruby_checked"] = True
 
-    print()
-    print("========================================")
-    print(
-        f"カード数: {len(cards)}枚"
-    )
-    print(
-        f"新規取得: {len(new_cards)}枚"
-    )
-    print("========================================")
+    cards = list(cards_by_id.values())
+    cards.sort(key=lambda x: x.get("release_order", 999999999))
+
+    with open(CARDS_FILE, "w", encoding="utf-8") as f:
+        json.dump(cards, f, ensure_ascii=False, indent=2)
+    with open(IDS_FILE, "w", encoding="utf-8") as f:
+        json.dump(list(all_links.keys()), f, ensure_ascii=False, indent=2)
+
+    found_unique = sum(1 for group in groups.values() if any(c.get("card_ruby") for c in group))
+    print("========================================", flush=True)
+    print(f"カード数: {len(cards)}枚", flush=True)
+    print(f"新規取得: {len(new_cards)}枚", flush=True)
+    print(f"読みあり: {found_unique}/{len(groups)}種類", flush=True)
+    print("========================================", flush=True)
 
 
 if __name__ == "__main__":

@@ -295,7 +295,7 @@ def get_total_card_count(html):
     return None
 
 def discover_all_cards():
-
+    """公式一覧を取得。Chromiumがクラッシュした場合は新しいブラウザで再開する。"""
     print()
     print("========================================")
     print("公式カード一覧を取得")
@@ -303,109 +303,102 @@ def discover_all_cards():
 
     all_links = {}
     release_order = {}
+    browser = None
+    context = None
+    page = None
+
+    def close_session():
+        nonlocal browser, context, page
+        for obj in (page, context, browser):
+            if obj is not None:
+                try:
+                    obj.close()
+                except Exception:
+                    pass
+        page = context = browser = None
+
+    def start_session():
+        nonlocal browser, context, page
+        close_session()
+        browser = p.chromium.launch(
+            headless=True,
+            args=["--disable-dev-shm-usage", "--no-sandbox"],
+        )
+        context = browser.new_context(
+            user_agent=HEADERS["User-Agent"],
+        )
+        # 一覧取得に不要なカード画像・動画・フォントを読み込まず、
+        # Chromiumのメモリ消費とクラッシュリスクを抑える。
+        context.route(
+            "**/*",
+            lambda route: route.abort()
+            if route.request.resource_type in ("image", "media", "font")
+            else route.continue_(),
+        )
+        page = context.new_page()
+        page.set_default_timeout(30000)
+        open_official_search_page(page)
+        links = extract_card_links(page.content())
+        if not links:
+            raise RuntimeError("1ページ目からカードを取得できませんでした")
+        return links
 
     with sync_playwright() as p:
-
-        browser = p.chromium.launch(
-            headless=True
-        )
-
-        context = browser.new_context(
-            user_agent=HEADERS["User-Agent"]
-        )
-
-        page = context.new_page()
-
-        print(
-            "公式カード検索を開いています...",
-            flush=True
-        )
-
-        open_official_search_page(page)
-
-        # --------------------------------
-        # 1ページ目
-        # --------------------------------
+        # 初回起動もクラッシュ・読み込み失敗に備えて再試行する。
+        first_links = None
+        for startup_attempt in range(1, 4):
+            try:
+                first_links = start_session()
+                break
+            except Exception as exc:
+                print(
+                    f"初回接続失敗 {startup_attempt}/3: {exc}",
+                    flush=True,
+                )
+                close_session()
+                if startup_attempt == 3:
+                    raise RuntimeError("公式カード検索を開けませんでした") from exc
+                time.sleep(startup_attempt * 3)
 
         html = page.content()
-
-        first_links = extract_card_links(
-            html
-        )
-
-        if not first_links:
-
-            browser.close()
-
-            raise RuntimeError(
-                "1ページ目からカードを取得できませんでした"
-            )
-
         last_page = get_page_count(html)
         expected_total = get_total_card_count(html)
 
-        print(
-            f"1ページ目: {len(first_links)}枚",
-            flush=True
-        )
-
+        print(f"1ページ目: {len(first_links)}枚", flush=True)
         print(f"最終ページ: {last_page}", flush=True)
         if expected_total:
             print(f"公式掲載総数: {expected_total}枚", flush=True)
 
         order = 0
-
         for cid, url in first_links:
-
             all_links[cid] = url
             release_order[cid] = order
             order += 1
 
-        # --------------------------------
-        # ページ2以降
-        # --------------------------------
-
         current_links = first_links
 
-        for page_number in range(
-            2,
-            last_page + 1
-        ):
-
+        for page_number in range(2, last_page + 1):
             success = False
 
-            for attempt in range(
-                1,
-                4
-            ):
-
+            for attempt in range(1, 4):
                 try:
+                    previous_ids = [item[0] for item in current_links]
+                    next_links = browser_get_page(page, page_number, previous_ids)
 
-                    previous_ids = [
-                        x[0]
-                        for x in current_links
-                    ]
-
-                    current_links = (
-                        browser_get_page(
-                            page,
-                            page_number,
-                            previous_ids
+                    # ページが切り替わったことをID集合で確認してから保存。
+                    next_ids = [item[0] for item in next_links]
+                    if not next_ids or next_ids == previous_ids:
+                        raise RuntimeError(
+                            f"{page_number}ページ目の切り替わりを確認できませんでした"
                         )
-                    )
 
+                    current_links = next_links
                     new_count = 0
-
                     for cid, url in current_links:
-
                         if cid not in all_links:
-
                             all_links[cid] = url
-
                             release_order[cid] = order
-
                             order += 1
-
                             new_count += 1
 
                     print(
@@ -413,51 +406,57 @@ def discover_all_cards():
                         f"{len(current_links)}枚 / "
                         f"新規{new_count}枚 / "
                         f"累計{len(all_links)}枚",
-                        flush=True
+                        flush=True,
                     )
-
                     success = True
                     break
 
-                except Exception as e:
-
+                except Exception as exc:
                     print(
-                        f"retry {attempt}/3: {e}",
-                        flush=True
+                        f"{page_number}ページ目でエラー retry {attempt}/3: {exc}",
+                        flush=True,
                     )
+                    close_session()
+                    time.sleep(attempt * 2)
 
-                    time.sleep(2)
-
-                    # ページ1へ戻し、次へリンクを順番にたどって再開位置まで復帰。
-                    open_official_search_page(page)
-                    current_links = extract_card_links(page.content())
-                    for back in range(2, page_number):
-                        previous_ids = [x[0] for x in current_links]
-                        current_links = browser_get_page(page, back, previous_ids)
+                    # 新しいChromiumを起動し、1ページ目から失敗ページの直前まで復元。
+                    try:
+                        current_links = start_session()
+                        for back in range(2, page_number):
+                            previous_ids = [item[0] for item in current_links]
+                            current_links = browser_get_page(page, back, previous_ids)
+                        print(
+                            f"{page_number}ページ目の直前まで復旧しました",
+                            flush=True,
+                        )
+                    except Exception as recovery_exc:
+                        print(
+                            f"ブラウザ再起動・復旧失敗: {recovery_exc}",
+                            flush=True,
+                        )
+                        close_session()
+                        if attempt == 3:
+                            break
 
             if not success:
-
-                browser.close()
-
                 raise RuntimeError(
-                    f"{page_number}ページ目の取得に失敗しました"
+                    f"{page_number}ページ目の取得に失敗しました。"
+                    "既存cards.jsonは更新していません。"
                 )
 
-        browser.close()
+        close_session()
 
     print()
     print("========================================")
-    print(
-        f"一覧取得完了: {len(all_links)}枚"
-    )
+    print(f"一覧取得完了: {len(all_links)}枚")
     print("========================================")
 
     if len(all_links) < 10000:
         raise RuntimeError(f"取得枚数が少なすぎます: {len(all_links)}")
     if expected_total and len(all_links) != expected_total:
         raise RuntimeError(
-            f"公式掲載数と取得数が一致しません: 公式{expected_total}枚 / 取得{len(all_links)}枚。"
-            "不完全な一覧でcards.jsonを上書きしないため中止します。"
+            f"公式掲載数と取得数が一致しません: 公式{expected_total}枚 / "
+            f"取得{len(all_links)}枚。不完全な一覧でcards.jsonを上書きしないため中止します。"
         )
 
     return all_links, release_order

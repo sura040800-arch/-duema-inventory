@@ -5,7 +5,7 @@ import time
 import threading
 import unicodedata
 import requests
-from urllib.parse import quote
+from urllib.parse import quote, urljoin
 from datetime import datetime, timezone, timedelta
 
 from bs4 import BeautifulSoup
@@ -162,65 +162,122 @@ def get_page_ids(page):
     )
 
     return links
-def browser_get_page(page, page_number, previous_ids):
-    """WP-PageNaviの「次へ」をたどって指定ページへ移動する。
+def open_official_search_page(page):
+    """公式カード検索を開く。DOMContentLoaded待ちの停止を避け、カード一覧を確認する。"""
+    print("公式カード検索へ接続しています...", flush=True)
+    try:
+        page.goto(SEARCH_URL, wait_until="commit", timeout=60000)
+    except Exception as exc:
+        # commit後の通知タイムアウトは、一覧が取得できれば回復可能。
+        print(f"ページ遷移通知: {exc}", flush=True)
 
-    ページ番号リンクは通常、近傍の数ページ分しかDOMに存在しないため、
-    a[data-page="N"]を直接探す方式だと途中で巡回が止まる。
-    """
+    page.wait_for_selector(
+        '#cardlist a[href*="/card/detail/"]',
+        state="attached",
+        timeout=120000,
+    )
+    page.wait_for_timeout(1000)
+
+
+def _page_number_from_link(info):
+    """ページ送りリンクからページ番号を推定する。"""
+    raw = info.get("data_page")
+    if raw and str(raw).isdigit():
+        return int(raw)
+
+    href = info.get("href") or ""
+    for pattern in (
+        r"[?&](?:paged|page|pagenum)=([0-9]+)",
+        r"/page/([0-9]+)(?:/|$)",
+    ):
+        match = re.search(pattern, href, re.I)
+        if match:
+            return int(match.group(1))
+
+    text = clean_text(info.get("text", ""))
+    if text.isdigit():
+        return int(text)
+    return None
+
+
+def browser_get_page(page, page_number, previous_ids):
+    """ページ送りの実リンクを優先し、ページ番号属性がない場合もhrefから移動する。"""
     print(f"{page_number}ページ目へ移動...", flush=True)
 
     pager = page.locator("#cardlist .wp-pagenavi")
     if pager.count() == 0:
-        raise RuntimeError("ページ送りが見つかりません")
+        raise RuntimeError("ページ送り(#cardlist .wp-pagenavi)が見つかりません")
 
+    link_info = pager.locator("a").evaluate_all("""
+        els => els.map((a, index) => ({
+          index,
+          data_page: a.getAttribute('data-page'),
+          href: a.getAttribute('href') || '',
+          text: (a.innerText || a.textContent || '').trim(),
+          cls: String(a.className || ''),
+          rel: String(a.getAttribute('rel') || ''),
+          aria: String(a.getAttribute('aria-label') || ''),
+          title: String(a.getAttribute('title') || '')
+        }))
+    """)
+
+    target_info = next(
+        (item for item in link_info if _page_number_from_link(item) == page_number),
+        None,
+    )
+
+    next_info = next(
+        (item for item in link_info if
+         item["rel"].lower() == "next" or
+         "next" in item["cls"].lower() or
+         "次" in item["aria"] or "次" in item["title"] or
+         re.search(r"^(次へ|next|›|»|→|＞|〉)$", clean_text(item["text"]), re.I)),
+        None,
+    )
+
+    # exact page link is safest; otherwise follow the explicit next link.
+    chosen = target_info or next_info
     anchors = pager.locator("a")
-    next_locator = pager.locator(
-        'a[rel="next"], a.nextpostslink, a.next, a[aria-label*="次"], a[title*="次"]'
-    ).first
+    if chosen is None:
+        # Last fallback: choose the nearest numeric page greater than current.
+        candidates = [
+            (number, item) for item in link_info
+            if (number := _page_number_from_link(item)) is not None
+            and number > page_number - 1
+        ]
+        if candidates:
+            chosen = min(candidates, key=lambda pair: pair[0])[1]
 
-    if next_locator.count() == 0:
-        # クラス名に依存せず「次へ」記号のリンクを探す。
-        link_info = anchors.evaluate_all("""
-            els => els.map((a, index) => ({
-              index,
-              page: Number(a.getAttribute('data-page')),
-              text: (a.innerText || '').trim(),
-              cls: String(a.className || ''),
-              rel: String(a.getAttribute('rel') || '')
-            }))
-        """)
-        next_info = next((x for x in link_info if
-            x['rel'].lower() == 'next' or
-            'next' in x['cls'].lower() or
-            re.search(r'^(次へ|next|›|»|→|＞|〉)$', x['text'], re.I)
-        ), None)
-        if next_info:
-            next_locator = anchors.nth(next_info['index'])
-        else:
-            current = page_number - 1
-            target = current + 1
-            target_info = next((x for x in link_info if x['page'] == target), None)
-            if not target_info:
-                raise RuntimeError(
-                    f"{page_number}ページ目への連続したページリンクがありません。"
-                    "飛びページを誤取得しないため中止します。"
-                )
-            next_locator = anchors.nth(target_info['index'])
+    if chosen is None:
+        raise RuntimeError(
+            f"{page_number}ページ目へのリンクが見つかりません。"
+            f"ページ送りリンク情報: {link_info[:12]}"
+        )
 
-    if next_locator.count() == 0:
-        raise RuntimeError(f"{page_number}ページ目の次リンクが見つかりません")
+    href = chosen.get("href", "").strip()
+    if href and not href.lower().startswith("javascript:") and href != "#":
+        destination = urljoin(page.url or SEARCH_URL, href)
+        try:
+            page.goto(destination, wait_until="commit", timeout=60000)
+        except Exception as exc:
+            print(f"ページ移動通知: {exc}", flush=True)
+    else:
+        anchors.nth(chosen["index"]).click(timeout=20000)
 
-    next_locator.click(timeout=15000)
-    start_time = time.time()
-    while time.time() - start_time < 40:
-        html = page.content()
-        links = extract_card_links(html)
-        ids = [x[0] for x in links]
-        if ids and ids != previous_ids:
-            return links
-        time.sleep(0.4)
-    raise RuntimeError(f"{page_number}ページ目のカード取得がタイムアウトしました")
+    deadline = time.time() + 60
+    while time.time() < deadline:
+        try:
+            links = extract_card_links(page.content())
+            ids = [item[0] for item in links]
+            if ids and ids != previous_ids:
+                return links
+        except Exception:
+            pass
+        time.sleep(0.5)
+
+    raise RuntimeError(
+        f"{page_number}ページ目へ移動しましたが、カード一覧が切り替わりませんでした"
+    )
 
 
 def get_total_card_count(html):
@@ -236,28 +293,6 @@ def get_total_card_count(html):
         except ValueError:
             pass
     return None
-
-def open_official_search_page(page):
-    """公式サイトのDOMContentLoaded待ちで固まらないよう、応答開始後にカード一覧を待つ。"""
-    print("公式カード検索へ接続しています...", flush=True)
-    try:
-        page.goto(
-            SEARCH_URL,
-            wait_until="commit",
-            timeout=60000
-        )
-    except Exception as e:
-        # commit後にブラウザ側のイベント待ちだけがタイムアウトする場合がある。
-        # 実際の一覧が表示されるかを下のselector待ちで判定する。
-        print(f"ページ遷移通知: {e}", flush=True)
-
-    page.wait_for_selector(
-        '#cardlist a[href*="/card/detail/"]',
-        state="attached",
-        timeout=120000
-    )
-    page.wait_for_timeout(1500)
-
 
 def discover_all_cards():
 

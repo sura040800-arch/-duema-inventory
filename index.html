@@ -266,7 +266,7 @@ function aliasTargets(query){const q=norm(query);return Object.entries(aliases).
 function matchesAliasTarget(c,targets){if(!targets.length)return false;const names=[cleanCardName(c),c.cardName,c.card_name,c._name,c.title,c.displayName,c.display_name,...faces(c).flatMap(f=>[f?.name,f?.cardName,f?.card_name,f?.title])].filter(v=>typeof v==='string').map(norm);return targets.some(t=>names.some(n=>n===t||n.includes(t)))}
 function norm(s){return String(s||'').toLowerCase().normalize('NFKC').replace(/[\s　・･\-‐‑–—ー_「」『』【】〔〕（）()\[\]“”‘’"'’]/g,'').replace(/[ぁ-ゖ]/g,ch=>String.fromCharCode(ch.charCodeAt(0)+96))}
 // 公式カード詳細から取得した読み・ルビを、検索箇所を問わず共通利用する。
-function readingTerms(c){return [...new Set(['card_ruby','cardRuby','ruby','reading','yomi','furigana','kana','kana_name','kanaName','読み','読み仮名','ルビ'].flatMap(k=>vals(c,k).flatMap(split)).filter(Boolean))]}
+function readingTerms(c){const keys=['card_ruby','cardRuby','ruby','reading','yomi','furigana','kana','kana_name','kanaName','読み','読み仮名','ルビ'];const own=keys.flatMap(k=>vals(c,k).flatMap(split));const nested=faces(c).flatMap(f=>keys.flatMap(k=>vals(f,k).flatMap(split)));return [...new Set([...own,...nested].filter(Boolean))]}
 const searchTextCache=new WeakMap();
 function searchText(c){
  let cached=searchTextCache.get(c);if(cached!==undefined)return cached;

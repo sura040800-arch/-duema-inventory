@@ -237,6 +237,28 @@ def get_total_card_count(html):
             pass
     return None
 
+def open_official_search_page(page):
+    """公式サイトのDOMContentLoaded待ちで固まらないよう、応答開始後にカード一覧を待つ。"""
+    print("公式カード検索へ接続しています...", flush=True)
+    try:
+        page.goto(
+            SEARCH_URL,
+            wait_until="commit",
+            timeout=60000
+        )
+    except Exception as e:
+        # commit後にブラウザ側のイベント待ちだけがタイムアウトする場合がある。
+        # 実際の一覧が表示されるかを下のselector待ちで判定する。
+        print(f"ページ遷移通知: {e}", flush=True)
+
+    page.wait_for_selector(
+        '#cardlist a[href*="/card/detail/"]',
+        state="attached",
+        timeout=120000
+    )
+    page.wait_for_timeout(1500)
+
+
 def discover_all_cards():
 
     print()
@@ -264,15 +286,7 @@ def discover_all_cards():
             flush=True
         )
 
-        page.goto(
-            SEARCH_URL,
-            wait_until="domcontentloaded",
-            timeout=60000
-        )
-
-        page.wait_for_timeout(
-            2000
-        )
+        open_official_search_page(page)
 
         # --------------------------------
         # 1ページ目
@@ -380,8 +394,7 @@ def discover_all_cards():
                     time.sleep(2)
 
                     # ページ1へ戻し、次へリンクを順番にたどって再開位置まで復帰。
-                    page.goto(SEARCH_URL, wait_until="domcontentloaded", timeout=60000)
-                    page.wait_for_timeout(1500)
+                    open_official_search_page(page)
                     current_links = extract_card_links(page.content())
                     for back in range(2, page_number):
                         previous_ids = [x[0] for x in current_links]

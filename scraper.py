@@ -718,6 +718,25 @@ def parse_detail(
         # rubyのrt（読み）を正式カード名に混ぜない。
         title = extract_ruby_base_text(h1)
 
+    # 公式ページのHTML構造変更でh1が取得できない場合は、
+    # OGP / Twitterカード / titleタグからカード名を補完する。
+    if not title:
+        for selector in ('meta[property="og:title"]', 'meta[name="twitter:title"]'):
+            meta = soup.select_one(selector)
+            if meta and meta.get("content"):
+                title = clean_card_name(meta.get("content"))
+                if title:
+                    break
+
+    if not title and soup.title:
+        title = clean_card_name(soup.title.get_text(" ", strip=True))
+
+    title = re.sub(
+        r"\\s*[-|｜:]\\s*(?:デュエル・マスターズ|カード詳細).*$",
+        "",
+        title,
+    ).strip()
+
     name = title
 
     if "(" in name:

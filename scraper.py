@@ -515,27 +515,41 @@ def ruby_heading_text(node):
 def extract_wiki_card_reading(html, card_name):
     """DM Wikiのカード記事見出しから、カード名全体のルビ読みを抽出。"""
     soup = BeautifulSoup(html, "html.parser")
-    heading = soup.select_one("h1#firstHeading, h1.mw-first-heading, h1")
-    if not heading:
-        return ""
 
-    # ルビを外した見出しが、照合対象の正式カード名と一致する場合のみ採用。
-    base = BeautifulSoup(str(heading), "html.parser")
-    for tag in base.find_all(("rt", "rp")):
-        tag.decompose()
-    base_text = re.sub(r"\[\s*編集\s*\]", "", clean_text(base.get_text("", strip=True))).strip("《》")
-    # 括弧ルビ形式も比較用に取り除く。
-    base_text = re.sub(r"([一-龯々〆ヵヶ]+[”’」』】〕]*)[（(][ぁ-ゖァ-ヺー]+[）)]", r"\1", base_text)
-    if normalize_card_title(base_text) != normalize_card_title(card_name):
-        return ""
+    # MediaWikiはh1、PukiWikiミラーはh2等で記事タイトルを出すため、
+    # 見出しレベルを固定せず、正式カード名と一致する見出しを探す。
+    headings = soup.select("h1, h2, h3, h4, h5, h6")
+    for heading in headings:
+        base = BeautifulSoup(str(heading), "html.parser")
+        for tag in base.find_all(("rt", "rp")):
+            tag.decompose()
+        base_text = re.sub(
+            r"\[\s*編集\s*\]",
+            "",
+            clean_text(base.get_text("", strip=True)),
+        ).strip("《》")
+        # 括弧ルビ形式も比較用に取り除く。
+        base_text = re.sub(
+            r"([一-龯々〆ヵヶ]+[”’」』】〕]*)[（(][ぁ-ゖァ-ヺー]+[）)]",
+            r"\1",
+            base_text,
+        )
+        if normalize_card_title(base_text) != normalize_card_title(card_name):
+            continue
 
-    has_ruby = bool(heading.find("ruby")) or bool(
-        re.search(r"[一-龯々〆ヵヶ]+[”’」』】〕]*[（(][ぁ-ゖァ-ヺー]+[）)]", heading.get_text("", strip=True))
-    )
-    if not has_ruby:
-        return ""
-    reading = ruby_heading_text(heading)
-    return clean_reading_punctuation(reading) if reading and normalize_card_title(reading) != normalize_card_title(card_name) else ""
+        has_ruby = bool(heading.find("ruby")) or bool(
+            re.search(
+                r"[一-龯々〆ヵヶ]+[”’」』】〕]*[（(][ぁ-ゖァ-ヺー]+[）)]",
+                heading.get_text("", strip=True),
+            )
+        )
+        if not has_ruby:
+            continue
+        reading = ruby_heading_text(heading)
+        if reading and normalize_card_title(reading) != normalize_card_title(card_name):
+            return clean_reading_punctuation(reading)
+
+    return ""
 
 
 def _wiki_get(url, params=None):

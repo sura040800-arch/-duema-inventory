@@ -37,6 +37,8 @@ _request_lock = threading.Lock()
 _last_request_at = 0.0
 _wiki_request_lock = threading.Lock()
 _last_wiki_request_at = 0.0
+_wiki_api_blocked = False
+_wiki_api_block_lock = threading.Lock()
 
 HEADERS = {
     "User-Agent": (
@@ -576,28 +578,47 @@ def fetch_wiki_reading(card_name):
         except Exception as exc:
             print(f"Wiki読み解析失敗: {card_name}: {exc}", flush=True)
 
-    # URLエンコードや記事名の差異で直接URLが解決できない場合にAPIで正確な記事を探す。
-    api_url = "https://dmwiki.net/api.php"
+    # 直接URLで記事が見つからない場合は、通常版・ミラー版のAPIを順に試す。
+    # 片方でも403/429を返した場合はアクセス制限と判断し、全カードで同じ失敗を
+    # 繰り返さない。通常版が制限されていてもミラー版は一度だけ確認する。
+    global _wiki_api_blocked
+    with _wiki_api_block_lock:
+        if _wiki_api_blocked:
+            return ""
+
+    api_urls = (
+        "https://dmwiki.net/api.php",
+        "https://m.dmwiki.net/api.php",
+    )
     title_candidates = (title, card_name)
-    for candidate in title_candidates:
-        try:
-            response = _wiki_get(api_url, {
-                "action": "parse", "page": candidate, "prop": "text",
-                "format": "json", "formatversion": 2,
-            })
-            payload = response.json()
-            html = payload.get("parse", {}).get("text", "")
-            if html:
-                reading = extract_wiki_card_reading(html, card_name)
-                if reading:
-                    return reading
-        except requests.RequestException as exc:
-            print(f"Wiki API読み取得失敗: {card_name}: {exc}", flush=True)
-            response = getattr(exc, "response", None)
-            if response is not None and response.status_code in (403, 429):
-                return ""
-        except (ValueError, TypeError, AttributeError) as exc:
-            print(f"Wiki API読み解析失敗: {card_name}: {exc}", flush=True)
+    for api_url in api_urls:
+        endpoint_blocked = False
+        for candidate in title_candidates:
+            try:
+                response = _wiki_get(api_url, {
+                    "action": "parse", "page": candidate, "prop": "text",
+                    "format": "json", "formatversion": 2,
+                })
+                payload = response.json()
+                html = payload.get("parse", {}).get("text", "")
+                if html:
+                    reading = extract_wiki_card_reading(html, card_name)
+                    if reading:
+                        return reading
+            except requests.RequestException as exc:
+                print(f"Wiki API読み取得失敗: {card_name}: {exc}", flush=True)
+                response = getattr(exc, "response", None)
+                if response is not None and response.status_code in (403, 429):
+                    endpoint_blocked = True
+                    break
+            except (ValueError, TypeError, AttributeError) as exc:
+                print(f"Wiki API読み解析失敗: {card_name}: {exc}", flush=True)
+        if endpoint_blocked:
+            # ミラーAPIも一度だけ試す。両方拒否されたら今回の実行では停止。
+            if api_url == api_urls[-1]:
+                with _wiki_api_block_lock:
+                    _wiki_api_blocked = True
+            continue
 
     return ""
 

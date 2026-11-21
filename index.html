@@ -16,7 +16,7 @@ h1{font-size:16px;margin:0 0 8px;font-weight:800}
 main{max-width:900px;margin:auto}
 .tabs{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;padding:10px}
 .tab{border:0;border-radius:12px;padding:11px 5px;background:#e5e7eb;font-weight:800}.tab.active{background:#111827;color:#fff}
-.status{padding:0 14px 8px;color:#6b7280;font-size:12px}.loading-line{display:flex;align-items:center;gap:8px;min-height:28px}.loading-spinner{width:15px;height:15px;border:2px solid #d1d5db;border-top-color:#64748b;border-radius:50%;animation:loading-spin .8s linear infinite;flex:none}@keyframes loading-spin{to{transform:rotate(360deg)}}.loading-time{font-variant-numeric:tabular-nums;color:#64748b}
+.status{padding:0 14px 8px;color:#6b7280;font-size:12px}
 .hidden{display:none!important}
 
 /* collection */
@@ -204,7 +204,7 @@ body.deck-mode .pcard img{width:100%!important;height:clamp(115px,19dvh,150px)!i
 <button class="tab" id="favTab">⭐ お気に入り</button>
 <button class="tab" id="deckTab">🃏 デッキ</button>
 </div>
-<section id="inventory"><div class="status" id="invStatus"><div class="loading-line"><span class="loading-spinner"></span><span>カードデータを読み込み中…</span><span class="loading-time" id="loadingTime">0秒</span></div></div><div id="cards"></div></section>
+<section id="inventory"><div class="status" id="invStatus">カードデータを読み込み中…</div><div id="cards"></div></section>
 <section id="favorites" class="hidden"><div class="status" id="favStatus"></div><div id="favCards"></div></section>
 <section id="decks" class="hidden"></section>
 </main>
@@ -543,9 +543,7 @@ $('applyFilter').onclick=()=>{S.filter={civ:$('fCiv').value,race:$('fRace').valu
 $('invTab').onclick=()=>switchTab('inv');$('favTab').onclick=()=>switchTab('fav');$('deckTab').onclick=()=>switchTab('deck');
 document.body.addEventListener('click',e=>{let row=e.target.closest('.card[data-versions]');if(row&&!e.target.closest('button')){showVersions(row.dataset.versions);return}let p=e.target.dataset.plus,m=e.target.dataset.minus,f=e.target.dataset.fav;if(p){S.owned[p]=(S.owned[p]||0)+1;save();renderInventory()}if(m){S.owned[m]=Math.max(0,(S.owned[m]||0)-1);save();renderInventory()}if(f){S.favs[f]=!S.favs[f];if(!S.favs[f])delete S.favs[f];save();renderInventory()}});
 async function load(){
-const startedAt=Date.now();
-const timer=setInterval(()=>{const el=$('loadingTime');if(el)el.textContent=Math.floor((Date.now()-startedAt)/1000)+'秒'},1000);
-try{let r=await fetch('data/cards.json?'+Date.now(),{cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status);let j=await r.json();S.cards=Array.isArray(j)?j:(j.cards||j.data||[]);$('invStatus').textContent=`カード ${S.cards.length.toLocaleString()} 枚を表示（先頭150枚）`;populateFilters();renderInventory()}catch(e){$('invStatus').textContent='カードデータの読み込みに失敗しました。通信環境を確認して再読み込みしてください。';console.error(e)}finally{clearInterval(timer)}
+try{let r=await fetch('data/cards.json?'+Date.now(),{cache:'no-store'});let j=await r.json();S.cards=Array.isArray(j)?j:(j.cards||j.data||[]);$('invStatus').textContent=`カード ${S.cards.length.toLocaleString()} 枚を表示（先頭150枚）`;populateFilters();renderInventory()}catch(e){$('invStatus').textContent='カードデータの読み込みに失敗しました。';console.error(e)}
 }
 load();
 </script>

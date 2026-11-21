@@ -31,13 +31,16 @@ def main():
     initial_batch = not os.path.exists(RECHECK_MARKER)
     candidates = []
     for name, group in groups.items():
-        if any(
-            c.get("card_ruby")
-            and c.get("ruby_source") not in ("generated", "fallback", "not_found")
-            for c in group
-        ):
+        # 公式・Wikiなどで確定済みの読みは保護し、未取得または機械生成の読みだけを対象にする。
+        eligible = [
+            c for c in group
+            if not c.get("card_ruby")
+            or c.get("ruby_source") in ("generated", "fallback", "not_found")
+        ]
+        if not eligible:
             continue
-        if initial_batch or not any(scraper.ruby_attempt_is_recent(c, now) for c in group):
+        # 同名カードの一部に未確認版があれば対象。直近で照合したものは次回まで待つ。
+        if initial_batch or any(not scraper.ruby_attempt_is_recent(c, now) for c in eligible):
             candidates.append(name)
 
     candidates = sorted(candidates)[:BATCH_SIZE]

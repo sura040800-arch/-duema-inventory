@@ -33,6 +33,7 @@ WIKI_BASE_URL = "https://dmwiki.net/"
 WIKI_REQUEST_INTERVAL = 0.75
 WIKI_MAX_WORKERS = 5
 RUBY_RETRY_DAYS = 7
+RUBY_RETRY_BATCH = 100
 _request_lock = threading.Lock()
 _last_request_at = 0.0
 _wiki_request_lock = threading.Lock()
@@ -1014,16 +1015,16 @@ def main():
 
     now = datetime.now(timezone.utc)
     wiki_targets = []
-    # 既存カード全件を毎回Wiki照合すると、8,000種類以上の取得で数時間かかる。
-    # Wiki照合は今回新規取得したカード名に限定し、既存カードの不足読みはpykakasiで補完する。
+    retry_candidates = []
+    # 新規カードは毎回読み取得を実施。既存の機械生成読みも7日ごとに再照合し、
+    # 取得元の復旧や別ソース追加後に、より正確な読みへ自動更新できるようにする。
+    # 1回の実行での再照合は最大100種類に制限し、長時間化とアクセス集中を防ぐ。
     new_card_names = {
         clean_card_name(card.get("name", ""))
         for card in new_cards
         if clean_card_name(card.get("name", ""))
     }
     for card_name, group in groups.items():
-        # Wiki等で確認済みの読みがあれば同名の全印刷版へ伝播。
-        # 機械生成読みは確定扱いせず、7日ごとにWikiの特殊読みで上書きできるようにする。
         existing_reading = next((
             c.get("card_ruby") for c in group
             if c.get("card_ruby") and c.get("ruby_source") not in ("generated", "fallback")
@@ -1035,7 +1036,6 @@ def main():
                 card["ruby_source"] = card.get("ruby_source") or "existing"
             continue
 
-        # 漢字を含まない名前は名前自体を読み検索語として保持する。
         if not re.search(r"[一-龯々〆ヵヶ]", card_name):
             for card in group:
                 card["card_ruby"] = card_name
@@ -1043,18 +1043,30 @@ def main():
                 card["ruby_source"] = "identity"
             continue
 
-        # 既存カードは外部Wikiへ再照会せず、未取得分を機械読みで補完する。
-        # 新規カードだけWikiの正式ルビを確認し、失敗時は機械読みへフォールバックする。
         if card_name in new_card_names:
             wiki_targets.append(card_name)
-        elif not any(c.get("card_ruby") for c in group):
-            fallback = generate_fallback_reading(card_name)
-            attempted_at = now.isoformat(timespec="seconds")
-            for card in group:
-                card["card_ruby"] = fallback
-                card["ruby_checked"] = bool(fallback)
-                card["ruby_source"] = "generated" if fallback else "not_found"
-                card["ruby_attempted_at"] = attempted_at
+            continue
+
+        # 既存の機械生成読みは期限が来たものだけ再照合候補にする。
+        if any(c.get("card_ruby") for c in group):
+            if any(
+                c.get("ruby_source") in ("generated", "fallback")
+                and not ruby_attempt_is_recent(c, now)
+                for c in group
+            ):
+                retry_candidates.append(card_name)
+            continue
+
+        fallback = generate_fallback_reading(card_name)
+        attempted_at = now.isoformat(timespec="seconds")
+        for card in group:
+            card["card_ruby"] = fallback
+            card["ruby_checked"] = bool(fallback)
+            card["ruby_source"] = "generated" if fallback else "not_found"
+            card["ruby_attempted_at"] = attempted_at
+
+    retry_candidates.sort()
+    wiki_targets.extend(retry_candidates[:RUBY_RETRY_BATCH])
 
     print(f"DM Wiki読み取得対象: {len(wiki_targets)}種類", flush=True)
     wiki_results = {}

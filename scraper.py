@@ -412,6 +412,23 @@ def discover_all_cards():
                         flush=True,
                     )
                     success = True
+
+                    # 長時間のページ巡回でChromiumのメモリが蓄積するため、
+                    # 20ページごとにブラウザを再起動して現在位置まで復元する。
+                    if page_number % 20 == 0 and page_number < last_page:
+                        print(
+                            f"{page_number}ページ取得完了。ブラウザを定期再起動します...",
+                            flush=True,
+                        )
+                        close_session()
+                        current_links = start_session()
+                        for back in range(2, page_number + 1):
+                            previous_ids = [item[0] for item in current_links]
+                            current_links = browser_get_page(page, back, previous_ids)
+                        print(
+                            f"{page_number}ページ目まで再接続・復元しました",
+                            flush=True,
+                        )
                     break
 
                 except Exception as exc:

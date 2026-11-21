@@ -11,6 +11,10 @@ BATCH_SIZE = 1000
 
 
 def main():
+    # 固有名の実ルビがWikiから取得できるかを毎回確認し、取得元の障害を早期検知する。
+    smoke_reading = scraper.fetch_wiki_reading("“龍装”チュリス")
+    print(f"Wikiルビ動作確認: {smoke_reading or '取得できず'}", flush=True)
+
     with open(CARDS_FILE, "r", encoding="utf-8") as f:
         cards = json.load(f)
     if not isinstance(cards, list):

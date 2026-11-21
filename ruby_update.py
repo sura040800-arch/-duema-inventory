@@ -7,6 +7,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import scraper
 
 CARDS_FILE = os.path.join("data", "cards.json")
+RECHECK_MARKER = os.path.join("data", "ruby_recheck_started")
 BATCH_SIZE = 1000
 
 
@@ -27,6 +28,7 @@ def main():
             groups.setdefault(name, []).append(card)
 
     now = datetime.now(timezone.utc)
+    initial_batch = not os.path.exists(RECHECK_MARKER)
     candidates = []
     for name, group in groups.items():
         if any(
@@ -35,7 +37,7 @@ def main():
             for c in group
         ):
             continue
-        if not any(scraper.ruby_attempt_is_recent(c, now) for c in group):
+        if initial_batch or not any(scraper.ruby_attempt_is_recent(c, now) for c in group):
             candidates.append(name)
 
     candidates = sorted(candidates)[:BATCH_SIZE]
@@ -80,6 +82,9 @@ def main():
     with open(tmp, "w", encoding="utf-8") as f:
         json.dump(cards, f, ensure_ascii=False, indent=2)
     os.replace(tmp, CARDS_FILE)
+    os.makedirs(os.path.dirname(RECHECK_MARKER), exist_ok=True)
+    with open(RECHECK_MARKER, "w", encoding="utf-8") as marker:
+        marker.write("started\\n")
 
     print(f"Wiki確定ルビ: {sum(bool(v) for v in results.values())}/{len(results)}種類", flush=True)
     print("ルビ再照合完了", flush=True)

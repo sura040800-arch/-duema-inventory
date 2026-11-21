@@ -570,6 +570,9 @@ def fetch_wiki_reading(card_name):
                 return reading
         except requests.RequestException as exc:
             print(f"Wiki読み取得失敗: {card_name}: {exc}", flush=True)
+            response = getattr(exc, "response", None)
+            if response is not None and response.status_code in (403, 429):
+                return ""
         except Exception as exc:
             print(f"Wiki読み解析失敗: {card_name}: {exc}", flush=True)
 
@@ -590,6 +593,9 @@ def fetch_wiki_reading(card_name):
                     return reading
         except requests.RequestException as exc:
             print(f"Wiki API読み取得失敗: {card_name}: {exc}", flush=True)
+            response = getattr(exc, "response", None)
+            if response is not None and response.status_code in (403, 429):
+                return ""
         except (ValueError, TypeError, AttributeError) as exc:
             print(f"Wiki API読み解析失敗: {card_name}: {exc}", flush=True)
 
@@ -987,6 +993,13 @@ def main():
 
     now = datetime.now(timezone.utc)
     wiki_targets = []
+    # 既存カード全件を毎回Wiki照合すると、8,000種類以上の取得で数時間かかる。
+    # Wiki照合は今回新規取得したカード名に限定し、既存カードの不足読みはpykakasiで補完する。
+    new_card_names = {
+        clean_card_name(card.get("name", ""))
+        for card in new_cards
+        if clean_card_name(card.get("name", ""))
+    }
     for card_name, group in groups.items():
         # Wiki等で確認済みの読みがあれば同名の全印刷版へ伝播。
         # 機械生成読みは確定扱いせず、7日ごとにWikiの特殊読みで上書きできるようにする。
@@ -1009,9 +1022,18 @@ def main():
                 card["ruby_source"] = "identity"
             continue
 
-        # 旧版で ruby_checked=True なのに空欄になったカードも、成功扱いにせず再試行する。
-        if any(not ruby_attempt_is_recent(card, now) for card in group):
+        # 既存カードは外部Wikiへ再照会せず、未取得分を機械読みで補完する。
+        # 新規カードだけWikiの正式ルビを確認し、失敗時は機械読みへフォールバックする。
+        if card_name in new_card_names:
             wiki_targets.append(card_name)
+        elif not any(c.get("card_ruby") for c in group):
+            fallback = generate_fallback_reading(card_name)
+            attempted_at = now.isoformat(timespec="seconds")
+            for card in group:
+                card["card_ruby"] = fallback
+                card["ruby_checked"] = bool(fallback)
+                card["ruby_source"] = "generated" if fallback else "not_found"
+                card["ruby_attempted_at"] = attempted_at
 
     print(f"DM Wiki読み取得対象: {len(wiki_targets)}種類", flush=True)
     wiki_results = {}

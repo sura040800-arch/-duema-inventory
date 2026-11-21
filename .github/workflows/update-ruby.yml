@@ -1,0 +1,58 @@
+name: デュエマカード読みルビ再照合
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "15 19 * * *"
+  push:
+    paths:
+      - "ruby_update.py"
+      - ".github/workflows/update-ruby.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: duelmasters-ruby-update
+  cancel-in-progress: false
+
+jobs:
+  update-ruby:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install packages
+        run: pip install requests beautifulsoup4 playwright pykakasi
+      - name: Recheck card ruby
+        env:
+          PYTHONUNBUFFERED: "1"
+        run: python ruby_update.py
+      - name: Commit ruby updates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/cards.json
+          git add data/ruby_recheck_started
+          if git diff --cached --quiet; then
+            echo "ルビに変更なし"
+          else
+            git commit -m "自動更新: カード名ルビ再照合"
+            # 公式カードID更新などが同時にmainへ入っても、取得済みルビを捨てずに再適用する
+            for attempt in 1 2 3 4 5; do
+              git pull --rebase origin main
+              if git push origin HEAD:main; then
+                echo "ルビ更新をmainへ保存しました"
+                exit 0
+              fi
+              echo "push競合。再試行: $attempt"
+              sleep 3
+            done
+            echo "5回再試行してもpushできませんでした"
+            exit 1
+          fi

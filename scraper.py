@@ -575,7 +575,8 @@ def fetch_wiki_reading(card_name):
             print(f"Wiki読み取得失敗: {card_name}: {exc}", flush=True)
             response = getattr(exc, "response", None)
             if response is not None and response.status_code in (403, 429):
-                return ""
+                # 通常版で拒否されてもミラー版は別ホストなので試行を継続する。
+                continue
         except Exception as exc:
             print(f"Wiki読み解析失敗: {card_name}: {exc}", flush=True)
 

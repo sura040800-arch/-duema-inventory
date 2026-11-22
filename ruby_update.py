@@ -8,6 +8,7 @@ import scraper
 
 CARDS_FILE = os.path.join("data", "cards.json")
 RECHECK_MARKER = os.path.join("data", "ruby_recheck_started")
+CURSOR_FILE = os.path.join("data", "ruby_recheck_cursor.json")
 BATCH_SIZE = 1000
 
 
@@ -28,21 +29,22 @@ def main():
             groups.setdefault(name, []).append(card)
 
     now = datetime.now(timezone.utc)
-    initial_batch = not os.path.exists(RECHECK_MARKER)
-    candidates = []
+    eligible_names = []
     source_counts = {}
     attempted_count = 0
     never_attempted_count = 0
     retry_due_count = 0
     eligible_card_count = 0
+    due_names = []
     for name, group in groups.items():
         eligible = [
-            c for c in group
-            if not c.get("card_ruby")
-            or c.get("ruby_source") in ("generated", "fallback", "not_found")
+            card for card in group
+            if not card.get("card_ruby")
+            or card.get("ruby_source") in ("generated", "fallback", "not_found")
         ]
         if not eligible:
             continue
+        eligible_names.append(name)
         eligible_card_count += len(eligible)
         due = False
         for card in eligible:
@@ -55,18 +57,35 @@ def main():
             if not scraper.ruby_attempt_is_recent({**card, "ruby_source": "generated"}, now):
                 retry_due_count += 1
                 due = True
-        if initial_batch or due:
-            candidates.append(name)
+        if due:
+            due_names.append(name)
+
+    eligible_names.sort()
+    due_names.sort()
+    cursor_state = None
+    if os.path.exists(CURSOR_FILE):
+        with open(CURSOR_FILE, "r", encoding="utf-8") as f:
+            cursor_state = json.load(f)
+    catchup_active = not (cursor_state and cursor_state.get("complete"))
+    if catchup_active:
+        last_name = (cursor_state or {}).get("last_name", "")
+        remaining = [name for name in eligible_names if name > last_name]
+        candidates = remaining[:BATCH_SIZE]
+        print(
+            f"初回一括照合: 継続位置={last_name or '(先頭)'}, "
+            f"残り={len(remaining)}種類",
+            flush=True,
+        )
+    else:
+        candidates = due_names[:BATCH_SIZE]
+        print(f"定期再照合: 期限到来={len(due_names)}種類", flush=True)
 
     print(
-        f"診断: 初回={initial_batch}, 全カード={len(cards)}, "
-        f"ルビ対象カード={eligible_card_count}, 取得元={source_counts}, "
-        f"取得試行日時あり={attempted_count}, なし={never_attempted_count}, "
-        f"再照合期限到来={retry_due_count}",
+        f"診断: 全カード={len(cards)}, ルビ対象カード={eligible_card_count}, "
+        f"取得元={source_counts}, 取得試行日時あり={attempted_count}, "
+        f"なし={never_attempted_count}, 再照合期限到来={retry_due_count}",
         flush=True,
     )
-    print(f"候補種類(上限適用前): {len(candidates)}", flush=True)
-    candidates = sorted(candidates)[:BATCH_SIZE]
     print(f"ルビ再照合対象: {len(candidates)}種類 / 全{len(groups)}種類", flush=True)
     results = {}
     if candidates:
@@ -116,6 +135,24 @@ def main():
     os.makedirs(os.path.dirname(RECHECK_MARKER), exist_ok=True)
     with open(RECHECK_MARKER, "w", encoding="utf-8") as marker:
         marker.write("started\n")
+
+    os.makedirs(os.path.dirname(CURSOR_FILE), exist_ok=True)
+    if catchup_active:
+        if candidates and len(remaining) > len(candidates):
+            cursor_state = {"last_name": candidates[-1], "complete": False}
+        else:
+            cursor_state = {
+                "last_name": candidates[-1] if candidates else (cursor_state or {}).get("last_name", ""),
+                "complete": True,
+                "completed_at": stamp,
+            }
+        with open(CURSOR_FILE, "w", encoding="utf-8") as cursor:
+            json.dump(cursor_state, cursor, ensure_ascii=False, indent=2)
+        print(
+            "初回一括照合の進捗: "
+            + ("継続" if not cursor_state["complete"] else "全対象の処理完了"),
+            flush=True,
+        )
 
     print(f"Wiki確定ルビ: {sum(bool(v) for v in results.values())}/{len(results)}種類", flush=True)
     print("ルビ再照合完了", flush=True)

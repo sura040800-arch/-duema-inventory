@@ -40,7 +40,7 @@ def main():
         if not eligible:
             continue
         # 同名カードの一部に未確認版があれば対象。直近で照合したものは次回まで待つ。
-        if initial_batch or any(not scraper.ruby_attempt_is_recent(c, now) for c in eligible):
+        if initial_batch or any(not scraper.ruby_attempt_is_recent({**c, "ruby_source": "generated"}, now) for c in eligible):
             candidates.append(name)
 
     candidates = sorted(candidates)[:BATCH_SIZE]

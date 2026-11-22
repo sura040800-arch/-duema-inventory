@@ -30,8 +30,12 @@ def main():
     now = datetime.now(timezone.utc)
     initial_batch = not os.path.exists(RECHECK_MARKER)
     candidates = []
+    source_counts = {}
+    attempted_count = 0
+    never_attempted_count = 0
+    retry_due_count = 0
+    eligible_card_count = 0
     for name, group in groups.items():
-        # 公式・Wikiなどで確定済みの読みは保護し、未取得または機械生成の読みだけを対象にする。
         eligible = [
             c for c in group
             if not c.get("card_ruby")
@@ -39,10 +43,29 @@ def main():
         ]
         if not eligible:
             continue
-        # 同名カードの一部に未確認版があれば対象。直近で照合したものは次回まで待つ。
-        if initial_batch or any(not scraper.ruby_attempt_is_recent({**c, "ruby_source": "generated"}, now) for c in eligible):
+        eligible_card_count += len(eligible)
+        due = False
+        for card in eligible:
+            source = card.get("ruby_source") or "(none)"
+            source_counts[source] = source_counts.get(source, 0) + 1
+            if card.get("ruby_attempted_at"):
+                attempted_count += 1
+            else:
+                never_attempted_count += 1
+            if not scraper.ruby_attempt_is_recent({**card, "ruby_source": "generated"}, now):
+                retry_due_count += 1
+                due = True
+        if initial_batch or due:
             candidates.append(name)
 
+    print(
+        f"診断: 初回={initial_batch}, 全カード={len(cards)}, "
+        f"ルビ対象カード={eligible_card_count}, 取得元={source_counts}, "
+        f"取得試行日時あり={attempted_count}, なし={never_attempted_count}, "
+        f"再照合期限到来={retry_due_count}",
+        flush=True,
+    )
+    print(f"候補種類(上限適用前): {len(candidates)}", flush=True)
     candidates = sorted(candidates)[:BATCH_SIZE]
     print(f"ルビ再照合対象: {len(candidates)}種類 / 全{len(groups)}種類", flush=True)
     results = {}
@@ -65,7 +88,12 @@ def main():
 
     stamp = now.isoformat(timespec="seconds")
     for name, reading in results.items():
-        for card in groups[name]:
+        targets = [
+            card for card in groups[name]
+            if not card.get("card_ruby")
+            or card.get("ruby_source") in ("generated", "fallback", "not_found")
+        ]
+        for card in targets:
             card["ruby_attempted_at"] = stamp
             if reading:
                 card["card_ruby"] = reading

@@ -7,6 +7,7 @@ on:
   push:
     paths:
       - "ruby_update.py"
+      - "merge_ruby_updates.py"
       - ".github/workflows/update-ruby.yml"
 
 permissions:
@@ -33,27 +34,45 @@ jobs:
         env:
           PYTHONUNBUFFERED: "1"
         run: python ruby_update.py
-      - name: Commit ruby updates
+      - name: Merge ruby updates and commit safely
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/cards.json
-          git add data/ruby_recheck_started
-          git add data/ruby_recheck_cursor.json
-          if git diff --cached --quiet; then
-            echo "ルビに変更なし"
-          else
+          cp data/cards.json /tmp/ruby_updated_cards.json
+          cp data/ruby_recheck_cursor.json /tmp/ruby_recheck_cursor.json 2>/dev/null || true
+          cp data/ruby_recheck_started /tmp/ruby_recheck_started 2>/dev/null || true
+
+          for attempt in 1 2 3 4 5; do
+            echo "最新mainへルビ情報を統合: 試行 $attempt"
+            git fetch origin main
+            git reset --hard origin/main
+
+            if [ -f /tmp/ruby_recheck_cursor.json ]; then
+              mkdir -p data
+              cp /tmp/ruby_recheck_cursor.json data/ruby_recheck_cursor.json
+            fi
+            if [ -f /tmp/ruby_recheck_started ]; then
+              mkdir -p data
+              cp /tmp/ruby_recheck_started data/ruby_recheck_started
+            fi
+
+            python merge_ruby_updates.py /tmp/ruby_updated_cards.json data/cards.json
+            git add data/cards.json data/ruby_recheck_cursor.json data/ruby_recheck_started
+
+            if git diff --cached --quiet; then
+              echo "ルビに変更なし"
+              exit 0
+            fi
+
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git commit -m "自動更新: カード名ルビ再照合"
-            # 公式カードID更新などが同時にmainへ入っても、取得済みルビを捨てずに再適用する
-            for attempt in 1 2 3 4 5; do
-              git pull --rebase origin main
-              if git push origin HEAD:main; then
-                echo "ルビ更新をmainへ保存しました"
-                exit 0
-              fi
-              echo "push競合。再試行: $attempt"
-              sleep 3
-            done
-            echo "5回再試行してもpushできませんでした"
-            exit 1
-          fi
+
+            if git push origin HEAD:main; then
+              echo "ルビ更新をmainへ保存しました"
+              exit 0
+            fi
+            echo "push競合。最新mainから統合し直します: $attempt"
+            sleep 3
+          done
+
+          echo "5回再試行してもpushできませんでした"
+          exit 1

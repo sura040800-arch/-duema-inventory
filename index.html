@@ -342,7 +342,27 @@ function groupPrintings(cards){const map=new Map();for(const c of cards){const k
 // Prefer the earliest known non-promotional printing as the representative card.
 function printingDate(c){for(const k of ['releaseDate','release_date','発売日','date','publishedAt','published_at']){const v=vals(c,k).find(x=>x);if(v){const t=Date.parse(String(v));if(Number.isFinite(t))return t}}return Infinity}
 function isPromoPrinting(c){const s=norm([num(c),...rare(c),...vals(c,'set'),...vals(c,'setName'),...vals(c,'収録弾')].join(' '));return /(^|[^a-z])(p|pr|promo|promotional)([^a-z]|$)/i.test(s)||s.includes('プロモ')||s.includes('プロモーション')}
-function preferredPrinting(group){/* cards.json release_order is an ascending recency index: the largest value is the earliest/oldest printing. Prefer this source field over promo heuristics or array order. */return [...group].sort((a,b)=>{const ao=Number(a.release_order),bo=Number(b.release_order);const av=Number.isFinite(ao),bv=Number.isFinite(bo);if(av&&bv&&ao!==bo)return bo-ao;if(av!==bv)return av?-1:1;const ad=printingDate(a),bd=printingDate(b);if(Number.isFinite(ad)&&Number.isFinite(bd)&&ad!==bd)return ad-bd;return group.indexOf(b)-group.indexOf(a)})[0]}
+function preferredPrinting(group){
+ // release_order is assigned in official listing order (newest first), so the largest
+ // value is the earliest listing. Keep that as the primary criterion.
+ const order = c => Number.isFinite(Number(c.release_order)) ? Number(c.release_order) : null;
+ const isSecret = c => /シークレット|秘|SEC/i.test([num(c),...rare(c)].join(' ')) || /[0-9]+[ＢB]\\/[0-9]+/.test(num(c));
+ return [...group].sort((a,b)=>{
+  const ao=order(a),bo=order(b);
+  if(ao!==null&&bo!==null&&ao!==bo)return bo-ao;
+  if((ao!==null)!==(bo!==null))return ao!==null?-1:1;
+  // If the official listing gives the same position, prefer a standard, non-promo
+  // printing over a secret/promo variant. This only breaks ties; it cannot override
+  // an earlier official listing entry.
+  const ap=isPromoPrinting(a),bp=isPromoPrinting(b);
+  if(ap!==bp)return ap?1:-1;
+  const as=isSecret(a),bs=isSecret(b);
+  if(as!==bs)return as?1:-1;
+  const ad=printingDate(a),bd=printingDate(b);
+  if(Number.isFinite(ad)&&Number.isFinite(bd)&&ad!==bd)return ad-bd;
+  return group.indexOf(a)-group.indexOf(b);
+ })[0];
+}
 function renderInventory(){let matched=new Set(filtered().map(id)),groups=groupPrintings(S.cards).filter(g=>g.some(c=>matched.has(id(c)))),show=groups.slice(0,150);$('invStatus').textContent=`カード ${groups.length.toLocaleString()} 種を表示${groups.length>150?'（先頭150種）':''}`;$('cards').innerHTML=show.map(g=>cardHtml(preferredPrinting(g),g)).join('')||'<div class="status">該当カードなし</div>'}
 function renderFav(){let favNames=new Set(S.cards.filter(c=>S.favs[id(c)]).map(cardNameKey)),groups=groupPrintings(S.cards).filter(g=>favNames.has(cardNameKey(g[0])));$('favStatus').textContent=`お気に入り ${groups.length} 種`;$('favCards').innerHTML=groups.map(g=>cardHtml(preferredPrinting(g),g)).join('')||'<div class="status">お気に入りカードはありません</div>'}
 function showVersions(ids){const versions=ids.split('|').map(k=>S.cards.find(c=>id(c)===k)).filter(Boolean);if(!versions.length)return;const title=cleanCardName(versions[0]);$('versionsContent').innerHTML=`<div class="sheet-head"><div><h2>${esc(title)}</h2><div class="muted">バージョンを選んで所持枚数を管理</div></div><button class="close" id="versionsClose">×</button></div><div>${versions.map(c=>{const k=id(c),count=S.owned[k]||0;return `<div class="version-row">${img(c)}<div class="version-info"><strong>${esc(num(c))}</strong><small>${esc(civ(c).join(' / '))}　${esc(rare(c).join(' / '))}</small></div><div class="version-qty"><button data-vminus="${esc(k)}">−</button><b>${count}</b><button data-vplus="${esc(k)}">＋</button></div></div>`}).join('')}</div>`;$('versionsOverlay').classList.add('open');$('versionsClose').onclick=()=>closeOverlay('versionsOverlay');$('versionsContent').querySelectorAll('[data-vplus]').forEach(b=>b.onclick=()=>{const k=b.dataset.vplus;S.owned[k]=(S.owned[k]||0)+1;save();showVersions(ids);renderInventory()});$('versionsContent').querySelectorAll('[data-vminus]').forEach(b=>b.onclick=()=>{const k=b.dataset.vminus;S.owned[k]=Math.max(0,(S.owned[k]||0)-1);if(!S.owned[k])delete S.owned[k];save();showVersions(ids);renderInventory()})}

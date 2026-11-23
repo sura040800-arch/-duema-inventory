@@ -346,7 +346,7 @@ function preferredPrinting(group){
  // release_order is assigned in official listing order (newest first), so the largest
  // value is the earliest listing. Keep that as the primary criterion.
  const order = c => Number.isFinite(Number(c.release_order)) ? Number(c.release_order) : null;
- const isSecret = c => /シークレット|秘|SEC/i.test([num(c),...rare(c)].join(' ')) || /[0-9]+[ＢB]\\/[0-9]+/.test(num(c));
+ const isSecret = c => /シークレット|秘|SEC/i.test([num(c),...rare(c)].join(' ')) || /[0-9]+[ＢB][/][0-9]+/.test(num(c));
  return [...group].sort((a,b)=>{
   const ao=order(a),bo=order(b);
   if(ao!==null&&bo!==null&&ao!==bo)return bo-ao;

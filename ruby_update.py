@@ -9,6 +9,7 @@ import scraper
 CARDS_FILE = os.path.join("data", "cards.json")
 RECHECK_MARKER = os.path.join("data", "ruby_recheck_started")
 CURSOR_FILE = os.path.join("data", "ruby_recheck_cursor.json")
+STATS_FILE = os.path.join("data", "ruby_recheck_stats.json")
 BATCH_SIZE = 1000
 
 
@@ -106,12 +107,19 @@ def main():
                     print(f"ルビ照合: {i}/{len(futures)} / Wiki確定{found}", flush=True)
 
     stamp = now.isoformat(timespec="seconds")
+    wiki_confirmed_names = 0
+    fallback_names = 0
+    not_found_names = 0
+    affected_cards = 0
     for name, reading in results.items():
         targets = [
             card for card in groups[name]
             if not card.get("card_ruby")
             or card.get("ruby_source") in ("generated", "fallback", "not_found")
         ]
+        affected_cards += len(targets)
+        if reading:
+            wiki_confirmed_names += 1
         for card in targets:
             card["ruby_attempted_at"] = stamp
             if reading:
@@ -121,10 +129,12 @@ def main():
             else:
                 fallback = scraper.generate_fallback_reading(name)
                 if fallback:
+                    fallback_names += 1
                     card["card_ruby"] = fallback
                     card["ruby_checked"] = True
                     card["ruby_source"] = "generated"
                 else:
+                    not_found_names += 1
                     card["ruby_checked"] = False
                     card["ruby_source"] = "not_found"
 
@@ -154,7 +164,23 @@ def main():
             flush=True,
         )
 
-    print(f"Wiki確定ルビ: {sum(bool(v) for v in results.values())}/{len(results)}種類", flush=True)
+    stats = {
+        "updated_at": stamp,
+        "batch_name_count": len(results),
+        "wiki_confirmed_name_count": wiki_confirmed_names,
+        "fallback_name_count": fallback_names,
+        "not_found_name_count": not_found_names,
+        "affected_card_count": affected_cards,
+        "cursor": cursor_state or {},
+    }
+    with open(STATS_FILE, "w", encoding="utf-8") as f:
+        json.dump(stats, f, ensure_ascii=False, indent=2)
+    print(
+        f"今回の取得結果: Wiki確定={wiki_confirmed_names}種類 / "
+        f"機械読み={fallback_names}種類 / 未取得={not_found_names}種類 / "
+        f"更新対象カード={affected_cards}枚",
+        flush=True,
+    )
     print("ルビ再照合完了", flush=True)
 
 

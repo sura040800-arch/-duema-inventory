@@ -39,6 +39,7 @@ jobs:
           cp data/cards.json /tmp/ruby_updated_cards.json
           cp data/ruby_recheck_cursor.json /tmp/ruby_recheck_cursor.json 2>/dev/null || true
           cp data/ruby_recheck_started /tmp/ruby_recheck_started 2>/dev/null || true
+          cp data/ruby_recheck_stats.json /tmp/ruby_recheck_stats.json 2>/dev/null || true
 
           for attempt in 1 2 3 4 5; do
             echo "最新mainへルビ情報を統合: 試行 $attempt"
@@ -53,9 +54,13 @@ jobs:
               mkdir -p data
               cp /tmp/ruby_recheck_started data/ruby_recheck_started
             fi
+            if [ -f /tmp/ruby_recheck_stats.json ]; then
+              mkdir -p data
+              cp /tmp/ruby_recheck_stats.json data/ruby_recheck_stats.json
+            fi
 
             python merge_ruby_updates.py /tmp/ruby_updated_cards.json data/cards.json
-            git add data/cards.json data/ruby_recheck_cursor.json data/ruby_recheck_started
+            git add data/cards.json data/ruby_recheck_cursor.json data/ruby_recheck_started data/ruby_recheck_stats.json
 
             if git diff --cached --quiet; then
               echo "ルビに変更なし"

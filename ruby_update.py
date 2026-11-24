@@ -118,25 +118,26 @@ def main():
             or card.get("ruby_source") in ("generated", "fallback", "not_found")
         ]
         affected_cards += len(targets)
+        fallback = scraper.generate_fallback_reading(name) if not reading else ""
         if reading:
             wiki_confirmed_names += 1
+        elif fallback:
+            fallback_names += 1
+        else:
+            not_found_names += 1
         for card in targets:
             card["ruby_attempted_at"] = stamp
             if reading:
                 card["card_ruby"] = reading
                 card["ruby_checked"] = True
                 card["ruby_source"] = "dmwiki"
+            elif fallback:
+                card["card_ruby"] = fallback
+                card["ruby_checked"] = True
+                card["ruby_source"] = "generated"
             else:
-                fallback = scraper.generate_fallback_reading(name)
-                if fallback:
-                    fallback_names += 1
-                    card["card_ruby"] = fallback
-                    card["ruby_checked"] = True
-                    card["ruby_source"] = "generated"
-                else:
-                    not_found_names += 1
-                    card["ruby_checked"] = False
-                    card["ruby_source"] = "not_found"
+                card["ruby_checked"] = False
+                card["ruby_source"] = "not_found"
 
     tmp = CARDS_FILE + ".ruby.tmp"
     with open(tmp, "w", encoding="utf-8") as f:

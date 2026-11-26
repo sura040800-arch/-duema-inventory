@@ -165,8 +165,18 @@ def main():
             flush=True,
         )
 
+    remaining_name_count = (
+        max(0, len(remaining) - len(candidates)) if catchup_active else None
+    )
+    completed_name_count = (
+        len(eligible_names) - remaining_name_count
+        if remaining_name_count is not None else None
+    )
     stats = {
         "updated_at": stamp,
+        "total_eligible_name_count": len(eligible_names),
+        "completed_name_count": completed_name_count,
+        "remaining_name_count": remaining_name_count,
         "batch_name_count": len(results),
         "wiki_confirmed_name_count": wiki_confirmed_names,
         "fallback_name_count": fallback_names,

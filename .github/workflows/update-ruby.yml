@@ -3,7 +3,10 @@ name: デュエマカード読みルビ再照合
 on:
   workflow_dispatch:
   schedule:
+    # 1日3回（日本時間 04:15 / 12:15 / 20:15）
     - cron: "15 19 * * *"
+    - cron: "15 3 * * *"
+    - cron: "15 11 * * *"
   push:
     paths:
       - "ruby_update.py"

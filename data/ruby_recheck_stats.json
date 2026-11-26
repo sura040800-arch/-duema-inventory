@@ -1,15 +1,16 @@
 {
-  "updated_at": "2026-11-26T04:40:30+00:00",
-  "total_eligible_name_count": 2089,
-  "completed_name_count": 1903,
-  "remaining_name_count": 186,
-  "batch_name_count": 1000,
-  "wiki_confirmed_name_count": 889,
-  "fallback_name_count": 111,
+  "updated_at": "2026-11-26T20:11:22+00:00",
+  "total_eligible_name_count": 1200,
+  "completed_name_count": 1200,
+  "remaining_name_count": 0,
+  "batch_name_count": 186,
+  "wiki_confirmed_name_count": 137,
+  "fallback_name_count": 49,
   "not_found_name_count": 0,
-  "affected_card_count": 2054,
+  "affected_card_count": 401,
   "cursor": {
-    "last_name": "龍素記号Ps チャンカンパラス",
-    "complete": false
+    "last_name": "～黒馬の騎兵長～",
+    "complete": true,
+    "completed_at": "2026-11-26T20:11:22+00:00"
   }
 }

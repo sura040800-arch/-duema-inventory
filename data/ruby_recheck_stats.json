@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-25T03:02:11+00:00",
+  "updated_at": "2026-11-26T02:11:47+00:00",
   "batch_name_count": 1000,
-  "wiki_confirmed_name_count": 927,
-  "fallback_name_count": 73,
+  "wiki_confirmed_name_count": 883,
+  "fallback_name_count": 117,
   "not_found_name_count": 0,
-  "affected_card_count": 2093,
+  "affected_card_count": 2004,
   "cursor": {
-    "last_name": "蒼天の翼 ラウ",
+    "last_name": "鎧亜の戦輝リグド",
     "complete": false
   }
 }

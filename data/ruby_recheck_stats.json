@@ -1,12 +1,15 @@
 {
-  "updated_at": "2026-11-26T02:11:47+00:00",
+  "updated_at": "2026-11-26T04:26:14+00:00",
+  "total_eligible_name_count": 2089,
+  "completed_name_count": 1903,
+  "remaining_name_count": 186,
   "batch_name_count": 1000,
-  "wiki_confirmed_name_count": 883,
-  "fallback_name_count": 117,
+  "wiki_confirmed_name_count": 889,
+  "fallback_name_count": 111,
   "not_found_name_count": 0,
-  "affected_card_count": 2004,
+  "affected_card_count": 2054,
   "cursor": {
-    "last_name": "鎧亜の戦輝リグド",
+    "last_name": "龍素記号Ps チャンカンパラス",
     "complete": false
   }
 }

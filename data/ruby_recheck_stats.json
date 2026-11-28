@@ -1,14 +1,13 @@
 {
-  "updated_at": "2026-11-28T02:18:11+00:00",
+  "updated_at": "2026-11-28T11:38:34+00:00",
   "total_eligible_name_count": 1063,
   "completed_name_count": null,
   "remaining_name_count": null,
-  "batch_name_count": 1000,
-  "official_confirmed_name_count": 0,
+  "batch_name_count": 62,
   "wiki_confirmed_name_count": 0,
-  "fallback_name_count": 1000,
+  "fallback_name_count": 62,
   "not_found_name_count": 0,
-  "affected_card_count": 1974,
+  "affected_card_count": 115,
   "cursor": {
     "last_name": "～黒馬の騎兵長～",
     "complete": true,

@@ -13,6 +13,30 @@ STATS_FILE = os.path.join("data", "ruby_recheck_stats.json")
 BATCH_SIZE = 1000
 
 
+
+def lookup_card_reading(name, group):
+    """公式カード詳細の読みを最優先し、なければDM Wikiで確認する。"""
+    for card in group:
+        card_id = card.get("id")
+        url = card.get("url")
+        if card_id is None or not url:
+            continue
+        official = scraper.fetch_card((
+            card_id, url, card.get("release_order", 0)
+        ))
+        if official:
+            official_name = scraper.clean_card_name(official.get("name", ""))
+            official_reading = official.get("card_ruby", "")
+            if official_reading and official_name == scraper.clean_card_name(name):
+                return official_reading, "official"
+        # 公式詳細は代表の1版だけ確認し、負荷を抑えてWikiへ進む。
+        break
+
+    wiki_reading = scraper.fetch_wiki_reading(name)
+    if wiki_reading:
+        return wiki_reading, "dmwiki"
+    return "", ""
+
 def main():
     # 固有名の実ルビがWikiから取得できるかを毎回確認し、取得元の障害を早期検知する。
     smoke_reading = scraper.fetch_wiki_reading("“龍装”チュリス")
@@ -92,26 +116,28 @@ def main():
     if candidates:
         with ThreadPoolExecutor(max_workers=scraper.WIKI_MAX_WORKERS) as pool:
             futures = {
-                pool.submit(scraper.fetch_wiki_reading, name): name
+                pool.submit(lookup_card_reading, name, groups[name]): name
                 for name in candidates
             }
             for i, future in enumerate(as_completed(futures), 1):
                 name = futures[future]
                 try:
-                    results[name] = future.result() or ""
+                    results[name] = future.result() or ("", "")
                 except Exception as exc:
-                    print(f"Wiki取得失敗 {name}: {exc}", flush=True)
-                    results[name] = ""
+                    print(f"公式/Wiki読み取得失敗 {name}: {exc}", flush=True)
+                    results[name] = ("", "")
                 if i % 50 == 0 or i == len(futures):
-                    found = sum(bool(v) for v in results.values())
-                    print(f"ルビ照合: {i}/{len(futures)} / Wiki確定{found}", flush=True)
+                    found = sum(bool(v[0]) for v in results.values())
+                    print(f"ルビ照合: {i}/{len(futures)} / 公式・Wiki確定{found}", flush=True)
 
     stamp = now.isoformat(timespec="seconds")
+    official_confirmed_names = 0
     wiki_confirmed_names = 0
     fallback_names = 0
     not_found_names = 0
     affected_cards = 0
-    for name, reading in results.items():
+    for name, result in results.items():
+        reading, reading_source = result
         targets = [
             card for card in groups[name]
             if not card.get("card_ruby")
@@ -119,7 +145,9 @@ def main():
         ]
         affected_cards += len(targets)
         fallback = scraper.generate_fallback_reading(name) if not reading else ""
-        if reading:
+        if reading_source == "official":
+            official_confirmed_names += 1
+        elif reading_source == "dmwiki":
             wiki_confirmed_names += 1
         elif fallback:
             fallback_names += 1
@@ -130,7 +158,7 @@ def main():
             if reading:
                 card["card_ruby"] = reading
                 card["ruby_checked"] = True
-                card["ruby_source"] = "dmwiki"
+                card["ruby_source"] = reading_source
             elif fallback:
                 card["card_ruby"] = fallback
                 card["ruby_checked"] = True
@@ -178,6 +206,7 @@ def main():
         "completed_name_count": completed_name_count,
         "remaining_name_count": remaining_name_count,
         "batch_name_count": len(results),
+        "official_confirmed_name_count": official_confirmed_names,
         "wiki_confirmed_name_count": wiki_confirmed_names,
         "fallback_name_count": fallback_names,
         "not_found_name_count": not_found_names,
@@ -187,7 +216,8 @@ def main():
     with open(STATS_FILE, "w", encoding="utf-8") as f:
         json.dump(stats, f, ensure_ascii=False, indent=2)
     print(
-        f"今回の取得結果: Wiki確定={wiki_confirmed_names}種類 / "
+        f"今回の取得結果: 公式確定={official_confirmed_names}種類 / "
+        f"Wiki確定={wiki_confirmed_names}種類 / "
         f"機械読み={fallback_names}種類 / 未取得={not_found_names}種類 / "
         f"更新対象カード={affected_cards}枚",
         flush=True,
